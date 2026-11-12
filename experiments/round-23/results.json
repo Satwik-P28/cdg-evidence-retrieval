@@ -1,0 +1,265 @@
+{
+  "date": "2026-11-12",
+  "seed": 23026,
+  "cases_per_mode": 120,
+  "dataset": "programmatically generated two-hop fixtures; no external natural-language dataset",
+  "methods": [
+    "static BM25 top-2",
+    "naive exact bridge lookup",
+    "version/scope/conflict guarded bridge lookup"
+  ],
+  "cost_exclusions": [
+    "index build and scan",
+    "metadata lookup",
+    "CPU time",
+    "compression",
+    "cache",
+    "network",
+    "neural model"
+  ],
+  "results": {
+    "clean": {
+      "static": {
+        "correct_cases": 0,
+        "invalid_answers": 0,
+        "abstentions": 120,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 196.0
+      },
+      "naive": {
+        "correct_cases": 120,
+        "invalid_answers": 0,
+        "abstentions": 0,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 141.0
+      },
+      "guarded": {
+        "correct_cases": 120,
+        "invalid_answers": 0,
+        "abstentions": 0,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 141.0
+      }
+    },
+    "conflicting_anchors": {
+      "static": {
+        "correct_cases": 120,
+        "invalid_answers": 0,
+        "abstentions": 120,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 196.0
+      },
+      "naive": {
+        "correct_cases": 0,
+        "invalid_answers": 120,
+        "abstentions": 0,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 141.0
+      },
+      "guarded": {
+        "correct_cases": 120,
+        "invalid_answers": 0,
+        "abstentions": 120,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 196.0
+      }
+    },
+    "stale_version": {
+      "static": {
+        "correct_cases": 0,
+        "invalid_answers": 0,
+        "abstentions": 120,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 195.0
+      },
+      "naive": {
+        "correct_cases": 0,
+        "invalid_answers": 120,
+        "abstentions": 0,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 149.0
+      },
+      "guarded": {
+        "correct_cases": 120,
+        "invalid_answers": 0,
+        "abstentions": 0,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 141.0
+      }
+    },
+    "scope_collision": {
+      "static": {
+        "correct_cases": 0,
+        "invalid_answers": 0,
+        "abstentions": 120,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 196.0
+      },
+      "naive": {
+        "correct_cases": 0,
+        "invalid_answers": 120,
+        "abstentions": 0,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 144.0
+      },
+      "guarded": {
+        "correct_cases": 120,
+        "invalid_answers": 0,
+        "abstentions": 0,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 141.0
+      }
+    },
+    "missing_second_hop": {
+      "static": {
+        "correct_cases": 120,
+        "invalid_answers": 0,
+        "abstentions": 120,
+        "total_cases": 120,
+        "mean_source_materializations": 2.0,
+        "mean_materialized_source_bytes": 196.0
+      },
+      "naive": {
+        "correct_cases": 120,
+        "invalid_answers": 0,
+        "abstentions": 120,
+        "total_cases": 120,
+        "mean_source_materializations": 1.0,
+        "mean_materialized_source_bytes": 96.0
+      },
+      "guarded": {
+        "correct_cases": 120,
+        "invalid_answers": 0,
+        "abstentions": 120,
+        "total_cases": 120,
+        "mean_source_materializations": 1.0,
+        "mean_materialized_source_bytes": 96.0
+      }
+    }
+  },
+  "receipt_checks": {
+    "utf8_span_roundtrip": true,
+    "source_version_changed": true,
+    "old_offset_invalid_after_shift": true
+  },
+  "first_case_examples": [
+    {
+      "scenario": "clean",
+      "policy": "static",
+      "predicted": null,
+      "expected": "result23026",
+      "read_count": 2
+    },
+    {
+      "scenario": "clean",
+      "policy": "naive",
+      "predicted": "result23026",
+      "expected": "result23026",
+      "read_count": 2
+    },
+    {
+      "scenario": "clean",
+      "policy": "guarded",
+      "predicted": "result23026",
+      "expected": "result23026",
+      "read_count": 2
+    },
+    {
+      "scenario": "conflicting_anchors",
+      "policy": "static",
+      "predicted": null,
+      "expected": null,
+      "read_count": 2
+    },
+    {
+      "scenario": "conflicting_anchors",
+      "policy": "naive",
+      "predicted": "result33026",
+      "expected": null,
+      "read_count": 2
+    },
+    {
+      "scenario": "conflicting_anchors",
+      "policy": "guarded",
+      "predicted": null,
+      "expected": null,
+      "read_count": 2
+    },
+    {
+      "scenario": "stale_version",
+      "policy": "static",
+      "predicted": null,
+      "expected": "result43026",
+      "read_count": 2
+    },
+    {
+      "scenario": "stale_version",
+      "policy": "naive",
+      "predicted": "obsolete43026",
+      "expected": "result43026",
+      "read_count": 2
+    },
+    {
+      "scenario": "stale_version",
+      "policy": "guarded",
+      "predicted": "result43026",
+      "expected": "result43026",
+      "read_count": 2
+    },
+    {
+      "scenario": "scope_collision",
+      "policy": "static",
+      "predicted": null,
+      "expected": "result53026",
+      "read_count": 2
+    },
+    {
+      "scenario": "scope_collision",
+      "policy": "naive",
+      "predicted": "unrelated53026",
+      "expected": "result53026",
+      "read_count": 2
+    },
+    {
+      "scenario": "scope_collision",
+      "policy": "guarded",
+      "predicted": "result53026",
+      "expected": "result53026",
+      "read_count": 2
+    },
+    {
+      "scenario": "missing_second_hop",
+      "policy": "static",
+      "predicted": null,
+      "expected": null,
+      "read_count": 2
+    },
+    {
+      "scenario": "missing_second_hop",
+      "policy": "naive",
+      "predicted": null,
+      "expected": null,
+      "read_count": 1
+    },
+    {
+      "scenario": "missing_second_hop",
+      "policy": "guarded",
+      "predicted": null,
+      "expected": null,
+      "read_count": 1
+    }
+  ],
+  "limitations": "Templates expose exact bridge identifiers; guarded method assumes trustworthy source IDs, version metadata and scope. Not a realistic or fair comparison with trained SOTA systems."
+}

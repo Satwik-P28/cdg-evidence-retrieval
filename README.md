@@ -1,6 +1,6 @@
 # CDG: Source-Aligned Evidence Retrieval and Compression
 
-**Research notebook and reproducible experiments, November 2026.**
+**Research notebook and reproducible experiments, November 2026. Latest research: Round 23.**
 
 CDG studies a practical mismatch in retrieval-augmented systems: a search result can be relevant without providing a *complete* basis for a claim. Retrieving more context often fixes omissions, but increases tokens, source reads, and decoding work. The working question is whether a system can recover complete evidence more economically by treating source identity, evidence dependencies, and physical storage layout as one optimization problem.
 
@@ -28,14 +28,15 @@ The architecture deliberately separates four claims that can otherwise be confus
 | Cost-aware alternatives, Round 19 | Oracle selection improved modeled prompt-plus-frame cost by 2.91% at 512 B. | Modest gain, requires gold witness identities unavailable at inference. |
 | Dependency signal, Round 21 | Non-oracle *synthetic* matching improves as the noisy signal becomes informative; confidence is badly miscalibrated under shift. | Shows a mechanism to test, not field evidence of better retrieval. |
 | Real-text local stress test, Round 22 | BM25 recovered complete constructed evidence pairs in 96% of cases at two paragraphs; facet selection reached 97.6%. | Small and artificially easy benchmark; complex selection barely helps. |
+| Bridge/version/scope injection, Round 23 | Guarded lookup returned the stipulated correct answer or abstention on 600/600 generated two-hop fixtures; naive bridge lookup made 360 injected invalid answers. | **Template-based and deliberately adversarially ordered** inputs; metadata lookups were not charged; no naturally authored benchmark or full QA evaluation. |
 
 **Current verdict:** promising systems hypothesis; no verified held-out, end-to-end improvement over strong retrieval and storage baselines. The primary next step is a real, inference-time dependency predictor, with fixed costs and source-grounded answer evaluation.
 
 ## Repository guide
 
-- [`research/living-record-rounds-19-22.md`](research/living-record-rounds-19-22.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
+- [`research/living-record-rounds-19-23.md`](research/living-record-rounds-19-22.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
 - [`research/rounds/`](research/rounds/): recovered round-specific archives, source code, notes and artifacts. Some early source packages include previous-round snapshots.
-- [`experiments/`](experiments/): directly accessible Round 20–22 scripts and machine-readable outputs.
+- [`experiments/`](experiments/): directly accessible Round 20–23 scripts and machine-readable outputs.
 - [`source-archives/`](source-archives/): exact downloaded historical ZIP packages preserved separately for auditability. Do not confuse archive existence with successful reruns.
 - [`docs/methodology.md`](docs/methodology.md): evidence hierarchy, reproducibility and pitfalls.
 - [`docs/research-decisions.md`](docs/research-decisions.md): negative results, hypotheses and next milestones.
@@ -44,9 +45,11 @@ The architecture deliberately separates four claims that can otherwise be confus
 
 ## Reproducing selected experiments
 
-The source tree includes Python scripts with different dependencies and entry-point conventions. Some historical scripts expect the directory structure of their archived package or require networked datasets. Start by inspecting `experiments/round-20/`, `experiments/round-21/`, `experiments/round-22/`, then read the corresponding appendices and run only those tests whose inputs and environment you can supply. A syntax/JSON integrity audit was performed on this export, **not** a complete rerun of every experimental result.
+The source tree includes Python scripts with different dependencies and entry-point conventions. Some historical scripts expect the directory structure of their archived package or require networked datasets. Start by inspecting `experiments/round-20/`, `experiments/round-21/`, `experiments/round-22/`, `experiments/round-23/`, then read the corresponding appendices and run only those tests whose inputs and environment you can supply. A syntax/JSON integrity audit was performed on this export, **not** a complete rerun of every experimental result.
 
 ## Research status and next falsification test
+
+Round 23 also introduces exact source-ID and version/scope guarded bridge lookup as a simple baseline. See [`research/rounds/round-23/report.md`](research/rounds/round-23/report.md) for the experiment and failure-injection analysis.
 
 The central test is whether predicted evidence dependencies improve *complete-witness recall per total cost* on independently authored held-out multihop queries. Compare against BM25, hybrid retrieval, cross-encoder reranking, set-level selectors and simple expand-on-failure policies. Measure complete support, false citations, final answer accuracy, prompt tokens, compressed storage including indexes, cold/warm p50/p95 reads, and calibration under family shift.
 

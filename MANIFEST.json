@@ -13,8 +13,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6855,
-      "sha256": "8d823a271a4b01d1369908b38f3a49020eab5b9515522e28fd5f78151133df45"
+      "bytes": 7508,
+      "sha256": "1e93acf7b22824f07f6459568702acf39a312d79fc9a4c35955d2a34a7880c27"
     },
     {
       "path": "docs/focus-project-description.md",
@@ -82,9 +82,29 @@
       "sha256": "af29c01cccb4f28d573b3ee0dbe10a47d46adf22fa49cc856b0ec833d0596f1a"
     },
     {
+      "path": "experiments/round-23/cdg_round23_lab.py",
+      "bytes": 9545,
+      "sha256": "ce9de448d72fd14846d2d554b609ebcad9f792c1d242af580ba0095a3fa0669a"
+    },
+    {
+      "path": "experiments/round-23/results.json",
+      "bytes": 6853,
+      "sha256": "8619a5ff5ab0608ffd80153eff2d0ca86f9eefe6796339998f9c446dba01640a"
+    },
+    {
+      "path": "experiments/round-23/test_round23.py",
+      "bytes": 1804,
+      "sha256": "40a34691533378d1432068a64e1f30e75e61d8441677ff02028c45a3b78b55cd"
+    },
+    {
       "path": "research/living-record-rounds-19-22.md",
       "bytes": 76132,
       "sha256": "72805cde08553308ef5d8ac34ea0f89ade48bdea599cd767cee3a274d844e1c1"
+    },
+    {
+      "path": "research/living-record-rounds-19-23.md",
+      "bytes": 88148,
+      "sha256": "75831d474eb789c16fa9b763e57e730ba8c7685de73229666c131b97c84358af"
     },
     {
       "path": "research/rounds/round-03/source-package/cdg_round3/CDG_round3_research_report_2026-11-08.md",
@@ -1155,6 +1175,11 @@
       "path": "research/rounds/round-22/appendix.md",
       "bytes": 14371,
       "sha256": "49470dd86762c76fcad6eed1795c27da876972a7d7f3f67ed7411963fcf415ad"
+    },
+    {
+      "path": "research/rounds/round-23/report.md",
+      "bytes": 12009,
+      "sha256": "c209f8bdec47a138d03112c6b1e97e0f9e440eaca3f838e0ad8eacb4edd3b494"
     },
     {
       "path": "research/snapshots/living-record-through-round-20.md",
