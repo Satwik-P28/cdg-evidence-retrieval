@@ -1,0 +1,66 @@
+{
+  "documents": 250,
+  "documents_with_unindexed_terms": 172,
+  "unindexed_unique_term_occurrences": 3177,
+  "total_document_unique_term_occurrences": 87777,
+  "fraction_lost": 0.03619,
+  "examples": [
+    {
+      "commit": "9ac632de",
+      "file": "app/ui.js",
+      "examples": [
+        "functionality"
+      ]
+    },
+    {
+      "commit": "e07ca6a8",
+      "file": "tests/test.websock.js",
+      "examples": [
+        "account",
+        "apply",
+        "bef",
+        "containing",
+        "current",
+        "entire",
+        "init",
+        "instanceof",
+        "proper",
+        "prototype",
+        "qslice",
+        "read"
+      ]
+    },
+    {
+      "commit": "b16f19f9",
+      "file": "core/rfb.js",
+      "examples": [
+        "hdr",
+        "onflush",
+        "qslice",
+        "securityresult"
+      ]
+    },
+    {
+      "commit": "9a06058f",
+      "file": "app/ui.js",
+      "examples": [
+        "functionality"
+      ]
+    },
+    {
+      "commit": "74fe694c",
+      "file": "docs/API.md",
+      "examples": [
+        "let"
+      ]
+    },
+    {
+      "commit": "ce534b85",
+      "file": "docs/API.md",
+      "examples": [
+        "let"
+      ]
+    }
+  ],
+  "method": "Original tokens vs union of sampled newest-path version and change windows at commit. 1-gram lexical coverage only."
+}

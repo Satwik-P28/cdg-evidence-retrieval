@@ -1,0 +1,136 @@
+{
+  "study": "Holdout adaptive literal storage selection, real noVNC revision bytes, synthetic query traces",
+  "source_versions": 250,
+  "source_raw_bytes": 6234330,
+  "literal_piece_count": 6210,
+  "free_raw_count": 3309,
+  "shared_base_frame_bytes": 314370,
+  "compressed_piece_map_disk_bytes": 103920,
+  "resident_piece_map_metadata_bytes": 298578,
+  "training": {
+    "queries": 3000,
+    "skew": "Zipf-like permuted popularity, 80% change-oriented windows",
+    "test_same_queries": 1000,
+    "test_shift_queries": 1000,
+    "shift": "version popularity rotated, only 35% change-oriented windows"
+  },
+  "budget64_extra_bytes": 1509,
+  "budget256_extra_bytes": 62313,
+  "storage_bytes": {
+    "all_compressed": 983556,
+    "size_minimal": 960100,
+    "threshold64": 961609,
+    "threshold256": 1022413,
+    "demand_budget64": 961609,
+    "random_budget64": 961609,
+    "demand_budget256": 1022404,
+    "random_budget256": 1022413,
+    "independent_full": 1455847,
+    "seekable_frames32": 2528761
+  },
+  "raw_fragment_counts": {
+    "all_compressed": 0,
+    "size_minimal": 3309,
+    "threshold64": 3589,
+    "threshold256": 5503,
+    "demand_budget64": 3459,
+    "random_budget64": 3333,
+    "demand_budget256": 4793,
+    "random_budget256": 3838
+  },
+  "timings": {
+    "heldout_same": {
+      "independent_full": {
+        "median_us": 50.85,
+        "p95_us": 262.03
+      },
+      "seekable_frames32": {
+        "median_us": 26.92,
+        "p95_us": 59.05
+      },
+      "all_compressed": {
+        "median_us": 48.29,
+        "p95_us": 133.85
+      },
+      "size_minimal": {
+        "median_us": 35.04,
+        "p95_us": 102.31
+      },
+      "threshold64": {
+        "median_us": 34.29,
+        "p95_us": 97.69
+      },
+      "threshold256": {
+        "median_us": 32.91,
+        "p95_us": 103.78
+      },
+      "demand_budget64": {
+        "median_us": 33.77,
+        "p95_us": 92.76
+      },
+      "random_budget64": {
+        "median_us": 36.11,
+        "p95_us": 111.98
+      },
+      "demand_budget256": {
+        "median_us": 32.03,
+        "p95_us": 86.42
+      },
+      "random_budget256": {
+        "median_us": 34.06,
+        "p95_us": 92.74
+      }
+    },
+    "heldout_shift": {
+      "independent_full": {
+        "median_us": 46.9,
+        "p95_us": 240.97
+      },
+      "seekable_frames32": {
+        "median_us": 26.46,
+        "p95_us": 53.81
+      },
+      "all_compressed": {
+        "median_us": 47.61,
+        "p95_us": 108.93
+      },
+      "size_minimal": {
+        "median_us": 37.9,
+        "p95_us": 87.24
+      },
+      "threshold64": {
+        "median_us": 37.39,
+        "p95_us": 85.79
+      },
+      "threshold256": {
+        "median_us": 31.96,
+        "p95_us": 75.84
+      },
+      "demand_budget64": {
+        "median_us": 36.27,
+        "p95_us": 85.43
+      },
+      "random_budget64": {
+        "median_us": 36.54,
+        "p95_us": 88.85
+      },
+      "demand_budget256": {
+        "median_us": 31.89,
+        "p95_us": 75.13
+      },
+      "random_budget256": {
+        "median_us": 34.18,
+        "p95_us": 82.31
+      }
+    }
+  },
+  "verified": "All 250 full original byte streams reconstruct exactly for every policy and both independently-compressed baselines; all 2000 held-out 5-line windows exact.",
+  "limits": [
+    "Warm CPU Python microbenchmark, no SSD reads, no neural retrieval or LLM.",
+    "Source frames and metadata are preloaded;  resident piece-map size counted separately.",
+    "Access traces synthetically generated from real source revisions, not real user query logs.",
+    "Policies select fragments using 3000 training synthetic accesses only, test queries independently generated.",
+    "Selected policy based on synthetic access popularity may fail under distribution shift.",
+    "No proof of novel algorithm; caching and tiering are established techniques."
+  ]
+}

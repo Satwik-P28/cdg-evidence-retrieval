@@ -1,0 +1,140 @@
+{
+  "study": "Access-trained selective 32-line materializations on real versioned source, synthetic query logs",
+  "total_source_raw_bytes": 6234330,
+  "compressed_piece_store_bytes": 1022413,
+  "policy": "Choose materialized compressed frames using training access frequency and multi-piece overlap, constrained by extra storage budget",
+  "results": {
+    "49152": {
+      "selected_frames": {
+        "piece_only": 0,
+        "hot": 131,
+        "hot_plain": 134,
+        "random": 115
+      },
+      "measured": {
+        "same": {
+          "piece_only": {
+            "median_us": 34.5,
+            "p95_us": 74.46,
+            "direct_hit_fraction": 0.0,
+            "source_bytes": 1022413
+          },
+          "hot": {
+            "median_us": 32.1,
+            "p95_us": 73.01,
+            "direct_hit_fraction": 0.396,
+            "source_bytes": 1071557
+          },
+          "hot_plain": {
+            "median_us": 31.97,
+            "p95_us": 72.92,
+            "direct_hit_fraction": 0.407,
+            "source_bytes": 1071565
+          },
+          "random": {
+            "median_us": 34.31,
+            "p95_us": 74.18,
+            "direct_hit_fraction": 0.069,
+            "source_bytes": 1071559
+          }
+        },
+        "shift": {
+          "piece_only": {
+            "median_us": 36.21,
+            "p95_us": 89.43,
+            "direct_hit_fraction": 0.0,
+            "source_bytes": 1022413
+          },
+          "hot": {
+            "median_us": 35.2,
+            "p95_us": 89.26,
+            "direct_hit_fraction": 0.125,
+            "source_bytes": 1071557
+          },
+          "hot_plain": {
+            "median_us": 35.04,
+            "p95_us": 88.49,
+            "direct_hit_fraction": 0.126,
+            "source_bytes": 1071565
+          },
+          "random": {
+            "median_us": 35.46,
+            "p95_us": 83.0,
+            "direct_hit_fraction": 0.045,
+            "source_bytes": 1071559
+          }
+        }
+      }
+    },
+    "131072": {
+      "selected_frames": {
+        "piece_only": 0,
+        "hot": 329,
+        "hot_plain": 327,
+        "random": 298
+      },
+      "measured": {
+        "same": {
+          "piece_only": {
+            "median_us": 38.23,
+            "p95_us": 128.28,
+            "direct_hit_fraction": 0.0,
+            "source_bytes": 1022413
+          },
+          "hot": {
+            "median_us": 34.14,
+            "p95_us": 114.49,
+            "direct_hit_fraction": 0.535,
+            "source_bytes": 1153441
+          },
+          "hot_plain": {
+            "median_us": 33.32,
+            "p95_us": 108.75,
+            "direct_hit_fraction": 0.532,
+            "source_bytes": 1153360
+          },
+          "random": {
+            "median_us": 36.76,
+            "p95_us": 120.68,
+            "direct_hit_fraction": 0.189,
+            "source_bytes": 1153465
+          }
+        },
+        "shift": {
+          "piece_only": {
+            "median_us": 37.53,
+            "p95_us": 104.88,
+            "direct_hit_fraction": 0.0,
+            "source_bytes": 1022413
+          },
+          "hot": {
+            "median_us": 35.87,
+            "p95_us": 113.55,
+            "direct_hit_fraction": 0.268,
+            "source_bytes": 1153441
+          },
+          "hot_plain": {
+            "median_us": 36.34,
+            "p95_us": 110.69,
+            "direct_hit_fraction": 0.267,
+            "source_bytes": 1153360
+          },
+          "random": {
+            "median_us": 36.62,
+            "p95_us": 101.33,
+            "direct_hit_fraction": 0.116,
+            "source_bytes": 1153465
+          }
+        }
+      }
+    }
+  },
+  "exactness": "All sampled held-out windows verified byte exact",
+  "limitations": [
+    "Materialized frames only generated for frames observed in training queries; unseen frames fall back.",
+    "Hot selection is workload-specific.",
+    "Warm CPU, loaded metadata. No SSD or LLM.",
+    "This is selective materialized-view caching, an established technique; no novelty claim.",
+    "No full-frame rebuild/update cost measured."
+  ]
+}

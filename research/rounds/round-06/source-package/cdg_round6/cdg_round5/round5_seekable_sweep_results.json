@@ -1,0 +1,53 @@
+{
+  "task": "192 5-line windows selected to overlap changed pieces in 250 actual noVNC version histories",
+  "baseline": "Independent Zstd-3 compressed per-version line frames; varying 8-1024 lines per frame",
+  "frame_index_bytes": "4-byte per-frame offset included; full global document directory omitted",
+  "results": {
+    "8": {
+      "source_bytes": 3758286,
+      "median_us": 27.55,
+      "p95_us": 59.11
+    },
+    "16": {
+      "source_bytes": 3035266,
+      "median_us": 27.79,
+      "p95_us": 69.84
+    },
+    "32": {
+      "source_bytes": 2528761,
+      "median_us": 30.14,
+      "p95_us": 90.6
+    },
+    "64": {
+      "source_bytes": 2145594,
+      "median_us": 31.79,
+      "p95_us": 74.23
+    },
+    "128": {
+      "source_bytes": 1880986,
+      "median_us": 35.95,
+      "p95_us": 77.2
+    },
+    "256": {
+      "source_bytes": 1702229,
+      "median_us": 43.28,
+      "p95_us": 88.77
+    },
+    "512": {
+      "source_bytes": 1587328,
+      "median_us": 54.46,
+      "p95_us": 138.98
+    },
+    "1024": {
+      "source_bytes": 1511656,
+      "median_us": 68.95,
+      "p95_us": 217.67
+    }
+  },
+  "limits": [
+    "CPU warm cache and Python code; no SSD I/O.",
+    "All queries correct by byte-exact comparisons.",
+    "Frame size in number of lines produces uneven byte sizes.",
+    "No vector-search or LLM inference included."
+  ]
+}

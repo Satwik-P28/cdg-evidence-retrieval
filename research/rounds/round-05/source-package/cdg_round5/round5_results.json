@@ -1,0 +1,438 @@
+{
+  "dataset": {
+    "n": 250,
+    "unique_files": 56,
+    "vocab": 3398,
+    "split_train": 104,
+    "split_test": 146,
+    "query_type": "human-written Git commit subjects; automatic same-commit target"
+  },
+  "full_vocab": {
+    "full_bm25": {
+      "train": {
+        "hit1": 0.1635,
+        "hit5": 0.3365,
+        "hit10": 0.4231,
+        "mrr10": 0.2309
+      },
+      "test": {
+        "hit1": 0.0753,
+        "hit5": 0.2671,
+        "hit10": 0.363,
+        "mrr10": 0.1547
+      },
+      "all": {
+        "hit1": 0.112,
+        "hit5": 0.296,
+        "hit10": 0.388,
+        "mrr10": 0.1864
+      }
+    },
+    "diff_bm25": {
+      "train": {
+        "hit1": 0.3846,
+        "hit5": 0.6635,
+        "hit10": 0.7019,
+        "mrr10": 0.4977
+      },
+      "test": {
+        "hit1": 0.2945,
+        "hit5": 0.5822,
+        "hit10": 0.6507,
+        "mrr10": 0.4216
+      },
+      "all": {
+        "hit1": 0.332,
+        "hit5": 0.616,
+        "hit10": 0.672,
+        "mrr10": 0.4532
+      }
+    },
+    "normalized_fusion": {
+      "train": {
+        "hit1": 0.3942,
+        "hit5": 0.6635,
+        "hit10": 0.7115,
+        "mrr10": 0.5115
+      },
+      "test": {
+        "hit1": 0.2671,
+        "hit5": 0.5959,
+        "hit10": 0.6986,
+        "mrr10": 0.4056
+      },
+      "all": {
+        "hit1": 0.32,
+        "hit5": 0.624,
+        "hit10": 0.704,
+        "mrr10": 0.4496
+      }
+    },
+    "rrf": {
+      "train": {
+        "hit1": 0.25,
+        "hit5": 0.5962,
+        "hit10": 0.7019,
+        "mrr10": 0.3953
+      },
+      "test": {
+        "hit1": 0.1849,
+        "hit5": 0.5137,
+        "hit10": 0.6507,
+        "mrr10": 0.3263
+      },
+      "all": {
+        "hit1": 0.212,
+        "hit5": 0.548,
+        "hit10": 0.672,
+        "mrr10": 0.355
+      }
+    }
+  },
+  "storage": {
+    "full_matrix_compressed": 290018,
+    "diff_matrix_compressed": 35642,
+    "both_matrices_compressed": 325660,
+    "vocab_zlib_bytes": 21380
+  },
+  "budgets": {
+    "512": {
+      "frequency": {
+        "matrix_bytes": 177475,
+        "merged_matrix_bytes": 157817,
+        "vocabulary_bytes": 1821,
+        "coverage_commits": 0.996,
+        "full": {
+          "hit1": 0.0274,
+          "hit5": 0.1575,
+          "hit10": 0.2123,
+          "mrr10": 0.0766
+        },
+        "diff": {
+          "hit1": 0.1986,
+          "hit5": 0.4521,
+          "hit10": 0.5616,
+          "mrr10": 0.3163
+        },
+        "fusion": {
+          "hit1": 0.1849,
+          "hit5": 0.4315,
+          "hit10": 0.5274,
+          "mrr10": 0.2917
+        },
+        "merged": {
+          "hit1": 0.1918,
+          "hit5": 0.4521,
+          "hit10": 0.5548,
+          "mrr10": 0.3113
+        },
+        "train_merged": {
+          "hit1": 0.2692,
+          "hit5": 0.5,
+          "hit10": 0.5769,
+          "mrr10": 0.3639
+        }
+      },
+      "diff_only": {
+        "matrix_bytes": 19169,
+        "merged_matrix_bytes": 15921,
+        "vocabulary_bytes": 2101,
+        "coverage_commits": 0.368,
+        "full": {
+          "hit1": 0.0616,
+          "hit5": 0.1575,
+          "hit10": 0.1986,
+          "mrr10": 0.0995
+        },
+        "diff": {
+          "hit1": 0.089,
+          "hit5": 0.1849,
+          "hit10": 0.2192,
+          "mrr10": 0.1321
+        },
+        "fusion": {
+          "hit1": 0.1027,
+          "hit5": 0.1986,
+          "hit10": 0.2466,
+          "mrr10": 0.1441
+        },
+        "merged": {
+          "hit1": 0.1027,
+          "hit5": 0.1986,
+          "hit10": 0.2466,
+          "mrr10": 0.144
+        },
+        "train_merged": {
+          "hit1": 0.1635,
+          "hit5": 0.3173,
+          "hit10": 0.3269,
+          "mrr10": 0.2229
+        }
+      },
+      "balanced_70_30": {
+        "matrix_bytes": 142202,
+        "merged_matrix_bytes": 124003,
+        "vocabulary_bytes": 1901,
+        "coverage_commits": 0.992,
+        "full": {
+          "hit1": 0.0342,
+          "hit5": 0.1164,
+          "hit10": 0.1507,
+          "mrr10": 0.063
+        },
+        "diff": {
+          "hit1": 0.1438,
+          "hit5": 0.411,
+          "hit10": 0.4863,
+          "mrr10": 0.2629
+        },
+        "fusion": {
+          "hit1": 0.1164,
+          "hit5": 0.3562,
+          "hit10": 0.4932,
+          "mrr10": 0.2252
+        },
+        "merged": {
+          "hit1": 0.1164,
+          "hit5": 0.3973,
+          "hit10": 0.5205,
+          "mrr10": 0.2442
+        },
+        "train_merged": {
+          "hit1": 0.2115,
+          "hit5": 0.4423,
+          "hit10": 0.5577,
+          "mrr10": 0.3129
+        }
+      }
+    },
+    "1024": {
+      "frequency": {
+        "matrix_bytes": 254684,
+        "merged_matrix_bytes": 230369,
+        "vocabulary_bytes": 3721,
+        "coverage_commits": 1.0,
+        "full": {
+          "hit1": 0.0548,
+          "hit5": 0.1644,
+          "hit10": 0.2397,
+          "mrr10": 0.1053
+        },
+        "diff": {
+          "hit1": 0.274,
+          "hit5": 0.5479,
+          "hit10": 0.6301,
+          "mrr10": 0.3974
+        },
+        "fusion": {
+          "hit1": 0.2397,
+          "hit5": 0.5479,
+          "hit10": 0.6507,
+          "mrr10": 0.3693
+        },
+        "merged": {
+          "hit1": 0.2603,
+          "hit5": 0.5479,
+          "hit10": 0.6438,
+          "mrr10": 0.3885
+        },
+        "train_merged": {
+          "hit1": 0.2885,
+          "hit5": 0.5962,
+          "hit10": 0.6538,
+          "mrr10": 0.4214
+        }
+      },
+      "diff_only": {
+        "matrix_bytes": 85010,
+        "merged_matrix_bytes": 74869,
+        "vocabulary_bytes": 4074,
+        "coverage_commits": 0.824,
+        "full": {
+          "hit1": 0.1027,
+          "hit5": 0.2671,
+          "hit10": 0.3356,
+          "mrr10": 0.168
+        },
+        "diff": {
+          "hit1": 0.1575,
+          "hit5": 0.3356,
+          "hit10": 0.3904,
+          "mrr10": 0.2391
+        },
+        "fusion": {
+          "hit1": 0.1849,
+          "hit5": 0.363,
+          "hit10": 0.4658,
+          "mrr10": 0.2638
+        },
+        "merged": {
+          "hit1": 0.1781,
+          "hit5": 0.3699,
+          "hit10": 0.4658,
+          "mrr10": 0.2643
+        },
+        "train_merged": {
+          "hit1": 0.3269,
+          "hit5": 0.5962,
+          "hit10": 0.6442,
+          "mrr10": 0.4321
+        }
+      },
+      "balanced_70_30": {
+        "matrix_bytes": 223574,
+        "merged_matrix_bytes": 200003,
+        "vocabulary_bytes": 3764,
+        "coverage_commits": 0.996,
+        "full": {
+          "hit1": 0.0685,
+          "hit5": 0.2192,
+          "hit10": 0.3014,
+          "mrr10": 0.13
+        },
+        "diff": {
+          "hit1": 0.2603,
+          "hit5": 0.5548,
+          "hit10": 0.6301,
+          "mrr10": 0.4005
+        },
+        "fusion": {
+          "hit1": 0.2397,
+          "hit5": 0.5205,
+          "hit10": 0.6233,
+          "mrr10": 0.3692
+        },
+        "merged": {
+          "hit1": 0.274,
+          "hit5": 0.5411,
+          "hit10": 0.6438,
+          "mrr10": 0.4033
+        },
+        "train_merged": {
+          "hit1": 0.3365,
+          "hit5": 0.5769,
+          "hit10": 0.6731,
+          "mrr10": 0.4438
+        }
+      }
+    },
+    "2048": {
+      "frequency": {
+        "matrix_bytes": 300399,
+        "merged_matrix_bytes": 274744,
+        "vocabulary_bytes": 7702,
+        "coverage_commits": 1.0,
+        "full": {
+          "hit1": 0.0685,
+          "hit5": 0.2466,
+          "hit10": 0.3562,
+          "mrr10": 0.1465
+        },
+        "diff": {
+          "hit1": 0.2671,
+          "hit5": 0.5616,
+          "hit10": 0.6438,
+          "mrr10": 0.4001
+        },
+        "fusion": {
+          "hit1": 0.2603,
+          "hit5": 0.6027,
+          "hit10": 0.6986,
+          "mrr10": 0.4057
+        },
+        "merged": {
+          "hit1": 0.2808,
+          "hit5": 0.6164,
+          "hit10": 0.7123,
+          "mrr10": 0.4259
+        },
+        "train_merged": {
+          "hit1": 0.3846,
+          "hit5": 0.6442,
+          "hit10": 0.7115,
+          "mrr10": 0.4977
+        }
+      },
+      "diff_only": {
+        "matrix_bytes": 285438,
+        "merged_matrix_bytes": 258045,
+        "vocabulary_bytes": 7696,
+        "coverage_commits": 1.0,
+        "full": {
+          "hit1": 0.089,
+          "hit5": 0.2534,
+          "hit10": 0.3356,
+          "mrr10": 0.1572
+        },
+        "diff": {
+          "hit1": 0.2945,
+          "hit5": 0.5822,
+          "hit10": 0.6507,
+          "mrr10": 0.4216
+        },
+        "fusion": {
+          "hit1": 0.2671,
+          "hit5": 0.6096,
+          "hit10": 0.6986,
+          "mrr10": 0.4075
+        },
+        "merged": {
+          "hit1": 0.2877,
+          "hit5": 0.6027,
+          "hit10": 0.6918,
+          "mrr10": 0.422
+        },
+        "train_merged": {
+          "hit1": 0.3942,
+          "hit5": 0.6538,
+          "hit10": 0.7308,
+          "mrr10": 0.5123
+        }
+      },
+      "balanced_70_30": {
+        "matrix_bytes": 299720,
+        "merged_matrix_bytes": 273001,
+        "vocabulary_bytes": 7659,
+        "coverage_commits": 1.0,
+        "full": {
+          "hit1": 0.089,
+          "hit5": 0.2534,
+          "hit10": 0.363,
+          "mrr10": 0.1625
+        },
+        "diff": {
+          "hit1": 0.2945,
+          "hit5": 0.5822,
+          "hit10": 0.6507,
+          "mrr10": 0.421
+        },
+        "fusion": {
+          "hit1": 0.2671,
+          "hit5": 0.6096,
+          "hit10": 0.6986,
+          "mrr10": 0.4097
+        },
+        "merged": {
+          "hit1": 0.2877,
+          "hit5": 0.6096,
+          "hit10": 0.7055,
+          "mrr10": 0.4272
+        },
+        "train_merged": {
+          "hit1": 0.3846,
+          "hit5": 0.6538,
+          "hit10": 0.7308,
+          "mrr10": 0.505
+        }
+      }
+    }
+  },
+  "limits": [
+    "No neural encoder available in runtime; lexical BM25, not pretrained semantic retrieval.",
+    "Commit message labels are weak automatically derived qrels; version collisions are penalized.",
+    "Original source files / indexes and exact source reconstruction stored separately from matrix-byte accounting.",
+    "No online dataset or downloadable pretrained models in this container.",
+    "Experiment uses only one repository and token unigram BM25; independent domains required."
+  ],
+  "duration_seconds": 9.181
+}

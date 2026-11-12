@@ -1,0 +1,43 @@
+{
+  "protocol": "round20-synthetic-v1",
+  "sha256_script": null,
+  "checks": [
+    {
+      "case": "multibyte Unicode, dash substitution, collapsed whitespace",
+      "status": "PASS",
+      "raw_interval": [
+        8,
+        26
+      ]
+    },
+    {
+      "case": "repeated fragment refused",
+      "status": "PASS"
+    },
+    {
+      "case": "noncontiguous evidence is two exact source intervals",
+      "status": "PASS",
+      "gap_bytes": 1101
+    },
+    {
+      "case": "ambiguous ordered fragment refused",
+      "status": "PASS"
+    },
+    {
+      "case": "frame union avoids double charging",
+      "status": "PASS"
+    },
+    {
+      "case": "partial witness is not complete",
+      "status": "PASS"
+    }
+  ],
+  "synthetic_experiment": {
+    "n": 20000,
+    "seed": 20261111,
+    "independent_top_two_complete": 6705,
+    "witness_aware_complete": 20000,
+    "denominator": 20000,
+    "note": "Synthetic structural oracle; witness identities known to witness-aware policy. Not predictive of deployable retrieval."
+  }
+}

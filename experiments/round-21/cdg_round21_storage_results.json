@@ -1,0 +1,92 @@
+{
+  "protocol": "round21-local-zstd-independent-frames-v1",
+  "source": "user-provided Round 19-20 research Markdown, not SciFact",
+  "source_bytes": 45383,
+  "source_sha256": "1e108600bc5694553d20eb48e0f1d075ed87a1c46c866237215cec6367e60c70",
+  "compression_level": 3,
+  "n_synthetic_source_spans": 250,
+  "tables": [
+    {
+      "frame_bytes": 128,
+      "frame_count": 355,
+      "actual_zstd_payload_bytes": 38454,
+      "modeled_seek_table_bytes": 2857,
+      "total_with_modeled_table_bytes": 41311,
+      "ratio_with_table": 0.9103,
+      "sampled_mean_compressed_activation_bytes": 271.7,
+      "sampled_mean_decompressed_activation_bytes": 323.1,
+      "sampled_mean_frames": 2.52
+    },
+    {
+      "frame_bytes": 256,
+      "frame_count": 178,
+      "actual_zstd_payload_bytes": 33115,
+      "modeled_seek_table_bytes": 1441,
+      "total_with_modeled_table_bytes": 34556,
+      "ratio_with_table": 0.7614,
+      "sampled_mean_compressed_activation_bytes": 329.4,
+      "sampled_mean_decompressed_activation_bytes": 455.7,
+      "sampled_mean_frames": 1.78
+    },
+    {
+      "frame_bytes": 512,
+      "frame_count": 89,
+      "actual_zstd_payload_bytes": 29937,
+      "modeled_seek_table_bytes": 729,
+      "total_with_modeled_table_bytes": 30666,
+      "ratio_with_table": 0.6757,
+      "sampled_mean_compressed_activation_bytes": 474.6,
+      "sampled_mean_decompressed_activation_bytes": 727.0,
+      "sampled_mean_frames": 1.42
+    },
+    {
+      "frame_bytes": 1024,
+      "frame_count": 45,
+      "actual_zstd_payload_bytes": 27102,
+      "modeled_seek_table_bytes": 377,
+      "total_with_modeled_table_bytes": 27479,
+      "ratio_with_table": 0.6055,
+      "sampled_mean_compressed_activation_bytes": 733.1,
+      "sampled_mean_decompressed_activation_bytes": 1241.1,
+      "sampled_mean_frames": 1.21
+    },
+    {
+      "frame_bytes": 2048,
+      "frame_count": 23,
+      "actual_zstd_payload_bytes": 24790,
+      "modeled_seek_table_bytes": 201,
+      "total_with_modeled_table_bytes": 24991,
+      "ratio_with_table": 0.5507,
+      "sampled_mean_compressed_activation_bytes": 1206.4,
+      "sampled_mean_decompressed_activation_bytes": 2228.2,
+      "sampled_mean_frames": 1.09
+    },
+    {
+      "frame_bytes": 4096,
+      "frame_count": 12,
+      "actual_zstd_payload_bytes": 23094,
+      "modeled_seek_table_bytes": 113,
+      "total_with_modeled_table_bytes": 23207,
+      "ratio_with_table": 0.5114,
+      "sampled_mean_compressed_activation_bytes": 2174.3,
+      "sampled_mean_decompressed_activation_bytes": 4309.0,
+      "sampled_mean_frames": 1.05
+    },
+    {
+      "frame_bytes": 8192,
+      "frame_count": 6,
+      "actual_zstd_payload_bytes": 21574,
+      "modeled_seek_table_bytes": 65,
+      "total_with_modeled_table_bytes": 21639,
+      "ratio_with_table": 0.4768,
+      "sampled_mean_compressed_activation_bytes": 3757.2,
+      "sampled_mean_decompressed_activation_bytes": 7926.5,
+      "sampled_mean_frames": 1.03
+    }
+  ],
+  "limitations": [
+    "Frame payloads use libzstd individually; 8 bytes per frame + 17 seek-table overhead is a modeled no-checksum table, not a serialized official seekable archive.",
+    "No measured SSD reads, cache behavior, p95 latency, neural model, or real query offsets.",
+    "Document is a single research report; storage ratios cannot generalize to SciFact or heterogeneous corpora."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "samples": 250,
+  "repeats": 6,
+  "unit": "microseconds per random version read, CPU only, warm OS cache",
+  "decode": {
+    "independent": {
+      "median_us": 37.79,
+      "p95_us": 122.31,
+      "mean_us": 54.14
+    },
+    "uncached_base": {
+      "median_us": 111.03,
+      "p95_us": 526.72,
+      "mean_us": 168.92
+    },
+    "cached_base": {
+      "median_us": 79.72,
+      "p95_us": 390.74,
+      "mean_us": 126.22
+    }
+  },
+  "roundtrip_verified": true,
+  "limitations": [
+    "Per-read Python patch reconstruction, no C/Rust optimized implementation.",
+    "Caching base as raw data consumes extra RAM, not included in compressed bytes.",
+    "No SSD read or end-to-end RAG latency measured."
+  ]
+}

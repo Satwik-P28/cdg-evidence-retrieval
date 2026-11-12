@@ -1,0 +1,174 @@
+{
+  "source_versions": 250,
+  "raw_bytes": 6234330,
+  "source_disk_bytes": {
+    "independent_fixed32": 2609744,
+    "dedup_cdc32": 769939
+  },
+  "traces": {
+    "BM25_top1": {
+      "independent_fixed32": {
+        "median_us": 26.6,
+        "p95_us": 50.0,
+        "mean_payload_bytes": 553.5,
+        "mean_decoded_bytes": 1221.9,
+        "mean_frames_decoded": 1.1,
+        "mean_chunk_references": 1.1
+      },
+      "dedup_cdc32_no_batch": {
+        "median_us": 27.35,
+        "p95_us": 52.06,
+        "mean_payload_bytes": 618.0,
+        "mean_decoded_bytes": 1473.6,
+        "mean_frames_decoded": 1.1,
+        "mean_chunk_references": 1.1
+      },
+      "dedup_cdc32_batch": {
+        "median_us": 23.29,
+        "p95_us": 49.42,
+        "mean_payload_bytes": 618.0,
+        "mean_decoded_bytes": 1473.6,
+        "mean_frames_decoded": 1.1,
+        "mean_chunk_references": 1.1
+      }
+    },
+    "random_top1": {
+      "independent_fixed32": {
+        "median_us": 26.5,
+        "p95_us": 52.01,
+        "mean_payload_bytes": 530.7,
+        "mean_decoded_bytes": 1138.6,
+        "mean_frames_decoded": 1.1,
+        "mean_chunk_references": 1.1
+      },
+      "dedup_cdc32_no_batch": {
+        "median_us": 20.92,
+        "p95_us": 51.25,
+        "mean_payload_bytes": 566.6,
+        "mean_decoded_bytes": 1278.3,
+        "mean_frames_decoded": 1.1,
+        "mean_chunk_references": 1.1
+      },
+      "dedup_cdc32_batch": {
+        "median_us": 18.19,
+        "p95_us": 43.05,
+        "mean_payload_bytes": 566.6,
+        "mean_decoded_bytes": 1278.3,
+        "mean_frames_decoded": 1.1,
+        "mean_chunk_references": 1.1
+      }
+    },
+    "BM25_top5": {
+      "independent_fixed32": {
+        "median_us": 116.51,
+        "p95_us": 186.52,
+        "mean_payload_bytes": 2744.1,
+        "mean_decoded_bytes": 6053.1,
+        "mean_frames_decoded": 5.4,
+        "mean_chunk_references": 5.4
+      },
+      "dedup_cdc32_no_batch": {
+        "median_us": 110.34,
+        "p95_us": 188.01,
+        "mean_payload_bytes": 3123.0,
+        "mean_decoded_bytes": 7556.8,
+        "mean_frames_decoded": 5.4,
+        "mean_chunk_references": 5.4
+      },
+      "dedup_cdc32_batch": {
+        "median_us": 82.06,
+        "p95_us": 154.26,
+        "mean_payload_bytes": 1789.1,
+        "mean_decoded_bytes": 4351.3,
+        "mean_frames_decoded": 3,
+        "mean_chunk_references": 5.4
+      }
+    },
+    "random_top5": {
+      "independent_fixed32": {
+        "median_us": 121.45,
+        "p95_us": 181.54,
+        "mean_payload_bytes": 2517.8,
+        "mean_decoded_bytes": 5413.9,
+        "mean_frames_decoded": 5.3,
+        "mean_chunk_references": 5.3
+      },
+      "dedup_cdc32_no_batch": {
+        "median_us": 128.92,
+        "p95_us": 191.2,
+        "mean_payload_bytes": 2805.3,
+        "mean_decoded_bytes": 6547.8,
+        "mean_frames_decoded": 5.4,
+        "mean_chunk_references": 5.4
+      },
+      "dedup_cdc32_batch": {
+        "median_us": 126.06,
+        "p95_us": 184.4,
+        "mean_payload_bytes": 2702.7,
+        "mean_decoded_bytes": 6336.1,
+        "mean_frames_decoded": 5.2,
+        "mean_chunk_references": 5.4
+      }
+    },
+    "BM25_top10": {
+      "independent_fixed32": {
+        "median_us": 228.46,
+        "p95_us": 395.92,
+        "mean_payload_bytes": 5466.1,
+        "mean_decoded_bytes": 12138.5,
+        "mean_frames_decoded": 10.7,
+        "mean_chunk_references": 10.7
+      },
+      "dedup_cdc32_no_batch": {
+        "median_us": 212.69,
+        "p95_us": 373.94,
+        "mean_payload_bytes": 6256.1,
+        "mean_decoded_bytes": 15194.6,
+        "mean_frames_decoded": 10.9,
+        "mean_chunk_references": 10.9
+      },
+      "dedup_cdc32_batch": {
+        "median_us": 138.61,
+        "p95_us": 281.36,
+        "mean_payload_bytes": 3019.8,
+        "mean_decoded_bytes": 7439.4,
+        "mean_frames_decoded": 5.0,
+        "mean_chunk_references": 10.9
+      }
+    },
+    "random_top10": {
+      "independent_fixed32": {
+        "median_us": 240.63,
+        "p95_us": 457.98,
+        "mean_payload_bytes": 5071.4,
+        "mean_decoded_bytes": 10826.3,
+        "mean_frames_decoded": 10.6,
+        "mean_chunk_references": 10.6
+      },
+      "dedup_cdc32_no_batch": {
+        "median_us": 246.33,
+        "p95_us": 486.92,
+        "mean_payload_bytes": 5736.0,
+        "mean_decoded_bytes": 13280.7,
+        "mean_frames_decoded": 10.7,
+        "mean_chunk_references": 10.7
+      },
+      "dedup_cdc32_batch": {
+        "median_us": 234.42,
+        "p95_us": 468.05,
+        "mean_payload_bytes": 5234.3,
+        "mean_decoded_bytes": 12180.1,
+        "mean_frames_decoded": 9.7,
+        "mean_chunk_references": 10.7
+      }
+    }
+  },
+  "notes": [
+    "BM25 top-k retrieval uses the exact document scoring and tokenizer from Round 8a.",
+    "All passages verified against original file bytes for both stores; no relevance/QA labels.",
+    "Warm CPU in-memory compressed payloads with per-query cache only, no SSD and no cross-query retention.",
+    "Random k candidates used to estimate how much duplication is caused by retrieving similar versions.",
+    "Metadata costs: 9B per unique compressed frame and 8B per document chunk ref plus 8B per file.",
+    "Timing includes Python decompression, chunk navigation, splitting lines, assembly; excludes BM25 query scoring."
+  ]
+}

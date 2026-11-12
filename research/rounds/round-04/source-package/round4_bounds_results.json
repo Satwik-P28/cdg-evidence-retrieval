@@ -1,0 +1,523 @@
+{
+  "dataset": {
+    "repo": "noVNC",
+    "commits": 250,
+    "families": 56,
+    "query_type": "real commit subjects",
+    "evaluation": "same-commit file-version weak label"
+  },
+  "method": "Non-neural TruncatedSVD(96) surrogate on TF-IDF, normalized vectors",
+  "fit_svd_seconds": 0.748,
+  "full_svd_metrics": {
+    "hit@1": 0.108,
+    "hit@5": 0.36,
+    "hit@10": 0.464,
+    "mrr@10": 0.2053
+  },
+  "bounds": {
+    "1": {
+      "groups": 250,
+      "mean_group_size": 1.0,
+      "mean_docs_scored": 5.02,
+      "median_docs_scored": 5.0,
+      "p95_docs_scored": 5.0,
+      "mean_groups_examined": 5.02,
+      "skipped_document_fraction": 0.9799,
+      "safety_failures_excluding_ties": 0,
+      "centroid_bytes_fp32": 96000,
+      "radius_bytes_fp32": 2000
+    },
+    "2": {
+      "groups": 146,
+      "mean_group_size": 1.71,
+      "mean_docs_scored": 13.76,
+      "median_docs_scored": 12.0,
+      "p95_docs_scored": 30.549999999999983,
+      "mean_groups_examined": 7.56,
+      "skipped_document_fraction": 0.9449,
+      "safety_failures_excluding_ties": 0,
+      "centroid_bytes_fp32": 56064,
+      "radius_bytes_fp32": 1168
+    },
+    "3": {
+      "groups": 112,
+      "mean_group_size": 2.23,
+      "mean_docs_scored": 23.93,
+      "median_docs_scored": 21.0,
+      "p95_docs_scored": 52.0,
+      "mean_groups_examined": 8.91,
+      "skipped_document_fraction": 0.9043,
+      "safety_failures_excluding_ties": 0,
+      "centroid_bytes_fp32": 43008,
+      "radius_bytes_fp32": 896
+    },
+    "4": {
+      "groups": 94,
+      "mean_group_size": 2.66,
+      "mean_docs_scored": 32.74,
+      "median_docs_scored": 27.0,
+      "p95_docs_scored": 72.54999999999998,
+      "mean_groups_examined": 9.5,
+      "skipped_document_fraction": 0.869,
+      "safety_failures_excluding_ties": 0,
+      "centroid_bytes_fp32": 36096,
+      "radius_bytes_fp32": 752
+    },
+    "5": {
+      "groups": 83,
+      "mean_group_size": 3.01,
+      "mean_docs_scored": 40.64,
+      "median_docs_scored": 38.0,
+      "p95_docs_scored": 82.54999999999998,
+      "mean_groups_examined": 9.58,
+      "skipped_document_fraction": 0.8374,
+      "safety_failures_excluding_ties": 0,
+      "centroid_bytes_fp32": 31872,
+      "radius_bytes_fp32": 664
+    },
+    "8": {
+      "groups": 71,
+      "mean_group_size": 3.52,
+      "mean_docs_scored": 57.82,
+      "median_docs_scored": 55.0,
+      "p95_docs_scored": 117.0,
+      "mean_groups_examined": 9.7,
+      "skipped_document_fraction": 0.7687,
+      "safety_failures_excluding_ties": 0,
+      "centroid_bytes_fp32": 27264,
+      "radius_bytes_fp32": 568
+    },
+    "999": {
+      "groups": 56,
+      "mean_group_size": 4.46,
+      "mean_docs_scored": 119.24,
+      "median_docs_scored": 122.5,
+      "p95_docs_scored": 172.54999999999998,
+      "mean_groups_examined": 8.1,
+      "skipped_document_fraction": 0.5231,
+      "safety_failures_excluding_ties": 0,
+      "centroid_bytes_fp32": 21504,
+      "radius_bytes_fp32": 448
+    }
+  },
+  "residuals": {
+    "4": {
+      "m": 4,
+      "bytes_shared_residual": 14252,
+      "full_fp32_bytes": 96000,
+      "full_int8_bytes_excl_global_quantization": 25000,
+      "size_ratio_vs_full_fp32": 6.736,
+      "top5_overlap_no_rerank": 0.7328,
+      "oversampling": {
+        "1": {
+          "mean_exact_top5_overlap": 0.7328,
+          "same_commit_hit_at5": 0.344,
+          "exact_candidates_scored": 5
+        },
+        "2": {
+          "mean_exact_top5_overlap": 0.8568,
+          "same_commit_hit_at5": 0.344,
+          "exact_candidates_scored": 10
+        },
+        "4": {
+          "mean_exact_top5_overlap": 0.9424,
+          "same_commit_hit_at5": 0.344,
+          "exact_candidates_scored": 20
+        },
+        "8": {
+          "mean_exact_top5_overlap": 0.9904,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 40
+        },
+        "16": {
+          "mean_exact_top5_overlap": 0.9952,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 80
+        }
+      }
+    },
+    "8": {
+      "m": 8,
+      "bytes_shared_residual": 17252,
+      "full_fp32_bytes": 96000,
+      "full_int8_bytes_excl_global_quantization": 25000,
+      "size_ratio_vs_full_fp32": 5.565,
+      "top5_overlap_no_rerank": 0.7824,
+      "oversampling": {
+        "1": {
+          "mean_exact_top5_overlap": 0.7824,
+          "same_commit_hit_at5": 0.336,
+          "exact_candidates_scored": 5
+        },
+        "2": {
+          "mean_exact_top5_overlap": 0.9008,
+          "same_commit_hit_at5": 0.352,
+          "exact_candidates_scored": 10
+        },
+        "4": {
+          "mean_exact_top5_overlap": 0.972,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 20
+        },
+        "8": {
+          "mean_exact_top5_overlap": 0.9944,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 40
+        },
+        "16": {
+          "mean_exact_top5_overlap": 0.9976,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 80
+        }
+      }
+    },
+    "12": {
+      "m": 12,
+      "bytes_shared_residual": 20252,
+      "full_fp32_bytes": 96000,
+      "full_int8_bytes_excl_global_quantization": 25000,
+      "size_ratio_vs_full_fp32": 4.74,
+      "top5_overlap_no_rerank": 0.7976,
+      "oversampling": {
+        "1": {
+          "mean_exact_top5_overlap": 0.7976,
+          "same_commit_hit_at5": 0.352,
+          "exact_candidates_scored": 5
+        },
+        "2": {
+          "mean_exact_top5_overlap": 0.9096,
+          "same_commit_hit_at5": 0.352,
+          "exact_candidates_scored": 10
+        },
+        "4": {
+          "mean_exact_top5_overlap": 0.9768,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 20
+        },
+        "8": {
+          "mean_exact_top5_overlap": 0.9936,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 40
+        },
+        "16": {
+          "mean_exact_top5_overlap": 0.9984,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 80
+        }
+      }
+    },
+    "16": {
+      "m": 16,
+      "bytes_shared_residual": 23252,
+      "full_fp32_bytes": 96000,
+      "full_int8_bytes_excl_global_quantization": 25000,
+      "size_ratio_vs_full_fp32": 4.129,
+      "top5_overlap_no_rerank": 0.8256,
+      "oversampling": {
+        "1": {
+          "mean_exact_top5_overlap": 0.8256,
+          "same_commit_hit_at5": 0.368,
+          "exact_candidates_scored": 5
+        },
+        "2": {
+          "mean_exact_top5_overlap": 0.9328,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 10
+        },
+        "4": {
+          "mean_exact_top5_overlap": 0.9848,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 20
+        },
+        "8": {
+          "mean_exact_top5_overlap": 0.9968,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 40
+        },
+        "16": {
+          "mean_exact_top5_overlap": 0.9992,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 80
+        }
+      }
+    },
+    "24": {
+      "m": 24,
+      "bytes_shared_residual": 29252,
+      "full_fp32_bytes": 96000,
+      "full_int8_bytes_excl_global_quantization": 25000,
+      "size_ratio_vs_full_fp32": 3.282,
+      "top5_overlap_no_rerank": 0.8704,
+      "oversampling": {
+        "1": {
+          "mean_exact_top5_overlap": 0.8704,
+          "same_commit_hit_at5": 0.356,
+          "exact_candidates_scored": 5
+        },
+        "2": {
+          "mean_exact_top5_overlap": 0.9568,
+          "same_commit_hit_at5": 0.356,
+          "exact_candidates_scored": 10
+        },
+        "4": {
+          "mean_exact_top5_overlap": 0.9928,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 20
+        },
+        "8": {
+          "mean_exact_top5_overlap": 0.9968,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 40
+        },
+        "16": {
+          "mean_exact_top5_overlap": 0.9976,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 80
+        }
+      }
+    },
+    "32": {
+      "m": 32,
+      "bytes_shared_residual": 35252,
+      "full_fp32_bytes": 96000,
+      "full_int8_bytes_excl_global_quantization": 25000,
+      "size_ratio_vs_full_fp32": 2.723,
+      "top5_overlap_no_rerank": 0.8896,
+      "oversampling": {
+        "1": {
+          "mean_exact_top5_overlap": 0.8896,
+          "same_commit_hit_at5": 0.368,
+          "exact_candidates_scored": 5
+        },
+        "2": {
+          "mean_exact_top5_overlap": 0.9704,
+          "same_commit_hit_at5": 0.356,
+          "exact_candidates_scored": 10
+        },
+        "4": {
+          "mean_exact_top5_overlap": 0.9968,
+          "same_commit_hit_at5": 0.356,
+          "exact_candidates_scored": 20
+        },
+        "8": {
+          "mean_exact_top5_overlap": 0.9976,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 40
+        },
+        "16": {
+          "mean_exact_top5_overlap": 0.9976,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 80
+        }
+      }
+    },
+    "48": {
+      "m": 48,
+      "bytes_shared_residual": 47252,
+      "full_fp32_bytes": 96000,
+      "full_int8_bytes_excl_global_quantization": 25000,
+      "size_ratio_vs_full_fp32": 2.032,
+      "top5_overlap_no_rerank": 0.9168,
+      "oversampling": {
+        "1": {
+          "mean_exact_top5_overlap": 0.9168,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 5
+        },
+        "2": {
+          "mean_exact_top5_overlap": 0.9824,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 10
+        },
+        "4": {
+          "mean_exact_top5_overlap": 0.9976,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 20
+        },
+        "8": {
+          "mean_exact_top5_overlap": 0.9976,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 40
+        },
+        "16": {
+          "mean_exact_top5_overlap": 0.9976,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 80
+        }
+      }
+    },
+    "64": {
+      "m": 64,
+      "bytes_shared_residual": 59252,
+      "full_fp32_bytes": 96000,
+      "full_int8_bytes_excl_global_quantization": 25000,
+      "size_ratio_vs_full_fp32": 1.62,
+      "top5_overlap_no_rerank": 0.9576,
+      "oversampling": {
+        "1": {
+          "mean_exact_top5_overlap": 0.9576,
+          "same_commit_hit_at5": 0.364,
+          "exact_candidates_scored": 5
+        },
+        "2": {
+          "mean_exact_top5_overlap": 0.9976,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 10
+        },
+        "4": {
+          "mean_exact_top5_overlap": 0.9984,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 20
+        },
+        "8": {
+          "mean_exact_top5_overlap": 0.9984,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 40
+        },
+        "16": {
+          "mean_exact_top5_overlap": 0.9984,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 80
+        }
+      }
+    },
+    "96": {
+      "m": 96,
+      "bytes_shared_residual": 83252,
+      "full_fp32_bytes": 96000,
+      "full_int8_bytes_excl_global_quantization": 25000,
+      "size_ratio_vs_full_fp32": 1.153,
+      "top5_overlap_no_rerank": 0.9992,
+      "oversampling": {
+        "1": {
+          "mean_exact_top5_overlap": 0.9992,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 5
+        },
+        "2": {
+          "mean_exact_top5_overlap": 0.9992,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 10
+        },
+        "4": {
+          "mean_exact_top5_overlap": 0.9992,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 20
+        },
+        "8": {
+          "mean_exact_top5_overlap": 0.9992,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 40
+        },
+        "16": {
+          "mean_exact_top5_overlap": 0.9992,
+          "same_commit_hit_at5": 0.36,
+          "exact_candidates_scored": 80
+        }
+      }
+    }
+  },
+  "full_int8": {
+    "1": {
+      "hit_at5": 0.352,
+      "overlap_exact_top5": 0.9344
+    },
+    "2": {
+      "hit_at5": 0.36,
+      "overlap_exact_top5": 0.9936
+    },
+    "4": {
+      "hit_at5": 0.36,
+      "overlap_exact_top5": 1.0
+    },
+    "8": {
+      "hit_at5": 0.36,
+      "overlap_exact_top5": 1.0
+    }
+  },
+  "runtime": {
+    "2": {
+      "max_group_size": 2,
+      "groups": 146,
+      "median_us_exhaustive": 7.89,
+      "median_us_bounded_python": 32.84,
+      "p95_us_exhaustive": 13.63,
+      "p95_us_bounded_python": 89.75,
+      "mean_docs_scored": 13.76,
+      "top5_set_agreement": 0.98
+    },
+    "3": {
+      "max_group_size": 3,
+      "groups": 112,
+      "median_us_exhaustive": 7.92,
+      "median_us_bounded_python": 39.01,
+      "p95_us_exhaustive": 15.24,
+      "p95_us_bounded_python": 125.13,
+      "mean_docs_scored": 23.93,
+      "top5_set_agreement": 0.98
+    },
+    "4": {
+      "max_group_size": 4,
+      "groups": 94,
+      "median_us_exhaustive": 7.88,
+      "median_us_bounded_python": 40.23,
+      "p95_us_exhaustive": 16.02,
+      "p95_us_bounded_python": 126.68,
+      "mean_docs_scored": 32.74,
+      "top5_set_agreement": 0.98
+    },
+    "8": {
+      "max_group_size": 8,
+      "groups": 71,
+      "median_us_exhaustive": 7.89,
+      "median_us_bounded_python": 49.27,
+      "p95_us_exhaustive": 13.44,
+      "p95_us_bounded_python": 116.91,
+      "mean_docs_scored": 57.82,
+      "top5_set_agreement": 0.976
+    },
+    "999": {
+      "max_group_size": 999,
+      "groups": 56,
+      "median_us_exhaustive": 7.94,
+      "median_us_bounded_python": 58.15,
+      "p95_us_exhaustive": 15.49,
+      "p95_us_bounded_python": 148.18,
+      "mean_docs_scored": 119.24,
+      "top5_set_agreement": 0.976
+    }
+  },
+  "semantic_proxy_comparison": {
+    "full_document": {
+      "hit@1": 0.108,
+      "hit@5": 0.36,
+      "hit@10": 0.464,
+      "mrr@10": 0.2053
+    },
+    "changes_only": {
+      "hit@1": 0.312,
+      "hit@5": 0.624,
+      "hit@10": 0.708,
+      "mrr@10": 0.4445
+    },
+    "fused_half_half": {
+      "hit@1": 0.3,
+      "hit@5": 0.636,
+      "hit@10": 0.724,
+      "mrr@10": 0.4417
+    },
+    "index_bytes_fp32_full": 96000,
+    "index_bytes_fp32_change": 96000,
+    "both_indexes_bytes_fp32": 192000
+  },
+  "physical_vector_encoding": {
+    "full_fp16_zlib_bytes": 43856,
+    "full_fp32_zlib_bytes": 87932,
+    "full_int8_zlib_bytes_including_scales": 13468,
+    "shared_residual_top4_zlib_bytes": 12869,
+    "shared_residual_top8_zlib_bytes": 15156,
+    "shared_residual_top16_zlib_bytes": 19785,
+    "shared_residual_top24_zlib_bytes": 24415,
+    "shared_residual_top32_zlib_bytes": 28988
+  }
+}

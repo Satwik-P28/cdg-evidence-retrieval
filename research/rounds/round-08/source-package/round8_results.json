@@ -1,0 +1,66 @@
+{
+  "experiment": "CDG Round 8: exact BM25 matrix factorization through shared CDC chunks on real noVNC file histories.",
+  "date": "2026-11-09",
+  "provenance": {
+    "repo": "/opt/novnc",
+    "selected_versions": 250,
+    "unique_paths": 56,
+    "raw_bytes": 6234330,
+    "queries": 250,
+    "train_queries": 100,
+    "heldout_queries": 150,
+    "unique_cdc_chunks": 1573,
+    "logical_chunk_references": 5947,
+    "vocabulary": 5515,
+    "source_bytes": 769939
+  },
+  "index_storage_compressed_bytes": {
+    "flat_term_document": 73233,
+    "factorized_chunk_terms": 122835,
+    "factorized_chunk_membership": 5265,
+    "factorized_total_exclusive_vocab": 128100,
+    "flat_plus_cdc_source_exclusive_vocab": 843172,
+    "factorized_plus_cdc_source_exclusive_vocab": 898039,
+    "vocabulary_common": 37594,
+    "hybrid_10pct_hot_extra_postings": 4961,
+    "hybrid_30pct_hot_extra_postings": 9745
+  },
+  "timing_heldout_warm_cpu": {
+    "flat_document_postings": {
+      "median_us": 46.32,
+      "p95_us": 72.64,
+      "mean_us": 49.76
+    },
+    "factorized_chunks": {
+      "median_us": 171.84,
+      "p95_us": 221.61,
+      "mean_us": 175.67
+    },
+    "hybrid_10pct_hot": {
+      "median_us": 205.44,
+      "p95_us": 264.1,
+      "mean_us": 208.65
+    },
+    "hybrid_30pct_hot": {
+      "median_us": 210.55,
+      "p95_us": 270.3,
+      "mean_us": 217.3
+    }
+  },
+  "retrieval_quality_flat_bm25": {
+    "hit_at1": 0.108,
+    "hit_at5": 0.284,
+    "hit_at10": 0.376
+  },
+  "exact_all_250_queries": true,
+  "notes": [
+    "All full-document term counts equal membership x unique-chunk counts, verified for every doc with exact tokenization.",
+    "All 250 BM25 score vectors match within floating-point tolerance between factorized, flat, and hybrid variants.",
+    "12 randomized timing rounds over 150 held-out commit-subject queries; query-term lookup and scoring included, no preprocessing, IO, source decompression or generation.",
+    "Compressed CSR int32 indices, pointers and frequency arrays, Zstd level 3. SciPy CSR object overhead and vocabulary RAM excluded from byte totals.",
+    "Membership matrix M is already implicit in chunk reference metadata for CDC source storage; reporting its size separately to avoid free metadata.",
+    "Only commit-message queries with automatic single-revision targets, not human-labeled QA or semantic-neural retrieval.",
+    "The implementation is a straightforward factorized sparse-matrix method; factorized DB systems and inverted indexes are prior art.",
+    "The source_bytes entry is reused from independently verified Round 7 representation with the same CDC target and corpus; no SSD implementation here."
+  ]
+}

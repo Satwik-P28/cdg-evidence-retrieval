@@ -1,0 +1,32 @@
+{
+  "2": {
+    "max_absolute_topk_score_difference": 1.7881393432617188e-07,
+    "mean_exact_id_overlap_at5": 0.9968,
+    "queries": 250,
+    "all_scores_correct_at_1e-5": true
+  },
+  "3": {
+    "max_absolute_topk_score_difference": 1.4901161193847656e-07,
+    "mean_exact_id_overlap_at5": 0.9968,
+    "queries": 250,
+    "all_scores_correct_at_1e-5": true
+  },
+  "4": {
+    "max_absolute_topk_score_difference": 1.1920928955078125e-07,
+    "mean_exact_id_overlap_at5": 0.9976,
+    "queries": 250,
+    "all_scores_correct_at_1e-5": true
+  },
+  "8": {
+    "max_absolute_topk_score_difference": 1.1920928955078125e-07,
+    "mean_exact_id_overlap_at5": 0.9976,
+    "queries": 250,
+    "all_scores_correct_at_1e-5": true
+  },
+  "999": {
+    "max_absolute_topk_score_difference": 1.1920928955078125e-07,
+    "mean_exact_id_overlap_at5": 0.9976,
+    "queries": 250,
+    "all_scores_correct_at_1e-5": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "change_windows": 192,
+  "threshold_bytes": "literals <= threshold stored raw; larger literals independently compressed zstd3",
+  "results": {
+    "0": {
+      "total_disk_source_bytes": 999396,
+      "median_change_window_us": 71.14,
+      "p95_change_window_us": 190.54
+    },
+    "32": {
+      "total_disk_source_bytes": 990421,
+      "median_change_window_us": 63.2,
+      "p95_change_window_us": 141.51
+    },
+    "64": {
+      "total_disk_source_bytes": 980087,
+      "median_change_window_us": 54.76,
+      "p95_change_window_us": 173.78
+    },
+    "128": {
+      "total_disk_source_bytes": 993530,
+      "median_change_window_us": 47.04,
+      "p95_change_window_us": 101.36
+    },
+    "256": {
+      "total_disk_source_bytes": 1038253,
+      "median_change_window_us": 38.97,
+      "p95_change_window_us": 98.32
+    },
+    "512": {
+      "total_disk_source_bytes": 1135530,
+      "median_change_window_us": 38.04,
+      "p95_change_window_us": 91.04
+    },
+    "2048": {
+      "total_disk_source_bytes": 1248399,
+      "median_change_window_us": 36.06,
+      "p95_change_window_us": 83.27
+    },
+    "1000000": {
+      "total_disk_source_bytes": 1302226,
+      "median_change_window_us": 36.8,
+      "p95_change_window_us": 92.25
+    }
+  },
+  "cautions": [
+    "Byte exact changed windows only, full document reconstruction already verified for underlying piece model.",
+    "Warm CPU timings and resident index; no disk I/O.",
+    "This storage layout replaces per-version literal payload with many small frames, so metadata and compression overhead can increase.",
+    "Query windows contain a changed span, but are not generated from natural-language information needs."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "rows": {
+    "one_piece": {
+      "n": 2109,
+      "median_us": 30.16,
+      "p95_us": 70.59
+    },
+    "two_pieces": {
+      "n": 1449,
+      "median_us": 32.09,
+      "p95_us": 91.2
+    },
+    "3plus_pieces": {
+      "n": 2442,
+      "median_us": 46.45,
+      "p95_us": 104.19
+    },
+    "literals_in_window": {
+      "n": 3933,
+      "median_us": 38.16,
+      "p95_us": 97.42
+    },
+    "stable_only": {
+      "n": 2067,
+      "median_us": 30.83,
+      "p95_us": 75.81
+    }
+  },
+  "spearman_piece_count_vs_time": 0.479,
+  "sample_count": 6000,
+  "interpretation": "Descriptive association; larger/crossed windows may have other differences in code paths and source sizes.",
+  "limitations": [
+    "One process, repeated warm timings, synthetic windows.",
+    "Not a causal ablation of piece count."
+  ]
+}

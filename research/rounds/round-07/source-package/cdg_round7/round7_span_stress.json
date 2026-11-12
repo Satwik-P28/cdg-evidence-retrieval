@@ -1,0 +1,118 @@
+{
+  "query_length_stress": {
+    "1": {
+      "original_threshold256": {
+        "median_us": 20.43,
+        "p95_us": 36.87
+      },
+      "bridge_2": {
+        "median_us": 22.35,
+        "p95_us": 34.99
+      },
+      "bridge_8": {
+        "median_us": 24.84,
+        "p95_us": 40.06
+      },
+      "bridge_16": {
+        "median_us": 26.24,
+        "p95_us": 57.06
+      },
+      "independent_zstd": {
+        "median_us": 47.76,
+        "p95_us": 250.9
+      },
+      "seekable_zstd32": {
+        "median_us": 25.44,
+        "p95_us": 39.87
+      }
+    },
+    "5": {
+      "original_threshold256": {
+        "median_us": 32.29,
+        "p95_us": 84.37
+      },
+      "bridge_2": {
+        "median_us": 30.14,
+        "p95_us": 73.05
+      },
+      "bridge_8": {
+        "median_us": 29.96,
+        "p95_us": 85.01
+      },
+      "bridge_16": {
+        "median_us": 30.27,
+        "p95_us": 91.16
+      },
+      "independent_zstd": {
+        "median_us": 48.9,
+        "p95_us": 252.28
+      },
+      "seekable_zstd32": {
+        "median_us": 26.74,
+        "p95_us": 73.73
+      }
+    },
+    "20": {
+      "original_threshold256": {
+        "median_us": 74.59,
+        "p95_us": 185.09
+      },
+      "bridge_2": {
+        "median_us": 62.01,
+        "p95_us": 146.64
+      },
+      "bridge_8": {
+        "median_us": 55.82,
+        "p95_us": 132.89
+      },
+      "bridge_16": {
+        "median_us": 55.05,
+        "p95_us": 143.14
+      },
+      "independent_zstd": {
+        "median_us": 49.01,
+        "p95_us": 246.44
+      },
+      "seekable_zstd32": {
+        "median_us": 35.61,
+        "p95_us": 89.94
+      }
+    },
+    "40": {
+      "original_threshold256": {
+        "median_us": 111.56,
+        "p95_us": 269.98
+      },
+      "bridge_2": {
+        "median_us": 96.63,
+        "p95_us": 193.39
+      },
+      "bridge_8": {
+        "median_us": 83.28,
+        "p95_us": 175.82
+      },
+      "bridge_16": {
+        "median_us": 77.95,
+        "p95_us": 185.77
+      },
+      "independent_zstd": {
+        "median_us": 49.17,
+        "p95_us": 246.0
+      },
+      "seekable_zstd32": {
+        "median_us": 52.61,
+        "p95_us": 129.03
+      }
+    }
+  },
+  "resident_map_payload_bytes": {
+    "bridge_0": 298578,
+    "bridge_1": 247422,
+    "bridge_2": 219954,
+    "bridge_4": 179802,
+    "bridge_8": 143388,
+    "bridge_16": 116550,
+    "bridge_32": 102396
+  },
+  "notes": "Combined held-out streams are half matched and half shifted popularity; warm CPU; 900 queries per span length, three runs each."
+}

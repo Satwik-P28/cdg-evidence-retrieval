@@ -1,0 +1,36 @@
+{
+  "dataset": "250 noVNC real source revisions, 250 fixed random 5-line windows, 6 repeated randomized-order measurements",
+  "roundtrip": "All 5-line samples match original bytes for all methods",
+  "compressed_storage_bytes": {
+    "independent_zstd3": 1455847,
+    "base_star_patches_zstd3": 473266,
+    "independent_seekable_32_lines_zstd3_plus_4byte_offsets": 2528761,
+    "piece_table_num_pieces": 14218,
+    "piece_table_python_objects_not_counted_on_disk": true
+  },
+  "latency_microseconds": {
+    "independent_full": {
+      "median": 62.05,
+      "p95": 284.23
+    },
+    "patch_full_cached_base": {
+      "median": 104.7,
+      "p95": 559.79
+    },
+    "indexed_piece_slice": {
+      "median": 2.62,
+      "p95": 5.86
+    },
+    "seekable_zstd32": {
+      "median": 28.32,
+      "p95": 81.52
+    }
+  },
+  "limitations": [
+    "Indexed piece tables are already constructed in RAM before timing, so their preprocessing and RAM cost is excluded from lookup latency.",
+    "Patch full method assumes uncompressed family bases cached in RAM.",
+    "All access CPU warm cache; no SSD cost, no actual RAG model.",
+    "Frames are 32 lines per independently compressed version, not cross-version deduplication.",
+    "Piece table is an established text-editor/data-structure idea, not a new method."
+  ]
+}

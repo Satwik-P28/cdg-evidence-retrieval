@@ -1,0 +1,31 @@
+{
+  "query_type": "192 actual edited-piece-centered 5-line windows, 9 randomized repeats per method",
+  "source_bytes": {
+    "independent_full": 1455847,
+    "independent_seekable": 2528761,
+    "per_version_literals": 666829,
+    "raw_under_64": 980087,
+    "raw_under_256": 1038253
+  },
+  "median_latency_us": {
+    "independent_full": 69.8,
+    "independent_seekable": 30.51,
+    "per_version_literals": 74.61,
+    "raw_under_64": 48.93,
+    "raw_under_256": 46.48
+  },
+  "p95_latency_us": {
+    "independent_full": 268.85,
+    "independent_seekable": 70.82,
+    "per_version_literals": 151.93,
+    "raw_under_64": 108.59,
+    "raw_under_256": 98.57
+  },
+  "all_results_exact": true,
+  "limits": [
+    "Warm CPU and resident metadata.",
+    "No read from disk or natural-language retrieval loop.",
+    "Compression source sizes exclude lexical index, shared code and model.",
+    "Python prototype, not compiled engine."
+  ]
+}

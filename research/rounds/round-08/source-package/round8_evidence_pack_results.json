@@ -1,0 +1,48 @@
+{
+  "experiment": "Evidence packing after BM25 retrieval, exact passage-level dedup with per-version provenance.",
+  "queries_heldout": 150,
+  "conditions": {
+    "BM25_top5": {
+      "mean_original_prompt_bytes": 1002.8,
+      "mean_exact_dedup_prompt_bytes": 425.3,
+      "mean_exact_dedup_percent": 57.9,
+      "mean_token_count_proxy_reduction_percent": 57.8,
+      "mean_unique_evidence_passages": 2.1,
+      "mean_source_paths": 1.82,
+      "mean_naive_json_provenance_bytes": 377.3
+    },
+    "random_top5": {
+      "mean_original_prompt_bytes": 914.0,
+      "mean_exact_dedup_prompt_bytes": 828.5,
+      "mean_exact_dedup_percent": 9.2,
+      "mean_token_count_proxy_reduction_percent": 9.2,
+      "mean_unique_evidence_passages": 4.53,
+      "mean_source_paths": 4.39,
+      "mean_naive_json_provenance_bytes": 541.6
+    },
+    "BM25_top10": {
+      "mean_original_prompt_bytes": 2010.8,
+      "mean_exact_dedup_prompt_bytes": 647.7,
+      "mean_exact_dedup_percent": 68.1,
+      "mean_token_count_proxy_reduction_percent": 68.0,
+      "mean_unique_evidence_passages": 3.17,
+      "mean_source_paths": 2.5,
+      "mean_naive_json_provenance_bytes": 682.9
+    },
+    "random_top10": {
+      "mean_original_prompt_bytes": 1873.2,
+      "mean_exact_dedup_prompt_bytes": 1557.3,
+      "mean_exact_dedup_percent": 17.1,
+      "mean_token_count_proxy_reduction_percent": 17.1,
+      "mean_unique_evidence_passages": 8.19,
+      "mean_source_paths": 7.59,
+      "mean_naive_json_provenance_bytes": 1022.2
+    }
+  },
+  "notes": [
+    "Uses the same five-line query-selected evidence windows as Round8b; generated extractive windows, not QA-gold snippets.",
+    "Deduplicates only byte-identical passage content. Every original passage and version association remains represented as provenance metadata.",
+    "Raw prompt bytes are a proxy for token costs; not actual LLM token counts, and provenance metadata has its own costs.",
+    "No LLM generation, attention-cache reuse or measured end-to-end RAG latency."
+  ]
+}

@@ -1,0 +1,1252 @@
+[
+  {
+    "sha": "fb1817c99fdf71180e8d05bdb6f9595be2b5541b",
+    "query": "Remove Chrome timeout workaround",
+    "path": "karma.conf.js"
+  },
+  {
+    "sha": "fc11b9d2b095b0dd0db106ca0f80a47d6e262f6c",
+    "query": "Remove Twitter links",
+    "path": "README.md"
+  },
+  {
+    "sha": "d80e3bfa2f372e2b210f46b8c46796a9754abf27",
+    "query": "Add unit tests for Tight gradient filter",
+    "path": "tests/test.tight.js"
+  },
+  {
+    "sha": "c187b2e5e0e44b4157f5e6220b263940f600bbca",
+    "query": "Implement gradient filter of tight decoder, fixing issue #1767",
+    "path": "core/decoders/tight.js"
+  },
+  {
+    "sha": "cd927723bc98bd56f23119b8bcc011139a382702",
+    "query": "Fix import of \"commander\"",
+    "path": "utils/convert.js"
+  },
+  {
+    "sha": "e75938bebcf88b678f24ed35b78be9eaf982d213",
+    "query": "Make non-HTTPS message more harsh",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "bd32922ff8f6209bdb20dc0b75c034d1b304dc7a",
+    "query": "Avoid exception when cursor was removed from DOM already",
+    "path": "core/util/cursor.js"
+  },
+  {
+    "sha": "48c8e41877a98dbf6c65e2a8086160c82b01e7dd",
+    "query": "Fix key event debug output",
+    "path": "core/input/keyboard.js"
+  },
+  {
+    "sha": "fca48df85d394b2c1e9d26ed6e9d10d33db9f4f4",
+    "query": "Increase test timeout for Chrome on Windows",
+    "path": "karma.conf.js"
+  },
+  {
+    "sha": "9ac632deee0410be07187dcbb3d40fbf00ede0c3",
+    "query": "Handle immediate connection errors",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "b40a45a11b98c2a2dac24f9b6151722f1e3115be",
+    "query": "Remove unused argument to inflateInit()",
+    "path": "core/inflator.js"
+  },
+  {
+    "sha": "01bb36d43171c340cb10028e938d2c3afadb2049",
+    "query": "Use proper argument to deflateInit()",
+    "path": "core/deflator.js"
+  },
+  {
+    "sha": "b146de6d69b65588a74a7142bd332bf3e08f9202",
+    "query": "Avoid internal variables in recv queue tests",
+    "path": "tests/test.websock.js"
+  },
+  {
+    "sha": "b298bf9e901ea4264a83abd498415da49388709e",
+    "query": "Don't split large WebSocket data in tests",
+    "path": "tests/fake.websocket.js"
+  },
+  {
+    "sha": "45cedea78fc5f05b32c8514132349710707081b7",
+    "query": "Don't send SetDesktopSize too early",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "12d2e7832d15d10e6c105c709b86d4adc040548d",
+    "query": "Properly decode ExtendedDesktopSize fields",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "aaa4eb8c3c358feb08c52991c331684ccd63b34c",
+    "query": "Use proper socket helpers for FBU header",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "87143b361e78dda79b2f58b59d82d4696ba66163",
+    "query": "Reduce kept state in JPEG decoder",
+    "path": "core/decoders/jpeg.js"
+  },
+  {
+    "sha": "9e02f4d01d85390b565cb041ad8f6c1a033d1740",
+    "query": "Return a copy of the data from FakeWebSocket",
+    "path": "tests/fake.websocket.js"
+  },
+  {
+    "sha": "e07ca6a8e2428939de72348a1edfa7b749dec00b",
+    "query": "Fix Websock send tests",
+    "path": "tests/test.websock.js"
+  },
+  {
+    "sha": "da75689f4c3fcff11056592771495fa3806d1374",
+    "query": "Fix data for empty RRE rect test",
+    "path": "tests/test.rre.js"
+  },
+  {
+    "sha": "9b115a4485eb6bebc3cdec799ad304749e0bc0fb",
+    "query": "Send ArrayBuffer, not Uint8Array in tests",
+    "path": "tests/fake.websocket.js"
+  },
+  {
+    "sha": "775ccaa74cca90d1270fcd172e1507897aee270d",
+    "query": "Handle immediate responses in RSA-AES authentication",
+    "path": "core/ra2.js"
+  },
+  {
+    "sha": "91307951d349ffac5295db00feb9386be8af2593",
+    "query": "Fix cached JPEG test",
+    "path": "tests/test.jpeg.js"
+  },
+  {
+    "sha": "cd1a63b737b1ffa0fb5a343de7381bedf562c5e4",
+    "query": "Restore history state after tests",
+    "path": "tests/test.webutil.js"
+  },
+  {
+    "sha": "b16f19f9ceb464a39735b8a2c799a1d7c3212c0c",
+    "query": "Set _rfbVeNCryptState = 4 not == 4",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "681632bc9fc38b4e4f0f9bf4a6b7d675fb991e70",
+    "query": "Avoid running tests on l10n singleton",
+    "path": "tests/test.localization.js"
+  },
+  {
+    "sha": "747603c0d5bbdc8ac31b81f7a1b31291a397d280",
+    "query": "Also re-enable playback on failures",
+    "path": "tests/playback-ui.js"
+  },
+  {
+    "sha": "c1d2449fb86f162c78abc6146bf001d380fd8ba4",
+    "query": "Fix playback error message for load failure",
+    "path": "tests/playback-ui.js"
+  },
+  {
+    "sha": "9a06058f66edb31f3d942e21b67319f243228330",
+    "query": "Added english to list of supported languages",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "8decca7353a0a730226842aa33c9018ac5e6e44c",
+    "query": "Use unitless numbers for line-height values",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "4558104196834963cea5748e4bed1750fbc4f6e2",
+    "query": "Properly center the checkbox checkmark",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "5b7d2a622ea5441ae750ea4d3e5cf56ee5737ac5",
+    "query": "Fix positioning of checkbox checkmark",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "367bfd296228d94b00c18e5b37cc03e34822eb64",
+    "query": "Use JavaScript highlighting for Synax sections",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "934e3de356988bf8676c1056acc3c0825051765c",
+    "query": "Follow current MDN for syntax examples",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "74fe694cc4ae6239cbb4f7b65b7da8cef4778e2a",
+    "query": "Fix toBlob() documentation",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "ce534b85c140e11662a5839188471d5daf9bc278",
+    "query": "Fix indentation of toBlob()/toImage() docs",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "caf0ecc99b526e558ec4bd0e6d904f9acc030ccd",
+    "query": "Consistent naming of RFB arguments",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "ceadcd6e83c1e68de00f609153119e4fb2957be7",
+    "query": "Use reference style links in API docs",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "e16b3b86201bbcea4c54e5d164e724fd4d7b3c21",
+    "query": "Update feature list",
+    "path": "README.md"
+  },
+  {
+    "sha": "5de478d6e7b70c080a4a64ec6deb590c773ca416",
+    "query": "Restrict forced panning to known bad platforms",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "8fb30fb9dc6771ca0e0c2ca8a37d13ee37a503da",
+    "query": "Add unit tests for OS detection",
+    "path": "tests/test.browser.js"
+  },
+  {
+    "sha": "4a34ee4b1e1da67111d50eb2cd059e38aae4349a",
+    "query": "Remove navigator check from browser tests",
+    "path": "core/util/browser.js"
+  },
+  {
+    "sha": "bd2d3a58b0b79fe149564faf8e3a28c7c3f9e0cc",
+    "query": "Change element type of noVNC_logo",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "2b449b208e217b3f322fe02bafa4f3d6d84e385a",
+    "query": "Get rid of WebKit's button top margin",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "079889a13ad95714deaa11c994368d47f042658a",
+    "query": "Stop including apple-touch-icons as regular icons",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "ec4591145662d6abdb64f76955d7e7b24d200307",
+    "query": "Don't show virtual keyboard button in webkit",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "4fb2d6c497dc2e307400ff581f9292758c709b40",
+    "query": "Add FIXME for virtual keyboard button on touch",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "d8b3ec99fa64766bcbc8787cc07442dfcabe1170",
+    "query": "Use \"initial\" for displaying handle touch area",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "6d7d45ba08e203e616171e53cea5b2bd2314dc4d",
+    "query": "Ensure arrow doesn't change on disabled <select>",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "90f120c1394c9f10fa34c78b08bade4c431aedf7",
+    "query": "Added none user select on the cursor",
+    "path": "core/util/cursor.js"
+  },
+  {
+    "sha": "1ff035c330e8aa1dfe5d1a6e7f9aebf5e3c80428",
+    "query": "Add comment explaining the handle touch area",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "333e075d7b4d92a3a9a4e2c3be08b165294b8af5",
+    "query": "Get rid of Chrome's blue touch tap highlight",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "98364c3daa554a2d7de600263b18898aeee3d39b",
+    "query": "Use the same background gradient on all buttons",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "837cc75a8ccc08df11b173cb691da00fd8ee0a2d",
+    "query": "Add FIXME for select:active on Firefox",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "d083ba269eea3e9ff9cd13d48c90f6062d86ca13",
+    "query": "Buttons shouldn't react to clicks when disabled",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "69c1d8a1b961cc5bde80514d62c07e1c44bc1320",
+    "query": "Add section comments to input.css",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "b676122642bcc0c1cacdcf620e01412eb1b2ecae",
+    "query": "Simplify :focus-visible & :disabled selectors",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "9107ae3a102ee2e3f57dd2d4d4ea1971f2bd8d14",
+    "query": "Share some properties between all input elements",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "8c1b6e19c781ea5265aec335ad134584f29402a5",
+    "query": "Combine rules for buttons in input.css",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "3cf2bb9b5938fe61a7914704bbcd354a4eaa956c",
+    "query": "Change arrow direction of active select button",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "80897091e08f94661370396de936ba91655da870",
+    "query": "Put all styling for selected buttons in one place",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "36510f7d1678e4fb29a1a018a67843896bed1e1a",
+    "query": "Clarify comment about hover state on touch devices",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "cc703babcb1472d23239fe16a7e8213b4870aed8",
+    "query": "Remove duplicate opacity for :disable",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "654066f2c49ad664470ac973e9307ddd43247ce0",
+    "query": "Be more specific for control bar button background",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "4050f0e248981418eb5ab26acebaba5105c812e9",
+    "query": "Break out properties for disabled buttons",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "629a6cacb9ed74bf615c507c23235dc036a49427",
+    "query": "Add styling for input[type=file] elements",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "63528570bc2c7051e8384d43f16b8c737b067788",
+    "query": "Respect standard font settings for buttons as well",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "80ea7e17ecafc2d484507ce912e8bec4a24644ee",
+    "query": "Add styling for radio buttons",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "564a89bcb96f1595730723f3e622f1e09a01d64e",
+    "query": "Add small margin to the right of checkboxes",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "a714e1b003aca76caf6eb069e9839c516e0afb49",
+    "query": "Add small animation for checkboxes",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "fa8ff5e09d6132c7167ea47d8e2f17894d3903cd",
+    "query": "Set checkbox size using px rather than em",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "7519f2d4adae6023147eb8cd5ba71d241d015a6d",
+    "query": "Set a white background-color on checkboxes",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "faf921b02383766046750ac99fda0a494b9dd374",
+    "query": "Set background gradients using background-image",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "2ff09d6f104d560d4aa9c8077a804c0224cfef0a",
+    "query": "Unify element's :disabled styles to use opacity",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "1e500883f63277f3c7debd7b10146e5a992c4913",
+    "query": "Move <select>:hover to other hover styles",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "86adcdd3a3a838b189c3f7785bed91fcc9a63c44",
+    "query": "Reorder selectors alphabetically in input.css",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "9c13ea3dd29dc692395a74a92a2c786e9ff11c71",
+    "query": "Use a outline instead of border for focus-visible",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "8c961ab7c67de6971ae5a97701ec7a1a131cca86",
+    "query": "Add styling for input[type=range]",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "f820ec86f01cedabc8145c5c52c93f7f22d13a5d",
+    "query": "Add styling for checkboxes",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "52178e9381022cb3c77c61c55e651307d47fc22f",
+    "query": "Set min-height on control bar panel",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "2d6302e359153f33f3b8299eb6fa23737c773456",
+    "query": "Tone down comment about user-select on container",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "fc5bb6dab6af005e67f8827c5e09feb3ea2ff6de",
+    "query": "Add \"arrow\" to <select> elements",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "4a0999a34ecade5723ee84950b4ab816ab1b8e4b",
+    "query": "Slightly increase the padding on <select> elements",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "f19e328dce42094e9889063ba0750a6878a74370",
+    "query": "Add explanation text to clipboard panel",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "0cb5f2341c69ef91020d1d2f397d28fe14d73335",
+    "query": "Fix indentation of comment in CSS",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "429a08da892303ca1842f729ad15ce141c3052f3",
+    "query": "Make control bar button selectors more specific",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "081f9d2a13795ee70a1632a1aca3efb0498d35f6",
+    "query": "Disable iOS long-press popup for sidebar images",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "7e29e02ce44517699fc8a29a59e5598494e94715",
+    "query": "Prevent accidental selection of the container",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "584ce066988d143d793f820727eb22be3bf99530",
+    "query": "Disable selection globally on sidebar",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "0ef75824a4a6a9a4873ddb4f9a39050ad7b87565",
+    "query": "Ensure the correct cursor on disabled buttons",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "138df468258661891b11ce23a17b2362c558f8c9",
+    "query": "Remove unnecessary legacy CSS properties",
+    "path": "app/styles/input.css"
+  },
+  {
+    "sha": "5c684cce2a54414f6a8698ee3ee3a75ccfe84827",
+    "query": "Change default dimensions of clipboard textarea",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "d3913c0dde8b6730e676e3bcee5334b3e0213013",
+    "query": "Limit webaccess clipboard textarea min width",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "82253c1f1aee69bc7302de68a855e51588a4f58b",
+    "query": "Don't let the clipboard textarea grow too high",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "f0fea1fccd503f33b2776fdb45f25c1bbe2fe3d5",
+    "query": "Fix max-width of clipboard textarea",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "6b2357061e1b0865673e1c2c45191d2236080c32",
+    "query": "Use border-box for noVNC panels",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "dd713bee63a7f31c9827afce0471a0a1b360e713",
+    "query": "Set max-width on all noVNC panels",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "0410cbc1908c460eb2d339e2d1a703ba1d07815d",
+    "query": "Remove redundant inspect() override",
+    "path": "tests/assertions.js"
+  },
+  {
+    "sha": "8715ed9e7010c83cb96a519e5569a5d0cad51bca",
+    "query": "Match touch area height with height of handle",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "9761278df8f663f64f13b18e901a80bda799d893",
+    "query": "Style <button> the same as <input type=\"button\">",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "9a6e0d47d0c6efe5c515891cefd0936cf259b60a",
+    "query": "Rename CSS section to better reflect contents",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "145d235094c61675abefdcfc6e74fafe54f17794",
+    "query": "Make error handler's focus changes best-effort",
+    "path": "app/error-handler.js"
+  },
+  {
+    "sha": "4ecb44111d16048ef1ee3a7e96acb66ac9c39303",
+    "query": "Check if activeElement exists before using it",
+    "path": "app/error-handler.js"
+  },
+  {
+    "sha": "bdc0bbbb4fd8cd6c5471efd53e343ceb93a63ec3",
+    "query": "Respect font settings on input elements",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "a8488d5b322b0795443d69762881150fa1404f6d",
+    "query": "Add more air to settings panel",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "f887abdb3816b9157cd7aad2e4f5af58cf81c853",
+    "query": "Increase input element padding",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "a1e11e6d00da50f608c0de41ba7710232172ef48",
+    "query": "Stop setting margin on input elements",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "615b36a067c9e99a5646d42521efcea7ade7c345",
+    "query": "Handle crash dialog overflow better",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "58dfb7df4586e85794cb3a700d9323776273ec23",
+    "query": "Don't react to interactions with disabled buttons",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "c101a31520aba083a85edcb2f3269a826471007a",
+    "query": "Don't use explicitly Helvetica",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "1a101443a75df64bf7e87ee3ab6a06c459a3df94",
+    "query": "Set font family on root element",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "af10b0c5e45315d0bea84f8678d34d750cafd334",
+    "query": "Avoid using translate() for positioning",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "32f90338635aeff37c311c784d9b0e90bfe44b22",
+    "query": "Document state classes uses in CSS",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "e1174e813b617062c77491c01130c38b45f15311",
+    "query": "Use constants for security types",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "084030fe68b137e20043d112e7876e0094b4d761",
+    "query": "Handle connection init loop at the top",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "05d68e118d9bdb429ca1da49accbb098afd91523",
+    "query": "Abstract resuming the authentication",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "faedcd0210c810be925d64ed77172ef4433ad7eb",
+    "query": "Allow continued reconnect tries",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "98664c78871bf9e1c6c8914e68196fc4350a21cd",
+    "query": "Handle correct data offset in raw decoder",
+    "path": "core/decoders/raw.js"
+  },
+  {
+    "sha": "7730814b8d43d24db0894b641317be4b9f683da4",
+    "query": "Set label \"for\" attributes for credentials dialog",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "7be06b4d7db3be1434e68989b92710a4befbea38",
+    "query": "Add headings for dialogs",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "15a0608e041627779ba49ce9c388396f459ca6a2",
+    "query": "Make sure server verification dialog is closed",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "ced6431ac576ba9c59cc2c47b6283c77aaf48d8b",
+    "query": "Make credentials rules more specific",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "cbe54acd1f6a8a14b56b6a7ed45b23ee4f87ca99",
+    "query": "Fix bad links in API documentation",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "cf7f7b57c563bf916c41d88adb830a7e4f224726",
+    "query": "Document new API for server verification",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "240efb94dae7239cfdb95942ee8492779170e4d5",
+    "query": "Note contribution from USTC Vlab Team",
+    "path": "README.md"
+  },
+  {
+    "sha": "a78a7bf8aa0d8d321a8d17fe547c0b01f28197bf",
+    "query": "Update comment for scrollbar workaround",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "c88083b86a1738ddd4257dc3740f1d97e99dab11",
+    "query": "Use \"Full Screen\" instead of \"Fullscreen\"",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "466f1f9af6f0a7653e610a6be9dfb3464b306238",
+    "query": "Document binding to localhost in Quick Start",
+    "path": "README.md"
+  },
+  {
+    "sha": "2f602da96145f02b7765916ac8abfb5022097c29",
+    "query": "Ignore ResizeObserver errors",
+    "path": "app/error-handler.js"
+  },
+  {
+    "sha": "7ad4e60df60fa007c6c89f61479c02487aba837b",
+    "query": "Add transition animation to transition screen",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "98cdc076a0ae4e3c6ee853d2406bcfbbf1eb1cc4",
+    "query": "Tiny typo fix",
+    "path": "README.md"
+  },
+  {
+    "sha": "a85c85fb5f34a47c0f79865252ef9dad8f257441",
+    "query": "Follow API changes in commander 7.0.0+",
+    "path": "utils/use_require.js"
+  },
+  {
+    "sha": "ff077f4656f6f1e0355e9a634512ac63fb0af27c",
+    "query": "Preload status bar images",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "1afa18f09ee407fb8856ba28a3fc8f59021f7b23",
+    "query": "Increase browser version requirements",
+    "path": "README.md"
+  },
+  {
+    "sha": "a9c2ff30b636cf5bb0c5f183302646a5b6ec8481",
+    "query": "Replace window.onresize with ResizeObserver",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "7485e82b72d4d1356d95ecca2d109cbf49908b9d",
+    "query": "Update playback test to use new API",
+    "path": "tests/playback.js"
+  },
+  {
+    "sha": "2244f5377433e2107ca3fce4934939a7b4600dc4",
+    "query": "Move Websock event handlers to own methods",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "0c55c6475701b66c28c245483aeaf4d0179a3cca",
+    "query": "Normalize the credentials presence check",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "18593154d3cf8973dbddb9f97615453efa6b3b0d",
+    "query": "Allow longer passwords in Plain authentication",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "adfb99e7ecd8e4ae77ae76a4e24c1e4c41520982",
+    "query": "Update conversion documentation for Node.js",
+    "path": "docs/LIBRARY.md"
+  },
+  {
+    "sha": "32222304f4beba73e55ef5f53c26fa322cbbced1",
+    "query": "Remove documentation about converting the app",
+    "path": "docs/EMBEDDING.md"
+  },
+  {
+    "sha": "6784bb312f8cea2104b39adde1cce8246114e415",
+    "query": "chore: sync with W3C documentation",
+    "path": "core/input/domkeytable.js"
+  },
+  {
+    "sha": "4ae9d3e75a34403f44fda1bd061d9a20dd3ff76c",
+    "query": "Remove some unnecessary use of done argument",
+    "path": "tests/test.keyboard.js"
+  },
+  {
+    "sha": "bd1bb2ed75f022bfb91c0f63b042a3f7c07eb8ab",
+    "query": "Use toggle keysym for Eisu key",
+    "path": "core/input/domkeytable.js"
+  },
+  {
+    "sha": "273acf3e899f70ab71b5cf53854877ddd1595ac4",
+    "query": "Remove unused injectParamIfMissing()",
+    "path": "app/webutil.js"
+  },
+  {
+    "sha": "60c7518f8c32704615b4953bae28783786817cdc",
+    "query": "Update keycode mappings to latest version",
+    "path": "core/input/xtscancodes.js"
+  },
+  {
+    "sha": "c1281b136d5182dc96a919a9acb455a92aaaacb4",
+    "query": "Add workaround for Firefox PNG rounding bug",
+    "path": "tests/test.tightpng.js"
+  },
+  {
+    "sha": "20e4f1b3f8a6b90fef7f520002b81ea4ad3b5c6f",
+    "query": "Remove Firefox Alt workaround",
+    "path": "core/input/keyboard.js"
+  },
+  {
+    "sha": "3037eb16f73efc1f4c3ffc07668b5bd3b4e2c50b",
+    "query": "Ignore recording variables in our linter",
+    "path": "tests/playback-ui.js"
+  },
+  {
+    "sha": "7ce1b071ecb542efe26c5042e61d52dc5af138f5",
+    "query": "Fix call to _recvMessage()",
+    "path": "tests/playback.js"
+  },
+  {
+    "sha": "ecdd075672073410f65a7c8ceec9fd9951c9ffde",
+    "query": "Fix names of recording variables",
+    "path": "tests/playback-ui.js"
+  },
+  {
+    "sha": "81898d7ceac715141e2339b5d8a1c7b820c9c268",
+    "query": "Remove note about clipboard ISO 8859-1 restriction",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "90ead240c7afde328870a4e6767aab70e71c00a2",
+    "query": "Mention gestures in README",
+    "path": "README.md"
+  },
+  {
+    "sha": "794b06b2bd39236321945ed928de4e2ca8fb47e1",
+    "query": "Don't detach handler if it doesn't exist",
+    "path": "tests/test.gesturehandler.js"
+  },
+  {
+    "sha": "484a9551d1c14118f9ab66a39a3a7181dbbac1d3",
+    "query": "Handle quick Cursor detach after mouse up",
+    "path": "core/util/cursor.js"
+  },
+  {
+    "sha": "6c6776a7a0d3aa0b104cdf7d828da796658a54bc",
+    "query": "Update build badges for GitHub actions",
+    "path": "README.md"
+  },
+  {
+    "sha": "643442feac2bf95f526738eab5b03a267d38fb85",
+    "query": "Remove default Karma options",
+    "path": "karma.conf.js"
+  },
+  {
+    "sha": "57ba67f30662d7d7b3850b89ea0b2e3240ab49e4",
+    "query": "Alway focus on touchstart",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "48f15efa690b95e5b0ae5154dc57caf8088ae2f5",
+    "query": "Compensate for visual viewport when moving cursor",
+    "path": "core/util/cursor.js"
+  },
+  {
+    "sha": "440ec8a0b696640ce1276b0359ed573762dce245",
+    "query": "Start fake test clock at real clock time",
+    "path": "tests/test.rfb.js"
+  },
+  {
+    "sha": "97b86abc948f3f1d5d20864bb4325a0feb6f34bb",
+    "query": "Avoid fractional pixel sizes from Display",
+    "path": "core/display.js"
+  },
+  {
+    "sha": "0a6aec357850e4681ecfc6cbf74196dc96dbf75b",
+    "query": "Avoid printing the Websock buffer in tests",
+    "path": "tests/test.rfb.js"
+  },
+  {
+    "sha": "34f52a8f41ec677463dc331ae31b89db32883817",
+    "query": "Fix bad BasicCompression check in Tight decoder",
+    "path": "core/decoders/tight.js"
+  },
+  {
+    "sha": "f2fbaacc82e0db5e36fe29f5ba9f07850c272094",
+    "query": "Standardize on camelCase in Base64",
+    "path": "core/base64.js"
+  },
+  {
+    "sha": "b5ff33a556c1bdf544b94ade1b413edaee2292be",
+    "query": "Remove unused mouse_arr variable",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "a672168d4dac5735b40cfe618a47f76b69c85882",
+    "query": "Add unit tests for mouse move limit",
+    "path": "tests/test.mouse.js"
+  },
+  {
+    "sha": "0f81407c641243df89aa57e23b2e16d7d020c425",
+    "query": "Shorten rows to max 80 chars in mouse.js",
+    "path": "core/input/mouse.js"
+  },
+  {
+    "sha": "f477469fb5162c18177a0809682096ebf2e5fda2",
+    "query": "Fix wording in comment",
+    "path": "core/input/mouse.js"
+  },
+  {
+    "sha": "44eb1fe59bdab58ed6bedefe8db5e13a2a487352",
+    "query": "Limit mouse move events to one every 17 ms",
+    "path": "core/input/mouse.js"
+  },
+  {
+    "sha": "e7fa686f329c3fb9e391387e0fdf28de1241f4a0",
+    "query": "Fix indentation for focus check",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "8df281cce6822b534ad43edc9efb18a5292e8e60",
+    "query": "Don't fade the control bar if it has focus",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "c12e5b2b544aff6f662c7f61f82ce40d132e14df",
+    "query": "Hide the clipboard when not connected",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "27a6978e3034870b6932bebcfd2b46eb78c6bf66",
+    "query": "Document default setting of `focusOnClick`",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "a1015d8db569fcdd681039c4c0872879c8af0292",
+    "query": "rfb: VeNCrypt Plain SecurityType support",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "a040c402ed64fbbee67e69dc4787e6ea54a8a88c",
+    "query": "Fix focus problem after closing the toolbar",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "c4633ab33377f690c6f5efcee7ede858a6c197db",
+    "query": "Set a default value for the quality input",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "9253e178fcaff965ccea31b48069313568c17b40",
+    "query": "Hide clipboard side bar button when view only mode",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "e4e6a9b9b40545094530cf1d751b33466d2ed57d",
+    "query": "Style all input types for consistent UI",
+    "path": "app/styles/base.css"
+  },
+  {
+    "sha": "9a31083a8ae4f1a3cfd4977cb1b05151a83bcf26",
+    "query": "Export constants in inflate.js for easier usage",
+    "path": "vendor/pako/lib/zlib/inflate.js"
+  },
+  {
+    "sha": "13be552d60f399d8618af5dc22eb4e0838cd9d8e",
+    "query": "Fix bug where inflate would read too much data",
+    "path": "core/inflator.js"
+  },
+  {
+    "sha": "3cf11004b476b66296714e0d7b85437d40604cc3",
+    "query": "Handle errors from zlib/pako",
+    "path": "core/inflator.js"
+  },
+  {
+    "sha": "fe5aa6408aed83ec07e640cc9c0249688a7b710b",
+    "query": "Add missing copyright header for Inflator.js",
+    "path": "core/inflator.js"
+  },
+  {
+    "sha": "3b562e8a0f0c15be8d42ce171b296594988d321e",
+    "query": "Make clipBoardPasteFrom() test more specific",
+    "path": "tests/test.rfb.js"
+  },
+  {
+    "sha": "546edcd4a0c04a2ccfa96852dcd0169058c73500",
+    "query": "Correcting path to package.json for running at a path other than root.",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "8394462356042e03f68be9f6d815f008be5c1404",
+    "query": "Remove generated HTML by Cursor when it detaches",
+    "path": "core/util/cursor.js"
+  },
+  {
+    "sha": "64fdd336a03105db8d21c896e83de97e84971a86",
+    "query": "Simplify encodeUTF8/decodeUTF8 unittests",
+    "path": "tests/test.util.js"
+  },
+  {
+    "sha": "80c72e92d2b8b1ac7cac552dd6bd431cfedbd3bb",
+    "query": "Add unit tests for encodeUTF8 and decodeUTF8",
+    "path": "tests/test.util.js"
+  },
+  {
+    "sha": "11ae8f0ef4dc1edffb497c0ed56e66054f897b20",
+    "query": "Add comment for browser and platform detection",
+    "path": "core/util/browser.js"
+  },
+  {
+    "sha": "c32d4f3cd0c19c0cf1a96207adc253f6073014d4",
+    "query": "Add short description at the top of browser.js",
+    "path": "core/util/browser.js"
+  },
+  {
+    "sha": "78bbf6bad2b3f18198f851908eb30633390b9938",
+    "query": "Restore X-UA-Compatible meta tag to vnc_lite",
+    "path": "vnc_lite.html"
+  },
+  {
+    "sha": "3a64043f28f704b9a1b6e7f85e1bc230e4ff8bc2",
+    "query": "Restore X-UA-Compatible meta tag to vnc.html",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "49db41ea4be69753b5480559839cf031d52a1241",
+    "query": "Allow cursor to be updated while connecting",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "d507d1415eff9fce16fb67963f34a1aa1ecb1fe4",
+    "query": "Make sure \"undefined\" can be a default parameter value",
+    "path": "vnc_lite.html"
+  },
+  {
+    "sha": "b8d1a8bb57c0e1bff08ea5df2c62b9479ce49d02",
+    "query": "Avoid using Array.includes()",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "06a8f7d91a1555f9309791b6cda662cbb4539aa6",
+    "query": "Use undefined as the default value for password",
+    "path": "vnc_lite.html"
+  },
+  {
+    "sha": "dbbb676da96519acfdfc66c412d2f2cdbc898ab6",
+    "query": "Peter is no longer part of the noVNC team",
+    "path": "README.md"
+  },
+  {
+    "sha": "ff1b10ca668978186e3c7f7efec79c7d20af1cf3",
+    "query": "Add try catch in every place that uses decodeUTF8",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "1c9826140a50f685dd255655dac83a3f571048f0",
+    "query": "Add support for Unix Tight auth",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "01d4514deed5e61d849c6f720b6f165a88f2e106",
+    "query": "Allow connecting with empty string credentials",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "80b078c469465f1ec45a5251a40eee51f13c5a1d",
+    "query": "Add encodeUTF8 function to core/util/strings.js",
+    "path": "core/util/strings.js"
+  },
+  {
+    "sha": "9f557f5280063b6e194da4541db75c568d27a901",
+    "query": "Make Cursor.detach() safe to call when not attached",
+    "path": "core/util/cursor.js"
+  },
+  {
+    "sha": "b17f6c692939af3edb11e2c1d30ab3ee0f6717f0",
+    "query": "Simplify logic for status hierarchy",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "afa1f8a2ab541d95de7ca2ae19d4f88b1a36e627",
+    "query": "Ensure warning status timeouts are honored",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "d01ecc18d5f91e5377b792caedf979ad2ae246ec",
+    "query": "Don't use arrow functions in legacy loader",
+    "path": "utils/use_require_helpers.js"
+  },
+  {
+    "sha": "66ab0d98d7f41160be70faf47451de71b3f5fce7",
+    "query": "Load support scripts first",
+    "path": "utils/use_require.js"
+  },
+  {
+    "sha": "6b208034015b9c4cc491be7c659d9888c7fb1fee",
+    "query": "Clean up handling of untransformed files",
+    "path": "utils/use_require.js"
+  },
+  {
+    "sha": "8cfa673d94c4cc7819fa817c3369cbb275ec6d24",
+    "query": "Remove redundant \"no copy\" check",
+    "path": "utils/use_require.js"
+  },
+  {
+    "sha": "c6e37040de7a6d199682fba38cca3eef2c0ab679",
+    "query": "Use proper backticks for generating legacy script tags",
+    "path": "utils/use_require.js"
+  },
+  {
+    "sha": "175b843b664724c0265ab36c7dcee365f1d1d04e",
+    "query": "Add \"macOS shuffle\" to iOS as well",
+    "path": "core/input/keyboard.js"
+  },
+  {
+    "sha": "94a01b0ae0b735c2da794e7870bf972a68fece69",
+    "query": "Keep the virtual keyboard after using extra keys",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "dd4341fe6774dcbf64bf76a9f3a32d86d660a45e",
+    "query": "Explain why Clear maps to KP_Begin",
+    "path": "core/input/domkeytable.js"
+  },
+  {
+    "sha": "a5aa8e12822a0b83f2521ed04911a03f3f33c192",
+    "query": "Move focus to the screen when using extra keys",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "c568ad4c7415109f01750fe55e9a881b8eb4a3c6",
+    "query": "Add missing scancode for sendTab",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "c3a7524c9e2820ff888edfd0ba5b4d22800e60a8",
+    "query": "Hide the emulated cursor when target is null",
+    "path": "core/util/cursor.js"
+  },
+  {
+    "sha": "938690375b590d8e7c3589a280350929da30efdc",
+    "query": "Check next elem at mouseleave in cursor emulation",
+    "path": "core/util/cursor.js"
+  },
+  {
+    "sha": "fcd99d04fbb41307cc1b1bffd24970b7da656955",
+    "query": "Rename variables in setCapture proxy",
+    "path": "core/util/events.js"
+  },
+  {
+    "sha": "2b4c655405e2f9cffad881341053c3d4a7270cce",
+    "query": "Fix alt text for drag button",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "f2d42dc3577d921ac8f51c029729b3fca275c483",
+    "query": "Never show drag icon if clipping is disabled",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "e8614e20eff48400d1a8687e0fcc3228315dd21a",
+    "query": "Code comments for how the receieve queue works",
+    "path": "core/websock.js"
+  },
+  {
+    "sha": "c90d53565ad731be7a6131f0141145ad4db93c0d",
+    "query": "Clarify why we ENABLE_COPYWITHIN is false",
+    "path": "core/websock.js"
+  },
+  {
+    "sha": "d39e0d124487fb85522e929909d3a9d34261cc57",
+    "query": "Clarify comments for broken alt in FF on Windows",
+    "path": "core/input/keyboard.js"
+  },
+  {
+    "sha": "a1afb2a21539d430deb801f678946eb39e5a93ca",
+    "query": "Fix url cursor detection on Edge",
+    "path": "core/util/browser.js"
+  },
+  {
+    "sha": "c90245da2542b7e2072f74b3e231e4dbfeb72ce2",
+    "query": "Restore page name after disconnect",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "8d6f686b596dab2d4fa4bd23ad5ebac5ad635069",
+    "query": "Test unicode desktop names",
+    "path": "tests/test.rfb.js"
+  },
+  {
+    "sha": "9886d5951d8f6990cb3a16553a5df482dbcdd68d",
+    "query": "Set viewport size for autoscale tests",
+    "path": "tests/test.display.js"
+  },
+  {
+    "sha": "1f2bb528503d7222ec123f00f55e25659d4d2624",
+    "query": "Make sure showDotCursor can be modified before connecting",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "08567b08acecf94fb65db6b2038b68fec7ea1c66",
+    "query": "When compacting the receive buffer don't copy unused buffer space",
+    "path": "core/websock.js"
+  },
+  {
+    "sha": "e9f489a6292c453d900284523e4ff0c0f67333a0",
+    "query": "Avoid recursion in Alt check on Firefox",
+    "path": "core/input/keyboard.js"
+  },
+  {
+    "sha": "ff7882c44c59289edd490f6748c6541caa743e9a",
+    "query": "Remove unused import from module loader",
+    "path": "vendor/browser-es-module-loader/src/browser-es-module-loader.js"
+  },
+  {
+    "sha": "b875486db86aab5e9d1f810ead8eb7fa4c94346b",
+    "query": "Avoid deprecated called.once from sinon-chai",
+    "path": "tests/test.rfb.js"
+  },
+  {
+    "sha": "897b465b870eddefb8bc7305cba514139cc1ca32",
+    "query": "Add missing parentheses for arrow func arg",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "e14aa4d0fe43a939378a3dd7666806fa7018dfe7",
+    "query": "Add documentation for the option showDotCursor",
+    "path": "docs/API.md"
+  },
+  {
+    "sha": "21ac6ca0f294d4037fc5b166b2d954dada09f69a",
+    "query": "Update link to websock.js API",
+    "path": "docs/API-internal.md"
+  },
+  {
+    "sha": "32e081950cf2e2cf1218f17acd16df6a33bce370",
+    "query": "Revert \"Fullscreen from iframe (#1236)\" (#1247)",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "755d6eae993a904c60122c4f6341c225d407ae5a",
+    "query": "Remove server pixel format warnings",
+    "path": "core/rfb.js"
+  },
+  {
+    "sha": "19cdc15aa314760446866a1bcc2db99a80479683",
+    "query": "Fullscreen from iframe (#1236)",
+    "path": "app/ui.js"
+  },
+  {
+    "sha": "a136b4b078e8ac316b80d1ee24cf8f9b400ba2d5",
+    "query": "Allow autoscale() with zero height or width",
+    "path": "core/display.js"
+  },
+  {
+    "sha": "dcc41bde618ade458ec516736b375a19db3b13ed",
+    "query": "Fix up errors and warnings in vnc_playback.html",
+    "path": "tests/vnc_playback.html"
+  },
+  {
+    "sha": "f5d76dd5bb174115be559ecf5128a0c12eb6794f",
+    "query": "Add translations as a feature",
+    "path": "README.md"
+  },
+  {
+    "sha": "94e6f8c2faa4bee651d29f31ca3d56bc5b448394",
+    "query": "Remove trailing whitespace",
+    "path": "vnc_lite.html"
+  },
+  {
+    "sha": "26a9c1c14dc62b0e538338938ccf816b3924a57c",
+    "query": "Remove invalid HTML attributes from textarea",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "fe8d784bceb8e75c226f1aeca36b8440c01fc949",
+    "query": "img elements must have alt attributes",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "5a76000848de9e172b7e8aaeb9464bde13d66577",
+    "query": "Fix invalid input type 'input'",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "892c3330cf56b8677b9e42ddb68cd3b6d5be43c7",
+    "query": "Input type image is not allowed to have values",
+    "path": "vnc.html"
+  },
+  {
+    "sha": "6e7e6f9c9ed3367ecaa80f78a512187a7ae95eb4",
+    "query": "Add check for bad values for Display.autoscale()",
+    "path": "core/display.js"
+  },
+  {
+    "sha": "9d2c9d1a75fa6cdec5a50bc51467df8b35290c0a",
+    "query": "Use default argument for base64",
+    "path": "core/base64.js"
+  },
+  {
+    "sha": "667f3cc20ece104ac1e841b67a7cc9f4e196f8ca",
+    "query": "Remove unnecessary context from eventtarget",
+    "path": "core/util/eventtarget.js"
+  },
+  {
+    "sha": "fe5974a740bea67c650147d67a85dcbda252784c",
+    "query": "Remove unnecessary constructor parameter from Cursor",
+    "path": "core/util/cursor.js"
+  },
+  {
+    "sha": "9255e0fb47fe450793d8018c1cbb1f47124e9344",
+    "query": "Remove intermediate variable from mouse",
+    "path": "core/input/mouse.js"
+  }
+]

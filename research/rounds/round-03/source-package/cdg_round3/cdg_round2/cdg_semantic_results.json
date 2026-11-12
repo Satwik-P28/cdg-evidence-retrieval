@@ -1,0 +1,83 @@
+{
+  "description": "150 real local technical-document bases with 10 controlled synthetic revisions; lexical TF-IDF scoring and linear SVD proxy, NOT neural embedding RAG",
+  "data": {
+    "base_docs": 150,
+    "versions_per_base": 10,
+    "logical_docs": 1500,
+    "raw_bytes": 16995890,
+    "queries": 300,
+    "features": 24000
+  },
+  "tfidf": {
+    "full_index_csr": {
+      "raw_bytes": 10606564,
+      "zstd3_bytes": 344443,
+      "nnz": 1325070
+    },
+    "shared_base_csr": {
+      "raw_bytes": 1060660,
+      "zstd3_bytes": 271324,
+      "nnz": 132507
+    },
+    "delta_csr": {
+      "raw_bytes": 85204,
+      "zstd3_bytes": 5582,
+      "nnz": 9900
+    },
+    "full_index_zstd_total_bytes": 345877,
+    "base_delta_zstd_total_bytes": 278543,
+    "max_element_reconstruction_error": 0.0,
+    "max_score_abs_error": 0.0,
+    "exact_top5_set_matches": 300,
+    "query_count": 300,
+    "full_scores_batch_time": {
+      "median_s": 0.01906688900004383,
+      "min_s": 0.014351981000004344
+    },
+    "base_delta_scores_batch_time": {
+      "median_s": 0.004869353000003684,
+      "min_s": 0.004621079000003192
+    },
+    "labeled_target_mrr_at5_full": 0.07427777777777778,
+    "labeled_target_mrr_at5_base_only": 0.0
+  },
+  "safe_pruning": {
+    "query_count": 100,
+    "correct_top5_sets": 100,
+    "avg_docs_exactly_scored": 561.57,
+    "median_docs_exactly_scored": 495.0,
+    "p95_docs_exactly_scored": 724.0,
+    "total_document_count": 1500,
+    "total_python_query_seconds": 10.188472421000029,
+    "note": "Scans all document-level bounds in Python; counts are avoided exact residual dot evaluations, not a measured latency speedup."
+  },
+  "dense_svd_proxy": {
+    "8bit": {
+      "full_q_exact_top5_set_rate": 0.02666666666666667,
+      "base_residual_q_exact_top5_set_rate": 1.0,
+      "full_q_target_hit_at5": 0.01,
+      "base_residual_q_target_hit_at5": 0.01,
+      "full_index_estimated_bytes": 102000,
+      "base_residual_estimated_bytes": 146400
+    },
+    "4bit": {
+      "full_q_exact_top5_set_rate": 0.0,
+      "base_residual_q_exact_top5_set_rate": 0.8166666666666667,
+      "full_q_target_hit_at5": 0.0,
+      "base_residual_q_target_hit_at5": 0.01,
+      "full_index_estimated_bytes": 54000,
+      "base_residual_estimated_bytes": 98400
+    },
+    "reference_target_hit_at5": 0.01,
+    "base_only_target_hit_at5": 0.006666666666666667,
+    "svd_fit_and_project_seconds": 0.552806234000002
+  },
+  "limitations": [
+    "Models are TF-IDF and linear SVD, not contextual neural embeddings.",
+    "Synthetic version-specific queries and synthetic edits over real background text.",
+    "Counts include CSR arrays, family map, norms; exclude shared vectorizer vocabulary and model, equal across alternatives.",
+    "Dense quantization storage estimates omit some alignment and indexing overhead; treat as lower bounds.",
+    "Timing uses warm-cache CPU microbenchmarks with no isolation; not production latency.",
+    "Correct topk means score identity under TF-IDF, not correctness of an LLM answer."
+  ]
+}

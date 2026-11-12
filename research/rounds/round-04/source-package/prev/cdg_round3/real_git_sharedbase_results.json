@@ -1,0 +1,46 @@
+{
+  "dataset": "250 real noVNC single-file commits from 56 paths, human commit subjects as queries and exact commit revision as target",
+  "representations": {
+    "full_file": {
+      "Hit@1": 0.152,
+      "Hit@5": 0.364,
+      "Hit@10": 0.472
+    },
+    "changed_region": {
+      "Hit@1": 0.364,
+      "Hit@5": 0.64,
+      "Hit@10": 0.716
+    },
+    "full_plus_change": {
+      "Hit@1": 0.372,
+      "Hit@5": 0.672,
+      "Hit@10": 0.736
+    },
+    "shared_path_base_plus_change": {
+      "Hit@1": 0.368,
+      "Hit@5": 0.676,
+      "Hit@10": 0.736
+    },
+    "shared_base_only": {
+      "Hit@1": 0.092,
+      "Hit@5": 0.308,
+      "Hit@10": 0.428
+    }
+  },
+  "index_bytes": {
+    "full_file_zstd": 911926,
+    "changed_region_zstd": 95338,
+    "shared_path_base_zstd": 198394,
+    "family_ref_zstd": 287,
+    "full_plus_change_total_zstd": 1007264,
+    "base_plus_change_total_zstd": 294019
+  },
+  "scoring_batch_median_seconds": 0.00306,
+  "limitations": [
+    "Base per path is most recent sampled after-file. It is not a verified common-content intersection across versions.",
+    "This tests version-specific human commit messages. Unchanged-fact or arbitrary old-version lookup may fail without a fuller overlay.",
+    "No learned neural embeddings, only sparse TF-IDF. No model loading or generation time.",
+    "Index sizes exclude shared vocabulary and source archive; include compressed per-document family references.",
+    "Strong full+change baseline has similar code-aware tokenization; qrels auto-created from Git not expert annotations."
+  ]
+}

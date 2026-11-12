@@ -1,0 +1,60 @@
+{
+  "experiment": "Diversified BM25 candidates with controlled same-path cap. Same source version store and exact query-conditioned passage selection.",
+  "evaluated_queries": 150,
+  "conditions": {
+    "top5_pathcap1": {
+      "mean_unique_paths": 5,
+      "exact_revision_hit_at_k": 0.2333,
+      "mean_shared_frames_decoded": 5.5,
+      "mean_shared_payload_bytes": 3007.0,
+      "mean_independent_payload_bytes": 2761.1,
+      "batch_saved_payload_percent": -8.9
+    },
+    "top5_pathcap2": {
+      "mean_unique_paths": 3.27,
+      "exact_revision_hit_at_k": 0.26,
+      "mean_shared_frames_decoded": 4.18,
+      "mean_shared_payload_bytes": 2415.9,
+      "mean_independent_payload_bytes": 2747.1,
+      "batch_saved_payload_percent": 12.1
+    },
+    "top5_pathcap1000": {
+      "mean_unique_paths": 1.82,
+      "exact_revision_hit_at_k": 0.3067,
+      "mean_shared_frames_decoded": 3,
+      "mean_shared_payload_bytes": 1789.1,
+      "mean_independent_payload_bytes": 2744.1,
+      "batch_saved_payload_percent": 34.8
+    },
+    "top10_pathcap1": {
+      "mean_unique_paths": 10,
+      "exact_revision_hit_at_k": 0.2667,
+      "mean_shared_frames_decoded": 11.2,
+      "mean_shared_payload_bytes": 6040.0,
+      "mean_independent_payload_bytes": 5492.6,
+      "batch_saved_payload_percent": -10.0
+    },
+    "top10_pathcap2": {
+      "mean_unique_paths": 6.13,
+      "exact_revision_hit_at_k": 0.3267,
+      "mean_shared_frames_decoded": 8.39,
+      "mean_shared_payload_bytes": 4782.3,
+      "mean_independent_payload_bytes": 5508.0,
+      "batch_saved_payload_percent": 13.2
+    },
+    "top10_pathcap1000": {
+      "mean_unique_paths": 2.5,
+      "exact_revision_hit_at_k": 0.3867,
+      "mean_shared_frames_decoded": 5.05,
+      "mean_shared_payload_bytes": 3019.8,
+      "mean_independent_payload_bytes": 5466.1,
+      "batch_saved_payload_percent": 44.8
+    }
+  },
+  "notes": [
+    "Version-specific qrels are exact selected commit-after version; a different revision of same file is NOT a hit.",
+    "All methods use the same unmodified BM25 ranking, with a post-ranking same-file-path cap.",
+    "This is not a production diversity reranker; highlights correctness/redundancy tradeoff.",
+    "Cache and decode counts measured as full per-query batches in warm in-memory source; no SSD or LLM."
+  ]
+}

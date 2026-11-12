@@ -1,0 +1,129 @@
+{
+  "study": "Equal RAM budgets for decoded base-frame caching; real version bytes, synthetic requests.",
+  "source_storage": {
+    "cdg_threshold256": 1022413,
+    "independently_seekable32": 2528761
+  },
+  "resident_piece_map_bytes_cdg_excluded_from_cache_budget": 298578,
+  "cache_bytes_applied_equally_to_both": true,
+  "measurements": {
+    "same": {
+      "16384": {
+        "shared": {
+          "median_us": 29.33,
+          "p95_us": 62.41,
+          "frame_cache_hits": 577,
+          "frame_cache_misses": 832,
+          "frame_hit_rate": 0.4095,
+          "resident_decoded_bytes": 15573
+        },
+        "independent": {
+          "median_us": 29.83,
+          "p95_us": 62.17,
+          "frame_cache_hits": 96,
+          "frame_cache_misses": 1006,
+          "frame_hit_rate": 0.0871,
+          "resident_decoded_bytes": 16149
+        }
+      },
+      "65536": {
+        "shared": {
+          "median_us": 27.1,
+          "p95_us": 65.79,
+          "frame_cache_hits": 836,
+          "frame_cache_misses": 573,
+          "frame_hit_rate": 0.5933,
+          "resident_decoded_bytes": 64410
+        },
+        "independent": {
+          "median_us": 29.34,
+          "p95_us": 59.74,
+          "frame_cache_hits": 231,
+          "frame_cache_misses": 871,
+          "frame_hit_rate": 0.2096,
+          "resident_decoded_bytes": 65507
+        }
+      },
+      "262144": {
+        "shared": {
+          "median_us": 5.38,
+          "p95_us": 45.9,
+          "frame_cache_hits": 1233,
+          "frame_cache_misses": 176,
+          "frame_hit_rate": 0.8751,
+          "resident_decoded_bytes": 260881
+        },
+        "independent": {
+          "median_us": 2.25,
+          "p95_us": 56.02,
+          "frame_cache_hits": 608,
+          "frame_cache_misses": 494,
+          "frame_hit_rate": 0.5517,
+          "resident_decoded_bytes": 262089
+        }
+      }
+    },
+    "shift": {
+      "16384": {
+        "shared": {
+          "median_us": 31.61,
+          "p95_us": 67.66,
+          "frame_cache_hits": 540,
+          "frame_cache_misses": 939,
+          "frame_hit_rate": 0.3651,
+          "resident_decoded_bytes": 15710
+        },
+        "independent": {
+          "median_us": 29.62,
+          "p95_us": 63.22,
+          "frame_cache_hits": 72,
+          "frame_cache_misses": 1047,
+          "frame_hit_rate": 0.0643,
+          "resident_decoded_bytes": 15863
+        }
+      },
+      "65536": {
+        "shared": {
+          "median_us": 30.16,
+          "p95_us": 67.96,
+          "frame_cache_hits": 815,
+          "frame_cache_misses": 664,
+          "frame_hit_rate": 0.551,
+          "resident_decoded_bytes": 64294
+        },
+        "independent": {
+          "median_us": 28.81,
+          "p95_us": 58.83,
+          "frame_cache_hits": 191,
+          "frame_cache_misses": 928,
+          "frame_hit_rate": 0.1707,
+          "resident_decoded_bytes": 65473
+        }
+      },
+      "262144": {
+        "shared": {
+          "median_us": 6.41,
+          "p95_us": 50.04,
+          "frame_cache_hits": 1288,
+          "frame_cache_misses": 191,
+          "frame_hit_rate": 0.8709,
+          "resident_decoded_bytes": 262141
+        },
+        "independent": {
+          "median_us": 17.49,
+          "p95_us": 63.92,
+          "frame_cache_hits": 577,
+          "frame_cache_misses": 542,
+          "frame_hit_rate": 0.5156,
+          "resident_decoded_bytes": 261912
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Warm CPU only, no SSD or actual semantic retrieval.",
+    "CDG has additional resident piece metadata not charged to the 16/64/256KB cache budgets; see separate accounting.",
+    "One pass steady-state latency per workload, subject to CPU variance.",
+    "The source layout and queries remain favorable to shared document version representations."
+  ]
+}

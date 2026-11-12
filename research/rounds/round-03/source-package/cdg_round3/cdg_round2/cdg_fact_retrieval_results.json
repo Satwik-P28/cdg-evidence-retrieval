@@ -1,0 +1,32 @@
+{
+  "description": "Controlled queries identifying explicitly changed synthetic facts inside 150 real technical-document bases (1500 versions).",
+  "methods": {
+    "full_document_tfidf": {
+      "hit_at5": 0.16666666666666666,
+      "mrr_at5": 0.07427777777777778,
+      "hit_at1": 0.03
+    },
+    "revision_span_tfidf": {
+      "hit_at5": 0.20333333333333334,
+      "mrr_at5": 0.09327777777777778,
+      "hit_at1": 0.04
+    },
+    "family_route_top5_then_span": {
+      "hit_at5": 0.056666666666666664,
+      "mrr_at5": 0.023499999999999997,
+      "hit_at1": 0.006666666666666667
+    },
+    "family_plus_span_hybrid": {
+      "hit_at5": 0.21666666666666667,
+      "mrr_at5": 0.10055555555555555,
+      "hit_at1": 0.043333333333333335
+    }
+  },
+  "family_router_top5_contains_true_family": 0.056666666666666664,
+  "limitations": [
+    "The revised sentence is isolated with a known delimiter. Inferring evidence spans remains unsolved.",
+    "A chunked RAG baseline can isolate the same span; this is not a CDG-specific gain.",
+    "Queries explicitly identify the controlled project and revision.",
+    "No real relevance judgments, pretrained embedding model, LLM generation, or measured SSD latency."
+  ]
+}

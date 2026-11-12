@@ -1,0 +1,87 @@
+{
+  "description": "Controlled line-revision density stress test using real local documentation bases. No indexes included.",
+  "results": [
+    {
+      "edit_fraction": 0.0,
+      "base_docs": 150,
+      "versions_per_base": 7,
+      "total_docs": 1050,
+      "raw_bytes": 11749283,
+      "independent_zstd3_bytes": 4133850,
+      "solid_zstd9_bytes": 389600,
+      "base_plus_line_overlay_zstd_bytes": 591551,
+      "deduplicated_1024b_chunks_zstd_bytes": 751577,
+      "overlay_vs_independent_ratio": 6.988,
+      "chunk_vs_independent_ratio": 5.5,
+      "integrity_checks": 1050,
+      "experiment_seconds": 1.77
+    },
+    {
+      "edit_fraction": 0.01,
+      "base_docs": 150,
+      "versions_per_base": 7,
+      "total_docs": 1050,
+      "raw_bytes": 11887831,
+      "independent_zstd3_bytes": 4201940,
+      "solid_zstd9_bytes": 435692,
+      "base_plus_line_overlay_zstd_bytes": 757072,
+      "deduplicated_1024b_chunks_zstd_bytes": 3126446,
+      "overlay_vs_independent_ratio": 5.55,
+      "chunk_vs_independent_ratio": 1.344,
+      "integrity_checks": 1050,
+      "experiment_seconds": 1.87
+    },
+    {
+      "edit_fraction": 0.05,
+      "base_docs": 150,
+      "versions_per_base": 7,
+      "total_docs": 1050,
+      "raw_bytes": 12430631,
+      "independent_zstd3_bytes": 4333130,
+      "solid_zstd9_bytes": 570661,
+      "base_plus_line_overlay_zstd_bytes": 1092193,
+      "deduplicated_1024b_chunks_zstd_bytes": 5650220,
+      "overlay_vs_independent_ratio": 3.967,
+      "chunk_vs_independent_ratio": 0.767,
+      "integrity_checks": 1050,
+      "experiment_seconds": 2.25
+    },
+    {
+      "edit_fraction": 0.2,
+      "base_docs": 150,
+      "versions_per_base": 7,
+      "total_docs": 1050,
+      "raw_bytes": 14486071,
+      "independent_zstd3_bytes": 4735651,
+      "solid_zstd9_bytes": 992354,
+      "base_plus_line_overlay_zstd_bytes": 2143522,
+      "deduplicated_1024b_chunks_zstd_bytes": 7446040,
+      "overlay_vs_independent_ratio": 2.209,
+      "chunk_vs_independent_ratio": 0.636,
+      "integrity_checks": 100,
+      "experiment_seconds": 2.22
+    },
+    {
+      "edit_fraction": 0.5,
+      "base_docs": 150,
+      "versions_per_base": 7,
+      "total_docs": 1050,
+      "raw_bytes": 18589073,
+      "independent_zstd3_bytes": 5398379,
+      "solid_zstd9_bytes": 1671384,
+      "base_plus_line_overlay_zstd_bytes": 4012583,
+      "deduplicated_1024b_chunks_zstd_bytes": 8956245,
+      "overlay_vs_independent_ratio": 1.345,
+      "chunk_vs_independent_ratio": 0.603,
+      "integrity_checks": 100,
+      "experiment_seconds": 2.89
+    }
+  ],
+  "limitations": [
+    "Controlled added revision text, not actual revision histories.",
+    "Line overlays require known family grouping; storage includes per-version patch size metadata.",
+    "Source-storage results alone are not RAG speedups.",
+    "Deduplicated chunk manifests and hashes included via first-round implementation.",
+    "Solid zstd9 cannot independently access a document without additional mechanism."
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "data": "250 real noVNC file revisions, synthetic access traces, original Round6 pipeline",
+  "intervention": "Coalesce adjacent edited pieces across unchanged bridges of at most K lines. Encode as one literal, raw if <=256 bytes, else Zstd. Keep shared bases and lossless line maps.",
+  "storage_bytes": {
+    "bridge_0": 1022413,
+    "bridge_1": 971249,
+    "bridge_2": 950300,
+    "bridge_4": 903819,
+    "bridge_8": 880620,
+    "bridge_16": 893740,
+    "bridge_32": 926720,
+    "original_threshold256": 1022413,
+    "independent_zstd": 1455847,
+    "seekable_zstd32": 2528761
+  },
+  "piece_count": {
+    "bridge_0": 14218,
+    "bridge_1": 11782,
+    "bridge_2": 10474,
+    "bridge_4": 8562,
+    "bridge_8": 6828,
+    "bridge_16": 5550,
+    "bridge_32": 4876
+  },
+  "merged_piece_boundaries": {
+    "bridge_0": 0,
+    "bridge_1": 2436,
+    "bridge_2": 3744,
+    "bridge_4": 5656,
+    "bridge_8": 7390,
+    "bridge_16": 8668,
+    "bridge_32": 9342
+  },
+  "duplicated_shared_lines": {
+    "bridge_0": 0,
+    "bridge_1": 1218,
+    "bridge_2": 2526,
+    "bridge_4": 5687,
+    "bridge_8": 10946,
+    "bridge_16": 18267,
+    "bridge_32": 26397
+  },
+  "timings": {
+    "train": {
+      "bridge_0": {
+        "median_us": 30.05,
+        "p95_us": 65.06
+      },
+      "bridge_1": {
+        "median_us": 29.15,
+        "p95_us": 59.43
+      },
+      "bridge_2": {
+        "median_us": 28.16,
+        "p95_us": 59.68
+      },
+      "bridge_4": {
+        "median_us": 28.35,
+        "p95_us": 61.28
+      },
+      "bridge_8": {
+        "median_us": 27.64,
+        "p95_us": 58.92
+      },
+      "bridge_16": {
+        "median_us": 27.75,
+        "p95_us": 60.54
+      },
+      "bridge_32": {
+        "median_us": 28.58,
+        "p95_us": 69.24
+      },
+      "independent_zstd": {
+        "median_us": 44.36,
+        "p95_us": 219.49
+      },
+      "seekable_zstd32": {
+        "median_us": 25.39,
+        "p95_us": 51.38
+      },
+      "original_threshold256": {
+        "median_us": 29.84,
+        "p95_us": 64.42
+      }
+    },
+    "heldout_same": {
+      "bridge_0": {
+        "median_us": 30.61,
+        "p95_us": 73.65
+      },
+      "bridge_1": {
+        "median_us": 29.84,
+        "p95_us": 75.39
+      },
+      "bridge_2": {
+        "median_us": 29.66,
+        "p95_us": 79.92
+      },
+      "bridge_4": {
+        "median_us": 28.37,
+        "p95_us": 72.29
+      },
+      "bridge_8": {
+        "median_us": 29.64,
+        "p95_us": 81.05
+      },
+      "bridge_16": {
+        "median_us": 29.12,
+        "p95_us": 85.06
+      },
+      "bridge_32": {
+        "median_us": 29.18,
+        "p95_us": 101.1
+      },
+      "independent_zstd": {
+        "median_us": 47.26,
+        "p95_us": 229.16
+      },
+      "seekable_zstd32": {
+        "median_us": 26.4,
+        "p95_us": 84.82
+      },
+      "original_threshold256": {
+        "median_us": 30.49,
+        "p95_us": 75.15
+      }
+    },
+    "heldout_shift": {
+      "bridge_0": {
+        "median_us": 32.51,
+        "p95_us": 88.13
+      },
+      "bridge_1": {
+        "median_us": 30.63,
+        "p95_us": 72.72
+      },
+      "bridge_2": {
+        "median_us": 30.61,
+        "p95_us": 78.69
+      },
+      "bridge_4": {
+        "median_us": 30.43,
+        "p95_us": 83.13
+      },
+      "bridge_8": {
+        "median_us": 29.07,
+        "p95_us": 71.44
+      },
+      "bridge_16": {
+        "median_us": 29.88,
+        "p95_us": 82.13
+      },
+      "bridge_32": {
+        "median_us": 30.95,
+        "p95_us": 98.36
+      },
+      "independent_zstd": {
+        "median_us": 45.77,
+        "p95_us": 245.91
+      },
+      "seekable_zstd32": {
+        "median_us": 26.71,
+        "p95_us": 57.67
+      },
+      "original_threshold256": {
+        "median_us": 32.7,
+        "p95_us": 96.61
+      }
+    }
+  },
+  "exactness": "Each of 250 versions and 2000 independently generated held-out windows reconstructed byte-for-byte for every bridge threshold",
+  "limitations": [
+    "All query requests are synthetic over genuine version bytes",
+    "Codec, piece traversal, and splitlines occur in warm Python CPU",
+    "No SSD I/O or neural retrieval",
+    "Metadata in each compact piece map included in source disk bytes; memory allocated by Python excluded",
+    "Only same-family coalescing; no global grammar algorithm",
+    "Train and heldout have related generative distributions, shifted uses rotated popularity/changed fraction",
+    "No normalized p95 CI or external corpus testing yet"
+  ]
+}

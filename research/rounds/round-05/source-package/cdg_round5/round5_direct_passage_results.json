@@ -1,0 +1,33 @@
+{
+  "corpus": "250 genuine noVNC file revisions, five-line queries",
+  "correctness": "all 250 full documents reconstructed byte-exact from compressed pieces; all sampled windows exact",
+  "compressed_source_bytes": {
+    "base_seekable_frames": 314370,
+    "piece_maps_compressed": 119760,
+    "per_version_literal_payloads_compressed": 232699,
+    "combined_direct_passage_store": 666829,
+    "independent_zstd": 1455847,
+    "independent_32line_seekable": 2528761,
+    "base_star_patch": 473266
+  },
+  "median_latency_microseconds": {
+    "direct_cold_base": 34.67,
+    "direct_cached_base": 2.8,
+    "independent_full": 72.28,
+    "seekable_own": 30.1
+  },
+  "p95_latency_microseconds": {
+    "direct_cold_base": 170.51,
+    "direct_cached_base": 45.86,
+    "independent_full": 368.68,
+    "seekable_own": 122.19
+  },
+  "notes": [
+    "Physical storage includes independent compressed base frames, compressed piece-map per version, and literal data per version.",
+    "Search index and vocabulary not included.",
+    "Piece map decoded from disk before query and held as Python objects; exclude RAM and index-loading cost.",
+    "Two direct retrieval modes: base frames decoded on demand; or base original lines cached in RAM.",
+    "Every version full reconstruction is checked; no real RAG semantic evaluation.",
+    "Base frame metadata counts 4 bytes per frame, actual offsets and file catalog not fully persisted."
+  ]
+}

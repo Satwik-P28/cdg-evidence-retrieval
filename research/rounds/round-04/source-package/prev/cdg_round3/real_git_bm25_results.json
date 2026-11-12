@@ -1,0 +1,78 @@
+{
+  "data": {
+    "repo": "/opt/novnc",
+    "real_commits": 250,
+    "unique_files": 56,
+    "query_type": "human-written single-file commit messages, labels from git history, not human relevance judgments"
+  },
+  "bm25": {
+    "full_bm25": {
+      "hit1": 0.04,
+      "hit5": 0.128,
+      "hit10": 0.188,
+      "mrr10": 0.0774,
+      "zero_positive": 6
+    },
+    "diff_bm25": {
+      "hit1": 0.176,
+      "hit5": 0.416,
+      "hit10": 0.476,
+      "mrr10": 0.2657,
+      "zero_positive": 36
+    },
+    "fusion_diff_weight_0.25": {
+      "hit1": 0.092,
+      "hit5": 0.248,
+      "hit10": 0.364,
+      "mrr10": 0.1592,
+      "zero_positive": 4
+    },
+    "fusion_diff_weight_0.5": {
+      "hit1": 0.16,
+      "hit5": 0.4,
+      "hit10": 0.532,
+      "mrr10": 0.2639,
+      "zero_positive": 4
+    },
+    "fusion_diff_weight_0.75": {
+      "hit1": 0.18,
+      "hit5": 0.412,
+      "hit10": 0.524,
+      "mrr10": 0.2788,
+      "zero_positive": 4
+    }
+  },
+  "temporal_split_hit5": {
+    "newer_half": {
+      "full": 0.08,
+      "diff": 0.384,
+      "fusion_.25": 0.168,
+      "fusion_.50": 0.344,
+      "fusion_.75": 0.368
+    },
+    "older_half": {
+      "full": 0.176,
+      "diff": 0.448,
+      "fusion_.25": 0.328,
+      "fusion_.50": 0.456,
+      "fusion_.75": 0.456
+    }
+  },
+  "indexes_zstd": {
+    "full": 282686,
+    "diff": 38306,
+    "both": 320992,
+    "vocab": 23383
+  },
+  "characters": {
+    "full": 6234189,
+    "changed": 176797
+  },
+  "limitations": [
+    "No pretrained semantic model.",
+    "Exact revision matching may penalize semantically related file versions.",
+    "The same dataset contains duplicate file paths across revisions, yielding hard near-duplicate retrieval.",
+    "Diff includes removed text for pure deletions: correct for edit-history search but not current-state factual QA.",
+    "No dataset-level cross-validation or external repository held-out test."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "dataset": {
+    "repository": "/opt/novnc (public source git history)",
+    "samples": 250,
+    "unique_paths": 56,
+    "human_written_queries": 250,
+    "task": "single-file commit message -> matching changed file-version",
+    "automated_labels": "same commit SHA and changed source file. No human relevance annotation."
+  },
+  "metrics": {
+    "full_file": {
+      "hit_at1": 0.152,
+      "hit_at5": 0.364,
+      "hit_at10": 0.472,
+      "mrr_at10": 0.2469,
+      "zero_score_target": 6
+    },
+    "change_region_only": {
+      "hit_at1": 0.364,
+      "hit_at5": 0.64,
+      "hit_at10": 0.716,
+      "mrr_at10": 0.4778,
+      "zero_score_target": 36
+    },
+    "hybrid_70_30": {
+      "hit_at1": 0.372,
+      "hit_at5": 0.672,
+      "hit_at10": 0.736,
+      "mrr_at10": 0.4902,
+      "zero_score_target": 4
+    }
+  },
+  "index_storage": {
+    "full_index_zstd_bytes": 911926,
+    "diff_index_zstd_bytes": 95338,
+    "both_indexes_zstd_bytes": 1007264,
+    "vocabulary_items": 32228,
+    "vocab_json_zstd_bytes": 245636
+  },
+  "source_pairs": {
+    "independent_after_zstd_bytes": 1455847,
+    "parent_plus_patch_zstd_bytes": 1494057,
+    "patch_bytes_total": 43823,
+    "byte_exact_pairs": 250
+  },
+  "limitations": [
+    "Commits and qrels extracted from one repository, not general RAG questions.",
+    "Index sizes exclude source storage and shared normalization model; vocabulary is reported separately.",
+    "A full baseline using changed regions with BM25, hybrid neural reranker, and real end-to-end RAG not available here.",
+    "Target revision is a single changed file, and commit messages may not mention changed terms.",
+    "Deleted content can appear in the special diff channel, which is useful for historical change search but may mislead current-state QA."
+  ]
+}

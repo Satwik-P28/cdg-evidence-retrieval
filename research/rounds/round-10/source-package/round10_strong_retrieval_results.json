@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "real_doc_versions": 250,
+    "real_queries": 250,
+    "heldout_paired_queries": 75,
+    "train_pairs": 50,
+    "neural_retriever": false,
+    "task": "retrieval of two exact real code revisions from combined commit subjects (synthetic combination)",
+    "source": "noVNC Git history, local checkout"
+  },
+  "controls": {
+    "combined": {
+      "complete_at10": 0.2133,
+      "partial_at10": 0.4467,
+      "mean_compressed_passage_bytes": 2764.5,
+      "mean_distinct_paths": 5.23,
+      "successes": 16
+    },
+    "round_robin": {
+      "complete_at10": 0.2933,
+      "partial_at10": 0.5267,
+      "mean_compressed_passage_bytes": 2944.0,
+      "mean_distinct_paths": 5.76,
+      "successes": 22
+    },
+    "change_combined": {
+      "complete_at10": 0.28,
+      "partial_at10": 0.48,
+      "mean_compressed_passage_bytes": 2122.8,
+      "successes": 21
+    },
+    "change_round_robin": {
+      "complete_at10": 0.2533,
+      "partial_at10": 0.5067,
+      "mean_compressed_passage_bytes": 2230.3,
+      "successes": 19
+    },
+    "old_round9_passage_cost": {
+      "complete_at10": 0.1333,
+      "mean_compressed_passage_bytes": 2974,
+      "source": "Reported prior experiment, not rerun here"
+    }
+  },
+  "selected_train_only": {
+    "cost": {
+      "lambda": 0.05,
+      "gamma": 0.0,
+      "train": {
+        "complete_at10": 0.36,
+        "partial_at10": 0.57,
+        "mean_compressed_passage_bytes": 2617.0,
+        "mean_distinct_paths": 5.5,
+        "successes": 18
+      },
+      "test": {
+        "complete_at10": 0.2933,
+        "partial_at10": 0.5067,
+        "mean_compressed_passage_bytes": 2667.9,
+        "mean_distinct_paths": 5.75,
+        "successes": 22
+      }
+    },
+    "coverage": {
+      "lambda": 0.05,
+      "gamma": 0.3,
+      "train": {
+        "complete_at10": 0.38,
+        "partial_at10": 0.58,
+        "mean_compressed_passage_bytes": 2609.5,
+        "mean_distinct_paths": 5.56,
+        "successes": 19
+      },
+      "test": {
+        "complete_at10": 0.3067,
+        "partial_at10": 0.4933,
+        "mean_compressed_passage_bytes": 2710.3,
+        "mean_distinct_paths": 6,
+        "successes": 23
+      }
+    },
+    "diversity": {
+      "lambda": 0.05,
+      "gamma": 0.1,
+      "train": {
+        "complete_at10": 0.34,
+        "partial_at10": 0.56,
+        "mean_compressed_passage_bytes": 2590.7,
+        "mean_distinct_paths": 6.74,
+        "successes": 17
+      },
+      "test": {
+        "complete_at10": 0.2933,
+        "partial_at10": 0.5,
+        "mean_compressed_passage_bytes": 2702.2,
+        "mean_distinct_paths": 7.01,
+        "successes": 22
+      }
+    }
+  },
+  "bootstrap": {
+    "hybrid_round_robin": {
+      "difference_vs_changed_round_robin": 0.04,
+      "paired_bootstrap95": [
+        0.0,
+        0.0933
+      ]
+    },
+    "cost": {
+      "difference_vs_changed_round_robin": 0.04,
+      "paired_bootstrap95": [
+        0.0,
+        0.08
+      ]
+    },
+    "coverage": {
+      "difference_vs_changed_round_robin": 0.0533,
+      "paired_bootstrap95": [
+        0.0133,
+        0.1067
+      ]
+    },
+    "diversity": {
+      "difference_vs_changed_round_robin": 0.04,
+      "paired_bootstrap95": [
+        0.0,
+        0.0933
+      ]
+    }
+  },
+  "notes": [
+    "All query terms supplied by user-like real commit subjects; two-part questions are synthetic pairs",
+    "Exact revision associated with commit is an automated noisy proxy qrel, not human QA evidence label",
+    "Change BM25 includes removed lines, appropriate for history queries but not for current-state questions",
+    "Candidate pool top 30 per branch, cost uses query-selected five-line passage chunks; no disk IO",
+    "Search costs, true model token costs, accuracy of final generation not measured",
+    "Methods tuned on 50 training pairs and only final settings scored on 75 held-out pairs"
+  ]
+}

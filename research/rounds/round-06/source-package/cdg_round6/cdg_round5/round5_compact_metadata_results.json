@@ -1,0 +1,21 @@
+{
+  "corpus_versions": 250,
+  "packed_piece_map_record_bytes": 17,
+  "piece_count": 14218,
+  "resident_compact_piece_map_bytes": 298578,
+  "median_5line_read_microseconds": 31.09,
+  "p95_5line_read_microseconds": 108.56,
+  "source_compressed_disk_bytes": 666829,
+  "correctness": "250 byte exact full reconstruction and 250 byte exact random 5-line windows",
+  "comparators": {
+    "full_document_zstd_median_us": 72.28,
+    "independent_seekable_32line_median_us": 30.1,
+    "independent_seekable_disk_bytes": 2528761,
+    "independent_zstd_disk_bytes": 1455847
+  },
+  "limitations": [
+    "Resident metadata and compressed base/literal payloads are assumed warm in RAM / OS cache.",
+    "Disk I/O and on-demand metadata load not timed.",
+    "Only source access; excludes retrieval engine and LLM."
+  ]
+}

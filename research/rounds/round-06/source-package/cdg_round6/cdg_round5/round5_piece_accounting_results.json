@@ -1,0 +1,20 @@
+{
+  "cached_piece_tables_python_heap_bytes": 2965060,
+  "cached_base_lines_python_heap_bytes": 1652400,
+  "serialized_piece_mapping_bytes_uncompressed": 185834,
+  "compressed_piece_mapping_zstd3_bytes": 91171,
+  "compressed_source_star_zstd3_bytes": 473266,
+  "combined_compressed_source_and_piece_mapping_bytes": 564437,
+  "benchmark": {
+    "on_demand_piece_median_us": 48.01,
+    "on_demand_piece_p95_us": 205.31,
+    "cached_piece_median_us": 2.14,
+    "independent_seekable_zstd_median_us": 28.14
+  },
+  "cautions": [
+    "Serialized metadata is a size estimate, not an implemented on-disk lazy piece extractor.",
+    "Serialized map lacks literal byte offsets into compressed patch, so direct partial decoding of literals is NOT implemented.",
+    "Cached piece-table timing assumes all relevant literal bytes already available in RAM.",
+    "On-demand requires full patch decoding but no full version reconstruction."
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "setup": {
+    "real_git_revisions": 250,
+    "train_multi_intent_pairs": 50,
+    "heldout_multi_intent_pairs": 75,
+    "synthetic_paired_queries": true,
+    "pretrained_encoder": false,
+    "label": "exact Git commit-after revision"
+  },
+  "heldout": {
+    "combined": {
+      "pairs": 75,
+      "both_revisions_recall_at10": 0.04,
+      "mean_revision_fraction_at10": 0.2333,
+      "mean_union_compressed_chunk_bytes": 55735.2,
+      "mean_distinct_paths": 2.56
+    },
+    "round_robin": {
+      "pairs": 75,
+      "both_revisions_recall_at10": 0.0933,
+      "mean_revision_fraction_at10": 0.3133,
+      "mean_union_compressed_chunk_bytes": 55402.6,
+      "mean_distinct_paths": 3.59
+    },
+    "rrf": {
+      "pairs": 75,
+      "both_revisions_recall_at10": 0.04,
+      "mean_revision_fraction_at10": 0.2467,
+      "mean_union_compressed_chunk_bytes": 60019.4,
+      "mean_distinct_paths": 3.37
+    },
+    "costaware": {
+      "pairs": 75,
+      "both_revisions_recall_at10": 0.12,
+      "mean_revision_fraction_at10": 0.3067,
+      "mean_union_compressed_chunk_bytes": 37365.2,
+      "mean_distinct_paths": 3.77
+    }
+  },
+  "selected_cost_parameter_train_only": 0.05,
+  "training_sweep": {
+    "0": {
+      "pairs": 50,
+      "both_revisions_recall_at10": 0.02,
+      "mean_revision_fraction_at10": 0.25,
+      "mean_union_compressed_chunk_bytes": 58103.0,
+      "mean_distinct_paths": 3.68
+    },
+    "0.0005": {
+      "pairs": 50,
+      "both_revisions_recall_at10": 0.02,
+      "mean_revision_fraction_at10": 0.25,
+      "mean_union_compressed_chunk_bytes": 56073.6,
+      "mean_distinct_paths": 3.7
+    },
+    "0.002": {
+      "pairs": 50,
+      "both_revisions_recall_at10": 0.02,
+      "mean_revision_fraction_at10": 0.27,
+      "mean_union_compressed_chunk_bytes": 50410.8,
+      "mean_distinct_paths": 3.74
+    },
+    "0.01": {
+      "pairs": 50,
+      "both_revisions_recall_at10": 0.02,
+      "mean_revision_fraction_at10": 0.29,
+      "mean_union_compressed_chunk_bytes": 43654.5,
+      "mean_distinct_paths": 3.82
+    },
+    "0.05": {
+      "pairs": 50,
+      "both_revisions_recall_at10": 0.04,
+      "mean_revision_fraction_at10": 0.26,
+      "mean_union_compressed_chunk_bytes": 38708.9,
+      "mean_distinct_paths": 3.78
+    }
+  },
+  "paired_bootstrap": {
+    "round_robin": {
+      "delta": 0.0533,
+      "paired_bootstrap_95pct": [
+        0.0,
+        0.12
+      ]
+    },
+    "rrf": {
+      "delta": 0,
+      "paired_bootstrap_95pct": [
+        -0.04,
+        0.04
+      ]
+    },
+    "costaware": {
+      "delta": 0.08,
+      "paired_bootstrap_95pct": [
+        0.0133,
+        0.16
+      ]
+    }
+  },
+  "important_limitations": [
+    "Queries are two concatenated real commit titles; they are not real multi-hop QA questions.",
+    "Cost model counts unique *whole-document* shared compressed chunks, not requested source windows or measured SSD latency.",
+    "The completeness metric is exact two-revision retrieval, not factual sufficiency or LLM answer accuracy.",
+    "Comparing query-decomposed methods to one un-decomposed query is an established algorithmic advantage, not a new compression method."
+  ]
+}

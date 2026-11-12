@@ -1,0 +1,80 @@
+{
+  "data": {
+    "docs": 1500,
+    "queries": 300,
+    "fixed_vocabulary_budget": 24000
+  },
+  "protected_feature_count": 3287,
+  "rare_schema_terms_originally_missing": 3215,
+  "examples_missing": [
+    "cmake project_name",
+    "for project_0000",
+    "for project_0001",
+    "for project_0002",
+    "for project_0003",
+    "for project_0004",
+    "for project_0005",
+    "for project_0006",
+    "for project_0007",
+    "for project_0008",
+    "for project_0009",
+    "for project_0010",
+    "for project_0011",
+    "for project_0012",
+    "for project_0013"
+  ],
+  "results": {
+    "frequency_top24k": {
+      "features": 24000,
+      "index_zstd_bytes_full_docs": 634830,
+      "index_zstd_bytes_revision_spans": 4975,
+      "full_doc": {
+        "hit_at1": 0.03,
+        "hit_at5": 0.16666666666666666,
+        "mrr_at5": 0.07427777777777778
+      },
+      "revision_span": {
+        "hit_at1": 0.04,
+        "hit_at5": 0.20333333333333334,
+        "mrr_at5": 0.09327777777777778
+      }
+    },
+    "schema_protected_24k": {
+      "features": 24000,
+      "index_zstd_bytes_full_docs": 673726,
+      "index_zstd_bytes_revision_spans": 25026,
+      "full_doc": {
+        "hit_at1": 0.5566666666666666,
+        "hit_at5": 0.8866666666666667,
+        "mrr_at5": 0.6954444444444444
+      },
+      "revision_span": {
+        "hit_at1": 1.0,
+        "hit_at5": 1.0,
+        "mrr_at5": 1.0
+      }
+    },
+    "unlimited_features": {
+      "features": 108415,
+      "index_zstd_bytes_full_docs": 1081072,
+      "index_zstd_bytes_revision_spans": 25105,
+      "full_doc": {
+        "hit_at1": 0.73,
+        "hit_at5": 0.9266666666666666,
+        "mrr_at5": 0.8112222222222222
+      },
+      "revision_span": {
+        "hit_at1": 1.0,
+        "hit_at5": 1.0,
+        "mrr_at5": 1.0
+      }
+    }
+  },
+  "limitations": [
+    "All edited facts are synthetic with a known metadata token schema.",
+    "Schema-protected feature selection is established practice; this is a diagnostic baseline.",
+    "Revision spans are extracted using a known delimiter, not learned or inferred.",
+    "No generative model, actual semantic embedding, or end-to-end RAG evaluation.",
+    "These comparisons use compressed float32 CSR structures rather than optimized inverted indexes."
+  ]
+}

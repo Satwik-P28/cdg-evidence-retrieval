@@ -1,0 +1,76 @@
+{
+  "corpus": "48 families \u00d7 7 versions, 5% synthetic interior edits on real technical-document bodies",
+  "sizes": {
+    "independent_archive_bytes": 1137067,
+    "patch_archive_bytes": 221953,
+    "patch_plus_hotcopy_archive_bytes": 384836,
+    "uncompressed_base_cache_ram_bytes": 447583
+  },
+  "query_distribution": {
+    "hot": "75% hot version 1, 25% uniform over 7 versions",
+    "uniform": "uniform version selection"
+  },
+  "results": {
+    "hot": {
+      "independent": {
+        "mean_ms": 0.081,
+        "median_ms": 0.0267,
+        "p95_ms": 0.046
+      },
+      "patch": {
+        "mean_ms": 0.0678,
+        "median_ms": 0.0575,
+        "p95_ms": 0.1207
+      },
+      "hot-copy": {
+        "mean_ms": 0.0378,
+        "median_ms": 0.0279,
+        "p95_ms": 0.093
+      },
+      "base-cache": {
+        "mean_ms": 0.0408,
+        "median_ms": 0.0319,
+        "p95_ms": 0.0727
+      },
+      "base-cache+hot-copy": {
+        "mean_ms": 0.0303,
+        "median_ms": 0.0254,
+        "p95_ms": 0.0617
+      }
+    },
+    "uniform": {
+      "independent": {
+        "mean_ms": 0.0338,
+        "median_ms": 0.0293,
+        "p95_ms": 0.0521
+      },
+      "patch": {
+        "mean_ms": 0.0857,
+        "median_ms": 0.0668,
+        "p95_ms": 0.1657
+      },
+      "hot-copy": {
+        "mean_ms": 0.0718,
+        "median_ms": 0.0599,
+        "p95_ms": 0.134
+      },
+      "base-cache": {
+        "mean_ms": 0.0396,
+        "median_ms": 0.0318,
+        "p95_ms": 0.0743
+      },
+      "base-cache+hot-copy": {
+        "mean_ms": 0.0413,
+        "median_ms": 0.034,
+        "p95_ms": 0.0762
+      }
+    }
+  },
+  "limitations": [
+    "Warm CPU decode only. No retrieval index, actual disk I/O, neural model or generated answers.",
+    "Source code text from installed local documentation, artificial interior edits and artificial access skew.",
+    "Patch reconstruction uses relatively slow Python/JSON operations; Rust/C implementation could change trade-offs.",
+    "Base-cache variant reports its extra uncompressed RAM; no cache eviction or update handling.",
+    "Storage excludes cross-family metadata beyond simple compressed patch length fields."
+  ]
+}

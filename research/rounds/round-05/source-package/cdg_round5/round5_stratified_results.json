@@ -1,0 +1,38 @@
+{
+  "experiment": "Five-line windows selected to overlap one stable or changed piece per real source version, 6 repeated randomized passes",
+  "correctness": "All checked byte-exact",
+  "results": {
+    "stable": {
+      "versions_with_window": 250,
+      "median_us": {
+        "compact": 31.52,
+        "independent": 55.51,
+        "seekable": 29.05
+      },
+      "p95_us": {
+        "compact": 93.82,
+        "independent": 254.17,
+        "seekable": 65.37
+      }
+    },
+    "changed": {
+      "versions_with_window": 192,
+      "median_us": {
+        "compact": 71.29,
+        "independent": 63.9,
+        "seekable": 29.21
+      },
+      "p95_us": {
+        "compact": 114.54,
+        "independent": 253.16,
+        "seekable": 59.37
+      }
+    }
+  },
+  "limitations": [
+    "Window selection is by structural piece, not by natural language retrieval relevance.",
+    "As before, metadata and compressed payloads are loaded/warm; no real SSD latency.",
+    "Changed windows may overlap unchanged lines; they are selected to contain a change.",
+    "Not a neural retrieval benchmark."
+  ]
+}

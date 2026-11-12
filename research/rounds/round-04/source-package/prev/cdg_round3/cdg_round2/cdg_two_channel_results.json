@@ -1,0 +1,56 @@
+{
+  "data": {
+    "families": 150,
+    "documents": 1500,
+    "version_queries": 300,
+    "general_source_lookup_queries": 143,
+    "unique_chunks": 2763,
+    "chunk_occurrences": 16936
+  },
+  "metrics": {
+    "full_document": {
+      "version_queries": {
+        "hit_at5": 0.8866666666666667,
+        "hit_at1": 0.5566666666666666
+      },
+      "general_queries": {
+        "family_hit_at5": 0.916083916083916,
+        "family_hit_at1": 0.7342657342657343
+      }
+    },
+    "base_plus_changed_region": {
+      "version_queries": {
+        "hit_at5": 1.0,
+        "hit_at1": 1.0
+      },
+      "general_queries": {
+        "family_hit_at5": 0.916083916083916,
+        "family_hit_at1": 0.7342657342657343
+      }
+    },
+    "deduplicated_chunk": {
+      "version_queries": {
+        "hit_at5": 0.9766666666666667,
+        "hit_at1": 0.75
+      },
+      "general_queries": {
+        "family_hit_at5": 0.916083916083916,
+        "family_hit_at1": 0.6993006993006993
+      }
+    }
+  },
+  "search_index_zstd_bytes": {
+    "full_document": 672381,
+    "base_plus_changed_region": 404076,
+    "deduplicated_chunk": 758916
+  },
+  "dedup_chunk_search_batch_seconds": 0.054227241000035065,
+  "limitations": [
+    "General queries are generated from distinctive TF-IDF words of each document family, not written by humans.",
+    "Version queries concern synthetic record changes, not naturally occurring revisions.",
+    "Only the revision-derived changed region is indexed in second channel; real changes may span many passages.",
+    "Lexical vector spaces only; no contextual semantic embeddings or generative answer testing.",
+    "Source content compression excluded from index-only numbers; codec/decoder/vocabulary excluded equally.",
+    "Query and data layout are favorable to version-aware methods; gains may disappear in heterogeneous corpora."
+  ]
+}

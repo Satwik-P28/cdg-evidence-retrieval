@@ -1,0 +1,118 @@
+{
+  "train": {
+    "0": {
+      "both_at10": 0.02,
+      "mean_revision_fraction": 0.25,
+      "mean_actual_passage_payload_bytes": 3545.6,
+      "mean_passage_chunks": 5.92
+    },
+    "0.0005": {
+      "both_at10": 0.02,
+      "mean_revision_fraction": 0.25,
+      "mean_actual_passage_payload_bytes": 3535.6,
+      "mean_passage_chunks": 5.9
+    },
+    "0.002": {
+      "both_at10": 0.02,
+      "mean_revision_fraction": 0.25,
+      "mean_actual_passage_payload_bytes": 3436.1,
+      "mean_passage_chunks": 5.78
+    },
+    "0.01": {
+      "both_at10": 0.02,
+      "mean_revision_fraction": 0.25,
+      "mean_actual_passage_payload_bytes": 3346.3,
+      "mean_passage_chunks": 5.68
+    },
+    "0.03": {
+      "both_at10": 0.02,
+      "mean_revision_fraction": 0.25,
+      "mean_actual_passage_payload_bytes": 3237.0,
+      "mean_passage_chunks": 5.6
+    },
+    "0.05": {
+      "both_at10": 0.02,
+      "mean_revision_fraction": 0.25,
+      "mean_actual_passage_payload_bytes": 3187.3,
+      "mean_passage_chunks": 5.58
+    },
+    "0.1": {
+      "both_at10": 0.04,
+      "mean_revision_fraction": 0.26,
+      "mean_actual_passage_payload_bytes": 3024.9,
+      "mean_passage_chunks": 5.44
+    },
+    "0.2": {
+      "both_at10": 0.06,
+      "mean_revision_fraction": 0.27,
+      "mean_actual_passage_payload_bytes": 2883.0,
+      "mean_passage_chunks": 5.34
+    }
+  },
+  "test_sensitivity_not_for_tuning": {
+    "0": {
+      "both_at10": 0.0933,
+      "mean_revision_fraction": 0.3133,
+      "mean_actual_passage_payload_bytes": 3621.6,
+      "mean_passage_chunks": 6.08
+    },
+    "0.0005": {
+      "both_at10": 0.0933,
+      "mean_revision_fraction": 0.3133,
+      "mean_actual_passage_payload_bytes": 3590.1,
+      "mean_passage_chunks": 6.04
+    },
+    "0.002": {
+      "both_at10": 0.0933,
+      "mean_revision_fraction": 0.3133,
+      "mean_actual_passage_payload_bytes": 3590.1,
+      "mean_passage_chunks": 6.04
+    },
+    "0.01": {
+      "both_at10": 0.0933,
+      "mean_revision_fraction": 0.3067,
+      "mean_actual_passage_payload_bytes": 3458.8,
+      "mean_passage_chunks": 5.89
+    },
+    "0.03": {
+      "both_at10": 0.1067,
+      "mean_revision_fraction": 0.32,
+      "mean_actual_passage_payload_bytes": 3310.4,
+      "mean_passage_chunks": 5.75
+    },
+    "0.05": {
+      "both_at10": 0.1067,
+      "mean_revision_fraction": 0.3267,
+      "mean_actual_passage_payload_bytes": 3248.5,
+      "mean_passage_chunks": 5.68
+    },
+    "0.1": {
+      "both_at10": 0.1067,
+      "mean_revision_fraction": 0.3267,
+      "mean_actual_passage_payload_bytes": 3123.9,
+      "mean_passage_chunks": 5.59
+    },
+    "0.2": {
+      "both_at10": 0.1333,
+      "mean_revision_fraction": 0.34,
+      "mean_actual_passage_payload_bytes": 2973.9,
+      "mean_passage_chunks": 5.55
+    }
+  },
+  "selected_lambda": 0.2,
+  "heldout_selected": {
+    "both_at10": 0.1333,
+    "mean_revision_fraction": 0.34,
+    "mean_actual_passage_payload_bytes": 2973.9,
+    "mean_passage_chunks": 5.55
+  },
+  "setup": {
+    "test_pairs": 75,
+    "train_pairs": 50
+  },
+  "limitations": [
+    "Passage windows selected from lexical overlap with query, not an LLM",
+    "Costs are true compressed payload unions for five-line passage chunks, not SSD I/O",
+    "Only exact selected revisions counted as correct; synthetic paired task."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "documents": 1500,
+  "chunks": 16936,
+  "unique_chunks": 2763,
+  "chunk_membership_mapping_zstd_bytes": 9550,
+  "comparisons": {
+    "frequency_24k": {
+      "ordinary_chunk_index_bytes": 918115,
+      "unique_chunk_index_plus_mapping_bytes": 746551,
+      "ordinary_chunk_top5": {
+        "hit_at5": 0.15666666666666668,
+        "hit_at1": 0.02
+      },
+      "unique_chunk_top5": {
+        "hit_at5": 0.15666666666666668,
+        "hit_at1": 0.02
+      },
+      "full_chunk_query_batch_seconds": 0.07347456399998009,
+      "dedup_chunk_query_batch_seconds": 0.05346524200001568
+    },
+    "diff_protected_24k": {
+      "ordinary_chunk_index_bytes": 912628,
+      "unique_chunk_index_plus_mapping_bytes": 759532,
+      "ordinary_chunk_top5": {
+        "hit_at5": 0.9766666666666667,
+        "hit_at1": 0.75
+      },
+      "unique_chunk_top5": {
+        "hit_at5": 0.9766666666666667,
+        "hit_at1": 0.75
+      },
+      "full_chunk_query_batch_seconds": 0.06216128799997023,
+      "dedup_chunk_query_batch_seconds": 0.04331508899997516
+    }
+  },
+  "cautions": [
+    "Chunking by 1.1KB line-aligned groups is one arbitrary baseline; tuned chunking may improve it.",
+    "Python reduction loops and BLAS timings are not calibrated latency measurements.",
+    "Queries intentionally describe version-specific synthetic audit records."
+  ]
+}

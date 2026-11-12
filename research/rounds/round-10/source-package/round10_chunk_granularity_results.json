@@ -1,0 +1,281 @@
+{
+  "dataset": {
+    "corpus": "real noVNC commit revisions",
+    "versions": 250,
+    "human_commit_queries": 250,
+    "train": 100,
+    "heldout": 150,
+    "task": "fixed BM25 top-k exact five-line passage retrieval",
+    "encoder": "none"
+  },
+  "chunk_sweep": {
+    "8": {
+      "target_lines_per_chunk": 8,
+      "raw_bytes": 6234330,
+      "unique_chunks": 4616,
+      "logical_references": 25383,
+      "payload_bytes": 739261,
+      "compressed_manifest_bytes": 14420,
+      "compressed_seek_table_bytes": 26406,
+      "total_storage_bytes": 780119,
+      "lossless_verified_versions": 250,
+      "access": {
+        "train_k5": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 719.7,
+          "median_compressed_payload_bytes": 656.0,
+          "mean_unique_chunks_decompressed": 3.44,
+          "median_warm_decode_us": 64.57,
+          "p95_warm_decode_us": 178.72
+        },
+        "train_k10": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 1086.2,
+          "median_compressed_payload_bytes": 1003.5,
+          "mean_unique_chunks_decompressed": 5.24,
+          "median_warm_decode_us": 97.54,
+          "p95_warm_decode_us": 265.28
+        },
+        "heldout_k5": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 717.5,
+          "median_compressed_payload_bytes": 653.0,
+          "mean_unique_chunks_decompressed": 3.53,
+          "median_warm_decode_us": 69.3,
+          "p95_warm_decode_us": 176.65
+        },
+        "heldout_k10": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 1154.7,
+          "median_compressed_payload_bytes": 1074.0,
+          "mean_unique_chunks_decompressed": 5.63,
+          "median_warm_decode_us": 111.73,
+          "p95_warm_decode_us": 323.89
+        }
+      }
+    },
+    "16": {
+      "target_lines_per_chunk": 16,
+      "raw_bytes": 6234330,
+      "unique_chunks": 2600,
+      "logical_references": 12012,
+      "payload_bytes": 704484,
+      "compressed_manifest_bytes": 8141,
+      "compressed_seek_table_bytes": 15613,
+      "total_storage_bytes": 728270,
+      "lossless_verified_versions": 250,
+      "access": {
+        "train_k5": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 1125.1,
+          "median_compressed_payload_bytes": 1078.5,
+          "mean_unique_chunks_decompressed": 3.11,
+          "median_warm_decode_us": 65.78,
+          "p95_warm_decode_us": 170.07
+        },
+        "train_k10": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 1758.3,
+          "median_compressed_payload_bytes": 1642.5,
+          "mean_unique_chunks_decompressed": 4.82,
+          "median_warm_decode_us": 105.83,
+          "p95_warm_decode_us": 281.08
+        },
+        "heldout_k5": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 1106.1,
+          "median_compressed_payload_bytes": 997.0,
+          "mean_unique_chunks_decompressed": 3.16,
+          "median_warm_decode_us": 67.47,
+          "p95_warm_decode_us": 180.67
+        },
+        "heldout_k10": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 1858.6,
+          "median_compressed_payload_bytes": 1667.5,
+          "mean_unique_chunks_decompressed": 5.19,
+          "median_warm_decode_us": 111.76,
+          "p95_warm_decode_us": 328.25
+        }
+      }
+    },
+    "32": {
+      "target_lines_per_chunk": 32,
+      "raw_bytes": 6234330,
+      "unique_chunks": 1573,
+      "logical_references": 5947,
+      "payload_bytes": 706237,
+      "compressed_manifest_bytes": 5347,
+      "compressed_seek_table_bytes": 9775,
+      "total_storage_bytes": 721391,
+      "lossless_verified_versions": 250,
+      "access": {
+        "train_k5": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 1787.8,
+          "median_compressed_payload_bytes": 1784.0,
+          "mean_unique_chunks_decompressed": 3.03,
+          "median_warm_decode_us": 69.15,
+          "p95_warm_decode_us": 170.54
+        },
+        "train_k10": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 2817.5,
+          "median_compressed_payload_bytes": 2581.5,
+          "mean_unique_chunks_decompressed": 4.76,
+          "median_warm_decode_us": 123.86,
+          "p95_warm_decode_us": 374.09
+        },
+        "heldout_k5": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 1789.1,
+          "median_compressed_payload_bytes": 1816.5,
+          "mean_unique_chunks_decompressed": 3,
+          "median_warm_decode_us": 69.01,
+          "p95_warm_decode_us": 199.54
+        },
+        "heldout_k10": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 3019.8,
+          "median_compressed_payload_bytes": 2749.5,
+          "mean_unique_chunks_decompressed": 5.05,
+          "median_warm_decode_us": 120.23,
+          "p95_warm_decode_us": 365.98
+        }
+      }
+    },
+    "64": {
+      "target_lines_per_chunk": 64,
+      "raw_bytes": 6234330,
+      "unique_chunks": 998,
+      "logical_references": 3102,
+      "payload_bytes": 752120,
+      "compressed_manifest_bytes": 3567,
+      "compressed_seek_table_bytes": 6398,
+      "total_storage_bytes": 762117,
+      "lossless_verified_versions": 250,
+      "access": {
+        "train_k5": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 3168.0,
+          "median_compressed_payload_bytes": 3285.0,
+          "mean_unique_chunks_decompressed": 3.24,
+          "median_warm_decode_us": 76.41,
+          "p95_warm_decode_us": 175.61
+        },
+        "train_k10": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 5403,
+          "median_compressed_payload_bytes": 5179.5,
+          "mean_unique_chunks_decompressed": 5.31,
+          "median_warm_decode_us": 132.53,
+          "p95_warm_decode_us": 346.06
+        },
+        "heldout_k5": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 3269.2,
+          "median_compressed_payload_bytes": 3210.0,
+          "mean_unique_chunks_decompressed": 3.29,
+          "median_warm_decode_us": 81.68,
+          "p95_warm_decode_us": 227.69
+        },
+        "heldout_k10": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 5509.2,
+          "median_compressed_payload_bytes": 5597.0,
+          "mean_unique_chunks_decompressed": 5.54,
+          "median_warm_decode_us": 132.76,
+          "p95_warm_decode_us": 327.1
+        }
+      }
+    },
+    "128": {
+      "target_lines_per_chunk": 128,
+      "raw_bytes": 6234330,
+      "unique_chunks": 658,
+      "logical_references": 1646,
+      "payload_bytes": 806494,
+      "compressed_manifest_bytes": 2427,
+      "compressed_seek_table_bytes": 4376,
+      "total_storage_bytes": 813329,
+      "lossless_verified_versions": 250,
+      "access": {
+        "train_k5": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 5395.1,
+          "median_compressed_payload_bytes": 5053.0,
+          "mean_unique_chunks_decompressed": 3.6,
+          "median_warm_decode_us": 88.76,
+          "p95_warm_decode_us": 213.46
+        },
+        "train_k10": {
+          "queries": 100,
+          "mean_compressed_payload_bytes": 9510.7,
+          "median_compressed_payload_bytes": 8887.5,
+          "mean_unique_chunks_decompressed": 6.03,
+          "median_warm_decode_us": 159.28,
+          "p95_warm_decode_us": 371.31
+        },
+        "heldout_k5": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 5457.3,
+          "median_compressed_payload_bytes": 4687.0,
+          "mean_unique_chunks_decompressed": 3.49,
+          "median_warm_decode_us": 92.64,
+          "p95_warm_decode_us": 174.16
+        },
+        "heldout_k10": {
+          "queries": 150,
+          "mean_compressed_payload_bytes": 9683.5,
+          "median_compressed_payload_bytes": 8904.0,
+          "mean_unique_chunks_decompressed": 6.07,
+          "median_warm_decode_us": 162.19,
+          "p95_warm_decode_us": 371.78
+        }
+      }
+    }
+  },
+  "train_chosen_by_amortization": {
+    "100": {
+      "chosen_target": 8,
+      "heldout": {
+        "queries": 150,
+        "mean_compressed_payload_bytes": 1154.7,
+        "median_compressed_payload_bytes": 1074.0,
+        "mean_unique_chunks_decompressed": 5.63,
+        "median_warm_decode_us": 111.73,
+        "p95_warm_decode_us": 323.89
+      }
+    },
+    "1000": {
+      "chosen_target": 8,
+      "heldout": {
+        "queries": 150,
+        "mean_compressed_payload_bytes": 1154.7,
+        "median_compressed_payload_bytes": 1074.0,
+        "mean_unique_chunks_decompressed": 5.63,
+        "median_warm_decode_us": 111.73,
+        "p95_warm_decode_us": 323.89
+      }
+    },
+    "10000": {
+      "chosen_target": 8,
+      "heldout": {
+        "queries": 150,
+        "mean_compressed_payload_bytes": 1154.7,
+        "median_compressed_payload_bytes": 1074.0,
+        "mean_unique_chunks_decompressed": 5.63,
+        "median_warm_decode_us": 111.73,
+        "p95_warm_decode_us": 323.89
+      }
+    }
+  },
+  "limitations": [
+    "Repetitive one-repository Git history, not real RAG QA data",
+    "Warm CPU zstd decode, no SSD fetch, no tokenizer or generation",
+    "Compression ratios include manifest and compressed seek-table payloads but exclude Python allocator memory and search index",
+    "Predictive selection uses fixed BM25 retrieval; it does not improve evidence relevance",
+    "No trained codec or model, no pretrained neural retriever",
+    "The amortization term is an illustrative workload weighting, not observed economic cost"
+  ]
+}

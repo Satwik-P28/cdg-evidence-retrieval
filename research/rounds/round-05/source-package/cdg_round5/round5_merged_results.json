@@ -1,0 +1,33 @@
+{
+  "source": "noVNC source git history, 250 genuine commit queries",
+  "note": "CPU query-time sparse score calculation only. No tokenizer, loading, disk I/O or ANN.",
+  "index": {
+    "full_bytes": 290018,
+    "changes_bytes": 35642,
+    "separate_bytes": 325660,
+    "merged_bytes": 298467,
+    "vocabulary_size": 3398,
+    "full_nnz": 87777,
+    "changes_nnz": 7811,
+    "merged_nnz": 88065
+  },
+  "score_max_abs_diff": 7.105427357601002e-15,
+  "query_scores": {
+    "separate_hit5": 0.624,
+    "merged_hit5": 0.624
+  },
+  "query_time_microseconds": {
+    "separate": {
+      "median": 299.42,
+      "p95": 486.66,
+      "mean": 333.11
+    },
+    "merged": {
+      "median": 231.89,
+      "p95": 383.98,
+      "mean": 267.11
+    }
+  },
+  "repetitions": 10,
+  "queries_per_repetition": 250
+}

@@ -1,0 +1,391 @@
+{
+  "dataset": "18 real version histories \u00d710 versions from public local noVNC repository, JavaScript/CSS/HTML/Markdown",
+  "all_reconstructions_exact": true,
+  "algorithm": "Real Git commit snapshots; zstd3; line-sequence diff compressed via zstd3; checkpoints every 3/5 or small exact DP choosing checkpoints under storage + 20000 bytes*weighted chain hops objective.",
+  "probability_assumption": "Zipf-like version accesses, latest revisions more likely; not measured workload.",
+  "aggregate": {
+    "original_bytes": 3599970,
+    "independent_bytes": 865997,
+    "star_bytes": 229556,
+    "chain_bytes": 149307,
+    "checkpoint3_bytes": 385191,
+    "checkpoint5_bytes": 229503,
+    "workload_opt_bytes": 346864,
+    "mean_chain_hops": 2.026,
+    "mean_fixed3_hops": 0.638,
+    "mean_opt_hops": 0.459,
+    "solid_zstd9_bytes": 91516
+  },
+  "files": [
+    {
+      "name": "app/ui.js",
+      "versions": 10,
+      "original_bytes": 604823,
+      "independent_bytes": 137185,
+      "star_bytes": 18679,
+      "chain_bytes": 15144,
+      "checkpoint3_bytes": 55622,
+      "checkpoint5_bytes": 28822,
+      "workload_opt_bytes": 28635,
+      "optimal_checkpoints": [
+        0,
+        3
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 1.096
+    },
+    {
+      "name": "vnc.html",
+      "versions": 10,
+      "original_bytes": 159752,
+      "independent_bytes": 34884,
+      "star_bytes": 7308,
+      "chain_bytes": 4965,
+      "checkpoint3_bytes": 14965,
+      "checkpoint5_bytes": 8343,
+      "workload_opt_bytes": 14831,
+      "optimal_checkpoints": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.43
+    },
+    {
+      "name": "app/styles/base.css",
+      "versions": 10,
+      "original_bytes": 188511,
+      "independent_bytes": 51662,
+      "star_bytes": 8069,
+      "chain_bytes": 6495,
+      "checkpoint3_bytes": 21614,
+      "checkpoint5_bytes": 11562,
+      "workload_opt_bytes": 16619,
+      "optimal_checkpoints": [
+        0,
+        2,
+        5
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.666
+    },
+    {
+      "name": "README.md",
+      "versions": 10,
+      "original_bytes": 82535,
+      "independent_bytes": 35924,
+      "star_bytes": 7009,
+      "chain_bytes": 4693,
+      "checkpoint3_bytes": 14904,
+      "checkpoint5_bytes": 8112,
+      "workload_opt_bytes": 15337,
+      "optimal_checkpoints": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.43
+    },
+    {
+      "name": "include/ui.js",
+      "versions": 10,
+      "original_bytes": 489894,
+      "independent_bytes": 108815,
+      "star_bytes": 22487,
+      "chain_bytes": 26519,
+      "checkpoint3_bytes": 51585,
+      "checkpoint5_bytes": 37335,
+      "workload_opt_bytes": 41446,
+      "optimal_checkpoints": [
+        0,
+        2,
+        6
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.68
+    },
+    {
+      "name": "vnc_auto.html",
+      "versions": 10,
+      "original_bytes": 115661,
+      "independent_bytes": 34329,
+      "star_bytes": 17957,
+      "chain_bytes": 6912,
+      "checkpoint3_bytes": 15040,
+      "checkpoint5_bytes": 10081,
+      "workload_opt_bytes": 15350,
+      "optimal_checkpoints": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.43
+    },
+    {
+      "name": "vnc_lite.html",
+      "versions": 10,
+      "original_bytes": 61334,
+      "independent_bytes": 23760,
+      "star_bytes": 4804,
+      "chain_bytes": 3482,
+      "checkpoint3_bytes": 10375,
+      "checkpoint5_bytes": 5661,
+      "workload_opt_bytes": 12363,
+      "optimal_checkpoints": [
+        0,
+        1,
+        2,
+        4,
+        7
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.283
+    },
+    {
+      "name": "docs/API.md",
+      "versions": 10,
+      "original_bytes": 155904,
+      "independent_bytes": 48432,
+      "star_bytes": 16265,
+      "chain_bytes": 9620,
+      "checkpoint3_bytes": 22910,
+      "checkpoint5_bytes": 14457,
+      "workload_opt_bytes": 20789,
+      "optimal_checkpoints": [
+        0,
+        1,
+        4,
+        8
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.513
+    },
+    {
+      "name": "core/display.js",
+      "versions": 10,
+      "original_bytes": 179639,
+      "independent_bytes": 47245,
+      "star_bytes": 13787,
+      "chain_bytes": 9618,
+      "checkpoint3_bytes": 22281,
+      "checkpoint5_bytes": 13712,
+      "workload_opt_bytes": 21656,
+      "optimal_checkpoints": [
+        0,
+        2,
+        4,
+        7
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.459
+    },
+    {
+      "name": "include/util.js",
+      "versions": 10,
+      "original_bytes": 190247,
+      "independent_bytes": 57507,
+      "star_bytes": 19541,
+      "chain_bytes": 11440,
+      "checkpoint3_bytes": 27873,
+      "checkpoint5_bytes": 16695,
+      "workload_opt_bytes": 23965,
+      "optimal_checkpoints": [
+        0,
+        2,
+        5,
+        8
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.502
+    },
+    {
+      "name": "tests/test.display.js",
+      "versions": 10,
+      "original_bytes": 182607,
+      "independent_bytes": 32325,
+      "star_bytes": 13913,
+      "chain_bytes": 6589,
+      "checkpoint3_bytes": 15521,
+      "checkpoint5_bytes": 9338,
+      "workload_opt_bytes": 17188,
+      "optimal_checkpoints": [
+        0,
+        1,
+        2,
+        4,
+        7
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.283
+    },
+    {
+      "name": "tests/test.keyboard.js",
+      "versions": 10,
+      "original_bytes": 263191,
+      "independent_bytes": 30228,
+      "star_bytes": 9729,
+      "chain_bytes": 5117,
+      "checkpoint3_bytes": 13332,
+      "checkpoint5_bytes": 7696,
+      "workload_opt_bytes": 15808,
+      "optimal_checkpoints": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.292
+    },
+    {
+      "name": "core/websock.js",
+      "versions": 10,
+      "original_bytes": 104593,
+      "independent_bytes": 34516,
+      "star_bytes": 7957,
+      "chain_bytes": 5018,
+      "checkpoint3_bytes": 14838,
+      "checkpoint5_bytes": 8423,
+      "workload_opt_bytes": 14804,
+      "optimal_checkpoints": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.43
+    },
+    {
+      "name": "include/canvas.js",
+      "versions": 10,
+      "original_bytes": 220236,
+      "independent_bytes": 63922,
+      "star_bytes": 19492,
+      "chain_bytes": 9173,
+      "checkpoint3_bytes": 28689,
+      "checkpoint5_bytes": 14105,
+      "workload_opt_bytes": 19292,
+      "optimal_checkpoints": [
+        0,
+        2,
+        5
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.666
+    },
+    {
+      "name": "tests/test.websock.js",
+      "versions": 10,
+      "original_bytes": 207059,
+      "independent_bytes": 33722,
+      "star_bytes": 13953,
+      "chain_bytes": 6760,
+      "checkpoint3_bytes": 16249,
+      "checkpoint5_bytes": 9236,
+      "workload_opt_bytes": 18370,
+      "optimal_checkpoints": [
+        0,
+        1,
+        3,
+        5,
+        7
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.287
+    },
+    {
+      "name": "include/websock.js",
+      "versions": 10,
+      "original_bytes": 138115,
+      "independent_bytes": 37724,
+      "star_bytes": 13213,
+      "chain_bytes": 9482,
+      "checkpoint3_bytes": 15903,
+      "checkpoint5_bytes": 12953,
+      "workload_opt_bytes": 20029,
+      "optimal_checkpoints": [
+        0,
+        1,
+        3,
+        6,
+        9
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.353
+    },
+    {
+      "name": "tests/test.helper.js",
+      "versions": 10,
+      "original_bytes": 130911,
+      "independent_bytes": 23922,
+      "star_bytes": 7770,
+      "chain_bytes": 4222,
+      "checkpoint3_bytes": 10805,
+      "checkpoint5_bytes": 5950,
+      "workload_opt_bytes": 15013,
+      "optimal_checkpoints": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.178
+    },
+    {
+      "name": "include/base.css",
+      "versions": 10,
+      "original_bytes": 124958,
+      "independent_bytes": 29895,
+      "star_bytes": 7623,
+      "chain_bytes": 4058,
+      "checkpoint3_bytes": 12685,
+      "checkpoint5_bytes": 7022,
+      "workload_opt_bytes": 15369,
+      "optimal_checkpoints": [
+        0,
+        1,
+        2,
+        4,
+        7
+      ],
+      "expected_hops_chain": 2.026,
+      "expected_hops_checkpoint3": 0.638,
+      "expected_hops_workload_opt": 0.283
+    }
+  ],
+  "limitations": [
+    "Real Git changes, but only one project and 18 file histories.",
+    "No real observed access traces, no SSD latency. Workload cost uses number of patch applications as proxy.",
+    "DP objective lambda=20000 bytes/expected-hop is a design parameter, not tuned against a held-out workload.",
+    "No per-version index costs or cross-document grammar compression, all sizes are exact patch/full encodings plus simple length metadata.",
+    "Solid zstd archive is a compressed whole-collection comparison, without direct version-level random access."
+  ]
+}

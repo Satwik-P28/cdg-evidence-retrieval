@@ -1,0 +1,44 @@
+{
+  "data": {
+    "documents": 1500,
+    "queries": 300,
+    "vocabulary_budget": 24000
+  },
+  "detected_changed_vocabulary_features": 3283,
+  "original_frequency_vocab_missing_change_features": 3200,
+  "results": {
+    "frequency_24k": {
+      "full_document": {
+        "hit_at5": 0.16666666666666666,
+        "hit_at1": 0.03
+      },
+      "changed_region": {
+        "hit_at5": 0.20333333333333334,
+        "hit_at1": 0.04
+      },
+      "full_index_zstd_bytes": 634830,
+      "changed_region_index_zstd_bytes": 6305,
+      "retained_changed_features": 83
+    },
+    "automatic_diff_protected_24k": {
+      "full_document": {
+        "hit_at5": 0.8866666666666667,
+        "hit_at1": 0.5566666666666666
+      },
+      "changed_region": {
+        "hit_at5": 1.0,
+        "hit_at1": 1.0
+      },
+      "full_index_zstd_bytes": 672381,
+      "changed_region_index_zstd_bytes": 25242,
+      "retained_changed_features": 3283
+    }
+  },
+  "limitations": [
+    "Changes are synthetic and usually occupy a single known line in each technical document.",
+    "Diff detection uses common unchanged line prefix and suffix, not a general-purpose minimal diff.",
+    "Both methods have the same feature count but different vocabularies; known revised queries favor change preservation.",
+    "Does not measure neural embedding retrieval or RAG generation.",
+    "A standard chunk index can solve the same synthetic query task; this experiment does not prove novelty."
+  ]
+}

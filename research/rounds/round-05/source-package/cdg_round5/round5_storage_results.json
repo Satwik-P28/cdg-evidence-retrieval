@@ -1,0 +1,20 @@
+{
+  "versions": 250,
+  "families": 56,
+  "raw_bytes": 6234330,
+  "compressed_source_bytes": {
+    "independent_zstd3": 1455847,
+    "base_star_patch_zstd3": 472650,
+    "hybrid_per_family_choose_min": 472706,
+    "solid_zstd9": 178735
+  },
+  "patch_roundtrip_verified": 194,
+  "complete_versions": 250,
+  "seconds": 6.48,
+  "limitations": [
+    "Patch star uses first observed version as base, not optimized root.",
+    "Source bytes only; separate lexical index and vocabulary must be counted for total system.",
+    "Solid archive cannot retrieve versions without additional index and decoding work.",
+    "Random access/time not measured by this experiment."
+  ]
+}

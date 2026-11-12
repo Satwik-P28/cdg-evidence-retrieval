@@ -1,0 +1,44 @@
+{
+  "bm25_top5": {
+    "queries": 150,
+    "mean_raw_prompt_bytes": 1074.433,
+    "mean_exact_inline_bytes": 500.807,
+    "mean_unique_evidence": 2.1,
+    "mean_occurrences": 5,
+    "mean_binary_provenance_bytes": 42.6,
+    "mean_binary_provenance_zlib": 41.207,
+    "mean_raw_token_proxy": 121.753,
+    "mean_inline_token_proxy": 57.593,
+    "overall_byte_reduction_frac": 0.53389,
+    "overall_token_proxy_reduction_frac": 0.52697,
+    "percent_queries_inline_smaller": 0.9667
+  },
+  "bm25_top10": {
+    "queries": 150,
+    "mean_raw_prompt_bytes": 2154.047,
+    "mean_exact_inline_bytes": 789.507,
+    "mean_unique_evidence": 3.173,
+    "mean_occurrences": 10,
+    "mean_binary_provenance_bytes": 79.04,
+    "mean_binary_provenance_zlib": 64.24,
+    "mean_raw_token_proxy": 246.307,
+    "mean_inline_token_proxy": 89.667,
+    "overall_byte_reduction_frac": 0.63348,
+    "overall_token_proxy_reduction_frac": 0.63596,
+    "percent_queries_inline_smaller": 1.0
+  },
+  "random_top10": {
+    "queries": 150,
+    "mean_raw_prompt_bytes": 1989.847,
+    "mean_exact_inline_bytes": 1739.573,
+    "mean_unique_evidence": 8.273,
+    "mean_occurrences": 10,
+    "mean_binary_provenance_bytes": 109.64,
+    "mean_binary_provenance_zlib": 86.16,
+    "mean_raw_token_proxy": 231.353,
+    "mean_inline_token_proxy": 204.847,
+    "overall_byte_reduction_frac": 0.12578,
+    "overall_token_proxy_reduction_frac": 0.11457,
+    "percent_queries_inline_smaller": 0.8733
+  }
+}

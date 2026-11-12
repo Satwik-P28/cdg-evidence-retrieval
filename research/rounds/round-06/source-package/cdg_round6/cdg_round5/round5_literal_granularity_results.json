@@ -1,0 +1,58 @@
+{
+  "corpus": "250 noVNC real versions",
+  "literal_frames": 6210,
+  "source_bytes": {
+    "original_per_version_literal": 666829,
+    "selective_per_literal": 993186,
+    "independent_32_line_seekable": 2528761
+  },
+  "piece_payload_zstd3_and_length_metadata": 559056,
+  "latency": {
+    "random": {
+      "n": 250,
+      "median_us": {
+        "per_piece": 34.31,
+        "per_version": 35.09,
+        "independent_seekable": 30.7
+      },
+      "p95_us": {
+        "per_piece": 116.3,
+        "per_version": 117.23,
+        "independent_seekable": 90.35
+      }
+    },
+    "stable": {
+      "n": 250,
+      "median_us": {
+        "per_piece": 34.64,
+        "per_version": 34.72,
+        "independent_seekable": 30.51
+      },
+      "p95_us": {
+        "per_piece": 137.61,
+        "per_version": 136.71,
+        "independent_seekable": 99.7
+      }
+    },
+    "changed": {
+      "n": 192,
+      "median_us": {
+        "per_piece": 71.2,
+        "per_version": 79.4,
+        "independent_seekable": 31.57
+      },
+      "p95_us": {
+        "per_piece": 194.03,
+        "per_version": 208.32,
+        "independent_seekable": 90.61
+      }
+    }
+  },
+  "checks": "whole source reconstructs exactly; every tested five-line window identical to original",
+  "limitations": [
+    "Source only; no real neural retrieval or generation.",
+    "Metadata for all piece records is resident; compressed blocks warm in memory/OS cache.",
+    "Per-literal blocks trade increased overhead for selective changed-region decoding.",
+    "Literal frame pointers and complete file catalog costs not separately serialized."
+  ]
+}

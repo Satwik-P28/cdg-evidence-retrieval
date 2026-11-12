@@ -1,0 +1,107 @@
+{
+  "input_path": "/mnt/data/CDG_Living_Research_Record_Rounds_19_21_2026-11-12.md",
+  "input_sha256": "eece022c466001babc7dd3460c62b33c0885471d6f2ab1a260c1a4c58cc61785",
+  "paragraph_count": 63,
+  "query_count": 250,
+  "query_provenance": "synthetic query terms sampled from held-out target paragraphs, labels known only to evaluation",
+  "results": {
+    "bm25": {
+      "2": {
+        "complete": 240,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 0.96
+      },
+      "3": {
+        "complete": 250,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 1.0
+      },
+      "5": {
+        "complete": 250,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 1.0
+      },
+      "8": {
+        "complete": 250,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 1.0
+      }
+    },
+    "facet": {
+      "2": {
+        "complete": 244,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 0.976
+      },
+      "3": {
+        "complete": 250,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 1.0
+      },
+      "5": {
+        "complete": 250,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 1.0
+      },
+      "8": {
+        "complete": 250,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 1.0
+      }
+    },
+    "mmr": {
+      "2": {
+        "complete": 242,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 0.968
+      },
+      "3": {
+        "complete": 250,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 1.0
+      },
+      "5": {
+        "complete": 250,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 1.0
+      },
+      "8": {
+        "complete": 250,
+        "any": 250,
+        "n": 250,
+        "complete_rate": 1.0
+      }
+    }
+  },
+  "paired_k2": {
+    "facet": {
+      "both": 240,
+      "bm25_only": 0,
+      "competitor_only": 4,
+      "neither": 6
+    },
+    "mmr": {
+      "both": 240,
+      "bm25_only": 0,
+      "competitor_only": 2,
+      "neither": 8
+    }
+  },
+  "version_tests": {
+    "old_version_rejected": true,
+    "stale_offset_not_equivalent": true,
+    "utf8_byte_roundtrip": true
+  },
+  "interpretation": "in-domain mechanical retrieval stress test; NOT external QA, not naturally authored multihop, not held-out model evaluation"
+}

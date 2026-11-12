@@ -1,0 +1,52 @@
+{
+  "dataset": "250 real noVNC changed-file versions; human commit messages; one shared base per path.",
+  "before": {
+    "docs_with_unindexed_terms": 172,
+    "missing_distinct_term_occurrences": 3177
+  },
+  "exception_channel": {
+    "docs_with_exception_lines": 172,
+    "total_exception_lines": 1802,
+    "avg_exception_lines_per_doc": 7.208,
+    "total_exception_text_bytes": 85097,
+    "remaining_missing_unigrams": 0
+  },
+  "metrics": {
+    "full": {
+      "hit1": 0.152,
+      "hit5": 0.36,
+      "hit10": 0.468
+    },
+    "base_plus_delta": {
+      "hit1": 0.372,
+      "hit5": 0.668,
+      "hit10": 0.724
+    },
+    "base_plus_delta_plus_exceptions_max": {
+      "hit1": 0.352,
+      "hit5": 0.648,
+      "hit10": 0.704
+    },
+    "base_plus_delta_plus_exceptions_sum": {
+      "hit1": 0.372,
+      "hit5": 0.672,
+      "hit10": 0.72
+    }
+  },
+  "index_bytes": {
+    "full_index": 915513,
+    "base_index": 198451,
+    "diff_index": 95709,
+    "exception_index": 43292,
+    "family_ref": 287,
+    "two_channel": 294447,
+    "three_channel": 337739,
+    "exception_text_zstd": 8378
+  },
+  "limits": [
+    "Unigram coverage is complete by construction for this sample, not phrase/semantic completeness.",
+    "Exception extraction uses exact original lines, not LLM-generated replacements.",
+    "Index sizes exclude shared vocabulary and codec model; text snapshots still need lossless source archive.",
+    "One source repository, heuristic qrels and lexical retriever, no actual RAG QA accuracy."
+  ]
+}
