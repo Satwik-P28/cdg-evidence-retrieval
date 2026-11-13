@@ -1,6 +1,6 @@
 # CDG: Source-Aligned Evidence Retrieval and Compression
 
-**Research notebook and reproducible experiments, November 2026. Latest research: Round 28.**
+**Research notebook and reproducible experiments, November 2026. Latest research: Round 29.**
 
 CDG studies a practical mismatch in retrieval-augmented systems: a search result can be relevant without providing a *complete* basis for a claim. Retrieving more context often fixes omissions, but increases tokens, source reads, and decoding work. The working question is whether a system can recover complete evidence more economically by treating source identity, evidence dependencies, and physical storage layout as one optimization problem.
 
@@ -36,7 +36,7 @@ The architecture deliberately separates four claims that can otherwise be confus
 
 ## Repository guide
 
-- [`research/living-record-rounds-19-28.md`](research/living-record-rounds-19-28.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
+- [`research/living-record-rounds-19-29.md`](research/living-record-rounds-19-29.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
 - [`research/rounds/`](research/rounds/): recovered round-specific archives, source code, notes and artifacts. Some early source packages include previous-round snapshots.
 - [`experiments/`](experiments/): directly accessible Round 20–23 scripts and machine-readable outputs.
 - [`source-archives/`](source-archives/): exact downloaded historical ZIP packages preserved separately for auditability. Do not confuse archive existence with successful reruns.
@@ -60,6 +60,10 @@ A local source-archive experiment used **five CDG research reports** (90,163 ori
 ## Round 28: real file-backed compressed frame retrieval
 
 The prototype now writes independent Zstandard frames to disk, serializes byte-accurate frame offsets and source versions in SQLite, indexes lines with FTS5, and reconstructs selected original byte intervals with `os.pread`. On **88,679 bytes across five local research reports**, the total physical footprint at 512-byte frames was **291,755 B** (fixed) versus **301,449 B** (line-aligned), including actual SQLite files. On 250 seeded whole-line two-span requests, compressed payload reads averaged **833.9 B** versus **556.8 B** respectively. This decreased compressed read bytes but **did not demonstrate a warm-latency advantage** and used known span coordinates rather than authentic question-driven retrieval. Six local tests passed, including a repaired empty-span regression. See the [technical report](research/rounds/round-28/report.md), [source](experiments/round-28/filebacked_bench.py), [results](experiments/round-28/results.json) and [build measurements](experiments/round-28/build_results.json). This is a physical storage benchmark, **not** a novel compressor or proven RAG improvement.
+
+## Round 29: query-driven retrieval to exact compressed source bytes
+
+The physical benchmark now runs the entire search and source reconstruction path: **FTS5 full-text query → line ID and stored UTF-8 offsets → serialized independent Zstandard frames → file-backed read/decode → exact original bytes**. Five local technical reports (88,679 bytes) and 158 deterministically **source-derived**, label-leaked two-term queries were tested. Exact target-line recovery was **94.3% @3** and **97.47% @5**, with zero byte reconstruction errors. Across 474 warm requests per layout, fixed 2,048-byte frames gave a 126.8 μs observed full p50 versus 140.1 μs for line-aligned 512 B, despite the latter reading substantially fewer compressed bytes. Warm timings lack cold-cache and statistical controls. **This is not independent QA or evidence-completeness validation.** Six regression tests passed. [Technical report](research/rounds/round-29/report.md), [benchmark code](experiments/round-29/retrieval_bench.py), [machine-readable measurements](experiments/round-29/results.json).
 
 ## Research status and next falsification test
 

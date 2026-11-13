@@ -1,0 +1,171 @@
+{
+  "status": "local file-backed full query to spans experiment; constructed lexical queries, NOT real QA or HotpotQA",
+  "input_files": [
+    {
+      "name": "CDG_Round19_Research_Report_2026-11-11(1).md",
+      "sha256": "b8c805baef7dffaeaf355d31a0ccc23fd1aa83e411a4cbebcc54cae8cd414c02",
+      "bytes": 28396
+    },
+    {
+      "name": "cdg_round20_appendix.md",
+      "sha256": "c03ad05bd18331e8553d3fe964595bdedbc1ee6a7a9c6d7e5b3a58fd9c947291",
+      "bytes": 16987
+    },
+    {
+      "name": "cdg_round21_appendix.md",
+      "sha256": "1b310415d0a7f267cd83712b31e70d8d42b956ac44efcff8e71b90394f2f3c99",
+      "bytes": 16372
+    },
+    {
+      "name": "cdg_round22_appendix.md",
+      "sha256": "49470dd86762c76fcad6eed1795c27da876972a7d7f3f67ed7411963fcf415ad",
+      "bytes": 14371
+    },
+    {
+      "name": "report.md",
+      "sha256": "8ccbcdd68a07afc3738d4270103c4a1616a775899721ed439323ed570e722e9b",
+      "bytes": 12553
+    }
+  ],
+  "tasks": 158,
+  "seed": 29026,
+  "retrieval_scoring": "SQLite FTS5 bm25 over line text, OR of two tokens drawn from gold target line. Target line identity only, no semantic support assessment.",
+  "select_k": 3,
+  "runs": [
+    {
+      "layout": "whole",
+      "frame_size": 0,
+      "source_count": 5,
+      "task_count": 158,
+      "repeated_measurements": 474,
+      "build_ms": 26.96,
+      "sqlite_bytes": 233472,
+      "payload_bytes": 38689,
+      "persistent_total_bytes": 272161,
+      "exact_target_line_recall_at_k": {
+        "1": 0.6076,
+        "3": 0.943,
+        "5": 0.9747
+      },
+      "mean_compressed_bytes_read_at_3": 23369.23,
+      "mean_frames_decoded_at_3": 2.91,
+      "fts_p50_us": 45.12,
+      "fts_p95_us": 85.19,
+      "read_decode_p50_us": 136.26,
+      "read_decode_p95_us": 209.98,
+      "full_p50_us": 185.38,
+      "full_p95_us": 271.56,
+      "roundtrip_errors": 0,
+      "cold_cache_controlled": false,
+      "queries_label_leaked": true
+    },
+    {
+      "layout": "fixed",
+      "frame_size": 512,
+      "source_count": 5,
+      "task_count": 158,
+      "repeated_measurements": 474,
+      "build_ms": 25.18,
+      "sqlite_bytes": 233472,
+      "payload_bytes": 58283,
+      "persistent_total_bytes": 291755,
+      "exact_target_line_recall_at_k": {
+        "1": 0.6076,
+        "3": 0.943,
+        "5": 0.9747
+      },
+      "mean_compressed_bytes_read_at_3": 1372.73,
+      "mean_frames_decoded_at_3": 4.16,
+      "fts_p50_us": 42.05,
+      "fts_p95_us": 76.49,
+      "read_decode_p50_us": 92.61,
+      "read_decode_p95_us": 159.16,
+      "full_p50_us": 139.02,
+      "full_p95_us": 221.0,
+      "roundtrip_errors": 0,
+      "cold_cache_controlled": false,
+      "queries_label_leaked": true
+    },
+    {
+      "layout": "lines",
+      "frame_size": 512,
+      "source_count": 5,
+      "task_count": 158,
+      "repeated_measurements": 474,
+      "build_ms": 28.92,
+      "sqlite_bytes": 241664,
+      "payload_bytes": 59785,
+      "persistent_total_bytes": 301449,
+      "exact_target_line_recall_at_k": {
+        "1": 0.6076,
+        "3": 0.943,
+        "5": 0.9747
+      },
+      "mean_compressed_bytes_read_at_3": 825.72,
+      "mean_frames_decoded_at_3": 3.08,
+      "fts_p50_us": 45.46,
+      "fts_p95_us": 81.2,
+      "read_decode_p50_us": 90.76,
+      "read_decode_p95_us": 160.97,
+      "full_p50_us": 140.13,
+      "full_p95_us": 244.77,
+      "roundtrip_errors": 0,
+      "cold_cache_controlled": false,
+      "queries_label_leaked": true
+    },
+    {
+      "layout": "fixed",
+      "frame_size": 2048,
+      "source_count": 5,
+      "task_count": 158,
+      "repeated_measurements": 474,
+      "build_ms": 21.74,
+      "sqlite_bytes": 233472,
+      "payload_bytes": 48323,
+      "persistent_total_bytes": 281795,
+      "exact_target_line_recall_at_k": {
+        "1": 0.6076,
+        "3": 0.943,
+        "5": 0.9747
+      },
+      "mean_compressed_bytes_read_at_3": 3531.61,
+      "mean_frames_decoded_at_3": 3.28,
+      "fts_p50_us": 40.45,
+      "fts_p95_us": 68.63,
+      "read_decode_p50_us": 77.05,
+      "read_decode_p95_us": 111.33,
+      "full_p50_us": 126.79,
+      "full_p95_us": 166.09,
+      "roundtrip_errors": 0,
+      "cold_cache_controlled": false,
+      "queries_label_leaked": true
+    },
+    {
+      "layout": "lines",
+      "frame_size": 2048,
+      "source_count": 5,
+      "task_count": 158,
+      "repeated_measurements": 474,
+      "build_ms": 23.84,
+      "sqlite_bytes": 233472,
+      "payload_bytes": 48961,
+      "persistent_total_bytes": 282433,
+      "exact_target_line_recall_at_k": {
+        "1": 0.6076,
+        "3": 0.943,
+        "5": 0.9747
+      },
+      "mean_compressed_bytes_read_at_3": 2971.41,
+      "mean_frames_decoded_at_3": 2.91,
+      "fts_p50_us": 43.05,
+      "fts_p95_us": 79.0,
+      "read_decode_p50_us": 78.83,
+      "read_decode_p95_us": 158.74,
+      "full_p50_us": 126.95,
+      "full_p95_us": 228.97,
+      "roundtrip_errors": 0,
+      "cold_cache_controlled": false,
+      "queries_label_leaked": true
+    }
+  ]
+}
