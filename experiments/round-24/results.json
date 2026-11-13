@@ -1,0 +1,132 @@
+{
+  "research_round": 24,
+  "date": "2026-11-12",
+  "experiment": "HotpotQA-derived question-only title discovery",
+  "execution": "Connected GitHub resource analysis in JavaScript. Python reproduction unit-tested locally but not run on full dataset in offline container.",
+  "source_repository": "surpradhan/rag-benchmark",
+  "source_commit": "c9dc6c350accb3c07629f0465e57d38756a006b0",
+  "source_git_blobs": {
+    "dev_questions.json": "553bca588cda339747dbdbffd876be4d4c9ef72d",
+    "test_questions.json": "b76819e1aaa08f7146f781184cd4f935eef5b79c"
+  },
+  "question_count": 1000,
+  "title_pool_size": 1975,
+  "gold_leakage": "Yes: union of gold annotated supporting titles; no ordinary distractor document pool.",
+  "method": "BM25 titles k1=1.2 b=0.75 positive IDF; MMR lambda=0.75 over top 50 ranked candidates",
+  "unit": "supporting document-title identity only; no source paragraphs",
+  "counts": {
+    "dev": {
+      "n": 500,
+      "bridge": 399,
+      "comparison": 101,
+      "bm25": {
+        "any": {
+          "1": 408,
+          "2": 426,
+          "3": 434,
+          "5": 439,
+          "10": 443
+        },
+        "complete": {
+          "1": 0,
+          "2": 145,
+          "3": 162,
+          "5": 184,
+          "10": 201
+        },
+        "bridge_complete": {
+          "2": 48,
+          "10": 101
+        },
+        "comparison_complete": {
+          "2": 97,
+          "10": 100
+        }
+      },
+      "mmr": {
+        "any": {
+          "1": 408,
+          "2": 431,
+          "3": 433,
+          "5": 438,
+          "10": 444
+        },
+        "complete": {
+          "1": 0,
+          "2": 142,
+          "3": 161,
+          "5": 177,
+          "10": 194
+        },
+        "bridge_complete": {
+          "2": 46,
+          "10": 94
+        },
+        "comparison_complete": {
+          "2": 96,
+          "10": 100
+        }
+      }
+    },
+    "test": {
+      "n": 500,
+      "bridge": 404,
+      "comparison": 96,
+      "bm25": {
+        "any": {
+          "1": 413,
+          "2": 424,
+          "3": 430,
+          "5": 436,
+          "10": 443
+        },
+        "complete": {
+          "1": 0,
+          "2": 167,
+          "3": 181,
+          "5": 199,
+          "10": 210
+        },
+        "bridge_complete": {
+          "2": 74,
+          "10": 114
+        },
+        "comparison_complete": {
+          "2": 93,
+          "10": 96
+        }
+      },
+      "mmr": {
+        "any": {
+          "1": 413,
+          "2": 425,
+          "3": 431,
+          "5": 438,
+          "10": 443
+        },
+        "complete": {
+          "1": 0,
+          "2": 163,
+          "3": 173,
+          "5": 187,
+          "10": 210
+        },
+        "bridge_complete": {
+          "2": 70,
+          "10": 114
+        },
+        "comparison_complete": {
+          "2": 93,
+          "10": 96
+        }
+      }
+    }
+  },
+  "limitations": [
+    "No source text, evidence sentences, citation verification, model reader, or open corpus",
+    "Pool constructed from gold title annotations",
+    "No SSD measurements",
+    "No inference-time bridge extraction",
+    "Full Python dataset rerun pending"
+  ]
+}
