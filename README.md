@@ -1,6 +1,6 @@
 # CDG: Source-Aligned Evidence Retrieval and Compression
 
-**Research notebook and reproducible experiments, November 2026. Latest research: Round 24.**
+**Research notebook and reproducible experiments, November 2026. Latest research: Round 25.**
 
 CDG studies a practical mismatch in retrieval-augmented systems: a search result can be relevant without providing a *complete* basis for a claim. Retrieving more context often fixes omissions, but increases tokens, source reads, and decoding work. The working question is whether a system can recover complete evidence more economically by treating source identity, evidence dependencies, and physical storage layout as one optimization problem.
 
@@ -30,11 +30,13 @@ The architecture deliberately separates four claims that can otherwise be confus
 | Real-text local stress test, Round 22 | BM25 recovered complete constructed evidence pairs in 96% of cases at two paragraphs; facet selection reached 97.6%. | Small and artificially easy benchmark; complex selection barely helps. |
 | Bridge/version/scope injection, Round 23 | Guarded lookup returned the stipulated correct answer or abstention on 600/600 generated two-hop fixtures; naive bridge lookup made 360 injected invalid answers. | **Template-based and deliberately adversarially ordered** inputs; metadata lookups were not charged; no naturally authored benchmark or full QA evaluation. |
 
+| HotpotQA full-context mention expansion, Round 25 | On 100 HotpotQA-derived questions (curated upstream subset), complete supporting-document recovery @2 was BM25 33/100, exact-title mention expansion 46/100, MMR 32/100; @5 BM25 62/100 versus expansion 84/100. | Real source text, **closed-world candidate contexts**; title links are a conventional retrieval baseline. No semantic answer verification, SSD/codec measurements, or independently held-out improvement. Python unit tests pass, but full-data cross-language reproduction is pending. |
+
 **Current verdict:** promising systems hypothesis; no verified held-out, end-to-end improvement over strong retrieval and storage baselines. The primary next step is a real, inference-time dependency predictor, with fixed costs and source-grounded answer evaluation.
 
 ## Repository guide
 
-- [`research/living-record-rounds-19-24.md`](research/living-record-rounds-19-24.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
+- [`research/living-record-rounds-19-25.md`](research/living-record-rounds-19-24.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
 - [`research/rounds/`](research/rounds/): recovered round-specific archives, source code, notes and artifacts. Some early source packages include previous-round snapshots.
 - [`experiments/`](experiments/): directly accessible Round 20–23 scripts and machine-readable outputs.
 - [`source-archives/`](source-archives/): exact downloaded historical ZIP packages preserved separately for auditability. Do not confuse archive existence with successful reruns.
@@ -49,9 +51,11 @@ The source tree includes Python scripts with different dependencies and entry-po
 
 ## Research status and next falsification test
 
-Round 23 also introduces exact source-ID and version/scope guarded bridge lookup as a simple baseline. See [`research/rounds/round-23/report.md`](research/rounds/round-23/report.md) for the experiment and failure-injection analysis.
+Round 23 introduced exact source-ID and version/scope guarded bridge lookup as a simple baseline. See [`research/rounds/round-23/report.md`](research/rounds/round-23/report.md) for the experiment and failure-injection analysis.
 
 **Round 24 real-question diagnostic:** On 1,000 HotpotQA-derived questions using a gold-derived pool of 1,975 document titles, BM25 recovered both annotated titles at k=2 on 122/803 bridge questions versus 190/197 comparison questions. MMR did not help. This is not a standard HotpotQA benchmark and contains title-pool label leakage. [Read the study](research/rounds/round-24/report.md).
+
+Round 25 uses authentic source paragraphs to test exact-title mention expansion as a strong *simple* baseline. See [the report](research/rounds/round-25/report.md), [code](experiments/round-25/bridge_probe.py) and [aggregate results](experiments/round-25/results.json). The simple baseline improves complete supporting-document recall on a small curated subset but does not establish a novel algorithm or total-cost advantage.
 
 The central test is whether predicted evidence dependencies improve *complete-witness recall per total cost* on independently authored held-out multihop queries. Compare against BM25, hybrid retrieval, cross-encoder reranking, set-level selectors and simple expand-on-failure policies. Measure complete support, false citations, final answer accuracy, prompt tokens, compressed storage including indexes, cold/warm p50/p95 reads, and calibration under family shift.
 
@@ -62,3 +66,5 @@ If the graph controller loses to a simpler evidence-expansion baseline at matche
 This is ongoing exploratory research. Synthetic controls, oracle upper bounds, cost proxies, exact-quote alignment, and real held-out evaluation are different classes of evidence. They are labeled separately throughout. Research reports and scripts may include prior model-assisted analysis; authorship and execution history should be described accurately in applications. Code and text here should not be represented as independently peer-reviewed or accepted research.
 
 See [methodology](docs/methodology.md) and [provenance](docs/provenance.md).
+
+**Integrity note:** `MANIFEST.json` is a historical snapshot and does not enumerate all later research rounds. Git tree object identities verify the committed files; use `git ls-files` and SHA-256 locally if a fresh content-hash inventory is required. The Round 25 source data itself is not committed.

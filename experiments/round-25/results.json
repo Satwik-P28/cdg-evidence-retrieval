@@ -1,0 +1,328 @@
+{
+  "analysis_date": "2026-11-12",
+  "analysis_backend": "Connected GitHub source, independent JavaScript evaluator. Python full-data reproducer NOT executed locally.",
+  "status": "exploratory closed-world retrieval, NOT held-out QA, compressed SSD, or end-to-end RAG",
+  "source": {
+    "repository": "OpenSPG/KAG",
+    "commit": "fdab15b3929d2ee40dfcdd388f90233096a6afc9",
+    "path": "kag/open_benchmark/hotpotqa/data/qa_train.json",
+    "git_blob_sha1": "7dbdf068a437f0577043667ffee3a20f0a602154"
+  },
+  "corpus": {
+    "questions": 100,
+    "bridge_questions": 78,
+    "comparison_questions": 22,
+    "question_local_paragraphs": 994,
+    "sentences": 4139,
+    "gold_sentences": 229,
+    "missing_gold_sentences": 0
+  },
+  "settings": {
+    "bm25_k1": 1.2,
+    "bm25_b": 0.75,
+    "bridge_exact_whole_title_match": true,
+    "bridge_score_bonus": 2.0,
+    "mmr_lambda": 0.75,
+    "doc_budgets": [
+      2,
+      3,
+      5
+    ]
+  },
+  "methods": {
+    "bm25": {
+      "2": {
+        "all": {
+          "n": 100,
+          "any_doc": 92,
+          "complete_docs": 33,
+          "mean_selected_characters_rounded": 1035,
+          "complete_gold_sentences_with_top1_per_document": 14,
+          "complete_gold_sentences_with_top2_per_document": 26,
+          "complete_gold_sentences_with_top3_per_document": 30
+        },
+        "bridge": {
+          "n": 78,
+          "any_doc": 73,
+          "complete_docs": 26,
+          "mean_selected_characters_rounded": 1066,
+          "complete_gold_sentences_with_top1_per_document": 9,
+          "complete_gold_sentences_with_top2_per_document": 19,
+          "complete_gold_sentences_with_top3_per_document": 23
+        },
+        "comparison": {
+          "n": 22,
+          "any_doc": 19,
+          "complete_docs": 7,
+          "mean_selected_characters_rounded": 924,
+          "complete_gold_sentences_with_top1_per_document": 5,
+          "complete_gold_sentences_with_top2_per_document": 7,
+          "complete_gold_sentences_with_top3_per_document": 7
+        }
+      },
+      "3": {
+        "all": {
+          "n": 100,
+          "any_doc": 95,
+          "complete_docs": 46,
+          "mean_selected_characters_rounded": 1577,
+          "complete_gold_sentences_with_top1_per_document": 23,
+          "complete_gold_sentences_with_top2_per_document": 37,
+          "complete_gold_sentences_with_top3_per_document": 42
+        },
+        "bridge": {
+          "n": 78,
+          "any_doc": 73,
+          "complete_docs": 36,
+          "mean_selected_characters_rounded": 1607,
+          "complete_gold_sentences_with_top1_per_document": 15,
+          "complete_gold_sentences_with_top2_per_document": 27,
+          "complete_gold_sentences_with_top3_per_document": 32
+        },
+        "comparison": {
+          "n": 22,
+          "any_doc": 22,
+          "complete_docs": 10,
+          "mean_selected_characters_rounded": 1470,
+          "complete_gold_sentences_with_top1_per_document": 8,
+          "complete_gold_sentences_with_top2_per_document": 10,
+          "complete_gold_sentences_with_top3_per_document": 10
+        }
+      },
+      "5": {
+        "all": {
+          "n": 100,
+          "any_doc": 99,
+          "complete_docs": 62,
+          "mean_selected_characters_rounded": 2781,
+          "complete_gold_sentences_with_top1_per_document": 31,
+          "complete_gold_sentences_with_top2_per_document": 50,
+          "complete_gold_sentences_with_top3_per_document": 58
+        },
+        "bridge": {
+          "n": 78,
+          "any_doc": 77,
+          "complete_docs": 46,
+          "mean_selected_characters_rounded": 2875,
+          "complete_gold_sentences_with_top1_per_document": 20,
+          "complete_gold_sentences_with_top2_per_document": 35,
+          "complete_gold_sentences_with_top3_per_document": 42
+        },
+        "comparison": {
+          "n": 22,
+          "any_doc": 22,
+          "complete_docs": 16,
+          "mean_selected_characters_rounded": 2448,
+          "complete_gold_sentences_with_top1_per_document": 11,
+          "complete_gold_sentences_with_top2_per_document": 15,
+          "complete_gold_sentences_with_top3_per_document": 16
+        }
+      }
+    },
+    "bridge": {
+      "2": {
+        "all": {
+          "n": 100,
+          "any_doc": 95,
+          "complete_docs": 46,
+          "mean_selected_characters_rounded": 990,
+          "complete_gold_sentences_with_top1_per_document": 19,
+          "complete_gold_sentences_with_top2_per_document": 36,
+          "complete_gold_sentences_with_top3_per_document": 43
+        },
+        "bridge": {
+          "n": 78,
+          "any_doc": 73,
+          "complete_docs": 41,
+          "mean_selected_characters_rounded": 1006,
+          "complete_gold_sentences_with_top1_per_document": 16,
+          "complete_gold_sentences_with_top2_per_document": 31,
+          "complete_gold_sentences_with_top3_per_document": 38
+        },
+        "comparison": {
+          "n": 22,
+          "any_doc": 22,
+          "complete_docs": 5,
+          "mean_selected_characters_rounded": 931,
+          "complete_gold_sentences_with_top1_per_document": 3,
+          "complete_gold_sentences_with_top2_per_document": 5,
+          "complete_gold_sentences_with_top3_per_document": 5
+        }
+      },
+      "3": {
+        "all": {
+          "n": 100,
+          "any_doc": 95,
+          "complete_docs": 64,
+          "mean_selected_characters_rounded": 1544,
+          "complete_gold_sentences_with_top1_per_document": 32,
+          "complete_gold_sentences_with_top2_per_document": 53,
+          "complete_gold_sentences_with_top3_per_document": 60
+        },
+        "bridge": {
+          "n": 78,
+          "any_doc": 73,
+          "complete_docs": 52,
+          "mean_selected_characters_rounded": 1576,
+          "complete_gold_sentences_with_top1_per_document": 22,
+          "complete_gold_sentences_with_top2_per_document": 41,
+          "complete_gold_sentences_with_top3_per_document": 48
+        },
+        "comparison": {
+          "n": 22,
+          "any_doc": 22,
+          "complete_docs": 12,
+          "mean_selected_characters_rounded": 1429,
+          "complete_gold_sentences_with_top1_per_document": 10,
+          "complete_gold_sentences_with_top2_per_document": 12,
+          "complete_gold_sentences_with_top3_per_document": 12
+        }
+      },
+      "5": {
+        "all": {
+          "n": 100,
+          "any_doc": 99,
+          "complete_docs": 84,
+          "mean_selected_characters_rounded": 2707,
+          "complete_gold_sentences_with_top1_per_document": 44,
+          "complete_gold_sentences_with_top2_per_document": 69,
+          "complete_gold_sentences_with_top3_per_document": 79
+        },
+        "bridge": {
+          "n": 78,
+          "any_doc": 77,
+          "complete_docs": 64,
+          "mean_selected_characters_rounded": 2779,
+          "complete_gold_sentences_with_top1_per_document": 29,
+          "complete_gold_sentences_with_top2_per_document": 50,
+          "complete_gold_sentences_with_top3_per_document": 59
+        },
+        "comparison": {
+          "n": 22,
+          "any_doc": 22,
+          "complete_docs": 20,
+          "mean_selected_characters_rounded": 2449,
+          "complete_gold_sentences_with_top1_per_document": 15,
+          "complete_gold_sentences_with_top2_per_document": 19,
+          "complete_gold_sentences_with_top3_per_document": 20
+        }
+      }
+    },
+    "mmr": {
+      "2": {
+        "all": {
+          "n": 100,
+          "any_doc": 92,
+          "complete_docs": 32,
+          "mean_selected_characters_rounded": 1044,
+          "complete_gold_sentences_with_top1_per_document": 13,
+          "complete_gold_sentences_with_top2_per_document": 25,
+          "complete_gold_sentences_with_top3_per_document": 29
+        },
+        "bridge": {
+          "n": 78,
+          "any_doc": 73,
+          "complete_docs": 25,
+          "mean_selected_characters_rounded": 1077,
+          "complete_gold_sentences_with_top1_per_document": 8,
+          "complete_gold_sentences_with_top2_per_document": 18,
+          "complete_gold_sentences_with_top3_per_document": 22
+        },
+        "comparison": {
+          "n": 22,
+          "any_doc": 19,
+          "complete_docs": 7,
+          "mean_selected_characters_rounded": 924,
+          "complete_gold_sentences_with_top1_per_document": 5,
+          "complete_gold_sentences_with_top2_per_document": 7,
+          "complete_gold_sentences_with_top3_per_document": 7
+        }
+      },
+      "3": {
+        "all": {
+          "n": 100,
+          "any_doc": 97,
+          "complete_docs": 47,
+          "mean_selected_characters_rounded": 1603,
+          "complete_gold_sentences_with_top1_per_document": 23,
+          "complete_gold_sentences_with_top2_per_document": 37,
+          "complete_gold_sentences_with_top3_per_document": 43
+        },
+        "bridge": {
+          "n": 78,
+          "any_doc": 75,
+          "complete_docs": 38,
+          "mean_selected_characters_rounded": 1635,
+          "complete_gold_sentences_with_top1_per_document": 16,
+          "complete_gold_sentences_with_top2_per_document": 28,
+          "complete_gold_sentences_with_top3_per_document": 34
+        },
+        "comparison": {
+          "n": 22,
+          "any_doc": 22,
+          "complete_docs": 9,
+          "mean_selected_characters_rounded": 1491,
+          "complete_gold_sentences_with_top1_per_document": 7,
+          "complete_gold_sentences_with_top2_per_document": 9,
+          "complete_gold_sentences_with_top3_per_document": 9
+        }
+      },
+      "5": {
+        "all": {
+          "n": 100,
+          "any_doc": 99,
+          "complete_docs": 62,
+          "mean_selected_characters_rounded": 2810,
+          "complete_gold_sentences_with_top1_per_document": 31,
+          "complete_gold_sentences_with_top2_per_document": 50,
+          "complete_gold_sentences_with_top3_per_document": 58
+        },
+        "bridge": {
+          "n": 78,
+          "any_doc": 77,
+          "complete_docs": 47,
+          "mean_selected_characters_rounded": 2910,
+          "complete_gold_sentences_with_top1_per_document": 21,
+          "complete_gold_sentences_with_top2_per_document": 36,
+          "complete_gold_sentences_with_top3_per_document": 43
+        },
+        "comparison": {
+          "n": 22,
+          "any_doc": 22,
+          "complete_docs": 15,
+          "mean_selected_characters_rounded": 2455,
+          "complete_gold_sentences_with_top1_per_document": 10,
+          "complete_gold_sentences_with_top2_per_document": 14,
+          "complete_gold_sentences_with_top3_per_document": 15
+        }
+      }
+    }
+  },
+  "paired_complete_docs": {
+    "2": {
+      "both": 31,
+      "bridge_only": 15,
+      "bm25_only": 2,
+      "neither": 52
+    },
+    "3": {
+      "both": 45,
+      "bridge_only": 19,
+      "bm25_only": 1,
+      "neither": 35
+    },
+    "5": {
+      "both": 60,
+      "bridge_only": 24,
+      "bm25_only": 2,
+      "neither": 14
+    }
+  },
+  "limitations": [
+    "Gold-bearing paragraphs supplied in each per-question candidate pool",
+    "Potential source selection bias, no official held-out evaluation",
+    "Full candidate BM25 indexing/scoring and title mention lookup not included in selected-character costs",
+    "No answer generator, semantic validation, compressed bytes, latency or physical I/O",
+    "Source results not cross-reproduced with local Python due offline data access"
+  ]
+}
