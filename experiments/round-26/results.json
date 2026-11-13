@@ -1,0 +1,75 @@
+{
+  "round": 26,
+  "research_date": "2026-11-12",
+  "status": "independent JavaScript analysis on GitHub-connected authentic source paragraphs; local Python full-data run not yet completed",
+  "source": {
+    "repository": "OpenSPG/KAG",
+    "revision": "fdab15b3929d2ee40dfcdd388f90233096a6afc9",
+    "path": "kag/open_benchmark/hotpotqa/data/qa_train.json",
+    "git_blob_sha1": "7dbdf068a437f0577043667ffee3a20f0a602154",
+    "questions": 100,
+    "per_question_source_occurrences": 994,
+    "corpus_is_curated": true
+  },
+  "evaluation": {
+    "unit": "complete annotated supporting sentences in selected sentence sets",
+    "gold_used_at_inference": false,
+    "document_policy": "Round 25 exact-title bridge selection, 2.0 score bonus",
+    "source_serialization": "UTF-8(title + newline + each sentence followed by newline), unique per question and candidate title",
+    "source_offsets": "UTF-8 byte positions in constructed serialization; not original upstream JSON offsets",
+    "frame_cost": "modeled uncompressed fixed-size frame union; full frames materialized, no cache",
+    "actual_compressed_corpus_bytes_measured": false,
+    "actual_ssd_latency_measured": false,
+    "full_candidate_index_scans_charged": false,
+    "frame_metadata_assumption_bytes": 16
+  },
+  "archive_uncompressed_body_bytes": 572088,
+  "archive_fixed_frames": {
+    "128": {"count": 4960, "metadata_bytes": 79360},
+    "256": {"count": 2736, "metadata_bytes": 43776},
+    "512": {"count": 1599, "metadata_bytes": 25584},
+    "1024": {"count": 1082, "metadata_bytes": 17312},
+    "2048": {"count": 998, "metadata_bytes": 15968}
+  },
+  "bridge_policy": {
+    "2": {
+      "full": {"complete": 46,"prompt_bytes_mean":947,"full_source_bytes_mean":995,"frame_bytes_mean":{"128":995,"256":995,"512":995,"1024":995,"2048":995}},
+      "top2": {"complete":36,"prompt_bytes_mean":543,"full_source_bytes_mean":995,"frame_bytes_mean":{"128":727,"256":828,"512":914,"1024":979,"2048":995}},
+      "top3": {"complete":43,"prompt_bytes_mean":723,"full_source_bytes_mean":995,"frame_bytes_mean":{"128":882,"256":926,"512":976,"1024":990,"2048":995}},
+      "top2+link": {"complete":39,"prompt_bytes_mean":553,"full_source_bytes_mean":995,"frame_bytes_mean":{"128":736,"256":834,"512":916,"1024":979,"2048":995}}
+    },
+    "3": {
+      "full": {"complete":64,"prompt_bytes_mean":1480,"full_source_bytes_mean":1552,"frame_bytes_mean":{"128":1552,"256":1552,"512":1552,"1024":1552,"2048":1552}},
+      "top2": {"complete":53,"prompt_bytes_mean":821,"full_source_bytes_mean":1552,"frame_bytes_mean":{"128":1121,"256":1279,"512":1412,"1024":1520,"2048":1552}},
+      "top3": {"complete":60,"prompt_bytes_mean":1093,"full_source_bytes_mean":1552,"frame_bytes_mean":{"128":1342,"256":1433,"512":1496,"1024":1540,"2048":1552}},
+      "top2+link": {"complete":56,"prompt_bytes_mean":833,"full_source_bytes_mean":1552,"frame_bytes_mean":{"128":1131,"256":1286,"512":1415,"1024":1520,"2048":1552}}
+    },
+    "5": {
+      "full": {"complete":84,"prompt_bytes_mean":2599,"full_source_bytes_mean":2722,"frame_bytes_mean":{"128":2722,"256":2722,"512":2722,"1024":2722,"2048":2722}},
+      "top2": {"complete":69,"prompt_bytes_mean":1386,"full_source_bytes_mean":2722,"frame_bytes_mean":{"128":1920,"256":2212,"512":2451,"1024":2661,"2048":2722}},
+      "top3": {"complete":79,"prompt_bytes_mean":1855,"full_source_bytes_mean":2722,"frame_bytes_mean":{"128":2312,"256":2498,"512":2628,"1024":2695,"2048":2722}},
+      "top2+link": {"complete":74,"prompt_bytes_mean":1417,"full_source_bytes_mean":2722,"frame_bytes_mean":{"128":1946,"256":2228,"512":2457,"1024":2661,"2048":2722}}
+    }
+  },
+  "paired_top2_vs_link_with_bridge_documents": {
+    "2": {"both":36,"top2_only":0,"link_only":3,"neither":61},
+    "3": {"both":53,"top2_only":0,"link_only":3,"neither":44},
+    "5": {"both":69,"top2_only":0,"link_only":5,"neither":26}
+  },
+  "bm25_document_policy_control": {
+    "5": {
+      "full":{"complete":62,"frame_bytes_mean_128":2796},
+      "top2":{"complete":50,"frame_bytes_mean_128":1947},
+      "top3":{"complete":58,"frame_bytes_mean_128":2350},
+      "top2+link":{"complete":58,"frame_bytes_mean_128":2355}
+    }
+  },
+  "integrity": {
+    "analysis_not_reproduced_from_python_full_dataset": true,
+    "local_python_test_count": 8,
+    "local_python_test_passed": 8,
+    "actual_independent_frame_zstd_implemented": true,
+    "zstd_verified_only_on_local_toy_fixture": true,
+    "source_data_not_redistributed": true
+  }
+}

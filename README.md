@@ -1,6 +1,6 @@
 # CDG: Source-Aligned Evidence Retrieval and Compression
 
-**Research notebook and reproducible experiments, November 2026. Latest research: Round 25.**
+**Research notebook and reproducible experiments, November 2026. Latest research: Round 26.**
 
 CDG studies a practical mismatch in retrieval-augmented systems: a search result can be relevant without providing a *complete* basis for a claim. Retrieving more context often fixes omissions, but increases tokens, source reads, and decoding work. The working question is whether a system can recover complete evidence more economically by treating source identity, evidence dependencies, and physical storage layout as one optimization problem.
 
@@ -36,7 +36,7 @@ The architecture deliberately separates four claims that can otherwise be confus
 
 ## Repository guide
 
-- [`research/living-record-rounds-19-25.md`](research/living-record-rounds-19-24.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
+- [`research/living-record-rounds-19-26.md`](research/living-record-rounds-19-26.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
 - [`research/rounds/`](research/rounds/): recovered round-specific archives, source code, notes and artifacts. Some early source packages include previous-round snapshots.
 - [`experiments/`](experiments/): directly accessible Round 20–23 scripts and machine-readable outputs.
 - [`source-archives/`](source-archives/): exact downloaded historical ZIP packages preserved separately for auditability. Do not confuse archive existence with successful reruns.
@@ -48,6 +48,10 @@ The architecture deliberately separates four claims that can otherwise be confus
 ## Reproducing selected experiments
 
 The source tree includes Python scripts with different dependencies and entry-point conventions. Some historical scripts expect the directory structure of their archived package or require networked datasets. Start by inspecting `experiments/round-20/`, `experiments/round-21/`, `experiments/round-22/`, `experiments/round-23/`, then read the corresponding appendices and run only those tests whose inputs and environment you can supply. A syntax/JSON integrity audit was performed on this export, **not** a complete rerun of every experimental result.
+
+## Round 26: source-aligned frame activation
+
+On the same 100-question HotpotQA-derived subset, five-document bridge retrieval contained every annotated supporting sentence in 84/100 cases when full source paragraphs were retained. Selecting only two query-BM25 sentences per source reduced complete evidence presence to 69/100; retaining additional observed bridge-mention sentences recovered 74/100. At **128-byte independent frames**, modeled mean raw source bytes activated were 2,722 for full sources versus 1,946 for top-two-plus-link. At **2,048-byte frames**, both activate 2,722 bytes in this short-document corpus. This is **not** a measured compressed SSD advantage: index/mention-sidecar costs, actual corpus-compressed frame bytes, and end-to-end QA remain unmeasured. Eight local tests passed for UTF-8 span offsets and lossless independent zstd/zlib frames on toy inputs. [Read the Round 26 report](research/rounds/round-26/report.md), [experiment code](experiments/round-26/frame_probe.py), and [model outputs](experiments/round-26/results.json).
 
 ## Research status and next falsification test
 
