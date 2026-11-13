@@ -1,0 +1,299 @@
+{
+  "256": {
+    "sources": 5,
+    "input_bytes": 88679,
+    "layout": "fixed",
+    "frame_size": 256,
+    "external": {
+      "sqlite": 241664,
+      "payload": 64533,
+      "total": 306197,
+      "build_ms": 29.98,
+      "median_query_and_decode_us": 276.53,
+      "mean_payload_read_bytes": 1142.72
+    },
+    "contentless": {
+      "sqlite": 147456,
+      "payload": 64533,
+      "total": 211989,
+      "build_ms": 23.73,
+      "median_query_and_decode_us": 264.49,
+      "mean_payload_read_bytes": 1142.72
+    },
+    "queries": 18,
+    "query_details": [
+      {
+        "term": "compression",
+        "hits": 5
+      },
+      {
+        "term": "evidence",
+        "hits": 5
+      },
+      {
+        "term": "retrieval",
+        "hits": 5
+      },
+      {
+        "term": "memory",
+        "hits": 2
+      },
+      {
+        "term": "source",
+        "hits": 5
+      },
+      {
+        "term": "system",
+        "hits": 5
+      },
+      {
+        "term": "graph",
+        "hits": 5
+      },
+      {
+        "term": "document",
+        "hits": 5
+      },
+      {
+        "term": "framework",
+        "hits": 1
+      },
+      {
+        "term": "model",
+        "hits": 5
+      },
+      {
+        "term": "time",
+        "hits": 5
+      },
+      {
+        "term": "cost",
+        "hits": 5
+      },
+      {
+        "term": "research",
+        "hits": 5
+      },
+      {
+        "term": "benchmarks",
+        "hits": 1
+      },
+      {
+        "term": "result",
+        "hits": 5
+      },
+      {
+        "term": "citation",
+        "hits": 5
+      },
+      {
+        "term": "byte",
+        "hits": 5
+      },
+      {
+        "term": "index",
+        "hits": 5
+      }
+    ],
+    "mismatches": [],
+    "status": "real local storage bytes and warm search/read/decode; terms hand-selected from topic, no QA and no cold cache control"
+  },
+  "512": {
+    "sources": 5,
+    "input_bytes": 88679,
+    "layout": "fixed",
+    "frame_size": 512,
+    "external": {
+      "sqlite": 233472,
+      "payload": 58283,
+      "total": 291755,
+      "build_ms": 20.92,
+      "median_query_and_decode_us": 229.77,
+      "mean_payload_read_bytes": 1713.5
+    },
+    "contentless": {
+      "sqlite": 139264,
+      "payload": 58283,
+      "total": 197547,
+      "build_ms": 20.24,
+      "median_query_and_decode_us": 179.5,
+      "mean_payload_read_bytes": 1713.5
+    },
+    "queries": 18,
+    "query_details": [
+      {
+        "term": "compression",
+        "hits": 5
+      },
+      {
+        "term": "evidence",
+        "hits": 5
+      },
+      {
+        "term": "retrieval",
+        "hits": 5
+      },
+      {
+        "term": "memory",
+        "hits": 2
+      },
+      {
+        "term": "source",
+        "hits": 5
+      },
+      {
+        "term": "system",
+        "hits": 5
+      },
+      {
+        "term": "graph",
+        "hits": 5
+      },
+      {
+        "term": "document",
+        "hits": 5
+      },
+      {
+        "term": "framework",
+        "hits": 1
+      },
+      {
+        "term": "model",
+        "hits": 5
+      },
+      {
+        "term": "time",
+        "hits": 5
+      },
+      {
+        "term": "cost",
+        "hits": 5
+      },
+      {
+        "term": "research",
+        "hits": 5
+      },
+      {
+        "term": "benchmarks",
+        "hits": 1
+      },
+      {
+        "term": "result",
+        "hits": 5
+      },
+      {
+        "term": "citation",
+        "hits": 5
+      },
+      {
+        "term": "byte",
+        "hits": 5
+      },
+      {
+        "term": "index",
+        "hits": 5
+      }
+    ],
+    "mismatches": [],
+    "status": "real local storage bytes and warm search/read/decode; terms hand-selected from topic, no QA and no cold cache control"
+  },
+  "2048": {
+    "sources": 5,
+    "input_bytes": 88679,
+    "layout": "fixed",
+    "frame_size": 2048,
+    "external": {
+      "sqlite": 233472,
+      "payload": 48323,
+      "total": 281795,
+      "build_ms": 18.28,
+      "median_query_and_decode_us": 222.76,
+      "mean_payload_read_bytes": 5004.72
+    },
+    "contentless": {
+      "sqlite": 139264,
+      "payload": 48323,
+      "total": 187587,
+      "build_ms": 17.69,
+      "median_query_and_decode_us": 191.93,
+      "mean_payload_read_bytes": 5004.72
+    },
+    "queries": 18,
+    "query_details": [
+      {
+        "term": "compression",
+        "hits": 5
+      },
+      {
+        "term": "evidence",
+        "hits": 5
+      },
+      {
+        "term": "retrieval",
+        "hits": 5
+      },
+      {
+        "term": "memory",
+        "hits": 2
+      },
+      {
+        "term": "source",
+        "hits": 5
+      },
+      {
+        "term": "system",
+        "hits": 5
+      },
+      {
+        "term": "graph",
+        "hits": 5
+      },
+      {
+        "term": "document",
+        "hits": 5
+      },
+      {
+        "term": "framework",
+        "hits": 1
+      },
+      {
+        "term": "model",
+        "hits": 5
+      },
+      {
+        "term": "time",
+        "hits": 5
+      },
+      {
+        "term": "cost",
+        "hits": 5
+      },
+      {
+        "term": "research",
+        "hits": 5
+      },
+      {
+        "term": "benchmarks",
+        "hits": 1
+      },
+      {
+        "term": "result",
+        "hits": 5
+      },
+      {
+        "term": "citation",
+        "hits": 5
+      },
+      {
+        "term": "byte",
+        "hits": 5
+      },
+      {
+        "term": "index",
+        "hits": 5
+      }
+    ],
+    "mismatches": [],
+    "status": "real local storage bytes and warm search/read/decode; terms hand-selected from topic, no QA and no cold cache control"
+  }
+}

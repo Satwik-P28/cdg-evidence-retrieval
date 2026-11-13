@@ -1,0 +1,285 @@
+{
+  "scope": "Two manually authored fixture questions for regression only; NOT science benchmark",
+  "measurements": {
+    "whole_0": {
+      "questions": 2,
+      "mean_total_store_bytes": 57798,
+      "mean_source_bytes": 539,
+      "build_ms_total": 31.1,
+      "methods": {
+        "fts": {
+          "2": {
+            "complete_docs": 1,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 344.7
+        },
+        "dynamic_bridge": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 207.1
+        },
+        "link_index": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 139.5
+        }
+      }
+    },
+    "fixed_128": {
+      "questions": 2,
+      "mean_total_store_bytes": 57813,
+      "mean_source_bytes": 539,
+      "build_ms_total": 26.9,
+      "methods": {
+        "fts": {
+          "2": {
+            "complete_docs": 1,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 469,
+          "mean_decode_us_5": 246.5
+        },
+        "dynamic_bridge": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 469,
+          "mean_decode_us_5": 136.7
+        },
+        "link_index": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 469,
+          "mean_decode_us_5": 136.5
+        }
+      }
+    },
+    "fixed_512": {
+      "questions": 2,
+      "mean_total_store_bytes": 57798,
+      "mean_source_bytes": 539,
+      "build_ms_total": 29.1,
+      "methods": {
+        "fts": {
+          "2": {
+            "complete_docs": 1,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 241.5
+        },
+        "dynamic_bridge": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 153.3
+        },
+        "link_index": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 133.4
+        }
+      }
+    },
+    "lines_512": {
+      "questions": 2,
+      "mean_total_store_bytes": 57798,
+      "mean_source_bytes": 539,
+      "build_ms_total": 25.1,
+      "methods": {
+        "fts": {
+          "2": {
+            "complete_docs": 1,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 189.3
+        },
+        "dynamic_bridge": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 113.9
+        },
+        "link_index": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 105.6
+        }
+      }
+    },
+    "fixed_2048": {
+      "questions": 2,
+      "mean_total_store_bytes": 57798,
+      "mean_source_bytes": 539,
+      "build_ms_total": 24.4,
+      "methods": {
+        "fts": {
+          "2": {
+            "complete_docs": 1,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 195.9
+        },
+        "dynamic_bridge": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 125.3
+        },
+        "link_index": {
+          "2": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "3": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "5": {
+            "complete_docs": 2,
+            "n": 2
+          },
+          "mean_payload_read_bytes_5": 454,
+          "mean_decode_us_5": 107.3
+        }
+      }
+    }
+  }
+}

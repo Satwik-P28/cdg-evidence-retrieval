@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-13",
+  "execution_backend": "Connected GitHub source content analyzed in JavaScript; independent Python full-corpus rerun not completed",
+  "source": {
+    "repository": "OpenSPG/KAG",
+    "commit": "fdab15b3929d2ee40dfcdd388f90233096a6afc9",
+    "path": "kag/open_benchmark/hotpotqa/data/qa_train.json",
+    "git_blob_sha1": "7dbdf068a437f0577043667ffee3a20f0a602154"
+  },
+  "scope": "100 curated HotpotQA-derived authentic questions, supplied question-local 10-document candidate pools. No end-to-end QA, no model trained, no full-corpus physical Zstd cost.",
+  "records": {"questions": 100, "bridge_questions": 78, "comparison_questions": 22, "document_instances": 994, "distinct_titles": 994, "source_utf8_bytes_with_title_and_newline": 571094},
+  "computed_link_graph": {
+    "definition": "Directed exact whole-token target document title occurrence in a different candidate's source body, among the ten question-local candidate documents",
+    "directed_edges": 403,
+    "mean_edges_per_question": 4.03,
+    "questions_whose_first_bm25_document_links_to_at_least_one_other_gold_title": 53,
+    "modeled_title_metadata_bytes_at_len_plus_8_each": 28047,
+    "modeled_link_metadata_bytes_at_16_per_edge": 6448,
+    "warning": "Two modeled metadata numbers are not measured SQLite index footprints; do not add to actual results as if they were measured."
+  },
+  "retrieval_document_bm25": {"k2_complete": 33, "k5_complete": 62},
+  "retrieval_exact_title_mention_plus_2_score_bonus": {"k2_complete": 46, "k5_complete": 84},
+  "paired_at_2": {"both_complete": 31, "bridge_only_complete": 15, "bm25_only_complete": 2, "neither_complete": 52},
+  "interpretation": "Recapitulates the existing Round25 quality baseline and quantifies candidate title-link graph density; NOT a new held-out result, and title links do not establish entailment."
+}

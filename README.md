@@ -1,6 +1,6 @@
 # CDG: Source-Aligned Evidence Retrieval and Compression
 
-**Research notebook and reproducible experiments, November 2026. Latest research: Round 29.**
+**Research notebook and reproducible experiments, November 2026. Latest research: Round 30.**
 
 CDG studies a practical mismatch in retrieval-augmented systems: a search result can be relevant without providing a *complete* basis for a claim. Retrieving more context often fixes omissions, but increases tokens, source reads, and decoding work. The working question is whether a system can recover complete evidence more economically by treating source identity, evidence dependencies, and physical storage layout as one optimization problem.
 
@@ -36,7 +36,7 @@ The architecture deliberately separates four claims that can otherwise be confus
 
 ## Repository guide
 
-- [`research/living-record-rounds-19-29.md`](research/living-record-rounds-19-29.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
+- [`research/living-record-rounds-19-30.md`](research/living-record-rounds-19-30.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
 - [`research/rounds/`](research/rounds/): recovered round-specific archives, source code, notes and artifacts. Some early source packages include previous-round snapshots.
 - [`experiments/`](experiments/): directly accessible Round 20–23 scripts and machine-readable outputs.
 - [`source-archives/`](source-archives/): exact downloaded historical ZIP packages preserved separately for auditability. Do not confuse archive existence with successful reruns.
@@ -64,6 +64,10 @@ The prototype now writes independent Zstandard frames to disk, serializes byte-a
 ## Round 29: query-driven retrieval to exact compressed source bytes
 
 The physical benchmark now runs the entire search and source reconstruction path: **FTS5 full-text query → line ID and stored UTF-8 offsets → serialized independent Zstandard frames → file-backed read/decode → exact original bytes**. Five local technical reports (88,679 bytes) and 158 deterministically **source-derived**, label-leaked two-term queries were tested. Exact target-line recovery was **94.3% @3** and **97.47% @5**, with zero byte reconstruction errors. Across 474 warm requests per layout, fixed 2,048-byte frames gave a 126.8 μs observed full p50 versus 140.1 μs for line-aligned 512 B, despite the latter reading substantially fewer compressed bytes. Warm timings lack cold-cache and statistical controls. **This is not independent QA or evidence-completeness validation.** Six regression tests passed. [Technical report](research/rounds/round-29/report.md), [benchmark code](experiments/round-29/retrieval_bench.py), [machine-readable measurements](experiments/round-29/results.json).
+
+## Round 30: contentless search indexes and integrated bridge retrieval
+
+Reviewing the Round 28/29 storage layer revealed duplicated original source text in SQLite alongside Zstandard-compressed source frames. On five research reports (**88,679 bytes**), replacing the uncompressed `lines.body` table with a **contentless FTS5** search index reduced the measured total database-plus-compressed-payload footprint from **291,755 to 197,547 bytes at 512-byte frames (32.3%)**, while preserving the same ranked byte-verified results for 18 local lexical queries. The reduction was **30.8%** at 256 B and **33.4%** at 2,048 B frames. These are established SQLite techniques, **not** a new index algorithm or verified latency gain. A file-backed HotpotQA-shaped FTS5 + title-link baseline and tests were also implemented, but the complete pinned 100-question dataset **was not run through that local physical reader**. A connected GitHub analysis separately reconfirmed 403 exact title links and the prior BM25 33/100 versus title expansion 46/100 complete two-document retrieval result; do not combine those two separately executed experiments as an end-to-end score. **13 local regression tests passed.** [Report](research/rounds/round-30/report.md), [integrated prototype](experiments/round-30/integrated.py), [real storage measurements](experiments/round-30/contentless_all_results.json), [connected-source analysis](experiments/round-30/source_analysis.json).
 
 ## Research status and next falsification test
 
