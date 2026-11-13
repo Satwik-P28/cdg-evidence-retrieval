@@ -1,0 +1,271 @@
+{
+  "version": "round28-v1",
+  "source_provenance": [
+    {
+      "name": "CDG_Round19_Research_Report_2026-11-11(1).md",
+      "bytes": 28396,
+      "sha256": "b8c805baef7dffaeaf355d31a0ccc23fd1aa83e411a4cbebcc54cae8cd414c02"
+    },
+    {
+      "name": "cdg_round20_appendix.md",
+      "bytes": 16987,
+      "sha256": "c03ad05bd18331e8553d3fe964595bdedbc1ee6a7a9c6d7e5b3a58fd9c947291"
+    },
+    {
+      "name": "cdg_round21_appendix.md",
+      "bytes": 16372,
+      "sha256": "1b310415d0a7f267cd83712b31e70d8d42b956ac44efcff8e71b90394f2f3c99"
+    },
+    {
+      "name": "cdg_round22_appendix.md",
+      "bytes": 14371,
+      "sha256": "49470dd86762c76fcad6eed1795c27da876972a7d7f3f67ed7411963fcf415ad"
+    },
+    {
+      "name": "report.md",
+      "bytes": 12553,
+      "sha256": "8ccbcdd68a07afc3738d4270103c4a1616a775899721ed439323ed570e722e9b"
+    }
+  ],
+  "workloads": {
+    "wholeline": {
+      "whole_0": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 38689,
+        "sqlite_index_bytes": 233472,
+        "total_persistent_bytes": 272161,
+        "frames": 5,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 12509.3,
+        "median_compressed_bytes_per_request": 12152.0,
+        "mean_frames_per_request": 1.52,
+        "warm_p50_us": 75.7,
+        "warm_p95_us": 96.7,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "fixed_256": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 64533,
+        "sqlite_index_bytes": 241664,
+        "total_persistent_bytes": 306197,
+        "frames": 349,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 641.7,
+        "median_compressed_bytes_per_request": 603.0,
+        "mean_frames_per_request": 3.54,
+        "warm_p50_us": 70.9,
+        "warm_p95_us": 120.8,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "lines_256": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 66381,
+        "sqlite_index_bytes": 262144,
+        "total_persistent_bytes": 328525,
+        "frames": 437,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 428.8,
+        "median_compressed_bytes_per_request": 394.0,
+        "mean_frames_per_request": 2.87,
+        "warm_p50_us": 68.4,
+        "warm_p95_us": 123.5,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "fixed_512": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 58283,
+        "sqlite_index_bytes": 233472,
+        "total_persistent_bytes": 291755,
+        "frames": 176,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 833.9,
+        "median_compressed_bytes_per_request": 719.0,
+        "mean_frames_per_request": 2.57,
+        "warm_p50_us": 57.0,
+        "warm_p95_us": 98.0,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "lines_512": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 59785,
+        "sqlite_index_bytes": 241664,
+        "total_persistent_bytes": 301449,
+        "frames": 222,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 556.8,
+        "median_compressed_bytes_per_request": 550.0,
+        "mean_frames_per_request": 2.07,
+        "warm_p50_us": 58.2,
+        "warm_p95_us": 93.0,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "fixed_2048": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 48323,
+        "sqlite_index_bytes": 233472,
+        "total_persistent_bytes": 281795,
+        "frames": 46,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 1986.3,
+        "median_compressed_bytes_per_request": 2074.0,
+        "mean_frames_per_request": 1.86,
+        "warm_p50_us": 47.2,
+        "warm_p95_us": 81.8,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "lines_2048": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 48961,
+        "sqlite_index_bytes": 233472,
+        "total_persistent_bytes": 282433,
+        "frames": 49,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 1765.3,
+        "median_compressed_bytes_per_request": 1979.0,
+        "mean_frames_per_request": 1.73,
+        "warm_p50_us": 46.3,
+        "warm_p95_us": 76.4,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      }
+    },
+    "subspan": {
+      "whole_0": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 38689,
+        "sqlite_index_bytes": 233472,
+        "total_persistent_bytes": 272161,
+        "frames": 5,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 12358.4,
+        "median_compressed_bytes_per_request": 12955.0,
+        "mean_frames_per_request": 1.55,
+        "warm_p50_us": 75.4,
+        "warm_p95_us": 114.1,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "fixed_256": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 64533,
+        "sqlite_index_bytes": 241664,
+        "total_persistent_bytes": 306197,
+        "frames": 349,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 387.0,
+        "median_compressed_bytes_per_request": 376.0,
+        "mean_frames_per_request": 2.18,
+        "warm_p50_us": 48.8,
+        "warm_p95_us": 86.2,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "lines_256": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 66381,
+        "sqlite_index_bytes": 262144,
+        "total_persistent_bytes": 328525,
+        "frames": 437,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 317.7,
+        "median_compressed_bytes_per_request": 318.0,
+        "mean_frames_per_request": 2.05,
+        "warm_p50_us": 55.9,
+        "warm_p95_us": 180.2,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "fixed_512": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 58283,
+        "sqlite_index_bytes": 233472,
+        "total_persistent_bytes": 291755,
+        "frames": 176,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 623.2,
+        "median_compressed_bytes_per_request": 677.0,
+        "mean_frames_per_request": 1.95,
+        "warm_p50_us": 45.5,
+        "warm_p95_us": 83.1,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "lines_512": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 59785,
+        "sqlite_index_bytes": 241664,
+        "total_persistent_bytes": 301449,
+        "frames": 222,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 510.5,
+        "median_compressed_bytes_per_request": 543.0,
+        "mean_frames_per_request": 1.88,
+        "warm_p50_us": 58.5,
+        "warm_p95_us": 183.2,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "fixed_2048": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 48323,
+        "sqlite_index_bytes": 233472,
+        "total_persistent_bytes": 281795,
+        "frames": 46,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 1833.2,
+        "median_compressed_bytes_per_request": 2019.0,
+        "mean_frames_per_request": 1.71,
+        "warm_p50_us": 47.6,
+        "warm_p95_us": 117.9,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      },
+      "lines_2048": {
+        "query_count": 250,
+        "verified_bytewise": true,
+        "compressed_payload_bytes": 48961,
+        "sqlite_index_bytes": 233472,
+        "total_persistent_bytes": 282433,
+        "frames": 49,
+        "lines": 721,
+        "fts_retrieval_hits": 36,
+        "mean_compressed_bytes_per_request": 1718.3,
+        "median_compressed_bytes_per_request": 1938.5,
+        "mean_frames_per_request": 1.7,
+        "warm_p50_us": 46.2,
+        "warm_p95_us": 81.2,
+        "latency_scope": "Python sqlite queries + os.pread + zstd decode + extraction, page cache NOT explicitly dropped, no answer model"
+      }
+    }
+  },
+  "mutation": {
+    "stale_hash_refused": true,
+    "replacement_hash_current": true,
+    "old_byte_receipt_unchanged": true,
+    "update_mode": "full rebuild, not incremental; no atomic switch or concurrent readers"
+  },
+  "notes": [
+    "All compressed payload and SQLite index bytes are actual local files",
+    "Queries use known source spans; index/search cost is charged as storage but search accuracy is not evaluated",
+    "Warm latencies include Python and OS file reads, do not establish cold NVMe performance"
+  ]
+}

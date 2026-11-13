@@ -1,6 +1,6 @@
 # CDG: Source-Aligned Evidence Retrieval and Compression
 
-**Research notebook and reproducible experiments, November 2026. Latest research: Round 27.**
+**Research notebook and reproducible experiments, November 2026. Latest research: Round 28.**
 
 CDG studies a practical mismatch in retrieval-augmented systems: a search result can be relevant without providing a *complete* basis for a claim. Retrieving more context often fixes omissions, but increases tokens, source reads, and decoding work. The working question is whether a system can recover complete evidence more economically by treating source identity, evidence dependencies, and physical storage layout as one optimization problem.
 
@@ -36,7 +36,7 @@ The architecture deliberately separates four claims that can otherwise be confus
 
 ## Repository guide
 
-- [`research/living-record-rounds-19-27.md`](research/living-record-rounds-19-27.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
+- [`research/living-record-rounds-19-28.md`](research/living-record-rounds-19-28.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
 - [`research/rounds/`](research/rounds/): recovered round-specific archives, source code, notes and artifacts. Some early source packages include previous-round snapshots.
 - [`experiments/`](experiments/): directly accessible Round 20–23 scripts and machine-readable outputs.
 - [`source-archives/`](source-archives/): exact downloaded historical ZIP packages preserved separately for auditability. Do not confuse archive existence with successful reruns.
@@ -56,6 +56,10 @@ On the same 100-question HotpotQA-derived subset, five-document bridge retrieval
 ## Round 27: actual Zstandard physical-access benchmark
 
 A local source-archive experiment used **five CDG research reports** (90,163 original bytes), independently compressed frames, and two seeded synthetic workloads of 250 two-span requests each. **This is not HotpotQA or SSD read timing**. At 512-byte frames, line-aware framing used 64,722 archive+modeled-table bytes vs 62,338 for fixed frames, but retrieved 540 vs 855 compressed bytes per request on the whole-line workload. A subspan control showed 519 vs 684 compressed bytes/request. Seven local regression tests passed, including byte-for-byte UTF-8 reconstruction. These observations are a conventional source-layout trade-off, not a novel compression or RAG superiority result. [Round 27 report](research/rounds/round-27/report.md), [benchmark](experiments/round-27/storage_bench.py), [whole-line results](experiments/round-27/results.json), [subspan results](experiments/round-27/results_subspan.json).
+
+## Round 28: real file-backed compressed frame retrieval
+
+The prototype now writes independent Zstandard frames to disk, serializes byte-accurate frame offsets and source versions in SQLite, indexes lines with FTS5, and reconstructs selected original byte intervals with `os.pread`. On **88,679 bytes across five local research reports**, the total physical footprint at 512-byte frames was **291,755 B** (fixed) versus **301,449 B** (line-aligned), including actual SQLite files. On 250 seeded whole-line two-span requests, compressed payload reads averaged **833.9 B** versus **556.8 B** respectively. This decreased compressed read bytes but **did not demonstrate a warm-latency advantage** and used known span coordinates rather than authentic question-driven retrieval. Six local tests passed, including a repaired empty-span regression. See the [technical report](research/rounds/round-28/report.md), [source](experiments/round-28/filebacked_bench.py), [results](experiments/round-28/results.json) and [build measurements](experiments/round-28/build_results.json). This is a physical storage benchmark, **not** a novel compressor or proven RAG improvement.
 
 ## Research status and next falsification test
 
