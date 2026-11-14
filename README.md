@@ -1,6 +1,6 @@
 # CDG: Source-Aligned Evidence Retrieval and Compression
 
-**Research notebook and reproducible experiments, November 2026. Latest research: Round 30.**
+**Research notebook and reproducible experiments, November 2026. Latest research: Round 31.**
 
 CDG studies a practical mismatch in retrieval-augmented systems: a search result can be relevant without providing a *complete* basis for a claim. Retrieving more context often fixes omissions, but increases tokens, source reads, and decoding work. The working question is whether a system can recover complete evidence more economically by treating source identity, evidence dependencies, and physical storage layout as one optimization problem.
 
@@ -36,7 +36,7 @@ The architecture deliberately separates four claims that can otherwise be confus
 
 ## Repository guide
 
-- [`research/living-record-rounds-19-30.md`](research/living-record-rounds-19-30.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
+- [`research/living-record-rounds-19-31.md`](research/living-record-rounds-19-31.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
 - [`research/rounds/`](research/rounds/): recovered round-specific archives, source code, notes and artifacts. Some early source packages include previous-round snapshots.
 - [`experiments/`](experiments/): directly accessible Round 20–23 scripts and machine-readable outputs.
 - [`source-archives/`](source-archives/): exact downloaded historical ZIP packages preserved separately for auditability. Do not confuse archive existence with successful reruns.
@@ -68,6 +68,10 @@ The physical benchmark now runs the entire search and source reconstruction path
 ## Round 30: contentless search indexes and integrated bridge retrieval
 
 Reviewing the Round 28/29 storage layer revealed duplicated original source text in SQLite alongside Zstandard-compressed source frames. On five research reports (**88,679 bytes**), replacing the uncompressed `lines.body` table with a **contentless FTS5** search index reduced the measured total database-plus-compressed-payload footprint from **291,755 to 197,547 bytes at 512-byte frames (32.3%)**, while preserving the same ranked byte-verified results for 18 local lexical queries. The reduction was **30.8%** at 256 B and **33.4%** at 2,048 B frames. These are established SQLite techniques, **not** a new index algorithm or verified latency gain. A file-backed HotpotQA-shaped FTS5 + title-link baseline and tests were also implemented, but the complete pinned 100-question dataset **was not run through that local physical reader**. A connected GitHub analysis separately reconfirmed 403 exact title links and the prior BM25 33/100 versus title expansion 46/100 complete two-document retrieval result; do not combine those two separately executed experiments as an end-to-end score. **13 local regression tests passed.** [Report](research/rounds/round-30/report.md), [integrated prototype](experiments/round-30/integrated.py), [real storage measurements](experiments/round-30/contentless_all_results.json), [connected-source analysis](experiments/round-30/source_analysis.json).
+
+## Round 31: immutable version-pinned evidence receipts
+
+The Round 30 compressed-source/contentless-FTS5 retrieval layer now has an experimental **single-writer, multi-generation snapshot interface**. Index, exact line-offset coordinates, compressed source frames, a basic title-mention table and source-version SHA-256 metadata are published as one generation; readers pin the generation and reject receipts from a different one. Ten local regression tests passed, including old/new reader continuity, stale receipts, corrupted SQLite/Zstandard payload, and failed pre-switch publication. On five existing research reports (63,869 original bytes), a 512-byte-frame snapshot occupied **181,633 bytes** of index and payload; changing one line and rebuilding took **29.01 ms** in one warm local run, and retaining two generations plus manifests/pointer consumed **365,879 bytes**. This is an update-amplification and data-provenance experiment, **not** a novel retrieval algorithm, authenticated freshness guarantee or actual HotpotQA QA result. An older but internally consistent snapshot remains possible. [Report](research/rounds/round-31/report.md), [implementation](experiments/round-31/snapshot_store.py), [tests](experiments/round-31/test_snapshot_store.py), [raw results](experiments/round-31/results.json).
 
 ## Research status and next falsification test
 

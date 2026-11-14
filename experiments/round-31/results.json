@@ -1,0 +1,106 @@
+{
+  "source_files": [
+    "/mnt/data/cdg_round24/report.md",
+    "/mnt/data/cdg_round25/report.md",
+    "/mnt/data/cdg_round26/report.md",
+    "/mnt/data/cdg_round27/report.md",
+    "/mnt/data/cdg_round28/report.md"
+  ],
+  "source_sha256_before": {
+    "report.md": "716c6916b6cc8151caaf6228252dd732808cbb34716c42204410bf8d389380b3"
+  },
+  "original_bytes": 63869,
+  "initial_build_ms": 31.36,
+  "update_full_rebuild_ms": 29.01,
+  "first_snapshot_total_bytes": 181633,
+  "first_snapshot_sqlite_bytes": 139264,
+  "first_snapshot_payload_bytes": 42369,
+  "first_snapshot_link_edges": 0,
+  "second_snapshot_total_bytes": 181661,
+  "two_generations_plus_manifests_and_current_bytes": 365879,
+  "query_count": 15,
+  "mean_compressed_bytes_at_top5": 2185.7,
+  "warm_median_search_and_decode_us": 240.4,
+  "warm_p95_search_and_decode_us": 503.6,
+  "stale_receipt_rejected_by_new_reader": true,
+  "old_reader_retained_snapshot": true,
+  "new_generation_search_retrieves_update": true,
+  "queries": [
+    {
+      "term": "evidence",
+      "hits": 5,
+      "bytes": 1735
+    },
+    {
+      "term": "retrieval",
+      "hits": 5,
+      "bytes": 2013
+    },
+    {
+      "term": "source",
+      "hits": 5,
+      "bytes": 1709
+    },
+    {
+      "term": "compression",
+      "hits": 5,
+      "bytes": 1744
+    },
+    {
+      "term": "index",
+      "hits": 5,
+      "bytes": 2412
+    },
+    {
+      "term": "research",
+      "hits": 5,
+      "bytes": 2100
+    },
+    {
+      "term": "bridge",
+      "hits": 5,
+      "bytes": 1677
+    },
+    {
+      "term": "frame",
+      "hits": 5,
+      "bytes": 2440
+    },
+    {
+      "term": "cost",
+      "hits": 5,
+      "bytes": 2027
+    },
+    {
+      "term": "result",
+      "hits": 5,
+      "bytes": 3088
+    },
+    {
+      "term": "document",
+      "hits": 5,
+      "bytes": 2299
+    },
+    {
+      "term": "accuracy",
+      "hits": 3,
+      "bytes": 1736
+    },
+    {
+      "term": "model",
+      "hits": 5,
+      "bytes": 2796
+    },
+    {
+      "term": "version",
+      "hits": 5,
+      "bytes": 3020
+    },
+    {
+      "term": "storage",
+      "hits": 5,
+      "bytes": 1990
+    }
+  ],
+  "scope": "Local five reports, source-derived keyword queries, one appended update; warm single-process timings, full rebuild and retained snapshots; no HotpotQA/ACL/authenticated source freshness/cold cache"
+}
