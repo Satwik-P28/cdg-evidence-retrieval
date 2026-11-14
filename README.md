@@ -1,6 +1,6 @@
 # CDG: Source-Aligned Evidence Retrieval and Compression
 
-**Research notebook and reproducible experiments, November 2026. Latest research: Round 31.**
+**Research notebook and reproducible experiments, November 2026. Latest research: Round 32.**
 
 CDG studies a practical mismatch in retrieval-augmented systems: a search result can be relevant without providing a *complete* basis for a claim. Retrieving more context often fixes omissions, but increases tokens, source reads, and decoding work. The working question is whether a system can recover complete evidence more economically by treating source identity, evidence dependencies, and physical storage layout as one optimization problem.
 
@@ -36,7 +36,7 @@ The architecture deliberately separates four claims that can otherwise be confus
 
 ## Repository guide
 
-- [`research/living-record-rounds-19-31.md`](research/living-record-rounds-19-31.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
+- [`research/living-record-rounds-19-32.md`](research/living-record-rounds-19-32.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
 - [`research/rounds/`](research/rounds/): recovered round-specific archives, source code, notes and artifacts. Some early source packages include previous-round snapshots.
 - [`experiments/`](experiments/): directly accessible Round 20–23 scripts and machine-readable outputs.
 - [`source-archives/`](source-archives/): exact downloaded historical ZIP packages preserved separately for auditability. Do not confuse archive existence with successful reruns.
@@ -72,6 +72,10 @@ Reviewing the Round 28/29 storage layer revealed duplicated original source text
 ## Round 31: immutable version-pinned evidence receipts
 
 The Round 30 compressed-source/contentless-FTS5 retrieval layer now has an experimental **single-writer, multi-generation snapshot interface**. Index, exact line-offset coordinates, compressed source frames, a basic title-mention table and source-version SHA-256 metadata are published as one generation; readers pin the generation and reject receipts from a different one. Ten local regression tests passed, including old/new reader continuity, stale receipts, corrupted SQLite/Zstandard payload, and failed pre-switch publication. On five existing research reports (63,869 original bytes), a 512-byte-frame snapshot occupied **181,633 bytes** of index and payload; changing one line and rebuilding took **29.01 ms** in one warm local run, and retaining two generations plus manifests/pointer consumed **365,879 bytes**. This is an update-amplification and data-provenance experiment, **not** a novel retrieval algorithm, authenticated freshness guarantee or actual HotpotQA QA result. An older but internally consistent snapshot remains possible. [Report](research/rounds/round-31/report.md), [implementation](experiments/round-31/snapshot_store.py), [tests](experiments/round-31/test_snapshot_store.py), [raw results](experiments/round-31/results.json).
+
+## Round 32: incremental immutable search segments and content-addressed Zstd frames
+
+Two executed local trials on five Round 24–28 research reports (63,869 original bytes) compared **eleven retained generations** under successive single-source ASCII replacements or insertions. A deliberately nonincremental control rebuilt every independent SQLite contentless FTS5 source segment and every compressed frame per generation. A CAS variant reused unchanged source segments, SHA-256-addressed independent Zstandard frames, and immutable source descriptors. With 512-byte line-bounded frames, retained storage after ten replacement updates was **4,602,314 B versus 1,174,447 B (74.48% lower)**; median update build time was **475.6 ms versus 24.5 ms**. An insertion workload showed similar results. Search output and source reconstruction matched exactly across stores. Nine local unit tests passed; correct-generation receipts were enforced and old readers remained pinned. **Not an optimized conventional SQLite baseline, not a held-out QA evaluation, and not a novel compression technique**. See [Round 32 report](research/rounds/round-32/report.md), [implementation](experiments/round-32/incremental_store.py), [benchmark](experiments/round-32/benchmark.py) and [results](experiments/round-32/results.json).
 
 ## Research status and next falsification test
 

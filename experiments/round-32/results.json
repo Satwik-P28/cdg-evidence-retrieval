@@ -1,0 +1,472 @@
+{
+  "source_hashes": {
+    "report.md": "716c6916b6cc8151caaf6228252dd732808cbb34716c42204410bf8d389380b3"
+  },
+  "runs": [
+    {
+      "mode": "replace",
+      "frame_size": 512,
+      "source_count": 5,
+      "initial_source_bytes": 63869,
+      "updates": 10,
+      "history": [
+        {
+          "step": 0,
+          "changed": null,
+          "full": {
+            "build_ms": 525.443,
+            "reader_open_ms": 8.794,
+            "warm_median_query_us": 4088.235,
+            "written_bytes": 419500,
+            "stored_bytes": 419533,
+            "generation": "d06a5f9aa3824d39ba7fcaaa62196106"
+          },
+          "cas": {
+            "build_ms": 437.293,
+            "reader_open_ms": 7.494,
+            "warm_median_query_us": 2277.424,
+            "written_bytes": 420785,
+            "stored_bytes": 420818,
+            "generation": "8b8d3bb1727a492d88f808ad275935c7"
+          }
+        },
+        {
+          "step": 1,
+          "changed": "report_01.md",
+          "full": {
+            "build_ms": 502.845,
+            "reader_open_ms": 8.545,
+            "warm_median_query_us": 2440.26,
+            "written_bytes": 419502,
+            "stored_bytes": 839035,
+            "generation": "cb655cce34b441c0bcf693956362a280"
+          },
+          "cas": {
+            "build_ms": 23.754,
+            "reader_open_ms": 7.599,
+            "warm_median_query_us": 1971.863,
+            "written_bytes": 77693,
+            "stored_bytes": 498511,
+            "generation": "d15f26d08b2642b8a722fe723aad1a06"
+          }
+        },
+        {
+          "step": 2,
+          "changed": "report_02.md",
+          "full": {
+            "build_ms": 486.844,
+            "reader_open_ms": 7.774,
+            "warm_median_query_us": 2164.143,
+            "written_bytes": 419505,
+            "stored_bytes": 1258540,
+            "generation": "5f61c9cbb052449fa2c41c535cc41193"
+          },
+          "cas": {
+            "build_ms": 25.082,
+            "reader_open_ms": 7.635,
+            "warm_median_query_us": 2091.144,
+            "written_bytes": 66939,
+            "stored_bytes": 565450,
+            "generation": "9f0fd63b131e4be59bc79a20b1ca3abe"
+          }
+        },
+        {
+          "step": 3,
+          "changed": "report_03.md",
+          "full": {
+            "build_ms": 485.169,
+            "reader_open_ms": 8.021,
+            "warm_median_query_us": 2044.803,
+            "written_bytes": 419505,
+            "stored_bytes": 1678045,
+            "generation": "f15f130e01e8431b9c0b5fcd399599a3"
+          },
+          "cas": {
+            "build_ms": 24.366,
+            "reader_open_ms": 7.043,
+            "warm_median_query_us": 1993.135,
+            "written_bytes": 79015,
+            "stored_bytes": 644465,
+            "generation": "fedec2dc018e45fea867e6a97841550c"
+          }
+        },
+        {
+          "step": 4,
+          "changed": "report_04.md",
+          "full": {
+            "build_ms": 581.789,
+            "reader_open_ms": 8.468,
+            "warm_median_query_us": 2208.93,
+            "written_bytes": 415409,
+            "stored_bytes": 2093454,
+            "generation": "4c142b98f84e4e0985b681a58ca1b944"
+          },
+          "cas": {
+            "build_ms": 28.867,
+            "reader_open_ms": 8.764,
+            "warm_median_query_us": 2258.836,
+            "written_bytes": 69974,
+            "stored_bytes": 714439,
+            "generation": "e90a53395436431284c8aeb8a1f220b7"
+          }
+        },
+        {
+          "step": 5,
+          "changed": "report_05.md",
+          "full": {
+            "build_ms": 465.991,
+            "reader_open_ms": 8.222,
+            "warm_median_query_us": 2089.161,
+            "written_bytes": 415411,
+            "stored_bytes": 2508865,
+            "generation": "ce72567249d84974847f37cd35b96034"
+          },
+          "cas": {
+            "build_ms": 23.205,
+            "reader_open_ms": 7.758,
+            "warm_median_query_us": 1904.443,
+            "written_bytes": 81220,
+            "stored_bytes": 795659,
+            "generation": "691b212ba3de402fa8a68a8c380e996b"
+          }
+        },
+        {
+          "step": 6,
+          "changed": "report_01.md",
+          "full": {
+            "build_ms": 545.053,
+            "reader_open_ms": 7.798,
+            "warm_median_query_us": 1941.098,
+            "written_bytes": 415412,
+            "stored_bytes": 2924277,
+            "generation": "e3c2fca8c1ba4117aae843f5034ba729"
+          },
+          "cas": {
+            "build_ms": 24.669,
+            "reader_open_ms": 7.489,
+            "warm_median_query_us": 2030.874,
+            "written_bytes": 77800,
+            "stored_bytes": 873459,
+            "generation": "1e5922de3b624549bde44a30abb2710c"
+          }
+        },
+        {
+          "step": 7,
+          "changed": "report_02.md",
+          "full": {
+            "build_ms": 455.639,
+            "reader_open_ms": 7.884,
+            "warm_median_query_us": 2088.761,
+            "written_bytes": 419508,
+            "stored_bytes": 3343785,
+            "generation": "617619505583450ab87656b09d81cc06"
+          },
+          "cas": {
+            "build_ms": 33.581,
+            "reader_open_ms": 7.387,
+            "warm_median_query_us": 1986.848,
+            "written_bytes": 70994,
+            "stored_bytes": 944453,
+            "generation": "ab8bcbaa1a7e471595ccfb60152ab979"
+          }
+        },
+        {
+          "step": 8,
+          "changed": "report_03.md",
+          "full": {
+            "build_ms": 419.077,
+            "reader_open_ms": 8.072,
+            "warm_median_query_us": 1954.388,
+            "written_bytes": 419509,
+            "stored_bytes": 3763294,
+            "generation": "e8126b498802427fbfcdf8ace1baa8b2"
+          },
+          "cas": {
+            "build_ms": 22.095,
+            "reader_open_ms": 7.272,
+            "warm_median_query_us": 2065.686,
+            "written_bytes": 78962,
+            "stored_bytes": 1023415,
+            "generation": "da319d3d830941c9938015df795b6f44"
+          }
+        },
+        {
+          "step": 9,
+          "changed": "report_04.md",
+          "full": {
+            "build_ms": 455.809,
+            "reader_open_ms": 7.908,
+            "warm_median_query_us": 2201.21,
+            "written_bytes": 419509,
+            "stored_bytes": 4182803,
+            "generation": "baf0f1d6866c49a7bdf1fe672bb53e54"
+          },
+          "cas": {
+            "build_ms": 23.359,
+            "reader_open_ms": 7.534,
+            "warm_median_query_us": 1888.179,
+            "written_bytes": 69934,
+            "stored_bytes": 1093349,
+            "generation": "ea08af31085749c3a20005cb6376b493"
+          }
+        },
+        {
+          "step": 10,
+          "changed": "report_05.md",
+          "full": {
+            "build_ms": 406.081,
+            "reader_open_ms": 7.774,
+            "warm_median_query_us": 2143.143,
+            "written_bytes": 419511,
+            "stored_bytes": 4602314,
+            "generation": "9b2efff02d59408e8b63972c1c7eef08"
+          },
+          "cas": {
+            "build_ms": 24.815,
+            "reader_open_ms": 7.542,
+            "warm_median_query_us": 2039.126,
+            "written_bytes": 81098,
+            "stored_bytes": 1174447,
+            "generation": "2958c12fdc314f51be7b749e2963c1f8"
+          }
+        }
+      ],
+      "cold_cache": false,
+      "notes": "5 source-derived reports, 15 shared literal query terms. Source-level index reuse; content-addressed individually compressed line frames; no GC; no ANN/global ranking; timing exploratory."
+    },
+    {
+      "mode": "insert",
+      "frame_size": 512,
+      "source_count": 5,
+      "initial_source_bytes": 63869,
+      "updates": 10,
+      "history": [
+        {
+          "step": 0,
+          "changed": null,
+          "full": {
+            "build_ms": 398.505,
+            "reader_open_ms": 8.194,
+            "warm_median_query_us": 2098.485,
+            "written_bytes": 419500,
+            "stored_bytes": 419533,
+            "generation": "9fc2f6df27b54f3590efa6655a1cd247"
+          },
+          "cas": {
+            "build_ms": 319.789,
+            "reader_open_ms": 7.315,
+            "warm_median_query_us": 1982.096,
+            "written_bytes": 420785,
+            "stored_bytes": 420818,
+            "generation": "d10cc3c4766e499abc84b2f4067642d5"
+          }
+        },
+        {
+          "step": 1,
+          "changed": "report_01.md",
+          "full": {
+            "build_ms": 518.879,
+            "reader_open_ms": 7.682,
+            "warm_median_query_us": 1999.757,
+            "written_bytes": 419502,
+            "stored_bytes": 839035,
+            "generation": "6e896ef173734485840ab7ef92a2cbf5"
+          },
+          "cas": {
+            "build_ms": 23.858,
+            "reader_open_ms": 6.954,
+            "warm_median_query_us": 1909.731,
+            "written_bytes": 77693,
+            "stored_bytes": 498511,
+            "generation": "7401ea36857d4012b749144e5d309f6f"
+          }
+        },
+        {
+          "step": 2,
+          "changed": "report_02.md",
+          "full": {
+            "build_ms": 459.623,
+            "reader_open_ms": 8.112,
+            "warm_median_query_us": 2084.784,
+            "written_bytes": 419505,
+            "stored_bytes": 1258540,
+            "generation": "9a3b6f9980d3475cbfde88ec9cc5325a"
+          },
+          "cas": {
+            "build_ms": 25.212,
+            "reader_open_ms": 7.036,
+            "warm_median_query_us": 1888.197,
+            "written_bytes": 66939,
+            "stored_bytes": 565450,
+            "generation": "67654ceae3d648758ce5fc5d968084c3"
+          }
+        },
+        {
+          "step": 3,
+          "changed": "report_03.md",
+          "full": {
+            "build_ms": 528.225,
+            "reader_open_ms": 7.69,
+            "warm_median_query_us": 2074.288,
+            "written_bytes": 419505,
+            "stored_bytes": 1678045,
+            "generation": "71ae86d4fb55459cae986ac5eba80409"
+          },
+          "cas": {
+            "build_ms": 24.314,
+            "reader_open_ms": 7.276,
+            "warm_median_query_us": 1992.585,
+            "written_bytes": 79106,
+            "stored_bytes": 644556,
+            "generation": "740d2022e5a7451b8ef59a8a00fe93d7"
+          }
+        },
+        {
+          "step": 4,
+          "changed": "report_04.md",
+          "full": {
+            "build_ms": 444.635,
+            "reader_open_ms": 8.612,
+            "warm_median_query_us": 2158.665,
+            "written_bytes": 415410,
+            "stored_bytes": 2093455,
+            "generation": "07550808dc644649bf78b149c9a569be"
+          },
+          "cas": {
+            "build_ms": 25.429,
+            "reader_open_ms": 7.026,
+            "warm_median_query_us": 2280.238,
+            "written_bytes": 70001,
+            "stored_bytes": 714557,
+            "generation": "7fce304e48bb47e78b3e5486dbd12f42"
+          }
+        },
+        {
+          "step": 5,
+          "changed": "report_05.md",
+          "full": {
+            "build_ms": 432.533,
+            "reader_open_ms": 7.736,
+            "warm_median_query_us": 2043.721,
+            "written_bytes": 415414,
+            "stored_bytes": 2508869,
+            "generation": "ff4cd64eddea40b99bc8fc69e4130f4c"
+          },
+          "cas": {
+            "build_ms": 22.733,
+            "reader_open_ms": 7.104,
+            "warm_median_query_us": 1943.4,
+            "written_bytes": 81336,
+            "stored_bytes": 795893,
+            "generation": "0be035c15aa848fe8df1161ac5dd0006"
+          }
+        },
+        {
+          "step": 6,
+          "changed": "report_01.md",
+          "full": {
+            "build_ms": 417.749,
+            "reader_open_ms": 7.875,
+            "warm_median_query_us": 1946.104,
+            "written_bytes": 415416,
+            "stored_bytes": 2924285,
+            "generation": "49c01645bd8343d2adba0a95dfb44052"
+          },
+          "cas": {
+            "build_ms": 23.241,
+            "reader_open_ms": 7.103,
+            "warm_median_query_us": 2052.865,
+            "written_bytes": 77801,
+            "stored_bytes": 873694,
+            "generation": "a3273735869741d0a55aa2ef74e3243c"
+          }
+        },
+        {
+          "step": 7,
+          "changed": "report_02.md",
+          "full": {
+            "build_ms": 436.941,
+            "reader_open_ms": 7.67,
+            "warm_median_query_us": 2054.469,
+            "written_bytes": 419513,
+            "stored_bytes": 3343798,
+            "generation": "132c8240b90049879dec5ff96138d4ef"
+          },
+          "cas": {
+            "build_ms": 61.648,
+            "reader_open_ms": 7.151,
+            "warm_median_query_us": 1993.547,
+            "written_bytes": 70995,
+            "stored_bytes": 944689,
+            "generation": "118879b31e774191943af33a252e8c8d"
+          }
+        },
+        {
+          "step": 8,
+          "changed": "report_03.md",
+          "full": {
+            "build_ms": 421.888,
+            "reader_open_ms": 7.542,
+            "warm_median_query_us": 2089.031,
+            "written_bytes": 419515,
+            "stored_bytes": 3763313,
+            "generation": "86c5bc2d51094d3abe91559a7c320498"
+          },
+          "cas": {
+            "build_ms": 23.762,
+            "reader_open_ms": 7.108,
+            "warm_median_query_us": 1796.419,
+            "written_bytes": 78963,
+            "stored_bytes": 1023652,
+            "generation": "d46ca5ecb48c4e95b1b5038969000c87"
+          }
+        },
+        {
+          "step": 9,
+          "changed": "report_04.md",
+          "full": {
+            "build_ms": 450.045,
+            "reader_open_ms": 7.626,
+            "warm_median_query_us": 2024.524,
+            "written_bytes": 419514,
+            "stored_bytes": 4182827,
+            "generation": "cc50c00c9a064310b1a791b227bc6746"
+          },
+          "cas": {
+            "build_ms": 23.069,
+            "reader_open_ms": 7.156,
+            "warm_median_query_us": 1858.203,
+            "written_bytes": 69933,
+            "stored_bytes": 1093585,
+            "generation": "7bf8a09357a34ec4a4af279c96d15db8"
+          }
+        },
+        {
+          "step": 10,
+          "changed": "report_05.md",
+          "full": {
+            "build_ms": 449.946,
+            "reader_open_ms": 7.57,
+            "warm_median_query_us": 2165.456,
+            "written_bytes": 419516,
+            "stored_bytes": 4602343,
+            "generation": "c4208688051741eba5ba26cf84e2038a"
+          },
+          "cas": {
+            "build_ms": 25.193,
+            "reader_open_ms": 7.266,
+            "warm_median_query_us": 1997.513,
+            "written_bytes": 81098,
+            "stored_bytes": 1174683,
+            "generation": "7252638e320a42e4a39372735549500f"
+          }
+        }
+      ],
+      "cold_cache": false,
+      "notes": "5 source-derived reports, 15 shared literal query terms. Source-level index reuse; content-addressed individually compressed line frames; no GC; no ANN/global ranking; timing exploratory."
+    }
+  ],
+  "analysis_date": "2026-11-14",
+  "status": "executed_local_real_zstd_sqlite_two_11_generation_trials",
+  "test_suite": "9 Python unittest cases passed"
+}
