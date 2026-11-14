@@ -57,6 +57,6 @@ def run(sources:dict[str,bytes],mode:str,frame_size:int):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--files',nargs='+',type=Path,required=True);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--frame-size',type=int,default=512);a=ap.parse_args()
     sources={f'report_{i+1:02d}.md':p.read_bytes() for i,p in enumerate(a.files)}
-    result={'source_hashes':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in a.files},'runs':[run(sources,'replace',a.frame_size),run(sources,'insert',a.frame_size)]}
+    result={'source_hashes':{f'report_{i+1:02d}.md':hashlib.sha256(p.read_bytes()).hexdigest() for i,p in enumerate(a.files)},'runs':[run(sources,'replace',a.frame_size),run(sources,'insert',a.frame_size)]}
     a.out.parent.mkdir(parents=True,exist_ok=True);a.out.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'runs':[{'mode':r['mode'],'final':r['history'][-1]} for r in result['runs']]},indent=2))
 if __name__=='__main__':main()
