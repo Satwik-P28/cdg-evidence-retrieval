@@ -1,27 +1,58 @@
-# Application-facing research description
+# Jane Street FOCUS | CDG project brief
 
-## One-paragraph project description
+## Preferred project name
 
-I have been investigating a failure mode in retrieval systems: passages that individually look relevant may still omit information needed to support a claim. My current work studies evidence as sets of source-linked spans and explores when selecting complete sets is worth the additional retrieval and storage cost. I built lexical baselines, tested exact alignment of annotated SciFact rationales, modeled seekable source-frame layouts, and examined dependency-aware selection with controlled synthetic experiments. Some results were negative, particularly when BM25 already recovered nearly all required evidence. The main open problem is whether a non-oracle dependency model can improve source-grounded retrieval on difficult held-out queries without adding more overhead than it saves.
+**CDG: Evidence-Preserving Retrieval and Versioned Compressed Storage**
 
-## What to say when asked about originality
+Use **CDG** rather than inventing a new academic-sounding acronym expansion. Name the implementation, the constraint, and the experiment.
 
-The project is an exploratory systems research agenda, not a novel algorithm established by publication. The potential distinction is the coupling of evidence-set completeness, exact source receipts and physical access cost. Individually, these have extensive prior art, and the combined approach has not yet shown a non-dominated end-to-end result.
+## Short application field (approximately 65 words)
 
-## What not to claim
+I have been developing a retrieval and compressed-storage prototype that preserves exact source bytes and tracks evidence across immutable versions. It combines SQLite full-text search with independently compressed Zstandard frames and content-addressed source segments. In a controlled 11-generation update experiment, it retained 74.5% less storage than a full-rebuild baseline. The project taught me to separate correctness, retrieval quality, read amplification and update cost rather than optimizing a single attractive metric.
 
-- That the oracle 100% success from a synthetic control is real-world accuracy.
-- That the full SciFact evaluation has been independently replicated locally.
-- That exact source-quote alignment proves entailment or original byte identity.
-- That compressed source I/O or RAG answer quality beats production systems.
-- That all experimental code was independently authored without assistance if that is inaccurate.
+## Main project description (approximately 155 words)
 
-## Interview questions worth being able to answer
+I started CDG after noticing that retrieving relevant documents is not the same as retrieving enough evidence to justify an answer. I explored multihop retrieval on HotpotQA-derived questions, then built a file-backed prototype that maps indexed text to exact UTF-8 byte spans inside independently compressed Zstandard frames. The system now supports contentless SQLite FTS5 indexes, source-version hashes, generation-bound evidence receipts and content-addressed reuse of unchanged frames and search segments.
 
-1. Why is complete evidence-set recall different from top-k source recall?
-2. When does BM25 already make dependency-aware retrieval unnecessary?
-3. What exactly is an oracle lower bound, and why is it not a deployable gain?
-4. What breaks when canonicalization changes source offsets?
-5. How does a 512-byte physical frame differ from a 512-token prompt chunk?
-6. What does a calibrated confidence estimate mean when source families shift?
-7. Which experiment would make you abandon the graph controller?
+My most useful experiment followed eleven successive versions of five research reports. Incremental reuse occupied 1.17 MB versus 4.60 MB for a deliberately full-rebuild design, and median update time fell from 475.6 ms to 24.5 ms in the controlled replacement workload. The comparison is intentionally limited: a mature incremental SQLite implementation may perform just as well. Earlier tests also showed that lower compressed read traffic did not necessarily mean lower latency. I am using these results to learn how to design systems whose performance claims survive careful baselines and adversarial correctness tests.
+
+## One-line resume entry
+
+**CDG | Versioned Evidence Retrieval & Compressed Storage** | Independent Research Project, 2026
+
+- Built a Python/SQLite FTS5/Zstandard prototype with byte-exact evidence receipts, immutable source generations and content-addressed search/frame reuse; measured **74.5% less retained storage and 19.4x faster median updates** against a full-rebuild baseline over 11 versions of five documents.
+
+If space permits, a second bullet:
+
+- Evaluated multihop evidence discovery on 100 HotpotQA-derived queries and compressed-source access; documented how bridge expansion improved complete supporting-document coverage from **33% to 46% @2**, while smaller frame reads did not reliably lower latency.
+
+Keep the source/baseline qualifier wherever the performance metric appears. Do not turn this into a production claim or call the retrieval policy original.
+
+## 30-second spoken explanation
+
+I began by studying a retrieval failure: a system can find a relevant document but miss the second document needed to support an answer. I built a prototype that ties search results to exact source bytes in compressed storage. Once I added versioned evidence receipts, a new problem appeared: every small source edit forced me to rebuild and retain an entire archive. I redesigned the store around immutable per-source indexes and content-addressed frames. That reduced storage and update work against the original rebuild design, but I am now testing whether standard incremental SQLite can achieve the same thing. My focus has been on proving which optimizations are real.
+
+## Why this is relevant to FOCUS
+
+The connection is **technical problem-solving and learning through experiments**, not that RAG resembles a trading system. The transferable ideas are immutable state, correctness invariants, latency-versus-throughput trade-offs, data structure selection, counterexamples and challenging baselines. Jane Street does not require previous financial knowledge for FOCUS.
+
+## Be ready to say what is not established
+
+- The 19.4x comparison uses a deliberately rebuild-everything control on a small corpus. It is not versus optimized incremental databases.
+- The HotpotQA-derived retrieval results were computed in a separate connected-data analysis, not an end-to-end execution through the compressed reader.
+- Exact byte receipts establish identity within a chosen generation, not truth, authorization or independent source freshness.
+- I have no peer-reviewed paper or independently verified SOTA RAG results.
+- Model-assisted development/research was used. I can explain my own choices, experiments and corrections without implying all code was written unaided.
+
+## Interview questions to rehearse
+
+1. What is the asymptotic write amplification of full rebuilds versus per-source copy-on-write? Under what update distributions does the advantage disappear?
+2. Why do SQLite index pages outweigh Zstandard payloads on a small corpus?
+3. Why can smaller frame reads increase query latency?
+4. What is the difference between `source_digest`, `frame_digest` and `generation_id`? Why do all matter?
+5. Which metadata must change if a sentence insertion shifts later UTF-8 offsets?
+6. What happens if the manifest is modified alongside the data by an attacker?
+7. Why is a query-local FTS rank not comparable across independent source indexes?
+8. What would an incremental SQLite WAL baseline have to include for a fair comparison?
+9. When is a title mention *not* evidence of a valid semantic relationship?
+10. Which result would make you remove the custom storage engine?

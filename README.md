@@ -1,98 +1,62 @@
-# CDG: Source-Aligned Evidence Retrieval and Compression
+# CDG | Evidence-Preserving Retrieval and Versioned Compressed Storage
 
-**Research notebook and reproducible experiments, November 2026. Latest research: Round 32.**
+**Research prototype · Python / SQLite FTS5 / Zstandard / content-addressed storage · November 2026**
 
-CDG studies a practical mismatch in retrieval-augmented systems: a search result can be relevant without providing a *complete* basis for a claim. Retrieving more context often fixes omissions, but increases tokens, source reads, and decoding work. The working question is whether a system can recover complete evidence more economically by treating source identity, evidence dependencies, and physical storage layout as one optimization problem.
+CDG began with a question about retrieval-augmented generation: *why can a system retrieve individually relevant passages yet fail to collect the complete evidence needed for an answer?* I explored multihop document selection, lossless source-byte reconstruction, and the physical cost of accessing evidence. The most mature outcome is an experimental **versioned source store** that couples immutable search-index segments with content-addressed, independently compressed frames and generation-bound evidence receipts.
 
-This repository is a record of an investigation, **not a claim of a production system or a published breakthrough**. It includes exploratory analyses, implementations, counterexamples, synthetic controls, measured compression pilots, and decisions to reject approaches that did not improve the relevant baselines.
+The central engineering problem is a constrained trade-off between **evidence coverage, read amplification, write amplification, index size, historical retention and source consistency**. The prototype is not a production RAG model and has not demonstrated end-to-end answer-quality superiority.
 
-## What I am investigating
+## Selected results, with the comparison boundaries
 
-A query can require multiple fragments from one document or several independent sources. If the retrieval policy scores each fragment separately, it may collect a set of individually useful passages while missing a required link. CDG examines whether dependency-aware evidence selection can lower that risk without an unreasonable cost in I/O, decompression, prompt length, or source fidelity.
+| Experiment | Observed result | What it does and does not establish |
+| --- | --- | --- |
+| **Incremental historical storage, R32** | **1,174,447 B** retained vs. **4,602,314 B** for full rebuilds across 11 versions (**74.5% less**); **24.5 ms** vs. **475.6 ms** median update time (~**19.4x** speedup) in the replacement regime | Actual local SQLite/Zstd results, 5 reports and 10 source updates. Control deliberately rebuilds all segments. **Not** an optimized incremental SQLite comparison, robust latency study or large-scale result. [Report](research/rounds/round-32/report.md) · [results](experiments/round-32/results.json) |
+| **Avoiding duplicated indexed plaintext, R30** | At 512-byte frames, source-store footprint fell from **291,755 B to 197,547 B (32.3%)** | Measured on 5 internal reports using SQLite's existing contentless FTS5 feature. Retrieval outputs matched across 18 local queries. **Not** novel indexing. [Report](research/rounds/round-30/report.md) · [results](experiments/round-30/contentless_all_results.json) |
+| **Multihop evidence discovery, R25** | Complete annotated supporting-document recovery at top 2: **46/100** with exact title-mention expansion vs. **33/100** with BM25; at top 5: **84/100 vs. 62/100** | 100 curated HotpotQA-derived questions, each with supplied candidate documents; independent JavaScript analysis. The Python full-corpus reproducer has **not** been independently run. Conventional iterative retrieval, **not** original algorithmic novelty. [Report](research/rounds/round-25/report.md) |
+| **True byte reconstruction and version checks, R28–R32** | Regression-tested exact UTF-8 reconstruction, corrupted-frame rejection, stale-receipt refusal and old-reader snapshot pinning | Local correctness under defined trust assumptions. **Not** proof of origin authenticity, crash-safety across all failures, or source entailment. [Snapshot implementation](experiments/round-31/snapshot_store.py) · [CAS implementation](experiments/round-32/incremental_store.py) |
 
-The architecture deliberately separates four claims that can otherwise be confused:
+**A negative result worth retaining:** R29 showed that reading fewer compressed bytes does **not** necessarily mean a lower measured query time. Smaller line-aligned frames improved read traffic but lost to larger frames in the observed warm timing. [R29 report](research/rounds/round-29/report.md).
 
-1. **Source identity:** do the referenced bytes correspond to the intended source version?
-2. **Text location:** do exact, possibly discontiguous spans exist in that source after a declared canonicalization transform?
-3. **Evidence completeness:** does the selected span set cover the structural evidence requirements?
-4. **Semantic validity:** does the source actually support the answer? Exact matching does not settle this.
+## System design
 
-## Evidence so far
+```text
+source version ──► UTF-8 byte spans ──► independently compressed Zstd frames
+      │                                        │
+      ├──► contentless FTS5 index segment      ├──► SHA-256 content address
+      │                                        │
+      └──► source descriptor + frame map ◄─────┘
+                       │
+             immutable generation manifest
+                       │
+         pinned reader + version-bound receipt
+                       │
+            exact source-byte reconstruction
+```
 
-| Study | Observation | Interpretation and limitation |
-|---|---|---|
-| SciFact corpus, Round 19 | BM25 abstract-only found an annotated source in the top 3 for 159/188 evidence-bearing claims, and top 10 for 174/188. | A strong lexical control; not an end-to-end RAG result. Full-data analysis used connected resources; local reproduction was not completed. |
-| Source alignment, Round 19 | 338/338 published rationale quotations were uniquely re-located under declared canonicalization; nine required discontiguous fragments. | Establishes text-location feasibility on the inspected flattened corpus, **not** official raw-byte provenance or entailment. |
-| Evidence budget, Round 19 | In a heuristic sentence selection proxy, five BM25-selected sentences contained a complete rationale for 133/188 claims. | More selection budget increases coverage; no general dominance for neighbor boosting. |
-| Physical frames, Round 19 | Modeled source-frame reads fell with smaller frames while archive metadata rose. | Model uses source byte lengths and assumed metadata, not SSD timings or compressed archive measurements. |
-| Cost-aware alternatives, Round 19 | Oracle selection improved modeled prompt-plus-frame cost by 2.91% at 512 B. | Modest gain, requires gold witness identities unavailable at inference. |
-| Dependency signal, Round 21 | Non-oracle *synthetic* matching improves as the noisy signal becomes informative; confidence is badly miscalibrated under shift. | Shows a mechanism to test, not field evidence of better retrieval. |
-| Real-text local stress test, Round 22 | BM25 recovered complete constructed evidence pairs in 96% of cases at two paragraphs; facet selection reached 97.6%. | Small and artificially easy benchmark; complex selection barely helps. |
-| Bridge/version/scope injection, Round 23 | Guarded lookup returned the stipulated correct answer or abstention on 600/600 generated two-hop fixtures; naive bridge lookup made 360 injected invalid answers. | **Template-based and deliberately adversarially ordered** inputs; metadata lookups were not charged; no naturally authored benchmark or full QA evaluation. |
+A receipt binds `(generation, source digest, byte start, byte end)`. A new reader rejects old-generation receipts, while a reader pinned to a historical generation can still return its original bytes. Unchanged source versions reuse their search indexes, and identical frames reuse compressed payloads. This is **single-writer local experimental software**, without signed provenance, ACL enforcement, multiwriter transactions or lease-aware garbage collection.
 
-| HotpotQA full-context mention expansion, Round 25 | On 100 HotpotQA-derived questions (curated upstream subset), complete supporting-document recovery @2 was BM25 33/100, exact-title mention expansion 46/100, MMR 32/100; @5 BM25 62/100 versus expansion 84/100. | Real source text, **closed-world candidate contexts**; title links are a conventional retrieval baseline. No semantic answer verification, SSD/codec measurements, or independently held-out improvement. Python unit tests pass, but full-data cross-language reproduction is pending. |
+## Where to start
 
-**Current verdict:** promising systems hypothesis; no verified held-out, end-to-end improvement over strong retrieval and storage baselines. The primary next step is a real, inference-time dependency predictor, with fixed costs and source-grounded answer evaluation.
+- **[Jane Street FOCUS project brief](docs/focus-project-description.md):** short and long application-ready descriptions, validated accomplishments and interview explanation.
+- **[Technical evidence dossier](docs/focus-technical-dossier.md):** design choices, measurement contracts, failure modes and source-specific proof map.
+- **[Round 32 implementation](experiments/round-32/incremental_store.py)** and **[tests](experiments/round-32/test_incremental.py):** most mature versioned-storage prototype. [Benchmark](experiments/round-32/benchmark.py), [results](experiments/round-32/results.json).
+- **[Round 30 implementation](experiments/round-30/integrated.py):** experimental FTS5/source-link/compressed retrieval integration.
+- **[Research record through Round 32](research/living-record-rounds-19-32.md):** extensive exploration and failed hypotheses. Historical source ZIPs and early notebooks remain available.
+- **[Provenance and missing artifacts](docs/provenance.md)** · [Research methodology](docs/methodology.md) · [Licensing notes](LICENSE-NOTE.md).
 
-## Repository guide
+### Reproduction starting points
 
-- [`research/living-record-rounds-19-32.md`](research/living-record-rounds-19-32.md): dated integrated working record. Earlier rounds are described in the record but not all source reports are accessible in this export.
-- [`research/rounds/`](research/rounds/): recovered round-specific archives, source code, notes and artifacts. Some early source packages include previous-round snapshots.
-- [`experiments/`](experiments/): directly accessible Round 20–23 scripts and machine-readable outputs.
-- [`source-archives/`](source-archives/): exact downloaded historical ZIP packages preserved separately for auditability. Do not confuse archive existence with successful reruns.
-- [`docs/methodology.md`](docs/methodology.md): evidence hierarchy, reproducibility and pitfalls.
-- [`docs/research-decisions.md`](docs/research-decisions.md): negative results, hypotheses and next milestones.
-- [`docs/provenance.md`](docs/provenance.md): dataset identities, missing sources, licensing concerns and source audit.
-- [`MANIFEST.json`](MANIFEST.json): SHA-256 hashes of included files.
+Python 3.10+, SQLite with FTS5, and `libzstd` are needed for the Round 32 prototype. In a clean checkout, run:
 
-## Reproducing selected experiments
+```bash
+python -m unittest discover -s experiments/round-32 -p 'test_*.py' -v
+python -m unittest discover -s experiments/round-31 -p 'test_*.py' -v
+```
 
-The source tree includes Python scripts with different dependencies and entry-point conventions. Some historical scripts expect the directory structure of their archived package or require networked datasets. Start by inspecting `experiments/round-20/`, `experiments/round-21/`, `experiments/round-22/`, `experiments/round-23/`, then read the corresponding appendices and run only those tests whose inputs and environment you can supply. A syntax/JSON integrity audit was performed on this export, **not** a complete rerun of every experimental result.
+A full Round 32 numerical reproduction also needs the five historical Round 24–28 report inputs identified by SHA-256 in `experiments/round-32/results.json`. The current root `MANIFEST.json` is a **historical snapshot** and does not list every later round. The repository is a research archive, not a fully automated CI-validated release.
 
-## Round 26: source-aligned frame activation
+## What I learned
 
-On the same 100-question HotpotQA-derived subset, five-document bridge retrieval contained every annotated supporting sentence in 84/100 cases when full source paragraphs were retained. Selecting only two query-BM25 sentences per source reduced complete evidence presence to 69/100; retaining additional observed bridge-mention sentences recovered 74/100. At **128-byte independent frames**, modeled mean raw source bytes activated were 2,722 for full sources versus 1,946 for top-two-plus-link. At **2,048-byte frames**, both activate 2,722 bytes in this short-document corpus. This is **not** a measured compressed SSD advantage: index/mention-sidecar costs, actual corpus-compressed frame bytes, and end-to-end QA remain unmeasured. Eight local tests passed for UTF-8 span offsets and lossless independent zstd/zlib frames on toy inputs. [Read the Round 26 report](research/rounds/round-26/report.md), [experiment code](experiments/round-26/frame_probe.py), and [model outputs](experiments/round-26/results.json).
+The most promising gains came from questioning system boundaries, not piling on retrieval heuristics. I rejected diversity-only search as a bridge solution; distinguished source consistency from semantic truth; found that the original SQLite schema stored redundant plaintext; and discovered that straightforward immutable snapshots incurred full-rebuild write amplification. The next fair comparison is **custom content-addressed segments against a strong incremental SQLite/FTS5 baseline**, followed by an end-to-end source-grounded QA evaluation on independently held-out questions. If the simpler design matches CDG on quality and total cost, it should replace it.
 
-## Round 27: actual Zstandard physical-access benchmark
-
-A local source-archive experiment used **five CDG research reports** (90,163 original bytes), independently compressed frames, and two seeded synthetic workloads of 250 two-span requests each. **This is not HotpotQA or SSD read timing**. At 512-byte frames, line-aware framing used 64,722 archive+modeled-table bytes vs 62,338 for fixed frames, but retrieved 540 vs 855 compressed bytes per request on the whole-line workload. A subspan control showed 519 vs 684 compressed bytes/request. Seven local regression tests passed, including byte-for-byte UTF-8 reconstruction. These observations are a conventional source-layout trade-off, not a novel compression or RAG superiority result. [Round 27 report](research/rounds/round-27/report.md), [benchmark](experiments/round-27/storage_bench.py), [whole-line results](experiments/round-27/results.json), [subspan results](experiments/round-27/results_subspan.json).
-
-## Round 28: real file-backed compressed frame retrieval
-
-The prototype now writes independent Zstandard frames to disk, serializes byte-accurate frame offsets and source versions in SQLite, indexes lines with FTS5, and reconstructs selected original byte intervals with `os.pread`. On **88,679 bytes across five local research reports**, the total physical footprint at 512-byte frames was **291,755 B** (fixed) versus **301,449 B** (line-aligned), including actual SQLite files. On 250 seeded whole-line two-span requests, compressed payload reads averaged **833.9 B** versus **556.8 B** respectively. This decreased compressed read bytes but **did not demonstrate a warm-latency advantage** and used known span coordinates rather than authentic question-driven retrieval. Six local tests passed, including a repaired empty-span regression. See the [technical report](research/rounds/round-28/report.md), [source](experiments/round-28/filebacked_bench.py), [results](experiments/round-28/results.json) and [build measurements](experiments/round-28/build_results.json). This is a physical storage benchmark, **not** a novel compressor or proven RAG improvement.
-
-## Round 29: query-driven retrieval to exact compressed source bytes
-
-The physical benchmark now runs the entire search and source reconstruction path: **FTS5 full-text query → line ID and stored UTF-8 offsets → serialized independent Zstandard frames → file-backed read/decode → exact original bytes**. Five local technical reports (88,679 bytes) and 158 deterministically **source-derived**, label-leaked two-term queries were tested. Exact target-line recovery was **94.3% @3** and **97.47% @5**, with zero byte reconstruction errors. Across 474 warm requests per layout, fixed 2,048-byte frames gave a 126.8 μs observed full p50 versus 140.1 μs for line-aligned 512 B, despite the latter reading substantially fewer compressed bytes. Warm timings lack cold-cache and statistical controls. **This is not independent QA or evidence-completeness validation.** Six regression tests passed. [Technical report](research/rounds/round-29/report.md), [benchmark code](experiments/round-29/retrieval_bench.py), [machine-readable measurements](experiments/round-29/results.json).
-
-## Round 30: contentless search indexes and integrated bridge retrieval
-
-Reviewing the Round 28/29 storage layer revealed duplicated original source text in SQLite alongside Zstandard-compressed source frames. On five research reports (**88,679 bytes**), replacing the uncompressed `lines.body` table with a **contentless FTS5** search index reduced the measured total database-plus-compressed-payload footprint from **291,755 to 197,547 bytes at 512-byte frames (32.3%)**, while preserving the same ranked byte-verified results for 18 local lexical queries. The reduction was **30.8%** at 256 B and **33.4%** at 2,048 B frames. These are established SQLite techniques, **not** a new index algorithm or verified latency gain. A file-backed HotpotQA-shaped FTS5 + title-link baseline and tests were also implemented, but the complete pinned 100-question dataset **was not run through that local physical reader**. A connected GitHub analysis separately reconfirmed 403 exact title links and the prior BM25 33/100 versus title expansion 46/100 complete two-document retrieval result; do not combine those two separately executed experiments as an end-to-end score. **13 local regression tests passed.** [Report](research/rounds/round-30/report.md), [integrated prototype](experiments/round-30/integrated.py), [real storage measurements](experiments/round-30/contentless_all_results.json), [connected-source analysis](experiments/round-30/source_analysis.json).
-
-## Round 31: immutable version-pinned evidence receipts
-
-The Round 30 compressed-source/contentless-FTS5 retrieval layer now has an experimental **single-writer, multi-generation snapshot interface**. Index, exact line-offset coordinates, compressed source frames, a basic title-mention table and source-version SHA-256 metadata are published as one generation; readers pin the generation and reject receipts from a different one. Ten local regression tests passed, including old/new reader continuity, stale receipts, corrupted SQLite/Zstandard payload, and failed pre-switch publication. On five existing research reports (63,869 original bytes), a 512-byte-frame snapshot occupied **181,633 bytes** of index and payload; changing one line and rebuilding took **29.01 ms** in one warm local run, and retaining two generations plus manifests/pointer consumed **365,879 bytes**. This is an update-amplification and data-provenance experiment, **not** a novel retrieval algorithm, authenticated freshness guarantee or actual HotpotQA QA result. An older but internally consistent snapshot remains possible. [Report](research/rounds/round-31/report.md), [implementation](experiments/round-31/snapshot_store.py), [tests](experiments/round-31/test_snapshot_store.py), [raw results](experiments/round-31/results.json).
-
-## Round 32: incremental immutable search segments and content-addressed Zstd frames
-
-Two executed local trials on five Round 24–28 research reports (63,869 original bytes) compared **eleven retained generations** under successive single-source ASCII replacements or insertions. A deliberately nonincremental control rebuilt every independent SQLite contentless FTS5 source segment and every compressed frame per generation. A CAS variant reused unchanged source segments, SHA-256-addressed independent Zstandard frames, and immutable source descriptors. With 512-byte line-bounded frames, retained storage after ten replacement updates was **4,602,314 B versus 1,174,447 B (74.48% lower)**; median update build time was **475.6 ms versus 24.5 ms**. An insertion workload showed similar results. Search output and source reconstruction matched exactly across stores. Nine local unit tests passed; correct-generation receipts were enforced and old readers remained pinned. **Not an optimized conventional SQLite baseline, not a held-out QA evaluation, and not a novel compression technique**. See [Round 32 report](research/rounds/round-32/report.md), [implementation](experiments/round-32/incremental_store.py), [benchmark](experiments/round-32/benchmark.py) and [results](experiments/round-32/results.json).
-
-## Research status and next falsification test
-
-Round 23 introduced exact source-ID and version/scope guarded bridge lookup as a simple baseline. See [`research/rounds/round-23/report.md`](research/rounds/round-23/report.md) for the experiment and failure-injection analysis.
-
-**Round 24 real-question diagnostic:** On 1,000 HotpotQA-derived questions using a gold-derived pool of 1,975 document titles, BM25 recovered both annotated titles at k=2 on 122/803 bridge questions versus 190/197 comparison questions. MMR did not help. This is not a standard HotpotQA benchmark and contains title-pool label leakage. [Read the study](research/rounds/round-24/report.md).
-
-Round 25 uses authentic source paragraphs to test exact-title mention expansion as a strong *simple* baseline. See [the report](research/rounds/round-25/report.md), [code](experiments/round-25/bridge_probe.py) and [aggregate results](experiments/round-25/results.json). The simple baseline improves complete supporting-document recall on a small curated subset but does not establish a novel algorithm or total-cost advantage.
-
-The central test is whether predicted evidence dependencies improve *complete-witness recall per total cost* on independently authored held-out multihop queries. Compare against BM25, hybrid retrieval, cross-encoder reranking, set-level selectors and simple expand-on-failure policies. Measure complete support, false citations, final answer accuracy, prompt tokens, compressed storage including indexes, cold/warm p50/p95 reads, and calibration under family shift.
-
-If the graph controller loses to a simpler evidence-expansion baseline at matched costs, remove it. The goal is a reliable mechanism and a defensible empirical result, not an increasingly elaborate architecture.
-
-## Intellectual honesty
-
-This is ongoing exploratory research. Synthetic controls, oracle upper bounds, cost proxies, exact-quote alignment, and real held-out evaluation are different classes of evidence. They are labeled separately throughout. Research reports and scripts may include prior model-assisted analysis; authorship and execution history should be described accurately in applications. Code and text here should not be represented as independently peer-reviewed or accepted research.
-
-See [methodology](docs/methodology.md) and [provenance](docs/provenance.md).
-
-**Integrity note:** `MANIFEST.json` is a historical snapshot and does not enumerate all later research rounds. Git tree object identities verify the committed files; use `git ls-files` and SHA-256 locally if a fresh content-hash inventory is required. The Round 25 source data itself is not committed.
+**Status:** independent research and iterative prototyping with model-assisted tooling and analyses, including separately executed connected-data studies. No peer-reviewed publication or claimed state-of-the-art result. For a statement-by-statement provenance audit, see the technical dossier and individual round reports.
