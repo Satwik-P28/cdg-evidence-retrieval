@@ -1,0 +1,276 @@
+{
+  "seed": 20261116,
+  "calibration_n": 3000,
+  "test_n": 3000,
+  "shifted_n": 3000,
+  "deep_threshold_selected_on_calibration": 0.5,
+  "gate_values": [
+    0.35,
+    0.5,
+    0.65
+  ],
+  "target_observed_calibration_upper_risk": 0.05,
+  "verifier_cost": 10,
+  "screen_cost": 0.3,
+  "results": {
+    "0.35": {
+      "iid": {
+        "accept_all": {
+          "accepted": 3000,
+          "true_accepted": 2202,
+          "false_accepted": 798,
+          "false_accept_fraction": 0.266,
+          "correct_answer_coverage": 0.734,
+          "abstention_fraction": 0.0,
+          "cost_per_query": 0.0,
+          "deep_verifications": 0
+        },
+        "deep_all": {
+          "accepted": 2175,
+          "true_accepted": 2147,
+          "false_accepted": 28,
+          "false_accept_fraction": 0.01287,
+          "correct_answer_coverage": 0.71567,
+          "abstention_fraction": 0.275,
+          "cost_per_query": 10.0,
+          "deep_verifications": 3000
+        },
+        "screen_then_deep": {
+          "accepted": 1978,
+          "true_accepted": 1952,
+          "false_accepted": 26,
+          "false_accept_fraction": 0.01314,
+          "correct_answer_coverage": 0.65067,
+          "abstention_fraction": 0.34067,
+          "cost_per_query": 8.04667,
+          "deep_verifications": 2324
+        },
+        "screen_only": {
+          "accepted": 2324,
+          "true_accepted": 1975,
+          "false_accepted": 349,
+          "false_accept_fraction": 0.15017,
+          "correct_answer_coverage": 0.65833,
+          "abstention_fraction": 0.22533,
+          "cost_per_query": 0.3,
+          "deep_verifications": 0
+        }
+      },
+      "shifted": {
+        "accept_all": {
+          "accepted": 3000,
+          "true_accepted": 1675,
+          "false_accepted": 1325,
+          "false_accept_fraction": 0.44167,
+          "correct_answer_coverage": 0.55833,
+          "abstention_fraction": 0.0,
+          "cost_per_query": 0.0,
+          "deep_verifications": 0
+        },
+        "deep_all": {
+          "accepted": 1963,
+          "true_accepted": 1626,
+          "false_accepted": 337,
+          "false_accept_fraction": 0.17168,
+          "correct_answer_coverage": 0.542,
+          "abstention_fraction": 0.34567,
+          "cost_per_query": 10.0,
+          "deep_verifications": 3000
+        },
+        "screen_then_deep": {
+          "accepted": 1807,
+          "true_accepted": 1485,
+          "false_accepted": 322,
+          "false_accept_fraction": 0.1782,
+          "correct_answer_coverage": 0.495,
+          "abstention_fraction": 0.39767,
+          "cost_per_query": 8.02,
+          "deep_verifications": 2316
+        },
+        "screen_only": {
+          "accepted": 2316,
+          "true_accepted": 1499,
+          "false_accepted": 817,
+          "false_accept_fraction": 0.35276,
+          "correct_answer_coverage": 0.49967,
+          "abstention_fraction": 0.228,
+          "cost_per_query": 0.3,
+          "deep_verifications": 0
+        }
+      }
+    },
+    "0.5": {
+      "iid": {
+        "accept_all": {
+          "accepted": 3000,
+          "true_accepted": 2202,
+          "false_accepted": 798,
+          "false_accept_fraction": 0.266,
+          "correct_answer_coverage": 0.734,
+          "abstention_fraction": 0.0,
+          "cost_per_query": 0.0,
+          "deep_verifications": 0
+        },
+        "deep_all": {
+          "accepted": 2175,
+          "true_accepted": 2147,
+          "false_accepted": 28,
+          "false_accept_fraction": 0.01287,
+          "correct_answer_coverage": 0.71567,
+          "abstention_fraction": 0.275,
+          "cost_per_query": 10.0,
+          "deep_verifications": 3000
+        },
+        "screen_then_deep": {
+          "accepted": 1705,
+          "true_accepted": 1683,
+          "false_accepted": 22,
+          "false_accept_fraction": 0.0129,
+          "correct_answer_coverage": 0.561,
+          "abstention_fraction": 0.43167,
+          "cost_per_query": 6.55,
+          "deep_verifications": 1875
+        },
+        "screen_only": {
+          "accepted": 1875,
+          "true_accepted": 1694,
+          "false_accepted": 181,
+          "false_accept_fraction": 0.09653,
+          "correct_answer_coverage": 0.56467,
+          "abstention_fraction": 0.375,
+          "cost_per_query": 0.3,
+          "deep_verifications": 0
+        }
+      },
+      "shifted": {
+        "accept_all": {
+          "accepted": 3000,
+          "true_accepted": 1675,
+          "false_accepted": 1325,
+          "false_accept_fraction": 0.44167,
+          "correct_answer_coverage": 0.55833,
+          "abstention_fraction": 0.0,
+          "cost_per_query": 0.0,
+          "deep_verifications": 0
+        },
+        "deep_all": {
+          "accepted": 1963,
+          "true_accepted": 1626,
+          "false_accepted": 337,
+          "false_accept_fraction": 0.17168,
+          "correct_answer_coverage": 0.542,
+          "abstention_fraction": 0.34567,
+          "cost_per_query": 10.0,
+          "deep_verifications": 3000
+        },
+        "screen_then_deep": {
+          "accepted": 1625,
+          "true_accepted": 1332,
+          "false_accepted": 293,
+          "false_accept_fraction": 0.18031,
+          "correct_answer_coverage": 0.444,
+          "abstention_fraction": 0.45833,
+          "cost_per_query": 6.75333,
+          "deep_verifications": 1936
+        },
+        "screen_only": {
+          "accepted": 1936,
+          "true_accepted": 1339,
+          "false_accepted": 597,
+          "false_accept_fraction": 0.30837,
+          "correct_answer_coverage": 0.44633,
+          "abstention_fraction": 0.35467,
+          "cost_per_query": 0.3,
+          "deep_verifications": 0
+        }
+      }
+    },
+    "0.65": {
+      "iid": {
+        "accept_all": {
+          "accepted": 3000,
+          "true_accepted": 2202,
+          "false_accepted": 798,
+          "false_accept_fraction": 0.266,
+          "correct_answer_coverage": 0.734,
+          "abstention_fraction": 0.0,
+          "cost_per_query": 0.0,
+          "deep_verifications": 0
+        },
+        "deep_all": {
+          "accepted": 2175,
+          "true_accepted": 2147,
+          "false_accepted": 28,
+          "false_accept_fraction": 0.01287,
+          "correct_answer_coverage": 0.71567,
+          "abstention_fraction": 0.275,
+          "cost_per_query": 10.0,
+          "deep_verifications": 3000
+        },
+        "screen_then_deep": {
+          "accepted": 1283,
+          "true_accepted": 1266,
+          "false_accepted": 17,
+          "false_accept_fraction": 0.01325,
+          "correct_answer_coverage": 0.422,
+          "abstention_fraction": 0.57233,
+          "cost_per_query": 4.79,
+          "deep_verifications": 1347
+        },
+        "screen_only": {
+          "accepted": 1347,
+          "true_accepted": 1267,
+          "false_accepted": 80,
+          "false_accept_fraction": 0.05939,
+          "correct_answer_coverage": 0.42233,
+          "abstention_fraction": 0.551,
+          "cost_per_query": 0.3,
+          "deep_verifications": 0
+        }
+      },
+      "shifted": {
+        "accept_all": {
+          "accepted": 3000,
+          "true_accepted": 1675,
+          "false_accepted": 1325,
+          "false_accept_fraction": 0.44167,
+          "correct_answer_coverage": 0.55833,
+          "abstention_fraction": 0.0,
+          "cost_per_query": 0.0,
+          "deep_verifications": 0
+        },
+        "deep_all": {
+          "accepted": 1963,
+          "true_accepted": 1626,
+          "false_accepted": 337,
+          "false_accept_fraction": 0.17168,
+          "correct_answer_coverage": 0.542,
+          "abstention_fraction": 0.34567,
+          "cost_per_query": 10.0,
+          "deep_verifications": 3000
+        },
+        "screen_then_deep": {
+          "accepted": 1341,
+          "true_accepted": 1096,
+          "false_accepted": 245,
+          "false_accept_fraction": 0.1827,
+          "correct_answer_coverage": 0.36533,
+          "abstention_fraction": 0.553,
+          "cost_per_query": 5.29667,
+          "deep_verifications": 1499
+        },
+        "screen_only": {
+          "accepted": 1499,
+          "true_accepted": 1096,
+          "false_accepted": 403,
+          "false_accept_fraction": 0.26885,
+          "correct_answer_coverage": 0.36533,
+          "abstention_fraction": 0.50033,
+          "cost_per_query": 0.3,
+          "deep_verifications": 0
+        }
+      }
+    }
+  },
+  "scope": "Entirely synthetic shared-noise verifier scores, not conformal coverage and not an evaluation of real RAG"
+}
