@@ -1,0 +1,181 @@
+{
+  "seed": 33116,
+  "n_per_family": 100,
+  "methods": {
+    "greedy": {
+      "n": 300,
+      "mean_ratio": 1.07921,
+      "median_ratio": 1.00788,
+      "max_ratio": 2.36082,
+      "exact_matches": 143,
+      "mean_cost": 54.9867,
+      "family_mean_ratios": {
+        "independent": 1.10733,
+        "shared": 1.08442,
+        "bridge": 1.04588
+      }
+    },
+    "pruned": {
+      "n": 300,
+      "mean_ratio": 1.06231,
+      "median_ratio": 1.0,
+      "max_ratio": 2.36082,
+      "exact_matches": 180,
+      "mean_cost": 54.1542,
+      "family_mean_ratios": {
+        "independent": 1.08483,
+        "shared": 1.06833,
+        "bridge": 1.03377
+      }
+    },
+    "repair": {
+      "n": 300,
+      "mean_ratio": 1.00325,
+      "median_ratio": 1.0,
+      "max_ratio": 1.26943,
+      "exact_matches": 292,
+      "mean_cost": 51.4125,
+      "family_mean_ratios": {
+        "independent": 1.00767,
+        "shared": 1.00029,
+        "bridge": 1.00178
+      }
+    },
+    "exact": {
+      "n": 300,
+      "mean_ratio": 1.0,
+      "median_ratio": 1.0,
+      "max_ratio": 1.0,
+      "exact_matches": 300,
+      "mean_cost": 51.2317,
+      "family_mean_ratios": {
+        "independent": 1.0,
+        "shared": 1.0,
+        "bridge": 1.0
+      }
+    }
+  },
+  "noise_stress": {
+    "0": {
+      "greedy": {
+        "n": 300,
+        "complete": 300,
+        "unsupported_stop": 0,
+        "coverage_missing": 0,
+        "mean_cost": 54.987,
+        "mean_actual_coverage": 1.0,
+        "mean_items": 2.983
+      },
+      "repair": {
+        "n": 300,
+        "complete": 300,
+        "unsupported_stop": 0,
+        "coverage_missing": 0,
+        "mean_cost": 51.413,
+        "mean_actual_coverage": 1.0,
+        "mean_items": 2.763
+      },
+      "observed_acquisition": {
+        "n": 300,
+        "complete": 300,
+        "unsupported_stop": 0,
+        "coverage_missing": 0,
+        "mean_cost": 54.987,
+        "mean_actual_coverage": 1.0,
+        "mean_items": 2.983
+      }
+    },
+    "0.05": {
+      "greedy": {
+        "n": 300,
+        "complete": 209,
+        "unsupported_stop": 88,
+        "coverage_missing": 3,
+        "mean_cost": 53.194,
+        "mean_actual_coverage": 0.939,
+        "mean_items": 2.917
+      },
+      "repair": {
+        "n": 300,
+        "complete": 199,
+        "unsupported_stop": 98,
+        "coverage_missing": 3,
+        "mean_cost": 49.631,
+        "mean_actual_coverage": 0.9319,
+        "mean_items": 2.663
+      },
+      "observed_acquisition": {
+        "n": 300,
+        "complete": 300,
+        "unsupported_stop": 0,
+        "coverage_missing": 0,
+        "mean_cost": 58.785,
+        "mean_actual_coverage": 1.0,
+        "mean_items": 3.327
+      }
+    },
+    "0.15": {
+      "greedy": {
+        "n": 300,
+        "complete": 114,
+        "unsupported_stop": 180,
+        "coverage_missing": 6,
+        "mean_cost": 49.313,
+        "mean_actual_coverage": 0.8433,
+        "mean_items": 2.81
+      },
+      "repair": {
+        "n": 300,
+        "complete": 99,
+        "unsupported_stop": 195,
+        "coverage_missing": 6,
+        "mean_cost": 44.878,
+        "mean_actual_coverage": 0.8224,
+        "mean_items": 2.49
+      },
+      "observed_acquisition": {
+        "n": 300,
+        "complete": 300,
+        "unsupported_stop": 0,
+        "coverage_missing": 0,
+        "mean_cost": 63.242,
+        "mean_actual_coverage": 1.0,
+        "mean_items": 3.853
+      }
+    },
+    "0.3": {
+      "greedy": {
+        "n": 300,
+        "complete": 51,
+        "unsupported_stop": 246,
+        "coverage_missing": 3,
+        "mean_cost": 43.971,
+        "mean_actual_coverage": 0.7286,
+        "mean_items": 2.67
+      },
+      "repair": {
+        "n": 300,
+        "complete": 36,
+        "unsupported_stop": 261,
+        "coverage_missing": 3,
+        "mean_cost": 38.453,
+        "mean_actual_coverage": 0.6848,
+        "mean_items": 2.33
+      },
+      "observed_acquisition": {
+        "n": 300,
+        "complete": 300,
+        "unsupported_stop": 0,
+        "coverage_missing": 0,
+        "mean_cost": 71.957,
+        "mean_actual_coverage": 1.0,
+        "mean_items": 4.693
+      }
+    }
+  },
+  "notes": "Synthetic small known-label instances; planning time measured locally, not model inference or I/O.",
+  "repair_search_evaluations": {
+    "mean": 443.8
+  },
+  "elapsed_wall_s": 2.309
+}
