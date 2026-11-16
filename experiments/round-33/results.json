@@ -1,0 +1,203 @@
+{
+  "seed": 33116,
+  "instances_per_family": 100,
+  "experiment": "synthetic small-instance oracle comparison; known coverage; read/decode cost proxies only",
+  "families": {
+    "independent": {
+      "n": 100,
+      "unsolved": 0,
+      "mean_greedy_over_optimum": 1.1073,
+      "median_greedy_over_optimum": 1.0,
+      "worst_greedy_over_optimum": 2.3608,
+      "exact_matches": 52,
+      "mean_exact_cost": 40.4,
+      "mean_greedy_cost": 44.938,
+      "counterexamples": [
+        {
+          "instance_seed": 33269,
+          "ratio": 1.5699,
+          "greedy": [
+            3,
+            0,
+            2
+          ],
+          "exact": [
+            2,
+            8,
+            10
+          ],
+          "greedy_cost": 75.75,
+          "exact_cost": 48.25
+        },
+        {
+          "instance_seed": 33422,
+          "ratio": 1.3147,
+          "greedy": [
+            10,
+            8,
+            7
+          ],
+          "exact": [
+            1,
+            7,
+            10
+          ],
+          "greedy_cost": 64.75,
+          "exact_cost": 49.25
+        },
+        {
+          "instance_seed": 33439,
+          "ratio": 1.2632,
+          "greedy": [
+            0,
+            6,
+            8
+          ],
+          "exact": [
+            0,
+            1,
+            7
+          ],
+          "greedy_cost": 36.0,
+          "exact_cost": 28.5
+        },
+        {
+          "instance_seed": 33575,
+          "ratio": 1.3988,
+          "greedy": [
+            7,
+            1,
+            5,
+            0
+          ],
+          "exact": [
+            0,
+            7
+          ],
+          "greedy_cost": 60.5,
+          "exact_cost": 43.25
+        }
+      ]
+    },
+    "shared": {
+      "n": 100,
+      "unsolved": 0,
+      "mean_greedy_over_optimum": 1.0844,
+      "median_greedy_over_optimum": 1.0157,
+      "worst_greedy_over_optimum": 1.6627,
+      "exact_matches": 42,
+      "mean_exact_cost": 38.767,
+      "mean_greedy_cost": 42.138,
+      "counterexamples": [
+        {
+          "instance_seed": 33286,
+          "ratio": 1.264,
+          "greedy": [
+            9,
+            8,
+            3,
+            6
+          ],
+          "exact": [
+            0,
+            1,
+            6
+          ],
+          "greedy_cost": 62.25,
+          "exact_cost": 49.25
+        },
+        {
+          "instance_seed": 33303,
+          "ratio": 1.3498,
+          "greedy": [
+            9,
+            4,
+            10
+          ],
+          "exact": [
+            0,
+            3
+          ],
+          "greedy_cost": 75.25,
+          "exact_cost": 55.75
+        },
+        {
+          "instance_seed": 33490,
+          "ratio": 1.4154,
+          "greedy": [
+            8,
+            9,
+            6,
+            3
+          ],
+          "exact": [
+            1,
+            3,
+            5
+          ],
+          "greedy_cost": 46.0,
+          "exact_cost": 32.5
+        },
+        {
+          "instance_seed": 33660,
+          "ratio": 1.3429,
+          "greedy": [
+            1,
+            2,
+            9
+          ],
+          "exact": [
+            0,
+            6,
+            9
+          ],
+          "greedy_cost": 35.25,
+          "exact_cost": 26.25
+        }
+      ]
+    },
+    "bridge": {
+      "n": 100,
+      "unsolved": 0,
+      "mean_greedy_over_optimum": 1.0459,
+      "median_greedy_over_optimum": 1.0048,
+      "worst_greedy_over_optimum": 1.7437,
+      "exact_matches": 49,
+      "mean_exact_cost": 74.528,
+      "mean_greedy_cost": 77.885,
+      "counterexamples": [
+        {
+          "instance_seed": 33694,
+          "ratio": 1.7437,
+          "greedy": [
+            9,
+            6
+          ],
+          "exact": [
+            2,
+            6
+          ],
+          "greedy_cost": 86.75,
+          "exact_cost": 49.75
+        },
+        {
+          "instance_seed": 33949,
+          "ratio": 1.2811,
+          "greedy": [
+            2,
+            10,
+            6,
+            4,
+            5
+          ],
+          "exact": [
+            4,
+            5
+          ],
+          "greedy_cost": 108.25,
+          "exact_cost": 84.5
+        }
+      ]
+    }
+  }
+}
