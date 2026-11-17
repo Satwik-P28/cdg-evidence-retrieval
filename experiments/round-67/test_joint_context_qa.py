@@ -6,7 +6,7 @@ from joint_context_qa import (
     budget_prefix,join_materials,prepare_tasks,make_oracle_task,locate_source_answer,
     experiment,aggregate,K_VALUES,MODES,POLICIES,
 )
-import extractive_qa as r66
+from joint_context_qa import q66 as r66
 
 
 def row(id='q',answer='Film B'):
