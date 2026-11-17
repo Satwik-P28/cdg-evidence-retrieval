@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse, hashlib, importlib.util, json, re, statistics, sys, time
 from pathlib import Path
 from urllib.request import urlopen, Request
+from urllib.error import HTTPError
 from urllib.parse import quote
 
 HERE=Path(__file__).resolve().parent
@@ -68,7 +69,14 @@ def download_history(spec,count=12,get_fn=get):
         if commit in seen:raise ValueError('duplicate commit from history API')
         seen.add(commit)
         url=f'https://raw.githubusercontent.com/{repo}/{commit}/{path}'
-        raw=get_fn(url)
+        try:
+            raw=get_fn(url)
+        except HTTPError as error:
+            if error.code==404:
+                # A path-history event can represent the original deletion or
+                # a later rename. These revisions have no available README blob.
+                continue
+            raise
         if b'\0' in raw or len(raw)>500_000 or not raw:
             raise ValueError('invalid README source bytes')
         digest=sha(raw)
