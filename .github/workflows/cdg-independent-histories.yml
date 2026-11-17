@@ -1,0 +1,30 @@
+name: CDG independent version history falsification
+on:
+  push:
+    branches:
+      - "research/round-62-*"
+      - "research/round-63-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  independent-histories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Round 62 upstream history fixture and archive controls
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-62 -p 'test_*.py' -v
+      - name: Round 62 pinned external revision histories benchmark
+        run: python experiments/round-62/independent_histories.py --out experiments/round-62/ci-results.json
+      - name: Upload compact provenance and outcomes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round62-revision-history-results
+          path: experiments/round-62/ci-results.json
+          if-no-files-found: ignore
