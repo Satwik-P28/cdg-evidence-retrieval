@@ -33,7 +33,7 @@ def dependencies():
 
 
 class HistoricIndexCache:
-    def __init__(self,engine,capacity,span_method='scan'):
+    def __init__(self,engine,capacity,span_method='batch'):
         self.engine=engine
         if span_method not in ('scan','point','batch'):
             raise ValueError('unknown span lookup')
