@@ -1,0 +1,85 @@
+{
+  "experiment": "round35: classical hybrid optimizer + symmetry encoder",
+  "simulated": true,
+  "quantum_hardware": false,
+  "instances": 100,
+  "candidates": 12,
+  "facets": 7,
+  "anneal_steps": 1000,
+  "optimization": {
+    "greedy": {
+      "mean_ratio": 1.08323,
+      "max_ratio": 1.48649,
+      "exact_matches": 48,
+      "mean_runtime_ms": 0.082
+    },
+    "local": {
+      "mean_ratio": 1.00214,
+      "max_ratio": 1.06452,
+      "exact_matches": 95,
+      "mean_runtime_ms": 0.946
+    },
+    "anneal": {
+      "mean_ratio": 1.00376,
+      "max_ratio": 1.11111,
+      "exact_matches": 93,
+      "mean_runtime_ms": 2.857
+    },
+    "anneal_local": {
+      "mean_ratio": 1.00106,
+      "max_ratio": 1.07895,
+      "exact_matches": 98,
+      "mean_runtime_ms": 3.594
+    },
+    "exact": {
+      "exact_matches": 100,
+      "mean_runtime_ms": 6.506
+    }
+  },
+  "symmetry": {
+    "periodic": {
+      "raw": 8192,
+      "period": 25,
+      "zlib9": 54,
+      "bz2": 72,
+      "raw_fallback": 8193,
+      "best_bytes": 25,
+      "best_method": "period"
+    },
+    "periodic_with_mutations": {
+      "raw": 8192,
+      "period": 8201,
+      "zlib9": 102,
+      "bz2": 123,
+      "raw_fallback": 8193,
+      "best_bytes": 102,
+      "best_method": "zlib9"
+    },
+    "random": {
+      "raw": 8192,
+      "period": 8201,
+      "zlib9": 8203,
+      "bz2": 8683,
+      "raw_fallback": 8193,
+      "best_bytes": 8193,
+      "best_method": "raw_fallback"
+    },
+    "textual_repetition": {
+      "raw": 7800,
+      "period": 61,
+      "zlib9": 99,
+      "bz2": 167,
+      "raw_fallback": 7801,
+      "best_bytes": 61,
+      "best_method": "period"
+    }
+  },
+  "elapsed_seconds": 1.429,
+  "limitations": [
+    "Synthetic predicted-perfect evidence labels",
+    "Small N permits exponential exact search",
+    "Ising-inspired annealing is classical, not quantum",
+    "No direct RAG answer, compressed SSD, or held-out workload",
+    "Period encoder O(n^2) naive equality comparisons, unsuitable for general data"
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "source": "astral-sh/uv README 12 pinned GitHub revisions",
+  "policy": "one-to-one greedy pairing of adjacent removed/added lines at token Jaccard >=0.75; similarity is not semantic equivalence",
+  "transitions": [
+    {
+      "transition": 1,
+      "date": "2025-02-05T23:22:09Z",
+      "deleted": 7,
+      "added": 10,
+      "near_pairs": 6,
+      "exact_normalized_pairs": 1,
+      "unmatched_deletions": 1,
+      "unmatched_additions": 4
+    },
+    {
+      "transition": 2,
+      "date": "2025-02-08T15:21:08Z",
+      "deleted": 6,
+      "added": 5,
+      "near_pairs": 5,
+      "exact_normalized_pairs": 1,
+      "unmatched_deletions": 1,
+      "unmatched_additions": 0
+    },
+    {
+      "transition": 3,
+      "date": "2025-05-27T16:11:54Z",
+      "deleted": 0,
+      "added": 4,
+      "near_pairs": 0,
+      "exact_normalized_pairs": 0,
+      "unmatched_deletions": 0,
+      "unmatched_additions": 4
+    },
+    {
+      "transition": 4,
+      "date": "2025-12-11T13:51:37Z",
+      "deleted": 5,
+      "added": 2,
+      "near_pairs": 0,
+      "exact_normalized_pairs": 0,
+      "unmatched_deletions": 5,
+      "unmatched_additions": 2
+    },
+    {
+      "transition": 5,
+      "date": "2025-12-16T14:36:06Z",
+      "deleted": 1,
+      "added": 4,
+      "near_pairs": 0,
+      "exact_normalized_pairs": 0,
+      "unmatched_deletions": 1,
+      "unmatched_additions": 4
+    },
+    {
+      "transition": 6,
+      "date": "2025-12-16T15:39:59Z",
+      "deleted": 0,
+      "added": 0,
+      "near_pairs": 0,
+      "exact_normalized_pairs": 0,
+      "unmatched_deletions": 0,
+      "unmatched_additions": 0
+    },
+    {
+      "transition": 7,
+      "date": "2025-12-18T12:56:51Z",
+      "deleted": 1,
+      "added": 1,
+      "near_pairs": 1,
+      "exact_normalized_pairs": 0,
+      "unmatched_deletions": 0,
+      "unmatched_additions": 0
+    },
+    {
+      "transition": 8,
+      "date": "2026-01-15T13:23:25Z",
+      "deleted": 11,
+      "added": 11,
+      "near_pairs": 11,
+      "exact_normalized_pairs": 0,
+      "unmatched_deletions": 0,
+      "unmatched_additions": 0
+    },
+    {
+      "transition": 9,
+      "date": "2026-03-04T15:52:15Z",
+      "deleted": 2,
+      "added": 2,
+      "near_pairs": 0,
+      "exact_normalized_pairs": 0,
+      "unmatched_deletions": 2,
+      "unmatched_additions": 2
+    },
+    {
+      "transition": 10,
+      "date": "2026-03-13T14:17:06Z",
+      "deleted": 1,
+      "added": 1,
+      "near_pairs": 0,
+      "exact_normalized_pairs": 0,
+      "unmatched_deletions": 1,
+      "unmatched_additions": 1
+    },
+    {
+      "transition": 11,
+      "date": "2026-07-08T13:08:32Z",
+      "deleted": 0,
+      "added": 3,
+      "near_pairs": 0,
+      "exact_normalized_pairs": 0,
+      "unmatched_deletions": 0,
+      "unmatched_additions": 3
+    }
+  ],
+  "summary": {
+    "revisions": 12,
+    "total_line_observations": 77,
+    "near_pairs": 23,
+    "paired_observations": 46,
+    "normalized_equal_pairs": 2,
+    "unpaired_observations": 31,
+    "adversarial_high_similarity": 6,
+    "adversarial_total": 6
+  },
+  "adversarial": [
+    {
+      "before": "The service is available to all users.",
+      "after": "The service is not available to all users.",
+      "reason": "negation",
+      "similarity": 0.875,
+      "would_skip_at_075": true
+    },
+    {
+      "before": "The limit is 10,000 requests per day.",
+      "after": "The limit is 1,000 requests per day.",
+      "reason": "numeric",
+      "similarity": 0.75,
+      "would_skip_at_075": true
+    },
+    {
+      "before": "This medication is safe for children aged 12.",
+      "after": "This medication is unsafe for children aged 12.",
+      "reason": "antonym",
+      "similarity": 0.7778,
+      "would_skip_at_075": true
+    },
+    {
+      "before": "Access was revoked on 12 May 2025.",
+      "after": "Access was revoked on 12 May 2026.",
+      "reason": "date",
+      "similarity": 0.75,
+      "would_skip_at_075": true
+    },
+    {
+      "before": "The policy allows processing of private documents.",
+      "after": "The policy forbids processing of private documents.",
+      "reason": "modality",
+      "similarity": 0.75,
+      "would_skip_at_075": true
+    },
+    {
+      "before": "The service never stores the full source document.",
+      "after": "The service stores the full source document.",
+      "reason": "negation",
+      "similarity": 0.8571,
+      "would_skip_at_075": true
+    }
+  ],
+  "examples": [
+    {
+      "old": "- 💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache) for",
+      "new": "- 💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache.md) for",
+      "similarity": 1,
+      "normalized_equal": true,
+      "transition": 1
+    },
+    {
+      "old": "- ❇️ [Runs single-file scripts](#script-support), with support for",
+      "new": "- ❇️ [Runs scripts](#script-support), with support for",
+      "similarity": 0.9,
+      "normalized_equal": false,
+      "transition": 1
+    },
+    {
+      "old": "- 🗂️ Provides [comprehensive project management](#project-management), with a",
+      "new": "- 🗂️ Provides [comprehensive project management](#project), with a",
+      "similarity": 0.9,
+      "normalized_equal": false,
+      "transition": 1
+    },
+    {
+      "old": "- 🔩 Includes a [pip-compatible interface](#a-pip-compatible-interface) for a performance boost with",
+      "new": "- 🔩 Includes a [pip-compatible interface](#the-pip-interface) for a performance boost with a",
+      "similarity": 0.8333,
+      "normalized_equal": false,
+      "transition": 1
+    },
+    {
+      "old": "- 🐍 [Installs and manages](#python-management) Python versions.",
+      "new": "- 🐍 [Installs and manages](#python-versions) Python versions.",
+      "similarity": 0.7778,
+      "normalized_equal": false,
+      "transition": 1
+    },
+    {
+      "old": "- 🏢 Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/workspaces) for scalable",
+      "new": "- 🏢 Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces.md)",
+      "similarity": 0.75,
+      "normalized_equal": false,
+      "transition": 1
+    },
+    {
+      "old": "- 💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache.md) for",
+      "new": "- 💾 Disk-space efficient, with a [global cache](https://docs.astral.sh/uv/concepts/cache) for",
+      "similarity": 1,
+      "normalized_equal": true,
+      "transition": 2
+    },
+    {
+      "old": "- 🛠️ [Runs and installs](#tool) tools published as Python packages.",
+      "new": "- 🛠️ [Runs and installs](#tools) tools published as Python packages.",
+      "similarity": 0.9091,
+      "normalized_equal": false,
+      "transition": 2
+    },
+    {
+      "old": "- 🗂️ Provides [comprehensive project management](#project), with a",
+      "new": "- 🗂️ Provides [comprehensive project management](#projects), with a",
+      "similarity": 0.9,
+      "normalized_equal": false,
+      "transition": 2
+    },
+    {
+      "old": "- ❇️ [Runs scripts](#script-support), with support for",
+      "new": "- ❇️ [Runs scripts](#scripts), with support for",
+      "similarity": 0.8889,
+      "normalized_equal": false,
+      "transition": 2
+    },
+    {
+      "old": "- 🏢 Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces.md)",
+      "new": "- 🏢 Supports Cargo-style [workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces) for",
+      "similarity": 0.8571,
+      "normalized_equal": false,
+      "transition": 2
+    },
+    {
+      "old": "[contributing guide](https://github.com/astral-sh/uv/blob/main/CONTRIBUTING.md) to get started.",
+      "new": "[contributing guide](https://github.com/astral-sh/uv?tab=contributing-ov-file#contributing) to get",
+      "similarity": 0.8333,
+      "normalized_equal": false,
+      "transition": 7
+    }
+  ],
+  "scope": "Real edits; similarity-based candidate classification only; no factual-change ground truth or external temporal QA labels"
+}

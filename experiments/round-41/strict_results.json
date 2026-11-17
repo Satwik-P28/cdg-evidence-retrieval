@@ -1,0 +1,67 @@
+{
+  "total": 260,
+  "point": {
+    "answered": 230,
+    "correct": 227,
+    "incorrect": 3,
+    "abstain": 30
+  },
+  "interval": {
+    "answered": 133,
+    "correct": 133,
+    "incorrect": 0,
+    "abstain": 127
+  },
+  "avoided_false_accepts": 3,
+  "answered_by_relation": {
+    "P26": {
+      "point": 59,
+      "interval": 42
+    },
+    "P35": {
+      "point": 171,
+      "interval": 91
+    }
+  },
+  "examples": [
+    {
+      "rel": "P35",
+      "id": 16,
+      "question": "In November 2025, who was the head of state of the High Military Command for the Restoration of National Security and Public Order?",
+      "point": "Horta Inta-A Na Man",
+      "expected": "Denis N'Canha",
+      "window": {
+        "start": "2025-11-01",
+        "end": "2025-11-30",
+        "mode": "month"
+      },
+      "strict": "ambiguous_or_partially_valid"
+    },
+    {
+      "rel": "P35",
+      "id": 16,
+      "question": "In November 2025, who was the head of state represented by the High Military Command for the Restoration of National Security and Public Order?",
+      "point": "Horta Inta-A Na Man",
+      "expected": "Denis N'Canha",
+      "window": {
+        "start": "2025-11-01",
+        "end": "2025-11-30",
+        "mode": "month"
+      },
+      "strict": "ambiguous_or_partially_valid"
+    },
+    {
+      "rel": "P35",
+      "id": 16,
+      "question": "In November 2025, who was the head of state for the High Military Command for the Restoration of National Security and Public Order?",
+      "point": "Horta Inta-A Na Man",
+      "expected": "Denis N'Canha",
+      "window": {
+        "start": "2025-11-01",
+        "end": "2025-11-30",
+        "mode": "month"
+      },
+      "strict": "ambiguous_or_partially_valid"
+    }
+  ]
+}

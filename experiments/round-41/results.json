@@ -1,0 +1,177 @@
+{
+  "metrics": {
+    "questions": 260,
+    "legacy_latest_correct": 122,
+    "temporal_correct": 227,
+    "temporal_answered": 230,
+    "abstained_none": 1,
+    "abstained_ambiguous": 29,
+    "bad_subject": 0,
+    "parse_failure": 0,
+    "by_relation": {
+      "P26": {
+        "records": 25,
+        "qa_rows": 25,
+        "questions": 86,
+        "latest_correct": 44,
+        "temporal_correct": 59,
+        "temporal_answered": 59,
+        "none": 0,
+        "ambiguous": 27
+      },
+      "P35": {
+        "records": 66,
+        "qa_rows": 66,
+        "questions": 174,
+        "latest_correct": 78,
+        "temporal_correct": 168,
+        "temporal_answered": 171,
+        "none": 1,
+        "ambiguous": 2
+      }
+    },
+    "year_resolution": {
+      "midyear": 124,
+      "month_end": 129,
+      "midpoint_between_years": 7
+    },
+    "example_conflicts": [
+      {
+        "relation": "P26",
+        "id": 2,
+        "question": "Since June 2025, who has Lauren Sánchez been married to?",
+        "asof": "2025-06-30",
+        "candidates": [
+          {
+            "key": "before",
+            "label": "Patrick Whitesell"
+          },
+          {
+            "key": "after",
+            "label": "Jeff Bezos"
+          }
+        ]
+      },
+      {
+        "relation": "P26",
+        "id": 2,
+        "question": "Since June 2025, who is Lauren Sánchez married to?",
+        "asof": "2025-06-30",
+        "candidates": [
+          {
+            "key": "before",
+            "label": "Patrick Whitesell"
+          },
+          {
+            "key": "after",
+            "label": "Jeff Bezos"
+          }
+        ]
+      },
+      {
+        "relation": "P26",
+        "id": 6,
+        "question": "Since January 2025, who has Tahsan Rahman Khan been married to?",
+        "asof": "2025-01-31",
+        "candidates": [
+          {
+            "key": "before",
+            "label": "Rafiath Rashid Mithila"
+          },
+          {
+            "key": "after",
+            "label": "Roza Ahmed"
+          }
+        ]
+      },
+      {
+        "relation": "P26",
+        "id": 6,
+        "question": "Since January 2025, who has been Tahsan Rahman Khan's spouse?",
+        "asof": "2025-01-31",
+        "candidates": [
+          {
+            "key": "before",
+            "label": "Rafiath Rashid Mithila"
+          },
+          {
+            "key": "after",
+            "label": "Roza Ahmed"
+          }
+        ]
+      },
+      {
+        "relation": "P26",
+        "id": 6,
+        "question": "Since January 2025, who is Tahsan Rahman Khan married to?",
+        "asof": "2025-01-31",
+        "candidates": [
+          {
+            "key": "before",
+            "label": "Rafiath Rashid Mithila"
+          },
+          {
+            "key": "after",
+            "label": "Roza Ahmed"
+          }
+        ]
+      },
+      {
+        "relation": "P26",
+        "id": 7,
+        "question": "Since November 2025, who has been Tokio Emoto's spouse?",
+        "asof": "2025-11-30",
+        "candidates": [
+          {
+            "key": "before",
+            "label": "Mari Iriki"
+          },
+          {
+            "key": "after",
+            "label": "Hona Ikoka"
+          }
+        ]
+      },
+      {
+        "relation": "P26",
+        "id": 7,
+        "question": "Since November 2025, who has Tokio Emoto been married to?",
+        "asof": "2025-11-30",
+        "candidates": [
+          {
+            "key": "before",
+            "label": "Mari Iriki"
+          },
+          {
+            "key": "after",
+            "label": "Hona Ikoka"
+          }
+        ]
+      },
+      {
+        "relation": "P26",
+        "id": 7,
+        "question": "Since November 2025, who is Tokio Emoto married to?",
+        "asof": "2025-11-30",
+        "candidates": [
+          {
+            "key": "before",
+            "label": "Mari Iriki"
+          },
+          {
+            "key": "after",
+            "label": "Hona Ikoka"
+          }
+        ]
+      }
+    ],
+    "source_interval_overlaps": 54
+  },
+  "contract": {
+    "question_time": "Month-year mapped to month end; year mapped to July 1; between-years mapped to midpoint July 1. These are modeling assumptions.",
+    "source_selection": "Gold-associated subject record and relation are given by the dataset row ID; not real question-to-document retrieval.",
+    "answer_labels": "Same dataset source constructs both structured facts and QA labels; NOT independently annotated answer verification.",
+    "time_semantics": "Dataset validity strings used as supplied, not externally audited.",
+    "conclusion": "Structural lookup diagnostic only. Reject cases with zero or multiple matching values."
+  }
+}

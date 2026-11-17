@@ -1,0 +1,52 @@
+{
+  "round": 40,
+  "source": {
+    "upstream": "astral-sh/uv",
+    "path": "README.md",
+    "revisions": 12,
+    "pinned_input": "research/rounds/round-38/uv_readme_revisions.json",
+    "event_definition": "one adjacent-revision matched changed-line pair or one unmatched added/removed line; exact byte membership source-derived"
+  },
+  "policy": "Review all changed visible text semantically; audit changed inline-link destinations; allow presentation-only only if both are unchanged",
+  "counts": {
+    "events": 54,
+    "paired": 23,
+    "unpaired": 31,
+    "semantic": 47,
+    "citation": 7,
+    "presentation": 0
+  },
+  "cost": {
+    "assumed_units": {
+      "semantic_review": 10,
+      "citation_audit": 2,
+      "screen_each": 0.1
+    },
+    "policies": {
+      "full_review": 540,
+      "skip_high_similarity": 310,
+      "staged_screen": 489.4
+    },
+    "savings_units": 50.6,
+    "savings_fraction": 0.0937037037037037,
+    "warning": "Illustrative cost ratios, not measured runtime or real verifier expenditure"
+  },
+  "adversarial": {
+    "hand_authored": 7,
+    "semantic_change_routed_semantic": 6,
+    "citation_redirect_routed_citation": 1,
+    "limitations": "Purpose-built sanity checks, not generalization measurement"
+  },
+  "status": {
+    "real_corpus": "historical markdown edits",
+    "independent_fact_labels": false,
+    "model_verifier_run": false,
+    "measured_end_to_end_rag": false,
+    "full_node_test_suite_executed": false,
+    "connected_js_analysis_executed": true,
+    "isolated_committed_source_executed": true,
+    "isolated_fixture_assertions_passed": true,
+    "execution_detail": "Exact committed source and test assertions evaluated in restricted JS isolate with Node modules stubbed; not standalone Node CLI."
+  },
+  "next": "Obtain independent gold factual correction annotations before measuring change recall and unsupported acceptance"
+}

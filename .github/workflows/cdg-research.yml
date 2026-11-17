@@ -1,0 +1,110 @@
+name: CDG research checks
+on:
+  push:
+    branches:
+      - "research/**"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  correctness-and-microbench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Environment
+        run: |
+          python -c "import sqlite3,sys; print(sys.version);print(sqlite3.sqlite_version); c=sqlite3.connect(':memory:'); c.execute('CREATE VIRTUAL TABLE t USING fts5(x)'); print('FTS5 enabled')"
+      - name: Earlier Python correctness suites (R32, R35-37)
+        run: |
+          for round in 32 35 36 37; do
+            python -W error::ResourceWarning -m unittest discover -s "experiments/round-${round}" -p 'test_*.py' -v
+          done
+      - name: Earlier Node correctness suites (R38-41)
+        run: |
+          node experiments/round-38/test_temporal.js
+          node experiments/round-39/test_audit.js
+          node experiments/round-40/test_screen.js
+          node experiments/round-41/test_temporal.js
+          node experiments/round-41/test_strict_window.js
+      - name: Round 42 regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-42 -p 'test_*.py' -v
+      - name: Round 43 regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-43 -p 'test_*.py' -v
+      - name: Round 43 quick correctness benchmark
+        run: python experiments/round-43/lab.py --quick --out experiments/round-43/smoke.json
+      - name: Round 43 full comparison
+        run: python experiments/round-43/lab.py --out experiments/round-43/ci-results.json
+      - name: Round 44 regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-44 -p 'test_*.py' -v
+      - name: Round 44 quick comparison
+        run: python experiments/round-44/layout_lab.py --quick --out experiments/round-44/smoke.json
+      - name: Round 44 full comparison
+        run: python experiments/round-44/layout_lab.py --out experiments/round-44/ci-results.json
+      - name: Round 45 retrieval and temporal correctness tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-45 -p 'test_*.py' -v
+      - name: Round 45 gold-ID-blind temporal retrieval evaluation
+        run: python experiments/round-45/blind_temporal.py --out experiments/round-45/ci-results.json
+      - name: Round 46 lossless history regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-46 -p 'test_*.py' -v
+      - name: Round 46 authentic source-history compression comparison
+        run: python experiments/round-46/version_chunks.py --out experiments/round-46/ci-results.json
+      - name: Round 47 packed-manifest tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-47 -p 'test_*.py' -v
+      - name: Round 47 serialized archive benchmark
+        run: python experiments/round-47/manifest_lab.py --out experiments/round-47/ci-results.json
+      - name: Round 48 source receipt and FTS bridge tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-48 -p 'test_*.py' -v
+      - name: Round 48 integrated source-evidence retrieval
+        run: python experiments/round-48/evidence_bridge.py --out experiments/round-48/ci-results.json
+      - name: Round 49 FTS5 detail correctness tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-49 -p 'test_*.py' -v
+      - name: Round 49 historical index density and phrase benchmark
+        run: python experiments/round-49/fts_detail.py --out experiments/round-49/ci-results.json
+      - name: Round 50 tiered retrieval correctness tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-50 -p 'test_*.py' -v
+      - name: Round 50 tiered historical FTS index experiment
+        run: python experiments/round-50/tiered_fts.py --out experiments/round-50/ci-results.json
+      - name: Round 51 historical LRU tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-51 -p 'test_*.py' -v
+      - name: Round 51 synthetic historical-query traces
+        run: python experiments/round-51/cache_lab.py --out experiments/round-51/ci-results.json
+      - name: Round 52 LRU source-span lookup tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-52 -p 'test_*.py' -v
+      - name: Round 52 scan vs point vs batched spans
+        run: python experiments/round-52/cache_lookup.py --out experiments/round-52/ci-results.json
+      - name: Report Round 43 aggregate
+        run: |
+          python - <<'PY'
+          import json,statistics
+          rows=json.load(open('experiments/round-43/ci-results.json'))['rows']
+          print('ROUND43_AGGREGATE',json.dumps({
+            'scenarios':len(rows),
+            'medians_ms':{k:round(statistics.median(r['update_p50_ms'][k] for r in rows),3) for k in ('legacy','hybrid','indexed')},
+            'median_storage_bytes':{k:statistics.median(r['storage_bytes'][k] for r in rows) for k in ('legacy','hybrid','indexed')},
+            'fastest_update_counts':{k:sum(r['update_p50_ms'][k]==min(r['update_p50_ms'].values()) for r in rows) for k in ('legacy','hybrid','indexed')},
+          },sort_keys=True))
+          PY
+      - name: Upload numerical artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round43-results
+          path: |
+            experiments/round-43/smoke.json
+            experiments/round-43/ci-results.json
+            experiments/round-44/smoke.json
+            experiments/round-44/ci-results.json
+            experiments/round-45/ci-results.json
+            experiments/round-46/ci-results.json
+            experiments/round-47/ci-results.json
+            experiments/round-48/ci-results.json
+            experiments/round-49/ci-results.json
+            experiments/round-50/ci-results.json
+            experiments/round-51/ci-results.json
+            experiments/round-52/ci-results.json
+          if-no-files-found: ignore
