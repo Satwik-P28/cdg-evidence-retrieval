@@ -43,7 +43,10 @@
     "model_verifier_run": false,
     "measured_end_to_end_rag": false,
     "full_node_test_suite_executed": false,
-    "connected_js_analysis_executed": true
+    "connected_js_analysis_executed": true,
+    "isolated_committed_source_executed": true,
+    "isolated_fixture_assertions_passed": true,
+    "execution_detail": "Exact committed source and test assertions evaluated in restricted JS isolate with Node modules stubbed; not standalone Node CLI."
   },
   "next": "Obtain independent gold factual correction annotations before measuring change recall and unsupported acceptance"
 }
