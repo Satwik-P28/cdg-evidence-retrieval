@@ -98,3 +98,18 @@ The cumulative research record is now [Rounds 33–53](research/living-record-ro
 **Run tests:** A GitHub Actions CI workflow executes earlier Python and Node regression suites, R42–R53 correctness checks, and reproducible comparison scripts. Raw benchmark data are uploaded as workflow artifacts. Reported microsecond numbers are short warm CI samples, not independent performance replications or device I/O measurements.
 
 The next publication-grade step is independently held-out real RAG/temporal QA with complete, externally judged evidence and a fair end-to-end index-plus-archive-plus-verifier cost baseline. No state-of-the-art, new compressor, or full-RAG superiority claim is warranted by the existing results.
+
+
+## Independent evidence and heterogeneous storage experiments, Rounds 54–59
+
+The latest cumulative record is [Rounds 33–59](research/living-record-rounds-33-59.md). Every experiment has its own code, regression suite, result report and GitHub Actions numerical artifact.
+
+- **R54, source retrieval across data splits:** 512 SHA-locked official HotpotQA distractor development questions, frozen R25 title-link bridge recovered all supporting documents in 212 questions at top 2 versus BM25 168; at top 5 it recovered 439 versus BM25 345. Precomputed title-link indexing gave the same rankings; all 512 sample records had valid support annotations.
+- **R55, compression integrated with indexed evidence:** On 128 dev questions, the source-sentence FTS5 index occupied 708,608 bytes. Whole-source Zlib was smaller than content-defined source archives; FTS top-two sentence pruning recovered only 79 complete support sets compared with 107 when full selected gold documents were retained.
+- **R56–57, sentence budget experiments:** Title-mention sentence priority was not consistently best. A global at-most-ten-sentence budget with rank-frontloaded assignment gave favorable exploratory recovery and compressed traffic on two sets of 128.
+- **R58, heterogeneous archive:** Online greedy selection charging both stored bytes and predicted read traffic selected whole Zlib for most independent sources and content-defined frames for a subset. On 1,288 real source blobs the mixed archive occupied 487,779 bytes versus 511,165 for always whole Zlib, with mean sampled compressed span traffic 324 vs 361 bytes. This is a small, domain-specific systems result and does not establish a new codec.
+- **R59, confirmation:** On the remaining 256 dev questions, frontloading recovered 187 complete annotated support sets versus recycled uniform 183, paired exact p=0.618. The primary superiority hypothesis was **not confirmed**. Recycling unused sentence slots is a safe monotonic coverage mechanism under a fixed upper budget, subject to additional reading/model cost.
+
+**Reproduction:** The held-out evaluation workflow verifies original input SHA-256, runs R54–R59 test suites and benchmarks, and uploads raw results. The corpus is licensed CC BY-SA 4.0 and downloaded transiently rather than redistributed. The broad research workflow continues checking prior rounds.
+
+**Research state:** Component-level exact source-byte storage, retrieval and selective evidence coverage have been evaluated. End-to-end factual support, hallucination mitigation, independent external-domain generalization, crash-safe history, and full latency/index/token Pareto gains remain unproven. Do not advertise this repository as a production research breakthrough or a new general compression algorithm.

@@ -9,3 +9,10 @@ This compilation is a research record rather than a blanket relicensing of histo
 - **PRISM-Edit TimeConflict subset** in experiments/round-41/timeconflict and downstream rounds: sourced from https://github.com/CheerCHuang/PRISM-Edit, which declares its own TimeConflict dataset contribution and MIT project licensing, subject to bundled third-party component notices. The verbatim upstream MIT notice is retained as third_party/PRISM-Edit-LICENSE.txt. Structured facts and QA records remain attributed to the upstream creators, not original CDG data.
 
 The notices are separate from any license that may apply to original CDG code. Some older research archive contents may contain other third-party materials that still require independent audits. Documentation of a license is not proof of independent truth/accuracy of dataset assertions and does not authorize use of unrelated model weights.
+
+
+## HotpotQA development evaluation inputs (Rounds 54–59)
+
+HotpotQA is credited to Yang et al. (EMNLP 2018), with the original dataset distributed under **CC BY-SA 4.0** (https://hotpotqa.github.io/). These experiments use a fixed, SHA-256-checked mirror of the official distractor development dataset at Hugging Face namlh2004/hotpotqa revision 7e54db4656209750ff487f6fdf8e39a66dba136b, object digest e3da074df24e8369009918aa5cdbdd254dadcde4c63f7569d36afd6f2268caa8. Data bytes are downloaded into ephemeral GitHub Actions runners and are **not committed or redistributed** here. Derived retrieval statistics and benchmark code do not imply proprietary rights over the upstream paragraphs.
+
+This source is distinct from the 100-question pinned OpenSPG/KAG training sample reproduced in Round 53. Respect the upstream dataset attribution and share-alike obligations if redistributing adapted source content. Existing licensing notes for other bundled historical materials remain in force.
