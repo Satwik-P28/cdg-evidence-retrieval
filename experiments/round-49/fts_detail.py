@@ -115,7 +115,7 @@ def experiment(versions):
                             ranked=[r[0] for r in obj.matches(gen,term,'bm25',limit=3)]
                             bm25supported+=1
                             bm25_exact_order+=int(ranked==full_ranked)
-                            top_overlap.append(len(full_top & set(ranked))/max(1,len(full_top)))
+                            top_overlap.append(1.0 if not full_top and not ranked else len(full_top & set(ranked))/max(1,len(full_top)))
                         except sqlite3.Error:
                             top_overlap.append(0.0)
                     for term in PHRASES:
