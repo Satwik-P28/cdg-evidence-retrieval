@@ -45,6 +45,13 @@ class HistoryTests(unittest.TestCase):
             'flask':[{'data':b'flask abc\n'*20+b'a'},
                      {'data':b'flask abc\n'*20+b'b'},
                      {'data':b'flask abc\n'*20+b'c'}]}
+        # Include the same immutable provenance schema as downloaded API records.
+        for name,entries in histories.items():
+            for i,entry in enumerate(entries):
+                blob=entry['data']
+                entry.update({'commit':f'{i+1:040x}','sha256':sha(blob),
+                              'git_blob':git_blob_sha(blob),'bytes':len(blob),
+                              'date':'2025-01-01T00:00:00Z'})
         # Exercise matrix with tiny fixture independent sources, not live data.
         import independent_histories as m
         old=m.IND_COUNTS
