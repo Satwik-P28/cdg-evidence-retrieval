@@ -1,0 +1,31 @@
+name: CDG human hallucination span and source receipt audit
+on:
+  push:
+    branches:
+      - "research/round-69-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  human-hallucination-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Validate human labels, URL pinning and exact source citations
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-69 -p 'test_*.py' -v
+      - name: SHA-verified official RAGTruth test QA label/source audit
+        run: python experiments/round-69/human_span_audit.py --out experiments/round-69/ci-results.json
+      - name: Preserve aggregate human annotation results without raw sources
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round69-human-hallucination-audit
+          path: experiments/round-69/ci-results.json
+          if-no-files-found: ignore
