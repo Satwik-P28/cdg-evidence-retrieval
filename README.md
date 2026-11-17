@@ -123,3 +123,14 @@ The latest cumulative record is [Rounds 33–59](research/living-record-rounds-3
 - **R61, mixture falsification:** Held-back dev source paragraphs (same domain) mixed with 0, 3, 6, or 12 related README revisions under 96, 384 or 1,024 independent documents. Frozen R58 online read-weighted layout reduced logical compressed partial-read bytes in 12/12 scenarios but reduced retained archive size in only 6/12. With few or no related revisions, the mixed archive became larger than whole Zlib. The gain depends on source relatedness and mix, so no universal policy is promoted.
 - **Reproduction:** The CDG strong compression workflow pins Python zstandard==0.25.0 and runs exact SHA-and-byte restoration checks, realistic Git pack reconstruction, Zstd codecs, mixture stress tests, and uploads JSON results.
 - **Open requirement:** Independent versioned source families, controlled physical I/O and cold cache, full index/citation metadata and reader/verifier token budgets, and matched Git/Zstd semantics must be evaluated before claiming end-to-end efficiency.
+
+
+## Independent source history transfer and similarity falsification: Rounds 62–63
+
+The updated [CDG cumulative research record through Round 63](research/living-record-rounds-33-63.md) documents two tests beyond uv's original source history.
+
+- **R62, independent histories:** Pinned source README revisions from Ruff (12), Transformers (12) and Flask (7), tested with 0, 128 and 512 independent source paragraphs under the frozen R58 adaptive policy. At 512 independent docs, archive savings versus whole-Zlib were **20.4% for Ruff** and **21.6% for Transformers**, but a **1.9% storage penalty for Flask**. These outcomes strengthen the observation that historical redundancy controls whether content-defined source framing is worthwhile.
+- **R63, label-blind relatedness:** Tested online 96-byte fingerprint overlap and prespecified .20/.50/.80 gates without gold labels. A permissive gate nearly eliminated Flask's archive penalty but suppressed useful framing in the two larger histories. **No fixed overlap threshold was promoted.** Reported archive bytes exclude the detector's own RAM and building costs.
+- **Reproduction and provenance:** The independent history CI workflow obtains content from immutable upstream Git commits, verifies SHA-256 and Git blob checksums, records each sampled file revision, and publishes only compact metrics and hashes. Upstream file bytes are not redistributed. Prior compression, history and retrieval suites remain active.
+
+These are experimental and established-codec systems comparisons, not a novel codec, semantic verification, complete RAG pipeline or demonstrated reduction in hallucinated answers. The next falsifier is cost-accounted, source-family-sensitive migration or direct reuse-cost estimation, ideally on additional untouched version histories.
