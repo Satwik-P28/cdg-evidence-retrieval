@@ -28,3 +28,10 @@ The experiments additionally use separate SHA-pinned HotpotQA development paragr
 ## Additional pinned revision histories (Rounds 64–65)
 
 The retroactive source-migration experiments additionally fetch immutable README.md revision histories from **vllm-project/vllm** under the Apache License 2.0 license (Git cutoff 935f87de846980dc16c54ac1996595fc12eb3f9e) and **pydantic/pydantic** under the MIT license (cutoff e56f60fd32273d1d7c397a3ac46bba05e6a73454). The exact original files remain under upstream authorship and licenses, are SHA/Git-blob identified, and are never bundled in this repository. The experimental scripts download them into transient CI environments and store only checksums, experiment records and derived aggregate numerical results.
+
+
+## Pinned external pretrained QA reader (Rounds 66–68)
+
+Real answer-quality experiments use **deepset/tinyroberta-squad2** under **CC BY 4.0**, pinned to Hugging Face model commit **12b287c9df677e28b07f0a023850dba68c997dbf** with model-identity metadata recorded in experiments/round-66/model_lock.json. The original model weights, tokenizer vocabulary and training artifacts remain upstream, and are downloaded transiently for CI inference, not redistributed by this repository. Credit and follow the model card's attribution terms: https://huggingface.co/deepset/tinyroberta-squad2 .
+
+The evaluations also download SHA-verified HotpotQA distractor development inputs under CC BY-SA 4.0, as documented above. Derived aggregate answer/citation statistics do not transfer ownership of source paragraphs or pretrained model data. The test suite's source receipts establish exact extracted bytes, not that those bytes truthfully entail an answer.
