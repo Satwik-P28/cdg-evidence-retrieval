@@ -77,6 +77,12 @@ jobs:
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-52 -p 'test_*.py' -v
       - name: Round 52 scan vs point vs batched spans
         run: python experiments/round-52/cache_lookup.py --out experiments/round-52/ci-results.json
+      - name: Round 25 original retrieval unit tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-25 -p 'test_*.py' -v
+      - name: Round 53 independent metric mapping tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-53 -p 'test_*.py' -v
+      - name: Round 53 download and verify pinned 100 HotpotQA questions, reproduce R25 metrics
+        run: python experiments/round-53/repro_r25.py --strict --out experiments/round-53/ci-results.json
       - name: Report Round 43 aggregate
         run: |
           python - <<'PY'
@@ -107,4 +113,5 @@ jobs:
             experiments/round-50/ci-results.json
             experiments/round-51/ci-results.json
             experiments/round-52/ci-results.json
+            experiments/round-53/ci-results.json
           if-no-files-found: ignore
