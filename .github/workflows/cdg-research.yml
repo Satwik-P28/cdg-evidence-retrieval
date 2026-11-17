@@ -1,0 +1,38 @@
+name: CDG research checks
+on:
+  push:
+    branches:
+      - "research/**"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  correctness-and-microbench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Environment
+        run: |
+          python -c "import sqlite3,sys; print(sys.version);print(sqlite3.sqlite_version); c=sqlite3.connect(':memory:'); c.execute('CREATE VIRTUAL TABLE t USING fts5(x)'); print('FTS5 enabled')"
+      - name: Round 42 regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-42 -p 'test_*.py' -v
+      - name: Round 43 regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-43 -p 'test_*.py' -v
+      - name: Round 43 quick correctness benchmark
+        run: python experiments/round-43/lab.py --quick --out experiments/round-43/smoke.json
+      - name: Round 43 full comparison
+        run: python experiments/round-43/lab.py --out experiments/round-43/ci-results.json
+      - name: Upload numerical artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round43-results
+          path: |
+            experiments/round-43/smoke.json
+            experiments/round-43/ci-results.json
+          if-no-files-found: ignore
