@@ -1,0 +1,35 @@
+name: CDG retroactive source migration
+on:
+  push:
+    branches:
+      - "research/round-64-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  retroactive-promotion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Round 64 source migration and citation byte correctness tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-64 -p 'test_*.py' -v
+      - name: Round 64 immutable independent-history promotion experiment
+        run: python experiments/round-64/retroactive_promotion.py --out experiments/round-64/ci-results.json
+      - name: Round 65 append-only metadata journal correctness
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-65 -p 'test_*.py' -v
+      - name: Round 65 checkpoint interval and write-amplification experiment
+        run: python experiments/round-65/manifest_journal.py --out experiments/round-65/ci-results.json
+      - name: Upload migration cost and reconstruction evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round64-online-migration-results
+          path: |
+            experiments/round-64/ci-results.json
+            experiments/round-65/ci-results.json
+          if-no-files-found: ignore
