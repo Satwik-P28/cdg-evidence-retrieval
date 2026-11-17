@@ -73,6 +73,8 @@ class StreamingArchive:
         self.references={}
         self.manifests=[]
         self.assignments=[]
+        # Ordered immutable manifest events, for later write-amplification controls.
+        self.events=[]
         self.payload_write_bytes=0
         self.manifest_rewrite_bytes=0
         self.recompression_source_plain_bytes=0
@@ -129,7 +131,9 @@ class StreamingArchive:
 
     def _append_source(self,blob,mode):
         self.assignments.append(mode)
-        self.manifests.append(self._make_manifest(blob,mode))
+        manifest=self._make_manifest(blob,mode)
+        self.manifests.append(manifest)
+        self.events.append({'op':'append','index':len(self.manifests)-1,'manifest':manifest})
 
     def _migrate(self,index,mode):
         before=self.manifests[index]
@@ -143,6 +147,7 @@ class StreamingArchive:
         self._drop_manifest(before)
         self.manifests[index]=after
         self.assignments[index]=mode
+        self.events.append({'op':'replace','index':index,'manifest':after})
         self.migrated_prior_sources+=1
 
     def archive_bytes(self):
