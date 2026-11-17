@@ -42,3 +42,25 @@ node experiments/round-41/test_temporal.js
 ```
 
 Source dataset release: https://github.com/CheerCHuang/PRISM-Edit (license: consult original release). No custom training or quantum runtime.
+
+## Follow-up ablation: temporal *interval* versus point-date interpretation
+
+The first benchmark maps “in November 2025” to **November 30**, and “in 2018” to **July 1**. This is an ungrounded precision assumption, not information stated in the question. Three erroneous unique responses were all from one transition with a before interval covering 2025-11-26 to 2025-11-27 and an after interval beginning 2025-11-27. The expected answer refers to the before interval, but the point-date heuristic selects the after value.
+
+The new `strict_window.js` interprets a month/year query as the **full calendar month/year** and returns a label only when exactly one object has a validity interval covering the entire window and no other value overlaps it. A range of years uses the full span between those calendar years. It retains conflicts and partial validity as explicit abstentions. This is conservative and potentially excessively strict for questions that mean “at some point during the period”.
+
+| Diagnostic | Point-date heuristic | Conservative full-period check |
+| --- | ---: | ---: |
+| Total questions | 260 | 260 |
+| Questions answered | 230 | 133 |
+| Dataset labels matched | 227 | 133 |
+| Single-answer mismatches | 3 | 0 |
+| Abstentions | 30 | 127 |
+
+Three point-date false accepts are avoided, at the cost of **97 additional abstentions**. The 0 observed mismatches among 133 answered cases do not establish a general safety guarantee because the questions and answers share the same source annotations, the test covers only two relations, and temporal semantics are approximate. The point lookup itself is not a strong baseline for real temporal QA.
+
+**Interpretation:** A query's temporal expression defines a set of eligible instants, not automatically a single instant. A valid answer policy should model temporal quantification, ambiguity and relation cardinality rather than fill in a date arbitrarily.
+
+**Validation:** The exact committed JS sources and both test suites were evaluated in a restricted JavaScript isolate with Node filesystem modules stubbed, yielding nine point-date and six strict-window fixture assertions. Recomputed source-derived results matched committed JSON. This was not a separate Node CLI clean-machine reproduction.
+
+**Next falsification:** Use a temporal QA dataset with *independent* answer/evidence judgments to separate genuinely conflicting source facts from ambiguous question wording. Evaluate a time-expression parser and source-trust/provenance rule with held-out entities, then measure total cost and accuracy against conventional temporal SQL retrieval. Do not silently resolve open-ended competing values by recency or by consulting the gold answer.
