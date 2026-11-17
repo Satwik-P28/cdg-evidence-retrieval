@@ -1,0 +1,35 @@
+name: CDG held-out evidence evaluation
+on:
+  push:
+    branches:
+      - "research/round-54-*"
+      - "research/round-55-*"
+      - "research/round-56-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  heldout-hotpot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Round 25 and Round 53 historical baseline regressions
+        run: |
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-25 -p 'test_*.py' -v
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-53 -p 'test_*.py' -v
+      - name: Round 54 policy tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-54 -p 'test_*.py' -v
+      - name: SHA-verified independent dev set evaluation, locked 512 questions
+        run: python experiments/round-54/heldout_dev.py --out experiments/round-54/ci-results.json
+      - name: Attach traceable numerical results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: heldout-r54-research-results
+          path: experiments/round-54/ci-results.json
+          if-no-files-found: ignore
