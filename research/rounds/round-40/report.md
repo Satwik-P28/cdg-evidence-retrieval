@@ -76,3 +76,7 @@ node experiments/round-40/test_screen.js
 ```
 
 The full inputs are pinned with commit and blob identities. Output metrics are not a claim that 54 events correspond to 54 factual changes.
+
+## Post-publication execution check
+
+On 2026-11-17, the exact committed `screen.js` and `test_screen.js` contents were fetched and executed in an isolated JavaScript runtime with the Node `fs` module stubbed and no filesystem access. The fixture and adversarial assertion code completed (`PASS: 10 fixture and adversarial invariants`), and rerunning the exact committed scanner on the 12 pinned revisions reproduced all six published event counts (54 total, 23 paired, 31 unpaired, 47 semantic, 7 citation, 0 presentation). **This is executable-source validation, not a separately installed Node CLI test, human semantic-label audit, or QA evaluation.**
