@@ -124,7 +124,7 @@ class MixedStore:
                 width=min(128,len(blob))
                 limit=max(1,len(blob)-width+1)
                 lo=int.from_bytes(hashlib.sha256(
-                    f'R58|{i}|{j}'.encode()).digest()[:8],'big')%limit
+                    f'R58|{sha(blob)}|{j}'.encode()).digest()[:8],'big')%limit
                 hi=lo+width
                 fragment,traffic=self.read(i,lo,hi)
                 if fragment!=blob[lo:hi]:
