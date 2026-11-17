@@ -59,7 +59,7 @@ def download_history(spec,count=12,get_fn=get):
     api=f'https://api.github.com/repos/{repo}/commits?sha={cutoff}&path={quote(path)}&per_page=48'
     entries=json.loads(get_fn(api))
     if not isinstance(entries,list) or len(entries)<count:
-        raise ValueError('not enough genuine history commits')
+        raise ValueError(f'{repo}: only {len(entries) if isinstance(entries,list) else "non-list"} README-history commits available before cutoff; need {count}')
     chosen=[]
     seen=set()
     for obj in entries:
