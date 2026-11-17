@@ -93,6 +93,7 @@ def experiment(versions):
                 top_overlap=[]
                 rowsets=[]
                 bm25supported=0
+                bm25_exact_order=0
                 for gen in range(len(versions)):
                     for term in TERMS:
                         start=time.perf_counter_ns()
@@ -108,13 +109,15 @@ def experiment(versions):
                                 # FTS5 can match stem/Unicode token boundaries but not substrings;
                                 # with these exact plain words, substring should still hold.
                                 raise AssertionError(f'bad retrieved span {key} {gen} {term}')
-                        full_top={r[0] for r in engines['full'].matches(gen,term,'bm25',limit=3)}
-                        top_overlap.append(len(full_top & {r[0] for r in rows})/max(1,len(full_top)))
+                        full_ranked=[r[0] for r in engines['full'].matches(gen,term,'bm25',limit=3)]
+                        full_top=set(full_ranked)
                         try:
-                            obj.matches(gen,term,'bm25',limit=3)
+                            ranked=[r[0] for r in obj.matches(gen,term,'bm25',limit=3)]
                             bm25supported+=1
+                            bm25_exact_order+=int(ranked==full_ranked)
+                            top_overlap.append(len(full_top & set(ranked))/max(1,len(full_top)))
                         except sqlite3.Error:
-                            pass
+                            top_overlap.append(0.0)
                     for term in PHRASES:
                         try:
                             hits=obj.matches(gen,term,'rowid',limit=None)
@@ -129,6 +132,7 @@ def experiment(versions):
                     'p50_keyword_query_us':round(statistics.median(latency),3),
                     'mean_top3_overlap_with_full_bm25':round(statistics.mean(top_overlap),4),
                     'bm25_queries_supported':bm25supported,
+                    'bm25_exact_top3_order_matches':bm25_exact_order,
                     'phrase_queries_supported':sum(int(p['supported']) for p in phrase),
                     'phrase_queries_total':len(phrase),
                     'phrase_match_total':sum(p['count'] for p in phrase)}
