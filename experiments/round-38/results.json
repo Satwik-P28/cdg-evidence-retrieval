@@ -1,0 +1,161 @@
+{
+  "source": {
+    "repo": "astral-sh/uv",
+    "path": "README.md",
+    "revisions": [
+      {
+        "commit": "2fb340b19d4f45d0e07d953194f7e25470ebc192",
+        "date": "2024-12-16T19:15:03Z",
+        "blob": "25816ed0bf1c421a9b347eb3930e4206e0eef720",
+        "bytes": 9861
+      },
+      {
+        "commit": "c64965273f91f006c359de5ef2ea603487a267f8",
+        "date": "2025-02-05T23:22:09Z",
+        "blob": "74e1b56d987c411405f830ffa83794b4c3669d47",
+        "bytes": 9936
+      },
+      {
+        "commit": "07d3e5085af02dcba4a13830ae4401f6a11eedec",
+        "date": "2025-02-08T15:21:08Z",
+        "blob": "0a66420d9364f5f4d5ec56f328ab95f8e0558b4a",
+        "bytes": 9910
+      },
+      {
+        "commit": "4f34eafbd2da7e878cbabdbb8d583c20f5889448",
+        "date": "2025-05-27T16:11:54Z",
+        "blob": "405095461d429a89bcb63a5b0b7418e70825c4eb",
+        "bytes": 10160
+      },
+      {
+        "commit": "ebdffaf7285b6795288d9aedb98781bc0cefe001",
+        "date": "2025-12-11T13:51:37Z",
+        "blob": "bc8daaa88162a08d2902b162ad274f7b9b7cfef8",
+        "bytes": 10044
+      },
+      {
+        "commit": "66f7093ad2f1b0fd34b59d486c3c0ac57fc0e781",
+        "date": "2025-12-16T14:36:06Z",
+        "blob": "bbd376d3b91a377defe22aa6d9d6b03a0bccb55f",
+        "bytes": 10134
+      },
+      {
+        "commit": "4f6f56b070879aa17d49ffe5686e4f61c3130dee",
+        "date": "2025-12-16T15:39:59Z",
+        "blob": "9c8ddb1d80b011b59ce73ffa7786c395bb2b7f2d",
+        "bytes": 10176
+      },
+      {
+        "commit": "994b108af23352ef5e7df83b87912f66b24a834b",
+        "date": "2025-12-18T12:56:51Z",
+        "blob": "511778054abf90a12e8117fa49d3e75d24b5910e",
+        "bytes": 10188
+      },
+      {
+        "commit": "ba3a70816037b7159522aa5d343977454a2843e6",
+        "date": "2026-01-15T13:23:25Z",
+        "blob": "3857216ea419fe3d6fc6c373e64d4ec2b03078d2",
+        "bytes": 10121
+      },
+      {
+        "commit": "4ff4720da566590fe5d546aca3dbfee61fe3d8c4",
+        "date": "2026-03-04T15:52:15Z",
+        "blob": "acbdda6d6a6666d656235a9e6f32c49c05789970",
+        "bytes": 10106
+      },
+      {
+        "commit": "7319e4699c89a9107fc69b418d68421446be70d1",
+        "date": "2026-03-13T14:17:06Z",
+        "blob": "060bb8faba5dcb4d827ca8a32047e57a8053b2c1",
+        "bytes": 10106
+      },
+      {
+        "commit": "6fb60d87fb39b3e0e83f1083058817d4584d3c11",
+        "date": "2026-07-08T13:08:32Z",
+        "blob": "66caaf9ccc62add8c63de8e71184c9b7677377ad",
+        "bytes": 9859
+      }
+    ]
+  },
+  "metrics": {
+    "n_queries": 77,
+    "counts": {
+      "removed": {
+        "n": 34,
+        "asof": 34,
+        "latest": 0,
+        "any_history": 34
+      },
+      "added": {
+        "n": 43,
+        "asof": 43,
+        "latest": 30,
+        "any_history": 43
+      }
+    },
+    "latest_correct": 30,
+    "asof_correct": 77,
+    "raw_snapshots_bytes": 120601,
+    "distinct_trimmed_lines_bytes": 9882,
+    "current_snapshot_bytes": 9859,
+    "revisions": 12,
+    "scope": "Gold-derived exact line membership from real commit snapshots; not natural-language QA, factual validity, or a latency measurement"
+  },
+  "transitions": [
+    {
+      "date": "2025-02-05T23:22:09Z",
+      "added": 10,
+      "removed": 7
+    },
+    {
+      "date": "2025-02-08T15:21:08Z",
+      "added": 5,
+      "removed": 6
+    },
+    {
+      "date": "2025-05-27T16:11:54Z",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "date": "2025-12-11T13:51:37Z",
+      "added": 2,
+      "removed": 5
+    },
+    {
+      "date": "2025-12-16T14:36:06Z",
+      "added": 4,
+      "removed": 1
+    },
+    {
+      "date": "2025-12-16T15:39:59Z",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "date": "2025-12-18T12:56:51Z",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "date": "2026-01-15T13:23:25Z",
+      "added": 11,
+      "removed": 11
+    },
+    {
+      "date": "2026-03-04T15:52:15Z",
+      "added": 2,
+      "removed": 2
+    },
+    {
+      "date": "2026-03-13T14:17:06Z",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "date": "2026-07-08T13:08:32Z",
+      "added": 3,
+      "removed": 0
+    }
+  ]
+}
