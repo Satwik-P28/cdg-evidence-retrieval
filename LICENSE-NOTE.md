@@ -23,3 +23,8 @@ This source is distinct from the 100-question pinned OpenSPG/KAG training sample
 The experiment retrieves upstream README.md revisions at immutable Git commit cutoffs: astral-sh/ruff (MIT license), huggingface/transformers (Apache License 2.0), and pallets/flask (BSD 3-Clause). Each historical source blob is SHA-256- and Git-blob-SHA-1-identified in experiment metadata. Historical README bytes are downloaded transiently by CI and **not committed or redistributed** in this repository. The originating projects retain authorship and license rights in their documentation. Where reproduced or adapted, users must comply with each upstream project's applicable license and attribution terms.
 
 The experiments additionally use separate SHA-pinned HotpotQA development paragraphs under CC BY-SA 4.0, already documented above. Derived measurements do not create ownership of original text. See research/rounds/round-62/report.md and research/rounds/round-63/report.md for exact source provenance and limitations.
+
+
+## Additional pinned revision histories (Rounds 64–65)
+
+The retroactive source-migration experiments additionally fetch immutable README.md revision histories from **vllm-project/vllm** under the Apache License 2.0 license (Git cutoff 935f87de846980dc16c54ac1996595fc12eb3f9e) and **pydantic/pydantic** under the MIT license (cutoff e56f60fd32273d1d7c397a3ac46bba05e6a73454). The exact original files remain under upstream authorship and licenses, are SHA/Git-blob identified, and are never bundled in this repository. The experimental scripts download them into transient CI environments and store only checksums, experiment records and derived aggregate numerical results.
