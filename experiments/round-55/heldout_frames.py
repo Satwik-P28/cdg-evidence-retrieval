@@ -44,6 +44,7 @@ def module(name,path):
 
 class SentenceIndex:
     def __init__(self,db_path,questions):
+        self.helper=module('cdg_r25_r55',R25)
         self.db=sqlite3.connect(db_path)
         self.db.execute('CREATE TABLE spans(rid INTEGER PRIMARY KEY, q INTEGER NOT NULL, d INTEGER NOT NULL, sid INTEGER NOT NULL, start INTEGER NOT NULL, end INTEGER NOT NULL)')
         self.db.execute('CREATE INDEX spans_q_d ON spans(q,d)')
@@ -74,8 +75,7 @@ class SentenceIndex:
         self.db_bytes=Path(db_path).stat().st_size
 
     def choose(self,qid,did,question,limit=2):
-        helper=module('cdg_r25_r55',R25)
-        terms=[x for x in dict.fromkeys(helper.words(question))
+        terms=[x for x in dict.fromkeys(self.helper.words(question))
                if len(x)>=3 and x not in STOP]
         if terms:
             query=' OR '.join('"'+word.replace('"','""')+'"' for word in terms[:24])
@@ -145,6 +145,7 @@ def decode_evidence(reader,doc_id,spans):
 
 def experiment(rows):
     r48=module('cdg_r48_r55',R48)
+    r54=module('cdg_r54_audit_r55',R54)
     with tempfile.TemporaryDirectory() as home:
         idx=SentenceIndex(Path(home)/'sentences.sqlite',rows)
         choices,search_p50=selected_query_trace(rows,idx)
@@ -175,7 +176,7 @@ def experiment(rows):
                             ranked=choices[(qid,policy)]['ranked_docs'][:k]
                             titles={row['context'][i][0] for i in ranked}
                             gold={title for title,_ in row['supporting_facts']}
-                            valid=module('cdg_r54_audit_r55',R54).support_reference_issue(row) is None
+                            valid=r54.support_reference_issue(row) is None
                             doc_complete+=int(valid and gold.issubset(titles))
                             selected={(row['context'][d][0],sid)
                                       for d in ranked
