@@ -1,0 +1,45 @@
+name: CDG answer QA held-back confirmation
+on:
+  push:
+    branches:
+      - "research/round-66-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  answer-holdback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pin CPU Torch and pretrained reader
+        run: |
+          python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.5.1
+          python -m pip install --disable-pip-version-check transformers==4.46.3 huggingface_hub==0.26.5 tokenizers==0.20.3 numpy==1.26.4
+      - name: Model-free answer and oracle isolation regression checks
+        run: |
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-66 -p 'test_*.py' -v
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-67 -p 'test_*.py' -v
+      - name: Holdback: per-source answer metrics without retuning
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-66/extractive_qa.py --offset 448 --count 64 --out experiments/round-66/holdback-results.json
+      - name: Holdback: joint-context answer metrics and oracle ceiling
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-67/joint_context_qa.py --offset 448 --count 64 --out experiments/round-67/holdback-results.json
+      - name: Upload unmodified holdback source metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round68-pinned-answer-holdback
+          path: |
+            experiments/round-66/holdback-results.json
+            experiments/round-67/holdback-results.json
+          if-no-files-found: ignore
