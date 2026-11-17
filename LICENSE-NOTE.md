@@ -16,3 +16,10 @@ The notices are separate from any license that may apply to original CDG code. S
 HotpotQA is credited to Yang et al. (EMNLP 2018), with the original dataset distributed under **CC BY-SA 4.0** (https://hotpotqa.github.io/). These experiments use a fixed, SHA-256-checked mirror of the official distractor development dataset at Hugging Face namlh2004/hotpotqa revision 7e54db4656209750ff487f6fdf8e39a66dba136b, object digest e3da074df24e8369009918aa5cdbdd254dadcde4c63f7569d36afd6f2268caa8. Data bytes are downloaded into ephemeral GitHub Actions runners and are **not committed or redistributed** here. Derived retrieval statistics and benchmark code do not imply proprietary rights over the upstream paragraphs.
 
 This source is distinct from the 100-question pinned OpenSPG/KAG training sample reproduced in Round 53. Respect the upstream dataset attribution and share-alike obligations if redistributing adapted source content. Existing licensing notes for other bundled historical materials remain in force.
+
+
+## Independent README revision histories (Rounds 62–63)
+
+The experiment retrieves upstream README.md revisions at immutable Git commit cutoffs: astral-sh/ruff (MIT license), huggingface/transformers (Apache License 2.0), and pallets/flask (BSD 3-Clause). Each historical source blob is SHA-256- and Git-blob-SHA-1-identified in experiment metadata. Historical README bytes are downloaded transiently by CI and **not committed or redistributed** in this repository. The originating projects retain authorship and license rights in their documentation. Where reproduced or adapted, users must comply with each upstream project's applicable license and attribution terms.
+
+The experiments additionally use separate SHA-pinned HotpotQA development paragraphs under CC BY-SA 4.0, already documented above. Derived measurements do not create ownership of original text. See research/rounds/round-62/report.md and research/rounds/round-63/report.md for exact source provenance and limitations.
