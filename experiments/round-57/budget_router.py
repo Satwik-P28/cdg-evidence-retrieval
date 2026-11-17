@@ -43,8 +43,8 @@ def load(name,path):
 def allocation(method,ranked_docs,orders,weights,qid,budget=GLOBAL_BUDGET):
     if budget<0:raise ValueError('negative budget')
     seq=[d for d in ranked_docs]
-    if len(seq)!=5:
-        raise ValueError('requires exactly five documents')
+    if not 1<=len(seq)<=5:
+        raise ValueError('requires one to five available candidate documents')
     if method=='random':
         entries=[(d,sid) for d in seq for sid in orders[d]]
         ranked=sorted(entries,key=lambda pair:hashlib.sha256(
@@ -71,7 +71,7 @@ def allocation(method,ranked_docs,orders,weights,qid,budget=GLOBAL_BUDGET):
             'reverse_1_1_2_3_3':[1,1,2,3,3],
         }.get(method)
         if caps is None:raise ValueError(method)
-        caps=[min(x,len(orders[d])) for x,d in zip(caps,seq)]
+        caps=[min(x,len(orders[d])) for x,d in zip(caps[:len(seq)],seq)]
     chosen=[(d,sid) for d,cap in zip(seq,caps) for sid in orders[d][:cap]]
     if method=='uniform2' or len(chosen)>=budget:
         return chosen[:budget]
@@ -214,6 +214,7 @@ def experiment(rows,split_size=128):
             return {
                 'questions':len(rows),'partition_size':split_size,'fixed_budget':GLOBAL_BUDGET,
                 'source_index_bytes':index.db_bytes,
+                'candidate_pool_short_of_5':sum(len(row['context'])<5 for row in rows),
                 'archive_bytes':{k:v.size() for k,v in readers.items()},
                 'verified_unique_source_spans':len(verified),
                 'results':output,
