@@ -113,3 +113,13 @@ The latest cumulative record is [Rounds 33–59](research/living-record-rounds-3
 **Reproduction:** The held-out evaluation workflow verifies original input SHA-256, runs R54–R59 test suites and benchmarks, and uploads raw results. The corpus is licensed CC BY-SA 4.0 and downloaded transiently rather than redistributed. The broad research workflow continues checking prior rounds.
 
 **Research state:** Component-level exact source-byte storage, retrieval and selective evidence coverage have been evaluated. End-to-end factual support, hallucination mitigation, independent external-domain generalization, crash-safe history, and full latency/index/token Pareto gains remain unproven. Do not advertise this repository as a production research breakthrough or a new general compression algorithm.
+
+
+## Conventional compression controls and mixture shift: Rounds 60–61
+
+[Updated cumulative CDG record through Round 61](research/living-record-rounds-33-61.md). R60 and R61 are **experimental source-storage component studies**, not new lossless compression algorithms or end-to-end RAG gains.
+
+- **R60, strong prior-art baselines:** Using the same 1,288 genuine uv README and HotpotQA source blobs as R58, compared Zlib6 against Zstandard 3/9 and a real aggressively packed Git repository. Whole Zstd3 archive 531,600 bytes, Zstd3 online read-weighted 508,271 bytes, frozen Zlib6 online read-weighted 487,779 bytes; Git pack+idx 494,194 bytes and full Git metadata 635,473 bytes. Git retains commit and tree information, so the archive byte boundary is not logically identical to a custom CAS manifest. Zstd loses on this short-document mix, not universally.
+- **R61, mixture falsification:** Held-back dev source paragraphs (same domain) mixed with 0, 3, 6, or 12 related README revisions under 96, 384 or 1,024 independent documents. Frozen R58 online read-weighted layout reduced logical compressed partial-read bytes in 12/12 scenarios but reduced retained archive size in only 6/12. With few or no related revisions, the mixed archive became larger than whole Zlib. The gain depends on source relatedness and mix, so no universal policy is promoted.
+- **Reproduction:** The CDG strong compression workflow pins Python zstandard==0.25.0 and runs exact SHA-and-byte restoration checks, realistic Git pack reconstruction, Zstd codecs, mixture stress tests, and uploads JSON results.
+- **Open requirement:** Independent versioned source families, controlled physical I/O and cold cache, full index/citation metadata and reader/verifier token budgets, and matched Git/Zstd semantics must be evaluated before claiming end-to-end efficiency.
