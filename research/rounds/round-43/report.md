@@ -68,3 +68,8 @@ Do not interpret benchmark timing until actual source hashes, environment, failu
 **NO-GO:** claim that CDG's hybrid is superior to well-indexed conventional SQLite, or that a new compression/RAG theorem has been established.
 
 **Next experiment:** execute the 48-case grid, investigate failures before interpreting numbers, then add a genuinely independent versioned text corpus and a SQLite historical-storage strategy that avoids complete index copying. Only afterward test adaptive selection with migration cost included.
+
+
+## Literature / SQLite implementation note (verified 2026-11-17)
+
+SQLite's FTS5 specification states that legacy contentless tables require the special FTS 'delete' insertion containing the **original row text**. This implementation preserves that text and deletes postings before deleting its mapping row. Newer SQLite versions support 'contentless_delete=1' and recommend it when compatibility permits. See https://www.sqlite.org/fts5.html (sections 4.4 and 6.3). The SQLite session extension does **not** capture virtual-table edits, so a history mechanism based purely on ordinary-table session changesets cannot be assumed to replay FTS5. See https://www.sqlite.org/sessionintro.html (limitations). The SQLite backup API copies a database snapshot rather than providing compact incremental history: https://sqlite.org/backup.html. These are existing mechanisms, not CDG novelty.
