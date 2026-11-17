@@ -21,10 +21,16 @@ jobs:
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-62 -p 'test_*.py' -v
       - name: Round 62 pinned external revision histories benchmark
         run: python experiments/round-62/independent_histories.py --out experiments/round-62/ci-results.json
+      - name: Round 63 source-relatedness regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-63 -p 'test_*.py' -v
+      - name: Round 63 frozen relatedness threshold ablation
+        run: python experiments/round-63/relatedness_gate.py --out experiments/round-63/ci-results.json
       - name: Upload compact provenance and outcomes
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: round62-revision-history-results
-          path: experiments/round-62/ci-results.json
+          path: |
+            experiments/round-62/ci-results.json
+            experiments/round-63/ci-results.json
           if-no-files-found: ignore
