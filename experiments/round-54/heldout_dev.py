@@ -262,8 +262,14 @@ def main():
                                    for x in ('bridge','comparison')},
         'complete_docs':compact,
         'paired_at2':output['paired_bm25_bridge']['2'],
+        'paired_at5':output['paired_bm25_bridge']['5'],
+        'complete_by_type_at2':{
+            method:{kind:entries['2']['complete_docs']
+                    for kind,entries in output['type_breakdown'][method].items()}
+            for method in ('bm25','bridge','text_gate')},
         'sample_hash':output['sample_id_sha256'],
-        'invalid_support':output['integrity']['locked_sample']['counts']},sort_keys=True))
+        'invalid_support_sample':output['integrity']['locked_sample']['counts'],
+        'invalid_support_full':output['integrity']['full_dataset']['counts']},sort_keys=True))
 
 
 if __name__=='__main__':
