@@ -77,3 +77,22 @@ A cross-disciplinary literature audit considered hypergraph retrieval, adaptive 
 Round 43 audits a **no-op edit generator flaw** in Round 42 and introduces a separate conventional control using stable integer line IDs and a contentless FTS5 index. It compares the old global+CAS (B) and hybrid (D) to row-ID-based incremental global FTS5 (P) across append, replacement, insertion, and deletion edits. The code includes generation-by-generation byte-reconstruction and search-parity checks. **Three focused local unit tests passed; the 48-scenario benchmark has not yet been executed or published.** There is no new speedup claim. See [Round 43 report](research/rounds/round-43/report.md), [experiment](experiments/round-43/lab.py), and [tests](experiments/round-43/test_lab.py).
 
 **Research decision:** validate the full grid, independently held-out data, and a stronger historical SQLite strategy before claiming an adaptive storage-policy advantage. The older README results above remain scoped to their original rounds.
+
+
+## Continued experimental research: Rounds 44–51 (November 17, 2026)
+
+The cumulative research record is now [Rounds 33–51](research/living-record-rounds-33-51.md), with original experiment code and CI checks retained per round.
+
+**Evidence boundaries and useful findings:**
+
+- **R44:** Global FTS5 with current-only index is faster to update and smaller to retain in tested workloads, but historical searches require expensive index reconstruction. Snapshot selection depends on historical-query rate.
+- **R45:** Standard BM25 retrieved all 260 easily structured TimeConflict record queries without gold record IDs. This does not establish semantic or independent QA correctness. Temporal interval semantics remain a bottleneck.
+- **R46–47:** Exact authentic-revision reconstruction under content-defined compressed frames plus compact manifests. Gear512 + compressed binary metadata retained a 17,769-byte archive on this one uv README history, smaller than a whole-document Zlib archive, but **not** smaller than the Git pack/index control. Historical query read patterns and manifest parsing matter.
+- **R48:** FTS5 retrieved 276 exact historical source line spans, bound to versioned source hashes. The historical search index was 196,608 bytes, much larger than the compact archive, exposing indexing as a larger storage target.
+- **R49:** Reducing FTS5 detail from full to none/columnsize=0 cut historical index bytes from 196,608 to 131,072 but lost phrase search and BM25 ranking parity. This is **not** a safe drop-in replacement.
+- **R50:** Two-tier current-full/historic-slim indexing retained ranked/phrase query results on the tested dataset and reduced persistent index to 155,648 bytes, but uncached ranked queries cost 927 microseconds median versus 27.4 microseconds for full history.
+- **R51:** Evaluates whether historical LRU caches make the two-tier approach competitive, explicitly counting cache page memory and query-distribution changes. Consult the Round 51 report for finalized metrics.
+
+**Run tests:** A GitHub Actions CI workflow executes earlier Python and Node regression suites, R42–R51 correctness checks, and reproducible comparison scripts. Raw benchmark data are uploaded as workflow artifacts. Reported microsecond numbers are short warm CI samples, not independent performance replications or device I/O measurements.
+
+The next publication-grade step is independently held-out real RAG/temporal QA with complete, externally judged evidence and a fair end-to-end index-plus-archive-plus-verifier cost baseline. No state-of-the-art, new compressor, or full-RAG superiority claim is warranted by the existing results.
