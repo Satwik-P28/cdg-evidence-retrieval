@@ -134,3 +134,13 @@ The updated [CDG cumulative research record through Round 63](research/living-re
 - **Reproduction and provenance:** The independent history CI workflow obtains content from immutable upstream Git commits, verifies SHA-256 and Git blob checksums, records each sampled file revision, and publishes only compact metrics and hashes. Upstream file bytes are not redistributed. Prior compression, history and retrieval suites remain active.
 
 These are experimental and established-codec systems comparisons, not a novel codec, semantic verification, complete RAG pipeline or demonstrated reduction in hallucinated answers. The next falsifier is cost-accounted, source-family-sensitive migration or direct reuse-cost estimation, ideally on additional untouched version histories.
+
+
+## Bounded migration and incremental metadata experiments: Rounds 64–65
+
+See [the updated cumulative CDG research record through Round 65](research/living-record-rounds-33-65.md).
+
+- **R64, retroactive source migration:** When a second sufficiently overlapping version arrives, a first version can be re-encoded from whole Zlib to shared content-defined frames with CAS reference-count repair. All exact source bytes were verified on Ruff, Transformers, Flask and two additional pinned version families, **vLLM and Pydantic**. Relative to frozen R58 ungated routing, the final 512-independent-source archives were ~1.7–1.9% smaller in four of five histories, but **0.5% larger in vLLM**. Plain whole-Zlib remained smaller for Flask. No unconditional migration policy is promoted.
+- **R65, metadata journal and checkpoint:** Full compressed manifest rewrite after every source update caused 5.1–5.8 MB of cumulative encoded metadata writes under 500-plus-source ingestion. Length-framed checksummed event logs and every-128-event checkpoints reduced *encoded metadata writes* by ~97.5% against this naive full-rewrite baseline, while increasing persistent metadata ~6–9% and requiring ~1.5–1.9 ms warm cold-replay CPU. These are user-space write counts, **not** fsync-durable SSD measurements or a claim of novelty.
+- **Reproduction:** The CDG migration GitHub Actions workflow executes both focused unit test suites and the full live SHA-pinned independent revision-history benchmarks, and uploads compact JSON research artifacts. External README and HotpotQA original sources are downloaded transiently.
+- **Next falsifiers:** Compare a conventional durable SQLite WAL or log-structured store, crash safety and physical write amplification, followed by a unified evidence retrieval plus factual claim support evaluation with exact token/index/archive costs.
