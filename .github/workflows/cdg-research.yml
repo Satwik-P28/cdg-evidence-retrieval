@@ -41,6 +41,10 @@ jobs:
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-46 -p 'test_*.py' -v
       - name: Round 46 authentic source-history compression comparison
         run: python experiments/round-46/version_chunks.py --out experiments/round-46/ci-results.json
+      - name: Round 47 packed-manifest tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-47 -p 'test_*.py' -v
+      - name: Round 47 serialized archive benchmark
+        run: python experiments/round-47/manifest_lab.py --out experiments/round-47/ci-results.json
       - name: Report Round 43 aggregate
         run: |
           python - <<'PY'
@@ -65,4 +69,5 @@ jobs:
             experiments/round-44/ci-results.json
             experiments/round-45/ci-results.json
             experiments/round-46/ci-results.json
+            experiments/round-47/ci-results.json
           if-no-files-found: ignore
