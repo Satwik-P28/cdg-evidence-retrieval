@@ -5,7 +5,7 @@ Authentic upstream file history is fetched by immutable commit SHA. Only compact
 hashes and measurements are committed, not third-party README text.
 """
 from __future__ import annotations
-import argparse, hashlib, importlib.util, json, re, statistics, sys, time
+import argparse, hashlib, importlib.util, json, os, re, statistics, sys, time
 from pathlib import Path
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError
@@ -43,9 +43,14 @@ def git_blob_sha(blob):
 
 
 def get(url,limit=500_000):
-    with urlopen(Request(url,headers={'User-Agent':'CDG-version-history-replication/1.0',
-                                      'Accept':'application/vnd.github+json'}),
-                 timeout=60) as res:
+    headers={'User-Agent':'CDG-version-history-replication/1.0',
+             'Accept':'application/vnd.github+json'}
+    # A GitHub Actions GITHUB_TOKEN avoids the 60-requests/hour anonymous API
+    # ceiling; never send credentials to raw source-host URLs or other hosts.
+    token=os.environ.get('GITHUB_TOKEN')
+    if token and url.startswith('https://api.github.com/'):
+        headers['Authorization']='Bearer '+token
+    with urlopen(Request(url,headers=headers),timeout=60) as res:
         value=res.read(limit+1)
     if len(value)>limit:raise ValueError('upstream source exceeds size cap')
     return value
