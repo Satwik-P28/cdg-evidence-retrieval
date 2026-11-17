@@ -23,6 +23,16 @@ class RouterTests(unittest.TestCase):
         self.assertLess(len(uniform),len(recycled))
         self.assertEqual(len(recycled),10)
 
+    def test_short_realistic_candidate_pool_not_padded(self):
+        docs=[0,1,2]
+        orders={0:[0,1,2,3],1:[0,1,2],2:[0,1,2,3]}
+        for name in ALLOCATORS:
+            out=allocation(name,docs,orders,{0:1,1:0,2:0},19)
+            self.assertLessEqual(len(out),GLOBAL_BUDGET)
+            self.assertTrue(all(d in docs for d,_ in out))
+        with self.assertRaises(ValueError):
+            allocation('uniform2',[],orders,{},0)
+
     def test_counterfactual_random_is_reproducible(self):
         docs=list(range(5))
         orders={d:[0,1,2,3] for d in docs}
