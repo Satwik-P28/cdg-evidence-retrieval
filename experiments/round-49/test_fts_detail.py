@@ -41,6 +41,8 @@ class TestIndexDetail(unittest.TestCase):
             self.assertTrue(stat['keyword_match_parity'])
         self.assertLessEqual(output['configurations']['none_no_columnsize']['index_bytes'],
                              output['configurations']['full']['index_bytes'])
+        self.assertEqual(output['configurations']['full']['bm25_exact_top3_order_matches'],120)
+        self.assertEqual(output['configurations']['full']['mean_top3_overlap_with_full_bm25'],1.0)
 
 if __name__=='__main__':
     unittest.main()
