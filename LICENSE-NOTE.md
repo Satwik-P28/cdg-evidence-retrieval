@@ -35,3 +35,8 @@ The retroactive source-migration experiments additionally fetch immutable README
 Real answer-quality experiments use **deepset/tinyroberta-squad2** under **CC BY 4.0**, pinned to Hugging Face model commit **12b287c9df677e28b07f0a023850dba68c997dbf** with model-identity metadata recorded in experiments/round-66/model_lock.json. The original model weights, tokenizer vocabulary and training artifacts remain upstream, and are downloaded transiently for CI inference, not redistributed by this repository. Credit and follow the model card's attribution terms: https://huggingface.co/deepset/tinyroberta-squad2 .
 
 The evaluations also download SHA-verified HotpotQA distractor development inputs under CC BY-SA 4.0, as documented above. Derived aggregate answer/citation statistics do not transfer ownership of source paragraphs or pretrained model data. The test suite's source receipts establish exact extracted bytes, not that those bytes truthfully entail an answer.
+
+
+## RAGTruth human hallucination annotations (Round 69)
+
+Round 69 uses the original ParticleMedia/RAGTruth research corpus (RAGTruth, ACL 2024), pinned to immutable upstream commit c103204b9ce28d6bbad859304bf30de72b8ed8fe. The RAGTruth code/research repository is MIT licensed; underlying MS MARCO QA passages and other original dataset materials may have different terms. R69 evaluates only derived aggregate metrics on human-labelled QA test examples. Source passage text, generated third-party responses and human annotations are downloaded transiently to the runner and **not redistributed**. See research/rounds/round-69/report.md for content-hash integrity checks and interpretation limits.
