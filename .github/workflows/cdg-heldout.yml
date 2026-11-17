@@ -26,10 +26,16 @@ jobs:
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-54 -p 'test_*.py' -v
       - name: SHA-verified independent dev set evaluation, locked 512 questions
         run: python experiments/round-54/heldout_dev.py --out experiments/round-54/ci-results.json
+      - name: Round 55 compressed evidence retrieval regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-55 -p 'test_*.py' -v
+      - name: Round 55 exact source-span retrieval and frame budget
+        run: python experiments/round-55/heldout_frames.py --sample-size 128 --out experiments/round-55/ci-results.json
       - name: Attach traceable numerical results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: heldout-r54-research-results
-          path: experiments/round-54/ci-results.json
+          path: |
+            experiments/round-54/ci-results.json
+            experiments/round-55/ci-results.json
           if-no-files-found: ignore
