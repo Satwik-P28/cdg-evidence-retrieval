@@ -27,6 +27,24 @@ jobs:
         run: python experiments/round-43/lab.py --quick --out experiments/round-43/smoke.json
       - name: Round 43 full comparison
         run: python experiments/round-43/lab.py --out experiments/round-43/ci-results.json
+      - name: Round 44 regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-44 -p 'test_*.py' -v
+      - name: Round 44 quick comparison
+        run: python experiments/round-44/layout_lab.py --quick --out experiments/round-44/smoke.json
+      - name: Round 44 full comparison
+        run: python experiments/round-44/layout_lab.py --out experiments/round-44/ci-results.json
+      - name: Report Round 43 aggregate
+        run: |
+          python - <<'PY'
+          import json,statistics
+          rows=json.load(open('experiments/round-43/ci-results.json'))['rows']
+          print('ROUND43_AGGREGATE',json.dumps({
+            'scenarios':len(rows),
+            'medians_ms':{k:round(statistics.median(r['update_p50_ms'][k] for r in rows),3) for k in ('legacy','hybrid','indexed')},
+            'median_storage_bytes':{k:statistics.median(r['storage_bytes'][k] for r in rows) for k in ('legacy','hybrid','indexed')},
+            'fastest_update_counts':{k:sum(r['update_p50_ms'][k]==min(r['update_p50_ms'].values()) for r in rows) for k in ('legacy','hybrid','indexed')},
+          },sort_keys=True))
+          PY
       - name: Upload numerical artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -35,4 +53,6 @@ jobs:
           path: |
             experiments/round-43/smoke.json
             experiments/round-43/ci-results.json
+            experiments/round-44/smoke.json
+            experiments/round-44/ci-results.json
           if-no-files-found: ignore
