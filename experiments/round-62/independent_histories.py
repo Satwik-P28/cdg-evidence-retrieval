@@ -58,8 +58,8 @@ def download_history(spec,count=12,get_fn=get):
         raise ValueError('untrusted repository path')
     api=f'https://api.github.com/repos/{repo}/commits?sha={cutoff}&path={quote(path)}&per_page=48'
     entries=json.loads(get_fn(api))
-    if not isinstance(entries,list) or len(entries)<count:
-        raise ValueError(f'{repo}: only {len(entries) if isinstance(entries,list) else "non-list"} README-history commits available before cutoff; need {count}')
+    if not isinstance(entries,list) or len(entries)<3:
+        raise ValueError(f'{repo}: fewer than three historical README commits at pinned cutoff')
     chosen=[]
     seen=set()
     for obj in entries:
@@ -81,8 +81,8 @@ def download_history(spec,count=12,get_fn=get):
             'bytes':len(raw),'data':raw,
             'date':obj.get('commit',{}).get('committer',{}).get('date','')})
         if len(chosen)==count:break
-    if len(chosen)!=count:
-        raise ValueError('too few distinct contents in pinned history')
+    if len(chosen)<3:
+        raise ValueError(f'{repo}: fewer than three distinct historical README content versions')
     chosen.reverse()
     if len({x['sha256'] for x in chosen})<3:
         raise ValueError('history lacks multiple changes')
@@ -139,12 +139,15 @@ def run_matrix(histories,independent,ids_digest):
                 'repository':PINNED[key]['repo'],'cutoff_commit':PINNED[key]['cutoff'],
                 'file':PINNED[key]['path'],'license':PINNED[key]['license'],
                 'history_identity_sha256':history_identity(versions),
+                'requested_version_limit':12,
+                'actual_distinct_versions':len(versions),
                 'versions':[ {key:x[key] for key in ('commit','sha256','git_blob','bytes','date')}
                              for x in versions ]
             } for key,versions in histories.items()},
         'independent_sample_question_id_sha256':ids_digest,
         'scenarios':out,
         'limitations':[
+            'up to 12 distinct revisions per repository: fewer changes are retained and reported rather than padded',
             'one history each from Ruff, Transformers and Flask; these are original upstream README files, not random versioned source families',
             'GitHub commit API output is cut off at fixed immutable commit SHAs, and exact source content hashes are recorded',
             'no upstream source bytes redistributed',
