@@ -48,8 +48,32 @@ def load_development():
     rows=json.loads(blob)
     if len(rows)!=7405:
         raise ValueError('Unexpected official distractor dev length')
-    r25().validate(rows)
+    if any(not row.get('question') or not row.get('context') or
+           not isinstance(row.get('supporting_facts'),list) for row in rows):
+        raise ValueError('missing essential HotpotQA example fields')
     return rows
+
+
+def support_reference_issue(row):
+    """Return first structural annotation fault, never used by retrievers."""
+    ctx={title:sents for title,sents in row['context']}
+    for title,sid in row['supporting_facts']:
+        if title not in ctx:
+            return 'missing_document'
+        if not isinstance(sid,int) or sid<0 or sid>=len(ctx[title]):
+            return 'missing_sentence'
+    return None
+
+
+def integrity_audit(rows):
+    counts={'valid':0,'missing_document':0,'missing_sentence':0}
+    affected=[]
+    for row in rows:
+        issue=support_reference_issue(row)
+        counts[issue or 'valid']+=1
+        if issue and len(affected)<12:
+            affected.append({'id':str(row.get('_id')),'fault':issue})
+    return {'counts':counts,'first_12_affected':affected}
 
 
 def locked_sample(data,size=FROZEN_SAMPLE_SIZE):
@@ -124,6 +148,7 @@ def measure_one(row,indices,helper):
     chosen=[context[i] for i in indices]
     output={}
     sentence_ranks={}
+    broken=support_reference_issue(row) is not None
     for i in indices:
         title,sentences=context[i]
         if sentences:
@@ -137,8 +162,8 @@ def measure_one(row,indices,helper):
         found={context[i][0] for i in current}
         retrieved={(context[i][0],n) for i in current for n in sentence_ranks[i][:2]}
         output[str(k)]={
-            'complete_docs':int(gold_titles.issubset(found)),
-            'complete_sentences_top2':int(all((title,idx) in retrieved
+            'complete_docs':int(not broken and gold_titles.issubset(found)),
+            'complete_sentences_top2':int(not broken and all((title,idx) in retrieved
                                               for title,idx in row['supporting_facts'])),
             'selected_utf8_bytes':sum(len(
                 (context[i][0]+' '+' '.join(context[i][1])).encode('utf8'))
@@ -155,7 +180,9 @@ def aggregate(data,policies=('bm25','bridge','mmr','title_graph','text_gate')):
     paired={str(k):{'both':0,'bm25_only':0,'bridge_only':0,'neither':0}
             for k in FROZEN_K}
     gate_positive=0
+    invalid_support_count=0
     for row in data:
+        invalid_support_count+=int(support_reference_issue(row) is not None)
         gate_positive+=int(question_gate(row['question']))
         outputs={}
         for method in policies:
@@ -191,7 +218,8 @@ def aggregate(data,policies=('bm25','bridge','mmr','title_graph','text_gate')):
             b=buckets[method][k]
             b['mean_selected_utf8_bytes']=round(b.pop('selected_utf8_bytes')/len(data),2)
     return {
-        'n':len(data),'gate_text_positive_count':gate_positive,
+        'n':len(data),'unscorable_support_count':invalid_support_count,
+        'gate_text_positive_count':gate_positive,
         'methods':buckets,'type_breakdown':bytype,'paired_bm25_bridge':paired,
         'policy_selection_p50_us':{
             k:round(statistics.median(v),3) for k,v in microtimes.items()},
@@ -217,6 +245,10 @@ def main():
     rows=load_development()
     sample=locked_sample(rows,args.sample_size)
     output=aggregate(sample)
+    output['integrity']={
+        'full_dataset':integrity_audit(rows),
+        'locked_sample':integrity_audit(sample),
+        'policy':'All selected questions remain in denominators; structurally unscorable cases count as zero recoveries'}
     output['source']={
         'url':URL,'sha256':SHA256,'size_bytes':EXPECTED_SIZE,
         'download_count':len(rows),'sample_salt':SAMPLE_SALT,
@@ -230,7 +262,8 @@ def main():
                                    for x in ('bridge','comparison')},
         'complete_docs':compact,
         'paired_at2':output['paired_bm25_bridge']['2'],
-        'sample_hash':output['sample_id_sha256']},sort_keys=True))
+        'sample_hash':output['sample_id_sha256'],
+        'invalid_support':output['integrity']['locked_sample']['counts']},sort_keys=True))
 
 
 if __name__=='__main__':
