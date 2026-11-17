@@ -1,0 +1,24 @@
+name: CDG answer-QA model provenance probe
+on:
+  push:
+    branches:
+      - "research/round-66-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  model-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Resolve immutable pre-trained QA model SHA and license
+        run: python experiments/round-66/model_probe.py
+      - name: Fast model-free QA and evidence joint-context regressions
+        run: |
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-66 -p 'test_*.py' -v
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-67 -p 'test_*.py' -v

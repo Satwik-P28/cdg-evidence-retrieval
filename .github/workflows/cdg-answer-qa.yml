@@ -1,0 +1,81 @@
+name: CDG fixed extractive HotpotQA answer experiment
+on:
+  push:
+    branches:
+      - "research/round-66-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  qa-answer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pin CPU Torch library
+        run: python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.5.1
+      - name: Pin pretrained reader dependencies
+        run: python -m pip install --disable-pip-version-check transformers==4.46.3 huggingface_hub==0.26.5 tokenizers==0.20.3 numpy==1.26.4
+      - name: Source citation and no-gold-leakage regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-66 -p 'test_*.py' -v
+      - name: Fixed SHA-pinned pretrained SQuAD2 model answer EM and F1
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-66/extractive_qa.py --count 64 --offset 0 --out experiments/round-66/ci-results.json
+      - name: Round 67 strict tokenizer and oracle-isolation tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-67 -p 'test_*.py' -v
+      - name: Round 67 joint-context answer accuracy and oracle ceiling
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-67/joint_context_qa.py --count 64 --offset 0 --out experiments/round-67/ci-results.json
+      - name: Upload compact answer metrics and source budgets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round66-extractive-answer-results
+          path: |
+            experiments/round-66/ci-results.json
+            experiments/round-67/ci-results.json
+          if-no-files-found: ignore
+
+  qa-heldback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install exactly pinned CPU reader dependencies
+        run: |
+          python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.5.1
+          python -m pip install --disable-pip-version-check transformers==4.46.3 huggingface_hub==0.26.5 tokenizers==0.20.3 numpy==1.26.4
+      - name: Freeze and verify both model-free experiment contracts
+        run: |
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-66 -p 'test_*.py' -v
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-67 -p 'test_*.py' -v
+      - name: Round 68 locked holdback per-source answer QA
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-66/extractive_qa.py --offset 448 --count 64 --out experiments/round-66/holdback-results.json
+      - name: Round 68 locked holdback joint-context answer QA
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-67/joint_context_qa.py --offset 448 --count 64 --out experiments/round-67/holdback-results.json
+      - name: Upload QA holdback outcomes without original source text
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round68-extractive-joint-answer-holdback
+          path: |
+            experiments/round-66/holdback-results.json
+            experiments/round-67/holdback-results.json
+          if-no-files-found: ignore
