@@ -33,8 +33,11 @@ def dependencies():
 
 
 class HistoricIndexCache:
-    def __init__(self,engine,capacity):
+    def __init__(self,engine,capacity,span_method='scan'):
         self.engine=engine
+        if span_method not in ('scan','point','batch'):
+            raise ValueError('unknown span lookup')
+        self.span_method=span_method
         self.capacity=capacity
         self.entries=OrderedDict()
         self.hits=0
@@ -80,8 +83,24 @@ class HistoricIndexCache:
         ids=[r[0] for r in conn.execute(sql,params)]
         if not self.capacity:
             conn.close()
-        lookup=dict((rid,(start,end)) for rid,start,end in self.engine.db.execute(
-            'SELECT rid,start,end FROM spans WHERE gen=?',(g,)))
+        if not ids:
+            return []
+        if self.span_method=='scan':
+            lookup=dict((rid,(start,end)) for rid,start,end in self.engine.db.execute(
+                'SELECT rid,start,end FROM spans WHERE gen=?',(g,)))
+        elif self.span_method=='point':
+            lookup={}
+            for rid in ids:
+                record=self.engine.db.execute(
+                    'SELECT start,end FROM spans WHERE rid=? AND gen=?',(rid,g)).fetchone()
+                if record is None:
+                    raise AssertionError('missing point span')
+                lookup[rid]=record
+        else:
+            keys=','.join('?' for _ in ids)
+            lookup={rid:(start,end) for rid,start,end in self.engine.db.execute(
+                f'SELECT rid,start,end FROM spans WHERE gen=? AND rid IN ({keys})',
+                [g,*ids])}
         return [(rid,*lookup[rid]) for rid in ids]
 
     def close(self):
