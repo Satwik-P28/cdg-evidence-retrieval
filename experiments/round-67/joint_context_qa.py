@@ -64,11 +64,8 @@ def join_materials(materials):
             cursor+=2
         parts.append(material['context'])
         local_cursor=0
-        if len(material['snippets'])!=len(sentence_ids):
-            # Whole mode stores one full source blob. Decode known sentence
-            # offsets separately in prepare_tasks, never gold labels.
-            if sentence_ids is not None:
-                raise AssertionError('source/sentence span mismatch')
+        if sentence_ids is not None and len(material['snippets'])!=len(sentence_ids):
+            raise AssertionError('source/sentence span mismatch')
         if sentence_ids is not None:
             for snippet,sid in zip(material['snippets'],sentence_ids):
                 start=cursor+local_cursor
