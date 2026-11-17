@@ -22,10 +22,16 @@ jobs:
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-60 -p 'test_*.py' -v
       - name: Run Round 60 full authentic-source comparison
         run: python experiments/round-60/strong_controls.py --out experiments/round-60/ci-results.json
+      - name: Round 61 frozen policy and mixture tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-61 -p 'test_*.py' -v
+      - name: Round 61 source-mixture shift experiment
+        run: python experiments/round-61/mix_shift.py --out experiments/round-61/ci-results.json
       - name: Upload numerical results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: round60-strong-compression-results
-          path: experiments/round-60/ci-results.json
+          path: |
+            experiments/round-60/ci-results.json
+            experiments/round-61/ci-results.json
           if-no-files-found: ignore
