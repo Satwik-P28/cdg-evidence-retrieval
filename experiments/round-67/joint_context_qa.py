@@ -11,14 +11,18 @@ from __future__ import annotations
 import argparse
 from collections import defaultdict
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import statistics
+import sys
 import time
 
-import extractive_qa as q66
-
 HERE=Path(__file__).resolve().parent
+_QA_SPEC=importlib.util.spec_from_file_location('cdg_round66_for_67',HERE.parent/'round-66'/'extractive_qa.py')
+q66=importlib.util.module_from_spec(_QA_SPEC)
+sys.modules[_QA_SPEC.name]=q66
+_QA_SPEC.loader.exec_module(q66)
 SAMPLE_COUNT=64
 MODES=('whole_source','fts_top2')
 POLICIES=('bm25','bridge','random')
