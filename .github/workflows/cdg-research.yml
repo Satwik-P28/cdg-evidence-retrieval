@@ -69,6 +69,10 @@ jobs:
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-50 -p 'test_*.py' -v
       - name: Round 50 tiered historical FTS index experiment
         run: python experiments/round-50/tiered_fts.py --out experiments/round-50/ci-results.json
+      - name: Round 51 historical LRU tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-51 -p 'test_*.py' -v
+      - name: Round 51 synthetic historical-query traces
+        run: python experiments/round-51/cache_lab.py --out experiments/round-51/ci-results.json
       - name: Report Round 43 aggregate
         run: |
           python - <<'PY'
@@ -97,4 +101,5 @@ jobs:
             experiments/round-48/ci-results.json
             experiments/round-49/ci-results.json
             experiments/round-50/ci-results.json
+            experiments/round-51/ci-results.json
           if-no-files-found: ignore
