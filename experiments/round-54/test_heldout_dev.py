@@ -1,6 +1,7 @@
 import unittest
 from copy import deepcopy
 from heldout_dev import (aggregate,graph_rank,locked_sample,question_gate,
+                         support_reference_issue,integrity_audit,
                          select,SAMPLE_SALT,FROZEN_K,URL,SHA256)
 
 
@@ -64,6 +65,21 @@ class HeldoutTests(unittest.TestCase):
                 self.assertGreaterEqual(outcome['methods'][policy][k]['complete_docs'],0)
         for k,counts in outcome['paired_bm25_bridge'].items():
             self.assertEqual(sum(counts.values()),2)
+
+    def test_annotation_faults_not_silently_filtered(self):
+        bad=row('bad')
+        bad['supporting_facts']=[['Absent source',0]]
+        out=aggregate([row('valid'),bad])
+        self.assertEqual(out['n'],2)
+        self.assertEqual(out['unscorable_support_count'],1)
+        self.assertEqual(support_reference_issue(bad),'missing_document')
+        for method in out['methods']:
+            self.assertLessEqual(out['methods'][method]['5']['complete_docs'],1)
+        bad2=row('bad2')
+        bad2['supporting_facts']=[['Founder',900]]
+        self.assertEqual(support_reference_issue(bad2),'missing_sentence')
+        self.assertEqual(integrity_audit([row('ok'),bad,bad2])['counts'],
+                         {'valid':1,'missing_document':1,'missing_sentence':1})
 
     def test_report_has_no_answers_or_gold_ids_in_query_output(self):
         result=aggregate([row('x')])
