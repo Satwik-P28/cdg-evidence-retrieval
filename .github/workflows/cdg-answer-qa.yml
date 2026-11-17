@@ -27,10 +27,19 @@ jobs:
           HF_HUB_DISABLE_TELEMETRY: "1"
           TOKENIZERS_PARALLELISM: "false"
         run: python experiments/round-66/extractive_qa.py --count 64 --offset 0 --out experiments/round-66/ci-results.json
+      - name: Round 67 strict tokenizer and oracle-isolation tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-67 -p 'test_*.py' -v
+      - name: Round 67 joint-context answer accuracy and oracle ceiling
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-67/joint_context_qa.py --count 64 --offset 0 --out experiments/round-67/ci-results.json
       - name: Upload compact answer metrics and source budgets
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: round66-extractive-answer-results
-          path: experiments/round-66/ci-results.json
+          path: |
+            experiments/round-66/ci-results.json
+            experiments/round-67/ci-results.json
           if-no-files-found: ignore
