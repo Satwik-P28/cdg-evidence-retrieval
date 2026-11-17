@@ -1,5 +1,6 @@
 import hashlib,json,unittest
-from independent_histories import (PINNED,POLICIES,git_blob_sha,download_history,
+from unittest.mock import patch, MagicMock
+from independent_histories import (PINNED,POLICIES,get,git_blob_sha,download_history,
                                     history_identity,sha,run_matrix)
 
 
@@ -10,6 +11,24 @@ class HistoryTests(unittest.TestCase):
             self.assertEqual(len(x['cutoff']),40)
             self.assertEqual(x['path'],'README.md')
             self.assertTrue(x['license'])
+
+    def test_github_token_sent_to_api_only(self):
+        class FakeResponse:
+            def __enter__(self):return self
+            def __exit__(self,*args):return False
+            def read(self,*args):return b'ok'
+        captured=[]
+        def fake_open(request,timeout=None):
+            captured.append(request)
+            return FakeResponse()
+        with patch.dict('os.environ',{'GITHUB_TOKEN':'temporary-test-secret'}):
+            with patch('independent_histories.urlopen',side_effect=fake_open):
+                self.assertEqual(get('https://api.github.com/repos/example/repo/commits'),b'ok')
+                self.assertEqual(get('https://raw.githubusercontent.com/example/repo/abc/README.md'),b'ok')
+                self.assertEqual(get('https://example.com/other'),b'ok')
+        self.assertEqual(captured[0].get_header('Authorization'),'Bearer temporary-test-secret')
+        self.assertIsNone(captured[1].get_header('Authorization'))
+        self.assertIsNone(captured[2].get_header('Authorization'))
 
     def test_history_commit_order_content_verification_and_noop(self):
         commits=[f'{i:040x}' for i in range(1,6)]
