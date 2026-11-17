@@ -30,6 +30,10 @@ jobs:
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-55 -p 'test_*.py' -v
       - name: Round 55 exact source-span retrieval and frame budget
         run: python experiments/round-55/heldout_frames.py --sample-size 128 --out experiments/round-55/ci-results.json
+      - name: Round 56 sentence retrieval policy regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-56 -p 'test_*.py' -v
+      - name: Round 56 sentence budget and title-link ablation
+        run: python experiments/round-56/sentence_policy.py --sample-size 128 --out experiments/round-56/ci-results.json
       - name: Attach traceable numerical results
         if: always()
         uses: actions/upload-artifact@v4
@@ -38,4 +42,5 @@ jobs:
           path: |
             experiments/round-54/ci-results.json
             experiments/round-55/ci-results.json
+            experiments/round-56/ci-results.json
           if-no-files-found: ignore
