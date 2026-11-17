@@ -157,3 +157,12 @@ The latest [CDG cumulative record through Round 68](research/living-record-round
 The pinned reader is **deepset/tinyroberta-squad2** commit **12b287c9df677e28b07f0a023850dba68c997dbf** (CC BY 4.0). CI installs pinned PyTorch CPU, Transformers and tokenizers; source SHA references, reader output/citation validation, model input-token counts, source index/archive footprints and inference wall time are recorded. Source paragraphs and model weights are downloaded only transiently.
 
 **Scientific limits:** The source pool is closed-world HotpotQA distractor dev, and the model is a small single-paragraph extractive SQuAD2 reader, not a multihop-trained generator. Literal source-span citation is not semantic entailment or proof of causal provenance. Strong relevant prior work already evaluates evidence granularity and answer quality in this dataset; these experiments are diagnostics for how much the current CDG components affect actual answers, not a novel RAG benchmark victory. Next priorities are stronger multihop readers, independently annotated hallucination/claim grounding (RAGTruth), and a full indexed-storage plus inference cost frontier.
+
+
+## Human-annotated hallucination stress test: Round 69
+
+The latest [CDG cumulative record through Round 69](research/living-record-rounds-33-69.md) adds an independent hallucination-label audit using original pinned **RAGTruth** (ACL 2024) QA test sources and generated responses. The experiment verifies the upstream Git blob hashes, exact source-byte archive receipts and 235 original human annotation spans across 875 responses from 150 source records.
+
+**Negative finding:** Naive lexical non-match flags most generated sentence chunks, including many chunks without human hallucination annotations. Those unlabeled chunks must **not** be assumed to be human-verified true. Neither exact source text matches nor SHA provenance receipts are semantic entailment or factual-truth guarantees. On this independent short-source family, whole-Zlib compressed storage (98,488 B) again beat content-defined gear512 (117,721 B).
+
+Run experiments/round-69/human_span_audit.py or the dedicated CI workflow. Original RAGTruth source documents, responses and annotator notes are downloaded transiently and never committed. The next research focus is an actual, costed semantic entailment verifier against human labels rather than more lexical-only source matching.
