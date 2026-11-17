@@ -43,7 +43,9 @@ def sha(blob):
 
 
 class MixedStore:
-    def __init__(self,data,policy,frame_fn,manifest_module):
+    def __init__(self,data,policy,frame_fn,manifest_module,gear_allowed=None):
+        if gear_allowed is not None and len(gear_allowed)!=len(data):
+            raise ValueError('gear_allowed must have exactly one decision per source')
         self.data=data
         self.policy=policy
         self.frame_fn=frame_fn
@@ -61,6 +63,8 @@ class MixedStore:
             elif policy in ('online_min_bytes','online_read_weighted'):
                 contenders=[]
                 for candidate in METHODS:
+                    if candidate=='gear512' and gear_allowed is not None and not gear_allowed[i]:
+                        continue
                     chunks=frame_fn(blob,candidate)
                     unique={sha(x):x for x in chunks}
                     payload_cost=sum(len(zlib.compress(chunk,6))
