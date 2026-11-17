@@ -7,8 +7,8 @@ class MixedTests(unittest.TestCase):
     def setUp(self):
         self.old=load('cdg_r46_test58',R46)
         self.packer=load('cdg_r47_test58',R47)
-        self.h=[('history',b'café 😊 '+b'a'*1300),
-                ('history',b'café 😊 '+b'a'*1000+b'b'*300)]
+        self.h=[('history','café 😊 '.encode('utf8')+b'a'*1300),
+                ('history','café 😊 '.encode('utf8')+b'a'*1000+b'b'*300)]
         self.u=[('independent',b'new source one'),
                 ('independent',b'another independent source'),
                 ('independent',b'third topic evidence'),
