@@ -112,12 +112,9 @@ def atomic_update(db,rowid,doc_id,title,abstract,fault=None):
                    (zlib.compress(payload,6),sha(payload),len(payload),generation,rowid))
         if fault=='after_payload':
             raise RuntimeError('injected interrupted update after source payload')
-        # FTS5 contentless-delete supports UPDATE when all indexed columns
-        # are supplied. A DELETE then same-rowid INSERT in one transaction
-        # inflated FTS5 global doc/token totals under SQLite 3.46.1 in R89.
-        # Use the documented atomic FTS5 UPDATE to preserve BM25 corpus stats.
-        db.execute("UPDATE sources SET title=?,abstract=? WHERE rowid=?",
-                   (title,' '.join(abstract),rowid))
+        db.execute("DELETE FROM sources WHERE rowid=?",(rowid,))
+        db.execute("INSERT INTO sources(rowid,title,abstract) VALUES(?,?,?)",
+                   (rowid,title,' '.join(abstract)))
         if fault=='after_index':
             raise RuntimeError('injected interrupted update after index')
         db.execute('COMMIT')
