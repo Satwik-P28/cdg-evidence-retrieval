@@ -97,6 +97,11 @@ def aggregate(rows):
     result={}
     for task in ('QA','Summary','all'):
         subset=[r for r in rows if task=='all' or r['task']==task]
+        if not subset:
+            result[task]={'responses':0,'source_groups':0,
+                          'original_predicted_positive':0,
+                          'near_far_difference_unavailable':'no examples for task'}
+            continue
         block={'responses':len(subset),
                'source_groups':len({r['source_id'] for r in subset}),
                'original_predicted_positive':sum(r['original_positive'] for r in subset)}
