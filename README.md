@@ -169,3 +169,16 @@ The pinned reader is **deepset/tinyroberta-squad2** commit **12b287c9df677e28b07
 - **Reproduction:** A dedicated RAGTruth QA workflow pins upstream RAGTruth source blobs by Git SHA and downloads them temporarily, runs all R69–71 tests and source-group heldout analysis, and uploads compact numerical outputs. No original source passages or generated responses are redistributed.
 
 **Critical limits:** Human RAGTruth labels are source-faithfulness annotations, not a definitive universal truth oracle. These rounds evaluate existing model outputs and do not generate new CDG answers or prevent hallucinations. Citation byte integrity is provenance, not entailment or causal reliance. Next research should benchmark a strong response-conditioned NLI/verifier under human-label and compute constraints, then integrate the actual answer reader and versioned archive into one total-cost frontier.
+
+
+## Frozen, response-conditioned NLI semantic verification: Round 72
+
+The [cumulative research record through Round 72](research/living-record-rounds-33-72.md) now contains a pinned pretrained **general-purpose SNLI/MultiNLI NLI** control against RAGTruth human-labeled QA and previously unexamined Summary test source groups.
+
+- **Model:** cross-encoder/nli-deberta-v3-xsmall at immutable Hugging Face SHA a150876415327c80daeff35ca6f68f5ed8cf5c24 (Apache-2.0), **not fine-tuned on RAGTruth**.
+- **Workload:** 141 quality-good RAGTruth test responses, 760 sentence-like hypotheses and 2,273 real model forward pairs. A strict 384-token NLI context, first source window vs lexical best vs top-three windows, fixed entailment threshold 0.50. Actual input 426,627 tokens and 251.993 s shared CPU forward inference.
+- **Negative result:** 31/31 human-positive unsupported responses were flagged but **108/110 human-negative responses were also flagged** under best-window/top-three NLI (F1 0.365). The original lexical warning baseline flagged 27/31 positives with 48/110 false alarms (F1 0.509). More NLI evidence windows barely changed its judgments and added compute.
+- **Prior-work distinction:** ModernBERT LettuceDetect is specifically trained on RAGTruth and already reports strong RAGTruth in-domain results. It must not be counted as independently validating transfer. The generic NLI source-window experiment does not demonstrate semantic reliability, end-to-end RAG improvements or hallucination mitigation.
+- **Next tests:** Train-only NLI risk calibration on source-disjoint QA and a new Data2txt test family, then materialize the exact source windows through cryptographically verified compressed archives while charging all window/index, model-token, inference and storage costs.
+
+The new round's [research report](research/rounds/round-72/report.md), five unit tests, immutable model lock and dedicated GPU-free GitHub Actions workflow reproduce the figures. No original passages or generated responses are committed.
