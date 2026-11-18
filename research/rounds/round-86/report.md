@@ -1,6 +1,6 @@
 # CDG Round 86: Source-CAS Bytes Behind Contentless FTS5 BM25
 
-**Date:** 18 November 2026. **Status:** an executable SQLite FTS5 contentless-versus-contentful benchmark and five synthetic regression tests were submitted; **full SciFact numbers pending successful exact-head CI**. Existing database technology, not a new retrieval or compression algorithm.
+**Date:** 18 November 2026. **Status:** five synthetic regression tests and original 5,183-document full SciFact end-to-end index/source read benchmark **passed in GitHub Actions 44266853921**. Measured results and limitations are recorded below. Existing database technology, not a new retrieval or compression algorithm.
 
 ## Research question
 
@@ -37,3 +37,43 @@ Official SQLite behavior: https://www.sqlite.org/fts5.html (section 4.4.1: conte
     python experiments/round-86/contentless_cas.py --out experiments/round-86/ci-results.json
 
 Workflow \`.github/workflows/cdg-r86-contentless-cas.yml\`. Data remains upstream. Only derived aggregate cost, hash, rank-equality and recall are stored as CI artifacts.
+
+
+## Executed original SciFact measurements (GitHub Actions 44266853921)
+
+**[FACT]** All 5 regression tests and the actual 5,183-document/300-claim corpus benchmark passed. The dataset SHA was verified. SQLite **3.46.1** was used under equal settings (FTS5 \`unicode61\`, retained column-size metadata, 4096-byte pages, VACUUM, bm25 title5/body1 and source-only OR up to 28 terms).
+
+**[FACT] Ranking and source byte fidelity:** **0/300** changed complete top-ten rowid rankings; gold annotated evidence retrieval Recall@1 136/188 (**.723404**), @3 156/188 (**.829787**), @5 166/188 (**.882979**) and @10 179/188 (**.952128**), equal to R83 and R84. **300/300** retrieved top-one contentless-index source IDs materialized byte-exact from SHA-bound whole-source compressed receipts; \`SELECT title,abstract\` on the contentless FTS returned \`(NULL,NULL)\`, confirming the source text is not redundantly stored inside that index.
+
+### Retained-byte accounting
+
+| Persistent component or architecture | Measured bytes |
+| --- | ---: |
+| Conventional full-content FTS5 alone (contains source text) | **14,544,896** |
+| Contentless FTS5 index alone, not source readable | **4,644,864** |
+| Whole-Zlib6 CAS archive including binary source manifest | **3,909,759** |
+| Source document ID -> archive slot JSON mapping | **55,126** |
+| **Contentless FTS5 + exact compressed CAS + mapping** | **8,609,749** |
+| Redundant full-content FTS5 + CAS + mapping | **18,509,781** |
+
+**[FACT]** The complete contentless-index/CAS system retains **5,935,147 fewer bytes**, a **40.81% space reduction** against a source-readable conventional full-content FTS5 standalone installation under the same 5,183 documents. The contentless index alone is smaller by 9,900,032 bytes, **but it cannot serve source text** and therefore is not a fair functional comparator by itself. Accounted mapping is a compact JSON doc ID list; update logs, extra in-memory structures, filesystem block layout and model weights are not included.
+
+The original 5,183 UTF-8 source documents totaled **7,792,860 B** in R86's exact \`title + newline + abstract\` serialization.
+
+### Index and source-read performance, measured but not end-to-end server latency
+
+| Measurement | Full content FTS5 | Contentless FTS5 + CAS |
+| --- | ---: | ---: |
+| Build and VACUUM wall | 0.32376 s | 0.24049 s |
+| Execute 300 original SciFact BM25 queries | 0.65707 s | 0.63840 s |
+| Additional archive build | not required | 0.25710 s |
+| Additional byte-verified top-one archive reads | not required | 300, **0.04210 s total** |
+| Logical compressed frame activation for 300 reads | not required | **231,797 B** |
+
+These are **single-run, warm page cache / Python in-memory** descriptive measurements, not SSD cold-read or transactional performance. Query timing differences are within benchmark variation without replications, and the contentless system must serve source bytes from the archive, not from FTS.
+
+**[INFERENCE]** A contentless FTS index coupled to source-byte receipts has a practical 40.81% persistent-byte advantage in this **specific SciFact source corpus** versus storing all original source text in FTS5, while preserving exact lexical candidate rankings and source content. This validates a conventional **index/source compression composition**, rather than a novel compressor or guaranteed general end-to-end improvement.
+
+**Next falsifiers:** test crash-safe updates and atomic index+archive commits, document addition/deletion, source-ID migration, p95/p99 warm/cold SSD read latency, transaction recovery, a stronger independent corpus, and end-to-end model answer quality with real retrieval sources. Do not generalize the current 5,183-text result to arbitrary datasets.
+
+Reproduce: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44266853921 .
