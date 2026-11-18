@@ -75,7 +75,11 @@ def source_only_ceiling(groups,field='human_unsupported',only_good=False):
         statuses.append((positives,negatives))
     n=counters['responses']
     if n<=0:raise ValueError('empty source-only evaluation')
-    result={key:int(value) for key,value in counters.items()}
+    result={key:int(counters[key]) for key in (
+        'source_groups','responses','human_positive_responses',
+        'human_clean_responses','mixed_truth_source_groups',
+        'unavoidable_source_only_errors','source_only_oracle_correct',
+        'always_accept_correct','always_reject_correct')}
     result.update({
         'conditional_source_only_oracle_accuracy':round(
             result['source_only_oracle_correct']/n,5),
