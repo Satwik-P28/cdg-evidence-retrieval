@@ -86,16 +86,17 @@ class CalibrationTests(unittest.TestCase):
                                             str(i),'The inventor worked in Berlin.',
                                             'train'))
             for i in range(25,40):
-                samples.append(response('test-'+str(i),str(i),
-                                        'The inventor moved to Paris.', 'test',
-                                        positive=i%2==0))
+                for k in range(2):
+                    samples.append(response('test-'+str(i)+'-'+str(k),str(i),
+                                            'The inventor moved to Paris.', 'test',
+                                            positive=i%2==0))
             # Test source selection consumes only test IDs; with 15 test groups
             # and two excluded prior-round groups, 13 remain.
             result=evaluate(samples,sources)
         finally:
             self.r69.MAX_TEST_SOURCE_GROUPS=old
         self.assertEqual(result['old_R69_source_ids_excluded'],2)
-        self.assertEqual(result['holdout_good_qa_responses'],13)
+        self.assertEqual(result['holdout_good_qa_responses'],26)
         self.assertGreater(result['train_good_qa_responses'],100)
         self.assertEqual(len(result['results']),len(SCORES)*len(RATES)+1)
 
