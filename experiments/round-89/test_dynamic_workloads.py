@@ -33,8 +33,9 @@ class DynamicWorkloadTests(unittest.TestCase):
     def test_delete_mode_source_and_bm25_parity_under_revisions(self):
         events = revision_events(DOCS, "hot", 20, hotset=3)
         result = benchmark(DOCS, CLAIMS, events, "DELETE", "hot")
-        self.assertEqual(result["verification"]["queries_with_equal_top10_rankings"], 5)
-        self.assertTrue(result["verification"]["all_rankings_identical"])
+        self.assertEqual(result["verification"]["identical_top10_rankings"], 5)
+        self.assertEqual(result["verification"]["atomic_fts5_stat_doc_count_and_column_tokens"][0], 15)
+        self.assertGreater(result["verification_before_rebuild"]["atomic_fts5_stat_doc_count_and_column_tokens"][0], 15)
         self.assertEqual(result["verification"]["revised_source_bytes_verified"], 3)
         for state in ("initial", "active_after_updates", "after_checkpoint",
                       "after_vacuum_and_checkpoint"):
@@ -45,7 +46,7 @@ class DynamicWorkloadTests(unittest.TestCase):
         events = revision_events(DOCS, "diffuse", 12)
         result = benchmark(DOCS, CLAIMS, events, "WAL", "diffuse")
         self.assertEqual(result["verification"]["revised_source_bytes_verified"], 12)
-        self.assertEqual(result["verification"]["queries_with_equal_top10_rankings"], 5)
+        self.assertEqual(result["verification"]["identical_top10_rankings"], 5)
         self.assertEqual(result["latency"]["atomic"]["events"], 12)
         self.assertEqual(result["latency"]["full"]["events"], 12)
 
