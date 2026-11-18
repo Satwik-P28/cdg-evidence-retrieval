@@ -1,0 +1,31 @@
+name: CDG R83 SciFact immutable source and license audit
+on:
+  push:
+    branches:
+      - "research/round-83-*"
+    paths:
+      - "experiments/round-83/scifact_data_probe.py"
+      - "experiments/round-83/test_scifact_data_probe.py"
+      - "experiments/round-83/upstream_lock.json"
+      - ".github/workflows/cdg-r83-scifact-source.yml"
+  workflow_dispatch:
+jobs:
+  source-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate offline SciFact S3 extractor and schema
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-83 -p 'test_scifact_data_probe.py' -v
+      - name: Audit official AI2 SciFact release SHA256 and expert annotated dev data
+        run: python experiments/round-83/scifact_data_probe.py --out experiments/round-83/probe-results.json
+      - name: Upload source identity hashes and aggregate metadata only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r83-scifact-source-metadata
+          path: experiments/round-83/probe-results.json
+          if-no-files-found: ignore

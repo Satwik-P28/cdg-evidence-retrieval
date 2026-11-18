@@ -1,0 +1,10 @@
+{
+  "source_url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz",
+  "archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+  "members": {
+    "data/claims_dev.jsonl": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217",
+    "data/corpus.jsonl": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62"
+  },
+  "pinned_from_ci_run": 44249807526,
+  "release_note": "Official upstream latest URL is mutable; reject all changes to these exact bytes"
+}
