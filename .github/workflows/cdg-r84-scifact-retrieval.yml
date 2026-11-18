@@ -1,0 +1,31 @@
+name: CDG R84 SciFact train-only BM25 policy selection
+on:
+  push:
+    branches:
+      - "research/round-84-*"
+    paths:
+      - "experiments/round-84/**"
+      - ".github/workflows/cdg-r84-scifact-retrieval.yml"
+  workflow_dispatch:
+jobs:
+  lexical-retrieval-policy-ablation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed TF-IDF baseline runtime
+        run: python -m pip install --disable-pip-version-check numpy==2.2.6 scikit-learn==1.6.1
+      - name: Test no-label retrieval, original train member and deterministic policy selection
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-84 -p 'test_*.py' -v
+      - name: Scan full 5183-source SciFact corpus with eight predeclared BM25 controls
+        run: python experiments/round-84/retrieval_ablation.py --out experiments/round-84/ci-results.json
+      - name: Persist only SHA-locked aggregate recall, index and query costs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r84-scifact-bm25-train-dev
+          path: experiments/round-84/ci-results.json
+          if-no-files-found: ignore
