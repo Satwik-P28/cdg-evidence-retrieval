@@ -76,6 +76,22 @@ def do_full_update(conn, rid, title, abstract):
     conn.commit()
 
 
+def fts5_global_stats(conn):
+    """Decode FTS5 %_data row 1's varint [documents, tokens per column]."""
+    row = conn.execute("SELECT block FROM sources_data WHERE id=1").fetchone()
+    if row is None:
+        raise AssertionError("missing FTS5 global stats")
+    values, current = [], 0
+    for byte in row[0]:
+        current = (current << 7) | (byte & 127)
+        if byte < 128:
+            values.append(current)
+            current = 0
+    if current or len(values) != 3:
+        raise AssertionError("unexpected FTS5 two-column statistics encoding")
+    return values
+
+
 def verify_pair(full, atomic, corpus, claims, expected):
     for label, db in (("full", full), ("atomic", atomic)):
         result = db.execute("PRAGMA integrity_check").fetchone()[0]
@@ -83,6 +99,13 @@ def verify_pair(full, atomic, corpus, claims, expected):
             raise AssertionError(f"{label} PRAGMA integrity_check: {result}")
         db.execute("INSERT INTO sources(sources) VALUES('integrity-check')")
         db.commit()
+    stat_full = fts5_global_stats(full)
+    stat_atomic = fts5_global_stats(atomic)
+    if stat_full != stat_atomic:
+        raise AssertionError("FTS5 global doc/token stats diverged: contentful="
+                             + repr(stat_full) + ", contentless=" + repr(stat_atomic))
+    if stat_atomic[0] != len(corpus):
+        raise AssertionError("FTS5 corpus size inflated after revisions")
     checked = 0
     rankings_identical = True
     sha_readbacks = 0
@@ -138,7 +161,8 @@ def verify_pair(full, atomic, corpus, claims, expected):
         expected_raw = (title + "\n" + " ".join(abstract)).encode("utf8")
         if read(atomic, rid)["source_bytes"] != expected_raw:
             raise AssertionError("source mismatch on revised document")
-    return {"queries_with_equal_top10_rankings": checked,
+    return {"fts5_global_stats": stat_atomic,
+            "queries_with_equal_top10_rankings": checked,
             "all_rankings_identical": rankings_identical,
             "sha_verified_top1_source_reads": sha_readbacks,
             "revised_source_bytes_verified": len(expected)}
