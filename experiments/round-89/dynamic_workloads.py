@@ -97,7 +97,8 @@ def verify_pair(full, atomic, corpus, claims, expected):
             contentful = full.execute(
                 "SELECT title,abstract FROM sources WHERE rowid=?", (rid,)
             ).fetchone()
-            expected_title, expected_abs = expected[rid]
+            expected_title, expected_abs = expected.get(
+                rid, (corpus[rid-1]["title"], list(corpus[rid-1]["abstract"])))
             if contentful != (expected_title, " ".join(expected_abs)):
                 raise AssertionError("contentful original text mismatch")
             verified = read(atomic, rid)["source_bytes"]
