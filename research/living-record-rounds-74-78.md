@@ -8,7 +8,7 @@
 | 75 | Same answer, actual versus nearest alternate source, generic NLI | Worst-claim entailment actual-minus-swap mean +0.00023; source-group interval spans 0. Other aggregations move more. Reject worst-claim sensitivity as reliable evidence-dependence test. Swaps are not independent counterfactual truth labels. |
 | 76 | Published RAGTruth-trained LettuceDetect on R72 fixed human QA+Summary test cohort | 141 responses: TP14/FP16/FN17/TN94, response F1 0.459, character F1 0.405. Strong in-domain pretrained baseline, not independent transfer. |
 | 77 | Original generator prompt versus reconstructed source context, identical detector/answers | 5/141 response decisions differ; response F1 0.459 to 0.484; source-group bootstrap interval includes 0. No reliable superiority. PR #19 contains code; PR #20 contains documentation. |
-| 78 | Source CAS receipt -> exact original byte prefix -> task context -> pretrained LettuceDetect -> human evaluation | **Workflow submitted, numerical results pending.** Exact paired input equality and full cost accounting are mandatory before promotion. No new detector claimed. |
+| 78 | Source CAS receipt -> exact original byte prefix -> task context -> pretrained LettuceDetect -> human evaluation | **Measured and passed:** 141/141 original-vs-archive model masks equal, 48 full reads and 282 response receipts verified; whole archive 28,398 B versus gear 35,437 B; original and archived F1 0.45902. Existing detector, no accuracy gain claimed. |
 
 ## Graph-of-thoughts update
 
