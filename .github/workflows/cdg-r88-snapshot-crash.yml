@@ -1,0 +1,29 @@
+name: CDG R88 snapshot coherence and process SIGKILL recovery
+on:
+  push:
+    branches:
+      - "research/round-88-*"
+    paths:
+      - "experiments/round-88/**"
+      - ".github/workflows/cdg-r88-snapshot-crash.yml"
+  workflow_dispatch:
+jobs:
+  snapshot-and-kill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Six interleaving and independent-process SIGKILL regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-88 -p 'test_*.py' -v
+      - name: SciFact original SHA corpus, WAL snapshot receipts and synthetic latency
+        run: python experiments/round-88/snapshot_kill_probe.py --full --out experiments/round-88/ci-results.json
+      - name: Retain aggregate results without original SciFact source text
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r88-snapshot-sigkill-results
+          path: experiments/round-88/ci-results.json
+          if-no-files-found: ignore
