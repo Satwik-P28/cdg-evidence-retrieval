@@ -1,10 +1,10 @@
 {
   "name": "cross-encoder/nli-deberta-v3-xsmall",
-  "revision": "PENDING_SHA_FROM_OFFICIAL_HF_API",
+  "revision": "a150876415327c80daeff35ca6f68f5ed8cf5c24",
   "license": "Apache-2.0",
   "training_data": [
     "SNLI",
     "MultiNLI"
   ],
-  "rationale": "Fixed general NLI cross-encoder, not fine-tuned on RAGTruth; identity must be pinned before scoring"
+  "rationale": "Frozen official Hugging Face model identity, retrieved by HfApi().model_info in GitHub Actions run 44227327389, before any RAGTruth model scoring"
 }
