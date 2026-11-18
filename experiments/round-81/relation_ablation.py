@@ -7,9 +7,11 @@ or unknown sources. Purpose: identify source wording effects without
 post-hoc threshold tuning. Synthetic labels, NOT human evaluation.
 """
 from __future__ import annotations
-import argparse,hashlib,json,statistics,time
+import argparse,hashlib,json,statistics,time,sys
 from collections import Counter,defaultdict
 from pathlib import Path
+# The R80 benchmark is a sibling experiment directory in the monorepo.
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'round-80'))
 from controlled_facts import (
     NAME_PAIRS,archived_docs,sha_cases,nli_scores,minicheck_scores,
     lettuce_scores,lexical_scores,confusion
