@@ -29,8 +29,8 @@ class DirectionalityAblationTests(unittest.TestCase):
         a=make_case(0,'reverse_negation_after')['doc']
         b=make_case(0,'reverse_negation_before')['doc']
         prefix='Fictional registry; one stable period. '
-        self.assertEqual(a.replace(prefix,'').split('. '),
-                         list(reversed(b.replace(prefix,'').split('. '))))
+        clauses=lambda text:[x.strip().rstrip('.') for x in text.replace(prefix,'').split('. ') if x.strip()]
+        self.assertEqual(clauses(a),list(reversed(clauses(b))))
         self.assertNotEqual(a,b)
 
     def test_paired_surface_metric_contract(self):
