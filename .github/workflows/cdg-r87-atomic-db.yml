@@ -1,0 +1,29 @@
+name: CDG R87 atomic contentless FTS5 with compressed SQLite source
+on:
+  push:
+    branches:
+      - "research/round-87-*"
+    paths:
+      - "experiments/round-87/**"
+      - ".github/workflows/cdg-r87-atomic-db.yml"
+  workflow_dispatch:
+jobs:
+  atomic-index-source-store:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Adversarial transaction rollback and integrity regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-87 -p 'test_*.py' -v
+      - name: Original 5183-abstract SciFact BM25/retained-byte/atomic source verification
+        run: python experiments/round-87/atomic_source_db.py --out experiments/round-87/ci-results.json
+      - name: Retain only source SHA, BM25 rank equality, corpus storage and fault outcomes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r87-transactional-source-index-results
+          path: experiments/round-87/ci-results.json
+          if-no-files-found: ignore
