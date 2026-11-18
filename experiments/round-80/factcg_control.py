@@ -53,8 +53,35 @@ def infer(cases,docs):
         with torch.inference_mode():
             probs=torch.softmax(model(**enc).logits,dim=-1)[:,1].tolist()
         probabilities.extend(float(x) for x in probs)
+    smoke_cases=[
+        ('exact_geography','London is in the United Kingdom.','London is in the United Kingdom.',1),
+        ('wrong_geography','London is in the United Kingdom, not in France.','London is in France.',0),
+        ('minicheck_author_positive',
+         'A group of students gather in the school library to study for their upcoming final exams.',
+         'The students are preparing for an examination.',1),
+        ('minicheck_author_negative',
+         'A group of students gather in the school library to study for their upcoming final exams.',
+         'The students are on vacation.',0),
+        ('exact_fictional',
+         'The operating center for Aster Initiative is in Lydon.',
+         'The operating center for Aster Initiative is in Lydon.',1),
+        ('explicit_fictional_negative',
+         'The operating center for Aster Initiative is in Merton, not in Lydon.',
+         'The operating center for Aster Initiative is in Lydon.',0),
+    ]
+    smoke_inputs=[prompt(doc,claim) for _,doc,claim,_ in smoke_cases]
+    smoke_tokens=tokenizer(smoke_inputs,max_length=2048,
+                           truncation='only_first',padding='longest',
+                           return_tensors='pt')
+    with torch.inference_mode():
+        smoke_probs=torch.softmax(model(**smoke_tokens).logits,dim=-1)[:,1].tolist()
+    smoke_diagnostics=[{
+        'id':entry[0],'expected_supported_by_contract':entry[3],
+        'p_class1':round(float(prob),7),'predicted_supported_at_05':int(prob>.5),
+    } for entry,prob in zip(smoke_cases,smoke_probs)]
     cost={'name':FACTCG_ID,'sha':FACTCG_SHA,'parameters':params,
-          'model_wall_seconds':round(time.perf_counter()-t0,3),
+          'model_wall_seconds_including_six_smoke_pairs':round(time.perf_counter()-t0,3),
+          'diagnostic_smoke_examples':smoke_diagnostics,
           'actual_input_tokens':tokens,'truncated_inputs':truncations,
           'rule':'P(Yes / supported) > 0.50',
           'implementation':'original author instruction template; short single-chunk softmax positive class'}
@@ -68,8 +95,36 @@ def run():
     docs,storage=archived_docs(cases)
     probs,meta=infer(cases,docs)
     preds=[int(x>.5) for x in probs]
+    positives=[float(p) for p,x in zip(probs,cases) if x['supported']]
+    negatives=[float(p) for p,x in zip(probs,cases) if not x['supported']]
+    auc=sum(float(a>b)+0.5*float(a==b)
+            for a in positives for b in negatives)/(len(positives)*len(negatives))
+    support_by_state={
+        s:{'n':sum(x['state']==s for x in cases),
+           'mean_probability':round(statistics.mean(
+               p for p,x in zip(probs,cases) if x['state']==s),7),
+           'min_probability':round(min(p for p,x in zip(probs,cases) if x['state']==s),7),
+           'max_probability':round(max(p for p,x in zip(probs,cases) if x['state']==s),7)}
+        for s in ('supported','contradicted','unknown')}
+    # Test-label-optimized threshold is a DIAGNOSTIC ONLY: no holdout or
+    # deployment claim may use this result.
+    thresholds=sorted({0.0,0.5,1.0,*map(float,probs)})
+    from controlled_facts import confusion
+    explored=sorted(
+        ((confusion([int(p>t) for p in probs],cases)['balanced_accuracy'],t)
+         for t in thresholds),reverse=True)
+    diagnostic_threshold={
+        'test_label_optimized_best_balanced_accuracy':explored[0][0],
+        'chosen_threshold':round(explored[0][1],8),
+        'INVALID_FOR_GENERALIZATION':True,
+    }
     result=compare(cases,{'factcg':preds},{'factcg':meta},storage)
     result['paper']='FactCG (Lei et al., NAACL 2025), not CDG-authored training'
+    result['diagnostics']={
+       'support_probabilities_by_state':support_by_state,
+       'positive_vs_negative_auroc_template_oracle':round(auc,6),
+       'post_hoc_oracle_threshold_only_for_diagnosis':diagnostic_threshold,
+    }
     result['limitations']+=[
         'template-specific synthetic support labels, not naturally annotated test claims',
         'input follows FactCG official HF single-chunk forward template but does not call authors batch chunking package',
@@ -77,6 +132,8 @@ def run():
         'FactCG fine tuning uses graph-connected synthetic training; test fixtures are independently authored but also templated',
         'results compared to MiniCheck only when same case_sha256 and frozen test cases',
         'model input includes an instruction prompt unlike MiniCheck; token and latency costs are not matched',
+        'six smoke cases test checkpoint behavior and run after main cases, not a human evaluation',
+        'post-hoc label-optimized threshold intentionally diagnostic and disallowed as a deployable or heldout comparison',
     ]
     print('ROUND80_FACTCG',json.dumps({
         'sample_sha256':result['case_sha256'],
@@ -86,6 +143,7 @@ def run():
             for k in ('location','date','relation','multihop')},
         'triple':result['matched_triples']['factcg'],
         'model_cost':meta,
+        'diagnostics':result['diagnostics'],
     },sort_keys=True))
     return result
 
