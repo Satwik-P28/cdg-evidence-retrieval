@@ -1,6 +1,6 @@
 # CDG Round 81: Source-Clause Order, Reverse Negation and Supervision Directionality
 
-**Date:** 18 November 2026. **Status:** four paired-model regression tests and pinned pretrained CPU ablation passed in GitHub Actions **44247354832**. A follow-up exact-head run includes a predeclared R80-oracle diagnostic FactCG cutoff and is separately checked. All source texts, claims and labels are synthetic fixture-defined, not independent human labels. This is a model invariance falsification test, not a new model or demonstrated RAG improvement.
+**Date:** 18 November 2026. **Status:** four paired-model regression tests and pinned pretrained CPU ablation passed in GitHub Actions **44247354832**. A follow-up pretrained-model run including the frozen R80-oracle diagnostic FactCG cutoff **passed** (GitHub Actions **44247874527**). The cutoff is not independently validated. All source texts, claims and labels are synthetic fixture-defined, not independent human labels. This is a model invariance falsification test, not a new model or demonstrated RAG improvement.
 
 ## Why this experiment follows R80
 
@@ -72,3 +72,24 @@ NLI: **2.140 s** CPU, 3,553 actual model-input tokens. MiniCheck: **20.858 s** C
     python experiments/round-81/relation_ablation.py --out experiments/round-81/ci-results.json
 
 Workflow: \`.github/workflows/cdg-r81-directionality.yml\`. Initial validated run: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44247354832 .
+
+
+## Follow-up experimental result: R80-only diagnostic threshold applied to R81
+
+**[FACT]** The exact clean-branch code and four synthetic tests passed CI run **44247874527**. At FactCG's frozen default 0.50, the supervisory format failures reproduced exactly. At the threshold **0.10503259** previously fitted using *R80 fixture labels* (and not changed on R81), FactCG accepted **60/60 supported** R81 surface forms and **0/40 contradiction-or-unknown** forms.
+
+| Decision rule | R81 supported accepted | R81 unsupported accepted | Balanced accuracy |
+| --- | ---: | ---: | ---: |
+| FactCG official 0.50 | 34/60 | 0/40 | 0.78333 |
+| FactCG R80 post-hoc oracle 0.10503259 | **60/60** | **0/40** | **1.00000** |
+| MiniCheck official 0.50 | **60/60** | 3/40 | 0.96250 |
+| General NLI official 0.50 | 31/60 | 0/40 | 0.75833 |
+| LettuceDetect package warning rule | 35/60 | 4/40 | 0.74167 |
+
+**[CRITICAL CAVEAT]** The apparently perfect FactCG score is a *weak transfer check* from another entirely synthetic fixture that reuses the **same ten entity names, similar document vocabulary and relation templates**. The threshold was tuned with labels on R80, which is not genuinely independent from R81. It is neither a new model performance result on independent source populations nor a justified deployment threshold. Its scientific value is to demonstrate that **threshold choice can flip a previously severe apparent failure** without retraining weights; validating calibration under independent domain shift remains open.
+
+The CPU inference totals for this follow-up were 2.318 s NLI, 25.131 s MiniCheck, 35.425 s FactCG (including six smoke probes in the reused R80 helper), and 10.298 s LettuceDetect; all in the CI runner and nonmatched for model size or context representation. The FactCG threshold variant reuses the same forward outputs with zero additional model inference, but applying any dynamic calibration in production would incur label collection and monitoring costs.
+
+**New independent falsification:** Select a held-out real-world fact-verification task and reserve a fully separate calibration population before evaluating the locked threshold. Do not turn the R80/R81 synthetic result into an accuracy claim.
+
+Result provenance: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44247874527 .
