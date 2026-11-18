@@ -1,6 +1,6 @@
 # CDG Round 79: Human-Label-Blind Source Perturbations of a Trained Grounding Detector
 
-**Date:** 18 November 2026. **Status:** code and five regression tests submitted; CI real-model numerical confirmation pending. This is a detector **source-sensitivity diagnostic** with real fixed responses, not verified alternative-source factuality, source retrieval, compression or novel hallucination mitigation.
+**Date:** 18 November 2026. **Status:** five dedicated regression tests and pinned real pretrained-model run passed in GitHub Actions **44243476813**. Measured numerical findings and limitations follow. This is a detector **source-sensitivity diagnostic** with real fixed responses, not verified alternative-source factuality, source retrieval, compression or novel hallucination mitigation.
 
 ## Motivation and prior art
 
@@ -38,4 +38,35 @@ Grounding-Aware Sensitivity by Perturbation (GASP, arXiv:2607.04223, July 2026) 
     python -W error::ResourceWarning -m unittest discover -s experiments/round-79 -p 'test_*.py' -v
     python experiments/round-79/trained_source_swap.py --out experiments/round-79/ci-results.json
 
-CI workflow: .github/workflows/cdg-trained-source-swap.yml. Full numerical results withheld pending successful exact-head run.
+CI workflow: .github/workflows/cdg-trained-source-swap.yml. The numerical real-model run succeeded at CI 44243476813; see below.
+
+
+## Executed evidence: CI run 44243476813
+
+**[FACT]** The five regression tests passed. Fixed R72/R76 sample identity, 24 source groups and **141 human-labeled original responses** were preserved. The exact pretrained detector and its original data SHA contracts were reused.
+
+**[FACT] Source-set lexical separations:** nearest same-task alternatives had mean source Jaccard **0.049670** (min 0.024390, max 0.080997). Farthest had mean **0.010834** (min 0.004000, max 0.020964). Even the "nearest" alternatives were **lexically weak matches**, so the contrast cannot be interpreted as fine-grained semantic distance.
+
+**[FACT]** Original-context pretrained detector reference confusion reproduced R76: TP14/FP16/FN17/TN94 over 141 responses. This is not accuracy after swapping evidence.
+
+### Paired source-sensitivity results
+
+| Task | Response count | Original predicted positive | Near source warning decision switches | Far source warning decision switches | Mean changed answer characters, near | Mean changed answer characters, far |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| QA | 45 | 9 | **36/45 = 80.00%** | **36/45 = 80.00%** | 71.873% | 72.041% |
+| Summary | 96 | 21 | **75/96 = 78.125%** | **75/96 = 78.125%** | 81.870% | 92.247% |
+| **Combined** | **141** | **30** | **111/141 = 78.723%** | **111/141 = 78.723%** | **78.680%** | **85.799%** |
+
+The paired far-minus-near **response warning switch-rate** is exactly zero for the evaluated sample and its source-group resamples, CI **[0,0]**, because each tested response's aggregate near/far switch indicator was equal across conditions according to the reported aggregate; however the aggregate alone does not distinguish each possible pairwise pattern. The bootstrap output is **[0,0]**. The rate equality should not be confused with proof that near/far masks are identical: their **character** disagreement from original answer differs substantially.
+
+**[FACT] CPU inference time:** unchanged original contexts **143.518 seconds**, near-substituted contexts **211.988 seconds**, far-substituted contexts **96.549 seconds**, total **452.055 seconds** of model inference route wall time. The large difference means alternative source contexts have unequal lengths/chunking and *cannot* be treated as a matched compute-cost ablation. This round did not charge archive or source index storage.
+
+### Research decision
+
+**KEEP:** strong detector source perturbations alter output masks, and character-level diagnostics preserve distinctions that a binary response warning can obscure.
+
+**REJECT:** the claim that far substitutes reliably improve warning correctness, that response-level switch rates are more discriminative for far than near, or that weak Jaccard distance measures a truth-changing counterfactual. The alternates have no new human support labels. Near/far evidence length is confounded with CPU cost.
+
+**NEXT FALSIFIER:** construct *controlled, human-validated* minimal evidence edits that preserve, negate or remove individual facts while holding formatting, source length and model input budgets approximately fixed; evaluate both direction of predicted support and token-level errors against independent labels. Run on previously unseen source families before making transfer claims.
+
+Run artifact: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44243476813 .
