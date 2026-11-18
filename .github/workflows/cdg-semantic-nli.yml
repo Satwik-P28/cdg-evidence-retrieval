@@ -1,0 +1,36 @@
+name: CDG generic pretrained semantic grounding control
+on:
+  push:
+    branches:
+      - "research/round-72-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  nli-grounding:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pin CPU Torch 2.5.1
+        run: python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.5.1
+      - name: Pin generic NLI verifier dependencies
+        run: python -m pip install --disable-pip-version-check transformers==4.46.3 huggingface_hub==0.26.5 tokenizers==0.20.3 numpy==1.26.4
+      - name: R72 frozen NLI source extraction and label isolation tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-72 -p 'test_*.py' -v
+      - name: R72 SHA-pinned pretrained response-grounding NLI vs 22 QA source groups
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-72/semantic_nli.py --out experiments/round-72/ci-results.json
+      - name: Upload only compact predictions and resource accounting
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round72-generic-nli-grounding-results
+          path: experiments/round-72/ci-results.json
+          if-no-files-found: ignore
