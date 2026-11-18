@@ -25,6 +25,10 @@ jobs:
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-70 -p 'test_*.py' -v
       - name: R70 train-calibrated QA grounding warning holdout
         run: python experiments/round-70/calibrated_grounding.py --out experiments/round-70/ci-results.json
+      - name: R71 source-only oracle lower bound and provenance regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-71 -p 'test_*.py' -v
+      - name: R71 source-matched human labels and exact archival citations
+        run: python experiments/round-71/source_only_bound.py --out experiments/round-71/ci-results.json
       - name: Upload numerical outcomes and original content hashes only
         if: always()
         uses: actions/upload-artifact@v4
@@ -33,4 +37,5 @@ jobs:
           path: |
             experiments/round-69/ci-results.json
             experiments/round-70/ci-results.json
+            experiments/round-71/ci-results.json
           if-no-files-found: ignore
