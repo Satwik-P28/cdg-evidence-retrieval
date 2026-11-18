@@ -57,7 +57,7 @@ CI workflow: .github/workflows/cdg-trained-source-swap.yml. The numerical real-m
 | Summary | 96 | 21 | **75/96 = 78.125%** | **75/96 = 78.125%** | 81.870% | 92.247% |
 | **Combined** | **141** | **30** | **111/141 = 78.723%** | **111/141 = 78.723%** | **78.680%** | **85.799%** |
 
-The paired far-minus-near **response warning switch-rate** is exactly zero for the evaluated sample and its source-group resamples, CI **[0,0]**, because each tested response's aggregate near/far switch indicator was equal across conditions according to the reported aggregate; however the aggregate alone does not distinguish each possible pairwise pattern. The bootstrap output is **[0,0]**. The rate equality should not be confused with proof that near/far masks are identical: their **character** disagreement from original answer differs substantially.
+The paired far-minus-near **response warning switch-rate** is zero in the observed sample, with source-group bootstrap output **[0,0]**. The stored aggregate results cannot establish whether each individual response has the same switch direction under near and far conditions, only that the task totals and reported grouped statistic agree. Equal response-warning rates do not imply identical character masks: the character-level disagreements differ substantially.
 
 **[FACT] CPU inference time:** unchanged original contexts **143.518 seconds**, near-substituted contexts **211.988 seconds**, far-substituted contexts **96.549 seconds**, total **452.055 seconds** of model inference route wall time. The large difference means alternative source contexts have unequal lengths/chunking and *cannot* be treated as a matched compute-cost ablation. This round did not charge archive or source index storage.
 
