@@ -1,0 +1,44 @@
+name: CDG R83 SciFact real retrieval and grounded verifier controls
+on:
+  push:
+    branches:
+      - "research/round-83-*"
+    paths:
+      - "experiments/round-83/**"
+      - ".github/workflows/cdg-r83-scifact-real.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "experiments/round-83/**"
+      - ".github/workflows/cdg-r83-scifact-real.yml"
+  workflow_dispatch:
+jobs:
+  scientific-grounding:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pretrained CPU runtime plus conventional TF-IDF
+        run: |
+          python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.6.0
+          python -m pip install --disable-pip-version-check transformers==4.52.4 huggingface_hub==0.32.4 tokenizers==0.21.4 numpy==2.2.6 scikit-learn==1.9.1 sentencepiece==0.2.0 protobuf==5.29.5
+      - name: SciFact source and model-free retrieval integrity tests
+        run: |
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-83 -p 'test_scifact_data_probe.py' -v
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-83 -p 'test_scifact_eval.py' -v
+      - name: Verified SciFact 300-claim retrieval and gold/retrieved model controls
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-83/scifact_eval.py --out experiments/round-83/ci-results.json
+      - name: Upload aggregate expert label outcome and source/model hashes only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r83-scifact-retrieval-grounding
+          path: experiments/round-83/ci-results.json
+          if-no-files-found: ignore
