@@ -110,7 +110,7 @@ def verify_pair(full, atomic, corpus, claims, expected):
                 diagnostics[label] = {
                     "fts_rows": db.execute("SELECT COUNT(*) FROM sources").fetchone()[0],
                     "docsize_rows": db.execute("SELECT COUNT(*) FROM sources_docsize").fetchone()[0],
-                    "stat_hex": db.execute("SELECT hex(value) FROM sources_config WHERE k='version'").fetchone(),
+                    "config": db.execute("SELECT k,v FROM sources_config ORDER BY k").fetchall(),
                     "fts_stat": db.execute("SELECT id,hex(value) FROM sources_data WHERE id=1").fetchone(),
                     "data_rows": db.execute("SELECT COUNT(*) FROM sources_data").fetchone()[0],
                 }
