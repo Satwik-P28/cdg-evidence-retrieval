@@ -1,0 +1,42 @@
+name: CDG R85 real SciFact train-only calibrated verifier evidence routes
+on:
+  push:
+    branches:
+      - "research/round-85-*"
+    paths:
+      - "experiments/round-85/**"
+      - ".github/workflows/cdg-r85-scifact-calibration.yml"
+  workflow_dispatch:
+jobs:
+  scifact-verified-model:
+    strategy:
+      fail-fast: false
+      matrix:
+        model: [nli, minicheck, factcg, lettuce]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pin released pretrained checkers, CPU and TF-IDF runtime
+        run: |
+          python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.6.0
+          python -m pip install --disable-pip-version-check lettucedetect==0.2.3 transformers==4.52.4 huggingface_hub==0.32.4 tokenizers==0.21.4 numpy==2.2.6 sentencepiece==0.2.0 protobuf==5.29.5 scikit-learn==1.6.1
+      - name: SciFact release, claim route, train threshold and group bootstrap tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-85 -p 'test_*.py' -v
+      - name: Published checker on train/development and three evidence routes
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+          OMP_NUM_THREADS: "2"
+          MKL_NUM_THREADS: "2"
+        run: python experiments/round-85/real_grounding.py --model ${{ matrix.model }} --out experiments/round-85/ci-${{ matrix.model }}.json
+      - name: Keep only aggregate source integrity, dev accuracy and CPU costs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r85-scifact-${{ matrix.model }}
+          path: experiments/round-85/ci-${{ matrix.model }}.json
+          if-no-files-found: ignore
