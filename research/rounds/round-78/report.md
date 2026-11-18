@@ -1,6 +1,6 @@
 # CDG Round 78: Archive-Fed Trained Verifier and Exact Detector-Input Equivalence
 
-**Research date:** 18 November 2026. **Experiment status:** code and pinned GitHub Actions run submitted; numerical outcomes must be taken from the current exact-head CI artifact. Do not promote this plan to a verified result before success. **Nature:** integration and falsification of source provenance and model inputs, not novel lossless compression, hallucination detection, or end-to-end retrieval.
+**Research date:** 18 November 2026. **Experiment status:** five unit tests and the full 141-response pretrained-model run **passed** in GitHub Actions 44242421472. Measured results and limitations are recorded below. **Nature:** integration and falsification of source provenance and model inputs, not novel lossless compression, hallucination detection, or end-to-end retrieval.
 
 ## Hypothesis and prior work
 
@@ -42,7 +42,7 @@ Read-path wall time is Python warm-memory timing, not real cold SSD reads, physi
     python -W error::ResourceWarning -m unittest discover -s experiments/round-78 -p 'test_*.py' -v
     python experiments/round-78/archived_detector.py --out experiments/round-78/ci-results.json
 
-Workflow: .github/workflows/cdg-archive-fed-detector.yml. Numeric results pending exact-head CI.
+Workflow: .github/workflows/cdg-archive-fed-detector.yml. Measured experiment executed successfully in GitHub Actions run 44242421472; see the measured results section.
 
 
 ## Measured results: exact-head run 44242421472
