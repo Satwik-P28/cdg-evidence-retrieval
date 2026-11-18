@@ -16,6 +16,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: R87 existing atomic update rollback tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-87 -p 'test_*.py' -v
+      - name: R88 existing reader snapshot and SIGKILL recovery tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-88 -p 'test_*.py' -v
       - name: Six synthetic differential regression tests
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-89 -p 'test_*.py' -v
       - name: Run SciFact 500-update hot and diffuse workloads in DELETE and WAL
