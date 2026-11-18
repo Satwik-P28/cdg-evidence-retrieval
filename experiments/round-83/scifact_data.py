@@ -31,11 +31,11 @@ LABELS={"SUPPORT":1,"CONTRADICT":0}
 REQUIRED=("corpus.jsonl","claims_train.jsonl","claims_dev.jsonl")
 
 
-def decode_release(payload: bytes):
+def decode_release(payload: bytes, expected_sha: str|None = ARCHIVE_SHA256):
     if len(payload)>35_000_000:
         raise RuntimeError("Unexpected SciFact bundle length")
     actual_sha=hashlib.sha256(payload).hexdigest()
-    if ARCHIVE_SHA256 is not None and actual_sha!=ARCHIVE_SHA256:
+    if expected_sha is not None and actual_sha!=expected_sha:
         raise AssertionError("SciFact upstream archive drift; do not silently resample")
     files={}
     with tarfile.open(fileobj=io.BytesIO(payload),mode="r:gz") as tar:
