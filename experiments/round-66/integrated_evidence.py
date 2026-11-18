@@ -88,6 +88,7 @@ def evaluate(rows):
     m54=dynamic('r54_eval66',R54)
     m55=dynamic('r55_eval66',R55)
     m57=dynamic('r57_eval66',R57)
+    m56=dynamic('r56_eval66',HERE.parent/'round-56'/'sentence_policy.py')
     m48=dynamic('r48_eval66',R48)
     with tempfile.TemporaryDirectory() as tmp:
         idx=m55.SentenceIndex(Path(tmp)/'sentences.sqlite',rows)
@@ -110,6 +111,8 @@ def evaluate(rows):
                     docs[method]=m54.select(row,method)
                     cpu_us[method]=(time.perf_counter_ns()-start)/1000
                 spans_by_doc={}
+                source_byte_offsets={did:m56.spans(row['context'][did][1])
+                                     for did in set(docs['bm25'][:5]+docs['bridge'][:5])}
                 fts_cpu_us=0.0
                 for did in set(docs['bm25'][:5]+docs['bridge'][:5]):
                     begin=time.perf_counter_ns()
@@ -148,8 +151,7 @@ def evaluate(rows):
                         for did,sid in selection:
                             document=idx.records[(qid,did)]
                             sentence=row['context'][did][1][sid].encode()
-                            parts=m55.module('r56_for66',HERE.parent/'round-56'/'sentence_policy.py').spans(row['context'][did][1])
-                            _,lo,hi=parts[sid]
+                            _,lo,hi=source_byte_offsets[did][sid]
                             if idx.original_blobs[document][lo:hi]!=sentence:
                                 raise AssertionError('original byte offsets wrong')
                             expected_source_spans+=1
