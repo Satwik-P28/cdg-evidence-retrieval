@@ -247,6 +247,8 @@ def run():
             'dataset claims and corpus abstracts are never redistributed; only aggregate recall/hashes in artifacts',
         ],
     }
+    print('ROUND84_GRID',json.dumps({name:{'train':row['train'],'dev':row['dev']}
+         for name,row in metrics.items()},sort_keys=True),flush=True)
     print('ROUND84',json.dumps({
         'upstream_sha':outcome['upstream']['archive_sha256'],
         'counts':outcome['counts'],
