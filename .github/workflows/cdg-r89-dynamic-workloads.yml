@@ -1,0 +1,33 @@
+name: CDG R89 dynamic update workload and storage differential
+on:
+  push:
+    branches:
+      - "research/round-89-*"
+    paths:
+      - "experiments/round-89/**"
+      - ".github/workflows/cdg-r89-dynamic-workloads.yml"
+  workflow_dispatch:
+jobs:
+  revisions-and-space:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: R87 existing atomic update rollback tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-87 -p 'test_*.py' -v
+      - name: R88 existing reader snapshot and SIGKILL recovery tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-88 -p 'test_*.py' -v
+      - name: Six synthetic differential regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-89 -p 'test_*.py' -v
+      - name: Run SciFact 500-update hot and diffuse workloads in DELETE and WAL
+        run: python experiments/round-89/dynamic_workloads.py --full --out experiments/round-89/ci-results.json
+      - name: Preserve aggregate storage and accuracy comparisons only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r89-update-workload-results
+          path: experiments/round-89/ci-results.json
+          if-no-files-found: ignore
