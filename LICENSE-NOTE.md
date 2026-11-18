@@ -35,3 +35,10 @@ The retroactive source-migration experiments additionally fetch immutable README
 Real answer-quality experiments use **deepset/tinyroberta-squad2** under **CC BY 4.0**, pinned to Hugging Face model commit **12b287c9df677e28b07f0a023850dba68c997dbf** with model-identity metadata recorded in experiments/round-66/model_lock.json. The original model weights, tokenizer vocabulary and training artifacts remain upstream, and are downloaded transiently for CI inference, not redistributed by this repository. Credit and follow the model card's attribution terms: https://huggingface.co/deepset/tinyroberta-squad2 .
 
 The evaluations also download SHA-verified HotpotQA distractor development inputs under CC BY-SA 4.0, as documented above. Derived aggregate answer/citation statistics do not transfer ownership of source paragraphs or pretrained model data. The test suite's source receipts establish exact extracted bytes, not that those bytes truthfully entail an answer.
+
+
+## RAGTruth human-annotated QA benchmark (Rounds 69–71)
+
+RAGTruth source and response annotation data originate from ParticleMedia/RAGTruth and Niu et al., ACL 2024, https://aclanthology.org/2024.acl-long.585/ . The experiment pins immutable upstream Git revision c103204b9ce28d6bbad859304bf30de72b8ed8fe and verifies the Git object hash for response.jsonl (f9ae5913fb9976684f3e13be3cd3465062db54cc) and source_info.jsonl (119277774009f110aa58596b93f9512f62594a89).
+
+RAGTruth annotations and the underlying source passages have potentially different licenses and provenance: source material may include MS MARCO, summarization news corpora and Yelp-derived fields. **No original paragraphs, model-generated answers, word-level annotations, or model weights are committed or redistributed in this repository.** These experimental scripts download the original files transiently and publish only derived aggregate counts, checksums and code. Consult each original dataset's applicable license/terms before reuse or redistribution. Attribution of the RAGTruth paper and upstream repository is required for scholarly use.

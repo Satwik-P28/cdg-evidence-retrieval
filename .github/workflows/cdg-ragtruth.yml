@@ -1,0 +1,41 @@
+name: CDG RAGTruth human grounding checks
+on:
+  push:
+    branches:
+      - "research/round-69-*"
+      - "research/round-70-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  human-grounding:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Fixed source-label mapping and annotation integrity tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-69 -p 'test_*.py' -v
+      - name: Human-annotated RAGTruth QA test split grounding benchmark
+        run: python experiments/round-69/ragtruth_grounding.py --out experiments/round-69/ci-results.json
+      - name: R70 source-disjoint calibration regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-70 -p 'test_*.py' -v
+      - name: R70 train-calibrated QA grounding warning holdout
+        run: python experiments/round-70/calibrated_grounding.py --out experiments/round-70/ci-results.json
+      - name: R71 source-only oracle lower bound and provenance regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-71 -p 'test_*.py' -v
+      - name: R71 source-matched human labels and exact archival citations
+        run: python experiments/round-71/source_only_bound.py --out experiments/round-71/ci-results.json
+      - name: Upload numerical outcomes and original content hashes only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ragtruth-r69-grounding-results
+          path: |
+            experiments/round-69/ci-results.json
+            experiments/round-70/ci-results.json
+            experiments/round-71/ci-results.json
+          if-no-files-found: ignore
