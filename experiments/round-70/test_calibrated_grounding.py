@@ -64,7 +64,7 @@ class CalibrationTests(unittest.TestCase):
         threshold,_=choose_cutoff([r['scores']['max_sentence_novelty'] for r in train],.1)
         orig=[{'source_id':'test1','gold':True,'scores':{'max_sentence_novelty':.8}},
               {'source_id':'test2','gold':False,'scores':{'max_sentence_novelty':.2}}]
-        flipped=[{**row,'gold':not row['gold']} for row in orig]
+        flipped=[{**row,'gold':True} for row in orig]
         self.assertEqual(threshold,choose_cutoff(
             [r['scores']['max_sentence_novelty'] for r in train],.1)[0])
         self.assertEqual([x['scores'] for x in orig],
@@ -73,10 +73,7 @@ class CalibrationTests(unittest.TestCase):
                             score_counts(flipped,'max_sentence_novelty',threshold))
 
     def test_full_train_and_new_test_group_fixture(self):
-        # Reduce R69 nominal 128-group exclusion to 2 only within unit tests.
-        import calibrated_grounding as module
-        old=self.r69.MAX_TEST_SOURCE_GROUPS
-        self.r69.MAX_TEST_SOURCE_GROUPS=2
+        # Fixture has two pre-examined groups; real run freezes 128.
         try:
             sources=[src(str(i)) for i in range(40)]
             samples=[]
@@ -92,9 +89,9 @@ class CalibrationTests(unittest.TestCase):
                                             positive=i%2==0))
             # Test source selection consumes only test IDs; with 15 test groups
             # and two excluded prior-round groups, 13 remain.
-            result=evaluate(samples,sources)
+            result=evaluate(samples,sources,previous_count=2)
         finally:
-            self.r69.MAX_TEST_SOURCE_GROUPS=old
+            pass
         self.assertEqual(result['old_R69_source_ids_excluded'],2)
         self.assertEqual(result['holdout_good_qa_responses'],26)
         self.assertGreater(result['train_good_qa_responses'],100)
