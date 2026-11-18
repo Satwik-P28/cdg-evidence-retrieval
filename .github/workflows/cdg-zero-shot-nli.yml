@@ -1,0 +1,39 @@
+name: CDG R72 zero-shot semantic NLI grounding
+on:
+  push:
+    branches:
+      - "research/round-72-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  zero-shot-nli:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned CPU inference runtime
+        run: |
+          python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.5.1
+          python -m pip install --disable-pip-version-check transformers==4.46.3 huggingface_hub==0.26.5 tokenizers==0.20.3 sentencepiece==0.2.0 numpy==1.26.4
+      - name: Verify upstream NLI model revision identity
+        run: |
+          python -c "from huggingface_hub import HfApi; print('NLI_MODEL_SHA',HfApi().model_info('cross-encoder/nli-deberta-v3-xsmall').sha)"
+      - name: Unit tests for source-group sample and gold-leakage safety
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-72 -p 'test_*.py' -v
+      - name: Full zero-shot QA and Summary human-label comparison
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-72/zero_shot_nli.py --out experiments/round-72/ci-results.json
+      - name: Publish derived metrics only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round72-zero-shot-nli-results
+          path: experiments/round-72/ci-results.json
+          if-no-files-found: ignore
