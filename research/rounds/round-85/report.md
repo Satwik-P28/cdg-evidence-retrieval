@@ -1,6 +1,6 @@
 # CDG Round 85: Train-Calibrated Grounding Checks and Evidence-Context Routing on SciFact
 
-**Date:** 18 November 2026. **Status:** code, frozen human claim-document cohort, synthetic regression tests and four separately isolated pretrained CPU model jobs submitted. Numerical real-model outcomes must come from successful exact-head runs. This is a continuation of Round 83/84; it is not a novel model or independent hidden benchmark.
+**Date:** 18 November 2026. **Status:** frozen cohort and 9 regression tests verified; the **NLI and LettuceDetect model jobs passed** in the source-locked four-model matrix CI 44265764572. FactCG and MiniCheck jobs have separate status checks; any unverified scores remain pending. This is a continuation of Round 83/84; it is not a novel model or independent hidden benchmark.
 
 ## Question
 
@@ -70,3 +70,33 @@ The selected thresholds are then applied *unchanged* to the 64 dev annotated cla
     python experiments/round-85/real_grounding.py --model lettuce --out experiments/round-85/ci-lettuce.json
 
 Workflow: \`.github/workflows/cdg-r85-scifact-calibration.yml\`. Only aggregate metrics, source/checkpoint SHA, tokenizer/inference costs and uncertainty summaries should be committed. No original claim or abstract text is redistributed.
+
+
+## Executed partial real-data controls: NLI and LettuceDetect
+
+**[FACT] Same independent SciFact evaluation cohort:** 64 claim-document pairs with equal expert SUPPORT/CONTRADICT labels, fixed selected SHA \`735fd797de6258eb0b667d5d789e76f341eb1abefdca284647d638974a5184df\`. The correct evidence document was supplied from annotations to the semantic model, not obtained through a retriever. All reported class scores therefore measure annotated-source support/contradiction only, not retrieval.
+
+### Original fixed-threshold human-label results
+
+| Verifier and source text | TP | FP | FN | TN | Dev balanced accuracy | Dev support recall | Dev contradiction rejection |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| General NLI xsmall: full abstract | 2 | 1 | 30 | 31 | **.51562** | .06250 | .96875 |
+| General NLI xsmall: lexical2 sentences | 7 | 1 | 25 | 31 | **.59375** | .21875 | .96875 |
+| General NLI xsmall: *oracle expert rationale* | 11 | 4 | 21 | 28 | **.60938** | .34375 | .87500 |
+| LettuceDetect: full abstract | 19 | 9 | 13 | 23 | **.65625** | .59375 | .71875 |
+| LettuceDetect: lexical2 sentences | 12 | 4 | 20 | 28 | **.62500** | .37500 | .87500 |
+| LettuceDetect: *oracle expert rationale* | 12 | 5 | 20 | 27 | **.60938** | .37500 | .84375 |
+
+**[FACT] NLI train-FPR-10% threshold transfer**, train-only selected and applied without test tuning: dev full TP9/FP3/FN23/TN29, BA **.59375**; lexical2 TP10/FP5/FN22/TN27, BA **.57812**; gold rationale TP12/FP4/FN20/TN28, BA **.62500**. A 10%-train false-positive allowance did not imply a uniform 10%-dev FPR across routes, as expected.
+
+**[FACT] Model cost:** 384 NLI model input pairs, 70,891 actual unpadded tokens, **54.648 s** shared model/tokenizer run wall. **45/384** original untruncated inputs exceeded the 384-token cap, so long-abstract truncation is a confound. LettuceDetect ran 384 claim-as-answer span checks in **92.866 s** measured detector forward time. Both jobs pinned the same exact released model SHA as earlier rounds.
+
+**[INFERENCE]** NLI improved support recognition with shorter source texts but lost contradiction specificity for the *expert-gold oracle*. LettuceDetect instead performed better when it saw the full source; its lexically shortened context removed unsupported source cues along with valid support. These are different architectures and training domains, so no generic claim about one context route being superior follows.
+
+### Critical inapplicable binary-calibration result
+
+LettuceDetect's implemented decision route returns a binary 0/1 support warning, **not a continuous support probability**. Reapplying the support-score threshold optimizer to those two discrete outputs drives it to the degenerate threshold 1.0, which rejects all 64 development pairs (nominal BA .50). **Do not interpret that computation as a meaningful calibrated detector comparison.** For LettuceDetect, only the native fixed-warning row is scientifically admissible in this study; a future calibration would need *real-valued* span/confidence outputs and separate train labels.
+
+No per-model final selection, efficacy or cross-domain superiority claim is promoted until all other model jobs finish.
+
+Provenance: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44265764572 .
