@@ -1,0 +1,37 @@
+name: CDG R74 NLI calibration across data modalities
+on:
+  push:
+    branches:
+      - "research/round-74-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  cross-task-calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned CPU inference and calibration dependencies
+        run: |
+          python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.5.1
+          python -m pip install --disable-pip-version-check transformers==4.46.3 huggingface_hub==0.26.5 tokenizers==0.20.3 sentencepiece==0.2.0 numpy==1.26.4
+      - name: Verify immutable model configuration lock and data conversions
+        run: |
+          python -W error::ResourceWarning -m unittest discover -s experiments/round-74 -p 'test_*.py' -v
+      - name: Fixed QA-train confidence calibration to unseen Data2txt test task
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-74/cross_task_calibration.py --out experiments/round-74/ci-results.json
+      - name: Upload numerical model and source-group outcomes only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round74-nli-calibration-cross-task
+          path: experiments/round-74/ci-results.json
+          if-no-files-found: ignore
