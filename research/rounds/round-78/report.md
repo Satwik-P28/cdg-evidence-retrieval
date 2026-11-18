@@ -43,3 +43,40 @@ Read-path wall time is Python warm-memory timing, not real cold SSD reads, physi
     python experiments/round-78/archived_detector.py --out experiments/round-78/ci-results.json
 
 Workflow: .github/workflows/cdg-archive-fed-detector.yml. Numeric results pending exact-head CI.
+
+
+## Measured results: exact-head run 44242421472
+
+**[FACT] CI outcome:** all five dedicated synthetic regression tests passed; real pretrained CPU evaluation succeeded on the original frozen 141 responses from 24 QA/Summary source groups. Both archives returned 24 full sources, giving **48 full-document SHA-bound readbacks**, plus **282 response-specific exact prefix receipts**. All selected archived contexts matched the original source route exactly and **0/141 paired predicted character masks diverged**.
+
+### Physical and memory read-path accounting
+
+| Measurement | Whole-source Zlib6 + compact manifest | Gear512 CAS + compact manifest |
+| --- | ---: | ---: |
+| Persistent archive bytes | **28,398** | 35,437 |
+| With optional separate FTS5 index | 102,126 | 109,165 |
+| Mean logical compressed frame activation per response | **1,154.128 B** | 1,346.887 B |
+| Mean warm-memory receipt time per response | 0.0621 ms | **0.0354 ms** |
+| Median warm-memory receipt time per response | 0.0595 ms | **0.0292 ms** |
+
+The optional FTS5 index is **73,728 B**, not used for selecting the known benchmark source IDs. Gear512 consumes **24.8% more persistent archive bytes** and **16.7% more logical compressed activation bytes** on the tested full/prefix source reads, but it has lower measured **warm Python receipt** latency. Do not equate receipt latency with cold SSD random I/O or decompression performance at scale.
+
+### Detector and human-label outcomes
+
+The archive-fed condition exactly reproduced the prior Round 76 response-level results, including **TP14, FP16, FN17, TN94**, precision **0.46667**, recall **0.45161**, response F1 **0.45902**, and false-positive rate **0.14545** on 141 responses.
+
+Task separation: QA **TP6/FP3/FN4/TN32**, F1 **0.63158**; Summary **TP8/FP13/FN13/TN62**, F1 **0.38095**. The original and reconstructed source detector masks were identical for every response.
+
+Measured cumulative CPU model inference was **134.895 seconds** for the original-source route and **134.744 seconds** for the archive-fed route. These are repeated in-process runs of the **same inputs** with alternating evaluation order, not independent two-model comparisons. The 0.151-second difference has no demonstrated causal significance and excludes archive read/build/index costs.
+
+### Decision
+
+**[FACT] PASS:** full SHA-byte provenance, task context equivalence and trained-model output identity from compressed sources were reproduced with measured storage and warm-memory costs.
+
+**[INFERENCE]** Whole-source compression is the simpler and more space/traffic-efficient option for this small oracle-source workload; gear512 showed lower receipt CPU wall time. Neither layout is globally superior when considering the measured dimensions together.
+
+**[NOT SHOWN]** Improved hallucination detection, lower actual SSD I/O, successful retrieval of the correct source, better answers, out-of-domain transfer, or end-to-end RAG latency advantage.
+
+**Next falsifier:** test trained detector's evidence sensitivity under source perturbations (Round 79). That evaluates different semantic inputs and cannot reuse Round 78's exact-input invariance as an accuracy improvement.
+
+**Provenance:** https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44242421472 .
