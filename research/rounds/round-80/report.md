@@ -1,6 +1,6 @@
 # CDG Round 80: Pretrained Working Verifiers Under Controlled Fact Edits
 
-**Date:** November 18, 2026. **Status:** code, tests and pinned CPU model workflow submitted. Actual model scores **pending** and must be inserted only from a successful exact-head run. This is a controlled synthetic stress test, **not independent human ground truth, an end-to-end RAG evaluation, or a novel detector**.
+**Date:** November 18, 2026. **Status:** five synthetic regression tests and the full pinned MiniCheck/NLI/Lettuce model experiment passed in GitHub Actions **44246390689**; three additional FactCG replication tests and published checkpoint run passed at **44246781207**. A further FactCG calibration/input diagnostic is running separately. These are synthetic mechanisms tests. This is a controlled synthetic stress test, **not independent human ground truth, an end-to-end RAG evaluation, or a novel detector**.
 
 ## Research question and motivation
 
@@ -49,3 +49,59 @@ Charge each pretrained model's actual tokenizer input tokens, CPU inference time
     python experiments/round-80/controlled_facts.py --out experiments/round-80/ci-results.json
 
 Workflow: \`.github/workflows/cdg-r80-controlled-checkers.yml\`; CI stores only compact aggregate measurements and hashes.
+
+
+## Completed measured evidence: initial 120-case model reproduction
+
+**[FACT] Exact source identity:** 120 deterministic documents in 40 supported/contradicted/unknown trios, fixture SHA-256 \`8a2ed2de012491086784f7098faa4b51042fa98d7cd53eb063ec78b33e1722c7\`. Whole/gear archive receipts passed 240/240 and reconstructed identical bytes. For these short, mostly unrelated source records, **both layout payloads + manifests were 21,303 B**, against 23,370 UTF-8 bytes. Per-response logical compressed activation was 140.75 B for both layouts. These measurements do not reproduce prior R78 long-document storage differences, which is expected from different workloads.
+
+### Comparative supported-versus-unsupported confusion
+
+| Method (fixed threshold, no tuning) | TP | FP | FN | TN | Balanced accuracy | Support recall | Unsupported rejection |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| MiniCheck-DeBERTa-v3-Large | **33** | 2 | 7 | 78 | **.9000** | .8250 | .9750 |
+| Generic R72 SNLI/MultiNLI NLI | 30 | 10 | 10 | 70 | .8125 | .7500 | .8750 |
+| Published LettuceDetect | 27 | 5 | 13 | 75 | .80625 | .6750 | .9375 |
+| MiniCheck AND NLI | 30 | 2 | 10 | 78 | .8625 | .7500 | .9750 |
+| MiniCheck AND LettuceDetect | 21 | **0** | 19 | **80** | .7625 | .5250 | 1.0000 |
+| MiniCheck OR NLI | 33 | 10 | 7 | 70 | .8500 | .8250 | .8750 |
+| Lexical R69 content overlap | 40 | 80 | 0 | 0 | .5000 | 1.0000 | .0000 |
+| FactCG-DeBERTa (preliminary 0.50 threshold) | 0 | 0 | 40 | 80 | .5000 | .0000 | 1.0000 |
+
+**[FACT] MiniCheck had no accepted explicit-contradiction cases (0/40), but incorrectly accepted 2/40 unknown evidence cases.** NLI also accepted no contradictions but incorrectly accepted 10/40 unknown cases. LettuceDetect incorrectly accepted 5/40 explicit contradictions but 0/40 unknown cases. Thus the three models are not interchangeable: unknown-evidence rejection, contradicted-evidence rejection and supported-evidence recall differ.
+
+**[FACT] Cost of the individual pretrained model forward passes on this fixed 120-pair CPU run:**
+- Generic NLI, 70,831,107 parameters: 5,641 tokenizer input tokens, **3.789 s**.
+- MiniCheck, 435,063,810 parameters: 5,641 tokenizer input tokens, **39.970 s**.
+- LettuceDetect, 149,606,402 parameters: **16.012 s** direct detector forward calls. Its encoder/tokenizer accounting is not directly equivalent to the two classification forward token counts.
+- FactCG, 435,063,810 parameters: 8,791 actual prompt input tokens and **52.258 s** in its first full 120-case run (prior to separate smoke diagnostics).
+
+The different prompt, architecture and token context budgets make these descriptive wall times, not a controlled hardware- and input-normalized architecture ranking. A boolean ensemble charges every component model.
+
+### Failure localization by source-fact family
+
+| Method | Location BA | Date BA | Supervisory relation BA | Two-hop warehouse BA |
+| --- | ---: | ---: | ---: | ---: |
+| MiniCheck | **1.00** | **.95** | .65 | **1.00** |
+| NLI | **1.00** | .75 | **.50** | **1.00** |
+| LettuceDetect | .95 | **.55** | **.85** | .875 |
+| FactCG at 0.50 (first run) | .50 | .50 | .50 | .50 |
+
+**[INFERENCE]** The original relation fixture includes a correct supervisory statement and a denial of the *opposite* supervision direction. MiniCheck missed 7/10 of these supported claims and generic NLI missed all 10, despite better performance on location and trivial two-hop statements. This suggests a potential directionality-plus-negation surface confound, **not demonstrated semantic incapacity**. A separate source-surface ablation is necessary before deciding which mechanism caused the failures.
+
+**[INFERENCE]** Strict MiniCheck AND Lettuce eliminated false acceptance of these 80 negative fixtures, but its support recall fell to 21/40. It is not generally a better model and does not make free gains: both models must run.
+
+### FactCG reproduction caution
+
+**[FACT]** The published \`yaxili96/FactCG-DeBERTa-v3-Large\` checkpoint, SHA \`7582b255f0b45a1be2db6fff5076d0e8ea7aa072\`, returned unsupported for all 120 cases at the authors' fixed 0.50 threshold when supplied the exact original source/claim instruction format in an independent short one-chunk forward implementation. This is **a negative reproduction result on this fixture**, not evidence that the model fails its original benchmark. An additional no-retuning smoke evaluation and real-valued support-probability audit will distinguish input/model misconfiguration from calibration collapse; conclusions about why must remain open until those diagnostics complete.
+
+### Next required experiments
+
+1. **Round 81:** hold the supervisory claim fixed and ablate active/passive phrasing, reversed negation, neutral extra sentences and clause order, comparing the same four published checkpoints.
+2. **MiniCheck and FactCG external validity:** use a frozen, independently human-annotated benchmark partition with actual documents (e.g. LLM-AggreFact), without tuning thresholds on test labels, and distinct source-group cohorts.
+3. **True multi-hop:** the two-hop warehouse templates proved relatively easy to MiniCheck and generic NLI; a longer bridge-with-distractors dataset plus independently judged support chains is needed to test graph-training benefits.
+4. **Costed retrieval:** source identity was supplied by the fixture; retrieval/FTS/dense models and SSD traffic are still unmeasured.
+
+Initial action runs:
+- MiniCheck/NLI/Lettuce + archive, https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44246390689
+- First FactCG author-template reproduction, https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44246781207
