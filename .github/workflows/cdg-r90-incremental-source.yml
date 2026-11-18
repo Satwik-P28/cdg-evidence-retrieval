@@ -1,0 +1,29 @@
+name: CDG R90 old-source-assisted incremental FTS5
+on:
+  push:
+    branches:
+      - "research/round-90-*"
+    paths:
+      - "experiments/round-90/**"
+      - ".github/workflows/cdg-r90-incremental-source.yml"
+  workflow_dispatch:
+jobs:
+  exact-contentless-incremental:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Eight source-exact FTS5 delete regressions and four synthetic comparisons
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-90 -p 'test_*.py' -v
+      - name: Full original SciFact 5183 docs, 300 claims, four 500-update workloads
+        run: python experiments/round-90/old_source_incremental.py --full --out experiments/round-90/ci-results.json
+      - name: Retain aggregate FTS statistics ranking space latency and failure outcomes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r90-source-exact-update-results
+          path: experiments/round-90/ci-results.json
+          if-no-files-found: ignore
