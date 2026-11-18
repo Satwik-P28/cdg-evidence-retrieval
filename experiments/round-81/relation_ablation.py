@@ -19,6 +19,9 @@ from controlled_facts import (
 from factcg_control import infer as factcg_scores
 
 HERE=Path(__file__).resolve().parent
+# The R80 label-oracle diagnostic threshold, frozen BEFORE any R81 results.
+# It is not deployment-calibrated or an independent model selection.
+FACTCG_R80_DIAGNOSTIC_CUTOFF=0.10503259
 VARIANTS=(
  'exact','active','passive','neutral_after',
  'reverse_negation_after','reverse_negation_before',
@@ -126,7 +129,7 @@ def by_variant(rows,models,model_info,archive):
             'sentence ordering, length and distractors are only partially controlled; neutral_after serves as simple extra-sentence control',
             'model training corpora and tokenizer contexts differ; measured CPU costs not directly comparable as architecture-only effects',
             'short sources, source identity supplied by oracle; archive bytes do not validate claim support or retrieval',
-            'fixed pretrained thresholds were not fitted to these known template labels',
+            'base pretrained thresholds fixed at 0.50; supplementary FactCG diagnostic threshold was chosen post-hoc on R80 fixture labels and transferred without R81 retuning, not deployable calibration',
             'FactCG implementation reproduces official single-chunk template for short documents, not full long-context inference',
             'no answer generator, human adjudication, out-of-domain validation or factual improvement attributable to compression',
         ],
@@ -146,10 +149,16 @@ def run():
         'nli':[int(x>=.5) for x in nli],
         'minicheck':[int(x>.5) for x in mc],
         'factcg':[int(x>.5) for x in factcg],
+        'factcg_R80_diagnostic_cutoff':[int(x>FACTCG_R80_DIAGNOSTIC_CUTOFF) for x in factcg],
         'lettuce':lettuce,
     }
     infos={'lexical':{'cost':'token overlap only'},'nli':nli_info,
-           'minicheck':mc_info,'factcg':factcg_info,'lettuce':lettuce_info}
+           'minicheck':mc_info,'factcg':factcg_info,
+           'factcg_R80_diagnostic_cutoff':{
+               'threshold':FACTCG_R80_DIAGNOSTIC_CUTOFF,
+               'source':'post-hoc R80 fixture labels, only tests surface transfer to R81; shared entity names/template constraints',
+               'inference_cost':'reuses FactCG model forward, no additional inference'},
+           'lettuce':lettuce_info}
     result=by_variant(rows,models,infos,archive)
     print('ROUND81',json.dumps({
         'sample_sha256':result['case_sha256'],
