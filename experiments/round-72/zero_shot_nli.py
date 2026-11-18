@@ -110,9 +110,10 @@ def compile_cases(responses,byid,r69):
         src=r69.source_text(byid[sid])
         windows,source_words,covered=source_windows(src)
         groups[(task,sid)]+=1
-        totals['source_words_total']+=source_words
-        totals['source_words_covered']+=covered
-        totals['source_truncated_groups']+=int(covered<source_words and groups[(task,sid)]==1)
+        if groups[(task,sid)]==1:
+            totals['source_words_total']+=source_words
+            totals['source_words_covered']+=covered
+            totals['source_truncated_groups']+=int(covered<source_words)
         if not windows or not windows[0]:raise ValueError('empty source text')
         for beg,end,claim,gold,strict in segment_labels(row,r69):
             if not claim.strip():continue
@@ -216,7 +217,7 @@ def score_cases(cases,probs,r69):
     return by_case
 
 
-def measures(rows,method,label='gold'):
+def measures(rows,method,r69,label='gold'):
     matrix=Counter()
     response=defaultdict(list)
     for row in rows:
@@ -251,8 +252,8 @@ def calculate(cases,probs,r69):
             'responses':len({r['response_id'] for r in selected}),
             'human_positive_sentences':sum(r['gold'] for r in selected),
             'methods':{m:{
-                'original_human_labels':measures(selected,m),
-                'implicit_true_excluded':measures(selected,m,'strict_gold')
+                'original_human_labels':measures(selected,m,r69),
+                'implicit_true_excluded':measures(selected,m,r69,'strict_gold')
             } for m in METHODS},
         }
     return output
