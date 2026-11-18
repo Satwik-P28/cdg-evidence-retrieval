@@ -111,7 +111,7 @@ def verify_pair(full, atomic, corpus, claims, expected):
                     "fts_rows": db.execute("SELECT COUNT(*) FROM sources").fetchone()[0],
                     "docsize_rows": db.execute("SELECT COUNT(*) FROM sources_docsize").fetchone()[0],
                     "config": db.execute("SELECT k,v FROM sources_config ORDER BY k").fetchall(),
-                    "fts_stat": db.execute("SELECT id,hex(value) FROM sources_data WHERE id=1").fetchone(),
+                    "fts_stat": db.execute("SELECT id,hex(block) FROM sources_data WHERE id=1").fetchone(),
                     "data_rows": db.execute("SELECT COUNT(*) FROM sources_data").fetchone()[0],
                 }
             raise AssertionError("BM25 divergence claim id " + str(row["id"])
