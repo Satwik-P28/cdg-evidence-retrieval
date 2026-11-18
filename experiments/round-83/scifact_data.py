@@ -24,7 +24,7 @@ URL="https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz"
 # Official AllenAI SciFact release URL from allenai/scifact Git commit:
 UPSTREAM_CODE_SHA="68b98a56d93e0f9da0d2aab4e6c3294699a0f72e"
 # Update once the first exact tarball hash is observed, so reruns are immutable.
-ARCHIVE_SHA256=None
+ARCHIVE_SHA256='11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be'
 SALT="CDG-R83-HUMAN-SCIFACT-SOURCE-DISJOINT-v1"
 PER_STATE_PER_SPLIT=32
 LABELS={"SUPPORT":1,"CONTRADICT":0}
