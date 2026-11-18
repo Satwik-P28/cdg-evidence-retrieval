@@ -1,6 +1,6 @@
 # CDG Round 83: Expert-Annotated SciFact Retrieval and Grounding Baselines
 
-**Date:** November 18, 2026. **Status:** locked official upstream dataset SHA source audit passed; full external-data retrieval/model CI submitted and requires actual results. Initial source provenance run: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44249807526 .
+**Date:** November 18, 2026. **Status:** official upstream source lock, regression tests and complete pretrained-model / 5,183-source retrieval evaluation **passed** in GitHub Actions 44250358050. Initial source provenance run: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44249807526 .
 
 ## The independent question
 
@@ -53,4 +53,46 @@ A source selection can miss relevant evidence, and a verifier can misinterpret c
     python -W error::ResourceWarning -m unittest discover -s experiments/round-83 -p 'test_scifact_eval.py' -v
     python experiments/round-83/scifact_eval.py --out experiments/round-83/ci-results.json
 
-GitHub Actions workflows: .github/workflows/cdg-r83-scifact-source.yml and .github/workflows/cdg-r83-scifact-real.yml . Full numerical retrieval and model outputs pending exact-head model run.
+GitHub Actions workflows: .github/workflows/cdg-r83-scifact-source.yml and .github/workflows/cdg-r83-scifact-real.yml . Executed retrieval and model results are recorded below from exact-head run 44250358050.
+
+
+## Executed results from upstream-locked real SciFact (CI 44250358050)
+
+**[FACT]** Model-forward and retrieval test workflow succeeded. Official release SHA-256 \`11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be\` verified. All 5,183 corpus abstracts and 300 development claims were used for retrieval. Recall denominator is **188 SciFact dev claims with at least one expert-annotated evidence document**, not every abstract or a zero-evidence case treated as negative.
+
+### Gold evidence-document retrieval
+
+| Retriever | Recall@1 | Recall@3 | Recall@5 | Recall@10 |
+| --- | ---: | ---: | ---: | ---: |
+| Authors' TF-IDF replica | **110/188 = 0.58511** | 140/188 = .74468 | 154/188 = .81915 | 163/188 = .86702 |
+| Conventional SQLite FTS5/BM25 | **136/188 = 0.72340** | 156/188 = .82979 | 166/188 = .88298 | 179/188 = .95213 |
+
+Stratified gold evidence recall@1, TF-IDF versus FTS5: SUPPORT **75/124 (.60484)** vs **93/124 (.75000)**; CONTRADICT **35/64 (.54688)** vs **43/64 (.67188)**.
+
+**[FACT] Retrieval/index costs:** TF-IDF reproduced authors' source string and \`TfidfVectorizer(stop_words='english', ngram_range=(1,1))\` with original descending tie ordering. It used a 37,455-term vocabulary and **5,623,728 sparse matrix bytes** excluding the vocabulary object; build-plus-query time **1.029 s**. FTS5/BM25 used a fixed title/body weighting 5:1 and OR of up to 28 claim terms, with **14,778,368 B persistent index** and **0.870 s** to build and serve the 300 queries. These measurements do not have matched index accounting or independent performance repetitions; no causal speed ranking is claimed.
+
+### Published verifier baseline on 60 annotated gold source/claim pairs
+
+The sample was locked to **30 expert-labeled SUPPORT + 30 CONTRADICT**, with 60 distinct claim IDs and 60 distinct evidence source IDs (cohort digest \`72b5e02303d7357dd7b49fde35ba10a7b06bba30d765e3c44e908ce0c23f1804\`).
+
+| Published checker | TP | FP | FN | TN | Balanced accuracy |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Generic NLI xsmall | 4 | **0** | 26 | 30 | **0.56667** |
+| MiniCheck DeBERTa-Large | 17 | 4 | 13 | 26 | **0.71667** |
+| FactCG DeBERTa-Large | **18** | 2 | 12 | 28 | **0.76667** |
+
+These judgments refer only to **the original annotated gold evidence document**, not automatically to any retrieved top-one document. On the 60 selected claims, **33** TF-IDF top-one and **39** FTS5 top-one claim/doc pairs had a human annotation for the selected document; predictions on the remaining source pairs are NOT valid false-positive/false-negative labels.
+
+**[FACT] Source archive/cost:** compressed full-corpus source+manifest byte count was **3,909,759 B whole-source zlib6** versus **4,791,255 B gear512** against **7,792,860 B** uncompressed original text. There were **180 selected route reads per layout**, each byte verified. Mean logical compressed activation per route **790.622 B** whole versus **917.667 B** gear. Total warm Python reader time **0.02522 s** whole and **0.06623 s** gear, no physical cold SSD I/O.
+
+**[FACT] Model CPU cost:** across all 180 oracle/top-one query variants, general NLI used **53,197 input tokens and 58.673 s**, MiniCheck used **62,883 tokens and 1,108.029 s**, FactCG used **67,647 tokens and 1,180.822 s** including six source-model smoke probes. Models have different parameter count, input limits and prompting, so these are descriptive aggregate wall times, not a controlled throughput claim.
+
+### Experimental interpretation
+
+**[INFERENCE]** Standard FTS5/BM25 retrieval is an important baseline that beat reproduced official SciFact TF-IDF recall@1 by **13.83 percentage points** and recall@10 by **8.51 percentage points** on this dataset, without a novel retrieval model. It uses more stored index bytes under the reported accounting. This suggests source selection is a higher-leverage optimization target than only changing compressed frame size.
+
+**[INFERENCE]** Expert-annotated scientific evidence changes the pretrained verifier ranking observed in the R80 fictional template fixture: FactCG now gives the highest **fixed-threshold gold-document** balanced accuracy of the three tested detectors, but on only 60 examples and with source access oracle supplied. There is no independent model-training exposure guarantee.
+
+**[NOT SHOWN]** General-domain fact checker superiority; inference from a wrong retrieved source is correct; improved generated answers; zero-knowledge source attribution; cold SSD retrieval/throughput advantage; new compression novelty; or end-to-end RAG quality/cost Pareto dominance. Gold annotations are source-specific, and 112 original dev claims have no evidence documents in this release.
+
+CI results: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44250358050 .
