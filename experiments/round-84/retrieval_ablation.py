@@ -76,8 +76,9 @@ def recall_at_k(rows,ranked,k):
 
 
 def compute_metrics(rows,ranked):
-    return {'n':len(rows),
-            'recall_at_'+str(k):round(recall_at_k(rows,ranked,k),6) for k in K}
+    return {'n':len(rows), **{
+            'recall_at_'+str(k):round(recall_at_k(rows,ranked,k),6)
+            for k in K}}
 
 
 def fts_rank_all(corpus,queries,max_k=10):
