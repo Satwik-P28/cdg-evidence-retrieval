@@ -186,7 +186,7 @@ The new round's [research report](research/rounds/round-72/report.md), five unit
 
 ## Research Rounds 74–77: Cross-task grounding, counterfactual sources and strong trained baseline
 
-[CDG cumulative research ledger through Round 77](research/living-record-rounds-33-77.md) links each executable report, actual model task and negative outcome.
+[CDG cumulative research ledger through Round 79](research/living-record-rounds-33-79.md) links each executable report, actual model task and negative outcome.
 
 - **R74, QA-to-Data2txt transfer:** Same pinned generic pretrained R72 NLI, thresholds fitted only on QA train human-negative answers (32 source groups, 190 responses), confirmed on 16 disjoint Data2txt test groups (96 responses with 61 human-positive). Frozen 0.50 threshold rejected **all 96**, and positive prevalence makes its response F1 look good at .777. QA-train 10% FPR target gave 25.7% Data2txt FPR and 19/61 true positives for top3 max risk. 7,550 actual NLI pairs and 1,552,487 input tokens. **Calibration did not transfer.**
 - **R75, evidence substitution:** On the same 96 Data2txt responses, replace the actual source with the nearest different source before NLI. Only **54/96** response weakest-claim scores preferred the actual source; mean actual-minus-alternative weakest-claim entailment difference **+.00023**, source-group bootstrap 95% interval **[-.00589,+.00629]**. Mean across claims rose +.12649 for actual evidence, showing how a single low-scoring claim can mask source sensitivity. Swapped data are not independently truth-labeled and the result is not counterfactual factual correctness.
@@ -195,3 +195,13 @@ The new round's [research report](research/rounds/round-72/report.md), five unit
 - **Reproduction and scope:** R74–R77 code and independent GitHub Actions model/inference workflows pin upstream Git blob source and model revisions. The source passages, human labels and original generated responses remain with upstream authors and are not redistributed. Full numerical results, source-group isolation, cpu inference and model token-cost limitations are retained in separate reports. No new end-to-end hallucination prevention or novel lossless codec is claimed.
 
 The research priority is now atomic fact/claim verification over **actual retrieved, versioned and byte-verified evidence**, compared with trained prior-art checkers and conventional storage at matched end-to-end compute and false-acceptance costs. Do not use source receipts, NLI confidence, or high F1 on imbalanced labels as unqualified proof of trustworthy answers.
+
+
+## Research Rounds 78–79: Verified archive-fed semantics and sensitivity limits
+
+The [cumulative living research record through Round 79](research/living-record-rounds-33-79.md) consolidates the evidence and decisions; the [Round 78](research/rounds/round-78/report.md) and [Round 79](research/rounds/round-79/report.md) reports preserve reproducibility and limitations.
+
+- **R78 archive-fed trained detector:** 24 exact original SHA-bound source blobs, 141 QA/Summary generated responses, 48 full-source and 282 response source receipts verified. Original-versus-reconstructed pretrained LettuceDetect character masks match on **141/141** responses; response F1 unchanged at **0.45902**. Whole-Zlib source archive 28,398 B versus gear512 35,437 B; mean per-response logical compressed activation 1,154 vs 1,347 B. Warm in-memory receipt timing favors gear, not proof of cold SSD advantage. Source identity was supplied by the benchmark, not retrieved.
+- **R79 same-answer evidence swaps:** SHA-frozen, task-matched lexical nearest/farthest alternative sources trigger **111/141** response warning decision changes for each alternative rule. Mean mask disagreement is **78.68%** near and **85.80%** far, yet original/alternative sources are *not* independently labeled support counterfactuals. Their Jaccard similarities are both low, and model CPU costs differ greatly. No hallucination reduction or reliable near/far response-level discrimination was demonstrated.
+
+**Next:** independently labeled, length-controlled atomic evidence edits and full-corpus retrieval, combined with conventional baseline storage and trained model inference costs. No source byte receipt or source-swap sensitivity alone establishes causal correctness of RAG answers.
