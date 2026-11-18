@@ -20,7 +20,9 @@ class SciFactDataContractTests(unittest.TestCase):
                 obj=tarfile.TarInfo('data/'+filename)
                 obj.size=len(raw)
                 tf.addfile(obj,io.BytesIO(raw))
-        result,sha=decode_release(buff.getvalue())
+        result,sha=decode_release(buff.getvalue(),expected_sha=None)
+        with self.assertRaises(AssertionError):
+            decode_release(buff.getvalue(),expected_sha='0'*64)
         self.assertEqual(set(result),set(fake))
         self.assertEqual(result['claims_dev.jsonl'][0]['id'],2)
         self.assertEqual(sha,hashlib.sha256(buff.getvalue()).hexdigest())
