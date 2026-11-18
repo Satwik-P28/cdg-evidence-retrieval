@@ -105,10 +105,20 @@ def verify_pair(full, atomic, corpus, claims, expected):
                     "WHERE sources MATCH ? AND rowid IN ("
                     + ",".join("?" for _ in sample) + ") ORDER BY rowid",
                     (q,*sample)).fetchall()
+            diagnostics = {}
+            for label, db in (("full", full), ("atomic", atomic)):
+                diagnostics[label] = {
+                    "fts_rows": db.execute("SELECT COUNT(*) FROM sources").fetchone()[0],
+                    "docsize_rows": db.execute("SELECT COUNT(*) FROM sources_docsize").fetchone()[0],
+                    "stat_hex": db.execute("SELECT hex(value) FROM sources_config WHERE k='version'").fetchone(),
+                    "fts_stat": db.execute("SELECT id,hex(value) FROM sources_data WHERE id=1").fetchone(),
+                    "data_rows": db.execute("SELECT COUNT(*) FROM sources_data").fetchone()[0],
+                }
             raise AssertionError("BM25 divergence claim id " + str(row["id"])
                 + " claim " + repr(probe[:120])
                 + " full=" + repr(old_query) + " atomic=" + repr(new_query)
-                + " scores=" + repr(scores))
+                + " scores=" + repr(scores)
+                + " diagnostics=" + repr(diagnostics))
         if a:
             rid = a[0]
             contentful = full.execute(
