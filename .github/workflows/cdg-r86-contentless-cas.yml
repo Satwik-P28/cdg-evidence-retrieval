@@ -1,0 +1,29 @@
+name: CDG R86 index-only FTS5 and source CAS rank-preservation
+on:
+  push:
+    branches:
+      - "research/round-86-*"
+    paths:
+      - "experiments/round-86/**"
+      - ".github/workflows/cdg-r86-contentless-cas.yml"
+  workflow_dispatch:
+jobs:
+  source-store-fidelity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify pure stdlib source-format and ranked-index contracts
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-86 -p 'test_*.py' -v
+      - name: Evaluate 5183 source docs and 300 SciFact claims on both FTS indexes
+        run: python experiments/round-86/contentless_cas.py --out experiments/round-86/ci-results.json
+      - name: Retain only aggregate retrieval rank, storage, SHA and source read metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r86-contentless-fts-cas-results
+          path: experiments/round-86/ci-results.json
+          if-no-files-found: ignore
