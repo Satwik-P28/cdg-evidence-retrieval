@@ -21,7 +21,8 @@ import random
 HERE=Path(__file__).resolve().parent
 R69=HERE.parent/'round-69'/'ragtruth_grounding.py'
 R72=HERE.parent/'round-72'/'zero_shot_nli.py'
-R74=HERE.parent/'round-74'/'cross_task_calibration.py'
+R74_SALT='CDG-R74-QA-TRAIN-D2T-TEST-SHA-LOCK-v1'
+R74_TEST_SOURCE_COUNT=16
 SEED=7517
 BOOTSTRAPS=1500
 SOURCE_SWAP_RULE='most-Jaccard-similar distinct Data2txt source_id, using source leaf-value tokens only'
@@ -34,6 +35,32 @@ def load(name,path):
     sys.modules[name]=mod
     spec.loader.exec_module(mod)
     return mod
+
+
+def choose_d2t_test_group(responses,sources):
+    byid={str(x['source_id']):x for x in sources}
+    candidates=set()
+    for row in responses:
+        sid=str(row.get('source_id'))
+        if (row.get('quality')=='good' and row.get('split')=='test' and
+            sid in byid and byid[sid].get('task_type')=='Data2txt'):
+            candidates.add(sid)
+    ranked=sorted(candidates,key=lambda sid:(
+        hashlib.sha256((R74_SALT+'|test|'+sid).encode()).hexdigest(),sid))
+    if len(ranked)<R74_TEST_SOURCE_COUNT:
+        raise ValueError('insufficient test Data2txt source groups')
+    ids=set(ranked[:R74_TEST_SOURCE_COUNT])
+    picked=[row for row in responses if
+            row.get('split')=='test' and row.get('quality')=='good' and
+            str(row.get('source_id')) in ids]
+    if len(picked)<30:raise ValueError('too few Data2txt responses')
+    return picked,byid,{
+        'source_groups':len(ids),
+        'sample_source_ids_sha256':hashlib.sha256(
+            '\n'.join(sorted(ids)).encode()).hexdigest(),
+        'responses':len(picked),
+        'available_source_groups':len(candidates),
+    }
 
 
 def leaves(info):
@@ -120,8 +147,7 @@ def group_ci(rows,metric='delta_min_entailment',reps=BOOTSTRAPS,seed=SEED):
 def evaluate(responses,sources):
     r69=load('r69_for75',R69)
     r72=load('r72_for75',R72)
-    r74=load('r74_for75',R74)
-    _training,test,source_map,parts=r74.partition(responses,sources)
+    test,source_map,test_meta=choose_d2t_test_group(responses,sources)
     ids=sorted(set(str(x['source_id']) for x in test))
     options,similarity=counterfactual_map(source_map,ids,r69)
     swapped_map=copy.deepcopy(source_map)
@@ -187,7 +213,7 @@ def evaluate(responses,sources):
             'name':r72.MODEL_ID,'sha':lock['revision'],
             'label_mapping':labels,'load_seconds':round(load_seconds,3),
         },
-        'original_R74_D2T_test_partition':parts['test'],
+        'original_R74_D2T_test_partition':test_meta,
         'swap_policy':SOURCE_SWAP_RULE,
         'source_swap_group_count':len(options),
         'source_similarity_mean':round(statistics.mean(similarity.values()),5),
@@ -204,7 +230,7 @@ def evaluate(responses,sources):
             'human_unsupported':summarise([r for r in rows if r['gold']]),
         },
         'source_identity_hashes':{
-            'real_source_ids_sha256':parts['test']['sample_source_ids_sha256'],
+            'real_source_ids_sha256':test_meta['sample_source_ids_sha256'],
             'swap_mapping_sha256':hashlib.sha256(
                 '\n'.join(f'{k}:{options[k]}' for k in sorted(options)).encode()).hexdigest(),
         },
