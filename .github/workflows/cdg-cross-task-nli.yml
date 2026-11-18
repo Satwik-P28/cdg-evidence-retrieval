@@ -1,0 +1,36 @@
+name: CDG R74 cross-task calibrated NLI
+on:
+  push:
+    branches:
+      - "research/round-74-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  qa-to-data2txt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned CPU NLI runtime
+        run: |
+          python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.5.1
+          python -m pip install --disable-pip-version-check transformers==4.46.3 huggingface_hub==0.26.5 tokenizers==0.20.3 sentencepiece==0.2.0 numpy==1.26.4
+      - name: R74 source-disjoint and human label isolation tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-74 -p 'test_*.py' -v
+      - name: Calibrate on QA train only then test previously unseen Data2txt
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-74/cross_task_calibration.py --out experiments/round-74/ci-results.json
+      - name: Publish aggregate transfer metrics and immutable source hashes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round74-qa-to-data2txt-nli-calibration-results
+          path: experiments/round-74/ci-results.json
+          if-no-files-found: ignore
