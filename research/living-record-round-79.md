@@ -1,6 +1,6 @@
 # CDG Evidence Graph Addendum: Round 79
 
-**Date:** 18 November 2026. **Status:** regression and real-model CI pending. This is an append-only continuation of the existing research ledger. It must be consolidated only after the prior round documentation is merged and exact-head numerical checks succeed.
+**Date:** 18 November 2026. **Status:** five tests and real pretrained-model experiment passed, CI 44243476813. This is an append-only continuation of the existing research ledger. It must be consolidated only after the prior round documentation is merged and exact-head numerical checks succeed.
 
 ## New graph branch
 
@@ -35,4 +35,6 @@ Whether the substituted source factually supports the answer, whether a changed 
 4. If a meaningful effect exists, commission **human-labeled or controlled truth-preserving / truth-changing** evidence interventions before promoting any accuracy or calibration claim.
 5. Integrate with R78 physical costs only after semantic checks, then compare ordinary BM25/FTS5 + whole-compressed source against any more complex CDG selection.
 
-[UNCERTAIN] It is possible that the trained span detector reacts more strongly to far swaps than the generic NLI's worst-claim statistic. This is a test hypothesis only, not a reported result.
+[FACT] Actual source swapping changed the response-level warning decision on 111/141 original outputs for both nearest and farthest alternatives. Mean changed answer-character mask was 78.680% (near) versus 85.799% (far). Lexical Jaccard overlaps were only 0.049670 (near) and 0.010834 (far), and the binary far-minus-near switch-rate had source-group bootstrap interval [0,0]. CPU costs differed substantially (original 143.518 s; near 211.988 s; far 96.549 s), so source length/chunking is a confound.
+
+[INFERENCE] Context sensitivity is visible in the trained model, but the response-level any-warning decision saturates on these weakly related alternative sources. Character-level behavior changes more, though the swaps have **no human counterfactual truth labels**. Controlled atomic fact edits and realistic full-corpus retrieval are still required before any semantic or efficiency promotion.
