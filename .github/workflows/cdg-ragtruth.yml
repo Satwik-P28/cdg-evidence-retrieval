@@ -21,10 +21,16 @@ jobs:
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-69 -p 'test_*.py' -v
       - name: Human-annotated RAGTruth QA test split grounding benchmark
         run: python experiments/round-69/ragtruth_grounding.py --out experiments/round-69/ci-results.json
+      - name: R70 source-disjoint calibration regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-70 -p 'test_*.py' -v
+      - name: R70 train-calibrated QA grounding warning holdout
+        run: python experiments/round-70/calibrated_grounding.py --out experiments/round-70/ci-results.json
       - name: Upload numerical outcomes and original content hashes only
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ragtruth-r69-grounding-results
-          path: experiments/round-69/ci-results.json
+          path: |
+            experiments/round-69/ci-results.json
+            experiments/round-70/ci-results.json
           if-no-files-found: ignore
