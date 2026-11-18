@@ -1,0 +1,10 @@
+{
+  "name": "cross-encoder/nli-deberta-v3-xsmall",
+  "revision": "PENDING_SHA_FROM_OFFICIAL_HF_API",
+  "license": "Apache-2.0",
+  "training_data": [
+    "SNLI",
+    "MultiNLI"
+  ],
+  "rationale": "Fixed general NLI cross-encoder, not fine-tuned on RAGTruth; identity must be pinned before scoring"
+}
