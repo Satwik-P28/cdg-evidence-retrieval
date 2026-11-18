@@ -61,3 +61,26 @@ The selected retrieval policy ties the frozen incumbent **exactly** on each dev 
 **[REJECTION GATE]** Do not describe the current method as a new retrieval algorithm or source compression breakthrough. Preserve the incumbent until a new candidate beats it on a source-distinct, genuine evaluation at matched index/query/runtime costs.
 
 Successful original full-run provenance: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44264954609 . A subsequent logging-only commit adds the whole eight-row grid to CI, without changing training selection or model inputs.
+
+
+## Exact eight-configuration sensitivity grid (CI 44265142751)
+
+**[FACT]** All five unit tests and the exact full-corpus reproducible rerun passed at https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44265142751 . The same train-only selector again chose **title5/terms28**. The table below contains **all predeclared variants**; unselected dev rows are disclosed as *exploratory diagnostics*, not independent confirmations.
+
+| FTS5 title boost | Max claim query terms | Train Recall@1 | Train Recall@5 | Dev Recall@1 | Dev Recall@5 | Dev Recall@10 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | 12 | .722772 | .899010 | .702128 | .893617 | .952128 |
+| 1 | 28 | .732673 | .900990 | .707447 | .893617 | .952128 |
+| 3 | 12 | .728713 | .895050 | **.734043** | **.904255** | .952128 |
+| 3 | 28 | **.738614** | .899010 | .728723 | **.904255** | .952128 |
+| 5 | 12 | .718812 | .899010 | **.734043** | .893617 | .952128 |
+| **5 (train selected)** | **28** | .732673 | **.902970** | .723404 | .882979 | .952128 |
+| 10 | 12 | .718812 | .887129 | .718085 | .882979 | .936170 |
+| 10 | 28 | .728713 | .891089 | .712766 | .872340 | .936170 |
+| Authors' TF-IDF | n/a | .609901 | .855446 | .585106 | .819149 | .867021 |
+
+**[FACT]** The dev-hindsight higher Recall@5 of weight3/terms12 or weight3/terms28 is **.904255** versus .882979 for the train-selected weight5/terms28, a difference of only 4/188 dev evidence claims. Its train Recall@5 is lower (.895050 or .899010 vs .902970). Weight10 reduces dev Recall@10 to .936170 while providing no top-one improvement. These are evidence of **train/dev hyperparameter variance**, not justification for selecting the dev-hindsight winner.
+
+**[INFERENCE]** Conventional lexical retrieval remains a strong baseline, but there is no demonstrated robust advantage among these nearby BM25 configurations. Choosing a few percentage points from the best dev row would introduce the same outcome-selection bias this round was designed to prevent.
+
+**[NEXT FALSIFIER]** Compare training-selected hybrid BM25+dense candidate routing or field-aware source selection on an additional genuinely independent corpus, at matched source-index bytes, retrieval latency, model rerank cost and relevant-source recall. Avoid claiming strong retrieval novelty for title weight sweeps.
