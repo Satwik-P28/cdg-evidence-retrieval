@@ -91,7 +91,24 @@ def verify_pair(full, atomic, corpus, claims, expected):
         b = [rid for rid, _ in retrieve_snapshot(atomic, row["claim"], 10)]
         if a != b:
             rankings_identical = False
-            raise AssertionError("same updated FTS index but different BM25 ranks")
+            probe = row["claim"]
+            old_query = query_fts(full, probe, 20)
+            from atomic_source_db import query as atomic_query
+            new_query = atomic_query(atomic, probe, 20)
+            sample = sorted(set(old_query + new_query))
+            from contentless_cas import query_text
+            q = query_text(probe)
+            scores = {}
+            for label, db in (("full",full),("atomic",atomic)):
+                scores[label] = db.execute(
+                    "SELECT rowid, bm25(sources,5.0,1.0) FROM sources "
+                    "WHERE sources MATCH ? AND rowid IN ("
+                    + ",".join("?" for _ in sample) + ") ORDER BY rowid",
+                    (q,*sample)).fetchall()
+            raise AssertionError("BM25 divergence claim id " + str(row["id"])
+                + " claim " + repr(probe[:120])
+                + " full=" + repr(old_query) + " atomic=" + repr(new_query)
+                + " scores=" + repr(scores))
         if a:
             rid = a[0]
             contentful = full.execute(
