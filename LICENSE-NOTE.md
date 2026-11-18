@@ -47,3 +47,8 @@ RAGTruth annotations and the underlying source passages have potentially differe
 ## General pretrained NLI model (Round 72)
 
 R72 fetches the upstream model **cross-encoder/nli-deberta-v3-xsmall**, Hugging Face Git SHA **a150876415327c80daeff35ca6f68f5ed8cf5c24**, originally trained using SNLI and MultiNLI and distributed under Apache License 2.0. The model weights are downloaded transiently by the evaluation runtime and are never redistributed or committed to this repository. Underlying RAGTruth passages and generated responses are governed by the separate attribution and licensing caveats documented in the RAGTruth section above. Derived aggregate confusion matrices, model token counts and input-free code are included for reproducibility.
+
+
+## Published LettuceDetect model and test-time prompt variants (Rounds 76–77)
+
+Rounds 76–77 evaluate the existing LettuceDetect model **KRLabsOrg/lettucedect-base-modernbert-en-v1** under its original **MIT** license, pinned to immutable Hugging Face Git SHA **0ff0f0dd23052cf751dae374f57a539aa092e772**; the Python package is **lettucedetect 0.2.3**. Model authorship belongs to its original creators (Kovacs et al.), and prior work https://arxiv.org/abs/2502.17125 must be cited for scholarly reuse. The model was trained on the original RAGTruth training partition, which makes these comparisons an **in-domain trained baseline**, not independent cross-domain validation. Weights and tokenizers are downloaded into transient CI runtime only and are not distributed here. The original RAGTruth generator prompts, source records, generated answers and word-level human labels remain upstream and are not redistributed. The reports contain derived aggregate error counts, inference costs and hashes only.
