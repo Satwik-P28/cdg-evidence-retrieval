@@ -1,0 +1,30 @@
+name: CDG integrated evidence and QA cost
+on:
+  push:
+    branches:
+      - "research/round-66-*"
+      - "research/round-67-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  integrated:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: R66 integration and no-gold-leakage regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-66 -p 'test_*.py' -v
+      - name: R66 disjoint HotpotQA dev full index+archive evidence evaluation
+        run: python experiments/round-66/integrated_evidence.py --out experiments/round-66/ci-results.json
+      - name: Upload numerical and provenance report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round66-integrated-evidence-results
+          path: experiments/round-66/ci-results.json
+          if-no-files-found: ignore
