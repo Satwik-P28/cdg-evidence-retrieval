@@ -1,0 +1,36 @@
+name: CDG R76 trained semantic verifier reference
+on:
+  push:
+    branches:
+      - "research/round-76-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  in-domain-trained-verifier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pin supported CPU Torch and transformer inference runtime
+        run: |
+          python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.6.0
+          python -m pip install --disable-pip-version-check lettucedetect==0.2.3 transformers==4.52.4 huggingface_hub==0.32.4 tokenizers==0.21.4 numpy==2.2.6
+      - name: R76 source formatting and span-offset unit tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-76 -p 'test_*.py' -v
+      - name: R76 SHA-pinned published LettuceDetect on exact R72 human-label cohort
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python experiments/round-76/lettuce_reference.py --out experiments/round-76/ci-results.json
+      - name: Save only compact confusion matrices and model resource counts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round76-published-lettucedetect-reference-results
+          path: experiments/round-76/ci-results.json
+          if-no-files-found: ignore
