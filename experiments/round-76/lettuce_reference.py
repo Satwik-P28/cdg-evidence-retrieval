@@ -99,7 +99,7 @@ def make_detector():
     path=snapshot_download(MODEL_ID,revision=MODEL_REVISION)
     detector=HallucinationDetector(
         method='transformer',model_path=path,
-        device='cpu',max_length=MAX_TOKENS,batch_size=BATCH_SIZE)
+        device='cpu',max_length=MAX_TOKENS)
     model=detector.detector.model
     model.eval()
     return detector,{
