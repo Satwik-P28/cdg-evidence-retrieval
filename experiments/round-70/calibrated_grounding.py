@@ -118,7 +118,7 @@ def grouped_bootstrap(records,signal,threshold,reps=BOOTSTRAP_REPETITIONS,
     return result
 
 
-def split_sources(responses,sources,r69):
+def split_sources(responses,sources,r69,previous_count=None):
     source_map={str(row['source_id']):row for row in sources}
     test_sources={str(r['source_id']) for r in responses
                   if r.get('split')=='test'
@@ -126,10 +126,11 @@ def split_sources(responses,sources,r69):
                   and source_map[str(r['source_id'])].get('task_type')=='QA'}
     ordered=sorted(test_sources,key=lambda sid:(
         hashlib.sha256((r69.SAMPLE_SALT+'|'+sid).encode()).hexdigest(),sid))
-    if len(ordered)<=r69.MAX_TEST_SOURCE_GROUPS:
+    boundary=r69.MAX_TEST_SOURCE_GROUPS if previous_count is None else previous_count
+    if not 0<boundary<len(ordered):
         raise ValueError('no disjoint source-group confirmation set')
-    old=set(ordered[:r69.MAX_TEST_SOURCE_GROUPS])
-    holdout=set(ordered[r69.MAX_TEST_SOURCE_GROUPS:])
+    old=set(ordered[:boundary])
+    holdout=set(ordered[boundary:])
     assert not old.intersection(holdout)
     return source_map,old,holdout
 
@@ -155,9 +156,9 @@ def rows_for_split(responses,source_map,allowed,split,r69):
     return results
 
 
-def evaluate(responses,sources):
+def evaluate(responses,sources,previous_count=None):
     r69=load('cdg69_for70',R69)
-    source_map,old,heldout=split_sources(responses,sources,r69)
+    source_map,old,heldout=split_sources(responses,sources,r69,previous_count)
     train_source_ids={str(row['source_id']) for row in responses
                       if row.get('split')=='train'
                       and str(row.get('source_id')) in source_map
