@@ -1,0 +1,29 @@
+name: CDG R73 exact archived NLI evidence windows
+on:
+  push:
+    branches:
+      - "research/round-73-*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  byte-windows:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Regression tests for precise UTF-8 source windows and CAS receipts
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-73 -p 'test_*.py' -v
+      - name: Frozen R72 RAGTruth sources exact archive read and traffic audit
+        run: python experiments/round-73/byte_exact_windows.py --out experiments/round-73/ci-results.json
+      - name: Upload only source byte metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: round73-exact-evidence-window-results
+          path: experiments/round-73/ci-results.json
+          if-no-files-found: ignore
