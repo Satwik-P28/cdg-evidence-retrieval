@@ -105,3 +105,35 @@ The different prompt, architecture and token context budgets make these descript
 Initial action runs:
 - MiniCheck/NLI/Lettuce + archive, https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44246390689
 - First FactCG author-template reproduction, https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44246781207
+
+
+## Follow-up FactCG audit: ranking works even though default cutoff fails
+
+**[FACT] CI 44247296287 succeeded.** The same immutable 120-case SHA and released FactCG HF SHA were preserved. Added six no-training smoke cases and stored only small synthetic diagnostic probabilities, not model weights or third-party raw data. The checkpoint correctly classified common exact-supported and contradicted geography, plus the two official-style MiniCheck example propositions:
+
+| Diagnostic claim | Expected | FactCG P(supported) |
+| --- | --- | ---: |
+| London is in the United Kingdom (exact supported) | 1 | .861068 |
+| London is in France, contrary to source | 0 | .021002 |
+| Students are preparing for an examination (source: studying for finals) | 1 | .935020 |
+| Students are on vacation (source: studying for finals) | 0 | .010399 |
+| Fictional Aster Initiative operating center, source says exactly Lydon | 1 | **.473906** |
+| Fictional Aster operating center, source says Merton not Lydon | 0 | .021568 |
+
+Thus an obvious smoke-test-supported statement from the invented registry falls just below the 0.50 cutoff while ordinary common-knowledge-style examples pass. This suggests threshold/domain sensitivity, **not broken model loading or reversed class IDs**.
+
+**[FACT] Frozen 120-case probability ranking metrics:**
+
+| Source relation | Mean P(supported) | Range |
+| --- | ---: | ---: |
+| Supported, 40 | **0.318728** | 0.054164 to 0.461957 |
+| Explicitly contradicted, 40 | 0.035124 | 0.016622 to 0.079159 |
+| Unknown, 40 | 0.048607 | 0.009649 to 0.112831 |
+
+The ROC AUC over the 40 positive vs 80 negative *same fixture* was **0.975625**, demonstrating strong ranking separation despite **0/40** support acceptance at the published 0.50 cutoff.
+
+**[CRITICAL LEAKAGE WARNING]** A threshold **0.10503259**, chosen by optimizing balanced accuracy on all 120 known fixture labels, would produce apparent in-sample balanced accuracy **0.93125**. This figure is **invalid as held-out accuracy, a fair model score or deployment calibration**. It is reported solely to falsify the proposition that all FactCG scores are uninformative. A separate R81 ablation will freeze this diagnostic threshold *without fitting it to R81 labels*, though R81 uses related entity names and is only a weak surface-transfer check.
+
+**[INFERENCE]** The strong score separation and unusually low absolute probabilities suggest calibration/wording shift, not necessarily failed graph reasoning. We cannot infer whether model architecture, training, token length or artificial names caused the lower probabilities without matched targeted interventions. A fresh, independently labeled benchmark and train/calibration/test separation remain required before declaring a generalizable working configuration.
+
+Audit: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/44247296287 .
