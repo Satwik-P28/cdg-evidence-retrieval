@@ -1,0 +1,29 @@
+name: CDG R92 fixed-storage scientific evidence coverage
+on:
+  push:
+    branches:
+      - "research/round-92-*"
+    paths:
+      - "experiments/round-92/**"
+      - ".github/workflows/cdg-r92-budget-evidence.yml"
+  workflow_dispatch:
+jobs:
+  fixed-budget-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic source fidelity, label scope and capacity tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-92 -p 'test_*.py' -v
+      - name: Frozen SciFact full versus 10/12 MiB nested hash-subset retrieval
+        run: python experiments/round-92/storage_budget_eval.py --out experiments/round-92/ci-results.json
+      - name: Retain aggregate sizes, paired claim-level uncertainty and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r92-budget-retrieval-results
+          path: experiments/round-92/ci-results.json
+          if-no-files-found: ignore
