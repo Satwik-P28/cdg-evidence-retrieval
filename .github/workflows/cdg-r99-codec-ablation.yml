@@ -1,0 +1,31 @@
+name: CDG R99 standard codecs at fixed original source and FTS5
+on:
+  push:
+    branches:
+      - "research/round-99-*"
+    paths:
+      - "experiments/round-99/**"
+      - ".github/workflows/cdg-r99-codec-ablation.yml"
+  workflow_dispatch:
+jobs:
+  source-codec-frontier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install explicitly pinned public standard lossless codecs
+        run: python -m pip install --disable-pip-version-check zstandard==0.23.0 Brotli==1.1.0
+      - name: Nine lossless exact-source, corruption, FTS invariance tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-99 -p 'test_*.py' -v
+      - name: Original SciFact and QASPER standard-codec source plus FTS byte and warm decode ablation
+        run: python experiments/round-99/codec_frontier.py --out experiments/round-99/ci-results.json
+      - name: Preserve only original source digests and aggregate codec byte/timing measurements
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r99-codec-fair-comparison
+          path: experiments/round-99/ci-results.json
+          if-no-files-found: ignore
