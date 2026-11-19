@@ -1,0 +1,31 @@
+name: CDG R104 atomic grouped evidence archive revisions and recovery
+on:
+  push:
+    branches:
+      - "research/round-104-*"
+    paths:
+      - "experiments/round-104/**"
+      - ".github/workflows/cdg-r104-group-atomicity.yml"
+  workflow_dispatch:
+jobs:
+  original-source-atomic-revisions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen standard source codecs
+        run: python -m pip install --disable-pip-version-check Brotli==1.1.0 zstandard==0.23.0
+      - name: Eleven original source, FTS, WAL snapshot and ten SIGKILL regressions
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-104 -p 'test_*.py' -v
+      - name: Full original QASPER 120 synthetically edited source and FTS differential
+        run: python experiments/round-104/atomic_grouped_updates.py --out experiments/round-104/ci-results.json
+      - name: Retain only original SHA, source revision and crash recovery summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r104-grouped-atomic-crash-snapshot
+          path: experiments/round-104/ci-results.json
+          if-no-files-found: ignore
