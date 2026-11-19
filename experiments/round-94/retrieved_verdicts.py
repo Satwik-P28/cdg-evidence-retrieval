@@ -200,6 +200,14 @@ def score_nli(pairs):
         gc.collect()
 
 
+def claim_ids(cases):
+    """Round-83/92 annotated_gold records use original SciFact 'id', not 'claim_id'."""
+    ids=[str(row["id"]) for row in cases]
+    if len(ids)!=len(set(ids)):
+        raise AssertionError("duplicate annotated SciFact claim ids")
+    return ids
+
+
 def evaluate_scenario(rows,model_results,expected_case_ids):
     if len(rows)!=len(expected_case_ids):
         raise AssertionError("case count mismatch")
@@ -268,7 +276,7 @@ def run(corpus,claims,seeds=SEEDS,budgets=BUDGETS):
     cases=annotated_gold(claims,corpus)
     scenarios,pairs=build_scenarios(corpus,cases,budgets,seeds)
     model_predictions,model_meta=score_nli(pairs)
-    baseline=[r["claim_id"] for r in cases]
+    baseline=claim_ids(cases)
     outcomes={}
     success={}
     for name,item in scenarios.items():
