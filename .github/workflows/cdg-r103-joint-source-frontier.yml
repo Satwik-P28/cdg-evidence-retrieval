@@ -1,0 +1,31 @@
+name: CDG R103 joint source blocks and disjoint-train dictionaries
+on:
+  push:
+    branches:
+      - "research/round-103-*"
+    paths:
+      - "experiments/round-103/**"
+      - ".github/workflows/cdg-r103-joint-source-frontier.yml"
+  workflow_dispatch:
+jobs:
+  joint-source-frontier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pin existing Brotli5 and Zstandard codecs
+        run: python -m pip install --disable-pip-version-check Brotli==1.1.0 zstandard==0.23.0
+      - name: Eleven independent-source, block boundary and dictionary integrity regressions
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-103 -p 'test_*.py' -v
+      - name: Original QASPER train dictionary and dev block by codec Pareto comparison
+        run: python experiments/round-103/joint_group_dictionary.py --out experiments/round-103/ci-results.json
+      - name: Retain only original-source hashes and aggregated physical byte/read amplification controls
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r103-joint-block-dictionary
+          path: experiments/round-103/ci-results.json
+          if-no-files-found: ignore
