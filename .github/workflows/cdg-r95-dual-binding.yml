@@ -1,0 +1,29 @@
+name: CDG R95 dual binding compressed and full evidence budgets
+on:
+  push:
+    branches:
+      - "research/round-95-*"
+    paths:
+      - "experiments/round-95/**"
+      - ".github/workflows/cdg-r95-dual-binding.yml"
+  workflow_dispatch:
+jobs:
+  tight-byte-budgets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Ten exact-source priority/selection and SQLite-byte regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-95 -p 'test_*.py' -v
+      - name: SHA-locked SciFact five-policy three-seed 6-and-8-MiB dual-architecture evaluation
+        run: python experiments/round-95/dual_budget_evidence.py --out experiments/round-95/ci-results.json
+      - name: Preserve measured byte and human evidence aggregate statistics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r95-dual-binding-sciFact
+          path: experiments/round-95/ci-results.json
+          if-no-files-found: ignore
