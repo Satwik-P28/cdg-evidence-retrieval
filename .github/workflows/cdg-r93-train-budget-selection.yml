@@ -1,0 +1,29 @@
+name: CDG R93 train-selected conventional budget falsification
+on:
+  push:
+    branches:
+      - "research/round-93-*"
+    paths:
+      - "experiments/round-93/**"
+      - ".github/workflows/cdg-r93-train-budget-selection.yml"
+  workflow_dispatch:
+jobs:
+  train-selection-and-dev-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Nine source-selection, fit/validation separation and label-leakage regressions
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-93 -p 'test_*.py' -v
+      - name: Original SHA-locked SciFact claim-disjoint train-fit/validation-selected six-priority two-budget dev evaluation
+        run: python experiments/round-93/train_budget_selection.py --out experiments/round-93/ci-results.json
+      - name: Retain train selection and aggregate blinded dev performance only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r93-train-budget-priority-results
+          path: experiments/round-93/ci-results.json
+          if-no-files-found: ignore
