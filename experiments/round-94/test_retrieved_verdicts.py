@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from retrieved_verdicts import (
     verdict_from_probabilities,evaluate_scenario,retrieved_entries,
-    annotated_gold,make_fts,create_legacy_contentless,
+    annotated_gold,make_fts,create_legacy_contentless,claim_ids,
 )
 
 
@@ -85,6 +85,12 @@ class RetrievedVerdictTests(unittest.TestCase):
         out,bits=evaluate_scenario(rows,{},["1"])
         self.assertEqual(out["empty_retrieval"],1)
         self.assertEqual(bits,[0])
+
+    def test_original_scifact_claim_identifier_contract(self):
+        cases=annotated_gold(CLAIMS,CORPUS)
+        self.assertEqual(claim_ids(cases),["8","9"])
+        with self.assertRaises(AssertionError):
+            claim_ids([{"id":"8"},{"id":"8"}])
 
     def test_failure_on_cohort_misalignment(self):
         rows=[{"claim_id":"1","source_id":None,
