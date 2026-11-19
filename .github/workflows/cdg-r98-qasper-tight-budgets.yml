@@ -1,0 +1,29 @@
+name: CDG R98 QASPER source budget with paper-balanced control
+on:
+  push:
+    branches:
+      - "research/round-98-*"
+    paths:
+      - "experiments/round-98/**"
+      - ".github/workflows/cdg-r98-qasper-tight-budgets.yml"
+  workflow_dispatch:
+jobs:
+  constrained-qasper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Nine source-label, article-balance, SQLite-physical-byte and parity tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-98 -p 'test_*.py' -v
+      - name: SHA-locked QASPER 6 and 8 MiB budgets for both representations and policies
+        run: python experiments/round-98/qasper_binding_budget.py --out experiments/round-98/ci-results.json
+      - name: Retain only physical-byte and expert paragraph evidence metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r98-qasper-budget
+          path: experiments/round-98/ci-results.json
+          if-no-files-found: ignore
