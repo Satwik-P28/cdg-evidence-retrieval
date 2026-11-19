@@ -26,7 +26,7 @@ Human annotation is matched using whitespace-normalized exact strings against th
 | --- | ---: | ---: |
 | Total static persistent source+index bytes | **12,099,584 B** | **9,822,208 B** |
 | Source+index storage saved | baseline | **18.8219%** |
-| Questions with identical top-10 paper-scoped ranked rowids | \multicolumn{2}{c}{**1,005 / 1,005**} |
+| Questions with identical top-10 paper-scoped ranked rowids | **1,005 / 1,005** | **1,005 / 1,005** |
 | Human exact paragraph Recall@1 | **229/888 = 25.7883%** | **229/888 = 25.7883%** |
 | Human exact paragraph Recall@3 | **434/888 = 48.8739%** | **434/888 = 48.8739%** |
 | Human exact paragraph Recall@5 | **537/888 = 60.4730%** | **537/888 = 60.4730%** |
