@@ -1,0 +1,29 @@
+name: CDG R96 QASPER independent source and evidence audit
+on:
+  push:
+    branches:
+      - "research/round-96-*"
+    paths:
+      - "experiments/round-96/**"
+      - ".github/workflows/cdg-r96-qasper-lock.yml"
+  workflow_dispatch:
+jobs:
+  qasper-source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Nine gold-evidence and immutable tar integrity regression tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-96 -p 'test_*.py' -v
+      - name: SHA-locked official QASPER train and dev source and text evidence audit
+        run: python experiments/round-96/qasper_source_probe.py --out experiments/round-96/ci-results.json
+      - name: Preserve only hashes schema counts and evidence mapping totals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r96-qasper-preflight
+          path: experiments/round-96/ci-results.json
+          if-no-files-found: ignore
