@@ -98,8 +98,12 @@ def article_paragraphs(article):
         raise AssertionError("QASPER full_text schema unrecognized")
     out=[]
     for section_idx,(title,paragraphs) in enumerate(iterator):
+        if title is None:
+            title=""
         if not isinstance(paragraphs,list) or not isinstance(title,str):
-            raise AssertionError("QASPER bad section")
+            raise AssertionError(
+                "QASPER bad section: title="+type(title).__name__
+                + " paragraphs="+type(paragraphs).__name__)
         for paragraph_idx,text in enumerate(paragraphs):
             if not isinstance(text,str):
                 raise AssertionError("QASPER paragraph text not string")
