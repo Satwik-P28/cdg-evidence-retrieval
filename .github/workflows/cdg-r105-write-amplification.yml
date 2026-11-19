@@ -1,0 +1,31 @@
+name: CDG R105 grouped evidence write amplification and WAL
+on:
+  push:
+    branches:
+      - "research/round-105-*"
+    paths:
+      - "experiments/round-105/**"
+      - ".github/workflows/cdg-r105-write-amplification.yml"
+  workflow_dispatch:
+jobs:
+  dynamic-write-frontier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned existing lossless source codecs
+        run: python -m pip install --disable-pip-version-check Brotli==1.1.0 zstandard==0.23.0
+      - name: Eleven source and write-cost control regressions
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-105 -p 'test_*.py' -v
+      - name: Original QASPER 17 archives x 120 identical synthetic revisions and independent FTS differential
+        run: python experiments/round-105/update_write_frontier.py --out experiments/round-105/ci-results.json
+      - name: Preserve aggregate WAL growth update-latency source-byte and original-index receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r105-WAL-rewrite-frontier
+          path: experiments/round-105/ci-results.json
+          if-no-files-found: ignore
