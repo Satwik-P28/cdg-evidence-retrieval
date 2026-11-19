@@ -1,0 +1,31 @@
+name: CDG R101 QASPER source-exact Brotli paragraph blocks
+on:
+  push:
+    branches:
+      - "research/round-101-*"
+    paths:
+      - "experiments/round-101/**"
+      - ".github/workflows/cdg-r101-paper-blocks.yml"
+  workflow_dispatch:
+jobs:
+  paragraph-block-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install previously verified standard Brotli5 codec
+        run: python -m pip install --disable-pip-version-check Brotli==1.1.0
+      - name: Ten fail-closed original paragraph receipt and group parity tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-101 -p 'test_*.py' -v
+      - name: Official QASPER full source group sizes one-to-entire-paper and source amplification
+        run: python experiments/round-101/paper_block_brotli.py --out experiments/round-101/ci-results.json
+      - name: Preserve original source integrity, persisted bytes and amplification aggregates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r101-paragraph-blocks
+          path: experiments/round-101/ci-results.json
+          if-no-files-found: ignore
