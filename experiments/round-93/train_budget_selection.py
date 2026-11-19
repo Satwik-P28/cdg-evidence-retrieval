@@ -47,11 +47,32 @@ K_RETRIEVE_TRAIN=10
 GREEDY_STEPS=400
 SELECT_METRIC="r10"
 PRIORITY_SALT="CDG-R93-TRAIN-ONLY-DOC-PRIORITIZATION-v1"
+SPLIT_SALT="CDG-R93-CLAIM-FIT-SELECT-DISJOINT-v1"
 
 
 def tie_hash(doc_id,seed):
     return hashlib.sha256((PRIORITY_SALT+"|"+str(seed)+"|"+str(doc_id))
                            .encode()).digest()
+
+
+def split_train_claims(train):
+    """Frozen 70/30 CLAIM-ID split before any source priorities or tuning.
+
+    The fit split builds candidate policy scores. The selection split
+    chooses the strongest predeclared policy, without sharing claim IDs.
+    The corpus and some source documents may overlap between splits.
+    """
+    ordered=sorted(train,key=lambda row:(
+        hashlib.sha256((SPLIT_SALT+"|"+str(row["id"])).encode()).digest(),
+        str(row["id"])))
+    n_selection=max(1,int(round(.30*len(ordered))))
+    fit=ordered[:-n_selection]
+    selection=ordered[-n_selection:]
+    if not fit or not selection:
+        raise AssertionError("not enough claims for fit/selection split")
+    if set(str(x["id"]) for x in fit)&set(str(x["id"]) for x in selection):
+        raise AssertionError("fit and selection claim ID overlap")
+    return fit,selection
 
 
 def train_gold_sources(train,corpus_ids):
@@ -254,18 +275,20 @@ def evaluate(corpus,train,dev,seeds=SEEDS,budgets=BUDGETS_BYTES):
     if set(str(x["id"]) for x in train)&set(str(x["id"]) for x in dev):
         raise AssertionError("train/dev claim ID overlap")
     ids={str(x["doc_id"]) for x in corpus}
-    train_gold=annotated_gold(train,corpus)
+    fit_claims,select_claims=split_train_claims(train)
+    train_gold=annotated_gold(select_claims,corpus)
     dev_gold=annotated_gold(dev,corpus)
-    train_counts=train_gold_sources(train,ids)
-    disjoint=source_disjoint_dev(dev_gold,set(train_counts))
-    rrf,qlinks,query_meta=train_query_relevance(corpus,train)
+    fit_counts=train_gold_sources(fit_claims,ids)
+    all_train_counts=train_gold_sources(train,ids)
+    disjoint=source_disjoint_dev(dev_gold,set(all_train_counts))
+    rrf,qlinks,query_meta=train_query_relevance(corpus,fit_claims)
     greedy=greedy_coverage_priority(corpus,qlinks)
-    signals={"train_gold":train_counts,"train_rrf":rrf,
+    signals={"train_gold":fit_counts,"train_rrf":rrf,
              "title_rarity":title_rarity_scores(corpus),"greedy":greedy}
     rows=[]
     for policy in POLICIES:
         for seed in seeds:
-            rows.extend(one_priority(corpus,train,dev,train_gold,dev_gold,
+            rows.extend(one_priority(corpus,select_claims,dev,train_gold,dev_gold,
                                     disjoint,policy,seed,signals,budgets))
     selections={str(budget):choose_train_policy(rows,budget)
                 for budget in budgets}
@@ -307,16 +330,21 @@ def evaluate(corpus,train,dev,seeds=SEEDS,budgets=BUDGETS_BYTES):
     return {
         "round":93,
         "cohort":{
-            "docs":len(corpus),"train_claims":len(train),
-            "train_annotated_claims":len(train_gold),
+            "docs":len(corpus),"original_train_claims":len(train),
+            "fit_claims":len(fit_claims),
+            "internal_selection_claims":len(select_claims),
+            "internal_selection_annotated_claims":len(train_gold),
+            "claim_fit_selection_overlap":0,
             "dev_claims":len(dev),"dev_annotated_claims":len(dev_gold),
-            "train_labelled_source_count":len(train_counts),
+            "fit_labelled_source_count":len(fit_counts),
+            "all_train_labelled_source_count":len(all_train_counts),
             "dev_annotated_source_disjoint_claims":len(disjoint),
             "seeds":list(seeds),"budgets":list(budgets),
             "all_policy_names":list(POLICIES),
-            "priority_training_uses_only_train_claims":True,
+            "priority_training_uses_fit_claims_only":True,
+            "policy_selection_uses_separate_claim_disjoint_validation":True,
             "ranker":"same full-content FTS5 BM25 title5/body1 term-budget28",
-            "selection_metric":"mean TRAIN Recall@10 across seeds; then mean TRAIN Recall@1",
+            "selection_metric":"mean internal heldout TRAIN selection Recall@10 across seeds; then Recall@1",
             "greedy_candidate_budget":GREEDY_STEPS,
         },
         "train_query_relevance":query_meta,
@@ -331,12 +359,12 @@ def evaluate(corpus,train,dev,seeds=SEEDS,budgets=BUDGETS_BYTES):
         "per_seed_all_methods":rows,
         "limitations":[
             "Six prioritizers are known conventional heuristics; none is an optimized semantic retriever",
-            "Train and dev claims disjoint, but train-evidence source documents can overlap dev source docs",
-            "Source-disjoint dev cohort removes all gold sources with train evidence labels, not all topical/train-pretraining overlap",
+            "Fit, internal selection and dev claim IDs disjoint; source documents may overlap across all splits",
+            "Source-disjoint dev cohort removes all gold sources with ANY official train evidence label, not all topical/pretraining overlap",
             "Five-seed R92 random baseline and three-seed R93 train choices are not identical experimental replications",
             "Full retrieval and compact compression share the same static BM25 ranking; no generator hallucination is tested",
             "Budget is post-VACUUM SQLite persistent bytes, not WAL, SSD reads, model weights or runtime RAM",
-            "Train only selects policy; individual nonselected dev variant outcomes are exploratory, not an untouched external test",
+            "Internal heldout TRAIN claims select policy; all dev variant outcomes are public exploratory research, not untouched external tests",
             "SciFact same source corpus can make training evidence frequency look unusually strong, potentially masking generalization failure",
             "Selection by hash prefix and binary search does not solve optimal document-knapsack allocation",
         ],
