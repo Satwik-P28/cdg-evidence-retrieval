@@ -5,7 +5,8 @@ from pathlib import Path
 from train_budget_selection import (
     POLICIES,SEEDS,train_gold_sources,title_rarity_scores,
     train_query_relevance,greedy_coverage_priority,
-    source_order,source_disjoint_dev,choose_train_policy,fit_budget
+    source_order,source_disjoint_dev,choose_train_policy,fit_budget,
+    split_train_claims
 )
 from train_budget_selection import make_fts,annotated_gold
 
@@ -109,6 +110,18 @@ class TrainedBudgetTests(unittest.TestCase):
             n,size=fit_budget(d,DOCS,budget,{})
             self.assertGreaterEqual(n,5)
             self.assertLessEqual(size,budget)
+
+    def test_fit_vs_selection_claim_disjoint_and_deterministic(self):
+        synthetic=[{"id":i, "claim":"query"+str(i), "evidence":{}}
+                   for i in range(40)]
+        f1,s1=split_train_claims(synthetic)
+        f2,s2=split_train_claims(synthetic)
+        self.assertEqual(f1,f2)
+        self.assertEqual(s1,s2)
+        self.assertEqual(len(f1),28)
+        self.assertEqual(len(s1),12)
+        self.assertFalse({r["id"] for r in f1}
+                         & {r["id"] for r in s1})
 
     def test_no_duplicate_dev_or_gold_case_identity(self):
         cases=annotated_gold(DEV,DOCS)
