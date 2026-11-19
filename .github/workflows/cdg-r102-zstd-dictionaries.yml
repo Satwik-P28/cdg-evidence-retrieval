@@ -1,0 +1,31 @@
+name: CDG R102 train-only QASPER shared Zstandard dictionary comparison
+on:
+  push:
+    branches:
+      - "research/round-102-*"
+    paths:
+      - "experiments/round-102/**"
+      - ".github/workflows/cdg-r102-zstd-dictionaries.yml"
+  workflow_dispatch:
+jobs:
+  train-only-dictionaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pin prior-art Brotli5 and Zstandard implementations
+        run: python -m pip install --disable-pip-version-check Brotli==1.1.0 zstandard==0.23.0
+      - name: Ten original train-only dictionary provenance and corrupted-source tests
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-102 -p 'test_*.py' -v
+      - name: Full QASPER original train/dev article-disjoint dictionary ablation
+        run: python experiments/round-102/train_only_zstd_dictionary.py --out experiments/round-102/ci-results.json
+      - name: Retain only source/dictionary SHA and aggregate total SQLite and decoder cost
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r102-train-only-zstd-dictionaries
+          path: experiments/round-102/ci-results.json
+          if-no-files-found: ignore
