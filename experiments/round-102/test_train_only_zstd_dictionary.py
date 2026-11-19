@@ -100,7 +100,13 @@ class QasperDictionaryTests(unittest.TestCase):
                     self.assertEqual(reader.read(i,str(row["doc_id"])),expected)
                 self.assertEqual(comp.execute(
                     "SELECT COUNT(*) FROM source_dictionaries").fetchone()[0],1)
-                self.assertEqual(meta["dictionary_stored_bytes"],8192)
+                # Zstd's trainer can return a smaller dictionary than the
+                # requested capacity on small/repetitive fixtures. Charge
+                # actual bytes and verify the persisted exact dictionary.
+                self.assertEqual(
+                    meta["dictionary_stored_bytes"],
+                    len(dictionaries[8192]["raw"]))
+                self.assertGreater(meta["dictionary_stored_bytes"],1000)
             finally:comp.close()
 
     def test_corrupt_dictionary_fails_before_source_read(self):
