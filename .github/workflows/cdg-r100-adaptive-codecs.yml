@@ -1,0 +1,31 @@
+name: CDG R100 adaptive per-source codec admission
+on:
+  push:
+    branches:
+      - "research/round-100-*"
+    paths:
+      - "experiments/round-100/**"
+      - ".github/workflows/cdg-r100-adaptive-codecs.yml"
+  workflow_dispatch:
+jobs:
+  codec-policy-ablation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install prior-art pinned codec implementations
+        run: python -m pip install --disable-pip-version-check zstandard==0.23.0 Brotli==1.1.0
+      - name: Nine static codec policy choice and exact-source regressions
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-100 -p 'test_*.py' -v
+      - name: Both original SciFact and QASPER seven-codec-policy SQLite comparisons
+        run: python experiments/round-100/adaptive_codec.py --out experiments/round-100/ci-results.json
+      - name: Retain only aggregate storage bytes source checks and encoding/decoding cost
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r100-adaptive-lossless-codec-results
+          path: experiments/round-100/ci-results.json
+          if-no-files-found: ignore
