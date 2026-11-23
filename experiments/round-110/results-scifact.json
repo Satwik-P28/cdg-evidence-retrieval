@@ -1,0 +1,81 @@
+{
+  "dataset": "scifact",
+  "decode_warm_batch_ms_trials": {
+    "barm_fast": [
+      86.5589,
+      86.95115,
+      86.62619,
+      86.99065,
+      87.53198,
+      86.68439,
+      86.97669
+    ],
+    "barm_legacy": [
+      188.31465,
+      186.16036,
+      185.80427,
+      185.15032,
+      185.66393,
+      185.49271,
+      186.11736
+    ],
+    "ef_partitioned": [
+      64.37529,
+      64.46123,
+      64.45431,
+      64.48808,
+      75.44052,
+      64.24829,
+      64.22166
+    ],
+    "streamvbyte": [
+      40.73824,
+      40.8299,
+      40.41884,
+      39.97697,
+      40.03359,
+      40.85381,
+      40.50536
+    ],
+    "varint": [
+      20.62581,
+      20.66606,
+      20.72545,
+      20.66712,
+      20.7114,
+      22.67581,
+      20.70187
+    ]
+  },
+  "decode_warm_median_batch_ms": {
+    "barm_fast": 86.95115,
+    "barm_legacy": 185.80427,
+    "ef_partitioned": 64.45431,
+    "streamvbyte": 40.50536,
+    "varint": 20.70187
+  },
+  "notes": [
+    "Same BARM encoded bytes for legacy and optimized decoder; no source data or QA labels in results",
+    "All five methods decoded every original selected list exactly before timing",
+    "Warm single-runner Python batch decode; no CPU affinity, native SIMD, cache flush, hardware repeats or SSD reads",
+    "Codecs have different data-dependent list decode complexity, and source selection is stratified rather than a natural workload probability",
+    "No full native FTS5 replacement or hallucination result"
+  ],
+  "original_R108_sampling_salt": "CDG-R108-SOURCE-POSTINGS-V1",
+  "original_documents": 5183,
+  "randomized_method_order_seed": 20261123,
+  "relative_fast_vs_legacy_wall_median": 2.13688,
+  "relative_fast_vs_varint_wall_median": 4.20016,
+  "repetitions": 7,
+  "round": 110,
+  "sampled_posting_entries": 116186,
+  "sampled_terms": 1950,
+  "source": {
+    "dataset": "SciFact official original corpus",
+    "num_corpus_docs": 5183,
+    "official_archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "source_member_sha256": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62",
+    "source_url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz"
+  },
+  "wire_identical_barm_bytes": 110142
+}

@@ -1,0 +1,39 @@
+name: CDG R110 compatible BARM decoder speed and correctness
+on:
+  push:
+    branches:
+      - 'research/round-110-*'
+    paths:
+      - 'experiments/round-110/**'
+      - '.github/workflows/cdg-r110-barm-fast-decode.yml'
+  pull_request:
+    paths:
+      - 'experiments/round-110/**'
+      - '.github/workflows/cdg-r110-barm-fast-decode.yml'
+  workflow_dispatch:
+jobs:
+  original-corpus-wire-compat-and-cpu-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned test dependency
+        run: python -m pip install --disable-pip-version-check pytest==9.0.2
+      - name: Wire format and corrupted/truncated bit-plane tests
+        run: python -m pytest -q experiments/round-110
+      - name: Source-locked QASPER same-bytes warm Python decoder comparison
+        run: python experiments/round-110/speed_lab.py --dataset qasper --out experiments/round-110/ci-qasper.json
+      - name: Source-locked SciFact same-bytes warm Python decoder comparison
+        run: python experiments/round-110/speed_lab.py --dataset scifact --out experiments/round-110/ci-scifact.json
+      - name: Publish numeric result tables without original source content
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r110-barm-decoder-compatibility-and-speed
+          path: |
+            experiments/round-110/ci-qasper.json
+            experiments/round-110/ci-scifact.json
+          if-no-files-found: warn
