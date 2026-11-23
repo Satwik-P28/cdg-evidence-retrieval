@@ -1,0 +1,43 @@
+name: CDG R112 full-vocabulary exact positions and BM25 phrase differential
+on:
+  push:
+    branches: ['research/round-112-*']
+    paths:
+      - 'experiments/round-112/**'
+      - 'research/rounds/round-112/**'
+      - '.github/workflows/cdg-r112-positional-index.yml'
+  pull_request:
+    paths:
+      - 'experiments/round-112/**'
+      - 'research/rounds/round-112/**'
+      - '.github/workflows/cdg-r112-positional-index.yml'
+  workflow_dispatch:
+jobs:
+  positional-index:
+    strategy:
+      fail-fast: false
+      matrix:
+        dataset: [qasper, scifact]
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned fixture testing dependency
+        run: python -m pip install --disable-pip-version-check pytest==9.0.2
+      - name: Independent exact phrase, gap, BM25 fixture tests with repository codecs
+        run: PYTHONPATH=experiments/round-112 python -m pytest -q experiments/round-112/tests
+      - name: Original SHA-locked corpus complete-vocabulary positional study
+        run: |
+          python experiments/round-112/positional_store.py \
+            --dataset ${{ matrix.dataset }} \
+            --out experiments/round-112/ci-${{ matrix.dataset }}.json
+      - name: Capture reproducible aggregate original-corpus results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r112-${{ matrix.dataset }}-positional
+          path: experiments/round-112/ci-${{ matrix.dataset }}.json
+          if-no-files-found: warn
