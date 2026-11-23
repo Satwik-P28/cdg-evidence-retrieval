@@ -1,6 +1,6 @@
 # R119: Atomic historical statistics and ranking receipts
 
-Status: pending original-source CI.
+**Status: PASS. Six tests and original-source CI [45287792108](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45287792108).**
 
 Extend R116's atomic source/index writes and R118's public native Unicode61
 tokenizer and phrase-count API with a per-generation token count, cumulative
@@ -32,3 +32,20 @@ user query logs, power loss, arbitrary FTS grammar, or novel scoring claim.
 
 Related work: https://sqlite.org/fts5.html ; https://sqlite.org/isolation.html ;
 https://arxiv.org/abs/2411.04051 ; https://doi.org/10.1145/3787449 .
+
+## Verified results
+
+45 remaining hash-ranked articles, 256 revisions, prefix 128. Independent native full-content oracle checks: 160 prefix and 160 final query/scope combinations; 604 prefix and 754 final ranked hits, exact ordered identities and zero observed BM25 score error. All 160 prefix receipts replay identically in the pinned reader and later snapshot. All 256 original source byte sequences reconstructed; all 256 ledger rows audited against native token positions and the chained prefix commitment. Five process-termination stages passed (source, index, ledger, meta, postcommit). Six regression tests passed, including malformed receipt fields and the distinction between a changed trusted digest and a valid alternative request with its own digest.
+
+| Metric | Base source+index | Atomic ledger |
+|---|---:|---:|
+| Complete SQLite bytes | 1253376 | 1269760 |
+| WAL bytes before checkpoint | 19504112 | 20583552 |
+
+Incremental physical archive overhead: 16384 B (1.307%). WAL growth: 5.534%. Exported 160 canonical receipt bodies occupy 160685 B plus 5120 B if digests are stored as raw 32-byte values (hex encoding doubles digest bytes). Exported receipts are not persisted in the measured SQLite archive. Baseline is a marginal overhead comparator, not a feature-equivalent temporal retrieval system.
+
+## Scientific disposition
+
+The source/index/statistics atomic integration passed on this cohort. This is a reproducible artifact result, not a proof of completeness, cryptographic authentication, power-loss tolerance, arbitrary FTS grammar, or production scalability. Actual latest-head-only BM25 corpus statistics are still unsupported: the heads scope filters candidates while preserving all-history prefix statistics. A further experiment must explicitly compare that different scoring contract to a rebuilt index of only active versions.
+
+Strong prior-art comparisons include Staudinger et al. (2024), Reproducible Hybrid Time-Travel Retrieval in Evolving Corpora (https://arxiv.org/abs/2411.04051), and TimIR (2025), which already supports recreating historical sparse rankings for reproducible research (https://repositum.tuwien.at/handle/20.500.12708/224602). The contribution cannot be framed as the invention of time-travel retrieval. Compare compact integrated source archives and receipt costs with versioned posting/statistics systems, with actual historical validity intervals and independent workloads.
