@@ -1,0 +1,39 @@
+name: CDG R108 authentic QASPER/SciFact logical postings and strong controls
+on:
+  push:
+    branches:
+      - 'research/round-108-*'
+    paths:
+      - 'experiments/round-108/**'
+      - '.github/workflows/cdg-r108-real-postings.yml'
+  pull_request:
+    paths:
+      - 'experiments/round-108/**'
+      - '.github/workflows/cdg-r108-real-postings.yml'
+  workflow_dispatch:
+jobs:
+  original-source-posting-study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test-only dependency
+        run: python -m pip install --disable-pip-version-check pytest==9.0.2
+      - name: Codec correctness and synthetic SQLite fixtures
+        run: python -m pytest -q experiments/round-108
+      - name: Original QASPER v0.3 DEV source SHA-locked posting-gap comparison
+        run: python experiments/round-108/authentic_postings.py --dataset qasper --out experiments/round-108/ci-qasper.json
+      - name: Original SciFact source SHA-locked posting-gap comparison
+        run: python experiments/round-108/authentic_postings.py --dataset scifact --out experiments/round-108/ci-scifact.json
+      - name: Upload aggregate, source-locked numerical results only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r108-true-source-fts5-codec-controls
+          path: |
+            experiments/round-108/ci-qasper.json
+            experiments/round-108/ci-scifact.json
+          if-no-files-found: warn

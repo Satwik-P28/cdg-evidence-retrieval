@@ -1,0 +1,234 @@
+{
+  "by_df": {
+    "df1": {
+      "bits_per_posting": {
+        "barm_g": 141.82857,
+        "barm_r": 101.82857,
+        "bitpack": 103.81714,
+        "ef_partitioned": 143.61143,
+        "streamvbyte": 103.81714,
+        "varint": 95.90857,
+        "zlib_varint": 159.90857
+      },
+      "posting_entries": 350,
+      "sampled_terms": 350,
+      "selected_term_sha256": "55150fbc7fe68c19cc37a0b855622680028c2cdc42a234bd818330fa0a959501",
+      "sizes_bytes": {
+        "barm_g": 6205,
+        "barm_r": 4455,
+        "bitpack": 4542,
+        "ef_partitioned": 6283,
+        "streamvbyte": 4542,
+        "varint": 4196,
+        "zlib_varint": 6996
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 0,
+        "barm_r": 91,
+        "bitpack": 4,
+        "ef_partitioned": 0,
+        "streamvbyte": 4,
+        "varint": 350,
+        "zlib_varint": 0
+      }
+    },
+    "df128_plus": {
+      "bits_per_posting": {
+        "barm_g": 5.69646,
+        "barm_r": 5.26485,
+        "bitpack": 7.51309,
+        "ef_partitioned": 5.89506,
+        "streamvbyte": 10.59651,
+        "varint": 8.82593,
+        "zlib_varint": 7.35255
+      },
+      "posting_entries": 113269,
+      "sampled_terms": 200,
+      "selected_term_sha256": "a70fae117ccec4357157172bdf251c6a28df2c4f58c307a4153d543941114642",
+      "sizes_bytes": {
+        "barm_g": 80654,
+        "barm_r": 74543,
+        "bitpack": 106375,
+        "ef_partitioned": 83466,
+        "streamvbyte": 150032,
+        "varint": 124963,
+        "zlib_varint": 104102
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 0,
+        "barm_r": 154,
+        "bitpack": 0,
+        "ef_partitioned": 48,
+        "streamvbyte": 0,
+        "varint": 0,
+        "zlib_varint": 0
+      }
+    },
+    "df2_3": {
+      "bits_per_posting": {
+        "barm_g": 65.52781,
+        "barm_r": 49.0829,
+        "bitpack": 51.49213,
+        "ef_partitioned": 66.45121,
+        "streamvbyte": 50.82057,
+        "varint": 47.62225,
+        "zlib_varint": 74.48478
+      },
+      "posting_entries": 953,
+      "sampled_terms": 400,
+      "selected_term_sha256": "fe90474ab1cd64dc1fd7886cdd2ede08297d9fc6148aa70f2ad0ca50393a0ede",
+      "sizes_bytes": {
+        "barm_g": 7806,
+        "barm_r": 5847,
+        "bitpack": 6134,
+        "ef_partitioned": 7916,
+        "streamvbyte": 6054,
+        "varint": 5673,
+        "zlib_varint": 8873
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 0,
+        "barm_r": 216,
+        "bitpack": 82,
+        "ef_partitioned": 0,
+        "streamvbyte": 17,
+        "varint": 390,
+        "zlib_varint": 0
+      }
+    },
+    "df32_127": {
+      "bits_per_posting": {
+        "barm_g": 10.54231,
+        "barm_r": 10.10502,
+        "bitpack": 12.33463,
+        "ef_partitioned": 11.35021,
+        "streamvbyte": 13.18675,
+        "varint": 12.21075,
+        "zlib_varint": 13.03233
+      },
+      "posting_entries": 22795,
+      "sampled_terms": 350,
+      "selected_term_sha256": "69902fcc1e9054735e998253471a1215396c6dc12667dd9ccd585b57440b5f63",
+      "sizes_bytes": {
+        "barm_g": 30039,
+        "barm_r": 28793,
+        "bitpack": 35146,
+        "ef_partitioned": 32341,
+        "streamvbyte": 37574,
+        "varint": 34793,
+        "zlib_varint": 37134
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 2,
+        "barm_r": 292,
+        "bitpack": 25,
+        "ef_partitioned": 54,
+        "streamvbyte": 0,
+        "varint": 0,
+        "zlib_varint": 0
+      }
+    },
+    "df4_31": {
+      "bits_per_posting": {
+        "barm_g": 21.44327,
+        "barm_r": 17.94939,
+        "bitpack": 20.3298,
+        "ef_partitioned": 22.80816,
+        "streamvbyte": 21.30068,
+        "varint": 19.54286,
+        "zlib_varint": 25.25061
+      },
+      "posting_entries": 7350,
+      "sampled_terms": 650,
+      "selected_term_sha256": "d963306b507bad1e52ab8d2591cf9c9e35e5bd9bb659da76f6edea8e22211c0f",
+      "sizes_bytes": {
+        "barm_g": 19701,
+        "barm_r": 16491,
+        "bitpack": 18678,
+        "ef_partitioned": 20955,
+        "streamvbyte": 19570,
+        "varint": 17955,
+        "zlib_varint": 23199
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 0,
+        "barm_r": 533,
+        "bitpack": 182,
+        "ef_partitioned": 0,
+        "streamvbyte": 10,
+        "varint": 193,
+        "zlib_varint": 0
+      }
+    }
+  },
+  "dataset": "qasper",
+  "limitations": [
+    "Logical gap streams extracted via SQLite fts5vocab(instance); SQLite native segment encoding not replaced",
+    "Python scalar reference codecs; no SIMD throughput or random-access latency claims",
+    "Adaptive EF partition DP can inspect entire input list; tuned reference, not production PEF",
+    "Total SQLite index bytes refer to existing unchanged FTS5, not a codec-substituted database",
+    "Corpus data streamed from locked official upstream; only aggregate metrics/hashes persisted",
+    "Term sampling is stratified, not representative of unsampled overall index bytes",
+    "No semantic retrieval improvement or RAG answer-level experiment"
+  ],
+  "num_documents": 13266,
+  "original_contentless_fts_sqlite_bytes": 4505600,
+  "round": 108,
+  "sampled_posting_entries": 144717,
+  "sampled_terms": 1950,
+  "selection": {
+    "band_limits": {
+      "df1": [
+        1,
+        1,
+        350
+      ],
+      "df128_plus": [
+        128,
+        1000000000,
+        200
+      ],
+      "df2_3": [
+        2,
+        3,
+        400
+      ],
+      "df32_127": [
+        32,
+        127,
+        350
+      ],
+      "df4_31": [
+        4,
+        31,
+        650
+      ]
+    },
+    "method": "SHA256-minimal terms within fixed doc-frequency strata",
+    "salt": "CDG-R108-SOURCE-POSTINGS-V1",
+    "total_eligible_terms_by_band": {
+      "df1": 9160,
+      "df128_plus": 957,
+      "df2_3": 4443,
+      "df32_127": 1773,
+      "df4_31": 6121
+    }
+  },
+  "sizes_bytes": {
+    "barm_g": 144405,
+    "barm_r": 130129,
+    "bitpack": 170875,
+    "ef_partitioned": 150961,
+    "streamvbyte": 217772,
+    "varint": 187580,
+    "zlib_varint": 180304
+  },
+  "source": {
+    "archive_bytes": 10835856,
+    "dataset": "QASPER v0.3 DEV original paragraphs",
+    "num_papers": 281,
+    "official_archive_sha256": "a28fdf966db827bcee3d873107d6b6669864fb7ca8fbf73a192f5e39191bdb5a",
+    "source_member_sha256": "2ae7ee62a65b1c4225791c70de80c2aad4e8998cf1fd4f09a53103db4f21af93"
+  },
+  "wall_seconds_pipeline": 3.62
+}
