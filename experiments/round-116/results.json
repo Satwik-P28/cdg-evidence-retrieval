@@ -1,0 +1,128 @@
+{
+  "round": 116,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 100,
+  "revisions": 556,
+  "prefix": 278,
+  "query_count": 64,
+  "article_sha256": "c40397a8d663ec1b6b70677fe3f19946e930bad8091230cfdd72513f38a90345",
+  "policies": {
+    "snapshot": {
+      "sqlite_bytes": 3166208,
+      "source_payload_bytes": 969040,
+      "wal_bytes": 44891552,
+      "initial_generation": 278,
+      "final_generation": 556,
+      "prefix": {
+        "queries": 128,
+        "receipts": 574,
+        "activated_payload_bytes": 1199169,
+        "decoded_bytes": 2735020,
+        "requested_bytes": 2735020,
+        "decode_amplification": 1,
+        "max_score_error": 0
+      },
+      "final": {
+        "queries": 128,
+        "receipts": 714,
+        "activated_payload_bytes": 1686039,
+        "decoded_bytes": 3930732,
+        "requested_bytes": 3930732,
+        "decode_amplification": 1,
+        "max_score_error": 0
+      },
+      "pinned_queries": 64,
+      "old_receipts_replayed": 355,
+      "all_revision_readbacks": 556,
+      "historical_cutoff_rank_changes": 12,
+      "historical_cutoff_score_or_rank_changes": 64,
+      "crash_stages_passed": [
+        "source",
+        "index",
+        "meta",
+        "commit"
+      ]
+    },
+    "prev2": {
+      "sqlite_bytes": 2461696,
+      "source_payload_bytes": 563141,
+      "wal_bytes": 43659672,
+      "initial_generation": 278,
+      "final_generation": 556,
+      "prefix": {
+        "queries": 128,
+        "receipts": 574,
+        "activated_payload_bytes": 1372912,
+        "decoded_bytes": 5181731,
+        "requested_bytes": 2735020,
+        "decode_amplification": 1.8945861456223354,
+        "max_score_error": 0
+      },
+      "final": {
+        "queries": 128,
+        "receipts": 714,
+        "activated_payload_bytes": 1891227,
+        "decoded_bytes": 6656988,
+        "requested_bytes": 3930732,
+        "decode_amplification": 1.693574631900623,
+        "max_score_error": 0
+      },
+      "pinned_queries": 64,
+      "old_receipts_replayed": 355,
+      "all_revision_readbacks": 556,
+      "historical_cutoff_rank_changes": 12,
+      "historical_cutoff_score_or_rank_changes": 64,
+      "crash_stages_passed": [
+        "source",
+        "index",
+        "meta",
+        "commit"
+      ]
+    },
+    "bounded_anchor": {
+      "sqlite_bytes": 2535424,
+      "source_payload_bytes": 554017,
+      "wal_bytes": 43853312,
+      "initial_generation": 278,
+      "final_generation": 556,
+      "prefix": {
+        "queries": 128,
+        "receipts": 574,
+        "activated_payload_bytes": 1278359,
+        "decoded_bytes": 4146856,
+        "requested_bytes": 2735020,
+        "decode_amplification": 1.5162068284692616,
+        "max_score_error": 0
+      },
+      "final": {
+        "queries": 128,
+        "receipts": 714,
+        "activated_payload_bytes": 1870565,
+        "decoded_bytes": 6051553,
+        "requested_bytes": 3930732,
+        "decode_amplification": 1.5395486133371596,
+        "max_score_error": 0
+      },
+      "pinned_queries": 64,
+      "old_receipts_replayed": 355,
+      "all_revision_readbacks": 556,
+      "historical_cutoff_rank_changes": 12,
+      "historical_cutoff_score_or_rank_changes": 64,
+      "crash_stages_passed": [
+        "source",
+        "index",
+        "meta",
+        "commit"
+      ]
+    }
+  },
+  "limits": [
+    "filtered processed source revisions; article-local chronology only",
+    "synthetic round-robin global ingestion order and deterministic lexical/phrase probes",
+    "heads filter retains whole historical index BM25 corpus statistics, not head-only statistics",
+    "no power-loss or adversarial database integrity guarantee; os._exit process crashes",
+    "cutoff filtering is not historical rank reconstruction; score drift is measured",
+    "same full positional contentless FTS5 for all policies, no RAG quality claim"
+  ]
+}

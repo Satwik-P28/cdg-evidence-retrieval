@@ -1,0 +1,32 @@
+name: CDG R116 version-bound evidence
+on:
+  push:
+    branches: ['research/round-116-*']
+    paths: ['experiments/round-116/**','.github/workflows/cdg-r116-evidence.yml','research/rounds/round-116/**']
+  pull_request:
+    paths: ['experiments/round-116/**','.github/workflows/cdg-r116-evidence.yml','research/rounds/round-116/**']
+  workflow_dispatch:
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2
+      - run: PYTHONPATH=experiments/round-116 python -m pytest -q experiments/round-116
+      - uses: actions/checkout@v4
+        with:
+          repository: natwar-modani/versions
+          ref: 06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0
+          path: external/versions
+          persist-credentials: false
+      - run: |
+          test "$(git -C external/versions rev-parse HEAD)" = "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0"
+          python experiments/round-116/versioned_evidence.py --root external/versions/version_documents --out experiments/round-116/ci-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r116-versioned-evidence
+          path: experiments/round-116/ci-results.json
