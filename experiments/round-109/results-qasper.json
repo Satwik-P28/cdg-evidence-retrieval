@@ -1,0 +1,121 @@
+{
+  "dataset": "qasper",
+  "limitations": [
+    "External SQLite postings table supports docID-only term lookup, not full FTS5 native ranking/positions/frequencies",
+    "Original contentless FTS5 index size is contextual only and is NOT a feature-equivalent baseline",
+    "All codec stores have same term set and same WITHOUT ROWID table schema with actual file bytes",
+    "Warm SQLite+Python decoder timings are descriptive one-runner samples, not cold SSD or SIMD throughput",
+    "QASPER/SciFact source payloads fetched with existing SHA locks; no source text committed",
+    "Selected vocabulary is a hashed doc-frequency-stratified sample, not a complete external index or overall FTS compression estimate",
+    "No source archive/citation receipt/versioning coupled into external store"
+  ],
+  "metrics": {
+    "barm_r": {
+      "build_elapsed_s_exploratory": 0.293,
+      "encoded_payload_bytes": 130129,
+      "lookups": {
+        "exact_pair_AND_OR_queries": 128,
+        "exact_single_term_queries": 384,
+        "not_cold_or_hardware_controlled": true,
+        "warm_median_ms_python_sqlite": 0.019199,
+        "warm_p95_ms_python_sqlite": 0.404046
+      },
+      "physical_sqlite_bytes": 212992,
+      "sqlite_overhead_bytes": 82863,
+      "term_rows": 1950
+    },
+    "bitpack": {
+      "build_elapsed_s_exploratory": 0.2824,
+      "encoded_payload_bytes": 170875,
+      "lookups": {
+        "exact_pair_AND_OR_queries": 128,
+        "exact_single_term_queries": 384,
+        "not_cold_or_hardware_controlled": true,
+        "warm_median_ms_python_sqlite": 0.020216,
+        "warm_p95_ms_python_sqlite": 0.466199
+      },
+      "physical_sqlite_bytes": 270336,
+      "sqlite_overhead_bytes": 99461,
+      "term_rows": 1950
+    },
+    "ef_partitioned": {
+      "build_elapsed_s_exploratory": 0.3632,
+      "encoded_payload_bytes": 150961,
+      "lookups": {
+        "exact_pair_AND_OR_queries": 128,
+        "exact_single_term_queries": 384,
+        "not_cold_or_hardware_controlled": true,
+        "warm_median_ms_python_sqlite": 0.014222,
+        "warm_p95_ms_python_sqlite": 0.168573
+      },
+      "physical_sqlite_bytes": 241664,
+      "sqlite_overhead_bytes": 90703,
+      "term_rows": 1950
+    },
+    "streamvbyte": {
+      "build_elapsed_s_exploratory": 0.085,
+      "encoded_payload_bytes": 217772,
+      "lookups": {
+        "exact_pair_AND_OR_queries": 128,
+        "exact_single_term_queries": 384,
+        "not_cold_or_hardware_controlled": true,
+        "warm_median_ms_python_sqlite": 0.010856,
+        "warm_p95_ms_python_sqlite": 0.102684
+      },
+      "physical_sqlite_bytes": 348160,
+      "sqlite_overhead_bytes": 130388,
+      "term_rows": 1950
+    },
+    "varint": {
+      "build_elapsed_s_exploratory": 0.0515,
+      "encoded_payload_bytes": 187580,
+      "lookups": {
+        "exact_pair_AND_OR_queries": 128,
+        "exact_single_term_queries": 384,
+        "not_cold_or_hardware_controlled": true,
+        "warm_median_ms_python_sqlite": 0.010776,
+        "warm_p95_ms_python_sqlite": 0.058328
+      },
+      "physical_sqlite_bytes": 307200,
+      "sqlite_overhead_bytes": 119620,
+      "term_rows": 1950
+    },
+    "zlib_varint": {
+      "build_elapsed_s_exploratory": 0.0672,
+      "encoded_payload_bytes": 180304,
+      "lookups": {
+        "exact_pair_AND_OR_queries": 128,
+        "exact_single_term_queries": 384,
+        "not_cold_or_hardware_controlled": true,
+        "warm_median_ms_python_sqlite": 0.010661,
+        "warm_p95_ms_python_sqlite": 0.062584
+      },
+      "physical_sqlite_bytes": 286720,
+      "sqlite_overhead_bytes": 106416,
+      "term_rows": 1950
+    }
+  },
+  "num_original_documents": 13266,
+  "original_fts5_index_bytes_not_semantically_equivalent": 4505600,
+  "original_term_sampling": "identical SHA-minimal df-stratified R108 sample",
+  "query_sample_salt": "CDG-R109-QUERY-SAMPLE-2026-11",
+  "round": 109,
+  "selected_docid_postings": 144717,
+  "selected_term_count": 1950,
+  "source": {
+    "archive_bytes": 10835856,
+    "dataset": "QASPER v0.3 DEV original paragraphs",
+    "num_papers": 281,
+    "official_archive_sha256": "a28fdf966db827bcee3d873107d6b6669864fb7ca8fbf73a192f5e39191bdb5a",
+    "source_member_sha256": "2ae7ee62a65b1c4225791c70de80c2aad4e8998cf1fd4f09a53103db4f21af93"
+  },
+  "term_sample_salt": "CDG-R108-SOURCE-POSTINGS-V1",
+  "total_eligible_terms_per_stratum": {
+    "df1": 9160,
+    "df128_plus": 957,
+    "df2_3": 4443,
+    "df32_127": 1773,
+    "df4_31": 6121
+  },
+  "total_pipeline_wall_seconds": 2.96
+}
