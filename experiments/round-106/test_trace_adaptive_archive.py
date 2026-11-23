@@ -229,6 +229,25 @@ class AdaptiveHybridEvidenceTests(unittest.TestCase):
             self.assertGreater(
                 row["synthetic_heldout_edit_stress"]["wal_appended_bytes"],0)
 
+    def test_matched_percentiles_hold_constant_source_layout_counts(self):
+        ranks={x["id"]:[x["row_start"]] for x in self.fit}
+        for suffix in ("25_25","50_25"):
+            a=policy_layouts(
+                self.groups,self.docs,self.fit,ranks,
+                "history_"+suffix)
+            b=policy_layouts(
+                self.groups,self.docs,self.fit,ranks,
+                "length_"+suffix)
+            c=policy_layouts(
+                self.groups,self.docs,self.fit,ranks,
+                "hash_"+suffix)
+            self.assertEqual(
+                sorted(list(a.values())),
+                sorted(list(b.values())))
+            self.assertEqual(
+                sorted(list(a.values())),
+                sorted(list(c.values())))
+
     def test_invalid_source_layout_policy_fails_closed(self):
         with self.assertRaises(ValueError):
             policy_layouts(self.groups,self.docs,self.fit,{},"made_up")
