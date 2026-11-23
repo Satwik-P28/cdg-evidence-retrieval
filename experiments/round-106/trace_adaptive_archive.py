@@ -54,6 +54,8 @@ POLICIES=(
     "history_50_25",
     "length_25_25",
     "hash_25_25",
+    "length_50_25",
+    "hash_50_25",
 )
 MAX_BLOCK=12_000_000
 BUDGETS=(8*1024*1024, 9*1024*1024)
@@ -624,6 +626,7 @@ def evaluate(train,dev,policies=POLICIES,edit_count=60):
             "limits":[
                 "QASPER has no real access/edits timeline. Split is hash-defined pseudo-history, not a prospective chronological holdout",
                 "Fit and test questions can refer to the same article, a transductive access scenario, not unseen papers",
+                "Additional matched-allocation length_50_25 and hash_50_25 controls were added after the first seven-policy holdout results: their results are exploratory, not pre-registered",
                 "Update stress is fully synthetic, independent of QA labels; it does not demonstrate source edit prediction",
                 "Every candidate uses complete original source and unchanged BM25 FTS postings, so original gold evidence recall cannot change",
                 "Actual full source+index database, shared dictionary, source offsets/hashes, and WAL writes measured; no online layout migration measured",
@@ -646,7 +649,7 @@ def main():
     result=evaluate(release["train"]["data"],release["dev"]["data"])
     Path(args.out).write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
     print("ROUND106",json.dumps({
-        "source_docs":result["original_corpus"]["questions"],
+        "source_docs":result["original_corpus"]["text_paragraphs"],
         "question_split":result["question_split"],
         "heldout_gold":result["heldout_gold_evidence_recall_control"],
         "archives":[{
