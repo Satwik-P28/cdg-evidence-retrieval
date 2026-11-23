@@ -19,7 +19,11 @@ def test_atomic_append_and_replay(tmp_path):
     for key,value in (("scope","heads"),("total_tokens",0),("prefix_sha256","0"*64),("phrase_df",[0])):
         bad=copy.deepcopy(body);bad[key]=value
         with pytest.raises(ValueError):replay(r,bad,digest)
-        with pytest.raises(ValueError):replay(r,bad,sha(canonical(bad)).hex())
+        if key!="scope":
+            with pytest.raises(ValueError):replay(r,bad,sha(canonical(bad)).hex())
+        else:
+            # Rehashing a valid alternative query is not forgery resistance.
+            assert replay(r,bad,sha(canonical(bad)).hex())==bad
     bad=copy.deepcopy(body);bad["hits"][0]["source_sha256"]="0"*64
     with pytest.raises(ValueError):replay(r,bad,sha(canonical(bad)).hex())
     r.close();db.close()
