@@ -1,6 +1,6 @@
 # CDG Round 113: Source-only cost-aware archive layout under retrieval and revision tradeoffs
 
-**Date:** November 23, 2026. **Status:** Initial seven-arm original QASPER CI PASS (run 45281936081); 25 deterministic unit tests passed. Four additional post-hoc comparison arms are undergoing separate verification. No novel performance superiority established.
+**Date:** November 23, 2026. **Status:** PASS. Both original SHA-locked QASPER CI runs completed successfully: first seven-policy exploratory baseline [45281936081](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45281936081), then 11-policy extended post-hoc falsification [45282426620](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45282426620). 25 deterministic planner tests passed. No novel performance superiority established.
 
 ## Research question
 
@@ -43,7 +43,28 @@ All 281 DEV articles, 13,266 original paragraphs, 1,005 QASPER questions and 24 
 
 R113's observed physical 8MiB budget **invalidates both initial planner arms**, even though their proxy budgets were feasible. The 65% planner shows an interesting but limited three-dimensional Pareto result versus `all_group4`: 8,192 fewer SQLite bytes, 32.6% fewer QASPER source decode bytes and 37,080 fewer WAL bytes. This is not an across-baseline or physical-budget victory. `all_individual` still improves read/WAL while costing more physical bytes. The planner used the original DEV source bytes, and the same QASPER DEV has been used repeatedly in prior rounds, so treat this as exploratory rather than independent publication validation.
 
-**Additional comparisons introduced after inspecting these seven results:** R106's 50/25 paper-length/hash controls and balanced planner at 25% and 30% proxy budgets. These are not preregistered or confirmatory. Any favorable comparison must be reported as exploratory, and should be repeated on a distinct held-out corpus with real access and revision traces. The separate second CI run determines these values; do not insert or assume numbers before verifying its artifacts.
+## Second original-source CI: four extra exploratory controls
+
+**After inspecting the seven-arm run**, we added R106's existing 50/25 paper-length/hash policies and two extra lower proxy budgets for the planner. This is a post-hoc sensitivity study, not a new preregistered primary hypothesis. All 11 policies were evaluated on the same SHA-locked original DEV, same 1,005 questions, and same 24 artificial edits, with all original/source and post-edit FTS5 differential checks passing. Full data in `experiments/round-113/results-eleven-arm.json`.
+
+| Additional arm | Physical source+FTS5 bytes | Top10 decoded-byte amplification | Synthetic 24-edit WAL appended bytes | Strict 8MiB fit? |
+|---|---:|---:|---:|---|
+| length_50_25 (established R106 control) | 8,429,568 | 1.683641x | 4,647,392 | No |
+| hash_50_25 (established R106 control) | 8,318,976 | 1.99361x | 4,680,352 | Yes |
+| planner_balanced_25 (post-hoc proxy fraction) | 8,249,344 | 2.720257x | 4,845,152 | Yes |
+| planner_balanced_30 (post-hoc proxy fraction) | 8,339,456 | 2.478228x | 4,696,832 | Yes |
+
+The exact unrounded top-ten amplification values for all 11 arms are in the JSON. The **dominance falsifier is unequivocal**: `hash_50_25` uses **20,480 fewer physical bytes**, **fewer decoded source bytes**, and **16,480 fewer WAL bytes** than `planner_balanced_30`. Thus a stable-hash source placement rule strictly dominates the best *initially suggested under-8MiB* high-coverage balanced planner configuration under all three measured resources. The 25% planner is not strictly dominated across all three: compared with `length_budget_35`, its WAL is slightly lower but its decode amplification and file bytes are worse.
+
+The source-only 65% planner remains a distinct non-dominated storage/read/WAL point but **exceeds 8 MiB**; it therefore does not establish superiority at the fixed budget. The original seven-arm and extended 11-arm runner results agree on each common policy. The 65% plan's smaller physical file size versus 35% demonstrates that SQLite page allocation and compression-layout interactions defeat simple monotone assumptions about the proxy fraction. A binary search on proxy fractions cannot be advertised as a guaranteed physical-budget solver.
+
+## Final disposition, next falsification
+
+**REJECT the present source-only balanced knapsack planner as a general improvement.** The optimized proxy is not a robust predictor of physical SQLite layout cost or original-query read savings, and a conventional stable-hash layout wins in one concrete, relevant 8MiB comparison. No new algorithmic result is ready for a main-track paper. Keep this as a transparent negative-control experiment within the multi-objective evidence-archive line, not as a standalone compression breakthrough.
+
+A stronger follow-up should use an **actual physical-size feasibility oracle** (build and measure SQLite archives before observing queries), dynamic migration cost that includes snapshot safety, and genuinely time-stamped independent edit/read histories. If the chosen physical layout cannot beat appropriate static controls on independent traces, stop optimizing this branch.
+
+Wikimedia publishes per-article pageview time series and time-stamped revision histories, which can offer a better externally validated stress setting. They do *not* supply paragraph-level RAG query logs, so using them would evaluate article-level storage access and revisions only. Important direct prior art: Verma, Setia and Demartini's **WikECD** (ACM Transactions on the Web, 2026) already studies versioned Wikipedia compression and random-revision retrieval. OReO (ICDE 2024), RocksDB (2026 partitioned blob files), WikECD and baseline static grouping must all be considered for a true novelty claim.
 
 ## Scientific limitations
 

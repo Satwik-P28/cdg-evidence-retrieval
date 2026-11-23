@@ -1,0 +1,971 @@
+{
+  "budgets_bytes": [
+    8388608,
+    9437184
+  ],
+  "confirmatory_first_run_policies": [
+    "all_paper",
+    "all_group4",
+    "all_individual",
+    "length_budget_35",
+    "hash_budget_35",
+    "planner_balanced_35",
+    "planner_balanced_65"
+  ],
+  "contract": "R106 physically materialized source+FTS store plus offline source-only static layout selection",
+  "dictionary_sha256": "60815f70f6d9b24c1c390cc9b9030dbc94e6c352a2d6e8fbbaee448052289607",
+  "dictionary_source": "independent original TRAIN articles, no answer labels",
+  "limitations": [
+    "Predeclared planning weights and static source-only features. Multiple-choice knapsack and layout decisions have extensive prior art; no novelty claim.",
+    "Optimization uses compressed DEV article source bytes (without heldout queries) as a normal archive-build input; it is not zero-shot to source data.",
+    "Estimated source size uses approximate 32 B/block and 56 B/row metadata. Quantized DP cannot guarantee a physical SQLite byte budget.",
+    "QASPER has no real time-ordered query access log or revision trace. Original QASPER questions test reads; source revisions are artificial stress only.",
+    "No dynamic live layout migration. The selected layout remains fixed after source updates.",
+    "No cached blocks across distinct questions. No remote SSD, hardware-controlled latency, energy or total model/vector memory measured.",
+    "Original FTS5 retrieval ranking is held fixed; no independent evidence recall or generated answer quality gain is possible from layout selection alone.",
+    "The repo has prior experiments with QASPER DEV (R101-R106): this is not an independent unseen benchmark corpus relative to the broader project.",
+    "Results should be interpreted as exploratory model comparison; need third-party dataset, real timestamped traces and existing optimizing-system baselines for a publication claim."
+  ],
+  "observed_three_resource_pareto_policy_names": [
+    "all_individual",
+    "all_paper",
+    "hash_50_25",
+    "hash_budget_35",
+    "length_50_25",
+    "length_budget_35",
+    "planner_balanced_25",
+    "planner_balanced_65"
+  ],
+  "original_dev_articles": 281,
+  "original_dev_paragraphs": 13266,
+  "original_dev_questions": 1005,
+  "planning_policy_frozen_before_dev_questions_access": true,
+  "points": [
+    {
+      "decoded_bytes": 23638827,
+      "name": "all_paper",
+      "physical_bytes": 7831552,
+      "wal_bytes": 5088232
+    },
+    {
+      "decoded_bytes": 12416702,
+      "name": "all_group4",
+      "physical_bytes": 8413184,
+      "wal_bytes": 4696832
+    },
+    {
+      "decoded_bytes": 5586486,
+      "name": "all_individual",
+      "physical_bytes": 8470528,
+      "wal_bytes": 4577352
+    },
+    {
+      "decoded_bytes": 14693662,
+      "name": "length_budget_35",
+      "physical_bytes": 8196096,
+      "wal_bytes": 4865752
+    },
+    {
+      "decoded_bytes": 16076315,
+      "name": "hash_budget_35",
+      "physical_bytes": 8093696,
+      "wal_bytes": 4985232
+    },
+    {
+      "decoded_bytes": 12757086,
+      "name": "planner_balanced_35",
+      "physical_bytes": 8409088,
+      "wal_bytes": 4700952
+    },
+    {
+      "decoded_bytes": 8366599,
+      "name": "planner_balanced_65",
+      "physical_bytes": 8404992,
+      "wal_bytes": 4659752
+    },
+    {
+      "decoded_bytes": 9405638,
+      "name": "length_50_25",
+      "physical_bytes": 8429568,
+      "wal_bytes": 4647392
+    },
+    {
+      "decoded_bytes": 11137277,
+      "name": "hash_50_25",
+      "physical_bytes": 8318976,
+      "wal_bytes": 4680352
+    },
+    {
+      "decoded_bytes": 15196679,
+      "name": "planner_balanced_25",
+      "physical_bytes": 8249344,
+      "wal_bytes": 4845152
+    },
+    {
+      "decoded_bytes": 13844584,
+      "name": "planner_balanced_30",
+      "physical_bytes": 8339456,
+      "wal_bytes": 4696832
+    }
+  ],
+  "policies": [
+    "all_paper",
+    "all_group4",
+    "all_individual",
+    "length_budget_35",
+    "hash_budget_35",
+    "planner_balanced_35",
+    "planner_balanced_65",
+    "length_50_25",
+    "hash_50_25",
+    "planner_balanced_25",
+    "planner_balanced_30"
+  ],
+  "posthoc_exploratory_additional_policies": [
+    "length_50_25",
+    "hash_50_25",
+    "planner_balanced_25",
+    "planner_balanced_30"
+  ],
+  "results": [
+    {
+      "assignment_sha256": "845dc207e283bbc5513f0ef90fb3be43098b5cf6d7dab344a571c4627a8bc539",
+      "build": {
+        "build_seconds": 0.40502,
+        "grouped_paragraphs": 13266,
+        "groups": 281,
+        "independent_paragraphs": 0
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": true,
+        "9437184": true
+      },
+      "layout_counts": {
+        "paper": 281
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 4.23143,
+        "decoded_original_source_bytes": 23638827,
+        "decompressions": 990,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.27319
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 40.069272,
+        "decoded_original_source_bytes": 23638827,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.0919
+      },
+      "physical_source_index_sqlite_bytes": 7831552,
+      "policy": "all_paper",
+      "source_local_proxy": {
+        "blob_bytes": 1864064,
+        "decoded_uniform_bytes_sum": 407768864,
+        "estimated_bytes": 2806080,
+        "n_blocks": 281,
+        "reencoded_uniform_bytes_sum": 111910314
+      },
+      "source_only_planner": {
+        "type": "fixed static layout"
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 14.34194,
+        "compressed_blob_reencoded_bytes": 189959,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 5088232,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 2.499256,
+          "p95_ms": 5.386885,
+          "sum_ms": 93.245
+        }
+      }
+    },
+    {
+      "assignment_sha256": "d842eabf586a98abb149d19fa6f7ce2fe30a4a283097fdb0b2ec23dc219d6105",
+      "build": {
+        "build_seconds": 0.47062,
+        "grouped_paragraphs": 13266,
+        "groups": 3428,
+        "independent_paragraphs": 0
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": false,
+        "9437184": true
+      },
+      "layout_counts": {
+        "group4": 281
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 2.222632,
+        "decoded_original_source_bytes": 12416702,
+        "decompressions": 5517,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.31442
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 3.911323,
+        "decoded_original_source_bytes": 2307481,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.04515
+      },
+      "physical_source_index_sqlite_bytes": 8413184,
+      "policy": "all_group4",
+      "source_local_proxy": {
+        "blob_bytes": 2171709,
+        "decoded_uniform_bytes_sum": 26497557,
+        "estimated_bytes": 3214429,
+        "n_blocks": 3428,
+        "reencoded_uniform_bytes_sum": 8546963
+      },
+      "source_only_planner": {
+        "type": "fixed static layout"
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 1.257909,
+        "compressed_blob_reencoded_bytes": 16661,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4696832,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 1.368121,
+          "p95_ms": 3.698082,
+          "sum_ms": 64.4443
+        }
+      }
+    },
+    {
+      "assignment_sha256": "1014dcd14ef92c87787d7d37fc78936c2d7b6c285256c518d5c65de969af2bf4",
+      "build": {
+        "build_seconds": 0.47587,
+        "grouped_paragraphs": 0,
+        "groups": 0,
+        "independent_paragraphs": 13266
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": false,
+        "9437184": true
+      },
+      "layout_counts": {
+        "individual": 281
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 1.0,
+        "decoded_original_source_bytes": 5586486,
+        "decompressions": 8856,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.14583
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 1.0,
+        "decoded_original_source_bytes": 589949,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.01871
+      },
+      "physical_source_index_sqlite_bytes": 8470528,
+      "policy": "all_individual",
+      "source_local_proxy": {
+        "blob_bytes": 2592285,
+        "decoded_uniform_bytes_sum": 6721559,
+        "estimated_bytes": 3949821,
+        "n_blocks": 13266,
+        "reencoded_uniform_bytes_sum": 2592285
+      },
+      "source_only_planner": {
+        "type": "fixed static layout"
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 0.391544,
+        "compressed_blob_reencoded_bytes": 5186,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4577352,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 0.614869,
+          "p95_ms": 2.806813,
+          "sum_ms": 46.5281
+        }
+      }
+    },
+    {
+      "assignment_sha256": "62d935c86fc0c0c74a2a1696416d84e1a5667f1c4e3d45dcc4552148a8017454",
+      "build": {
+        "build_seconds": 0.45418,
+        "grouped_paragraphs": 11131,
+        "groups": 1940,
+        "independent_paragraphs": 2135
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": true,
+        "9437184": true
+      },
+      "layout_counts": {
+        "group4": 150,
+        "individual": 88,
+        "paper": 43
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 2.630215,
+        "decoded_original_source_bytes": 14693662,
+        "decompressions": 5903,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.26787
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 12.450595,
+        "decoded_original_source_bytes": 7345216,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.04821
+      },
+      "physical_source_index_sqlite_bytes": 8196096,
+      "policy": "length_budget_35",
+      "source_local_proxy": {
+        "blob_bytes": 2128249,
+        "decoded_uniform_bytes_sum": 209257123,
+        "estimated_bytes": 3191673,
+        "n_blocks": 4075,
+        "reencoded_uniform_bytes_sum": 57250462
+      },
+      "source_only_planner": {
+        "allowed_proxy_total_bytes": 3206389.35,
+        "baseline_proxy_bytes": 2806080,
+        "estimated_total_source_proxy_bytes": 3191673,
+        "fraction_of_all_individual_proxy_increment": 0.35,
+        "not_a_physical_sqlite_budget_guarantee": true,
+        "optimized_score": 381.3556989703331,
+        "planner": "quantized multiple-choice knapsack of per-paper source-only proxies",
+        "policy_mode": "length",
+        "selected_quantized_cost_bytes": 400256,
+        "total_individual_over_paper_proxy_delta": 1143741,
+        "unit_bytes": 128
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 6.893922,
+        "compressed_blob_reencoded_bytes": 91310,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4865752,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 1.480224,
+          "p95_ms": 5.410448,
+          "sum_ms": 69.9533
+        }
+      }
+    },
+    {
+      "assignment_sha256": "9d99b33433830212b26052d813fdf311d828c880b09c6abf96075e86ae1449ee",
+      "build": {
+        "build_seconds": 0.43362,
+        "grouped_paragraphs": 9556,
+        "groups": 825,
+        "independent_paragraphs": 3710
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": true,
+        "9437184": true
+      },
+      "layout_counts": {
+        "group4": 56,
+        "individual": 113,
+        "paper": 112
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 2.877715,
+        "decoded_original_source_bytes": 16076315,
+        "decompressions": 5180,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.23352
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 20.227972,
+        "decoded_original_source_bytes": 11933472,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.05593
+      },
+      "physical_source_index_sqlite_bytes": 8093696,
+      "policy": "hash_budget_35",
+      "source_local_proxy": {
+        "blob_bytes": 2116875,
+        "decoded_uniform_bytes_sum": 271421938,
+        "estimated_bytes": 3195019,
+        "n_blocks": 4535,
+        "reencoded_uniform_bytes_sum": 74425135
+      },
+      "source_only_planner": {
+        "allowed_proxy_total_bytes": 3206389.35,
+        "baseline_proxy_bytes": 2806080,
+        "estimated_total_source_proxy_bytes": 3195019,
+        "fraction_of_all_individual_proxy_increment": 0.35,
+        "not_a_physical_sqlite_budget_guarantee": true,
+        "optimized_score": 192.91192536968816,
+        "planner": "quantized multiple-choice knapsack of per-paper source-only proxies",
+        "policy_mode": "hash",
+        "selected_quantized_cost_bytes": 400256,
+        "total_individual_over_paper_proxy_delta": 1143741,
+        "unit_bytes": 128
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 10.802416,
+        "compressed_blob_reencoded_bytes": 143078,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4985232,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 2.138556,
+          "p95_ms": 5.198612,
+          "sum_ms": 78.5872
+        }
+      }
+    },
+    {
+      "assignment_sha256": "a8ea03f00d8df14af6cf2cf8c8859870619a3ea432c398d2c77975f47bcfa079",
+      "build": {
+        "build_seconds": 0.46206,
+        "grouped_paragraphs": 13266,
+        "groups": 3239,
+        "independent_paragraphs": 0
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": false,
+        "9437184": true
+      },
+      "layout_counts": {
+        "group4": 240,
+        "paper": 41
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 2.283562,
+        "decoded_original_source_bytes": 12757086,
+        "decompressions": 5082,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.31034
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 6.055932,
+        "decoded_original_source_bytes": 3572691,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.04774
+      },
+      "physical_source_index_sqlite_bytes": 8409088,
+      "policy": "planner_balanced_35",
+      "source_local_proxy": {
+        "blob_bytes": 2154760,
+        "decoded_uniform_bytes_sum": 34666865,
+        "estimated_bytes": 3191432,
+        "n_blocks": 3239,
+        "reencoded_uniform_bytes_sum": 10819257
+      },
+      "source_only_planner": {
+        "allowed_proxy_total_bytes": 3206389.35,
+        "baseline_proxy_bytes": 2806080,
+        "estimated_total_source_proxy_bytes": 3191432,
+        "fraction_of_all_individual_proxy_increment": 0.35,
+        "not_a_physical_sqlite_budget_guarantee": true,
+        "optimized_score": 0.909153052871926,
+        "planner": "quantized multiple-choice knapsack of per-paper source-only proxies",
+        "policy_mode": "balanced",
+        "selected_quantized_cost_bytes": 400256,
+        "total_individual_over_paper_proxy_delta": 1143741,
+        "unit_bytes": 128
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 1.257909,
+        "compressed_blob_reencoded_bytes": 16661,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4700952,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 1.233185,
+          "p95_ms": 2.582195,
+          "sum_ms": 60.6839
+        }
+      }
+    },
+    {
+      "assignment_sha256": "1a844ade22e2ac5c8c385d0b647b3c725c12493a10eb666aafbce30c1bb1973d",
+      "build": {
+        "build_seconds": 0.47562,
+        "grouped_paragraphs": 7550,
+        "groups": 1939,
+        "independent_paragraphs": 5716
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": false,
+        "9437184": true
+      },
+      "layout_counts": {
+        "group4": 135,
+        "individual": 146
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 1.49765,
+        "decoded_original_source_bytes": 8366599,
+        "decompressions": 7368,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.22686
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 2.089486,
+        "decoded_original_source_bytes": 1232690,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.03075
+      },
+      "physical_source_index_sqlite_bytes": 8404992,
+      "policy": "planner_balanced_65",
+      "source_local_proxy": {
+        "blob_bytes": 2354114,
+        "decoded_uniform_bytes_sum": 15933211,
+        "estimated_bytes": 3532098,
+        "n_blocks": 7655,
+        "reencoded_uniform_bytes_sum": 5347876
+      },
+      "source_only_planner": {
+        "allowed_proxy_total_bytes": 3549511.65,
+        "baseline_proxy_bytes": 2806080,
+        "estimated_total_source_proxy_bytes": 3532098,
+        "fraction_of_all_individual_proxy_increment": 0.65,
+        "not_a_physical_sqlite_budget_guarantee": true,
+        "optimized_score": 0.9565693585512574,
+        "planner": "quantized multiple-choice knapsack of per-paper source-only proxies",
+        "policy_mode": "balanced",
+        "selected_quantized_cost_bytes": 743424,
+        "total_individual_over_paper_proxy_delta": 1143741,
+        "unit_bytes": 128
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 0.84983,
+        "compressed_blob_reencoded_bytes": 11256,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4659752,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 1.021762,
+          "p95_ms": 4.061759,
+          "sum_ms": 56.0445
+        }
+      }
+    },
+    {
+      "assignment_sha256": "86daab1b4e340fbfb579180c468eb559658ae900a4496ef83d1563b63750563c",
+      "build": {
+        "build_seconds": 0.46981,
+        "grouped_paragraphs": 4074,
+        "groups": 738,
+        "independent_paragraphs": 9192
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": false,
+        "9437184": true
+      },
+      "layout_counts": {
+        "group4": 71,
+        "individual": 141,
+        "paper": 69
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 1.683641,
+        "decoded_original_source_bytes": 9405638,
+        "decompressions": 6246,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.21648
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 7.112084,
+        "decoded_original_source_bytes": 4195767,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.03887
+      },
+      "physical_source_index_sqlite_bytes": 8429568,
+      "policy": "length_50_25",
+      "source_local_proxy": {
+        "blob_bytes": 2437703,
+        "decoded_uniform_bytes_sum": 31098538,
+        "estimated_bytes": 3688487,
+        "n_blocks": 9930,
+        "reencoded_uniform_bytes_sum": 9615328
+      },
+      "source_only_planner": {
+        "type": "R106 baseline without query history"
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 1.305549,
+        "compressed_blob_reencoded_bytes": 17292,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4647392,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 0.656543,
+          "p95_ms": 2.305046,
+          "sum_ms": 48.283
+        }
+      }
+    },
+    {
+      "assignment_sha256": "4faccc7672a02f66a4592d2cb90bd9df993f281532131fe08938ecfeb29deff2",
+      "build": {
+        "build_seconds": 0.46066,
+        "grouped_paragraphs": 6213,
+        "groups": 890,
+        "independent_paragraphs": 7053
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": true,
+        "9437184": true
+      },
+      "layout_counts": {
+        "group4": 71,
+        "individual": 141,
+        "paper": 69
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 1.99361,
+        "decoded_original_source_bytes": 11137277,
+        "decompressions": 6170,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.21899
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 10.064895,
+        "decoded_original_source_bytes": 5937775,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.04175
+      },
+      "physical_source_index_sqlite_bytes": 8318976,
+      "policy": "hash_50_25",
+      "source_local_proxy": {
+        "blob_bytes": 2329798,
+        "decoded_uniform_bytes_sum": 85576609,
+        "estimated_bytes": 3516998,
+        "n_blocks": 7943,
+        "reencoded_uniform_bytes_sum": 24321887
+      },
+      "source_only_planner": {
+        "type": "R106 baseline without query history"
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 1.756059,
+        "compressed_blob_reencoded_bytes": 23259,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4680352,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 0.702082,
+          "p95_ms": 2.5845,
+          "sum_ms": 50.7418
+        }
+      }
+    },
+    {
+      "assignment_sha256": "4f205521abf26b072d2b9fc2811b49a81f87e46a88431b9015c40dc079f5695c",
+      "build": {
+        "build_seconds": 0.44997,
+        "grouped_paragraphs": 13266,
+        "groups": 2381,
+        "independent_paragraphs": 0
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": true,
+        "9437184": true
+      },
+      "layout_counts": {
+        "group4": 135,
+        "paper": 146
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 2.720257,
+        "decoded_original_source_bytes": 15196679,
+        "decompressions": 3522,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.29408
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 16.180995,
+        "decoded_original_source_bytes": 9545962,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.06187
+      },
+      "physical_source_index_sqlite_bytes": 8249344,
+      "policy": "planner_balanced_25",
+      "source_local_proxy": {
+        "blob_bytes": 2074827,
+        "decoded_uniform_bytes_sum": 96559976,
+        "estimated_bytes": 3084043,
+        "n_blocks": 2381,
+        "reencoded_uniform_bytes_sum": 27738422
+      },
+      "source_only_planner": {
+        "allowed_proxy_total_bytes": 3092015.25,
+        "baseline_proxy_bytes": 2806080,
+        "estimated_total_source_proxy_bytes": 3084043,
+        "fraction_of_all_individual_proxy_increment": 0.25,
+        "not_a_physical_sqlite_budget_guarantee": true,
+        "optimized_score": 0.7576681396847619,
+        "planner": "quantized multiple-choice knapsack of per-paper source-only proxies",
+        "policy_mode": "balanced",
+        "selected_quantized_cost_bytes": 285824,
+        "total_individual_over_paper_proxy_delta": 1143741,
+        "unit_bytes": 128
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 4.381955,
+        "compressed_blob_reencoded_bytes": 58039,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4845152,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 1.598413,
+          "p95_ms": 2.921463,
+          "sum_ms": 69.5464
+        }
+      }
+    },
+    {
+      "assignment_sha256": "407014bfebf96fb6d13b76601417fe28f7a5a1d06c9ae0ba6bda68846ceeeea7",
+      "build": {
+        "build_seconds": 0.46112,
+        "grouped_paragraphs": 13266,
+        "groups": 2810,
+        "independent_paragraphs": 0
+      },
+      "fits_real_sqlite_budgets_bytes": {
+        "8388608": true,
+        "9437184": true
+      },
+      "layout_counts": {
+        "group4": 180,
+        "paper": 101
+      },
+      "original_query_ranking_parity": 1005,
+      "original_source_receipts_verified": 13266,
+      "original_top10_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 2.478228,
+        "decoded_original_source_bytes": 13844584,
+        "decompressions": 4264,
+        "k": 10,
+        "questions": 1005,
+        "requested_original_source_bytes": 5586486,
+        "source_receipts_verified": 8856,
+        "warm_full_query_source_seconds": 0.30019
+      },
+      "original_top1_source_reads": {
+        "cache": "each group inflated at most once within query; no cross-query cache",
+        "decoded_byte_amplification": 11.050365,
+        "decoded_original_source_bytes": 6519152,
+        "decompressions": 990,
+        "k": 1,
+        "questions": 1005,
+        "requested_original_source_bytes": 589949,
+        "source_receipts_verified": 990,
+        "warm_full_query_source_seconds": 0.05536
+      },
+      "physical_source_index_sqlite_bytes": 8339456,
+      "policy": "planner_balanced_30",
+      "source_local_proxy": {
+        "blob_bytes": 2115429,
+        "decoded_uniform_bytes_sum": 61837059,
+        "estimated_bytes": 3138373,
+        "n_blocks": 2810,
+        "reencoded_uniform_bytes_sum": 18285114
+      },
+      "source_only_planner": {
+        "allowed_proxy_total_bytes": 3149202.3,
+        "baseline_proxy_bytes": 2806080,
+        "estimated_total_source_proxy_bytes": 3138373,
+        "fraction_of_all_individual_proxy_increment": 0.3,
+        "not_a_physical_sqlite_budget_guarantee": true,
+        "optimized_score": 0.842480943333437,
+        "planner": "quantized multiple-choice knapsack of per-paper source-only proxies",
+        "policy_mode": "balanced",
+        "selected_quantized_cost_bytes": 343040,
+        "total_individual_over_paper_proxy_delta": 1143741,
+        "unit_bytes": 128
+      },
+      "synthetic_edit_stress": {
+        "blob_rewrite_per_edited_source_byte": 1.984371,
+        "compressed_blob_reencoded_bytes": 26283,
+        "matched_conventional_post_edit_top10": 1005,
+        "new_original_utf8_edit_bytes": 13245,
+        "revisions": "artificial hot/diffuse, not observed scholarly edit logs",
+        "source_rows_after_edits_verified": 13266,
+        "synthetic_source_edits": 24,
+        "wal": "FULL synchronous, wal_autocheckpoint=0; not physical SSD traffic",
+        "wal_appended_bytes": 4696832,
+        "warm_edit_ms": {
+          "count": 24,
+          "median_ms": 1.308718,
+          "p95_ms": 2.923657,
+          "sum_ms": 63.8437
+        }
+      }
+    }
+  ],
+  "round": 113,
+  "selection": "DEV source bytes+paper boundaries only; no questions, gold evidence, ranking, or synthetic edits",
+  "source_sha256": {
+    "dev": "2ae7ee62a65b1c4225791c70de80c2aad4e8998cf1fd4f09a53103db4f21af93",
+    "train": "9458bfe76074a8fa8d1685af02bcc73537aa6d338ad20591dfaff1946bc88bf4"
+  },
+  "source_workload_independence": "Original TRAIN/DEV paper IDs disjoint; evaluation questions belong only to DEV papers, but the DEV source bytes must be inspected to build the archive",
+  "synthetic_edits_count": 24
+}

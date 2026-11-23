@@ -18,4 +18,6 @@ python -m pytest -q experiments/round-113/tests
 python experiments/round-113/archive_planner.py --out experiments/round-113/ci-results.json --edits 24
 ```
 
+Verified QASPER original-source results: the first seven arms are archived in `results-seven-arm.json` ([CI 45281936081](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45281936081)), and the extended 11-arm post-hoc comparison in `results-eleven-arm.json` ([CI 45282426620](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45282426620)). **Negative result:** a stable-hash 50/25 policy dominates the balanced planner 30% on actual SQLite bytes, original-query decoded bytes and 24-edit WAL growth. Do not claim source-only planner superiority.
+
 See `research/rounds/round-113/report.md` and the workflow `.github/workflows/cdg-r113-layout-planner.yml`. The source tar is verified by existing R96 SHA locks; original QASPER text is not copied to the repo or workflow artifacts.
