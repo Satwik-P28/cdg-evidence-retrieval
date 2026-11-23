@@ -25,7 +25,7 @@ jobs:
       - name: Install pinned reference-test dependencies
         run: python -m pip install --disable-pip-version-check numpy==2.3.5 pytest==9.0.2
       - name: Strict round-trip and SQLite FTS5 gap regression checks
-        run: python -m pytest -q experiments/round-107/tests
+        run: PYTHONPATH=experiments/round-107 python -m pytest -q experiments/round-107/tests
       - name: Reproduce seeded finite-zeta, cluster negative controls
         working-directory: experiments/round-107
         run: python benchmark.py --n 12000 --out ci-results-synthetic.json
