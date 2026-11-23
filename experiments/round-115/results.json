@@ -1,0 +1,343 @@
+{
+  "cohorts": {
+    "article_disjoint": {
+      "article_sha256": "94407bd173488a2e71f883a0075eb4e1257efc3ead3d092efdb0cc511873a726",
+      "articles": 100,
+      "policies": {
+        "anchor4": {
+          "activated_compressed_bytes": 1229803,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.25009070199999783,
+          "decode_amplification": 1.4896747397241752,
+          "decoded_source_bytes": 3525643,
+          "depth_counts": {
+            "0": 150,
+            "1": 400
+          },
+          "max_activation_relative_to_snapshot_frame": 13.562005277044856,
+          "max_decode_relative_to_requested_nonempty_revision": 20.76840490797546,
+          "max_dependency_depth": 1,
+          "median_warm_lookup_us_exploratory": 35.7885,
+          "p95_warm_lookup_us_exploratory": 53.66,
+          "payload_bytes": 697911,
+          "raw_bytes": 2366720,
+          "sqlite_bytes": 1425408,
+          "versions": 550,
+          "wal_bytes": 8549032
+        },
+        "anchor8": {
+          "activated_compressed_bytes": 1250402,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.26147395099999926,
+          "decode_amplification": 1.4635009633585723,
+          "decoded_source_bytes": 3463697,
+          "depth_counts": {
+            "0": 102,
+            "1": 448
+          },
+          "max_activation_relative_to_snapshot_frame": 13.562005277044856,
+          "max_decode_relative_to_requested_nonempty_revision": 20.76840490797546,
+          "max_dependency_depth": 1,
+          "median_warm_lookup_us_exploratory": 37.561,
+          "p95_warm_lookup_us_exploratory": 53.56,
+          "payload_bytes": 738555,
+          "raw_bytes": 2366720,
+          "sqlite_bytes": 1482752,
+          "versions": 550,
+          "wal_bytes": 8998112
+        },
+        "bounded_anchor": {
+          "activated_compressed_bytes": 1147979,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.2633391220000014,
+          "decode_amplification": 1.4990805840995132,
+          "decoded_source_bytes": 3547904,
+          "depth_counts": {
+            "0": 184,
+            "1": 366
+          },
+          "max_activation_relative_to_snapshot_frame": 1.483568075117371,
+          "max_decode_relative_to_requested_nonempty_revision": 2.2289156626506026,
+          "max_dependency_depth": 1,
+          "median_warm_lookup_us_exploratory": 31.055999999999997,
+          "p95_warm_lookup_us_exploratory": 50.876,
+          "payload_bytes": 612526,
+          "raw_bytes": 2366720,
+          "sqlite_bytes": 1286144,
+          "versions": 550,
+          "wal_bytes": 8565512
+        },
+        "prev2": {
+          "activated_compressed_bytes": 1214210,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.24143667400000268,
+          "decode_amplification": 1.714147427663602,
+          "decoded_source_bytes": 4056907,
+          "depth_counts": {
+            "0": 222,
+            "1": 179,
+            "2": 149
+          },
+          "max_activation_relative_to_snapshot_frame": 21.01260504201681,
+          "max_decode_relative_to_requested_nonempty_revision": 39.86656441717791,
+          "max_dependency_depth": 2,
+          "median_warm_lookup_us_exploratory": 32.7085,
+          "p95_warm_lookup_us_exploratory": 64.827,
+          "payload_bytes": 614508,
+          "raw_bytes": 2366720,
+          "sqlite_bytes": 1212416,
+          "versions": 550,
+          "wal_bytes": 7807432
+        },
+        "prev4": {
+          "activated_compressed_bytes": 1352264,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.244902806999999,
+          "decode_amplification": 2.292940863304489,
+          "decoded_source_bytes": 5426749,
+          "depth_counts": {
+            "0": 150,
+            "1": 129,
+            "2": 112,
+            "3": 92,
+            "4": 67
+          },
+          "max_activation_relative_to_snapshot_frame": 19.892156862745097,
+          "max_decode_relative_to_requested_nonempty_revision": 39.86656441717791,
+          "max_dependency_depth": 4,
+          "median_warm_lookup_us_exploratory": 43.835499999999996,
+          "p95_warm_lookup_us_exploratory": 94.04,
+          "payload_bytes": 504691,
+          "raw_bytes": 2366720,
+          "sqlite_bytes": 1011712,
+          "versions": 550,
+          "wal_bytes": 7514912
+        },
+        "prev8": {
+          "activated_compressed_bytes": 1456725,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.23364097500000014,
+          "decode_amplification": 2.9774696626554893,
+          "decoded_source_bytes": 7046837,
+          "depth_counts": {
+            "0": 101,
+            "1": 100,
+            "2": 100,
+            "3": 92,
+            "4": 67,
+            "5": 49,
+            "6": 29,
+            "7": 12
+          },
+          "max_activation_relative_to_snapshot_frame": 21.680672268907564,
+          "max_decode_relative_to_requested_nonempty_revision": 67.70655270655271,
+          "max_dependency_depth": 7,
+          "median_warm_lookup_us_exploratory": 53.82,
+          "p95_warm_lookup_us_exploratory": 119.187,
+          "payload_bytes": 407447,
+          "raw_bytes": 2366720,
+          "sqlite_bytes": 860160,
+          "versions": 550,
+          "wal_bytes": 6814512
+        },
+        "snapshot": {
+          "activated_compressed_bytes": 1049783,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.2228059739999999,
+          "decode_amplification": 1.0,
+          "decoded_source_bytes": 2366720,
+          "depth_counts": {
+            "0": 550
+          },
+          "max_activation_relative_to_snapshot_frame": 1.0,
+          "max_decode_relative_to_requested_nonempty_revision": 1.0,
+          "max_dependency_depth": 0,
+          "median_warm_lookup_us_exploratory": 22.188499999999998,
+          "p95_warm_lookup_us_exploratory": 31.878,
+          "payload_bytes": 1049783,
+          "raw_bytes": 2366720,
+          "sqlite_bytes": 1982464,
+          "versions": 550,
+          "wal_bytes": 10164072
+        }
+      },
+      "revisions": 550
+    },
+    "development": {
+      "article_sha256": "3b28a913d9f21736a02aedfe0205a19b5071cee4d6a8840b540e032554696d01",
+      "articles": 100,
+      "policies": {
+        "anchor4": {
+          "activated_compressed_bytes": 1163801,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.2808120650000028,
+          "decode_amplification": 1.457922353869836,
+          "decoded_source_bytes": 3331927,
+          "depth_counts": {
+            "0": 154,
+            "1": 413
+          },
+          "max_activation_relative_to_snapshot_frame": 9.406360424028268,
+          "max_decode_relative_to_requested_nonempty_revision": 13.91529411764706,
+          "max_dependency_depth": 1,
+          "median_warm_lookup_us_exploratory": 33.37,
+          "p95_warm_lookup_us_exploratory": 53.109,
+          "payload_bytes": 681397,
+          "raw_bytes": 2285394,
+          "sqlite_bytes": 1449984,
+          "versions": 567,
+          "wal_bytes": 8796232
+        },
+        "anchor8": {
+          "activated_compressed_bytes": 1182525,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.26065925199999995,
+          "decode_amplification": 1.4370239879863165,
+          "decoded_source_bytes": 3284166,
+          "depth_counts": {
+            "0": 103,
+            "1": 464
+          },
+          "max_activation_relative_to_snapshot_frame": 9.406360424028268,
+          "max_decode_relative_to_requested_nonempty_revision": 13.91529411764706,
+          "max_dependency_depth": 1,
+          "median_warm_lookup_us_exploratory": 36.224,
+          "p95_warm_lookup_us_exploratory": 52.568,
+          "payload_bytes": 712882,
+          "raw_bytes": 2285394,
+          "sqlite_bytes": 1515520,
+          "versions": 567,
+          "wal_bytes": 9150552
+        },
+        "bounded_anchor": {
+          "activated_compressed_bytes": 1108966,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.26127422299999736,
+          "decode_amplification": 1.5132287911843647,
+          "decoded_source_bytes": 3458324,
+          "depth_counts": {
+            "0": 186,
+            "1": 381
+          },
+          "max_activation_relative_to_snapshot_frame": 1.5,
+          "max_decode_relative_to_requested_nonempty_revision": 2.31189948263119,
+          "max_dependency_depth": 1,
+          "median_warm_lookup_us_exploratory": 33.079,
+          "p95_warm_lookup_us_exploratory": 53.97,
+          "payload_bytes": 576697,
+          "raw_bytes": 2285394,
+          "sqlite_bytes": 1306624,
+          "versions": 567,
+          "wal_bytes": 8334792
+        },
+        "prev2": {
+          "activated_compressed_bytes": 1156054,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.33605543699999885,
+          "decode_amplification": 1.7218177697149812,
+          "decoded_source_bytes": 3935032,
+          "depth_counts": {
+            "0": 228,
+            "1": 188,
+            "2": 151
+          },
+          "max_activation_relative_to_snapshot_frame": 20.176678445229683,
+          "max_decode_relative_to_requested_nonempty_revision": 32.355294117647055,
+          "max_dependency_depth": 2,
+          "median_warm_lookup_us_exploratory": 31.236,
+          "p95_warm_lookup_us_exploratory": 64.426,
+          "payload_bytes": 577699,
+          "raw_bytes": 2285394,
+          "sqlite_bytes": 1146880,
+          "versions": 567,
+          "wal_bytes": 7840392
+        },
+        "prev4": {
+          "activated_compressed_bytes": 1272061,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.3556686870000014,
+          "decode_amplification": 2.2959966640325478,
+          "decoded_source_bytes": 5247257,
+          "depth_counts": {
+            "0": 151,
+            "1": 133,
+            "2": 115,
+            "3": 95,
+            "4": 73
+          },
+          "max_activation_relative_to_snapshot_frame": 20.176678445229683,
+          "max_decode_relative_to_requested_nonempty_revision": 39.975103734439834,
+          "max_dependency_depth": 4,
+          "median_warm_lookup_us_exploratory": 43.805,
+          "p95_warm_lookup_us_exploratory": 162.321,
+          "payload_bytes": 471945,
+          "raw_bytes": 2285394,
+          "sqlite_bytes": 987136,
+          "versions": 567,
+          "wal_bytes": 7605552
+        },
+        "prev8": {
+          "activated_compressed_bytes": 1407911,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.29572205000000196,
+          "decode_amplification": 3.0875372036506614,
+          "decoded_source_bytes": 7056239,
+          "depth_counts": {
+            "0": 100,
+            "1": 100,
+            "2": 100,
+            "3": 95,
+            "4": 73,
+            "5": 51,
+            "6": 33,
+            "7": 15
+          },
+          "max_activation_relative_to_snapshot_frame": 20.176678445229683,
+          "max_decode_relative_to_requested_nonempty_revision": 39.975103734439834,
+          "max_dependency_depth": 7,
+          "median_warm_lookup_us_exploratory": 53.69,
+          "p95_warm_lookup_us_exploratory": 133.79,
+          "payload_bytes": 379010,
+          "raw_bytes": 2285394,
+          "sqlite_bytes": 835584,
+          "versions": 567,
+          "wal_bytes": 7045232
+        },
+        "snapshot": {
+          "activated_compressed_bytes": 1014816,
+          "all_exact": true,
+          "build_seconds_exploratory": 0.568542278999999,
+          "decode_amplification": 1.0,
+          "decoded_source_bytes": 2285394,
+          "depth_counts": {
+            "0": 567
+          },
+          "max_activation_relative_to_snapshot_frame": 1.0,
+          "max_decode_relative_to_requested_nonempty_revision": 1.0,
+          "max_dependency_depth": 0,
+          "median_warm_lookup_us_exploratory": 20.661,
+          "p95_warm_lookup_us_exploratory": 30.686,
+          "payload_bytes": 1014816,
+          "raw_bytes": 2285394,
+          "sqlite_bytes": 1925120,
+          "versions": 567,
+          "wal_bytes": 10048712
+        }
+      },
+      "revisions": 567
+    }
+  },
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "limitations": [
+    "processed sampled Wikipedia texts; within-article order only",
+    "first cohort is R114 development sample; second article-disjoint sample not independent corpus",
+    "logical payload read bounds are not disk I/O, latency, or SQLite page bounds",
+    "synthetic equal-weight read order; no actual access history or timestamps",
+    "same SQLite schema across policies; no search index or RAG outcomes",
+    "anchor and base-selection methods are established prior art, not WikECD reproduction",
+    "source SHA checks detect accidental inconsistency, not malicious rewrite of all trusted metadata"
+  ],
+  "round": 115,
+  "selection_salt": "CDG-R114-independent-v1",
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0"
+}

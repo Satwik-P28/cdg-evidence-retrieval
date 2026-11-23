@@ -1,0 +1,32 @@
+name: CDG R115 direct anchor revisions
+on:
+  push:
+    branches: ['research/round-115-*']
+    paths: ['experiments/round-115/**','.github/workflows/cdg-r115-anchors.yml','research/rounds/round-115/**']
+  pull_request:
+    paths: ['experiments/round-115/**','.github/workflows/cdg-r115-anchors.yml','research/rounds/round-115/**']
+  workflow_dispatch:
+jobs:
+  anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2
+      - run: PYTHONPATH=experiments/round-115 python -m pytest -q experiments/round-115
+      - uses: actions/checkout@v4
+        with:
+          repository: natwar-modani/versions
+          ref: 06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0
+          path: external/versions
+          persist-credentials: false
+      - run: |
+          test "$(git -C external/versions rev-parse HEAD)" = "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0"
+          python experiments/round-115/anchor_bench.py --root external/versions/version_documents --out experiments/round-115/ci-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r115-direct-anchors
+          path: experiments/round-115/ci-results.json
