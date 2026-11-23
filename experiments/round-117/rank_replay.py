@@ -109,7 +109,7 @@ def plan_queries(ref):
     phrases=[x[1:-1] for x in quoted]
     queries=[((p,),"AND") for p in phrases]
     # deterministic mixed queries using distinct native phrases; no labels.
-    for i in range(8):
+    for i in range(min(8,len(phrases)//2)):
         a,b=phrases[i],phrases[-1-i]
         if a!=b:
             queries.append(((a,b),"AND")); queries.append(((a,b),"OR"))
