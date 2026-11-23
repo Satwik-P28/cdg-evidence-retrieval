@@ -1,0 +1,234 @@
+{
+  "by_df": {
+    "df1": {
+      "bits_per_posting": {
+        "barm_g": 137.50857,
+        "barm_r": 97.50857,
+        "bitpack": 103.58857,
+        "ef_partitioned": 143.10857,
+        "streamvbyte": 103.58857,
+        "varint": 95.81714,
+        "zlib_varint": 159.81714
+      },
+      "posting_entries": 350,
+      "sampled_terms": 350,
+      "selected_term_sha256": "e1ccbc6f147f683a5f20f5abba6bf9eca84e5f137900648e2701c9a406f5d465",
+      "sizes_bytes": {
+        "barm_g": 6016,
+        "barm_r": 4266,
+        "bitpack": 4532,
+        "ef_partitioned": 6261,
+        "streamvbyte": 4532,
+        "varint": 4192,
+        "zlib_varint": 6992
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 0,
+        "barm_r": 276,
+        "bitpack": 10,
+        "ef_partitioned": 0,
+        "streamvbyte": 10,
+        "varint": 350,
+        "zlib_varint": 0
+      }
+    },
+    "df128_plus": {
+      "bits_per_posting": {
+        "barm_g": 5.52101,
+        "barm_r": 5.07556,
+        "bitpack": 6.01296,
+        "ef_partitioned": 5.19673,
+        "streamvbyte": 10.51923,
+        "varint": 8.54047,
+        "zlib_varint": 6.52664
+      },
+      "posting_entries": 86887,
+      "sampled_terms": 200,
+      "selected_term_sha256": "1a2a8c0858f8c2274254e23da85eca0c470281da74dcffbcaa76c53f65f8704f",
+      "sizes_bytes": {
+        "barm_g": 59963,
+        "barm_r": 55125,
+        "bitpack": 65306,
+        "ef_partitioned": 56441,
+        "streamvbyte": 114248,
+        "varint": 92757,
+        "zlib_varint": 70885
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 0,
+        "barm_r": 34,
+        "bitpack": 0,
+        "ef_partitioned": 166,
+        "streamvbyte": 0,
+        "varint": 0,
+        "zlib_varint": 1
+      }
+    },
+    "df2_3": {
+      "bits_per_posting": {
+        "barm_g": 66.46023,
+        "barm_r": 49.50159,
+        "bitpack": 50.03606,
+        "ef_partitioned": 65.66278,
+        "streamvbyte": 52.386,
+        "varint": 49.40827,
+        "zlib_varint": 76.55567
+      },
+      "posting_entries": 943,
+      "sampled_terms": 400,
+      "selected_term_sha256": "2ee596bf8e5b30e1377d54bbd90fba9aee22e69e2d50f80f7163598611472f52",
+      "sizes_bytes": {
+        "barm_g": 7834,
+        "barm_r": 5835,
+        "bitpack": 5898,
+        "ef_partitioned": 7740,
+        "streamvbyte": 6175,
+        "varint": 5824,
+        "zlib_varint": 9024
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 0,
+        "barm_r": 378,
+        "bitpack": 320,
+        "ef_partitioned": 0,
+        "streamvbyte": 41,
+        "varint": 389,
+        "zlib_varint": 0
+      }
+    },
+    "df32_127": {
+      "bits_per_posting": {
+        "barm_g": 10.99693,
+        "barm_r": 10.63073,
+        "bitpack": 10.52556,
+        "ef_partitioned": 10.32203,
+        "streamvbyte": 11.83449,
+        "varint": 10.97423,
+        "zlib_varint": 12.14735
+      },
+      "posting_entries": 21147,
+      "sampled_terms": 350,
+      "selected_term_sha256": "9fb1572266e33fda04b430e3e3ac0723c877835878129929299916a540d1e8e4",
+      "sizes_bytes": {
+        "barm_g": 29069,
+        "barm_r": 28101,
+        "bitpack": 27823,
+        "ef_partitioned": 27285,
+        "streamvbyte": 31283,
+        "varint": 29009,
+        "zlib_varint": 32110
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 0,
+        "barm_r": 49,
+        "bitpack": 163,
+        "ef_partitioned": 188,
+        "streamvbyte": 0,
+        "varint": 7,
+        "zlib_varint": 0
+      }
+    },
+    "df4_31": {
+      "bits_per_posting": {
+        "barm_g": 23.41099,
+        "barm_r": 19.61219,
+        "bitpack": 19.23896,
+        "ef_partitioned": 22.39977,
+        "streamvbyte": 21.78977,
+        "varint": 21.07829,
+        "zlib_varint": 27.44307
+      },
+      "posting_entries": 6859,
+      "sampled_terms": 650,
+      "selected_term_sha256": "a50fb61755305eb5686692e950e36426b6f71ef007bfe4d2047229952b539584",
+      "sizes_bytes": {
+        "barm_g": 20072,
+        "barm_r": 16815,
+        "bitpack": 16495,
+        "ef_partitioned": 19205,
+        "streamvbyte": 18682,
+        "varint": 18072,
+        "zlib_varint": 23529
+      },
+      "ties_included_number_lists_smallest": {
+        "barm_g": 0,
+        "barm_r": 326,
+        "bitpack": 562,
+        "ef_partitioned": 0,
+        "streamvbyte": 10,
+        "varint": 63,
+        "zlib_varint": 0
+      }
+    }
+  },
+  "dataset": "scifact",
+  "limitations": [
+    "Logical gap streams extracted via SQLite fts5vocab(instance); SQLite native segment encoding not replaced",
+    "Python scalar reference codecs; no SIMD throughput or random-access latency claims",
+    "Adaptive EF partition DP can inspect entire input list; tuned reference, not production PEF",
+    "Total SQLite index bytes refer to existing unchanged FTS5, not a codec-substituted database",
+    "Corpus data streamed from locked official upstream; only aggregate metrics/hashes persisted",
+    "Term sampling is stratified, not representative of unsampled overall index bytes",
+    "No semantic retrieval improvement or RAG answer-level experiment"
+  ],
+  "num_documents": 5183,
+  "original_contentless_fts_sqlite_bytes": 4644864,
+  "round": 108,
+  "sampled_posting_entries": 116186,
+  "sampled_terms": 1950,
+  "selection": {
+    "band_limits": {
+      "df1": [
+        1,
+        1,
+        350
+      ],
+      "df128_plus": [
+        128,
+        1000000000,
+        200
+      ],
+      "df2_3": [
+        2,
+        3,
+        400
+      ],
+      "df32_127": [
+        32,
+        127,
+        350
+      ],
+      "df4_31": [
+        4,
+        31,
+        650
+      ]
+    },
+    "method": "SHA256-minimal terms within fixed doc-frequency strata",
+    "salt": "CDG-R108-SOURCE-POSTINGS-V1",
+    "total_eligible_terms_by_band": {
+      "df1": 17149,
+      "df128_plus": 917,
+      "df2_3": 7289,
+      "df32_127": 2072,
+      "df4_31": 8509
+    }
+  },
+  "sizes_bytes": {
+    "barm_g": 122954,
+    "barm_r": 110142,
+    "bitpack": 120054,
+    "ef_partitioned": 116932,
+    "streamvbyte": 174920,
+    "varint": 149854,
+    "zlib_varint": 142540
+  },
+  "source": {
+    "dataset": "SciFact official original corpus",
+    "num_corpus_docs": 5183,
+    "official_archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "source_member_sha256": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62",
+    "source_url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz"
+  },
+  "wall_seconds_pipeline": 3.28
+}
