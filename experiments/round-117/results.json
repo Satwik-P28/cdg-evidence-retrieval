@@ -1,0 +1,93 @@
+{
+  "round": 117,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 100,
+  "revisions": 575,
+  "article_sha256": "59d02b5a0f6b89e09f156e0403b003ed643eac002fc472e9e278e802bbe5d1ac",
+  "results": {
+    "final_archive_without_ledger_bytes": 2596864,
+    "final_archive_with_ledger_bytes": 2609152,
+    "ledger_physical_increment_bytes": 12288,
+    "retained_native_prefix_index_bytes": 1470464,
+    "checked_distinct_phrases": 64,
+    "integer_frequency_differentials": 3929,
+    "query_count_per_scope": 80,
+    "cutoffs": [
+      {
+        "cutoff": 143,
+        "additional_native_index_bytes": 225280,
+        "queries": 160,
+        "queries_with_hits": 141,
+        "ranked_hits": 683,
+        "max_inverse_score_error": 0,
+        "max_positions_score_error": 0,
+        "naive_cutoff_rank_changes": 45,
+        "naive_cutoff_score_or_rank_changes": 141,
+        "warm_median_rank_us_exploratory": {
+          "inverse": 148.986,
+          "positions": 199.472,
+          "native": 25
+        }
+      },
+      {
+        "cutoff": 287,
+        "additional_native_index_bytes": 450560,
+        "queries": 160,
+        "queries_with_hits": 138,
+        "ranked_hits": 824,
+        "max_inverse_score_error": 0,
+        "max_positions_score_error": 0,
+        "naive_cutoff_rank_changes": 41,
+        "naive_cutoff_score_or_rank_changes": 138,
+        "warm_median_rank_us_exploratory": {
+          "inverse": 153.1975,
+          "positions": 212.9475,
+          "native": 31.714
+        }
+      },
+      {
+        "cutoff": 431,
+        "additional_native_index_bytes": 794624,
+        "queries": 160,
+        "queries_with_hits": 133,
+        "ranked_hits": 882,
+        "max_inverse_score_error": 0,
+        "max_positions_score_error": 0,
+        "naive_cutoff_rank_changes": 30,
+        "naive_cutoff_score_or_rank_changes": 133,
+        "warm_median_rank_us_exploratory": {
+          "inverse": 155.122,
+          "positions": 217.9715,
+          "native": 44.4795
+        }
+      },
+      {
+        "cutoff": 575,
+        "additional_native_index_bytes": 0,
+        "queries": 160,
+        "queries_with_hits": 131,
+        "ranked_hits": 921,
+        "max_inverse_score_error": 0,
+        "max_positions_score_error": 0,
+        "naive_cutoff_rank_changes": 0,
+        "naive_cutoff_score_or_rank_changes": 0,
+        "warm_median_rank_us_exploratory": {
+          "inverse": 155.3585,
+          "positions": 216.15,
+          "native": 88.7765
+        }
+      }
+    ]
+  },
+  "limits": [
+    "processed Wikipedia revisions; synthetic cross-article ingestion order",
+    "native Unicode61 one-column unweighted BM25; exact phrases and distinct phrase AND/OR only",
+    "all candidates are enumerated; no top-k pruning, NEAR, prefix, NOT, weights or deletion support",
+    "ledger built offline from native vocabulary; no atomic incremental ledger maintenance or rank receipts",
+    "position control uses native fts5vocab, not a tuned native FTS5 auxiliary function",
+    "retained prefix comparator counts only additional standalone contentless native indexes, shared final source/metadata excluded",
+    "warm one-runner rank-only timing; no concurrent workload, cold I/O or RAG quality",
+    "known temporal scoring prior art; no novelty or performance superiority asserted"
+  ]
+}
