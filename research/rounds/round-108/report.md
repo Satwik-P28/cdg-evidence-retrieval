@@ -1,6 +1,6 @@
 # CDG Round 108: Authentic Original-Corpus FTS5 Gap Coding with Stronger Reference Controls
 
-**Date:** 2026-11-23. **Status:** experimental code locally tested; official QASPER/SciFact results are pending GitHub Actions execution. The first code check is 97 local unit/fixture tests passing. The initial version of this report intentionally contains no original-corpus numerical claims.
+**Date:** 2026-11-23. **Status:** PASS. 97 local tests and complete original-source QASPER/SciFact SHA-locked experiments succeeded in GitHub Actions run [45248301874](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45248301874). This round measures compressed *logical* posting lists, not an integrated physical index. Original aggregate machine-readable results are stored in `experiments/round-108/results-qasper.json` and `results-scifact.json`.
 
 ## Research question
 
@@ -26,6 +26,29 @@ The same independently decodable per-list gap values are fed to:
 5. Independently Zlib9-compressed varint frames, retaining the same per-frame independent decode boundary.
 
 All methods include a 4-byte list count and per-frame byte-length headers where applicable. The partitioned EF reference also counts its 7-byte per-partition header and boundary sizes. Every selected list must decode to precisely the originally extracted positive gaps before its size is counted.
+
+## Measured exact source outcomes (GitHub Actions)
+
+| Original source, stable-hash df-stratified term sample | QASPER DEV | SciFact corpus |
+| --- | ---: | ---: |
+| Original source documents indexed | 13,266 | 5,183 |
+| Source documents/papers | 281 papers | 5,183 abstracts |
+| Sampled terms (350 df1, 400 df2–3, 650 df4–31, 350 df32–127, 200 df>=128) | 1,950 | 1,950 |
+| Logical posting entries | 144,717 | 116,186 |
+| Conventional contentless FTS5 SQLite bytes, **not codec-substituted** | 4,505,600 | 4,644,864 |
+| **BARM-R (all framing charged)** | **130,129** | **110,142** |
+| BARM-G | 144,405 | 122,954 |
+| Variable partitioned EF reference | 150,961 | 116,932 |
+| Framed bitpack | 170,875 | 120,054 |
+| Framed zlib9(varints) | 180,304 | 142,540 |
+| Framed varint | 187,580 | 149,854 |
+| Scalar StreamVByte-format control | 217,772 | 174,920 |
+
+BARM-R is 30.63% and 26.50% smaller than framed varint on the *sampled logical streams*, and 13.80% and 5.81% smaller than this experimental partitioned-EF reference on QASPER and SciFact respectively. The latter is **not** a production PEF benchmark. At document frequency 1, however, BARM-R requires 4,455 vs 4,196 B (QASPER) and 4,266 vs 4,192 B (SciFact) against the ordinary framed varint baseline; short-list overhead is not free.
+
+At df 32–127 on SciFact, BARM-R uses 28,101 B versus EF 27,285 B, and at df 4–31 it uses 16,815 B versus block bitpack 16,495 B. Thus BARM does **not** dominate every corpus or frequency regime. Across both samples, higher-df terms dominate logical posting entry counts; the stratified mixture is not a statistically representative distribution of all index terms or bytes. No source text or labels were emitted.
+
+**Scientific decision:** Maintain BARM as a candidate for a physical external index integration experiment, not as an established superior codec. The more challenging next control is an actual byte-accounted posting store that supports random term lookups and compares with optimized C/C++ StreamVByte/FastPFOR and Partitioned Elias-Fano libraries. Whole-system FTS5/archival and query performance are unmeasured here.
 
 ## Main reporting metrics
 
