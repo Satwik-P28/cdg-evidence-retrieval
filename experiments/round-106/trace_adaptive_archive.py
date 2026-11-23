@@ -618,6 +618,7 @@ def evaluate(train,dev,policies=POLICIES,edit_count=60):
                 "heldout_question_text_used_in_policy":False,
             },
             "original_corpus":cohort,
+            "original_paragraphs":len(docs),
             "heldout_gold_evidence_recall_control":original_holdout_gold,
             "budgets_bytes":list(BUDGETS),
             "synthetic_edits":len(edits),
@@ -649,7 +650,7 @@ def main():
     result=evaluate(release["train"]["data"],release["dev"]["data"])
     Path(args.out).write_text(json.dumps(result,indent=2,sort_keys=True)+"\n")
     print("ROUND106",json.dumps({
-        "source_docs":result["original_corpus"]["text_paragraphs"],
+        "source_docs":result["original_paragraphs"],
         "question_split":result["question_split"],
         "heldout_gold":result["heldout_gold_evidence_recall_control"],
         "archives":[{
