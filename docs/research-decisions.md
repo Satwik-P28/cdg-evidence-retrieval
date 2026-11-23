@@ -97,3 +97,18 @@ The whole-paper archive's **10.09% idle saving** created a **36.5x larger compre
 - [R105 source rewrite and WAL live cost](../research/rounds/round-105/report.md)
 
 Every round above has code under experiments/round-NNN, a dedicated regression suite and a verified GitHub Actions run linked in its report. No original copyrighted source paragraph text or QA answers are committed as a local dataset.
+
+
+---
+
+# Research decision update: Round 106 pseudo-history and hybrid source allocation
+
+**Date: November 22, 2026. Exact-head source and CI report:** [Round 106](../research/rounds/round-106/report.md).
+
+**KEEP: Real hybrid source archive.** Round 106 constructs one genuine SQLite source+FTS database that can store some complete original paragraphs independently and other original paragraphs in paper-local groups, all using a single SHA-verified Zstd9 dictionary trained only on original QASPER TRAIN source text. Each original source belongs to exactly one representation, has exact provenance and a SHA receipt, and retains the same original FTS5 postings. Atomic edit transactions update both ordinary contentless FTS5 postings and the selected source representation. All 13,266 original source paragraphs and all 1,005 original QASPER question top-ten rankings were independently verified after each of nine layouts and 60 synthetic revisions per archive.
+
+**NEGATIVE: Sparse pseudo-historical source reads do not dominate simple original paper features.** Original QASPER DEV question IDs were SHA-split into 494 fit-history questions and 511 held-out questions, with no human evidence label exposure. At identical ratios (50% individual, 25% groups of four, 25% whole-paper), the historical source-read-count method stored 8,273,920 B and required 2.147x the requested original bytes decompressed for heldout top10. Original-paper-length allocation stored 8,429,568 B but required only 1.639x, with lower artificial-edit WAL growth. The length policy exceeded a strict 8 MiB archive cap by 40,960 B, so it is **not** an unconditional winner at that cap. Stable paper ID hashing also beat history in heldout top10 decoded bytes at matched allocation shares. Additional 50/25 controls were added after observing first heldout outcomes, thus considered exploratory rather than pre-registered.
+
+**DATA LIMITATION:** QASPER has NO actual timestamped read or edit history. The SHA split is a reproducible transductive pseudo-history: fit and heldout queries can share papers. The 60 revisions are synthetically generated, not observed corrections. This round is not proof that a learned hot/cold layout performs better or worse in a future deployment. Count source read amplification, FTS index bytes and WAL as distinct resources, rather than exaggerating a scalar best case.
+
+**NEXT: Strong retrieval controls, model storage, and semantic factuality.** R107 compares independently pinned public pretrained MiniLM and BGE retrieval, conventional BM25 and fixed RRF on original QASPER expert evidence under known article scope. Charge 384-d float32 embeddings, model checkpoint bytes, source+FTS index and CPU; dense evidence improvements, if any, are not a free byproduct of compression. Then evaluate actual human-annotated generated answer attribution, as the corpus storage experiments do NOT demonstrate reduced hallucination.
