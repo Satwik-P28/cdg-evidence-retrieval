@@ -1,0 +1,148 @@
+{
+  "codecs": {
+    "barm_r": {
+      "bm25_verification": {
+        "max_score_abs_delta": 1.7763568394002505e-15,
+        "note": "Equal-score ordering may vary by floating arithmetic; no phrase/positional queries",
+        "queries": 112,
+        "queries_with_hits": 90,
+        "ranked_rowid_positions_checked": 593,
+        "ranking_tie_positions": 0,
+        "scores_match_abs_1e_12": true
+      },
+      "build_wall_s_exploratory": 2.2345,
+      "codec_assignments": {
+        "barm_r": 35936
+      },
+      "number_of_terms": 35936,
+      "payload_bytes": 2146963,
+      "sqlite_bytes": 3264512,
+      "sqlite_plus_lexicon_plus_doclength_overhead_bytes": 1117549
+    },
+    "bitpack": {
+      "bm25_verification": {
+        "max_score_abs_delta": 1.7763568394002505e-15,
+        "note": "Equal-score ordering may vary by floating arithmetic; no phrase/positional queries",
+        "queries": 112,
+        "queries_with_hits": 90,
+        "ranked_rowid_positions_checked": 593,
+        "ranking_tie_positions": 0,
+        "scores_match_abs_1e_12": true
+      },
+      "build_wall_s_exploratory": 1.6945,
+      "codec_assignments": {
+        "bitpack": 35936
+      },
+      "number_of_terms": 35936,
+      "payload_bytes": 2198591,
+      "sqlite_bytes": 3366912,
+      "sqlite_plus_lexicon_plus_doclength_overhead_bytes": 1168321
+    },
+    "ef_partitioned": {
+      "bm25_verification": {
+        "max_score_abs_delta": 1.7763568394002505e-15,
+        "note": "Equal-score ordering may vary by floating arithmetic; no phrase/positional queries",
+        "queries": 112,
+        "queries_with_hits": 90,
+        "ranked_rowid_positions_checked": 593,
+        "ranking_tie_positions": 0,
+        "scores_match_abs_1e_12": true
+      },
+      "build_wall_s_exploratory": 2.2763,
+      "codec_assignments": {
+        "ef_partitioned": 35936
+      },
+      "number_of_terms": 35936,
+      "payload_bytes": 2309205,
+      "sqlite_bytes": 3424256,
+      "sqlite_plus_lexicon_plus_doclength_overhead_bytes": 1115051
+    },
+    "hybrid_df4": {
+      "bm25_verification": {
+        "max_score_abs_delta": 1.7763568394002505e-15,
+        "note": "Equal-score ordering may vary by floating arithmetic; no phrase/positional queries",
+        "queries": 112,
+        "queries_with_hits": 90,
+        "ranked_rowid_positions_checked": 593,
+        "ranking_tie_positions": 0,
+        "scores_match_abs_1e_12": true
+      },
+      "build_wall_s_exploratory": 1.9555,
+      "codec_assignments": {
+        "barm_r": 11498,
+        "varint": 24438
+      },
+      "number_of_terms": 35936,
+      "payload_bytes": 2142554,
+      "sqlite_bytes": 3256320,
+      "sqlite_plus_lexicon_plus_doclength_overhead_bytes": 1113766
+    },
+    "oracle_min": {
+      "bm25_verification": {
+        "max_score_abs_delta": 1.7763568394002505e-15,
+        "note": "Equal-score ordering may vary by floating arithmetic; no phrase/positional queries",
+        "queries": 112,
+        "queries_with_hits": 90,
+        "ranked_rowid_positions_checked": 593,
+        "ranking_tie_positions": 0,
+        "scores_match_abs_1e_12": true
+      },
+      "build_wall_s_exploratory": 5.2152,
+      "codec_assignments": {
+        "barm_r": 24603,
+        "bitpack": 4885,
+        "ef_partitioned": 1762,
+        "varint": 4686
+      },
+      "number_of_terms": 35936,
+      "payload_bytes": 2121926,
+      "sqlite_bytes": 3239936,
+      "sqlite_plus_lexicon_plus_doclength_overhead_bytes": 1118010
+    },
+    "varint": {
+      "bm25_verification": {
+        "max_score_abs_delta": 1.7763568394002505e-15,
+        "note": "Equal-score ordering may vary by floating arithmetic; no phrase/positional queries",
+        "queries": 112,
+        "queries_with_hits": 90,
+        "ranked_rowid_positions_checked": 593,
+        "ranking_tie_positions": 0,
+        "scores_match_abs_1e_12": true
+      },
+      "build_wall_s_exploratory": 0.7093,
+      "codec_assignments": {
+        "varint": 35936
+      },
+      "number_of_terms": 35936,
+      "payload_bytes": 2318764,
+      "sqlite_bytes": 3551232,
+      "sqlite_plus_lexicon_plus_doclength_overhead_bytes": 1232468
+    }
+  },
+  "dataset": "scifact",
+  "documents": 5183,
+  "full_distinct_docid_postings": 633936,
+  "full_token_occurrences": 1167874,
+  "full_token_vocabulary_terms": 35936,
+  "limitations": [
+    "External store has full corpus vocabulary and exact term frequencies, but not token positions, phrase queries or native FTS5 implementation",
+    "Original source text is not stored inside compared SQLite posting tables; identical schema and doc length metadata are charged to each arm",
+    "Query plan uses fixed SHA-selected df 3..256 terms, not actual user query logs or human evidence labels",
+    "BM25 checks use one text column formed by original title plus body and conjunctive terms only",
+    "Comparison to original FTS5 is contextual, NOT feature-equivalent because native FTS5 stores token positions",
+    "All codecs are Python implementations, without native SIMD controls; no trustworthy latency or CPU gain claim",
+    "Oracle_min chooses smallest actual encoded list including a charged codec tag; it is an in-sample attainable lower envelope, not learned workload policy",
+    "No RH theorem use, new lossless optimality proof, end-to-end RAG response, or hallucination result"
+  ],
+  "native_fts5_one_column_physical_bytes_not_feature_equivalent": 3379200,
+  "queried_terms_and_pairs": 112,
+  "query_sampling_salt": "CDG-R111-BM25-FULL-VOCAB-2026-v1",
+  "round": 111,
+  "source": {
+    "dataset": "SciFact official original corpus",
+    "num_corpus_docs": 5183,
+    "official_archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "source_member_sha256": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62",
+    "source_url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz"
+  }
+}

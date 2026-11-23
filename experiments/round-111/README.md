@@ -17,7 +17,7 @@ python experiments/round-111/full_bm25_store.py --dataset scifact --out experime
 python experiments/round-111/full_bm25_store.py --dataset qasper --out experiments/round-111/ci-qasper.json
 ```
 
-GitHub workflow `.github/workflows/cdg-r111-full-bm25-index.yml` runs the real original-source experiments, checks source SHAs with the preexisting R83/R96 readers and saves aggregate JSON. Full original articles/paragraphs are never committed.
+GitHub workflow `.github/workflows/cdg-r111-full-bm25-index.yml` has successfully run both original-source experiments in [Actions run 45260649171](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45260649171). Its complete aggregate output is committed as `results-qasper.json` and `results-scifact.json`, with source SHAs checked by the preexisting R83/R96 readers. Full original articles/paragraphs are never committed.
 
 **Scope:** This is a full-vocabulary, term-frequency-aware **conjunctive BM25 external index**, still not a feature-equivalent native FTS5 replacement. It does not retain token positions and therefore cannot reproduce phrase/NEAR queries. Its source archive is separately accounted for in R103–R106, not included here; do not divide index-only sizes by complete source+index bytes. The FTS5 native size has more features and is shown only as context. Codecs are Python reference implementations without matched native SIMD controls. Results are not RAG answer improvements, a novel information-theoretic codec, or applications of RH.
 
