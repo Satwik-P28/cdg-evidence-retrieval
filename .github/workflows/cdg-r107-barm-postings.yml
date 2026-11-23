@@ -1,0 +1,46 @@
+name: CDG R107 experimental BARM and genuine FTS5 logical postings
+on:
+  push:
+    branches:
+      - 'research/round-107-*'
+    paths:
+      - 'experiments/round-107/**'
+      - 'research/rounds/round-107/**'
+      - '.github/workflows/cdg-r107-barm-postings.yml'
+  pull_request:
+    paths:
+      - 'experiments/round-107/**'
+      - 'research/rounds/round-107/**'
+      - '.github/workflows/cdg-r107-barm-postings.yml'
+  workflow_dispatch:
+jobs:
+  barm-reference-and-postings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned reference-test dependencies
+        run: python -m pip install --disable-pip-version-check numpy==2.3.5 pytest==9.0.2
+      - name: Strict round-trip and SQLite FTS5 gap regression checks
+        run: PYTHONPATH=experiments/round-107 python -m pytest -q experiments/round-107/tests
+      - name: Reproduce seeded finite-zeta, cluster negative controls
+        working-directory: experiments/round-107
+        run: python benchmark.py --n 12000 --out ci-results-synthetic.json
+      - name: Genuine CDG Markdown report paragraph FTS5 logical docID-gap experiment
+        run: |
+          PYTHONPATH=experiments/round-107 python experiments/round-107/fts5_postings.py \
+            --root . --pattern 'research/rounds/round-*/report.md' \
+            --max-files 30 --max-docs 5000 --max-terms 3000 \
+            --out experiments/round-107/ci-results-fts5.json
+      - name: Upload reproducible machine-readable results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r107-barm-fts5-logical-postings
+          path: |
+            experiments/round-107/ci-results-synthetic.json
+            experiments/round-107/ci-results-fts5.json
+          if-no-files-found: warn

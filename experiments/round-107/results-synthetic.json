@@ -1,0 +1,236 @@
+{
+  "contract": "CDG BARM CPU-only pilot; not published CDG results",
+  "created_date": "2026-11-23",
+  "seed": 42,
+  "synthetic_distribution": "finite truncated discrete power law on [1,65536], not full zeta",
+  "block_size": 128,
+  "frame_accounting": "each independently decodable block includes 4B byte-length; global zlib does not support block random access",
+  "notes": "No QASPER, SciFact, Lean corpus tested. Python reference decoders, not SIMD. No FTS/WAL/archive integration. No LLM/RAG claims.",
+  "audit_corpus": null,
+  "cases": [
+    {
+      "case": "truncated_zeta_beta_1.001_cap_65536",
+      "n": 12000,
+      "min": 1,
+      "max": 65519,
+      "p1": 0.085,
+      "frames": 94,
+      "sizes_bytes": {
+        "barm_r": 17908,
+        "barm_g": 18394,
+        "gamma": 23462,
+        "delta": 19624,
+        "varint": 20316,
+        "fixed_bitpack": 24658,
+        "zlib_varint_block": 21350,
+        "barm_oracle_r": 17892,
+        "zlib_varint_global": 17788
+      },
+      "bits_per_integer": {
+        "barm_r": 11.9387,
+        "barm_g": 12.2627,
+        "gamma": 15.6413,
+        "delta": 13.0827,
+        "varint": 13.544,
+        "fixed_bitpack": 16.4387,
+        "zlib_varint_block": 14.2333,
+        "barm_oracle_r": 11.928,
+        "zlib_varint_global": 11.8587
+      },
+      "barm_decoding_seconds_warm_python": 0.026726,
+      "elapsed_seconds": 0.459
+    },
+    {
+      "case": "truncated_zeta_beta_1.01_cap_65536",
+      "n": 12000,
+      "min": 1,
+      "max": 65522,
+      "p1": 0.089,
+      "frames": 94,
+      "sizes_bytes": {
+        "barm_r": 17832,
+        "barm_g": 18311,
+        "gamma": 23322,
+        "delta": 19506,
+        "varint": 20255,
+        "fixed_bitpack": 24658,
+        "zlib_varint_block": 21289,
+        "barm_oracle_r": 17823,
+        "zlib_varint_global": 17697
+      },
+      "bits_per_integer": {
+        "barm_r": 11.888,
+        "barm_g": 12.2073,
+        "gamma": 15.548,
+        "delta": 13.004,
+        "varint": 13.5033,
+        "fixed_bitpack": 16.4387,
+        "zlib_varint_block": 14.1927,
+        "barm_oracle_r": 11.882,
+        "zlib_varint_global": 11.798
+      },
+      "barm_decoding_seconds_warm_python": 0.026794,
+      "elapsed_seconds": 0.458
+    },
+    {
+      "case": "truncated_zeta_beta_1.1_cap_65536",
+      "n": 12000,
+      "min": 1,
+      "max": 65474,
+      "p1": 0.13808,
+      "frames": 94,
+      "sizes_bytes": {
+        "barm_r": 15718,
+        "barm_g": 15685,
+        "gamma": 18973,
+        "delta": 16410,
+        "varint": 18087,
+        "fixed_bitpack": 24626,
+        "zlib_varint_block": 19121,
+        "barm_oracle_r": 15156,
+        "zlib_varint_global": 15201
+      },
+      "bits_per_integer": {
+        "barm_r": 10.4787,
+        "barm_g": 10.4567,
+        "gamma": 12.6487,
+        "delta": 10.94,
+        "varint": 12.058,
+        "fixed_bitpack": 16.4173,
+        "zlib_varint_block": 12.7473,
+        "barm_oracle_r": 10.104,
+        "zlib_varint_global": 10.134
+      },
+      "barm_decoding_seconds_warm_python": 0.023393,
+      "elapsed_seconds": 0.4
+    },
+    {
+      "case": "truncated_zeta_beta_1.5_cap_65536",
+      "n": 12000,
+      "min": 1,
+      "max": 65264,
+      "p1": 0.38108,
+      "frames": 94,
+      "sizes_bytes": {
+        "barm_r": 7674,
+        "barm_g": 8220,
+        "gamma": 7875,
+        "delta": 7899,
+        "varint": 13396,
+        "fixed_bitpack": 20750,
+        "zlib_varint_block": 11828,
+        "barm_oracle_r": 7646,
+        "zlib_varint_global": 8278
+      },
+      "bits_per_integer": {
+        "barm_r": 5.116,
+        "barm_g": 5.48,
+        "gamma": 5.25,
+        "delta": 5.266,
+        "varint": 8.9307,
+        "fixed_bitpack": 13.8333,
+        "zlib_varint_block": 7.8853,
+        "barm_oracle_r": 5.0973,
+        "zlib_varint_global": 5.5187
+      },
+      "barm_decoding_seconds_warm_python": 0.012505,
+      "elapsed_seconds": 0.26
+    },
+    {
+      "case": "truncated_zeta_beta_2_cap_65536",
+      "n": 12000,
+      "min": 1,
+      "max": 5161,
+      "p1": 0.60467,
+      "frames": 94,
+      "sizes_bytes": {
+        "barm_r": 4281,
+        "barm_g": 5455,
+        "gamma": 4281,
+        "delta": 4650,
+        "varint": 12617,
+        "fixed_bitpack": 11762,
+        "zlib_varint_block": 7890,
+        "barm_oracle_r": 4281,
+        "zlib_varint_global": 4774
+      },
+      "bits_per_integer": {
+        "barm_r": 2.854,
+        "barm_g": 3.6367,
+        "gamma": 2.854,
+        "delta": 3.1,
+        "varint": 8.4113,
+        "fixed_bitpack": 7.8413,
+        "zlib_varint_block": 5.26,
+        "barm_oracle_r": 2.854,
+        "zlib_varint_global": 3.1827
+      },
+      "barm_decoding_seconds_warm_python": 0.007568,
+      "elapsed_seconds": 0.183
+    },
+    {
+      "case": "truncated_zeta_beta_3_cap_65536",
+      "n": 12000,
+      "min": 1,
+      "max": 93,
+      "p1": 0.83367,
+      "frames": 94,
+      "sizes_bytes": {
+        "barm_r": 2727,
+        "barm_g": 3197,
+        "gamma": 2727,
+        "delta": 2934,
+        "varint": 12564,
+        "fixed_bitpack": 6514,
+        "zlib_varint_block": 4828,
+        "barm_oracle_r": 2727,
+        "zlib_varint_global": 2184
+      },
+      "bits_per_integer": {
+        "barm_r": 1.818,
+        "barm_g": 2.1313,
+        "gamma": 1.818,
+        "delta": 1.956,
+        "varint": 8.376,
+        "fixed_bitpack": 4.3427,
+        "zlib_varint_block": 3.2187,
+        "barm_oracle_r": 1.818,
+        "zlib_varint_global": 1.456
+      },
+      "barm_decoding_seconds_warm_python": 0.006088,
+      "elapsed_seconds": 0.152
+    },
+    {
+      "case": "clustered_mixture_80pct_gaps_1to4",
+      "n": 12000,
+      "min": 1,
+      "max": 32765,
+      "p1": 0.19875,
+      "frames": 94,
+      "sizes_bytes": {
+        "barm_r": 10942,
+        "barm_g": 11532,
+        "gamma": 12353,
+        "delta": 10843,
+        "varint": 16205,
+        "fixed_bitpack": 23158,
+        "zlib_varint_block": 14474,
+        "barm_oracle_r": 10925,
+        "zlib_varint_global": 10292
+      },
+      "bits_per_integer": {
+        "barm_r": 7.2947,
+        "barm_g": 7.688,
+        "gamma": 8.2353,
+        "delta": 7.2287,
+        "varint": 10.8033,
+        "fixed_bitpack": 15.4387,
+        "zlib_varint_block": 9.6493,
+        "barm_oracle_r": 7.2833,
+        "zlib_varint_global": 6.8613
+      },
+      "barm_decoding_seconds_warm_python": 0.016823,
+      "elapsed_seconds": 0.318
+    }
+  ]
+}
