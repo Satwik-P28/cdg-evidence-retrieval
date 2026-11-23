@@ -1,0 +1,39 @@
+name: CDG R107 pinned dense and lexical QASPER evidence comparison
+on:
+  push:
+    branches:
+      - "research/round-107-*"
+    paths:
+      - "experiments/round-107/**"
+      - ".github/workflows/cdg-r107-dense-evidence.yml"
+  workflow_dispatch:
+jobs:
+  pretrained-retrieval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    env:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      TOKENIZERS_PARALLELISM: "false"
+      HF_HUB_DISABLE_XET: "1"
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned CPU PyTorch and pretrained retrieval dependencies
+        run: |
+          python -m pip install --disable-pip-version-check --index-url https://download.pytorch.org/whl/cpu torch==2.6.0
+          python -m pip install --disable-pip-version-check transformers==4.52.4 huggingface_hub==0.32.4 tokenizers==0.21.4 numpy==2.2.6
+      - name: Thirteen human-gold scope and label-safe fusion regressions
+        run: python -W error::ResourceWarning -m unittest discover -s experiments/round-107 -p 'test_*.py' -v
+      - name: SHA-locked QASPER full 13k paragraph BM25 and two pinned pretrained dense-model source localization
+        run: python experiments/round-107/qasper_dense_hybrid_cost.py --out experiments/round-107/ci-results.json
+      - name: Preserve only model revisions/weights sizes and aggregated expert evidence hits
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r107-pretrained-evidence-source-cost
+          path: experiments/round-107/ci-results.json
+          if-no-files-found: ignore
