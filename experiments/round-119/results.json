@@ -1,0 +1,47 @@
+{
+  "round": 119,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 45,
+  "article_sha256": "fa5356c9c24cf1ddb21231cf28cb9a96cb6fd22ec6921e250dc91d34782fb345",
+  "result": {
+    "revisions": 256,
+    "prefix": 128,
+    "queries_per_scope": 80,
+    "prefix_rank_receipts": 160,
+    "prefix_ranked_hits": 604,
+    "final_ranked_hits": 754,
+    "pinned_snapshot_receipt_replays": 160,
+    "later_snapshot_receipt_replays": 160,
+    "max_score_error": 0,
+    "all_source_readbacks": 256,
+    "ledger_rows_audited": 256,
+    "receipt_body_bytes_external_not_persisted": 160685,
+    "receipt_digest_bytes_external_not_persisted": 5120,
+    "atomic": {
+      "sqlite_bytes": 1269760,
+      "wal_bytes_before_checkpoint": 20583552
+    },
+    "archive_without_ledger": {
+      "sqlite_bytes": 1253376,
+      "wal_bytes_before_checkpoint": 19504112
+    },
+    "crash_stages_passed": [
+      "source",
+      "index",
+      "ledger",
+      "meta",
+      "commit"
+    ]
+  },
+  "limits": [
+    "last 45 unused hash-ranked articles in same processed Versions corpus, not a new corpus",
+    "synthetic round-robin ingestion and prefix-generated queries, no actual time-stamped workload",
+    "receipt digest is not a signature; requires separately trusted expected digest and scorer configuration",
+    "replay assumes same scoring arithmetic, tokenization and append-only index; no arbitrary FTS syntax",
+    "ledger hash chain audited, not authenticated storage or adversarial database proof",
+    "receipt output bytes charged separately, not persisted in measured archive",
+    "process death is not power loss; no device write or latency claims",
+    "baseline has no replay ledger and is a marginal overhead comparator, not a feature-equivalent system"
+  ]
+}
