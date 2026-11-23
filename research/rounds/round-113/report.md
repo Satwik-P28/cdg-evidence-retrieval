@@ -1,6 +1,6 @@
 # CDG Round 113: Source-only cost-aware archive layout under retrieval and revision tradeoffs
 
-**Date:** November 23, 2026. **Status:** implementation and deterministic unit tests executed locally. Full original-source GitHub Actions result PENDING at time of initial commit. Do not cite empirical win until runner results are verified.
+**Date:** November 23, 2026. **Status:** Initial seven-arm original QASPER CI PASS (run 45281936081); 25 deterministic unit tests passed. Four additional post-hoc comparison arms are undergoing separate verification. No novel performance superiority established.
 
 ## Research question
 
@@ -27,9 +27,23 @@ Compare all seven archives under physically measured persistence bytes, verified
 
 **Predeclared decision gate:** The planner is worth further work only if, at comparable actual SQLite bytes, it improves actual original-QASPER read amplification without an unacceptable artificial update/WAL penalty. A planner solution at a larger physical archive size does not automatically beat a smaller baseline. Failure to fit 8MiB must be reported; a proxy budget is NOT a guaranteed file-size constraint. Use observed Pareto non-dominance, not an arbitrary scalar ranking of dissimilar metrics.
 
-## Results
+## First seven-arm original-source results (CI 45281936081)
 
-**Pending original-source CI**. Placeholder not permitted to become a performance claim. The final report must include measured physical SQLite bytes, QASPER original question top-ten decoded amplification and actual WAL bytes for each arm, as well as the Pareto set and any negative result.
+All 281 DEV articles, 13,266 original paragraphs, 1,005 QASPER questions and 24 artificial edit transactions are checked per arm. Read amplification and WAL sizes are measured, not predicted. Original FTS5 ranks and post-revision source reconstruction match exactly.
+
+| Archive policy | Actual source+FTS SQLite bytes | Original-question top10 decoded byte amplification | 24-edit WAL appended bytes | Strict 8MiB fit? |
+|---|---:|---:|---:|---|
+| all_paper | 7,831,552 | 4.231430x | 5,088,232 | Yes |
+| all_group4 | 8,413,184 | 2.222632x | 4,696,832 | No |
+| all_individual | 8,470,528 | 1.000000x | 4,577,352 | No |
+| length_budget_35 | 8,196,096 | 2.630215x | 4,865,752 | Yes |
+| hash_budget_35 | 8,093,696 | 2.877715x | 4,985,232 | Yes |
+| planner_balanced_35 | 8,409,088 | 2.283562x | 4,700,952 | **No** |
+| planner_balanced_65 | 8,404,992 | 1.497650x | 4,659,752 | **No** |
+
+R113's observed physical 8MiB budget **invalidates both initial planner arms**, even though their proxy budgets were feasible. The 65% planner shows an interesting but limited three-dimensional Pareto result versus `all_group4`: 8,192 fewer SQLite bytes, 32.6% fewer QASPER source decode bytes and 37,080 fewer WAL bytes. This is not an across-baseline or physical-budget victory. `all_individual` still improves read/WAL while costing more physical bytes. The planner used the original DEV source bytes, and the same QASPER DEV has been used repeatedly in prior rounds, so treat this as exploratory rather than independent publication validation.
+
+**Additional comparisons introduced after inspecting these seven results:** R106's 50/25 paper-length/hash controls and balanced planner at 25% and 30% proxy budgets. These are not preregistered or confirmatory. Any favorable comparison must be reported as exploratory, and should be repeated on a distinct held-out corpus with real access and revision traces. The separate second CI run determines these values; do not insert or assume numbers before verifying its artifacts.
 
 ## Scientific limitations
 

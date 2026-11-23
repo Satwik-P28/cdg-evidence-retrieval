@@ -28,7 +28,7 @@ from trace_adaptive_archive import (
     independently_trained_samples, train_dictionaries, document_bytes,
     base_fts_db, paper_rank, all_query_rankings, build_archive,
     source_integrity, read_cost, synthetic_edit_plan, live_expected,
-    dynamic_cost, stablehash,
+    dynamic_cost, stablehash, policy_layouts,
 )
 from cost_planner import paper_options,optimize,physical_pareto,LAYOUTS
 
@@ -36,22 +36,30 @@ POLICIES=(
     'all_paper','all_group4','all_individual',
     'length_budget_35','hash_budget_35',
     'planner_balanced_35','planner_balanced_65',
+    # Extra comparisons added after first seven-arm results: exploratory only.
+    'length_50_25','hash_50_25',
+    'planner_balanced_25','planner_balanced_30',
 )
 EDIT_COUNT=24
 BUDGETS=(8*1024*1024, 9*1024*1024)
 EXPERIMENT_SALT='CDG-R113-SOURCE-ONLY-INDEPENDENT-ARTICLES-v1'
 
 
-def frozen_choices(profiles):
+def frozen_choices(profiles,docs):
     pids=sorted(profiles)
     out={}
     for layout in LAYOUTS:
         out['all_'+layout]=({pid:layout for pid in pids},{'type':'fixed static layout'})
     for mode in ('length','hash','balanced'):
-        for fraction in ((.35,.65) if mode=='balanced' else (.35,)):
+        for fraction in ((.25,.30,.35,.65) if mode=='balanced' else (.35,)):
             choices,details=optimize(profiles,mode=mode,fraction=fraction)
             policy=('planner_'+mode if mode=='balanced' else mode+'_budget')+'_'+str(int(fraction*100))
             out[policy]=(choices,details)
+    # Established R106 percentage controls. No query IDs or rankings are needed
+    # for these two source-length/stable-hash static assignment rules.
+    src=original_papers(docs)
+    for name in ('length_50_25','hash_50_25'):
+        out[name]=(policy_layouts(src,docs,[],{},name),{'type':'R106 baseline without query history'})
     if set(out)!=set(POLICIES):raise AssertionError('expected policies not built')
     return out
 
@@ -84,7 +92,7 @@ def evaluate(train,dev,policies=POLICIES,edit_count=EDIT_COUNT):
     samples,train_meta=independently_trained_samples(train)
     dictionary=train_dictionaries(samples,(65536,))[65536]
     profiles=source_profiles(docs,dictionary)
-    frozen=frozen_choices(profiles)
+    frozen=frozen_choices(profiles,docs)
     if set(policies)-set(frozen):raise ValueError('invalid requested policy')
     # Here we freeze every policy BEFORE reading any DEV question text.
     plan={name:frozen[name] for name in policies}
@@ -148,6 +156,8 @@ def evaluate(train,dev,policies=POLICIES,edit_count=EDIT_COUNT):
           'source_workload_independence':'Original TRAIN/DEV paper IDs disjoint; evaluation questions belong only to DEV papers, but the DEV source bytes must be inspected to build the archive',
           'synthetic_edits_count':len(edits),'budgets_bytes':list(BUDGETS),
           'policies':list(policies),'results':outcomes,
+          'confirmatory_first_run_policies':list(POLICIES[:7]),
+          'posthoc_exploratory_additional_policies':list(POLICIES[7:]),
           'observed_three_resource_pareto_policy_names':physical_pareto(points),
           'points':points,
           'limitations':[
