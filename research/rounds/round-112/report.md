@@ -1,6 +1,6 @@
 # CDG Round 112: Complete Positional Index and Exact Phrase-Query Control
 
-**Date:** 2026-11-23. **Status:** 21 local structural/fixture tests passed under a temporary compatibility stand-in for the R108 codec; **original-source experiments and authentic R108 codec tests are pending remote GitHub Actions**. The stand-in is neither committed nor used to report original-corpus measurements. Never claim verified original-corpus compression until the GitHub workflow completes.
+**Date:** 2026-11-23. **Status: PASS.** 21 local fixture checks passed; both original SHA-locked QASPER/SciFact runs with actual R108 codecs, original full-vocabulary FTS5 positions and BM25/phrase differentials passed [GitHub Actions run 45278147405](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45278147405). Local tests used a temporary compatibility stand-in not committed; only GitHub Actions results are the source of authentic numerical findings.
 
 ## Research question
 
@@ -24,9 +24,29 @@ R112 adds the missing full per-token original positions with strict position res
 - **PISA** provides optimized compression and BlockMax WAND search infrastructure that must enter a later head-to-head test. https://pisa.readthedocs.io/en/latest/index.html
 - SQLite FTS5 semantics, offset vocab, document-size details: https://www.sqlite.org/fts5.html
 
-## Epistemic gates and pending evidence
 
-**[FACT]** R111 full vocabulary and BM25 scores were verified as above. **[FACT]** R110's faster Python BARM decoding remained about 4 times slower than Python scalar varint in its particular sampled warm decode workload. **[FACT]** R112 fixture tests locally pass, but they do not validate native R108 codecs or real original-source file sizes. **[UNKNOWN UNTIL CI]** Which fixed codec is smallest when *full position streams* are included; whether a simple static hybrid has any advantage; whether the original phrase-check query plan passes on QASPER and SciFact; and what the feature-consistent original SQLite file sizes are.
+## Verified original-source results (GitHub Actions)
+
+Both original SHA-locked source runs passed, including **112 BM25 single/AND queries and 32 exact bigram phrase queries per corpus** for every external codec. Original native scores and decoded external scores differed by at most 1.78e-15, with no ranking tie-order disagreements in the tested queries. Every original term and position stream was reconstructed after physical SQLite writes. **No original-source text or query terms were committed.**
+
+| Corpus | Docs | Vocab terms | Distinct postings | Token positions | Native contentless FTS5 bytes | BARM-R external bytes | Varint external bytes | Static hybrid external bytes | In-sample oracle external bytes |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| QASPER | 13,266 | 22,454 | 710,223 | 1,043,480 | 3,084,288 | 4,915,200 | 5,267,456 | 4,890,624 | 4,722,688 |
+| SCIFACT | 5,183 | 35,936 | 633,936 | 1,167,874 | 3,379,200 | 5,701,632 | 5,959,680 | 5,693,440 | 5,423,104 |
+
+**Result:** On QASPER, the external BARM-R positional store consumed **6.69% less physical storage than the matched-schema external varint control**, but was **59.36% larger than native FTS5**. On SciFact, corresponding values were **4.33% less than varint** yet **68.73% larger than native FTS5**. The static short-list hybrid used slightly fewer physical pages than fixed BARM on both. Even the per-term/per-plane in-sample minimum-size oracle is larger than native FTS5, so simply selecting from the tested codecs cannot close the gap.
+
+These external indexes implement tested term-frequency BM25 and exact ordered bigram phrase membership using all original token offsets. Native FTS5 also supports more sophisticated query operators, configurable ranking, term-prefix lookups, and production search paths. The comparison therefore **favors native FTS5 in bytes** on these exact sources without proving universal cross-engine superiority; importantly, it eliminates an earlier misleading incomplete-feature comparison.
+
+The result also highlights why reporting only docID stream compression is insufficient. Full positional storage and per-term framing/table metadata can dominate any benefit from a new integer code. The per-term oracle's selection uses original test data, so it is a lower envelope, not a trained adaptive codec that could be claimed as a new method.
+
+**Outcome: NEGATIVE for BARM-native-index superiority; KEEP BARM only as a reference component**, and redirect novelty work to jointly optimized versioned source storage, query-conditioned activation, and calibrated evidence verification, where original CDG provenance and WAL methods provide a clearer systems distinction.
+
+Workflow and artifacts: [GitHub Actions run 45278147405](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45278147405), `experiments/round-112/results-qasper.json` and `results-scifact.json`.
+
+## Epistemic gates and limitations
+
+**[FACT]** R111 full vocabulary and BM25 scores were verified as above. **[FACT]** R110's faster Python BARM decoding remained about 4 times slower than Python scalar varint in its particular sampled warm decode workload. **[FACT]** Original R112 full position reconstruction and restricted BM25/phrase correctness passed for both datasets and all seven policies. **[NEGATIVE]** Both BARM and the minimum-size oracle physical SQLite stores are larger than conventional native FTS5 on the same complete original one-column positional corpus. **[UNCERTAIN]** How this changes under production SIMD libraries, FTS5-native segment formats, phrase-heavy latency distributions, source-version updates, or different corpora. No claim of superior operational latency is justified.
 
 ### Paper-worthiness assessment
 

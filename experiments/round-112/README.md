@@ -17,7 +17,7 @@ python experiments/round-112/positional_store.py --dataset qasper --out experime
 python experiments/round-112/positional_store.py --dataset scifact --out experiments/round-112/ci-scifact.json
 ```
 
-The original-source benchmark downloads source archives only with pre-existing SHA locks and commits **aggregate metrics**. The accompanying GitHub Actions workflow runs full source experiments on GitHub-hosted runners with results stored in CI artifacts. Do not report original-source size or efficacy figures until Actions succeed.
+The original-source benchmark downloads source archives only with pre-existing SHA locks and commits **aggregate metrics**. The accompanying GitHub Actions workflow runs full source experiments on GitHub-hosted runners with results stored in CI artifacts. Both original-source CI jobs passed in [Actions run 45278147405](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45278147405), with aggregate original QASPER/SciFact JSON results committed as `results-qasper.json` and `results-scifact.json`. The negative outcome is that even the per-term minimum-size oracle external index is physically larger than native FTS5, while BARM retains a modest advantage over same-schema external varint. See the research report for exact verified values.
 
 ### Scientific limits
 
