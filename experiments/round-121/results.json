@@ -1,0 +1,219 @@
+{
+  "round": 121,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 445,
+  "sqlite_version": "3.46.1",
+  "result": {
+    "revisions": 2504,
+    "vocabulary": 43147,
+    "expanded_postings_checked": 754641,
+    "ordinary_postings": 754641,
+    "coalesced_postings": 316448,
+    "policies": {
+      "rel_version": {
+        "sqlite_bytes": 10297344,
+        "logical_postings": 754641,
+        "build_seconds_exploratory": 0.7308503229999985,
+        "persisted_postings_verified": 754641
+      },
+      "rel_coalesced": {
+        "sqlite_bytes": 7057408,
+        "logical_postings": 316448,
+        "build_seconds_exploratory": 0.4740483409999996,
+        "persisted_postings_verified": 316448
+      },
+      "packed_version": {
+        "sqlite_bytes": 8433664,
+        "logical_postings": 754641,
+        "build_seconds_exploratory": 0.5797965030000114,
+        "persisted_postings_verified": 754641
+      },
+      "packed_coalesced": {
+        "sqlite_bytes": 5353472,
+        "logical_postings": 316448,
+        "build_seconds_exploratory": 0.396700519999996,
+        "persisted_postings_verified": 316448
+      },
+      "native_history": {
+        "sqlite_bytes": 4657152,
+        "logical_postings": null,
+        "build_seconds_exploratory": 0.3683231429999978
+      }
+    },
+    "cutoffs": [
+      {
+        "cutoff": 626,
+        "active_documents": 445,
+        "query_checks": 103,
+        "ranked_hits": 575,
+        "active_integer_count_checks": 4737,
+        "max_error": {
+          "rel_version": 0,
+          "rel_coalesced": 0,
+          "packed_version": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "native_active_index_bytes": 712704,
+        "warm_median_us": {
+          "rel_version": 29.07,
+          "rel_coalesced": 27.441,
+          "packed_version": 44.753,
+          "packed_coalesced": 35.736,
+          "native_history": 40.698,
+          "native_active": 33.15
+        },
+        "warm_p95_us": {
+          "rel_version": 458.518,
+          "rel_coalesced": 525.376,
+          "packed_version": 708.428,
+          "packed_coalesced": 605.589,
+          "native_history": 708.242,
+          "native_active": 269.804
+        },
+        "common_median_us": {
+          "rel_version": 437.1685,
+          "rel_coalesced": 493.17999999999995,
+          "packed_version": 662.444,
+          "packed_coalesced": 572.981,
+          "native_history": 671.576,
+          "native_active": 254.7325
+        }
+      },
+      {
+        "cutoff": 1252,
+        "active_documents": 445,
+        "query_checks": 103,
+        "ranked_hits": 610,
+        "active_integer_count_checks": 5365,
+        "max_error": {
+          "rel_version": 0,
+          "rel_coalesced": 0,
+          "packed_version": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "native_active_index_bytes": 1024000,
+        "warm_median_us": {
+          "rel_version": 35.573,
+          "rel_coalesced": 31.28,
+          "packed_version": 48.937,
+          "packed_coalesced": 34.109,
+          "native_history": 55.178,
+          "native_active": 35.996
+        },
+        "warm_p95_us": {
+          "rel_version": 513.961,
+          "rel_coalesced": 566.862,
+          "packed_version": 710.878,
+          "packed_coalesced": 619.71,
+          "native_history": 774.914,
+          "native_active": 293.826
+        },
+        "common_median_us": {
+          "rel_version": 482.1705,
+          "rel_coalesced": 530.1845000000001,
+          "packed_version": 686.1904999999999,
+          "packed_coalesced": 587.813,
+          "native_history": 738.6555000000001,
+          "native_active": 278.2825
+        }
+      },
+      {
+        "cutoff": 1878,
+        "active_documents": 445,
+        "query_checks": 103,
+        "ranked_hits": 623,
+        "active_integer_count_checks": 5639,
+        "max_error": {
+          "rel_version": 0,
+          "rel_coalesced": 0,
+          "packed_version": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "native_active_index_bytes": 1200128,
+        "warm_median_us": {
+          "rel_version": 45.534,
+          "rel_coalesced": 34.156,
+          "packed_version": 49.068,
+          "packed_coalesced": 36.536,
+          "native_history": 62.42,
+          "native_active": 41.863
+        },
+        "warm_p95_us": {
+          "rel_version": 564.166,
+          "rel_coalesced": 571.141,
+          "packed_version": 720.307,
+          "packed_coalesced": 624.123,
+          "native_history": 842.794,
+          "native_active": 323.418
+        },
+        "common_median_us": {
+          "rel_version": 538.3009999999999,
+          "rel_coalesced": 552.4315,
+          "packed_version": 696.58,
+          "packed_coalesced": 595.4415,
+          "native_history": 795.4,
+          "native_active": 290.8685
+        }
+      },
+      {
+        "cutoff": 2504,
+        "active_documents": 445,
+        "query_checks": 103,
+        "ranked_hits": 638,
+        "active_integer_count_checks": 5825,
+        "max_error": {
+          "rel_version": 0,
+          "rel_coalesced": 0,
+          "packed_version": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "native_active_index_bytes": 1363968,
+        "warm_median_us": {
+          "rel_version": 54.608,
+          "rel_coalesced": 39.515,
+          "packed_version": 52.088,
+          "packed_coalesced": 38.611,
+          "native_history": 72.408,
+          "native_active": 46.648
+        },
+        "warm_p95_us": {
+          "rel_version": 625.744,
+          "rel_coalesced": 613.77,
+          "packed_version": 738.807,
+          "packed_coalesced": 638.572,
+          "native_history": 917.024,
+          "native_active": 340.101
+        },
+        "common_median_us": {
+          "rel_version": 588.0395,
+          "rel_coalesced": 582.2439999999999,
+          "packed_version": 711.3934999999999,
+          "packed_coalesced": 609.029,
+          "native_history": 873.0965,
+          "native_active": 304.827
+        }
+      }
+    ],
+    "repetitions": 3,
+    "queries_per_cutoff": 103
+  },
+  "limits": [
+    "same processed Versions corpus; synthetic cross-article order; no fresh holdout",
+    "term-only distinct AND/OR, no positions, phrase or NEAR support in external stores",
+    "native full-detail FTS5 is richer than external TF-only indexes",
+    "all index files include identical version and article metadata except active-only oracle files",
+    "source payload excluded; offline bulk builds, no update WAL or atomic integration measured",
+    "prepared active mapping shared outside timed rank calls; warm one-machine timing",
+    "packed arms decode entire term list, no skips or temporal partitions",
+    "TimIR-style relational baseline uses shared SQLite scoring/tokenizer, not executed MonetDB/Lucene or TTIX"
+  ]
+}
