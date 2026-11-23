@@ -1,0 +1,81 @@
+{
+  "dataset": "qasper",
+  "decode_warm_batch_ms_trials": {
+    "barm_fast": [
+      105.72554,
+      106.12716,
+      105.99588,
+      106.57374,
+      105.77279,
+      106.23747,
+      105.71491
+    ],
+    "barm_legacy": [
+      223.65629,
+      225.32641,
+      225.5244,
+      224.81216,
+      225.20874,
+      224.78907,
+      224.84486
+    ],
+    "ef_partitioned": [
+      80.65181,
+      81.03577,
+      80.99129,
+      80.78236,
+      80.99804,
+      80.89681,
+      80.88621
+    ],
+    "streamvbyte": [
+      49.90649,
+      49.39884,
+      49.51432,
+      49.44959,
+      49.57964,
+      50.04108,
+      49.99585
+    ],
+    "varint": [
+      26.97769,
+      26.08477,
+      26.1102,
+      26.18563,
+      26.69394,
+      26.27143,
+      26.28598
+    ]
+  },
+  "decode_warm_median_batch_ms": {
+    "barm_fast": 105.99588,
+    "barm_legacy": 224.84486,
+    "ef_partitioned": 80.89681,
+    "streamvbyte": 49.57964,
+    "varint": 26.27143
+  },
+  "notes": [
+    "Same BARM encoded bytes for legacy and optimized decoder; no source data or QA labels in results",
+    "All five methods decoded every original selected list exactly before timing",
+    "Warm single-runner Python batch decode; no CPU affinity, native SIMD, cache flush, hardware repeats or SSD reads",
+    "Codecs have different data-dependent list decode complexity, and source selection is stratified rather than a natural workload probability",
+    "No full native FTS5 replacement or hallucination result"
+  ],
+  "original_R108_sampling_salt": "CDG-R108-SOURCE-POSTINGS-V1",
+  "original_documents": 13266,
+  "randomized_method_order_seed": 20261123,
+  "relative_fast_vs_legacy_wall_median": 2.12126,
+  "relative_fast_vs_varint_wall_median": 4.03464,
+  "repetitions": 7,
+  "round": 110,
+  "sampled_posting_entries": 144717,
+  "sampled_terms": 1950,
+  "source": {
+    "archive_bytes": 10835856,
+    "dataset": "QASPER v0.3 DEV original paragraphs",
+    "num_papers": 281,
+    "official_archive_sha256": "a28fdf966db827bcee3d873107d6b6669864fb7ca8fbf73a192f5e39191bdb5a",
+    "source_member_sha256": "2ae7ee62a65b1c4225791c70de80c2aad4e8998cf1fd4f09a53103db4f21af93"
+  },
+  "wire_identical_barm_bytes": 130129
+}
