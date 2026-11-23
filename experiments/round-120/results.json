@@ -1,0 +1,185 @@
+{
+  "round": 120,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 445,
+  "result": {
+    "revisions": 2504,
+    "queries_per_cutoff": 88,
+    "receipts_replayed_pinned": 88,
+    "receipts_replayed_fresh": 88,
+    "all_source_readbacks": 2504,
+    "cutoffs": [
+      {
+        "cutoff": 626,
+        "active_documents": 445,
+        "active_tokens": 190828,
+        "query_checks": 88,
+        "ranked_hits": 441,
+        "max_error": {
+          "scan": 0,
+          "prepared": 0,
+          "interval": 0,
+          "native": 0
+        },
+        "naive_rank_changes": 8,
+        "naive_score_or_rank_changes": 80,
+        "prefix_phrase_match_rows": 5550,
+        "active_phrase_match_rows": 3996,
+        "active_native_index_bytes": 712704,
+        "warm_median_us": {
+          "scan": 431.506,
+          "prepared": 90.95,
+          "interval": 92.048,
+          "native": 40.321
+        },
+        "warm_p95_us": {
+          "scan": 1457.697,
+          "prepared": 1104.717,
+          "interval": 949.118,
+          "native": 332.328
+        },
+        "common_median_us": {
+          "scan": 1462.4325,
+          "prepared": 1109.1019999999999,
+          "interval": 963.566,
+          "native": 338.613
+        }
+      },
+      {
+        "cutoff": 1252,
+        "active_documents": 445,
+        "active_tokens": 282088,
+        "query_checks": 88,
+        "ranked_hits": 465,
+        "max_error": {
+          "scan": 0,
+          "prepared": 0,
+          "interval": 0,
+          "native": 0
+        },
+        "naive_rank_changes": 21,
+        "naive_score_or_rank_changes": 79,
+        "prefix_phrase_match_rows": 11660,
+        "active_phrase_match_rows": 4405,
+        "active_native_index_bytes": 1024000,
+        "warm_median_us": {
+          "scan": 497.3225,
+          "prepared": 112.061,
+          "interval": 102.7655,
+          "native": 44.3335
+        },
+        "warm_p95_us": {
+          "scan": 2168.513,
+          "prepared": 1781.196,
+          "interval": 1034.629,
+          "native": 357.599
+        },
+        "common_median_us": {
+          "scan": 2171.5155,
+          "prepared": 1823.7785,
+          "interval": 1044.1570000000002,
+          "native": 362.923
+        }
+      },
+      {
+        "cutoff": 1878,
+        "active_documents": 445,
+        "active_tokens": 337402,
+        "query_checks": 88,
+        "ranked_hits": 479,
+        "max_error": {
+          "scan": 0,
+          "prepared": 0,
+          "interval": 0,
+          "native": 0
+        },
+        "naive_rank_changes": 22,
+        "naive_score_or_rank_changes": 77,
+        "prefix_phrase_match_rows": 18133,
+        "active_phrase_match_rows": 4595,
+        "active_native_index_bytes": 1200128,
+        "warm_median_us": {
+          "scan": 552.5865,
+          "prepared": 136.921,
+          "interval": 113.731,
+          "native": 54.753
+        },
+        "warm_p95_us": {
+          "scan": 2908.651,
+          "prepared": 2481.439,
+          "interval": 1103.324,
+          "native": 369.472
+        },
+        "common_median_us": {
+          "scan": 2919.8725000000004,
+          "prepared": 2501.1710000000003,
+          "interval": 1108.4275,
+          "native": 373.7725
+        }
+      },
+      {
+        "cutoff": 2504,
+        "active_documents": 445,
+        "active_tokens": 395231,
+        "query_checks": 88,
+        "ranked_hits": 489,
+        "max_error": {
+          "scan": 0,
+          "prepared": 0,
+          "interval": 0,
+          "native": 0
+        },
+        "naive_rank_changes": 27,
+        "naive_score_or_rank_changes": 77,
+        "prefix_phrase_match_rows": 24797,
+        "active_phrase_match_rows": 4764,
+        "active_native_index_bytes": 1363968,
+        "warm_median_us": {
+          "scan": 603.55,
+          "prepared": 149.2165,
+          "interval": 123.09649999999999,
+          "native": 59.614000000000004
+        },
+        "warm_p95_us": {
+          "scan": 3696.456,
+          "prepared": 3254.947,
+          "interval": 1219.935,
+          "native": 388.282
+        },
+        "common_median_us": {
+          "scan": 3737.2335,
+          "prepared": 3282.929,
+          "interval": 1224.1064999999999,
+          "native": 395.1835
+        }
+      }
+    ],
+    "atomic_intervals": {
+      "sqlite_bytes": 10829824,
+      "wal_bytes_before_checkpoint": 257186912
+    },
+    "base_atomic_ledger": {
+      "sqlite_bytes": 10760192,
+      "wal_bytes_before_checkpoint": 232079632
+    },
+    "crash_stages_passed": [
+      "source",
+      "index",
+      "ledger",
+      "meta",
+      "commit"
+    ],
+    "repetitions": 3
+  },
+  "limitations": [
+    "all existing processed Versions articles, not fresh holdout",
+    "synthetic cross-article ingestion order; no deletions or timestamped workload",
+    "single column Unicode61 exact phrase AND/OR; all eligible candidates enumerated",
+    "interval filtering is result cardinality not internal posting I/O",
+    "prepared head set excludes once-per-cutoff preparation; scan includes it",
+    "warm rank-only single CI machine; receipt reconstruction not timed",
+    "process death not power loss; receipt digest not authenticated",
+    "native copies are simple controls; interval temporal search established prior art"
+  ]
+}
