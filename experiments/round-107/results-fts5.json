@@ -1,0 +1,155 @@
+{
+  "bpi": {
+    "barm_g": 12.72377,
+    "barm_r": 10.09682,
+    "delta": 10.97646,
+    "fixed_bitpack": 11.22243,
+    "gamma": 11.12205,
+    "varint": 12.04488,
+    "zlib_varint_block": 15.47099,
+    "zlib_varint_global": 13.22158
+  },
+  "contract": "SQLite FTS5-derived logical posting rowid gap stream, not FTS5 native segment encoding",
+  "input_manifest": [
+    {
+      "path": "research/rounds/round-100/report.md",
+      "sha256": "1086b1b875c744e887f3fcabc2a99540f2cff034612adb841fe34dc3bbb62245"
+    },
+    {
+      "path": "research/rounds/round-101/report.md",
+      "sha256": "9813ebd82d24b98dea90adc3e56a4b9d469b8c411ecb9c4d666000dbc88a5fee"
+    },
+    {
+      "path": "research/rounds/round-102/report.md",
+      "sha256": "f238d616bbbf5433a04cb3741a956ecc8e4c250230ff88fca67aa87a458ba010"
+    },
+    {
+      "path": "research/rounds/round-103/report.md",
+      "sha256": "8a3476b7b52397974c43dfc1f21ff7df643639899f86d55ea50a0e06b6f6ec1b"
+    },
+    {
+      "path": "research/rounds/round-104/report.md",
+      "sha256": "c3be3a53b1f3d175b8765f842ea421a09c884ec45ad839f83b866b0cd4573cbb"
+    },
+    {
+      "path": "research/rounds/round-105/report.md",
+      "sha256": "7eabb16667979f5e8fa1475de1d8cbbeea1005ebc8c64aa47d3e999b6aeb0a7f"
+    },
+    {
+      "path": "research/rounds/round-106/report.md",
+      "sha256": "8f9d55ec7383ff94dcdde9787724ab0a062a3968db10c920af2c33c0828180ec"
+    },
+    {
+      "path": "research/rounds/round-107/report.md",
+      "sha256": "d186626b2f0c94837cf45c683e2dd58070612e703cc62b6c76ad2405b75ed05e"
+    },
+    {
+      "path": "research/rounds/round-19/report.md",
+      "sha256": "b8c805baef7dffaeaf355d31a0ccc23fd1aa83e411a4cbebcc54cae8cd414c02"
+    },
+    {
+      "path": "research/rounds/round-23/report.md",
+      "sha256": "c209f8bdec47a138d03112c6b1e97e0f9e440eaca3f838e0ad8eacb4edd3b494"
+    },
+    {
+      "path": "research/rounds/round-24/report.md",
+      "sha256": "12a92f4f7ea9014418a17c45c24da7395d0a0472542c263b033dec6171455750"
+    },
+    {
+      "path": "research/rounds/round-25/report.md",
+      "sha256": "a1c736b792d6948fadddadb088ef0aa9111e5424a2d8bac527d5e1470a79d664"
+    },
+    {
+      "path": "research/rounds/round-26/report.md",
+      "sha256": "f89c345ca7cd4d8052a6c13493ff1914da92c7a364194750fa9c022ee43411bc"
+    },
+    {
+      "path": "research/rounds/round-27/report.md",
+      "sha256": "63e53e663e299f5fd3642507692de4cdde5cdc94a39edc82ca6828b349a889bd"
+    },
+    {
+      "path": "research/rounds/round-28/report.md",
+      "sha256": "26d0a3803c4454c248c918800c366054de180b0324791cb20d036cb810024c2d"
+    },
+    {
+      "path": "research/rounds/round-29/report.md",
+      "sha256": "f2f0786996f307900b2f85730a4a6b7fe3f8e07852b529cb1920fec0a1b618ed"
+    },
+    {
+      "path": "research/rounds/round-30/report.md",
+      "sha256": "eede5e18b6dd09b82b1ea1d479cadeab7410bd7ab712ec67c2d3d8425fda8542"
+    },
+    {
+      "path": "research/rounds/round-31/report.md",
+      "sha256": "bc09a6527ef96bce1b79fc9a2cf9e9990a73d2fc714755f3b9967d8f4335446a"
+    },
+    {
+      "path": "research/rounds/round-32/report.md",
+      "sha256": "3eedfd950bfb988444818221ea9f9aaaede0a16c30ef7a9e59a5115b4751eb60"
+    },
+    {
+      "path": "research/rounds/round-33/report.md",
+      "sha256": "38444e8258903114fa2f4a1cd2dfe39842adc03b91eb7f71ad632be0896fc307"
+    },
+    {
+      "path": "research/rounds/round-34/report.md",
+      "sha256": "41356593e97b694f21e5486dbf3873fc85feead70ebf13ef35beae1d41c2eb79"
+    },
+    {
+      "path": "research/rounds/round-35/report.md",
+      "sha256": "99ca1328c9bc83b99242e6db5f8a03c8e87acfe53174b9844924235acc38812b"
+    },
+    {
+      "path": "research/rounds/round-36/report.md",
+      "sha256": "12304e709bb1453b881642f19e072c47c01472db7020ec0bca23e5e4e52ce0eb"
+    },
+    {
+      "path": "research/rounds/round-37/report.md",
+      "sha256": "c416380c72ff850ab6f11da90b0a20350fe7fdf2e43839029b7f175d9fad6133"
+    },
+    {
+      "path": "research/rounds/round-38/report.md",
+      "sha256": "9f6892faf69340372f311062d1a083028236bf6936b1d38c49f9666386a1e9ff"
+    },
+    {
+      "path": "research/rounds/round-39/report.md",
+      "sha256": "17bb6c7b78569f86125a1bc25c7a9c29390390f7de408977eaef86f677d0fac8"
+    },
+    {
+      "path": "research/rounds/round-40/report.md",
+      "sha256": "f1338d8b7d408e04afe59694e225a4df79e305988cb08a59bab92d049d1a12dc"
+    },
+    {
+      "path": "research/rounds/round-41/report.md",
+      "sha256": "39e01bcbd04f55315ad7b2bdf928d20807e430c2ea11510622bfb14c77b8c95a"
+    },
+    {
+      "path": "research/rounds/round-42/report.md",
+      "sha256": "c309fa305e30df2d9530badbdad87773d671f5f66f19d42254805c21d3ae4ea2"
+    },
+    {
+      "path": "research/rounds/round-43/report.md",
+      "sha256": "0c2987f217529648edbed4cdacf0eb26b4d80a373a8fb5e5c43e53700afd92ed"
+    }
+  ],
+  "limitations": "No native FTS5 postings replaced; no full SQLite size or retrieval latency; global zlib is not random seekable",
+  "n_all_index_terms": 5010,
+  "n_documents": 1000,
+  "n_measured_terms": 2269,
+  "n_postings": 35387,
+  "selection": {
+    "max_terms": 3000,
+    "min_df": 3,
+    "sort": "lexical term"
+  },
+  "sizes_bytes": {
+    "barm_g": 56282,
+    "barm_r": 44662,
+    "delta": 48553,
+    "fixed_bitpack": 49641,
+    "gamma": 49197,
+    "varint": 53279,
+    "zlib_varint_block": 68434,
+    "zlib_varint_global": 58484
+  }
+}
