@@ -1,0 +1,414 @@
+{
+  "round": 122,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 445,
+  "result": {
+    "revisions": 2504,
+    "vocabulary": 43147,
+    "intervals": 316448,
+    "policies": {
+      "global_varint": {
+        "sqlite_bytes": 3911680,
+        "blocks": 43147,
+        "segments": 0,
+        "block_payload_bytes": 2517336,
+        "segment_payload_bytes": 0,
+        "segment_record_copies": 0,
+        "persisted_intervals_checked": 316448
+      },
+      "local_varint": {
+        "sqlite_bytes": 3063808,
+        "blocks": 43147,
+        "segments": 0,
+        "block_payload_bytes": 1923455,
+        "segment_payload_bytes": 0,
+        "segment_record_copies": 0,
+        "persisted_intervals_checked": 316448
+      },
+      "local_adaptive": {
+        "sqlite_bytes": 2420736,
+        "blocks": 43147,
+        "segments": 0,
+        "block_payload_bytes": 1538949,
+        "segment_payload_bytes": 0,
+        "segment_record_copies": 0,
+        "persisted_intervals_checked": 316448
+      },
+      "shared4k": {
+        "sqlite_bytes": 2519040,
+        "blocks": 525,
+        "segments": 0,
+        "block_payload_bytes": 898826,
+        "segment_payload_bytes": 0,
+        "segment_record_copies": 0,
+        "persisted_intervals_checked": 316448
+      },
+      "shared16k": {
+        "sqlite_bytes": 1286144,
+        "blocks": 128,
+        "segments": 0,
+        "block_payload_bytes": 850627,
+        "segment_payload_bytes": 0,
+        "segment_record_copies": 0,
+        "persisted_intervals_checked": 316448
+      },
+      "shared4k_time": {
+        "sqlite_bytes": 2674688,
+        "blocks": 406,
+        "segments": 1505,
+        "block_payload_bytes": 725230,
+        "segment_payload_bytes": 461479,
+        "segment_record_copies": 244525,
+        "persisted_intervals_checked": 316448
+      },
+      "packed_coalesced": {
+        "sqlite_bytes": 5353472,
+        "logical_postings": 316448,
+        "build_seconds_exploratory": 0.3668744279999885
+      },
+      "native_history": {
+        "sqlite_bytes": 4657152,
+        "logical_postings": null,
+        "build_seconds_exploratory": 0.3427964179999776
+      }
+    },
+    "cutoffs": [
+      {
+        "cutoff": 626,
+        "queries": 103,
+        "hits": 575,
+        "max_score_error": {
+          "global_varint": 0,
+          "local_varint": 0,
+          "local_adaptive": 0,
+          "shared4k": 0,
+          "shared16k": 0,
+          "shared4k_time": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "logical_read": {
+          "global_varint": {
+            "activated_encoded_bytes": 262409,
+            "decoded_block_bytes": 262282,
+            "intervals_examined": 44309
+          },
+          "local_varint": {
+            "activated_encoded_bytes": 179211,
+            "decoded_block_bytes": 179084,
+            "intervals_examined": 44309
+          },
+          "local_adaptive": {
+            "activated_encoded_bytes": 78542,
+            "decoded_block_bytes": 179084,
+            "intervals_examined": 44309
+          },
+          "shared4k": {
+            "activated_encoded_bytes": 246812,
+            "decoded_block_bytes": 474491,
+            "intervals_examined": 44309
+          },
+          "shared16k": {
+            "activated_encoded_bytes": 850634,
+            "decoded_block_bytes": 1635684,
+            "intervals_examined": 44309
+          },
+          "shared4k_time": {
+            "activated_encoded_bytes": 257735,
+            "decoded_block_bytes": 460696,
+            "intervals_examined": 20332
+          }
+        },
+        "median_us": {
+          "global_varint": 68.412,
+          "local_varint": 56.524,
+          "local_adaptive": 57.075,
+          "shared4k": 144.055,
+          "shared16k": 408.669,
+          "shared4k_time": 151.956,
+          "packed_coalesced": 32.309,
+          "native_history": 39.99,
+          "native_active": 25.809
+        },
+        "p95_us": {
+          "global_varint": 1915.745,
+          "local_varint": 1636.068,
+          "local_adaptive": 1643.569,
+          "shared4k": 1721.816,
+          "shared16k": 2115.032,
+          "shared4k_time": 1183.824,
+          "packed_coalesced": 495.628,
+          "native_history": 590.62,
+          "native_active": 231.676
+        },
+        "common_median_us": {
+          "global_varint": 1875.435,
+          "local_varint": 1585.0825,
+          "local_adaptive": 1585.5475000000001,
+          "shared4k": 1597.2195,
+          "shared16k": 1762.5610000000001,
+          "shared4k_time": 1056.5645,
+          "packed_coalesced": 467.712,
+          "native_history": 561.3965000000001,
+          "native_active": 214.68
+        }
+      },
+      {
+        "cutoff": 1252,
+        "queries": 103,
+        "hits": 610,
+        "max_score_error": {
+          "global_varint": 0,
+          "local_varint": 0,
+          "local_adaptive": 0,
+          "shared4k": 0,
+          "shared16k": 0,
+          "shared4k_time": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "logical_read": {
+          "global_varint": {
+            "activated_encoded_bytes": 262409,
+            "decoded_block_bytes": 262282,
+            "intervals_examined": 44309
+          },
+          "local_varint": {
+            "activated_encoded_bytes": 179211,
+            "decoded_block_bytes": 179084,
+            "intervals_examined": 44309
+          },
+          "local_adaptive": {
+            "activated_encoded_bytes": 78542,
+            "decoded_block_bytes": 179084,
+            "intervals_examined": 44309
+          },
+          "shared4k": {
+            "activated_encoded_bytes": 246812,
+            "decoded_block_bytes": 474491,
+            "intervals_examined": 44309
+          },
+          "shared16k": {
+            "activated_encoded_bytes": 850634,
+            "decoded_block_bytes": 1635684,
+            "intervals_examined": 44309
+          },
+          "shared4k_time": {
+            "activated_encoded_bytes": 260922,
+            "decoded_block_bytes": 462509,
+            "intervals_examined": 20782
+          }
+        },
+        "median_us": {
+          "global_varint": 66.899,
+          "local_varint": 57.045,
+          "local_adaptive": 58.688,
+          "shared4k": 141.651,
+          "shared16k": 399.284,
+          "shared4k_time": 152.397,
+          "packed_coalesced": 34.281,
+          "native_history": 50.335,
+          "native_active": 26.199
+        },
+        "p95_us": {
+          "global_varint": 1903.032,
+          "local_varint": 1626.89,
+          "local_adaptive": 1626.069,
+          "shared4k": 1701.802,
+          "shared16k": 1990.106,
+          "shared4k_time": 1122.396,
+          "packed_coalesced": 510.082,
+          "native_history": 649.881,
+          "native_active": 248.431
+        },
+        "common_median_us": {
+          "global_varint": 1861.5175,
+          "local_varint": 1594.8745,
+          "local_adaptive": 1587.619,
+          "shared4k": 1594.0729999999999,
+          "shared16k": 1736.0095000000001,
+          "shared4k_time": 1064.7855,
+          "packed_coalesced": 483.1915,
+          "native_history": 617.5575,
+          "native_active": 233.9535
+        }
+      },
+      {
+        "cutoff": 1878,
+        "queries": 103,
+        "hits": 623,
+        "max_score_error": {
+          "global_varint": 0,
+          "local_varint": 0,
+          "local_adaptive": 0,
+          "shared4k": 0,
+          "shared16k": 0,
+          "shared4k_time": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "logical_read": {
+          "global_varint": {
+            "activated_encoded_bytes": 262409,
+            "decoded_block_bytes": 262282,
+            "intervals_examined": 44309
+          },
+          "local_varint": {
+            "activated_encoded_bytes": 179211,
+            "decoded_block_bytes": 179084,
+            "intervals_examined": 44309
+          },
+          "local_adaptive": {
+            "activated_encoded_bytes": 78542,
+            "decoded_block_bytes": 179084,
+            "intervals_examined": 44309
+          },
+          "shared4k": {
+            "activated_encoded_bytes": 246812,
+            "decoded_block_bytes": 474491,
+            "intervals_examined": 44309
+          },
+          "shared16k": {
+            "activated_encoded_bytes": 850634,
+            "decoded_block_bytes": 1635684,
+            "intervals_examined": 44309
+          },
+          "shared4k_time": {
+            "activated_encoded_bytes": 262502,
+            "decoded_block_bytes": 463600,
+            "intervals_examined": 21051
+          }
+        },
+        "median_us": {
+          "global_varint": 68.823,
+          "local_varint": 59.219,
+          "local_adaptive": 60.34,
+          "shared4k": 146.869,
+          "shared16k": 409.482,
+          "shared4k_time": 155.432,
+          "packed_coalesced": 34.05,
+          "native_history": 57.175,
+          "native_active": 30.986
+        },
+        "p95_us": {
+          "global_varint": 1934.689,
+          "local_varint": 1646.429,
+          "local_adaptive": 1646.439,
+          "shared4k": 1738.737,
+          "shared16k": 2025.095,
+          "shared4k_time": 1124.43,
+          "packed_coalesced": 512.135,
+          "native_history": 698.624,
+          "native_active": 268.281
+        },
+        "common_median_us": {
+          "global_varint": 1886.6935,
+          "local_varint": 1604.687,
+          "local_adaptive": 1605.9535,
+          "shared4k": 1608.232,
+          "shared16k": 1769.012,
+          "shared4k_time": 1071.165,
+          "packed_coalesced": 487.613,
+          "native_history": 664.2825,
+          "native_active": 244.05450000000002
+        }
+      },
+      {
+        "cutoff": 2504,
+        "queries": 103,
+        "hits": 638,
+        "max_score_error": {
+          "global_varint": 0,
+          "local_varint": 0,
+          "local_adaptive": 0,
+          "shared4k": 0,
+          "shared16k": 0,
+          "shared4k_time": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "logical_read": {
+          "global_varint": {
+            "activated_encoded_bytes": 262409,
+            "decoded_block_bytes": 262282,
+            "intervals_examined": 44309
+          },
+          "local_varint": {
+            "activated_encoded_bytes": 179211,
+            "decoded_block_bytes": 179084,
+            "intervals_examined": 44309
+          },
+          "local_adaptive": {
+            "activated_encoded_bytes": 78542,
+            "decoded_block_bytes": 179084,
+            "intervals_examined": 44309
+          },
+          "shared4k": {
+            "activated_encoded_bytes": 246812,
+            "decoded_block_bytes": 474491,
+            "intervals_examined": 44309
+          },
+          "shared16k": {
+            "activated_encoded_bytes": 850634,
+            "decoded_block_bytes": 1635684,
+            "intervals_examined": 44309
+          },
+          "shared4k_time": {
+            "activated_encoded_bytes": 263443,
+            "decoded_block_bytes": 461309,
+            "intervals_examined": 20470
+          }
+        },
+        "median_us": {
+          "global_varint": 69.644,
+          "local_varint": 59.709,
+          "local_adaptive": 61.802,
+          "shared4k": 148.01,
+          "shared16k": 407.828,
+          "shared4k_time": 156.032,
+          "packed_coalesced": 36.464,
+          "native_history": 65.227,
+          "native_active": 34.491
+        },
+        "p95_us": {
+          "global_varint": 1919.259,
+          "local_varint": 1642.908,
+          "local_adaptive": 1642.647,
+          "shared4k": 1719.753,
+          "shared16k": 2021.803,
+          "shared4k_time": 1102.203,
+          "packed_coalesced": 525.583,
+          "native_history": 758.059,
+          "native_active": 278.415
+        },
+        "common_median_us": {
+          "global_varint": 1872.5304999999998,
+          "local_varint": 1598.4465,
+          "local_adaptive": 1602.117,
+          "shared4k": 1617.1840000000002,
+          "shared16k": 1760.7035,
+          "shared4k_time": 1034.3310000000001,
+          "packed_coalesced": 501.1665,
+          "native_history": 727.2735,
+          "native_active": 259.847
+        }
+      }
+    ],
+    "repetitions": 3
+  },
+  "limits": [
+    "same corpus and query plan as R121, not independent data",
+    "term-only, no positions or phrase support; native full FTS5 richer",
+    "offline final immutable layout, no updates or WAL measured",
+    "source payload excluded; metadata included except native active oracle",
+    "logical decoded/activated block bytes not device I/O; no cross-query block cache",
+    "temporal buckets duplicate overlapping intervals; prepared active maps excluded from timings",
+    "warm one-runner randomized rank-only timing, no latency guarantee",
+    "varints, front coding, block compression and temporal buckets are established techniques"
+  ]
+}
