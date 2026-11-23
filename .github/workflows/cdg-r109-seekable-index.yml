@@ -1,0 +1,39 @@
+name: CDG R109 seekable byte-accounted posting stores
+on:
+  push:
+    branches:
+      - 'research/round-109-*'
+    paths:
+      - 'experiments/round-109/**'
+      - '.github/workflows/cdg-r109-seekable-index.yml'
+  pull_request:
+    paths:
+      - 'experiments/round-109/**'
+      - '.github/workflows/cdg-r109-seekable-index.yml'
+  workflow_dispatch:
+jobs:
+  materialized-source-index-lookup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned test dependency
+        run: python -m pip install --disable-pip-version-check pytest==9.0.2
+      - name: External store lookup integrity, corruption and reproducibility tests
+        run: python -m pytest -q experiments/round-109
+      - name: QASPER original-source byte-accounted seekable index and exact FTS5 term parity
+        run: python experiments/round-109/seekable_index.py --dataset qasper --out experiments/round-109/ci-qasper.json
+      - name: SciFact original-source byte-accounted seekable index and exact FTS5 term parity
+        run: python experiments/round-109/seekable_index.py --dataset scifact --out experiments/round-109/ci-scifact.json
+      - name: Upload aggregated physical index and lookup metrics (no original text)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r109-seekable-external-posting-index
+          path: |
+            experiments/round-109/ci-qasper.json
+            experiments/round-109/ci-scifact.json
+          if-no-files-found: warn
