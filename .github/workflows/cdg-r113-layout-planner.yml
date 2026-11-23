@@ -1,0 +1,39 @@
+name: CDG R113 independent-paper source-only layout planner
+on:
+  push:
+    branches: ['research/round-113-*']
+    paths:
+      - 'experiments/round-113/**'
+      - 'research/rounds/round-113/**'
+      - '.github/workflows/cdg-r113-layout-planner.yml'
+  pull_request:
+    paths:
+      - 'experiments/round-113/**'
+      - 'research/rounds/round-113/**'
+      - '.github/workflows/cdg-r113-layout-planner.yml'
+  workflow_dispatch:
+jobs:
+  independent-source-layout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 58
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pinned scientific codec and tests
+        run: python -m pip install --disable-pip-version-check pytest==9.0.2 Brotli==1.1.0 zstandard==0.23.0
+      - name: Static planner, multi-choice knapsack and Pareto unit tests
+        run: python -m pytest -q experiments/round-113/tests
+      - name: Original QASPER SHA-locked source archive and independent-query read WAL falsification
+        run: |
+          python experiments/round-113/archive_planner.py \
+            --out experiments/round-113/ci-results.json \
+            --edits 24
+      - name: Upload full original source and physical SQLite metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r113-independent-source-layout
+          path: experiments/round-113/ci-results.json
+          if-no-files-found: warn
