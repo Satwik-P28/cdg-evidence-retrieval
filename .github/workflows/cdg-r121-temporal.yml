@@ -1,0 +1,33 @@
+name: CDG R121 temporal postings
+on:
+  push:
+    branches: ['research/round-121-*']
+    paths: ['experiments/round-121/**','.github/workflows/cdg-r121-temporal.yml','research/rounds/round-121/**']
+  pull_request:
+    paths: ['experiments/round-121/**','.github/workflows/cdg-r121-temporal.yml','research/rounds/round-121/**']
+  workflow_dispatch:
+jobs:
+  postings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-118/cdgfts.c -o experiments/round-118/cdgfts.so
+      - run: CDG_FTS_EXTENSION="$PWD/experiments/round-118/cdgfts.so" PYTHONPATH=experiments/round-121 python -m pytest -q experiments/round-121
+      - uses: actions/checkout@v4
+        with:
+          repository: natwar-modani/versions
+          ref: 06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0
+          path: external/versions
+          persist-credentials: false
+      - run: |
+          test "$(git -C external/versions rev-parse HEAD)" = "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0"
+          python experiments/round-121/temporal_postings.py --root external/versions/version_documents --extension experiments/round-118/cdgfts.so --out experiments/round-121/ci-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r121-temporal
+          path: experiments/round-121/ci-results.json
