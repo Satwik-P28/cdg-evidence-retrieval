@@ -1,0 +1,206 @@
+{
+  "round": 118,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "article_sha256": "59d02b5a0f6b89e09f156e0403b003ed643eac002fc472e9e278e802bbe5d1ac",
+  "sqlite_version": "3.46.1",
+  "articles": 100,
+  "results": {
+    "revisions": 575,
+    "native_tokenizer_length_checks": 575,
+    "unique_phrase_count": 72,
+    "full_integer_count_checks": 8200,
+    "query_count_per_scope": 88,
+    "high_df_terms": [
+      [
+        "the",
+        141
+      ],
+      [
+        "and",
+        138
+      ],
+      [
+        "of",
+        136
+      ],
+      [
+        "in",
+        134
+      ],
+      [
+        "a",
+        132
+      ],
+      [
+        "to",
+        130
+      ],
+      [
+        "is",
+        110
+      ],
+      [
+        "by",
+        108
+      ]
+    ],
+    "repetitions": 5,
+    "cutoffs": [
+      {
+        "cutoff": 143,
+        "query_checks_per_method": 176,
+        "max_error": {
+          "inverse": 0,
+          "positions": 0,
+          "native_full": 0,
+          "native_cutoff": 0,
+          "prefix_native": 0
+        },
+        "full_unique_phrase_match_rows": 8200,
+        "cutoff_unique_phrase_match_rows": 1793,
+        "warm_median_us": {
+          "inverse": 142.446,
+          "positions": 208.50900000000001,
+          "native_full": 80.50450000000001,
+          "native_cutoff": 57.289500000000004,
+          "prefix_native": 34.787
+        },
+        "warm_p95_us": {
+          "inverse": 1421.848,
+          "positions": 4969.62,
+          "native_full": 743.412,
+          "native_cutoff": 274.587,
+          "prefix_native": 168.45
+        },
+        "common_term_warm_median_us": {
+          "inverse": 1435.8495,
+          "positions": 4570.0425,
+          "native_full": 746.6775,
+          "native_cutoff": 277.677,
+          "prefix_native": 170.09699999999998
+        },
+        "timed_requests_per_method": 880,
+        "prefix_native_index_bytes": 225280
+      },
+      {
+        "cutoff": 287,
+        "query_checks_per_method": 176,
+        "max_error": {
+          "inverse": 0,
+          "positions": 0,
+          "native_full": 0,
+          "native_cutoff": 0,
+          "prefix_native": 0
+        },
+        "full_unique_phrase_match_rows": 8200,
+        "cutoff_unique_phrase_match_rows": 3800,
+        "warm_median_us": {
+          "inverse": 134.8,
+          "positions": 186.84199999999998,
+          "native_full": 77.71549999999999,
+          "native_cutoff": 64.205,
+          "prefix_native": 39.3835
+        },
+        "warm_p95_us": {
+          "inverse": 1423.982,
+          "positions": 4732.559,
+          "native_full": 742.491,
+          "native_cutoff": 446.832,
+          "prefix_native": 313.906
+        },
+        "common_term_warm_median_us": {
+          "inverse": 1461.5225,
+          "positions": 4416.395,
+          "native_full": 751.69,
+          "native_cutoff": 456.2165,
+          "prefix_native": 316.925
+        },
+        "timed_requests_per_method": 880,
+        "prefix_native_index_bytes": 450560
+      },
+      {
+        "cutoff": 431,
+        "query_checks_per_method": 176,
+        "max_error": {
+          "inverse": 0,
+          "positions": 0,
+          "native_full": 0,
+          "native_cutoff": 0,
+          "prefix_native": 0
+        },
+        "full_unique_phrase_match_rows": 8200,
+        "cutoff_unique_phrase_match_rows": 5953,
+        "warm_median_us": {
+          "inverse": 136.127,
+          "positions": 196.48149999999998,
+          "native_full": 79.33250000000001,
+          "native_cutoff": 74.9615,
+          "prefix_native": 53.213499999999996
+        },
+        "warm_p95_us": {
+          "inverse": 1451.723,
+          "positions": 4910.562,
+          "native_full": 809.601,
+          "native_cutoff": 641.982,
+          "prefix_native": 484.078
+        },
+        "common_term_warm_median_us": {
+          "inverse": 1475.313,
+          "positions": 4595.6255,
+          "native_full": 821.4485,
+          "native_cutoff": 669.072,
+          "prefix_native": 486.672
+        },
+        "timed_requests_per_method": 880,
+        "prefix_native_index_bytes": 794624
+      },
+      {
+        "cutoff": 575,
+        "query_checks_per_method": 176,
+        "max_error": {
+          "inverse": 0,
+          "positions": 0,
+          "native_full": 0,
+          "native_cutoff": 0,
+          "prefix_native": 0
+        },
+        "full_unique_phrase_match_rows": 8200,
+        "cutoff_unique_phrase_match_rows": 8200,
+        "warm_median_us": {
+          "inverse": 140.8095,
+          "positions": 199.04899999999998,
+          "native_full": 80.209,
+          "native_cutoff": 81.8565,
+          "prefix_native": 67.9865
+        },
+        "warm_p95_us": {
+          "inverse": 1504.287,
+          "positions": 4969.122,
+          "native_full": 845.874,
+          "native_cutoff": 857.322,
+          "prefix_native": 663.204
+        },
+        "common_term_warm_median_us": {
+          "inverse": 1535.9125,
+          "positions": 4613.839,
+          "native_full": 880.0305,
+          "native_cutoff": 894.1265,
+          "prefix_native": 666.357
+        },
+        "timed_requests_per_method": 880,
+        "prefix_native_index_bytes": 1175552
+      }
+    ]
+  },
+  "limits": [
+    "R117 cohort reused, not independent data",
+    "prefix-generated term and phrase probes; synthetic ingestion order",
+    "one-column full-detail Unicode61 FTS5; AND/OR only",
+    "cutoff row reduction is SQL result cardinality, not measured posting traversal or disk reads",
+    "warm rank-only timings randomized across methods, one CI machine, not cold latency",
+    "native count comparator still enumerates eligible phrase matches and ranks in Python",
+    "offline ledger only; token-count scalar tested but not yet atomic ingestion",
+    "no novelty claim for native auxiliary API or historical BM25"
+  ]
+}
