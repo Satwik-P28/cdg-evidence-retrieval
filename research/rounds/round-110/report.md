@@ -1,6 +1,6 @@
 # CDG Round 110: Word-Buffered Exact BARM-R Decode
 
-**Date:** 2026-11-23. **Status:** 68 local unit/synthetic tests passed; official original-source CI experiments pending. Do not claim source-level speedups until GitHub workflow artifacts are verified.
+**Date:** 2026-11-23. **Status:** PASS. 68 local input/compatibility tests and full original SHA-locked QASPER/SciFact runs passed in GitHub Actions [45250427687](https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45250427687). Both full numerical JSON artifacts are saved in `experiments/round-110/results-qasper.json` and `results-scifact.json`.
 
 ## Why this is the next real question
 
@@ -21,6 +21,24 @@ The result is not a novel integer code, not a proof of new compression theory, a
 - For all selected terms, decode every BARM block byte-identically with legacy R107 and R110 fast decoder, and compare with original positive docID gaps. Varint, scalar StreamVByte-format and partitioned Elias-Fano reference decoders also must reconstruct every list.
 - Run seven warm batches per method and corpus, changing method order with independent deterministic seeds. Each timed batch decodes all selected lists and accounts for every value. Record all seven times, median CPU wall time and ratios.
 - These are Python, warm-runner, one-machine descriptive timings. No cache flushing, CPU pinning, process isolation, C/SIMD comparison, physical SSD reads, or confidence intervals from independent runner repeats. Do not extrapolate a native-production latency improvement.
+
+## Actual original-source results
+
+Every selected logical posting list decoded to the same original values across both decoder versions and ordinary reference formats; BARM encoded bytes were **130,129** QASPER and **110,142** SciFact in both versions, precisely reproducing R108 byte totals.
+
+| Method | QASPER warm median batch decode (144,717 postings) | SciFact warm median batch decode (116,186 postings) |
+| --- | ---: | ---: |
+| R107 legacy bit-at-a-time BARM-R | 224.845 ms | 185.804 ms |
+| **R110 word-buffered BARM-R** | **105.996 ms** | **86.951 ms** |
+| Variable-partition EF Python reference | 80.897 ms | 64.454 ms |
+| Scalar StreamVByte-format Python control | 49.580 ms | 40.505 ms |
+| Scalar varint Python control | 26.271 ms | 20.702 ms |
+
+Observed warm median decoder speedup for the unchanged BARM bytes: **2.121× QASPER** and **2.137× SciFact**. This is a repeated, method-order-randomized CPU-runner **Python scalar comparison**, not optimized native or SIMD throughput and not a speedup guaranteed on other hardware.
+
+The optimized BARM remains **4.03× QASPER** and **4.20× SciFact slower than scalar Python varint** on the sampled decoding workload. This is a material failure against the simplest decoding-speed control. A general "BARM is now faster" claim is unjustified. Benchmark results also depend on source term frequency and independent framing.
+
+**Decision:** Promote the fast decoder only as the default experimental BARM reader, not as a production retrieval codec. The current storage/CPU frontier motivates optimized native implementations, explicit seek offsets, and a true total source+index+query Pareto study. Do not claim a new RH implication or end-to-end RAG efficiency from this result.
 
 ## Decision
 
