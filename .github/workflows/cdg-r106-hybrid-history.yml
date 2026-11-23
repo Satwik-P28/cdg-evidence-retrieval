@@ -18,7 +18,7 @@ jobs:
           python-version: '3.11'
       - name: Install pinned standard dictionary codec
         run: python -m pip install --disable-pip-version-check Brotli==1.1.0 zstandard==0.23.0
-      - name: Fourteen original evidence and heldout-policy source regression tests
+      - name: Fifteen original evidence and heldout-policy source regression tests
         run: python -W error::ResourceWarning -m unittest discover -s experiments/round-106 -p 'test_*.py' -v
       - name: Official QASPER real hybrid SQLite archive, hashed question heldout reads and synthetic revisions
         run: python experiments/round-106/trace_adaptive_archive.py --out experiments/round-106/ci-results.json
