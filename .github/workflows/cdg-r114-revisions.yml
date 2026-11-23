@@ -1,0 +1,33 @@
+name: CDG R114 chronological revision archive
+on:
+  push:
+    branches: ['research/round-114-*']
+    paths: ['experiments/round-114/**','.github/workflows/cdg-r114-revisions.yml','research/rounds/round-114/**']
+  pull_request:
+    paths: ['experiments/round-114/**','.github/workflows/cdg-r114-revisions.yml','research/rounds/round-114/**']
+  workflow_dispatch:
+jobs:
+  revision-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2
+      - run: PYTHONPATH=experiments/round-114 python -m pytest -q experiments/round-114
+      - uses: actions/checkout@v4
+        with:
+          repository: natwar-modani/versions
+          ref: 06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0
+          path: external/versions
+          persist-credentials: false
+      - name: Pin upstream checkout and run chronological revision benchmark
+        run: |
+          test "$(git -C external/versions rev-parse HEAD)" = "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0"
+          python experiments/round-114/revision_bench.py --root external/versions/version_documents --articles 100 --out experiments/round-114/ci-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r114-independent-revisions
+          path: experiments/round-114/ci-results.json
