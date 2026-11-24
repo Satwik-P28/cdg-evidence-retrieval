@@ -1,0 +1,1533 @@
+{
+  "round": 139,
+  "result": {
+    "revisions": 10009,
+    "documents": 1744,
+    "source_manifest": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+    "training_cutoffs": [
+      1744,
+      4499
+    ],
+    "heldout_cutoffs": [
+      4499,
+      7254,
+      10009
+    ],
+    "train_terms": 24,
+    "heldout_terms": 24,
+    "query_split_sha256": "04ce5a8fa6636ac62ea1ed49aeaeb0138b46c9a80ed45e124a1fb3ca293e1d00",
+    "prefix_payload": 4454533,
+    "final_payload": 8020372,
+    "candidate_delta_leaves": 2314,
+    "train_requests": 376,
+    "heldout_requests": 601,
+    "baseline_heldout": {
+      "requests": 601,
+      "requested_bytes": 2437827,
+      "decoded_bytes": 4342381,
+      "activated_bytes": 1180209,
+      "avoided_decode_bytes": 0,
+      "materialized_hits": 0,
+      "mean_decode_ratio": 1.7812506793960359,
+      "max_decode_ratio": 2.2513681138270702,
+      "max_activation_ratio": 1.4909535452322737
+    },
+    "budgets": {
+      "1": {
+        "budget": 445,
+        "heldout_fractional_oracle_upper_bound": 6441.845070422535,
+        "policies": {
+          "uniform_density": {
+            "materialized": 1,
+            "extra_payload_bytes": 380,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2236278,
+              "activated_bytes": 735119,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.4397643612483704,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "recent": {
+            "materialized": 1,
+            "extra_payload_bytes": 319,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2236278,
+              "activated_bytes": 735119,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.4397643612483704,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1427661,
+                "activated_bytes": 384675,
+                "avoided_decode_bytes": 862,
+                "materialized_hits": 1,
+                "mean_decode_ratio": 1.7930191288228445,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4341519,
+              "activated_bytes": 1180032,
+              "avoided_decode_bytes": 862,
+              "materialized_hits": 1,
+              "mean_decode_ratio": 1.7808970858063349,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "random": {
+            "materialized": 2,
+            "extra_payload_bytes": 420,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2236278,
+              "activated_bytes": 735119,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.4397643612483704,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "lfu": {
+            "materialized": 2,
+            "extra_payload_bytes": 438,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2234418,
+              "activated_bytes": 734771,
+              "avoided_decode_bytes": 1860,
+              "materialized_hits": 3,
+              "mean_decode_ratio": 1.438566852838449,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "query_density": {
+            "materialized": 2,
+            "extra_payload_bytes": 438,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2234418,
+              "activated_bytes": 734771,
+              "avoided_decode_bytes": 1860,
+              "materialized_hits": 3,
+              "mean_decode_ratio": 1.438566852838449,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "article_density": {
+            "materialized": 1,
+            "extra_payload_bytes": 323,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2236278,
+              "activated_bytes": 735119,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.4397643612483704,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          }
+        }
+      },
+      "5": {
+        "budget": 2227,
+        "heldout_fractional_oracle_upper_bound": 29711.081518357187,
+        "policies": {
+          "uniform_density": {
+            "materialized": 5,
+            "extra_payload_bytes": 2192,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2236278,
+              "activated_bytes": 735119,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.4397643612483704,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "recent": {
+            "materialized": 3,
+            "extra_payload_bytes": 2121,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2236278,
+              "activated_bytes": 735119,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.4397643612483704,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1427661,
+                "activated_bytes": 384675,
+                "avoided_decode_bytes": 862,
+                "materialized_hits": 1,
+                "mean_decode_ratio": 1.7930191288228445,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4341519,
+              "activated_bytes": 1180032,
+              "avoided_decode_bytes": 862,
+              "materialized_hits": 1,
+              "mean_decode_ratio": 1.7808970858063349,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "random": {
+            "materialized": 4,
+            "extra_payload_bytes": 2220,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2236278,
+              "activated_bytes": 735119,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.4397643612483704,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "lfu": {
+            "materialized": 3,
+            "extra_payload_bytes": 2215,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2222496,
+              "activated_bytes": 734717,
+              "avoided_decode_bytes": 13782,
+              "materialized_hits": 6,
+              "mean_decode_ratio": 1.430891210223889,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "query_density": {
+            "materialized": 3,
+            "extra_payload_bytes": 2215,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2222496,
+              "activated_bytes": 734717,
+              "avoided_decode_bytes": 13782,
+              "materialized_hits": 6,
+              "mean_decode_ratio": 1.430891210223889,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "article_density": {
+            "materialized": 5,
+            "extra_payload_bytes": 2227,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2231595,
+              "activated_bytes": 734349,
+              "avoided_decode_bytes": 4683,
+              "materialized_hits": 3,
+              "mean_decode_ratio": 1.4367493441066168,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          }
+        }
+      },
+      "10": {
+        "budget": 4454,
+        "heldout_fractional_oracle_upper_bound": 56019.6222896791,
+        "policies": {
+          "uniform_density": {
+            "materialized": 7,
+            "extra_payload_bytes": 4425,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2236278,
+              "activated_bytes": 735119,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.4397643612483704,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "recent": {
+            "materialized": 5,
+            "extra_payload_bytes": 4383,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2235808,
+              "activated_bytes": 735101,
+              "avoided_decode_bytes": 470,
+              "materialized_hits": 1,
+              "mean_decode_ratio": 1.4394617650372612,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1424479,
+                "activated_bytes": 384834,
+                "avoided_decode_bytes": 4044,
+                "materialized_hits": 1,
+                "mean_decode_ratio": 1.7890228111620594,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4338337,
+              "activated_bytes": 1180191,
+              "avoided_decode_bytes": 4044,
+              "materialized_hits": 1,
+              "mean_decode_ratio": 1.7795918250146545,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "random": {
+            "materialized": 6,
+            "extra_payload_bytes": 4399,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2236278,
+              "activated_bytes": 735119,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.4397643612483704,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "lfu": {
+            "materialized": 3,
+            "extra_payload_bytes": 4351,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2212420,
+              "activated_bytes": 734675,
+              "avoided_decode_bytes": 23858,
+              "materialized_hits": 7,
+              "mean_decode_ratio": 1.4244040625150896,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "query_density": {
+            "materialized": 4,
+            "extra_payload_bytes": 4405,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2211324,
+              "activated_bytes": 733679,
+              "avoided_decode_bytes": 24954,
+              "materialized_hits": 9,
+              "mean_decode_ratio": 1.423698433903652,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "article_density": {
+            "materialized": 3,
+            "extra_payload_bytes": 4435,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2220955,
+              "activated_bytes": 734462,
+              "avoided_decode_bytes": 15323,
+              "materialized_hits": 4,
+              "mean_decode_ratio": 1.4298990809444865,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          }
+        }
+      },
+      "50": {
+        "budget": 22272,
+        "heldout_fractional_oracle_upper_bound": 195151.27457927368,
+        "policies": {
+          "uniform_density": {
+            "materialized": 29,
+            "extra_payload_bytes": 22162,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2228728,
+              "activated_bytes": 733387,
+              "avoided_decode_bytes": 7550,
+              "materialized_hits": 2,
+              "mean_decode_ratio": 1.4349035072188512,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1425097,
+                "activated_bytes": 383901,
+                "avoided_decode_bytes": 3426,
+                "materialized_hits": 1,
+                "mean_decode_ratio": 1.7897989658805902,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1480913,
+                "activated_bytes": 405198,
+                "avoided_decode_bytes": 3426,
+                "materialized_hits": 1,
+                "mean_decode_ratio": 1.7647837625588843,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1423604,
+                "activated_bytes": 387629,
+                "avoided_decode_bytes": 5915,
+                "materialized_hits": 2,
+                "mean_decode_ratio": 1.7740785372741128,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4329614,
+              "activated_bytes": 1176728,
+              "avoided_decode_bytes": 12767,
+              "materialized_hits": 4,
+              "mean_decode_ratio": 1.7760136383754876,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "recent": {
+            "materialized": 13,
+            "extra_payload_bytes": 22180,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2224847,
+              "activated_bytes": 734460,
+              "avoided_decode_bytes": 11431,
+              "materialized_hits": 3,
+              "mean_decode_ratio": 1.4324048351011605,
+              "max_decode_ratio": 2.022142697383136,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1417957,
+                "activated_bytes": 384744,
+                "avoided_decode_bytes": 10566,
+                "materialized_hits": 3,
+                "mean_decode_ratio": 1.780831741462612,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4331815,
+              "activated_bytes": 1180101,
+              "avoided_decode_bytes": 10566,
+              "materialized_hits": 3,
+              "mean_decode_ratio": 1.7769164916132276,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "random": {
+            "materialized": 13,
+            "extra_payload_bytes": 22140,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2230638,
+              "activated_bytes": 735100,
+              "avoided_decode_bytes": 5640,
+              "materialized_hits": 1,
+              "mean_decode_ratio": 1.4361332067150605,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "lfu": {
+            "materialized": 16,
+            "extra_payload_bytes": 22194,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2145604,
+              "activated_bytes": 732167,
+              "avoided_decode_bytes": 90674,
+              "materialized_hits": 26,
+              "mean_decode_ratio": 1.3813864700864331,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.422434367541766
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1424138,
+                "activated_bytes": 384531,
+                "avoided_decode_bytes": 4385,
+                "materialized_hits": 1,
+                "mean_decode_ratio": 1.7885945445617049,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1479954,
+                "activated_bytes": 405828,
+                "avoided_decode_bytes": 4385,
+                "materialized_hits": 1,
+                "mean_decode_ratio": 1.763640935378426,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1425134,
+                "activated_bytes": 388887,
+                "avoided_decode_bytes": 4385,
+                "materialized_hits": 1,
+                "mean_decode_ratio": 1.775985205253431,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4329226,
+              "activated_bytes": 1179246,
+              "avoided_decode_bytes": 13155,
+              "materialized_hits": 3,
+              "mean_decode_ratio": 1.7758544802399843,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "query_density": {
+            "materialized": 18,
+            "extra_payload_bytes": 22202,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2138301,
+              "activated_bytes": 728517,
+              "avoided_decode_bytes": 97977,
+              "materialized_hits": 28,
+              "mean_decode_ratio": 1.3766846400231776,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.262210796915167
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          },
+          "article_density": {
+            "materialized": 10,
+            "extra_payload_bytes": 22200,
+            "train": {
+              "requests": 376,
+              "requested_bytes": 1553225,
+              "decoded_bytes": 2175099,
+              "activated_bytes": 734268,
+              "avoided_decode_bytes": 61179,
+              "materialized_hits": 12,
+              "mean_decode_ratio": 1.4003759918878462,
+              "max_decode_ratio": 2.058748169838946,
+              "max_activation_ratio": 1.4388185654008439
+            },
+            "heldout": {
+              "4499": {
+                "requests": 199,
+                "requested_bytes": 796233,
+                "decoded_bytes": 1428523,
+                "activated_bytes": 384852,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7941017265046788,
+                "max_decode_ratio": 2.1480121492361395,
+                "max_activation_ratio": 1.4909535452322737
+              },
+              "7254": {
+                "requests": 201,
+                "requested_bytes": 839147,
+                "decoded_bytes": 1484339,
+                "activated_bytes": 406149,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7688664798896976,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.4359088878963824
+              },
+              "10009": {
+                "requests": 201,
+                "requested_bytes": 802447,
+                "decoded_bytes": 1429519,
+                "activated_bytes": 389208,
+                "avoided_decode_bytes": 0,
+                "materialized_hits": 0,
+                "mean_decode_ratio": 1.7814497406059215,
+                "max_decode_ratio": 2.2513681138270702,
+                "max_activation_ratio": 1.3465703971119134
+              }
+            },
+            "aggregate_heldout": {
+              "requests": 601,
+              "requested_bytes": 2437827,
+              "decoded_bytes": 4342381,
+              "activated_bytes": 1180209,
+              "avoided_decode_bytes": 0,
+              "materialized_hits": 0,
+              "mean_decode_ratio": 1.7812506793960359,
+              "max_decode_ratio": 2.2513681138270702,
+              "max_activation_ratio": 1.4909535452322737
+            }
+          }
+        }
+      }
+    },
+    "limitations": [
+      "restricted preexisting one-hop leaf substitution, compacted source payload counterfactual",
+      "no physical archive size, rewrite cost, update atomicity or latency claim",
+      "lexically disjoint artificial probes, not human workload; same cutoff and future-cutoff tests",
+      "future revisions ineligible, oracle uses heldout counts only for upper bound",
+      "training frequency materialization is established prior art"
+    ]
+  }
+}
