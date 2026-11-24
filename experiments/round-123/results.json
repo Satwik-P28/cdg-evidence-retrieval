@@ -1,0 +1,1343 @@
+{
+  "round": 123,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 445,
+  "result": {
+    "revisions": 2504,
+    "vocabulary": 43147,
+    "intervals": 316448,
+    "layouts": {
+      "direct4": {
+        "sqlite_bytes": 2420736,
+        "page_size": 4096,
+        "blocks": 43147,
+        "encoded_block_bytes": 1538949,
+        "persisted_intervals_checked": 316448,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 14,
+            "page_bytes": 57344,
+            "payload": 49549,
+            "unused": 3991
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 504,
+            "page_bytes": 2064384,
+            "payload": 1902077,
+            "unused": 28918
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 42924,
+            "unused": 83928
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 605,
+            "unused": 3361
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "shared4": {
+        "sqlite_bytes": 2519040,
+        "page_size": 4096,
+        "blocks": 525,
+        "encoded_block_bytes": 898826,
+        "persisted_intervals_checked": 316448,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 8,
+            "page_bytes": 32768,
+            "payload": 29574,
+            "unused": 2402
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 60,
+            "page_bytes": 245760,
+            "payload": 228574,
+            "unused": 13047
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 505,
+            "page_bytes": 2068480,
+            "payload": 646329,
+            "unused": 1420131
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 605,
+            "unused": 3361
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "shared16": {
+        "sqlite_bytes": 1286144,
+        "page_size": 4096,
+        "blocks": 128,
+        "encoded_block_bytes": 850627,
+        "persisted_intervals_checked": 316448,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 6846,
+            "unused": 5238
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 15,
+            "page_bytes": 61440,
+            "payload": 55746,
+            "unused": 4662
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 254,
+            "page_bytes": 1040384,
+            "payload": 789366,
+            "unused": 250002
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 605,
+            "unused": 3361
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "shared16_rowid": {
+        "sqlite_bytes": 1208320,
+        "page_size": 4096,
+        "blocks": 128,
+        "encoded_block_bytes": 850627,
+        "persisted_intervals_checked": 316448,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3230
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 123,
+            "page_bytes": 503808,
+            "payload": 328350,
+            "unused": 173321
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 128,
+            "page_bytes": 524288,
+            "payload": 523608,
+            "unused": 168
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1331,
+            "unused": 2373
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 634,
+            "unused": 3328
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "shared16_page8": {
+        "sqlite_bytes": 1400832,
+        "page_size": 8192,
+        "blocks": 128,
+        "encoded_block_bytes": 850627,
+        "persisted_intervals_checked": 316448,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 8192,
+            "payload": 0,
+            "unused": 8172
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 2,
+            "page_bytes": 16384,
+            "payload": 8415,
+            "unused": 5855
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 24576,
+            "payload": 14042,
+            "unused": 10330
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 15,
+            "page_bytes": 122880,
+            "payload": 114342,
+            "unused": 7506
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 128,
+            "page_bytes": 1048576,
+            "payload": 723574,
+            "unused": 324490
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 8192,
+            "payload": 0,
+            "unused": 8184
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 8192,
+            "payload": 27,
+            "unused": 8146
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 2,
+            "page_bytes": 16384,
+            "payload": 9150,
+            "unused": 5886
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 8192,
+            "payload": 605,
+            "unused": 7457
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 8192,
+            "payload": 0,
+            "unused": 8060
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 16,
+            "page_bytes": 131072,
+            "payload": 113211,
+            "unused": 5340
+          }
+        ]
+      },
+      "shared16_page16": {
+        "sqlite_bytes": 2605056,
+        "page_size": 16384,
+        "blocks": 128,
+        "encoded_block_bytes": 850627,
+        "persisted_intervals_checked": 316448,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 16384,
+            "payload": 8415,
+            "unused": 5863
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 49152,
+            "payload": 28434,
+            "unused": 20514
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 15,
+            "page_bytes": 245760,
+            "payload": 231534,
+            "unused": 13194
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 128,
+            "page_bytes": 2097152,
+            "payload": 591990,
+            "unused": 1504650
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 16376
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 16384,
+            "payload": 9177,
+            "unused": 5864
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 16384,
+            "payload": 605,
+            "unused": 15649
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 16316
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 8,
+            "page_bytes": 131072,
+            "payload": 113211,
+            "unused": 5404
+          }
+        ]
+      },
+      "hybrid4": {
+        "sqlite_bytes": 1302528,
+        "page_size": 4096,
+        "blocks": 882,
+        "encoded_block_bytes": 912407,
+        "persisted_intervals_checked": 316448,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 1969
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 270,
+            "page_bytes": 1105920,
+            "payload": 921585,
+            "unused": 177033
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 47,
+            "unused": 4016
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 9898,
+            "unused": 3817
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 634,
+            "unused": 3328
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "hybrid16": {
+        "sqlite_bytes": 1261568,
+        "page_size": 4096,
+        "blocks": 625,
+        "encoded_block_bytes": 882510,
+        "persisted_intervals_checked": 316448,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 2547
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 198,
+            "page_bytes": 811008,
+            "payload": 635518,
+            "unused": 170050
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 63,
+            "page_bytes": 258048,
+            "payload": 253169,
+            "unused": 4627
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 25,
+            "unused": 4045
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 6659,
+            "unused": 3736
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 634,
+            "unused": 3328
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "packed_coalesced": {
+        "sqlite_bytes": 5353472,
+        "logical_postings": 316448,
+        "build_seconds_exploratory": 0.5179914070000038
+      },
+      "native_history": {
+        "sqlite_bytes": 4657152,
+        "logical_postings": null,
+        "build_seconds_exploratory": 0.4729177990000011
+      }
+    },
+    "cutoffs": [
+      {
+        "cutoff": 626,
+        "queries": 103,
+        "ranked_hits": 575,
+        "native_exhaustive_term_checks": 86294,
+        "positive_active_pairs_per_layout": 93726,
+        "max_score_error": {
+          "direct_python": 0,
+          "direct_c": 0,
+          "shared16_python": 0,
+          "shared16_c": 0,
+          "shared4_c": 0,
+          "shared16_rowid_c": 0,
+          "shared16_page8_c": 0,
+          "shared16_page16_c": 0,
+          "hybrid4_c": 0,
+          "hybrid16_c": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "direct_python": 106.649,
+          "direct_c": 38.787,
+          "shared16_python": 771.494,
+          "shared16_c": 75.788,
+          "shared4_c": 57.607,
+          "shared16_rowid_c": 69.198,
+          "shared16_page8_c": 77.182,
+          "shared16_page16_c": 76.776,
+          "hybrid4_c": 49.217,
+          "hybrid16_c": 62.682,
+          "packed_coalesced": 53.589,
+          "native_history": 68.248,
+          "native_active": 51.354
+        },
+        "p95_us": {
+          "direct_python": 3199.949,
+          "direct_c": 530.45,
+          "shared16_python": 4078.287,
+          "shared16_c": 589.131,
+          "shared4_c": 560.77,
+          "shared16_rowid_c": 594.503,
+          "shared16_page8_c": 598.936,
+          "shared16_page16_c": 620.543,
+          "hybrid4_c": 547.831,
+          "hybrid16_c": 553.469,
+          "packed_coalesced": 856.131,
+          "native_history": 1040.471,
+          "native_active": 407.978
+        },
+        "common_median_us": {
+          "direct_python": 3143.4845,
+          "direct_c": 498.5475,
+          "shared16_python": 3421.7125,
+          "shared16_c": 531.4925000000001,
+          "shared4_c": 510.28499999999997,
+          "shared16_rowid_c": 520.6755,
+          "shared16_page8_c": 516.692,
+          "shared16_page16_c": 526.1345,
+          "hybrid4_c": 500.302,
+          "hybrid16_c": 501.867,
+          "packed_coalesced": 808.337,
+          "native_history": 973.6345,
+          "native_active": 369.48
+        },
+        "cache": {
+          "shared16_0": {
+            "budget": 0,
+            "hits": 0,
+            "misses": 381,
+            "encoded_bytes": 2551902,
+            "decoded_bytes": 4907052,
+            "peak_decoded_bytes": 0,
+            "median_us": 97.102,
+            "p95_us": 637.324
+          },
+          "shared16_65536": {
+            "budget": 65536,
+            "hits": 15,
+            "misses": 366,
+            "encoded_bytes": 2453537,
+            "decoded_bytes": 4721411,
+            "peak_decoded_bytes": 65536,
+            "median_us": 97.182,
+            "p95_us": 640.63
+          },
+          "shared16_262144": {
+            "budget": 262144,
+            "hits": 113,
+            "misses": 268,
+            "encoded_bytes": 1796815,
+            "decoded_bytes": 3467517,
+            "peak_decoded_bytes": 262131,
+            "median_us": 96.84,
+            "p95_us": 614.257
+          },
+          "hybrid16_0": {
+            "budget": 0,
+            "hits": 0,
+            "misses": 381,
+            "encoded_bytes": 1492626,
+            "decoded_bytes": 2776713,
+            "peak_decoded_bytes": 0,
+            "median_us": 78.317,
+            "p95_us": 568.293
+          },
+          "hybrid16_65536": {
+            "budget": 65536,
+            "hits": 26,
+            "misses": 355,
+            "encoded_bytes": 1390197,
+            "decoded_bytes": 2579235,
+            "peak_decoded_bytes": 65509,
+            "median_us": 75.116,
+            "p95_us": 569.552
+          },
+          "hybrid16_262144": {
+            "budget": 262144,
+            "hits": 170,
+            "misses": 211,
+            "encoded_bytes": 815163,
+            "decoded_bytes": 1503447,
+            "peak_decoded_bytes": 262144,
+            "median_us": 68.362,
+            "p95_us": 556.594
+          }
+        }
+      },
+      {
+        "cutoff": 1252,
+        "queries": 103,
+        "ranked_hits": 610,
+        "native_exhaustive_term_checks": 86294,
+        "positive_active_pairs_per_layout": 129546,
+        "max_score_error": {
+          "direct_python": 0,
+          "direct_c": 0,
+          "shared16_python": 0,
+          "shared16_c": 0,
+          "shared4_c": 0,
+          "shared16_rowid_c": 0,
+          "shared16_page8_c": 0,
+          "shared16_page16_c": 0,
+          "hybrid4_c": 0,
+          "hybrid16_c": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "direct_python": 111.725,
+          "direct_c": 44.736,
+          "shared16_python": 769.064,
+          "shared16_c": 85.625,
+          "shared4_c": 65.861,
+          "shared16_rowid_c": 76.93,
+          "shared16_page8_c": 84.9,
+          "shared16_page16_c": 83.205,
+          "hybrid4_c": 53.813,
+          "hybrid16_c": 69.183,
+          "packed_coalesced": 55.284,
+          "native_history": 89.409,
+          "native_active": 53.717
+        },
+        "p95_us": {
+          "direct_python": 3237.73,
+          "direct_c": 554.606,
+          "shared16_python": 4019.48,
+          "shared16_c": 609.944,
+          "shared4_c": 583.431,
+          "shared16_rowid_c": 594.701,
+          "shared16_page8_c": 600.34,
+          "shared16_page16_c": 602.349,
+          "hybrid4_c": 549.857,
+          "hybrid16_c": 564.472,
+          "packed_coalesced": 906.107,
+          "native_history": 1145.047,
+          "native_active": 425.753
+        },
+        "common_median_us": {
+          "direct_python": 3150.2205000000004,
+          "direct_c": 522.6265,
+          "shared16_python": 3448.7889999999998,
+          "shared16_c": 540.972,
+          "shared4_c": 521.8735,
+          "shared16_rowid_c": 531.5264999999999,
+          "shared16_page8_c": 543.8905,
+          "shared16_page16_c": 537.5135,
+          "hybrid4_c": 515.2339999999999,
+          "hybrid16_c": 514.6320000000001,
+          "packed_coalesced": 851.9200000000001,
+          "native_history": 1078.2910000000002,
+          "native_active": 403.473
+        },
+        "cache": {
+          "shared16_0": {
+            "budget": 0,
+            "hits": 0,
+            "misses": 381,
+            "encoded_bytes": 2551902,
+            "decoded_bytes": 4907052,
+            "peak_decoded_bytes": 0,
+            "median_us": 104.005,
+            "p95_us": 679.109
+          },
+          "shared16_65536": {
+            "budget": 65536,
+            "hits": 25,
+            "misses": 356,
+            "encoded_bytes": 2386560,
+            "decoded_bytes": 4594634,
+            "peak_decoded_bytes": 65495,
+            "median_us": 103.898,
+            "p95_us": 650.049
+          },
+          "shared16_262144": {
+            "budget": 262144,
+            "hits": 90,
+            "misses": 291,
+            "encoded_bytes": 1954309,
+            "decoded_bytes": 3764850,
+            "peak_decoded_bytes": 262135,
+            "median_us": 101.115,
+            "p95_us": 645.278
+          },
+          "hybrid16_0": {
+            "budget": 0,
+            "hits": 0,
+            "misses": 381,
+            "encoded_bytes": 1492626,
+            "decoded_bytes": 2776713,
+            "peak_decoded_bytes": 0,
+            "median_us": 82.476,
+            "p95_us": 596.185
+          },
+          "hybrid16_65536": {
+            "budget": 65536,
+            "hits": 34,
+            "misses": 347,
+            "encoded_bytes": 1362464,
+            "decoded_bytes": 2530036,
+            "peak_decoded_bytes": 65458,
+            "median_us": 80.365,
+            "p95_us": 599.698
+          },
+          "hybrid16_262144": {
+            "budget": 262144,
+            "hits": 152,
+            "misses": 229,
+            "encoded_bytes": 891668,
+            "decoded_bytes": 1647832,
+            "peak_decoded_bytes": 262106,
+            "median_us": 73.801,
+            "p95_us": 582.842
+          }
+        }
+      },
+      {
+        "cutoff": 1878,
+        "queries": 103,
+        "ranked_hits": 623,
+        "native_exhaustive_term_checks": 86294,
+        "positive_active_pairs_per_layout": 150759,
+        "max_score_error": {
+          "direct_python": 0,
+          "direct_c": 0,
+          "shared16_python": 0,
+          "shared16_c": 0,
+          "shared4_c": 0,
+          "shared16_rowid_c": 0,
+          "shared16_page8_c": 0,
+          "shared16_page16_c": 0,
+          "hybrid4_c": 0,
+          "hybrid16_c": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "direct_python": 110.308,
+          "direct_c": 46.877,
+          "shared16_python": 773.177,
+          "shared16_c": 91.617,
+          "shared4_c": 68.452,
+          "shared16_rowid_c": 84.81,
+          "shared16_page8_c": 90.616,
+          "shared16_page16_c": 90.702,
+          "hybrid4_c": 56.142,
+          "hybrid16_c": 70.793,
+          "packed_coalesced": 59.952,
+          "native_history": 99.55,
+          "native_active": 65.188
+        },
+        "p95_us": {
+          "direct_python": 3209.798,
+          "direct_c": 579.794,
+          "shared16_python": 3996.15,
+          "shared16_c": 608.709,
+          "shared4_c": 581.08,
+          "shared16_rowid_c": 618.131,
+          "shared16_page8_c": 612.672,
+          "shared16_page16_c": 615.256,
+          "hybrid4_c": 569.524,
+          "hybrid16_c": 558.444,
+          "packed_coalesced": 903.666,
+          "native_history": 1227.795,
+          "native_active": 455.267
+        },
+        "common_median_us": {
+          "direct_python": 3166.7385,
+          "direct_c": 524.6034999999999,
+          "shared16_python": 3458.4300000000003,
+          "shared16_c": 535.7674999999999,
+          "shared4_c": 534.56,
+          "shared16_rowid_c": 534.606,
+          "shared16_page8_c": 545.009,
+          "shared16_page16_c": 550.498,
+          "hybrid4_c": 525.599,
+          "hybrid16_c": 520.4025,
+          "packed_coalesced": 867.4085,
+          "native_history": 1163.594,
+          "native_active": 421.1635
+        },
+        "cache": {
+          "shared16_0": {
+            "budget": 0,
+            "hits": 0,
+            "misses": 381,
+            "encoded_bytes": 2551902,
+            "decoded_bytes": 4907052,
+            "peak_decoded_bytes": 0,
+            "median_us": 109.465,
+            "p95_us": 663.363
+          },
+          "shared16_65536": {
+            "budget": 65536,
+            "hits": 26,
+            "misses": 355,
+            "encoded_bytes": 2380123,
+            "decoded_bytes": 4584304,
+            "peak_decoded_bytes": 65502,
+            "median_us": 104.941,
+            "p95_us": 652.35
+          },
+          "shared16_262144": {
+            "budget": 262144,
+            "hits": 111,
+            "misses": 270,
+            "encoded_bytes": 1813560,
+            "decoded_bytes": 3504845,
+            "peak_decoded_bytes": 262116,
+            "median_us": 100.524,
+            "p95_us": 634.004
+          },
+          "hybrid16_0": {
+            "budget": 0,
+            "hits": 0,
+            "misses": 381,
+            "encoded_bytes": 1492626,
+            "decoded_bytes": 2776713,
+            "peak_decoded_bytes": 0,
+            "median_us": 82.899,
+            "p95_us": 589.047
+          },
+          "hybrid16_65536": {
+            "budget": 65536,
+            "hits": 36,
+            "misses": 345,
+            "encoded_bytes": 1333260,
+            "decoded_bytes": 2482747,
+            "peak_decoded_bytes": 65535,
+            "median_us": 83.487,
+            "p95_us": 594.402
+          },
+          "hybrid16_262144": {
+            "budget": 262144,
+            "hits": 170,
+            "misses": 211,
+            "encoded_bytes": 795125,
+            "decoded_bytes": 1470853,
+            "peak_decoded_bytes": 262115,
+            "median_us": 74.484,
+            "p95_us": 594.96
+          }
+        }
+      },
+      {
+        "cutoff": 2504,
+        "queries": 103,
+        "ranked_hits": 638,
+        "native_exhaustive_term_checks": 86294,
+        "positive_active_pairs_per_layout": 170734,
+        "max_score_error": {
+          "direct_python": 0,
+          "direct_c": 0,
+          "shared16_python": 0,
+          "shared16_c": 0,
+          "shared4_c": 0,
+          "shared16_rowid_c": 0,
+          "shared16_page8_c": 0,
+          "shared16_page16_c": 0,
+          "hybrid4_c": 0,
+          "hybrid16_c": 0,
+          "packed_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "direct_python": 118.876,
+          "direct_c": 47.093,
+          "shared16_python": 780.283,
+          "shared16_c": 96.199,
+          "shared4_c": 70.725,
+          "shared16_rowid_c": 90.021,
+          "shared16_page8_c": 92.485,
+          "shared16_page16_c": 96.713,
+          "hybrid4_c": 57.412,
+          "hybrid16_c": 75.19,
+          "packed_coalesced": 62.162,
+          "native_history": 117.466,
+          "native_active": 68.629
+        },
+        "p95_us": {
+          "direct_python": 3302.336,
+          "direct_c": 574.96,
+          "shared16_python": 4026.437,
+          "shared16_c": 651.341,
+          "shared4_c": 594.019,
+          "shared16_rowid_c": 609.359,
+          "shared16_page8_c": 644.116,
+          "shared16_page16_c": 635.556,
+          "hybrid4_c": 573.392,
+          "hybrid16_c": 598.668,
+          "packed_coalesced": 944.284,
+          "native_history": 1319.419,
+          "native_active": 476.334
+        },
+        "common_median_us": {
+          "direct_python": 3191.9275,
+          "direct_c": 532.7505000000001,
+          "shared16_python": 3459.0654999999997,
+          "shared16_c": 563.1510000000001,
+          "shared4_c": 544.5630000000001,
+          "shared16_rowid_c": 548.4895,
+          "shared16_page8_c": 571.027,
+          "shared16_page16_c": 560.1804999999999,
+          "hybrid4_c": 535.125,
+          "hybrid16_c": 535.63,
+          "packed_coalesced": 878.5889999999999,
+          "native_history": 1272.9225,
+          "native_active": 437.2645
+        },
+        "cache": {
+          "shared16_0": {
+            "budget": 0,
+            "hits": 0,
+            "misses": 381,
+            "encoded_bytes": 2551902,
+            "decoded_bytes": 4907052,
+            "peak_decoded_bytes": 0,
+            "median_us": 117.774,
+            "p95_us": 686.89
+          },
+          "shared16_65536": {
+            "budget": 65536,
+            "hits": 26,
+            "misses": 355,
+            "encoded_bytes": 2378825,
+            "decoded_bytes": 4577789,
+            "peak_decoded_bytes": 65526,
+            "median_us": 110.154,
+            "p95_us": 677.602
+          },
+          "shared16_262144": {
+            "budget": 262144,
+            "hits": 109,
+            "misses": 272,
+            "encoded_bytes": 1826424,
+            "decoded_bytes": 3528127,
+            "peak_decoded_bytes": 262058,
+            "median_us": 110.453,
+            "p95_us": 646.976
+          },
+          "hybrid16_0": {
+            "budget": 0,
+            "hits": 0,
+            "misses": 381,
+            "encoded_bytes": 1492626,
+            "decoded_bytes": 2776713,
+            "peak_decoded_bytes": 0,
+            "median_us": 91.122,
+            "p95_us": 623.463
+          },
+          "hybrid16_65536": {
+            "budget": 65536,
+            "hits": 38,
+            "misses": 343,
+            "encoded_bytes": 1331121,
+            "decoded_bytes": 2474950,
+            "peak_decoded_bytes": 65527,
+            "median_us": 91.57,
+            "p95_us": 627.641
+          },
+          "hybrid16_262144": {
+            "budget": 262144,
+            "hits": 159,
+            "misses": 222,
+            "encoded_bytes": 839532,
+            "decoded_bytes": 1551455,
+            "peak_decoded_bytes": 262124,
+            "median_us": 83.562,
+            "p95_us": 602.601
+          }
+        }
+      }
+    ],
+    "repetitions": 3
+  },
+  "limits": [
+    "same Versions data and query plan, not independent corpus",
+    "term-only, no positions/phrase support; full native FTS5 richer",
+    "offline immutable index, no source payload or update WAL",
+    "C selected-list validation; no adversarial full-file authentication",
+    "warm one-runner timings, prepared active maps, no I/O guarantees",
+    "cache repeats synthetic query stream; budget counts decoded wire bytes only",
+    "page accounting via dbstat when supported; no new compression primitive"
+  ]
+}
