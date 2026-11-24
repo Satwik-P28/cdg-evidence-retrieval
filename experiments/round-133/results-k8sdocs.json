@@ -1,0 +1,1003 @@
+{
+  "corpus": "k8sdocs",
+  "manifest_sha256": "971413e777598b0f084c901dac6910dd3b790b5d4be0f1ff12e30109108ef8a3",
+  "scope": "source payload only; offline latest-literal optimum",
+  "result": {
+    "revisions": 378,
+    "snapshot": 1234598,
+    "greedy": 349176,
+    "offline": 344556,
+    "documents": 141,
+    "improved_documents": 4,
+    "candidate_checks": 694,
+    "per_document": [
+      {
+        "path": "content/en/docs/concepts/cluster-administration/system-logs.md",
+        "revisions": 3,
+        "snapshot": 15494,
+        "greedy": 5611,
+        "offline": 5611
+      },
+      {
+        "path": "content/en/docs/concepts/configuration/windows-resource-management.md",
+        "revisions": 1,
+        "snapshot": 1765,
+        "greedy": 1765,
+        "offline": 1765
+      },
+      {
+        "path": "content/en/docs/concepts/overview/working-with-objects/annotations.md",
+        "revisions": 2,
+        "snapshot": 4018,
+        "greedy": 2167,
+        "offline": 2167
+      },
+      {
+        "path": "content/en/docs/concepts/overview/working-with-objects/namespaces.md",
+        "revisions": 2,
+        "snapshot": 5239,
+        "greedy": 2669,
+        "offline": 2669
+      },
+      {
+        "path": "content/en/docs/concepts/policy/limit-range.md",
+        "revisions": 2,
+        "snapshot": 5113,
+        "greedy": 2581,
+        "offline": 2581
+      },
+      {
+        "path": "content/en/docs/concepts/scheduling-eviction/resource-bin-packing.md",
+        "revisions": 4,
+        "snapshot": 8930,
+        "greedy": 2931,
+        "offline": 2931
+      },
+      {
+        "path": "content/en/docs/concepts/scheduling-eviction/scheduling-framework.md",
+        "revisions": 3,
+        "snapshot": 12897,
+        "greedy": 4817,
+        "offline": 4817
+      },
+      {
+        "path": "content/en/docs/concepts/security/controlling-access.md",
+        "revisions": 1,
+        "snapshot": 3060,
+        "greedy": 3060,
+        "offline": 3060
+      },
+      {
+        "path": "content/en/docs/concepts/security/service-accounts.md",
+        "revisions": 2,
+        "snapshot": 11965,
+        "greedy": 6208,
+        "offline": 6208
+      },
+      {
+        "path": "content/en/docs/concepts/services-networking/dns-pod-service.md",
+        "revisions": 5,
+        "snapshot": 26445,
+        "greedy": 6521,
+        "offline": 6521
+      },
+      {
+        "path": "content/en/docs/concepts/services-networking/endpoint-slices.md",
+        "revisions": 3,
+        "snapshot": 11947,
+        "greedy": 5818,
+        "offline": 5818
+      },
+      {
+        "path": "content/en/docs/concepts/services-networking/ingress.md",
+        "revisions": 3,
+        "snapshot": 29426,
+        "greedy": 10397,
+        "offline": 10397
+      },
+      {
+        "path": "content/en/docs/concepts/storage/storage-limits.md",
+        "revisions": 8,
+        "snapshot": 16535,
+        "greedy": 8087,
+        "offline": 6337
+      },
+      {
+        "path": "content/en/docs/concepts/storage/volume-health-monitoring.md",
+        "revisions": 2,
+        "snapshot": 4241,
+        "greedy": 4241,
+        "offline": 4241
+      },
+      {
+        "path": "content/en/docs/concepts/storage/volume-snapshots.md",
+        "revisions": 2,
+        "snapshot": 7304,
+        "greedy": 3923,
+        "offline": 3923
+      },
+      {
+        "path": "content/en/docs/concepts/storage/windows-storage.md",
+        "revisions": 2,
+        "snapshot": 2780,
+        "greedy": 1425,
+        "offline": 1425
+      },
+      {
+        "path": "content/en/docs/concepts/workloads/controllers/deployment.md",
+        "revisions": 18,
+        "snapshot": 274562,
+        "greedy": 28660,
+        "offline": 28660
+      },
+      {
+        "path": "content/en/docs/concepts/workloads/controllers/replicaset.md",
+        "revisions": 6,
+        "snapshot": 40727,
+        "greedy": 8543,
+        "offline": 8543
+      },
+      {
+        "path": "content/en/docs/contribute/generate-ref-docs/metrics-reference.md",
+        "revisions": 1,
+        "snapshot": 1025,
+        "greedy": 1025,
+        "offline": 1025
+      },
+      {
+        "path": "content/en/docs/contribute/style/content-guide.md",
+        "revisions": 1,
+        "snapshot": 1152,
+        "greedy": 1152,
+        "offline": 1152
+      },
+      {
+        "path": "content/en/docs/contribute/style/content-organization.md",
+        "revisions": 1,
+        "snapshot": 2027,
+        "greedy": 2027,
+        "offline": 2027
+      },
+      {
+        "path": "content/en/docs/contribute/style/hugo-shortcodes/index.md",
+        "revisions": 6,
+        "snapshot": 27760,
+        "greedy": 5075,
+        "offline": 5075
+      },
+      {
+        "path": "content/en/docs/contribute/style/style-guide.md",
+        "revisions": 4,
+        "snapshot": 39121,
+        "greedy": 11210,
+        "offline": 11210
+      },
+      {
+        "path": "content/en/docs/reference/access-authn-authz/certificate-signing-requests.md",
+        "revisions": 12,
+        "snapshot": 116402,
+        "greedy": 27752,
+        "offline": 25387
+      },
+      {
+        "path": "content/en/docs/reference/access-authn-authz/mutating-admission-policy.md",
+        "revisions": 8,
+        "snapshot": 30980,
+        "greedy": 8217,
+        "offline": 8217
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates-removed/index.md",
+        "revisions": 1,
+        "snapshot": 744,
+        "greedy": 744,
+        "offline": 744
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/APIServerTracing.md",
+        "revisions": 2,
+        "snapshot": 577,
+        "greedy": 319,
+        "offline": 319
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/Accelerators.md",
+        "revisions": 1,
+        "snapshot": 320,
+        "greedy": 320,
+        "offline": 320
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/AllowUnsafeMalformedObjectDeletion.md",
+        "revisions": 2,
+        "snapshot": 667,
+        "greedy": 368,
+        "offline": 368
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/CBORServingAndStorage.md",
+        "revisions": 1,
+        "snapshot": 260,
+        "greedy": 260,
+        "offline": 260
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/CSIMigrationGCE.md",
+        "revisions": 1,
+        "snapshot": 420,
+        "greedy": 420,
+        "offline": 420
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/CSIStorageCapacity.md",
+        "revisions": 1,
+        "snapshot": 359,
+        "greedy": 359,
+        "offline": 359
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/ClusterTrustBundle.md",
+        "revisions": 4,
+        "snapshot": 1112,
+        "greedy": 746,
+        "offline": 689
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/ClusterTrustBundleProjection.md",
+        "revisions": 3,
+        "snapshot": 675,
+        "greedy": 309,
+        "offline": 309
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/ComponentFlagz.md",
+        "revisions": 2,
+        "snapshot": 449,
+        "greedy": 261,
+        "offline": 261
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/ConcurrentWatchObjectDecode.md",
+        "revisions": 2,
+        "snapshot": 485,
+        "greedy": 269,
+        "offline": 269
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/CustomResourceValidation.md",
+        "revisions": 1,
+        "snapshot": 298,
+        "greedy": 298,
+        "offline": 298
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/DRAAdminAccess.md",
+        "revisions": 6,
+        "snapshot": 2960,
+        "greedy": 1703,
+        "offline": 1255
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/HPAContainerMetrics.md",
+        "revisions": 1,
+        "snapshot": 301,
+        "greedy": 301,
+        "offline": 301
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/ImageVolume.md",
+        "revisions": 4,
+        "snapshot": 1028,
+        "greedy": 386,
+        "offline": 386
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/InTreePluginAzureDiskUnregister.md",
+        "revisions": 1,
+        "snapshot": 218,
+        "greedy": 218,
+        "offline": 218
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/JobSuccessPolicy.md",
+        "revisions": 3,
+        "snapshot": 676,
+        "greedy": 296,
+        "offline": 296
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/KMSv1.md",
+        "revisions": 1,
+        "snapshot": 259,
+        "greedy": 259,
+        "offline": 259
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/KubeletConfigFile.md",
+        "revisions": 1,
+        "snapshot": 306,
+        "greedy": 306,
+        "offline": 306
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/MatchLabelKeysInPodTopologySpread.md",
+        "revisions": 1,
+        "snapshot": 260,
+        "greedy": 260,
+        "offline": 260
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/MixedProtocolLBService.md",
+        "revisions": 1,
+        "snapshot": 242,
+        "greedy": 242,
+        "offline": 242
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/OpenAPIV3.md",
+        "revisions": 1,
+        "snapshot": 214,
+        "greedy": 214,
+        "offline": 214
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/PVCProtection.md",
+        "revisions": 1,
+        "snapshot": 260,
+        "greedy": 260,
+        "offline": 260
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/PersistentVolumeLastPhaseTransitionTime.md",
+        "revisions": 2,
+        "snapshot": 516,
+        "greedy": 290,
+        "offline": 290
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/PodLogsQuerySplitStreams.md",
+        "revisions": 1,
+        "snapshot": 215,
+        "greedy": 215,
+        "offline": 215
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/ProbeTerminationGracePeriod.md",
+        "revisions": 1,
+        "snapshot": 396,
+        "greedy": 396,
+        "offline": 396
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/ScheduleDaemonSetPods.md",
+        "revisions": 1,
+        "snapshot": 248,
+        "greedy": 248,
+        "offline": 248
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/SchedulerAsyncPreemption.md",
+        "revisions": 2,
+        "snapshot": 601,
+        "greedy": 333,
+        "offline": 333
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/ServerSideApply.md",
+        "revisions": 1,
+        "snapshot": 264,
+        "greedy": 264,
+        "offline": 264
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/ServiceLBNodePortControl.md",
+        "revisions": 1,
+        "snapshot": 250,
+        "greedy": 250,
+        "offline": 250
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/SetHostnameAsFQDN.md",
+        "revisions": 1,
+        "snapshot": 343,
+        "greedy": 343,
+        "offline": 343
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/StartupProbe.md",
+        "revisions": 2,
+        "snapshot": 584,
+        "greedy": 319,
+        "offline": 319
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/StructuredAuthenticationConfiguration.md",
+        "revisions": 3,
+        "snapshot": 811,
+        "greedy": 358,
+        "offline": 358
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/SupportNodePidsLimit.md",
+        "revisions": 1,
+        "snapshot": 378,
+        "greedy": 378,
+        "offline": 378
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/TopologyManagerPolicyBetaOptions.md",
+        "revisions": 1,
+        "snapshot": 285,
+        "greedy": 285,
+        "offline": 285
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/UnknownVersionInteroperabilityProxy.md",
+        "revisions": 2,
+        "snapshot": 584,
+        "greedy": 330,
+        "offline": 330
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/UserNamespacesPodSecurityStandards.md",
+        "revisions": 2,
+        "snapshot": 697,
+        "greedy": 454,
+        "offline": 454
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/UserNamespacesStatelessPodsSupport.md",
+        "revisions": 1,
+        "snapshot": 253,
+        "greedy": 253,
+        "offline": 253
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/VolumeSubpath.md",
+        "revisions": 1,
+        "snapshot": 202,
+        "greedy": 202,
+        "offline": 202
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/WarningHeaders.md",
+        "revisions": 1,
+        "snapshot": 216,
+        "greedy": 216,
+        "offline": 216
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/WindowsEndpointSliceProxying.md",
+        "revisions": 1,
+        "snapshot": 361,
+        "greedy": 361,
+        "offline": 361
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/WindowsGracefulNodeShutdown.md",
+        "revisions": 3,
+        "snapshot": 998,
+        "greedy": 435,
+        "offline": 435
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/feature-gates/index.md",
+        "revisions": 3,
+        "snapshot": 6772,
+        "greedy": 2895,
+        "offline": 2895
+      },
+      {
+        "path": "content/en/docs/reference/command-line-tools-reference/kube-scheduler.md",
+        "revisions": 7,
+        "snapshot": 50585,
+        "greedy": 13414,
+        "offline": 13414
+      },
+      {
+        "path": "content/en/docs/reference/external-api/custom-metrics.v1beta2.md",
+        "revisions": 2,
+        "snapshot": 2523,
+        "greedy": 1304,
+        "offline": 1304
+      },
+      {
+        "path": "content/en/docs/reference/external-api/metrics.v1beta1.md",
+        "revisions": 2,
+        "snapshot": 2277,
+        "greedy": 1196,
+        "offline": 1196
+      },
+      {
+        "path": "content/en/docs/reference/glossary/cri-o.md",
+        "revisions": 2,
+        "snapshot": 872,
+        "greedy": 465,
+        "offline": 465
+      },
+      {
+        "path": "content/en/docs/reference/glossary/deployment.md",
+        "revisions": 2,
+        "snapshot": 747,
+        "greedy": 403,
+        "offline": 403
+      },
+      {
+        "path": "content/en/docs/reference/glossary/eviction.md",
+        "revisions": 2,
+        "snapshot": 470,
+        "greedy": 263,
+        "offline": 263
+      },
+      {
+        "path": "content/en/docs/reference/glossary/feature-gates.md",
+        "revisions": 2,
+        "snapshot": 813,
+        "greedy": 435,
+        "offline": 435
+      },
+      {
+        "path": "content/en/docs/reference/glossary/job.md",
+        "revisions": 2,
+        "snapshot": 605,
+        "greedy": 330,
+        "offline": 330
+      },
+      {
+        "path": "content/en/docs/reference/glossary/kube-scheduler.md",
+        "revisions": 3,
+        "snapshot": 1314,
+        "greedy": 554,
+        "offline": 554
+      },
+      {
+        "path": "content/en/docs/reference/glossary/name.md",
+        "revisions": 3,
+        "snapshot": 994,
+        "greedy": 465,
+        "offline": 465
+      },
+      {
+        "path": "content/en/docs/reference/glossary/pod-lifecycle.md",
+        "revisions": 2,
+        "snapshot": 816,
+        "greedy": 436,
+        "offline": 436
+      },
+      {
+        "path": "content/en/docs/reference/glossary/pod.md",
+        "revisions": 2,
+        "snapshot": 731,
+        "greedy": 395,
+        "offline": 395
+      },
+      {
+        "path": "content/en/docs/reference/glossary/rbac.md",
+        "revisions": 2,
+        "snapshot": 883,
+        "greedy": 471,
+        "offline": 471
+      },
+      {
+        "path": "content/en/docs/reference/glossary/reviewer.md",
+        "revisions": 2,
+        "snapshot": 490,
+        "greedy": 274,
+        "offline": 274
+      },
+      {
+        "path": "content/en/docs/reference/glossary/sidecar-container.md",
+        "revisions": 4,
+        "snapshot": 1634,
+        "greedy": 497,
+        "offline": 497
+      },
+      {
+        "path": "content/en/docs/reference/glossary/upstream.md",
+        "revisions": 2,
+        "snapshot": 845,
+        "greedy": 451,
+        "offline": 451
+      },
+      {
+        "path": "content/en/docs/reference/glossary/wg.md",
+        "revisions": 3,
+        "snapshot": 1236,
+        "greedy": 475,
+        "offline": 475
+      },
+      {
+        "path": "content/en/docs/reference/instrumentation/slis.md",
+        "revisions": 3,
+        "snapshot": 3333,
+        "greedy": 1248,
+        "offline": 1248
+      },
+      {
+        "path": "content/en/docs/reference/kubectl/generated/kubectl_config/kubectl_config_set-context.md",
+        "revisions": 5,
+        "snapshot": 10473,
+        "greedy": 2836,
+        "offline": 2836
+      },
+      {
+        "path": "content/en/docs/reference/kubectl/generated/kubectl_create/kubectl_create_configmap.md",
+        "revisions": 6,
+        "snapshot": 20115,
+        "greedy": 4323,
+        "offline": 4323
+      },
+      {
+        "path": "content/en/docs/reference/kubectl/generated/kubectl_create/kubectl_create_poddisruptionbudget.md",
+        "revisions": 5,
+        "snapshot": 15274,
+        "greedy": 3777,
+        "offline": 3777
+      },
+      {
+        "path": "content/en/docs/reference/kubectl/generated/kubectl_create/kubectl_create_rolebinding.md",
+        "revisions": 5,
+        "snapshot": 15063,
+        "greedy": 3737,
+        "offline": 3737
+      },
+      {
+        "path": "content/en/docs/reference/kubectl/generated/kubectl_create/kubectl_create_secret_tls.md",
+        "revisions": 5,
+        "snapshot": 14834,
+        "greedy": 3692,
+        "offline": 3692
+      },
+      {
+        "path": "content/en/docs/reference/kubectl/generated/kubectl_create/kubectl_create_service_loadbalancer.md",
+        "revisions": 5,
+        "snapshot": 14324,
+        "greedy": 3584,
+        "offline": 3584
+      },
+      {
+        "path": "content/en/docs/reference/kubectl/generated/kubectl_set/kubectl_set_image.md",
+        "revisions": 6,
+        "snapshot": 18467,
+        "greedy": 3966,
+        "offline": 3966
+      },
+      {
+        "path": "content/en/docs/reference/kubectl/generated/kubectl_top/kubectl_top_pod.md",
+        "revisions": 6,
+        "snapshot": 15375,
+        "greedy": 3551,
+        "offline": 3551
+      },
+      {
+        "path": "content/en/docs/reference/kubectl/kubectl.md",
+        "revisions": 6,
+        "snapshot": 22951,
+        "greedy": 4513,
+        "offline": 4513
+      },
+      {
+        "path": "content/en/docs/reference/node/kernel-version-requirements.md",
+        "revisions": 4,
+        "snapshot": 8699,
+        "greedy": 2811,
+        "offline": 2811
+      },
+      {
+        "path": "content/en/docs/reference/node/kubelet-config-directory-merging.md",
+        "revisions": 2,
+        "snapshot": 2289,
+        "greedy": 1170,
+        "offline": 1170
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm.md",
+        "revisions": 1,
+        "snapshot": 919,
+        "greedy": 919,
+        "offline": 919
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_certs/kubeadm_certs_renew_all.md",
+        "revisions": 1,
+        "snapshot": 865,
+        "greedy": 865,
+        "offline": 865
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_certs/kubeadm_certs_renew_front-proxy-client.md",
+        "revisions": 2,
+        "snapshot": 2150,
+        "greedy": 1100,
+        "offline": 1100
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_certs/kubeadm_certs_renew_scheduler.conf.md",
+        "revisions": 2,
+        "snapshot": 2167,
+        "greedy": 1109,
+        "offline": 1109
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_config/kubeadm_config_print.md",
+        "revisions": 1,
+        "snapshot": 792,
+        "greedy": 792,
+        "offline": 792
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_config/kubeadm_config_print_init-defaults.md",
+        "revisions": 1,
+        "snapshot": 993,
+        "greedy": 993,
+        "offline": 993
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_init/kubeadm_init_phase_certs.md",
+        "revisions": 2,
+        "snapshot": 1198,
+        "greedy": 621,
+        "offline": 621
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_init/kubeadm_init_phase_kubeconfig_controller-manager.md",
+        "revisions": 1,
+        "snapshot": 1003,
+        "greedy": 1003,
+        "offline": 1003
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_join/kubeadm_join_phase.md",
+        "revisions": 2,
+        "snapshot": 1240,
+        "greedy": 643,
+        "offline": 643
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_join/kubeadm_join_phase_control-plane-join.md",
+        "revisions": 2,
+        "snapshot": 1282,
+        "greedy": 664,
+        "offline": 664
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_join/kubeadm_join_phase_wait-control-plane.md",
+        "revisions": 2,
+        "snapshot": 1244,
+        "greedy": 656,
+        "offline": 656
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_reset/kubeadm_reset_phase.md",
+        "revisions": 2,
+        "snapshot": 1236,
+        "greedy": 641,
+        "offline": 641
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_upgrade/kubeadm_upgrade_node.md",
+        "revisions": 3,
+        "snapshot": 4365,
+        "greedy": 1518,
+        "offline": 1518
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/generated/kubeadm_upgrade/kubeadm_upgrade_node_phase_addon_coredns.md",
+        "revisions": 3,
+        "snapshot": 3353,
+        "greedy": 1181,
+        "offline": 1181
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/kubeadm-reset-phase.md",
+        "revisions": 1,
+        "snapshot": 682,
+        "greedy": 682,
+        "offline": 682
+      },
+      {
+        "path": "content/en/docs/reference/setup-tools/kubeadm/kubeadm-token.md",
+        "revisions": 1,
+        "snapshot": 513,
+        "greedy": 513,
+        "offline": 513
+      },
+      {
+        "path": "content/en/docs/reference/using-api/deprecation-guide.md",
+        "revisions": 2,
+        "snapshot": 9277,
+        "greedy": 4680,
+        "offline": 4680
+      },
+      {
+        "path": "content/en/docs/setup/production-environment/container-runtimes.md",
+        "revisions": 10,
+        "snapshot": 48842,
+        "greedy": 7313,
+        "offline": 7313
+      },
+      {
+        "path": "content/en/docs/setup/production-environment/tools/kubeadm/ha-topology.md",
+        "revisions": 1,
+        "snapshot": 1365,
+        "greedy": 1365,
+        "offline": 1365
+      },
+      {
+        "path": "content/en/docs/tasks/administer-cluster/certificates.md",
+        "revisions": 3,
+        "snapshot": 8664,
+        "greedy": 2950,
+        "offline": 2950
+      },
+      {
+        "path": "content/en/docs/tasks/administer-cluster/cluster-upgrade.md",
+        "revisions": 3,
+        "snapshot": 5592,
+        "greedy": 2037,
+        "offline": 2037
+      },
+      {
+        "path": "content/en/docs/tasks/administer-cluster/dns-custom-nameservers.md",
+        "revisions": 2,
+        "snapshot": 5986,
+        "greedy": 3038,
+        "offline": 3038
+      },
+      {
+        "path": "content/en/docs/tasks/administer-cluster/kubeadm/adding-windows-nodes.md",
+        "revisions": 4,
+        "snapshot": 9717,
+        "greedy": 2532,
+        "offline": 2532
+      },
+      {
+        "path": "content/en/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy.md",
+        "revisions": 1,
+        "snapshot": 781,
+        "greedy": 781,
+        "offline": 781
+      },
+      {
+        "path": "content/en/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy.md",
+        "revisions": 1,
+        "snapshot": 596,
+        "greedy": 596,
+        "offline": 596
+      },
+      {
+        "path": "content/en/docs/tasks/configmap-secret/managing-secret-using-config-file.md",
+        "revisions": 1,
+        "snapshot": 2426,
+        "greedy": 2426,
+        "offline": 2426
+      },
+      {
+        "path": "content/en/docs/tasks/configure-pod-container/assign-pod-level-resources.md",
+        "revisions": 6,
+        "snapshot": 17045,
+        "greedy": 4765,
+        "offline": 4765
+      },
+      {
+        "path": "content/en/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes.md",
+        "revisions": 9,
+        "snapshot": 55867,
+        "greedy": 14026,
+        "offline": 14026
+      },
+      {
+        "path": "content/en/docs/tasks/configure-pod-container/configure-pod-configmap.md",
+        "revisions": 2,
+        "snapshot": 15622,
+        "greedy": 7838,
+        "offline": 7838
+      },
+      {
+        "path": "content/en/docs/tasks/configure-pod-container/enforce-standards-admission-controller.md",
+        "revisions": 1,
+        "snapshot": 1013,
+        "greedy": 1013,
+        "offline": 1013
+      },
+      {
+        "path": "content/en/docs/tasks/debug/debug-application/debug-init-containers.md",
+        "revisions": 2,
+        "snapshot": 2805,
+        "greedy": 1471,
+        "offline": 1471
+      },
+      {
+        "path": "content/en/docs/tasks/debug/debug-cluster/troubleshoot-kubectl.md",
+        "revisions": 1,
+        "snapshot": 2403,
+        "greedy": 2403,
+        "offline": 2403
+      },
+      {
+        "path": "content/en/docs/tasks/debug/debug-cluster/windows.md",
+        "revisions": 1,
+        "snapshot": 3265,
+        "greedy": 3265,
+        "offline": 3265
+      },
+      {
+        "path": "content/en/docs/tasks/extend-kubernetes/configure-multiple-schedulers.md",
+        "revisions": 2,
+        "snapshot": 6149,
+        "greedy": 3170,
+        "offline": 3170
+      },
+      {
+        "path": "content/en/docs/tasks/manage-hugepages/scheduling-hugepages.md",
+        "revisions": 1,
+        "snapshot": 1635,
+        "greedy": 1635,
+        "offline": 1635
+      },
+      {
+        "path": "content/en/docs/tasks/manage-kubernetes-objects/imperative-command.md",
+        "revisions": 1,
+        "snapshot": 2391,
+        "greedy": 2391,
+        "offline": 2391
+      },
+      {
+        "path": "content/en/docs/tasks/network/validate-dual-stack.md",
+        "revisions": 2,
+        "snapshot": 5061,
+        "greedy": 2663,
+        "offline": 2663
+      },
+      {
+        "path": "content/en/docs/tasks/run-application/run-stateless-application-deployment.md",
+        "revisions": 3,
+        "snapshot": 4928,
+        "greedy": 1861,
+        "offline": 1861
+      },
+      {
+        "path": "content/en/docs/tasks/tools/included/optional-kubectl-configs-pwsh.md",
+        "revisions": 1,
+        "snapshot": 409,
+        "greedy": 409,
+        "offline": 409
+      },
+      {
+        "path": "content/en/docs/tasks/tools/included/verify-kubectl.md",
+        "revisions": 2,
+        "snapshot": 2080,
+        "greedy": 1109,
+        "offline": 1109
+      },
+      {
+        "path": "content/en/docs/test.md",
+        "revisions": 3,
+        "snapshot": 13005,
+        "greedy": 4716,
+        "offline": 4716
+      },
+      {
+        "path": "content/en/docs/tutorials/security/apparmor.md",
+        "revisions": 2,
+        "snapshot": 8103,
+        "greedy": 4121,
+        "offline": 4121
+      },
+      {
+        "path": "content/en/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume.md",
+        "revisions": 3,
+        "snapshot": 9603,
+        "greedy": 3542,
+        "offline": 3542
+      },
+      {
+        "path": "content/en/docs/tutorials/stateless-application/expose-external-ip-address.md",
+        "revisions": 4,
+        "snapshot": 7955,
+        "greedy": 2299,
+        "offline": 2299
+      }
+    ]
+  }
+}

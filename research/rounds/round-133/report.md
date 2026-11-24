@@ -1,6 +1,6 @@
 # R133 novelty and claim audit
 
-Status: targeted literature audit and formal contract; offline oracle implementation pending execution.
+Status: targeted literature audit and formal contract; offline oracle completed and verified.
 
 ## Closest prior work
 
@@ -25,3 +25,7 @@ Historical ranking correctness is conditional on exact active validity intervals
 ## Offline oracle
 
 For latest-literal-only one-hop encoding, let f_t be independent frame cost and d(j,t) the feasible dictionary-frame cost from anchor j (infinity if admission fails). State DP_t(j) is minimum payload cost through t with latest literal j. Start DP_0(0)=f_0. Transition at t: open new literal DP_t(t)=f_t+min_j DP_(t-1)(j); retain existing literal DP_t(j)=DP_(t-1)(j)+d(j,t). By induction these are the only two allowed actions; the minimum is optimal within this restricted offline class. Runtime O(n^2) candidate encodings and O(n) working states, ignoring encoder cost. It is not a lower bound on unrestricted multi-anchor or alternative-codec methods. Compare greedy latest-only to this oracle using exactly the same 1.5x/2.5x/80% bounds. No training, no deployment of future-aware choices, no integrated size claims. Two previously measured large cohorts, Git/Kubernetes. Frozen manifest checks. Brute-force state enumeration on short random cost matrices validates recurrence.
+
+## Verified results
+
+Both R133 jobs passed (https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45497029658). On Git (667 revisions), greedy payload 884,795 B versus restricted offline optimum 871,706 B (1.48% less); six of 160 documents improved. On Kubernetes (378 revisions), greedy 349,176 B versus 344,556 B (1.32% less); four of 141 documents improved. These are source-only comparisons, not archive size or general optimality. The oracle verifies the frozen R132 manifest and reproduces the k1 payload totals. Further tuning of this restricted policy has little measured headroom on these two cohorts.

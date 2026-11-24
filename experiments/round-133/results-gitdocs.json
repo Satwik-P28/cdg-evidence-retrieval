@@ -1,0 +1,1136 @@
+{
+  "corpus": "gitdocs",
+  "manifest_sha256": "bc37ab840d0cdc16753cb1bf3945657fe85de671cefe13f2376d8409241d6404",
+  "scope": "source payload only; offline latest-literal optimum",
+  "result": {
+    "revisions": 667,
+    "snapshot": 4176417,
+    "greedy": 884795,
+    "offline": 871706,
+    "documents": 160,
+    "improved_documents": 6,
+    "candidate_checks": 1893,
+    "per_document": [
+      {
+        "path": "Documentation/MyFirstContribution.txt",
+        "revisions": 11,
+        "snapshot": 217864,
+        "greedy": 37739,
+        "offline": 37739
+      },
+      {
+        "path": "Documentation/config.txt",
+        "revisions": 16,
+        "snapshot": 101757,
+        "greedy": 9466,
+        "offline": 9466
+      },
+      {
+        "path": "Documentation/diff-format.txt",
+        "revisions": 2,
+        "snapshot": 4654,
+        "greedy": 2377,
+        "offline": 2377
+      },
+      {
+        "path": "Documentation/diff-options.txt",
+        "revisions": 13,
+        "snapshot": 149342,
+        "greedy": 18141,
+        "offline": 18141
+      },
+      {
+        "path": "Documentation/fetch-options.txt",
+        "revisions": 8,
+        "snapshot": 35379,
+        "greedy": 8246,
+        "offline": 8246
+      },
+      {
+        "path": "Documentation/git-add.txt",
+        "revisions": 7,
+        "snapshot": 41293,
+        "greedy": 6915,
+        "offline": 6915
+      },
+      {
+        "path": "Documentation/git-apply.txt",
+        "revisions": 5,
+        "snapshot": 21365,
+        "greedy": 4770,
+        "offline": 4770
+      },
+      {
+        "path": "Documentation/git-archimport.txt",
+        "revisions": 1,
+        "snapshot": 1828,
+        "greedy": 1828,
+        "offline": 1828
+      },
+      {
+        "path": "Documentation/git-archive.txt",
+        "revisions": 7,
+        "snapshot": 21880,
+        "greedy": 6407,
+        "offline": 6407
+      },
+      {
+        "path": "Documentation/git-bisect.txt",
+        "revisions": 6,
+        "snapshot": 35938,
+        "greedy": 7264,
+        "offline": 7264
+      },
+      {
+        "path": "Documentation/git-blame.txt",
+        "revisions": 5,
+        "snapshot": 18773,
+        "greedy": 4119,
+        "offline": 4119
+      },
+      {
+        "path": "Documentation/git-branch.txt",
+        "revisions": 8,
+        "snapshot": 44519,
+        "greedy": 7430,
+        "offline": 7430
+      },
+      {
+        "path": "Documentation/git-bugreport.txt",
+        "revisions": 5,
+        "snapshot": 5512,
+        "greedy": 2514,
+        "offline": 2277
+      },
+      {
+        "path": "Documentation/git-bundle.txt",
+        "revisions": 6,
+        "snapshot": 26330,
+        "greedy": 5045,
+        "offline": 5045
+      },
+      {
+        "path": "Documentation/git-cat-file.txt",
+        "revisions": 9,
+        "snapshot": 41020,
+        "greedy": 8087,
+        "offline": 8087
+      },
+      {
+        "path": "Documentation/git-check-ignore.txt",
+        "revisions": 2,
+        "snapshot": 3724,
+        "greedy": 1886,
+        "offline": 1886
+      },
+      {
+        "path": "Documentation/git-check-mailmap.txt",
+        "revisions": 2,
+        "snapshot": 1379,
+        "greedy": 857,
+        "offline": 857
+      },
+      {
+        "path": "Documentation/git-check-ref-format.txt",
+        "revisions": 2,
+        "snapshot": 4544,
+        "greedy": 2303,
+        "offline": 2303
+      },
+      {
+        "path": "Documentation/git-checkout-index.txt",
+        "revisions": 2,
+        "snapshot": 4612,
+        "greedy": 2366,
+        "offline": 2366
+      },
+      {
+        "path": "Documentation/git-checkout.txt",
+        "revisions": 9,
+        "snapshot": 66634,
+        "greedy": 9743,
+        "offline": 9743
+      },
+      {
+        "path": "Documentation/git-cherry-pick.txt",
+        "revisions": 4,
+        "snapshot": 14097,
+        "greedy": 3952,
+        "offline": 3952
+      },
+      {
+        "path": "Documentation/git-clone.txt",
+        "revisions": 9,
+        "snapshot": 49300,
+        "greedy": 9190,
+        "offline": 9190
+      },
+      {
+        "path": "Documentation/git-commit-graph.txt",
+        "revisions": 5,
+        "snapshot": 10828,
+        "greedy": 2616,
+        "offline": 2616
+      },
+      {
+        "path": "Documentation/git-commit-tree.txt",
+        "revisions": 1,
+        "snapshot": 1278,
+        "greedy": 1278,
+        "offline": 1278
+      },
+      {
+        "path": "Documentation/git-commit.txt",
+        "revisions": 5,
+        "snapshot": 38772,
+        "greedy": 8134,
+        "offline": 8134
+      },
+      {
+        "path": "Documentation/git-config.txt",
+        "revisions": 10,
+        "snapshot": 67958,
+        "greedy": 17288,
+        "offline": 17288
+      },
+      {
+        "path": "Documentation/git-count-objects.txt",
+        "revisions": 2,
+        "snapshot": 1297,
+        "greedy": 699,
+        "offline": 699
+      },
+      {
+        "path": "Documentation/git-credential-store.txt",
+        "revisions": 2,
+        "snapshot": 3150,
+        "greedy": 1598,
+        "offline": 1598
+      },
+      {
+        "path": "Documentation/git-credential.txt",
+        "revisions": 8,
+        "snapshot": 23685,
+        "greedy": 7237,
+        "offline": 7237
+      },
+      {
+        "path": "Documentation/git-cvsserver.txt",
+        "revisions": 4,
+        "snapshot": 25361,
+        "greedy": 6808,
+        "offline": 6808
+      },
+      {
+        "path": "Documentation/git-daemon.txt",
+        "revisions": 4,
+        "snapshot": 18592,
+        "greedy": 5294,
+        "offline": 5294
+      },
+      {
+        "path": "Documentation/git-describe.txt",
+        "revisions": 2,
+        "snapshot": 6480,
+        "greedy": 3268,
+        "offline": 3268
+      },
+      {
+        "path": "Documentation/git-diff-files.txt",
+        "revisions": 3,
+        "snapshot": 1953,
+        "greedy": 739,
+        "offline": 739
+      },
+      {
+        "path": "Documentation/git-diff-index.txt",
+        "revisions": 3,
+        "snapshot": 6272,
+        "greedy": 2234,
+        "offline": 2234
+      },
+      {
+        "path": "Documentation/git-diff.txt",
+        "revisions": 5,
+        "snapshot": 13332,
+        "greedy": 3499,
+        "offline": 3499
+      },
+      {
+        "path": "Documentation/git-difftool.txt",
+        "revisions": 6,
+        "snapshot": 11367,
+        "greedy": 2768,
+        "offline": 2768
+      },
+      {
+        "path": "Documentation/git-fast-import.txt",
+        "revisions": 6,
+        "snapshot": 122032,
+        "greedy": 21616,
+        "offline": 21616
+      },
+      {
+        "path": "Documentation/git-fetch-pack.txt",
+        "revisions": 3,
+        "snapshot": 5807,
+        "greedy": 2142,
+        "offline": 2142
+      },
+      {
+        "path": "Documentation/git-fetch.txt",
+        "revisions": 6,
+        "snapshot": 25742,
+        "greedy": 5322,
+        "offline": 5322
+      },
+      {
+        "path": "Documentation/git-filter-branch.txt",
+        "revisions": 2,
+        "snapshot": 22965,
+        "greedy": 11516,
+        "offline": 11516
+      },
+      {
+        "path": "Documentation/git-fmt-merge-msg.txt",
+        "revisions": 1,
+        "snapshot": 902,
+        "greedy": 902,
+        "offline": 902
+      },
+      {
+        "path": "Documentation/git-for-each-repo.txt",
+        "revisions": 2,
+        "snapshot": 1647,
+        "greedy": 959,
+        "offline": 959
+      },
+      {
+        "path": "Documentation/git-format-patch.txt",
+        "revisions": 12,
+        "snapshot": 125647,
+        "greedy": 15390,
+        "offline": 15390
+      },
+      {
+        "path": "Documentation/git-fsck-objects.txt",
+        "revisions": 1,
+        "snapshot": 231,
+        "greedy": 231,
+        "offline": 231
+      },
+      {
+        "path": "Documentation/git-fsck.txt",
+        "revisions": 4,
+        "snapshot": 9750,
+        "greedy": 2886,
+        "offline": 2886
+      },
+      {
+        "path": "Documentation/git-get-tar-commit-id.txt",
+        "revisions": 2,
+        "snapshot": 824,
+        "greedy": 435,
+        "offline": 435
+      },
+      {
+        "path": "Documentation/git-grep.txt",
+        "revisions": 5,
+        "snapshot": 21528,
+        "greedy": 5423,
+        "offline": 5423
+      },
+      {
+        "path": "Documentation/git-hash-object.txt",
+        "revisions": 4,
+        "snapshot": 4071,
+        "greedy": 1273,
+        "offline": 1273
+      },
+      {
+        "path": "Documentation/git-help.txt",
+        "revisions": 3,
+        "snapshot": 7698,
+        "greedy": 3116,
+        "offline": 3116
+      },
+      {
+        "path": "Documentation/git-http-backend.txt",
+        "revisions": 2,
+        "snapshot": 7806,
+        "greedy": 3952,
+        "offline": 3952
+      },
+      {
+        "path": "Documentation/git-http-fetch.txt",
+        "revisions": 2,
+        "snapshot": 1802,
+        "greedy": 933,
+        "offline": 933
+      },
+      {
+        "path": "Documentation/git-imap-send.txt",
+        "revisions": 3,
+        "snapshot": 5127,
+        "greedy": 1796,
+        "offline": 1796
+      },
+      {
+        "path": "Documentation/git-init.txt",
+        "revisions": 6,
+        "snapshot": 15117,
+        "greedy": 3600,
+        "offline": 3600
+      },
+      {
+        "path": "Documentation/git-instaweb.txt",
+        "revisions": 1,
+        "snapshot": 1004,
+        "greedy": 1004,
+        "offline": 1004
+      },
+      {
+        "path": "Documentation/git-interpret-trailers.txt",
+        "revisions": 7,
+        "snapshot": 34801,
+        "greedy": 10025,
+        "offline": 10025
+      },
+      {
+        "path": "Documentation/git-log.txt",
+        "revisions": 4,
+        "snapshot": 12468,
+        "greedy": 4087,
+        "offline": 4087
+      },
+      {
+        "path": "Documentation/git-ls-files.txt",
+        "revisions": 8,
+        "snapshot": 33485,
+        "greedy": 12045,
+        "offline": 10054
+      },
+      {
+        "path": "Documentation/git-ls-remote.txt",
+        "revisions": 4,
+        "snapshot": 8612,
+        "greedy": 3648,
+        "offline": 3648
+      },
+      {
+        "path": "Documentation/git-ls-tree.txt",
+        "revisions": 6,
+        "snapshot": 13407,
+        "greedy": 6448,
+        "offline": 4099
+      },
+      {
+        "path": "Documentation/git-mailinfo.txt",
+        "revisions": 2,
+        "snapshot": 3472,
+        "greedy": 1794,
+        "offline": 1794
+      },
+      {
+        "path": "Documentation/git-mailsplit.txt",
+        "revisions": 2,
+        "snapshot": 1531,
+        "greedy": 789,
+        "offline": 789
+      },
+      {
+        "path": "Documentation/git-maintenance.txt",
+        "revisions": 6,
+        "snapshot": 38331,
+        "greedy": 7431,
+        "offline": 7431
+      },
+      {
+        "path": "Documentation/git-merge-base.txt",
+        "revisions": 3,
+        "snapshot": 8593,
+        "greedy": 2960,
+        "offline": 2960
+      },
+      {
+        "path": "Documentation/git-merge-file.txt",
+        "revisions": 3,
+        "snapshot": 4835,
+        "greedy": 2377,
+        "offline": 2377
+      },
+      {
+        "path": "Documentation/git-merge-index.txt",
+        "revisions": 1,
+        "snapshot": 1165,
+        "greedy": 1165,
+        "offline": 1165
+      },
+      {
+        "path": "Documentation/git-merge-one-file.txt",
+        "revisions": 1,
+        "snapshot": 220,
+        "greedy": 220,
+        "offline": 220
+      },
+      {
+        "path": "Documentation/git-merge.txt",
+        "revisions": 8,
+        "snapshot": 41934,
+        "greedy": 6773,
+        "offline": 6773
+      },
+      {
+        "path": "Documentation/git-mergetool--lib.txt",
+        "revisions": 2,
+        "snapshot": 1550,
+        "greedy": 815,
+        "offline": 815
+      },
+      {
+        "path": "Documentation/git-mktag.txt",
+        "revisions": 3,
+        "snapshot": 2760,
+        "greedy": 982,
+        "offline": 982
+      },
+      {
+        "path": "Documentation/git-mktree.txt",
+        "revisions": 2,
+        "snapshot": 1222,
+        "greedy": 640,
+        "offline": 640
+      },
+      {
+        "path": "Documentation/git-multi-pack-index.txt",
+        "revisions": 4,
+        "snapshot": 7119,
+        "greedy": 2127,
+        "offline": 2127
+      },
+      {
+        "path": "Documentation/git-mv.txt",
+        "revisions": 4,
+        "snapshot": 4101,
+        "greedy": 1169,
+        "offline": 1169
+      },
+      {
+        "path": "Documentation/git-name-rev.txt",
+        "revisions": 3,
+        "snapshot": 4254,
+        "greedy": 1604,
+        "offline": 1604
+      },
+      {
+        "path": "Documentation/git-notes.txt",
+        "revisions": 5,
+        "snapshot": 25277,
+        "greedy": 7115,
+        "offline": 7115
+      },
+      {
+        "path": "Documentation/git-pack-objects.txt",
+        "revisions": 4,
+        "snapshot": 28757,
+        "greedy": 8498,
+        "offline": 8498
+      },
+      {
+        "path": "Documentation/git-pack-redundant.txt",
+        "revisions": 4,
+        "snapshot": 2865,
+        "greedy": 1162,
+        "offline": 1162
+      },
+      {
+        "path": "Documentation/git-pack-refs.txt",
+        "revisions": 3,
+        "snapshot": 4060,
+        "greedy": 2139,
+        "offline": 2139
+      },
+      {
+        "path": "Documentation/git-patch-id.txt",
+        "revisions": 2,
+        "snapshot": 2143,
+        "greedy": 1226,
+        "offline": 1226
+      },
+      {
+        "path": "Documentation/git-prune-packed.txt",
+        "revisions": 3,
+        "snapshot": 1669,
+        "greedy": 621,
+        "offline": 621
+      },
+      {
+        "path": "Documentation/git-prune.txt",
+        "revisions": 2,
+        "snapshot": 1897,
+        "greedy": 972,
+        "offline": 972
+      },
+      {
+        "path": "Documentation/git-pull.txt",
+        "revisions": 2,
+        "snapshot": 6519,
+        "greedy": 3295,
+        "offline": 3295
+      },
+      {
+        "path": "Documentation/git-push.txt",
+        "revisions": 7,
+        "snapshot": 68384,
+        "greedy": 10754,
+        "offline": 10754
+      },
+      {
+        "path": "Documentation/git-quiltimport.txt",
+        "revisions": 2,
+        "snapshot": 1591,
+        "greedy": 830,
+        "offline": 830
+      },
+      {
+        "path": "Documentation/git-rebase.txt",
+        "revisions": 19,
+        "snapshot": 301730,
+        "greedy": 46137,
+        "offline": 44566
+      },
+      {
+        "path": "Documentation/git-receive-pack.txt",
+        "revisions": 3,
+        "snapshot": 10813,
+        "greedy": 3693,
+        "offline": 3693
+      },
+      {
+        "path": "Documentation/git-reflog.txt",
+        "revisions": 4,
+        "snapshot": 7720,
+        "greedy": 2096,
+        "offline": 2096
+      },
+      {
+        "path": "Documentation/git-remote-ext.txt",
+        "revisions": 2,
+        "snapshot": 3100,
+        "greedy": 1607,
+        "offline": 1607
+      },
+      {
+        "path": "Documentation/git-remote-fd.txt",
+        "revisions": 2,
+        "snapshot": 1677,
+        "greedy": 886,
+        "offline": 886
+      },
+      {
+        "path": "Documentation/git-remote.txt",
+        "revisions": 3,
+        "snapshot": 9499,
+        "greedy": 3296,
+        "offline": 3296
+      },
+      {
+        "path": "Documentation/git-repack.txt",
+        "revisions": 7,
+        "snapshot": 28207,
+        "greedy": 7317,
+        "offline": 7317
+      },
+      {
+        "path": "Documentation/git-replace.txt",
+        "revisions": 3,
+        "snapshot": 6079,
+        "greedy": 2104,
+        "offline": 2104
+      },
+      {
+        "path": "Documentation/git-request-pull.txt",
+        "revisions": 2,
+        "snapshot": 1853,
+        "greedy": 956,
+        "offline": 956
+      },
+      {
+        "path": "Documentation/git-reset.txt",
+        "revisions": 3,
+        "snapshot": 18735,
+        "greedy": 6438,
+        "offline": 6438
+      },
+      {
+        "path": "Documentation/git-restore.txt",
+        "revisions": 3,
+        "snapshot": 8171,
+        "greedy": 2870,
+        "offline": 2870
+      },
+      {
+        "path": "Documentation/git-rev-list.txt",
+        "revisions": 3,
+        "snapshot": 3968,
+        "greedy": 1384,
+        "offline": 1384
+      },
+      {
+        "path": "Documentation/git-rev-parse.txt",
+        "revisions": 9,
+        "snapshot": 52706,
+        "greedy": 8461,
+        "offline": 8461
+      },
+      {
+        "path": "Documentation/git-revert.txt",
+        "revisions": 7,
+        "snapshot": 15429,
+        "greedy": 3759,
+        "offline": 3759
+      },
+      {
+        "path": "Documentation/git-rm.txt",
+        "revisions": 2,
+        "snapshot": 5941,
+        "greedy": 2995,
+        "offline": 2995
+      },
+      {
+        "path": "Documentation/git-send-email.txt",
+        "revisions": 14,
+        "snapshot": 103059,
+        "greedy": 15097,
+        "offline": 15097
+      },
+      {
+        "path": "Documentation/git-send-pack.txt",
+        "revisions": 3,
+        "snapshot": 6672,
+        "greedy": 2353,
+        "offline": 2353
+      },
+      {
+        "path": "Documentation/git-sh-i18n--envsubst.txt",
+        "revisions": 1,
+        "snapshot": 535,
+        "greedy": 535,
+        "offline": 535
+      },
+      {
+        "path": "Documentation/git-sh-i18n.txt",
+        "revisions": 1,
+        "snapshot": 602,
+        "greedy": 602,
+        "offline": 602
+      },
+      {
+        "path": "Documentation/git-sh-setup.txt",
+        "revisions": 2,
+        "snapshot": 2948,
+        "greedy": 1498,
+        "offline": 1498
+      },
+      {
+        "path": "Documentation/git-shell.txt",
+        "revisions": 1,
+        "snapshot": 1344,
+        "greedy": 1344,
+        "offline": 1344
+      },
+      {
+        "path": "Documentation/git-shortlog.txt",
+        "revisions": 2,
+        "snapshot": 3844,
+        "greedy": 2019,
+        "offline": 2019
+      },
+      {
+        "path": "Documentation/git-show-branch.txt",
+        "revisions": 6,
+        "snapshot": 16549,
+        "greedy": 3405,
+        "offline": 3405
+      },
+      {
+        "path": "Documentation/git-show-index.txt",
+        "revisions": 1,
+        "snapshot": 783,
+        "greedy": 783,
+        "offline": 783
+      },
+      {
+        "path": "Documentation/git-sparse-checkout.txt",
+        "revisions": 5,
+        "snapshot": 34239,
+        "greedy": 18687,
+        "offline": 12762
+      },
+      {
+        "path": "Documentation/git-stage.txt",
+        "revisions": 1,
+        "snapshot": 217,
+        "greedy": 217,
+        "offline": 217
+      },
+      {
+        "path": "Documentation/git-stash.txt",
+        "revisions": 4,
+        "snapshot": 19895,
+        "greedy": 5366,
+        "offline": 5366
+      },
+      {
+        "path": "Documentation/git-status.txt",
+        "revisions": 9,
+        "snapshot": 63002,
+        "greedy": 14865,
+        "offline": 13849
+      },
+      {
+        "path": "Documentation/git-submodule.txt",
+        "revisions": 4,
+        "snapshot": 26260,
+        "greedy": 7648,
+        "offline": 7648
+      },
+      {
+        "path": "Documentation/git-svn.txt",
+        "revisions": 3,
+        "snapshot": 46574,
+        "greedy": 15693,
+        "offline": 15693
+      },
+      {
+        "path": "Documentation/git-switch.txt",
+        "revisions": 4,
+        "snapshot": 13815,
+        "greedy": 3897,
+        "offline": 3897
+      },
+      {
+        "path": "Documentation/git-symbolic-ref.txt",
+        "revisions": 3,
+        "snapshot": 3072,
+        "greedy": 1295,
+        "offline": 1295
+      },
+      {
+        "path": "Documentation/git-tools.txt",
+        "revisions": 1,
+        "snapshot": 290,
+        "greedy": 290,
+        "offline": 290
+      },
+      {
+        "path": "Documentation/git-unpack-file.txt",
+        "revisions": 1,
+        "snapshot": 274,
+        "greedy": 274,
+        "offline": 274
+      },
+      {
+        "path": "Documentation/git-unpack-objects.txt",
+        "revisions": 1,
+        "snapshot": 659,
+        "greedy": 659,
+        "offline": 659
+      },
+      {
+        "path": "Documentation/git-update-index.txt",
+        "revisions": 7,
+        "snapshot": 56384,
+        "greedy": 9153,
+        "offline": 9153
+      },
+      {
+        "path": "Documentation/git-update-ref.txt",
+        "revisions": 4,
+        "snapshot": 10518,
+        "greedy": 3207,
+        "offline": 3207
+      },
+      {
+        "path": "Documentation/git-update-server-info.txt",
+        "revisions": 3,
+        "snapshot": 1349,
+        "greedy": 588,
+        "offline": 588
+      },
+      {
+        "path": "Documentation/git-upload-archive.txt",
+        "revisions": 2,
+        "snapshot": 2015,
+        "greedy": 1037,
+        "offline": 1037
+      },
+      {
+        "path": "Documentation/git-upload-pack.txt",
+        "revisions": 5,
+        "snapshot": 5100,
+        "greedy": 1780,
+        "offline": 1780
+      },
+      {
+        "path": "Documentation/git-var.txt",
+        "revisions": 6,
+        "snapshot": 6653,
+        "greedy": 2257,
+        "offline": 2257
+      },
+      {
+        "path": "Documentation/git-verify-commit.txt",
+        "revisions": 2,
+        "snapshot": 677,
+        "greedy": 369,
+        "offline": 369
+      },
+      {
+        "path": "Documentation/git-web--browse.txt",
+        "revisions": 1,
+        "snapshot": 1504,
+        "greedy": 1504,
+        "offline": 1504
+      },
+      {
+        "path": "Documentation/git-worktree.txt",
+        "revisions": 6,
+        "snapshot": 41093,
+        "greedy": 8614,
+        "offline": 8614
+      },
+      {
+        "path": "Documentation/git-write-tree.txt",
+        "revisions": 1,
+        "snapshot": 538,
+        "greedy": 538,
+        "offline": 538
+      },
+      {
+        "path": "Documentation/gitattributes.txt",
+        "revisions": 10,
+        "snapshot": 158347,
+        "greedy": 24487,
+        "offline": 24487
+      },
+      {
+        "path": "Documentation/gitcore-tutorial.txt",
+        "revisions": 2,
+        "snapshot": 40502,
+        "greedy": 20287,
+        "offline": 20287
+      },
+      {
+        "path": "Documentation/gitcredentials.txt",
+        "revisions": 7,
+        "snapshot": 28366,
+        "greedy": 5101,
+        "offline": 5101
+      },
+      {
+        "path": "Documentation/gitcvs-migration.txt",
+        "revisions": 1,
+        "snapshot": 2979,
+        "greedy": 2979,
+        "offline": 2979
+      },
+      {
+        "path": "Documentation/gitdiffcore.txt",
+        "revisions": 3,
+        "snapshot": 14148,
+        "greedy": 4849,
+        "offline": 4849
+      },
+      {
+        "path": "Documentation/giteveryday.txt",
+        "revisions": 3,
+        "snapshot": 16265,
+        "greedy": 5476,
+        "offline": 5476
+      },
+      {
+        "path": "Documentation/gitfaq.txt",
+        "revisions": 2,
+        "snapshot": 17923,
+        "greedy": 10096,
+        "offline": 10096
+      },
+      {
+        "path": "Documentation/gitglossary.txt",
+        "revisions": 1,
+        "snapshot": 223,
+        "greedy": 223,
+        "offline": 223
+      },
+      {
+        "path": "Documentation/githooks.txt",
+        "revisions": 9,
+        "snapshot": 79570,
+        "greedy": 15482,
+        "offline": 15482
+      },
+      {
+        "path": "Documentation/gitmodules.txt",
+        "revisions": 2,
+        "snapshot": 3978,
+        "greedy": 2058,
+        "offline": 2058
+      },
+      {
+        "path": "Documentation/gitnamespaces.txt",
+        "revisions": 1,
+        "snapshot": 1117,
+        "greedy": 1117,
+        "offline": 1117
+      },
+      {
+        "path": "Documentation/gitremote-helpers.txt",
+        "revisions": 5,
+        "snapshot": 36217,
+        "greedy": 7958,
+        "offline": 7958
+      },
+      {
+        "path": "Documentation/gitrepository-layout.txt",
+        "revisions": 2,
+        "snapshot": 8349,
+        "greedy": 4225,
+        "offline": 4225
+      },
+      {
+        "path": "Documentation/gitsubmodules.txt",
+        "revisions": 3,
+        "snapshot": 11098,
+        "greedy": 3783,
+        "offline": 3783
+      },
+      {
+        "path": "Documentation/gittutorial-2.txt",
+        "revisions": 1,
+        "snapshot": 4685,
+        "greedy": 4685,
+        "offline": 4685
+      },
+      {
+        "path": "Documentation/gittutorial.txt",
+        "revisions": 4,
+        "snapshot": 28023,
+        "greedy": 8206,
+        "offline": 8206
+      },
+      {
+        "path": "Documentation/gitweb.conf.txt",
+        "revisions": 4,
+        "snapshot": 55550,
+        "greedy": 14034,
+        "offline": 14034
+      },
+      {
+        "path": "Documentation/gitweb.txt",
+        "revisions": 6,
+        "snapshot": 51550,
+        "greedy": 9105,
+        "offline": 9105
+      },
+      {
+        "path": "Documentation/i18n.txt",
+        "revisions": 2,
+        "snapshot": 2711,
+        "greedy": 1386,
+        "offline": 1386
+      },
+      {
+        "path": "Documentation/line-range-format.txt",
+        "revisions": 1,
+        "snapshot": 544,
+        "greedy": 544,
+        "offline": 544
+      },
+      {
+        "path": "Documentation/line-range-options.txt",
+        "revisions": 1,
+        "snapshot": 451,
+        "greedy": 451,
+        "offline": 451
+      },
+      {
+        "path": "Documentation/merge-options.txt",
+        "revisions": 2,
+        "snapshot": 5542,
+        "greedy": 2796,
+        "offline": 2796
+      },
+      {
+        "path": "Documentation/merge-strategies.txt",
+        "revisions": 1,
+        "snapshot": 2614,
+        "greedy": 2614,
+        "offline": 2614
+      },
+      {
+        "path": "Documentation/pretty-formats.txt",
+        "revisions": 4,
+        "snapshot": 21635,
+        "greedy": 7107,
+        "offline": 7107
+      },
+      {
+        "path": "Documentation/rev-list-description.txt",
+        "revisions": 1,
+        "snapshot": 720,
+        "greedy": 720,
+        "offline": 720
+      },
+      {
+        "path": "Documentation/rev-list-options.txt",
+        "revisions": 16,
+        "snapshot": 235779,
+        "greedy": 29182,
+        "offline": 29182
+      },
+      {
+        "path": "Documentation/revisions.txt",
+        "revisions": 6,
+        "snapshot": 35835,
+        "greedy": 7053,
+        "offline": 7053
+      },
+      {
+        "path": "Documentation/sequencer.txt",
+        "revisions": 1,
+        "snapshot": 258,
+        "greedy": 258,
+        "offline": 258
+      },
+      {
+        "path": "Documentation/transfer-data-leaks.txt",
+        "revisions": 1,
+        "snapshot": 821,
+        "greedy": 821,
+        "offline": 821
+      },
+      {
+        "path": "Documentation/urls-remotes.txt",
+        "revisions": 4,
+        "snapshot": 3798,
+        "greedy": 1279,
+        "offline": 1279
+      },
+      {
+        "path": "Documentation/urls.txt",
+        "revisions": 5,
+        "snapshot": 6771,
+        "greedy": 1818,
+        "offline": 1818
+      },
+      {
+        "path": "Documentation/user-manual.txt",
+        "revisions": 9,
+        "snapshot": 465165,
+        "greedy": 54730,
+        "offline": 54730
+      }
+    ]
+  }
+}
