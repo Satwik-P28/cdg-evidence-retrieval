@@ -1,0 +1,120 @@
+{
+  "round": 137,
+  "corpus": "k8sdocs",
+  "manifest_sha256": "971413e777598b0f084c901dac6910dd3b790b5d4be0f1ff12e30109108ef8a3",
+  "result": {
+    "policies": {
+      "snapshot": {
+        "sqlite_bytes": 1634304,
+        "sidecar_bytes": 1234630,
+        "payload_bytes": 1234598,
+        "total_archive_bytes": 2868934,
+        "append": {
+          "median_us": 1275.433,
+          "p95_us": 3023.993,
+          "samples": 378
+        },
+        "read": {
+          "median_us": 28.386,
+          "p95_us": 107.482,
+          "samples": 378
+        },
+        "activated_bytes": 1234598,
+        "decode_amplification": 1,
+        "max_activation": 1,
+        "max_decode": 1,
+        "source_reads": 378,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "pinned_checks": 80
+      },
+      "bounded_anchor": {
+        "sqlite_bytes": 1634304,
+        "sidecar_bytes": 349208,
+        "payload_bytes": 349176,
+        "total_archive_bytes": 1983512,
+        "append": {
+          "median_us": 1353.5665,
+          "p95_us": 3482.104,
+          "samples": 378
+        },
+        "read": {
+          "median_us": 39.575500000000005,
+          "p95_us": 137.987,
+          "samples": 378
+        },
+        "activated_bytes": 1293529,
+        "decode_amplification": 1.7796586722181647,
+        "max_activation": 1.4089924160346696,
+        "max_decode": 2.2496429300142826,
+        "source_reads": 378,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "pinned_checks": 80
+      }
+    },
+    "query_plan_sha256": "caf16ca5db09191e9ed7bd53fb741cf0438f5190afdc383d31399a1d47b678eb",
+    "crash_suite": [
+      {
+        "stage": "before_write",
+        "visible_generations": 1,
+        "orphan_bytes": 0,
+        "retry_pass": true
+      },
+      {
+        "stage": "partial_write",
+        "visible_generations": 1,
+        "orphan_bytes": 13,
+        "retry_pass": true
+      },
+      {
+        "stage": "written",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "synced",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "source",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "index",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "ledger",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "meta",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "commit",
+        "visible_generations": 2,
+        "orphan_bytes": 0,
+        "retry_pass": true
+      }
+    ]
+  },
+  "limits": [
+    "process death only; no measured power-loss durability",
+    "cooperating SQLite-serialized local writers, immutable committed prefix, no compaction",
+    "explicit fsync ordering; file creation crash and filesystem faults not modeled",
+    "revision-level atomicity, not whole Git commit"
+  ]
+}
