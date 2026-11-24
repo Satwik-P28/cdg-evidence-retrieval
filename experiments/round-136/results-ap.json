@@ -1,0 +1,85 @@
+{
+  "round": 136,
+  "source_sha256": "005cf42b35f6b42700e16bf69d9a9e7cbd541d74faa0cd3b4c5b666e5c319e1e",
+  "source_file": "ap.db",
+  "scope": "source-only SQLite storage and reconstruction of derived NewsEdits sentence text; no retrieval index",
+  "result": {
+    "requested_revisions": 100000,
+    "target_reached": false,
+    "retained_revisions": 74364,
+    "documents": 12841,
+    "eligible_documents": 12841,
+    "raw_derived_bytes": 327838512,
+    "manifest_sha256": "e12f3c397333e78a5ab3394dbb119bbab95985161e53dadf9eef71b6b5508319",
+    "selected_id_sha256": "ee9c1642110fdca4f92ebb8c1e75c0584601d64eb69b83e136301710db0dd63a",
+    "policies": {
+      "snapshot": {
+        "reads": 74364,
+        "activated": 149369811,
+        "decoded": 327838512,
+        "max_depth": 0,
+        "max_activation": 1,
+        "max_decode": 1,
+        "source_sqlite_bytes": 300437504,
+        "payload_bytes": 149369811,
+        "decode_amplification": 1
+      },
+      "prev8": {
+        "reads": 74364,
+        "activated": 221769687,
+        "decoded": 1192660116,
+        "max_depth": 8,
+        "max_activation": 86.88888888888889,
+        "max_decode": 489.0188679245283,
+        "source_sqlite_bytes": 112594944,
+        "payload_bytes": 51566108,
+        "decode_amplification": 3.6379500038726382
+      },
+      "anchor8": {
+        "reads": 74364,
+        "activated": 179295372,
+        "decoded": 571604538,
+        "max_depth": 1,
+        "max_activation": 50.592592592592595,
+        "max_decode": 128.88888888888889,
+        "source_sqlite_bytes": 148963328,
+        "payload_bytes": 67227462,
+        "decode_amplification": 1.7435551867072896
+      },
+      "k1": {
+        "reads": 74364,
+        "activated": 156968754,
+        "decoded": 531737715,
+        "max_depth": 1,
+        "max_activation": 1.5,
+        "max_decode": 2.4876543209876543,
+        "source_sqlite_bytes": 138244096,
+        "payload_bytes": 62752187,
+        "decode_amplification": 1.621950123419301
+      },
+      "bounded_anchor": {
+        "reads": 74364,
+        "activated": 157263276,
+        "decoded": 538584234,
+        "max_depth": 1,
+        "max_activation": 1.5,
+        "max_decode": 2.4876543209876543,
+        "source_sqlite_bytes": 132505600,
+        "payload_bytes": 59982761,
+        "decode_amplification": 1.6428339389241737
+      },
+      "tight_activation": {
+        "reads": 74364,
+        "activated": 151433550,
+        "decoded": 521944756,
+        "max_depth": 1,
+        "max_activation": 1.1,
+        "max_decode": 2.316409124356144,
+        "source_sqlite_bytes": 134160384,
+        "payload_bytes": 62421909,
+        "decode_amplification": 1.5920788342279932
+      }
+    },
+    "elapsed_s": 139.96199213900002
+  }
+}
