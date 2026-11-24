@@ -1,0 +1,195 @@
+{
+  "round": 142,
+  "revisions": 10009,
+  "documents": 1744,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "source_sha256": "005cf42b35f6b42700e16bf69d9a9e7cbd541d74faa0cd3b4c5b666e5c319e1e",
+  "query_plan_sha256": "01f3300bfc3022ccfe9e2ea292f383c8ffd05d1b3e752675b6f90b22aed0aba4",
+  "git_version": "git version 2.56.1",
+  "unique_source_objects": 5651,
+  "exact_duplicate_revisions": 4358,
+  "policies": {
+    "snapshot": {
+      "sqlite_bytes": 22671360,
+      "sidecar_bytes": 20175440,
+      "payload_bytes": 20175408,
+      "total_archive_bytes": 42846800,
+      "source_reads": 10009,
+      "rank_checks": 256,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "activated_bytes": 20175408,
+      "source_read": {
+        "median_us": 20.367,
+        "p95_us": 31.665,
+        "samples": 10009
+      },
+      "receipt": {
+        "median_us": 5669.448,
+        "p95_us": 6864.634,
+        "samples": 256
+      }
+    },
+    "bounded_anchor": {
+      "sqlite_bytes": 22671360,
+      "sidecar_bytes": 8020404,
+      "payload_bytes": 8020372,
+      "total_archive_bytes": 30691764,
+      "source_reads": 10009,
+      "rank_checks": 256,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1.645910671385138,
+      "max_decode_ratio": 2.4825581395348837,
+      "max_activation_ratio": 1.4983063605570193,
+      "activated_bytes": 21201943,
+      "source_read": {
+        "median_us": 37.368,
+        "p95_us": 57.576,
+        "samples": 10009
+      },
+      "receipt": {
+        "median_us": 5799.311,
+        "p95_us": 6971.385,
+        "samples": 256
+      }
+    },
+    "snapshot_coalesced": {
+      "sqlite_bytes": 22671360,
+      "sidecar_bytes": 10744298,
+      "payload_bytes": 10744266,
+      "total_archive_bytes": 33415658,
+      "unique_frames": 5651,
+      "duplicate_frames": 4358,
+      "source_reads": 10009,
+      "rank_checks": 256,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "activated_bytes": 20175408,
+      "source_read": {
+        "median_us": 20.382,
+        "p95_us": 31.578,
+        "samples": 10009
+      },
+      "receipt": {
+        "median_us": 5651.4805,
+        "p95_us": 6818.431,
+        "samples": 256
+      }
+    },
+    "bounded_anchor_coalesced": {
+      "sqlite_bytes": 22671360,
+      "sidecar_bytes": 7149589,
+      "payload_bytes": 7149557,
+      "total_archive_bytes": 29820949,
+      "unique_frames": 6443,
+      "duplicate_frames": 3566,
+      "source_reads": 10009,
+      "rank_checks": 256,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1.645910671385138,
+      "max_decode_ratio": 2.4825581395348837,
+      "max_activation_ratio": 1.4983063605570193,
+      "activated_bytes": 21201943,
+      "source_read": {
+        "median_us": 36.847,
+        "p95_us": 55.426,
+        "samples": 10009
+      },
+      "receipt": {
+        "median_us": 5784.075999999999,
+        "p95_us": 6960.47,
+        "samples": 256
+      }
+    },
+    "git_pack_depth1": {
+      "pack_bytes": 6758645,
+      "index_bytes": 159300,
+      "pack_aux_bytes": 22656,
+      "unique_objects": 5651,
+      "max_depth": 1,
+      "source_reads": 10009,
+      "rank_checks": 256,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1.4378640289424234,
+      "max_decode_ratio": 14.425024826216484,
+      "max_activation_ratio": 9.943521594684386,
+      "activated_bytes": 22918378,
+      "source_read": {
+        "median_us": 70.482,
+        "p95_us": 117.866,
+        "samples": 10009
+      },
+      "receipt": {
+        "median_us": 6084.784,
+        "p95_us": 7529.745,
+        "samples": 256
+      },
+      "sqlite_bytes": 22716416,
+      "total_archive_bytes": 29657017
+    },
+    "git_pack_depth8": {
+      "pack_bytes": 6667862,
+      "index_bytes": 159300,
+      "pack_aux_bytes": 22656,
+      "unique_objects": 5651,
+      "max_depth": 5,
+      "source_reads": 10009,
+      "rank_checks": 256,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1.5139101178365906,
+      "max_decode_ratio": 30.14494680851064,
+      "max_activation_ratio": 14.91594827586207,
+      "activated_bytes": 23110667,
+      "source_read": {
+        "median_us": 65.103,
+        "p95_us": 108.82,
+        "samples": 10009
+      },
+      "receipt": {
+        "median_us": 6111.99,
+        "p95_us": 7248.069,
+        "samples": 256
+      },
+      "sqlite_bytes": 22716416,
+      "total_archive_bytes": 29566234
+    },
+    "git_pack_depth50": {
+      "pack_bytes": 6659615,
+      "index_bytes": 159300,
+      "pack_aux_bytes": 22656,
+      "unique_objects": 5651,
+      "max_depth": 5,
+      "source_reads": 10009,
+      "rank_checks": 256,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1.5351638105569196,
+      "max_decode_ratio": 38.9304865938431,
+      "max_activation_ratio": 14.91594827586207,
+      "activated_bytes": 23175930,
+      "source_read": {
+        "median_us": 69.021,
+        "p95_us": 116.006,
+        "samples": 10009
+      },
+      "receipt": {
+        "median_us": 6165.4485,
+        "p95_us": 7375.976,
+        "samples": 256
+      },
+      "sqlite_bytes": 22716416,
+      "total_archive_bytes": 29557987
+    }
+  },
+  "limitations": [
+    "finalized comparison: Git and coalesced layouts are read-only, not transactional append parity",
+    "Git offline cross-document/future-object deltas and exact source dedup allowed",
+    "coalesced CDG exact encoded-frame dedup only; per-revision parent metadata retained",
+    "derived news text and synthetic ordinal schedule as R138",
+    "logical decoded source sizes, not actual CPU/cache/I/O; Git entry activation includes headers",
+    "same query and source manifest; no semantic retrieval or answer quality claim"
+  ]
+}
