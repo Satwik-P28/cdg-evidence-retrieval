@@ -1,0 +1,37 @@
+name: CDG R127 compact boundary sidecar
+on:
+  push:
+    branches: ['research/round-127-*']
+    paths: ['experiments/round-127/**','.github/workflows/cdg-r127-sidecar.yml','research/rounds/round-127/**']
+  pull_request:
+    paths: ['experiments/round-127/**','.github/workflows/cdg-r127-sidecar.yml','research/rounds/round-127/**']
+  workflow_dispatch:
+jobs:
+  sidecar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2
+      - run: |
+          cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-118/cdgfts.c -o experiments/round-118/cdgfts.so
+          cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-123/decoder.c -o experiments/round-123/decoder.so
+          cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-125/cdgpos.c -o experiments/round-125/cdgpos.so
+          cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-126/cdgcross.c -o experiments/round-126/cdgcross.so
+      - run: CDG_FTS_EXTENSION="$PWD/experiments/round-118/cdgfts.so" CDG_POS_EXTENSION="$PWD/experiments/round-125/cdgpos.so" CDG_CROSS_EXTENSION="$PWD/experiments/round-126/cdgcross.so" CDG_NATIVE_DECODER="$PWD/experiments/round-123/decoder.so" PYTHONPATH=experiments/round-127 python -m pytest -q experiments/round-127
+      - uses: actions/checkout@v4
+        with:
+          repository: natwar-modani/versions
+          ref: 06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0
+          path: external/versions
+          persist-credentials: false
+      - run: |
+          test "$(git -C external/versions rev-parse HEAD)" = "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0"
+          python experiments/round-127/compact_boundary.py --root external/versions/version_documents --extension experiments/round-118/cdgfts.so --position-extension experiments/round-125/cdgpos.so --cross-extension experiments/round-126/cdgcross.so --decoder experiments/round-123/decoder.so --out experiments/round-127/ci-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r127-sidecar
+          path: experiments/round-127/ci-results.json
