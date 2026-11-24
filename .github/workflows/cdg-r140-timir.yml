@@ -25,9 +25,9 @@ jobs:
           java-version: '11'
       - run: pip install zstandard==0.25.0 pymonetdb
       - run: |
-          docker pull monetdb/monetdb:latest
-          docker image inspect monetdb/monetdb:latest --format '{{json .RepoDigests}}'
-          docker run -d --name timir-monet -p 127.0.0.1:50000:50000 -e MDB_DB_ADMIN_PASS=monetdb -e MDB_CREATE_DBS=demo monetdb/monetdb:latest
+          docker pull monetdb/monetdb@sha256:a71e6e8c8402beadc51aebf944b465ee5b185c7ae4a9e6808b5d9133ee921786
+          docker image inspect monetdb/monetdb@sha256:a71e6e8c8402beadc51aebf944b465ee5b185c7ae4a9e6808b5d9133ee921786 --format '{{json .RepoDigests}}'
+          docker run -d --name timir-monet -p 127.0.0.1:50000:50000 -e MDB_DB_ADMIN_PASS=monetdb -e MDB_CREATE_DBS=demo monetdb/monetdb@sha256:a71e6e8c8402beadc51aebf944b465ee5b185c7ae4a9e6808b5d9133ee921786
       - run: |
           mkdir -p external/timir external/history
           git -C external/timir init
