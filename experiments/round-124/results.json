@@ -1,0 +1,931 @@
+{
+  "round": 124,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 445,
+  "result": {
+    "revisions": 2504,
+    "vocabulary": 43147,
+    "per_version_vectors": 754641,
+    "coalesced_vectors": 632622,
+    "position_occurrences": 1663050,
+    "layouts": {
+      "version_hybrid4": {
+        "sqlite_bytes": 4456448,
+        "blocks": 2468,
+        "encoded_block_bytes": 3556772,
+        "raw_posting_wire_bytes": 6260614,
+        "interval_records": 754641,
+        "expanded_vectors": 754641,
+        "expanded_positions": 1663050,
+        "patch_records": 0,
+        "patch_raw_bytes_saved": 0,
+        "full_vector_wire_bytes": 3920657,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 0,
+            "unused": 5114
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 899,
+            "page_bytes": 3682304,
+            "payload": 3038880,
+            "unused": 621384
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 134,
+            "page_bytes": 548864,
+            "payload": 544568,
+            "unused": 3760
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 101,
+            "unused": 3927
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 9,
+            "page_bytes": 36864,
+            "payload": 28936,
+            "unused": 476
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 614,
+            "unused": 3348
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "coalesced_direct": {
+        "sqlite_bytes": 6242304,
+        "blocks": 43147,
+        "encoded_block_bytes": 4349878,
+        "raw_posting_wire_bytes": 5354769,
+        "interval_records": 632622,
+        "expanded_vectors": 754641,
+        "expanded_positions": 1663050,
+        "patch_records": 0,
+        "patch_raw_bytes_saved": 0,
+        "full_vector_wire_bytes": 3381042,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6131
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 1185,
+            "page_bytes": 4853760,
+            "payload": 4302811,
+            "unused": 292231
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 126,
+            "page_bytes": 516096,
+            "payload": 512125,
+            "unused": 3467
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 2305,
+            "unused": 624
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 166,
+            "page_bytes": 679936,
+            "payload": 545392,
+            "unused": 4270
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 614,
+            "unused": 3348
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "coalesced_hybrid4": {
+        "sqlite_bytes": 4505600,
+        "blocks": 2120,
+        "encoded_block_bytes": 3321096,
+        "raw_posting_wire_bytes": 5354769,
+        "interval_records": 632622,
+        "expanded_vectors": 754641,
+        "expanded_positions": 1663050,
+        "patch_records": 0,
+        "patch_raw_bytes_saved": 0,
+        "full_vector_wire_bytes": 3381042,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 0,
+            "unused": 4952
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 920,
+            "page_bytes": 3768320,
+            "payload": 2831621,
+            "unused": 916574
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 126,
+            "page_bytes": 516096,
+            "payload": 512125,
+            "unused": 3467
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 82,
+            "unused": 3953
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 8,
+            "page_bytes": 32768,
+            "payload": 24569,
+            "unused": 1796
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 614,
+            "unused": 3348
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "coalesced_hybrid16": {
+        "sqlite_bytes": 4124672,
+        "blocks": 1605,
+        "encoded_block_bytes": 3261399,
+        "raw_posting_wire_bytes": 5354769,
+        "interval_records": 632622,
+        "expanded_vectors": 754641,
+        "expanded_positions": 1663050,
+        "patch_records": 0,
+        "patch_raw_bytes_saved": 0,
+        "full_vector_wire_bytes": 3381042,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 0,
+            "unused": 6945
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 671,
+            "page_bytes": 2748416,
+            "payload": 2132016,
+            "unused": 600758
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 284,
+            "page_bytes": 1163264,
+            "payload": 1146292,
+            "unused": 15836
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 58,
+            "unused": 3991
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 6,
+            "page_bytes": 24576,
+            "payload": 18323,
+            "unused": 1405
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 614,
+            "unused": 3348
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "patch_hybrid4": {
+        "sqlite_bytes": 4472832,
+        "blocks": 2116,
+        "encoded_block_bytes": 3314377,
+        "raw_posting_wire_bytes": 5253448,
+        "interval_records": 632622,
+        "expanded_vectors": 754641,
+        "expanded_positions": 1663050,
+        "patch_records": 23064,
+        "patch_raw_bytes_saved": 101321,
+        "full_vector_wire_bytes": 3381042,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 0,
+            "unused": 4998
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 914,
+            "page_bytes": 3743744,
+            "payload": 2832293,
+            "unused": 891408
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 124,
+            "page_bytes": 507904,
+            "payload": 504660,
+            "unused": 2748
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 83,
+            "unused": 3952
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 8,
+            "page_bytes": 32768,
+            "payload": 24488,
+            "unused": 1889
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 614,
+            "unused": 3348
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "patch_hybrid16": {
+        "sqlite_bytes": 4112384,
+        "blocks": 1605,
+        "encoded_block_bytes": 3255152,
+        "raw_posting_wire_bytes": 5253448,
+        "interval_records": 632622,
+        "expanded_vectors": 754641,
+        "expanded_positions": 1663050,
+        "patch_records": 23064,
+        "patch_raw_bytes_saved": 101321,
+        "full_vector_wire_bytes": 3381042,
+        "dbstat": [
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 0,
+            "unused": 6961
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 669,
+            "page_bytes": 2740224,
+            "payload": 2129210,
+            "unused": 595400
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 283,
+            "page_bytes": 1159168,
+            "payload": 1142854,
+            "unused": 15182
+          },
+          {
+            "name": "segments",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 57,
+            "unused": 3992
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 6,
+            "page_bytes": 24576,
+            "payload": 18325,
+            "unused": 1403
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 614,
+            "unused": 3348
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "native_history": {
+        "sqlite_bytes": 4657152,
+        "logical_postings": null,
+        "build_seconds_exploratory": 0.371778135999989
+      }
+    },
+    "cutoffs": [
+      {
+        "cutoff": 626,
+        "queries": 159,
+        "phrase_queries": 56,
+        "ranked_hits": 772,
+        "unique_phrase_or_term_counts": 125,
+        "positive_native_frequency_pairs": 6466,
+        "max_error": {
+          "version_hybrid4": 0,
+          "coalesced_direct": 0,
+          "coalesced_hybrid4": 0,
+          "coalesced_hybrid16": 0,
+          "patch_hybrid4": 0,
+          "patch_hybrid16": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "version_hybrid4": 1632.302,
+          "coalesced_direct": 1411.426,
+          "coalesced_hybrid4": 1498.537,
+          "coalesced_hybrid16": 1618.87,
+          "patch_hybrid4": 1480.972,
+          "patch_hybrid16": 1627.86,
+          "native_history": 76.31,
+          "native_active": 74.595
+        },
+        "phrase_median_us": {
+          "version_hybrid4": 13114.651,
+          "coalesced_direct": 11772.0995,
+          "coalesced_hybrid4": 11896.152,
+          "coalesced_hybrid16": 12021.173999999999,
+          "patch_hybrid4": 11397.181499999999,
+          "patch_hybrid16": 11650.3115,
+          "native_history": 97.516,
+          "native_active": 100.10050000000001
+        },
+        "p95_us": {
+          "version_hybrid4": 39468.94,
+          "coalesced_direct": 36746.179,
+          "coalesced_hybrid4": 35400.229,
+          "coalesced_hybrid16": 36438.989,
+          "patch_hybrid4": 34289.208,
+          "patch_hybrid16": 34198.905,
+          "native_history": 796.633,
+          "native_active": 360.611
+        }
+      },
+      {
+        "cutoff": 1252,
+        "queries": 159,
+        "phrase_queries": 56,
+        "ranked_hits": 799,
+        "unique_phrase_or_term_counts": 125,
+        "positive_native_frequency_pairs": 7442,
+        "max_error": {
+          "version_hybrid4": 0,
+          "coalesced_direct": 0,
+          "coalesced_hybrid4": 0,
+          "coalesced_hybrid16": 0,
+          "patch_hybrid4": 0,
+          "patch_hybrid16": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "version_hybrid4": 1628.731,
+          "coalesced_direct": 1404.773,
+          "coalesced_hybrid4": 1513.063,
+          "coalesced_hybrid16": 1623.587,
+          "patch_hybrid4": 1464.293,
+          "patch_hybrid16": 1598.744,
+          "native_history": 90.473,
+          "native_active": 68.988
+        },
+        "phrase_median_us": {
+          "version_hybrid4": 13158.919,
+          "coalesced_direct": 11840.7905,
+          "coalesced_hybrid4": 11917.377499999999,
+          "coalesced_hybrid16": 12108.671,
+          "patch_hybrid4": 11441.2125,
+          "patch_hybrid16": 11645.372,
+          "native_history": 105.3905,
+          "native_active": 89.3645
+        },
+        "p95_us": {
+          "version_hybrid4": 38940.246,
+          "coalesced_direct": 36610.397,
+          "coalesced_hybrid4": 36396.608,
+          "coalesced_hybrid16": 35199.391,
+          "patch_hybrid4": 34053.582,
+          "patch_hybrid16": 32849.399,
+          "native_history": 901.579,
+          "native_active": 387.167
+        }
+      },
+      {
+        "cutoff": 1878,
+        "queries": 159,
+        "phrase_queries": 56,
+        "ranked_hits": 807,
+        "unique_phrase_or_term_counts": 125,
+        "positive_native_frequency_pairs": 7870,
+        "max_error": {
+          "version_hybrid4": 0,
+          "coalesced_direct": 0,
+          "coalesced_hybrid4": 0,
+          "coalesced_hybrid16": 0,
+          "patch_hybrid4": 0,
+          "patch_hybrid16": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "version_hybrid4": 1623.232,
+          "coalesced_direct": 1396.326,
+          "coalesced_hybrid4": 1482.056,
+          "coalesced_hybrid16": 1595.152,
+          "patch_hybrid4": 1474.471,
+          "patch_hybrid16": 1610.709,
+          "native_history": 107.081,
+          "native_active": 84.922
+        },
+        "phrase_median_us": {
+          "version_hybrid4": 13112.836,
+          "coalesced_direct": 11684.216,
+          "coalesced_hybrid4": 11778.3945,
+          "coalesced_hybrid16": 11999.601,
+          "patch_hybrid4": 11407.623,
+          "patch_hybrid16": 11601.964,
+          "native_history": 115.62100000000001,
+          "native_active": 104.485
+        },
+        "p95_us": {
+          "version_hybrid4": 39380.729,
+          "coalesced_direct": 35814.936,
+          "coalesced_hybrid4": 35357.714,
+          "coalesced_hybrid16": 36763.744,
+          "patch_hybrid4": 32817.278,
+          "patch_hybrid16": 34321.127,
+          "native_history": 970.964,
+          "native_active": 426.074
+        }
+      },
+      {
+        "cutoff": 2504,
+        "queries": 159,
+        "phrase_queries": 56,
+        "ranked_hits": 826,
+        "unique_phrase_or_term_counts": 125,
+        "positive_native_frequency_pairs": 8156,
+        "max_error": {
+          "version_hybrid4": 0,
+          "coalesced_direct": 0,
+          "coalesced_hybrid4": 0,
+          "coalesced_hybrid16": 0,
+          "patch_hybrid4": 0,
+          "patch_hybrid16": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "version_hybrid4": 1634.427,
+          "coalesced_direct": 1388.191,
+          "coalesced_hybrid4": 1471.737,
+          "coalesced_hybrid16": 1595.135,
+          "patch_hybrid4": 1475.284,
+          "patch_hybrid16": 1608.148,
+          "native_history": 102.88,
+          "native_active": 82.345
+        },
+        "phrase_median_us": {
+          "version_hybrid4": 13611.748,
+          "coalesced_direct": 11782.726999999999,
+          "coalesced_hybrid4": 11786.572499999998,
+          "coalesced_hybrid16": 11977.005000000001,
+          "patch_hybrid4": 11359.0445,
+          "patch_hybrid16": 11924.509,
+          "native_history": 106.10300000000001,
+          "native_active": 101.452
+        },
+        "p95_us": {
+          "version_hybrid4": 39664.026,
+          "coalesced_direct": 36667.09,
+          "coalesced_hybrid4": 35867.11,
+          "coalesced_hybrid16": 36583.04,
+          "patch_hybrid4": 32606.757,
+          "patch_hybrid16": 34457.8,
+          "native_history": 1048.057,
+          "native_active": 450.983
+        }
+      }
+    ],
+    "repetitions": 3
+  },
+  "limits": [
+    "same processed Versions corpus; synthetic order; not independent validation",
+    "exact Unicode61 token positions, quoted phrases and distinct phrase AND/OR only; no NEAR, prefix, NOT, weights or arbitrary grammar",
+    "one-step gap splice patch to latest literal in same term/article; no chain; offline immutable index",
+    "native full-detail FTS5 richer; source bytes and online update/WAL excluded",
+    "Python query decoding versus native FTS5; prepared active maps; warm one-runner timing",
+    "no general novelty claim for gap coding, temporal coalescing or prefix/suffix delta coding"
+  ]
+}
