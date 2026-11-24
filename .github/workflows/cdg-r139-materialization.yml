@@ -1,0 +1,27 @@
+name: CDG R139 query-conditioned materialization
+on:
+  push:
+    branches: ['research/round-139-*']
+    paths: ['experiments/round-139/**','.github/workflows/cdg-r139-materialization.yml','research/rounds/round-139/**']
+  workflow_dispatch:
+jobs:
+  workload:
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [10000, 100000]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2 gdown==5.2.0
+      - run: PYTHONPATH=experiments/round-139 python -m pytest -q experiments/round-139
+      - run: python experiments/round-136/download_source.py --out external/newsedits
+      - run: python experiments/round-139/query_materialization.py --source external/newsedits/ap.db --target ${{ matrix.target }} --out experiments/round-139/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r139-${{ matrix.target }}
+          path: experiments/round-139/ci.json

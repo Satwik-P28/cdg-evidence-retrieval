@@ -1,0 +1,129 @@
+{
+  "round": 134,
+  "corpus": "bips",
+  "manifest_sha256": "4108f00c68c7c62ca43e7d460f79ef137528eb2c956447e57354fb69a164239b",
+  "result": {
+    "policies": {
+      "snapshot": {
+        "sqlite_bytes": 7589888,
+        "pre_vacuum_sqlite_bytes": 7733248,
+        "wal_bytes_before_checkpoint": 63439792,
+        "payload_bytes": 3051292,
+        "depth_counts": {
+          "0": 395
+        },
+        "source_reads": 395,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 1,
+        "activated_bytes": 3051292,
+        "max_activation_relative_to_snapshot_frame": 1,
+        "max_decode_relative_to_nonempty_request": 1,
+        "source_read": {
+          "median_us": 88.344,
+          "p95_us": 267.909,
+          "samples": 395
+        },
+        "total_archive_bytes": 7589888
+      },
+      "bounded_anchor": {
+        "sqlite_bytes": 4780032,
+        "pre_vacuum_sqlite_bytes": 5013504,
+        "wal_bytes_before_checkpoint": 59575232,
+        "payload_bytes": 568414,
+        "depth_counts": {
+          "0": 81,
+          "1": 314
+        },
+        "source_reads": 395,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 1.8559447021823452,
+        "activated_bytes": 3138707,
+        "max_activation_relative_to_snapshot_frame": 1.2077018633540373,
+        "max_decode_relative_to_nonempty_request": 2.0695866729023207,
+        "source_read": {
+          "median_us": 86.782,
+          "p95_us": 281.734,
+          "samples": 395
+        },
+        "total_archive_bytes": 4780032
+      },
+      "git_pack_depth1": {
+        "pack_bytes": 531826,
+        "index_bytes": 12104,
+        "pack_aux_bytes": 1628,
+        "unique_objects": 394,
+        "max_depth": 1,
+        "source_reads": 395,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 1.909995132507857,
+        "activated_bytes": 3327499,
+        "max_activation_relative_to_snapshot_frame": 2.5604597701149427,
+        "max_decode_relative_to_nonempty_request": 3.0444444444444443,
+        "source_read": {
+          "median_us": 126.255,
+          "p95_us": 375.308,
+          "samples": 395
+        },
+        "sqlite_bytes": 3936256,
+        "total_archive_bytes": 4481814
+      },
+      "git_pack_depth8": {
+        "pack_bytes": 473086,
+        "index_bytes": 12104,
+        "pack_aux_bytes": 1628,
+        "unique_objects": 394,
+        "max_depth": 7,
+        "source_reads": 395,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 3.020820549693729,
+        "activated_bytes": 3345756,
+        "max_activation_relative_to_snapshot_frame": 2.703448275862069,
+        "max_decode_relative_to_nonempty_request": 8.315046588755527,
+        "source_read": {
+          "median_us": 103,
+          "p95_us": 365.996,
+          "samples": 395
+        },
+        "sqlite_bytes": 3936256,
+        "total_archive_bytes": 4423074
+      },
+      "git_pack_depth50": {
+        "pack_bytes": 472020,
+        "index_bytes": 12104,
+        "pack_aux_bytes": 1628,
+        "unique_objects": 394,
+        "max_depth": 9,
+        "source_reads": 395,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 3.572268018320412,
+        "activated_bytes": 3349412,
+        "max_activation_relative_to_snapshot_frame": 2.7167816091954022,
+        "max_decode_relative_to_nonempty_request": 10.439372552138213,
+        "source_read": {
+          "median_us": 103.543,
+          "p95_us": 356.233,
+          "samples": 395
+        },
+        "sqlite_bytes": 3936256,
+        "total_archive_bytes": 4422008
+      }
+    },
+    "query_plan_sha256": "f3eacc33de71ca3cde35ca525b1430f0f42d970b71c04229f55e8a3678f5e017",
+    "git_version": "git version 2.56.1",
+    "revisions": 395,
+    "documents": 80
+  },
+  "limitations": [
+    "finalized read-only Git pack, not append/crash parity",
+    "offline cross-document and future-object delta selection allowed",
+    "pack and idx and sidecars counted; generic empty Git repository scaffolding excluded",
+    "entry-byte activation includes pack entry headers; decoded work sums reconstructed blob lengths; excludes delta instruction buffers, caching, page I/O and CPU",
+    "source timings descriptive; Git persistent subprocess IPC versus in-process SQLite",
+    "same retrieval scorer and receipt bodies; not complete TimIR or WikECD comparison"
+  ]
+}

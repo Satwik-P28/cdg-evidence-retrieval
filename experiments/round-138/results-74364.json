@@ -1,0 +1,3577 @@
+{
+  "round": 138,
+  "result": {
+    "revisions": 74364,
+    "documents": 12841,
+    "manifest": "e12f3c397333e78a5ab3394dbb119bbab95985161e53dadf9eef71b6b5508319",
+    "source_sha256": "005cf42b35f6b42700e16bf69d9a9e7cbd541d74faa0cd3b4c5b666e5c319e1e",
+    "query_plan_sha256": "d458e8227abf254e9d0168249177e56972077617fc5dcc87f5bae104ed35cf24",
+    "cuts": [
+      12841,
+      33348,
+      53856,
+      74364
+    ],
+    "queries_per_cutoff": 64,
+    "current_only_drift": [
+      {
+        "cutoff": 12841,
+        "counts": {
+          "queries": 64,
+          "nonempty_old_queries": 59,
+          "rank_order_changed": 55,
+          "revision_order_changed": 59,
+          "score_only_changed": 0,
+          "historical_hits": 473,
+          "same_article_overlap": 275,
+          "same_revision_overlap": 0,
+          "citations": 473,
+          "latest_version_changed": 473,
+          "latest_source_changed": 344,
+          "query_matched_spans": 473,
+          "span_missing_from_latest": 232
+        },
+        "per_query": [
+          {
+            "phrases": [
+              "levada"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "verbalized"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "romano"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 7,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "ulysses"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 4,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 5,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "moises"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 5,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 3,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "audiotapes"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "bluesy"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 4,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 4,
+            "latest_version_changed": 4,
+            "latest_source_changed": 4,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "filibusters"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 9,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 5,
+            "latest_version_changed": 5,
+            "latest_source_changed": 3,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "coupe"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "machinist"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "booing"
+            ],
+            "op": "AND",
+            "old_hits": 8,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 8,
+            "latest_version_changed": 8,
+            "latest_source_changed": 8,
+            "query_matched_spans": 8,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "coiffed"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 3,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "barrages"
+            ],
+            "op": "AND",
+            "old_hits": 6,
+            "new_hits": 5,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 6,
+            "latest_version_changed": 6,
+            "latest_source_changed": 3,
+            "query_matched_spans": 6,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "blurted"
+            ],
+            "op": "AND",
+            "old_hits": 6,
+            "new_hits": 6,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 6,
+            "latest_version_changed": 6,
+            "latest_source_changed": 3,
+            "query_matched_spans": 6,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "ragged"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 4,
+            "latest_version_changed": 4,
+            "latest_source_changed": 4,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "yanks"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 5,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "inspire"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "oman"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "references"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "turin"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 8
+          },
+          {
+            "phrases": [
+              "unfettered"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "factions"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "trunk"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "ecologist"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "binkley"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "intriguing"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "imagination"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "unfinished"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "poachers"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "escalation"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "2040"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "submission"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "lawmaker"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "consumers"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "upcoming"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "inches"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "become"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "dropping"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "miami"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "trapped"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 8
+          },
+          {
+            "phrases": [
+              "springs"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "mission"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "stephen"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "maintaining"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "footage"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "cases"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "wants"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "unit"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 8
+          },
+          {
+            "phrases": [
+              "levada",
+              "unit"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "levada",
+              "unit"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "verbalized",
+              "wants"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "verbalized",
+              "wants"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "romano",
+              "cases"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 1,
+            "latest_version_changed": true,
+            "latest_source_changed": false,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "romano",
+              "cases"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "ulysses",
+              "footage"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "ulysses",
+              "footage"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 8
+          },
+          {
+            "phrases": [
+              "moises",
+              "maintaining"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 1,
+            "latest_version_changed": true,
+            "latest_source_changed": true,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "moises",
+              "maintaining"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "audiotapes",
+              "stephen"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "audiotapes",
+              "stephen"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "bluesy",
+              "mission"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "bluesy",
+              "mission"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "filibusters",
+              "springs"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "filibusters",
+              "springs"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          }
+        ]
+      },
+      {
+        "cutoff": 33348,
+        "counts": {
+          "queries": 64,
+          "nonempty_old_queries": 59,
+          "rank_order_changed": 55,
+          "revision_order_changed": 59,
+          "score_only_changed": 0,
+          "historical_hits": 480,
+          "same_article_overlap": 374,
+          "same_revision_overlap": 154,
+          "citations": 480,
+          "latest_version_changed": 318,
+          "latest_source_changed": 157,
+          "query_matched_spans": 480,
+          "span_missing_from_latest": 109
+        },
+        "per_query": [
+          {
+            "phrases": [
+              "levada"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "verbalized"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "romano"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 7,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "ulysses"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 4,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 2,
+            "citations": 4,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "moises"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 5,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 2,
+            "citations": 5,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "audiotapes"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "bluesy"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 4,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 1,
+            "citations": 4,
+            "latest_version_changed": 3,
+            "latest_source_changed": 3,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "filibusters"
+            ],
+            "op": "AND",
+            "old_hits": 6,
+            "new_hits": 9,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 3,
+            "citations": 6,
+            "latest_version_changed": 3,
+            "latest_source_changed": 0,
+            "query_matched_spans": 6,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "coupe"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "machinist"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 1,
+            "citations": 2,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "booing"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "coiffed"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 3,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "barrages"
+            ],
+            "op": "AND",
+            "old_hits": 6,
+            "new_hits": 5,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 1,
+            "citations": 6,
+            "latest_version_changed": 5,
+            "latest_source_changed": 1,
+            "query_matched_spans": 6,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "blurted"
+            ],
+            "op": "AND",
+            "old_hits": 6,
+            "new_hits": 6,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 1,
+            "citations": 6,
+            "latest_version_changed": 5,
+            "latest_source_changed": 1,
+            "query_matched_spans": 6,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "ragged"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 2,
+            "citations": 5,
+            "latest_version_changed": 3,
+            "latest_source_changed": 3,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "yanks"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 2,
+            "citations": 4,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "inspire"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "oman"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "references"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "turin"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "unfettered"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "factions"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "trunk"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "ecologist"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "binkley"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "intriguing"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "imagination"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "unfinished"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "poachers"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "escalation"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "2040"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "submission"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 1,
+            "citations": 10,
+            "latest_version_changed": 9,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "lawmaker"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "consumers"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "upcoming"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "inches"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 1,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "become"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "dropping"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "miami"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 1,
+            "citations": 10,
+            "latest_version_changed": 9,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "trapped"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "springs"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 1,
+            "citations": 10,
+            "latest_version_changed": 9,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "mission"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "stephen"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 1,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "maintaining"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "footage"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "cases"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "wants"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "unit"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "levada",
+              "unit"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "levada",
+              "unit"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "verbalized",
+              "wants"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "verbalized",
+              "wants"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "romano",
+              "cases"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 1,
+            "citations": 2,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "romano",
+              "cases"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "ulysses",
+              "footage"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "ulysses",
+              "footage"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "moises",
+              "maintaining"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 1,
+            "citations": 3,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "moises",
+              "maintaining"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "audiotapes",
+              "stephen"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "audiotapes",
+              "stephen"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 1,
+            "citations": 10,
+            "latest_version_changed": 9,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "bluesy",
+              "mission"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "bluesy",
+              "mission"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "filibusters",
+              "springs"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "filibusters",
+              "springs"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          }
+        ]
+      },
+      {
+        "cutoff": 53856,
+        "counts": {
+          "queries": 64,
+          "nonempty_old_queries": 59,
+          "rank_order_changed": 46,
+          "revision_order_changed": 51,
+          "score_only_changed": 8,
+          "historical_hits": 477,
+          "same_article_overlap": 410,
+          "same_revision_overlap": 325,
+          "citations": 477,
+          "latest_version_changed": 136,
+          "latest_source_changed": 77,
+          "query_matched_spans": 477,
+          "span_missing_from_latest": 54
+        },
+        "per_query": [
+          {
+            "phrases": [
+              "levada"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 2,
+            "citations": 2,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "verbalized"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 2,
+            "citations": 2,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "romano"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 7,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "ulysses"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 4,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 4,
+            "citations": 4,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "moises"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 5,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 5,
+            "citations": 5,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "audiotapes"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 1,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 1,
+            "citations": 1,
+            "latest_version_changed": false,
+            "latest_source_changed": false,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "bluesy"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 4,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 2,
+            "citations": 4,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "filibusters"
+            ],
+            "op": "AND",
+            "old_hits": 7,
+            "new_hits": 9,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 5,
+            "citations": 7,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 7,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "coupe"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "machinist"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 1,
+            "citations": 1,
+            "latest_version_changed": false,
+            "latest_source_changed": false,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "booing"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "coiffed"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 2,
+            "citations": 3,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "barrages"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 5,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 3,
+            "citations": 5,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "blurted"
+            ],
+            "op": "AND",
+            "old_hits": 6,
+            "new_hits": 6,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 4,
+            "citations": 6,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 6,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "ragged"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 3,
+            "citations": 3,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "yanks"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 3,
+            "citations": 4,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "inspire"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "oman"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "references"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "turin"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "unfettered"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "factions"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "trunk"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "ecologist"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "binkley"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "intriguing"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "imagination"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "unfinished"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "poachers"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "escalation"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "2040"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "submission"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "lawmaker"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "consumers"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "upcoming"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "inches"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "become"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "dropping"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "miami"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "trapped"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "springs"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "mission"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "stephen"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "maintaining"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "footage"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "cases"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "wants"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "unit"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "levada",
+              "unit"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "levada",
+              "unit"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "verbalized",
+              "wants"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 2,
+            "citations": 2,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "verbalized",
+              "wants"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "romano",
+              "cases"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 2,
+            "citations": 3,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "romano",
+              "cases"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "ulysses",
+              "footage"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "ulysses",
+              "footage"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "moises",
+              "maintaining"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 3,
+            "citations": 3,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "moises",
+              "maintaining"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "audiotapes",
+              "stephen"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "audiotapes",
+              "stephen"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "bluesy",
+              "mission"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "bluesy",
+              "mission"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "filibusters",
+              "springs"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "filibusters",
+              "springs"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          }
+        ]
+      }
+    ],
+    "policies": {
+      "snapshot": {
+        "total_archive_bytes": 312521715,
+        "sqlite_bytes": 163151872,
+        "sidecar_bytes": 149369843,
+        "payload_bytes": 149369811,
+        "source_reads": 74364,
+        "rank_checks": 256,
+        "receipt_replays": 256,
+        "extractive_packets": 1903,
+        "max_score_error": 0,
+        "mean_decode_ratio": 1,
+        "max_decode_ratio": 1,
+        "max_activation_ratio": 1,
+        "activated_bytes": 149369811,
+        "append": {
+          "median_us": 785.512,
+          "p95_us": 2168.899,
+          "samples": 74364
+        },
+        "receipt": {
+          "median_us": 38578.888,
+          "p95_us": 42135.922,
+          "samples": 256
+        },
+        "read": {
+          "median_us": 20.631,
+          "p95_us": 30.675,
+          "samples": 74364
+        }
+      },
+      "bounded_anchor": {
+        "total_archive_bytes": 223142857,
+        "sqlite_bytes": 163160064,
+        "sidecar_bytes": 59982793,
+        "payload_bytes": 59982761,
+        "source_reads": 74364,
+        "rank_checks": 256,
+        "receipt_replays": 256,
+        "extractive_packets": 1903,
+        "max_score_error": 0,
+        "mean_decode_ratio": 1.6428339389241737,
+        "max_decode_ratio": 2.4876543209876543,
+        "max_activation_ratio": 1.5,
+        "activated_bytes": 157263276,
+        "append": {
+          "median_us": 863.1855,
+          "p95_us": 2193.245,
+          "samples": 74364
+        },
+        "receipt": {
+          "median_us": 33445.448000000004,
+          "p95_us": 36607.965,
+          "samples": 256
+        },
+        "read": {
+          "median_us": 32.117,
+          "p95_us": 47.099,
+          "samples": 74364
+        }
+      }
+    },
+    "limitations": [
+      "derived text, synthetic round-robin global order, no original publication timeline",
+      "query probes selected from initial snapshot token frequencies, no human relevance labels",
+      "extractive citation packets only; no generated answers, semantic correctness or hallucination claims",
+      "current-only baseline resolves latest version by stable article ID; not a content-addressed archive",
+      "same hardware per job, sequential policy builds; timing descriptive, not cold I/O"
+    ]
+  }
+}

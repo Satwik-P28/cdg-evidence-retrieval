@@ -1,0 +1,143 @@
+{
+  "round": 135,
+  "corpus": "cpython",
+  "manifest_sha256": "b385e695dd75995df21ee467c3c2bec67415a27300446c0bffdc24c3e76eac83",
+  "result": {
+    "policies": {
+      "snapshot": {
+        "sqlite_bytes": 9166848,
+        "pre_vacuum_sqlite_bytes": 9736192,
+        "wal_bytes_before_checkpoint": 58969592,
+        "payload_bytes": 4406056,
+        "depth_counts": {
+          "0": 355
+        },
+        "source_reads": 355,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 1,
+        "activated_bytes": 4406056,
+        "max_activation_relative_to_snapshot_frame": 1,
+        "max_decode_relative_to_nonempty_request": 1,
+        "source_read": {
+          "median_us": 131.353,
+          "p95_us": 359.218,
+          "samples": 355
+        },
+        "total_archive_bytes": 9166848
+      },
+      "bounded_anchor": {
+        "sqlite_bytes": 5210112,
+        "pre_vacuum_sqlite_bytes": 5828608,
+        "wal_bytes_before_checkpoint": 54322232,
+        "payload_bytes": 745283,
+        "depth_counts": {
+          "0": 80,
+          "1": 275
+        },
+        "source_reads": 355,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 1.8556519159425797,
+        "activated_bytes": 4519011,
+        "max_activation_relative_to_snapshot_frame": 1.1583367057871308,
+        "max_decode_relative_to_nonempty_request": 2.036047234307023,
+        "source_read": {
+          "median_us": 141.048,
+          "p95_us": 397.074,
+          "samples": 355
+        },
+        "total_archive_bytes": 5210112
+      },
+      "snapshot_sidecar": {
+        "source_reads": 355,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 1,
+        "activated_bytes": 4406056,
+        "max_activation_relative_to_snapshot_frame": 1,
+        "max_decode_relative_to_nonempty_request": 1,
+        "source_read": {
+          "median_us": 90.483,
+          "p95_us": 270.498,
+          "samples": 355
+        },
+        "sqlite_bytes": 4194304,
+        "sidecar_bytes": 4406056,
+        "total_archive_bytes": 8600360
+      },
+      "bounded_anchor_sidecar": {
+        "source_reads": 355,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 1.8556519159425797,
+        "activated_bytes": 4519011,
+        "max_activation_relative_to_snapshot_frame": 1.1583367057871308,
+        "max_decode_relative_to_nonempty_request": 2.036047234307023,
+        "source_read": {
+          "median_us": 121.358,
+          "p95_us": 376.715,
+          "samples": 355
+        },
+        "sqlite_bytes": 4194304,
+        "sidecar_bytes": 745283,
+        "total_archive_bytes": 4939587
+      },
+      "wiki_default": {
+        "max_depth": 0,
+        "anchors": 355,
+        "serialized_decoded_bytes_all_recoveries": 2825194875,
+        "max_serialized_decode_ratio": 55.97583069364536,
+        "source_reads": 355,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 1,
+        "activated_bytes": 102200840,
+        "max_activation_relative_to_snapshot_frame": 53.56555128908393,
+        "max_decode_relative_to_nonempty_request": 1,
+        "source_read": {
+          "median_us": 2689.136,
+          "p95_us": 45180.523,
+          "samples": 355
+        },
+        "logical_decode_metric": "partition prefix source-volume proxy; gzip JSON inflation separately measured",
+        "sqlite_bytes": 4194304,
+        "sidecar_bytes": 7524784,
+        "total_archive_bytes": 11719088
+      },
+      "wiki_large_budget": {
+        "max_depth": 0,
+        "anchors": 355,
+        "serialized_decoded_bytes_all_recoveries": 2825201730,
+        "max_serialized_decode_ratio": 55.97585493567781,
+        "source_reads": 355,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "decode_amplification": 1,
+        "activated_bytes": 102203635,
+        "max_activation_relative_to_snapshot_frame": 53.56582556226001,
+        "max_decode_relative_to_nonempty_request": 1,
+        "source_read": {
+          "median_us": 2622.008,
+          "p95_us": 44597.912,
+          "samples": 355
+        },
+        "logical_decode_metric": "partition prefix source-volume proxy; gzip JSON inflation separately measured",
+        "sqlite_bytes": 4194304,
+        "sidecar_bytes": 7525332,
+        "total_archive_bytes": 11719636
+      }
+    },
+    "query_plan_sha256": "8a4f7f1b9ca9ccc52aa77a6f1d8b4d7c6b4f741156fa6e27a280d5d96ee95858",
+    "wikecd_version": "0.1.1",
+    "revisions": 355,
+    "documents": 80
+  },
+  "limits": [
+    "all sidecar representations finalized/read-only; no append/crash parity",
+    "WikECD native gzip JSON serializer and native retrieve_range, default and larger heuristic budget",
+    "WikECD source-volume proxy is not measured decoder byte traffic; complete gzip object activation and JSON inflation separately charged",
+    "timing includes Python wrappers and full per-article load; no cached WikECD variant",
+    "same lexical ranking and evidence contract; no claim of identical native WikECD ranking functionality"
+  ]
+}

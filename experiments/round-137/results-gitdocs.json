@@ -1,0 +1,120 @@
+{
+  "round": 137,
+  "corpus": "gitdocs",
+  "manifest_sha256": "bc37ab840d0cdc16753cb1bf3945657fe85de671cefe13f2376d8409241d6404",
+  "result": {
+    "policies": {
+      "snapshot": {
+        "sqlite_bytes": 4186112,
+        "sidecar_bytes": 4176449,
+        "payload_bytes": 4176417,
+        "total_archive_bytes": 8362561,
+        "append": {
+          "median_us": 2063.23,
+          "p95_us": 4622.753,
+          "samples": 667
+        },
+        "read": {
+          "median_us": 27.615,
+          "p95_us": 74.701,
+          "samples": 667
+        },
+        "activated_bytes": 4176417,
+        "decode_amplification": 1,
+        "max_activation": 1,
+        "max_decode": 1,
+        "source_reads": 667,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "pinned_checks": 80
+      },
+      "bounded_anchor": {
+        "sqlite_bytes": 4186112,
+        "sidecar_bytes": 884827,
+        "payload_bytes": 884795,
+        "total_archive_bytes": 5070939,
+        "append": {
+          "median_us": 1805.596,
+          "p95_us": 3884.217,
+          "samples": 667
+        },
+        "read": {
+          "median_us": 44.517,
+          "p95_us": 119.872,
+          "samples": 667
+        },
+        "activated_bytes": 4296833,
+        "decode_amplification": 1.820323058288002,
+        "max_activation": 1.2603363700070076,
+        "max_decode": 2.1584238037796544,
+        "source_reads": 667,
+        "rank_checks": 320,
+        "max_score_error": 0,
+        "pinned_checks": 80
+      }
+    },
+    "query_plan_sha256": "b7ee4514ba5d225fbf63ae551cdca9b1e237abf2b50e515db112be2e2186c59f",
+    "crash_suite": [
+      {
+        "stage": "before_write",
+        "visible_generations": 1,
+        "orphan_bytes": 0,
+        "retry_pass": true
+      },
+      {
+        "stage": "partial_write",
+        "visible_generations": 1,
+        "orphan_bytes": 13,
+        "retry_pass": true
+      },
+      {
+        "stage": "written",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "synced",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "source",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "index",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "ledger",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "meta",
+        "visible_generations": 1,
+        "orphan_bytes": 26,
+        "retry_pass": true
+      },
+      {
+        "stage": "commit",
+        "visible_generations": 2,
+        "orphan_bytes": 0,
+        "retry_pass": true
+      }
+    ]
+  },
+  "limits": [
+    "process death only; no measured power-loss durability",
+    "cooperating SQLite-serialized local writers, immutable committed prefix, no compaction",
+    "explicit fsync ordering; file creation crash and filesystem faults not modeled",
+    "revision-level atomicity, not whole Git commit"
+  ]
+}

@@ -1,0 +1,28 @@
+name: CDG R138 integrated NewsEdits historical retrieval
+on:
+  push:
+    branches: ['research/round-138-*']
+    paths: ['experiments/round-138/**','.github/workflows/cdg-r138-news.yml','research/rounds/round-138/**']
+  workflow_dispatch:
+jobs:
+  news:
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [10000, 100000]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2 gdown==5.2.0
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-118/cdgfts.c -o experiments/round-118/cdgfts.so
+      - run: PYTHONPATH=experiments/round-138 python -m pytest -q experiments/round-138
+      - run: python experiments/round-136/download_source.py --out external/newsedits
+      - run: python experiments/round-138/news_retrieval.py --source external/newsedits/ap.db --target ${{ matrix.target }} --extension experiments/round-118/cdgfts.so --out experiments/round-138/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r138-news-${{ matrix.target }}
+          path: experiments/round-138/ci.json

@@ -1,0 +1,40 @@
+name: CDG R133 restricted offline oracle
+on:
+  push:
+    branches: ['research/round-133-*']
+    paths: ['experiments/round-133/**','.github/workflows/cdg-r133-oracle.yml','research/rounds/round-133/**']
+  workflow_dispatch:
+jobs:
+  oracle:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {corpus: gitdocs, repository: git/git, pin: 777489f9e09c8d0dd6b12f9d90de6376330577a2}
+          - {corpus: k8sdocs, repository: kubernetes/website, pin: cd5dc586db87bc80666a54ce7ba113e19b062b91}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2
+      - run: PYTHONPATH=experiments/round-133 python -m pytest -q experiments/round-133
+      - name: Fetch pinned history
+        env:
+          UPSTREAM: ${{ matrix.repository }}
+          PIN: ${{ matrix.pin }}
+        run: |
+          mkdir -p external/history
+          git -C external/history init
+          git -C external/history remote add origin "https://github.com/$UPSTREAM.git"
+          git -C external/history config remote.origin.promisor true
+          git -C external/history config remote.origin.partialclonefilter blob:none
+          git -C external/history -c protocol.version=2 fetch --filter=blob:none --no-tags --depth=20000 origin "$PIN"
+          test "$(git -C external/history rev-parse FETCH_HEAD)" = "$PIN"
+      - run: python experiments/round-133/anchor_oracle.py --root external/history --corpus ${{ matrix.corpus }} --out experiments/round-133/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r133-${{ matrix.corpus }}
+          path: experiments/round-133/ci.json
