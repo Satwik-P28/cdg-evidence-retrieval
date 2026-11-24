@@ -1,0 +1,9 @@
+# R132 fresh histories and scaling protocol
+
+Status: implementation only. No new measurements yet.
+
+Fixed pins before examining source compression outcomes: git/git v2.47.0 (777489f9e09c8d0dd6b12f9d90de6376330577a2), kubernetes/website main commit cd5dc586db87bc80666a54ce7ba113e19b062b91. Git top-level Documentation .txt/.adoc files and English Kubernetes docs Markdown excluding _index.md. Hash selection from each baseline snapshot with new R132 salt. Two sizes per corpus: 400 path-touch commits / 80 requested files and 800 / 160. Report excluded paths; no replacement. Two separately scheduled large jobs, seeds 132 and 133, change build and read order but not source or query plan. Small versus large cohorts differ in baseline time, composition and history length; descriptive scale test, not pure controlled size extrapolation. No latency confidence intervals from two runners.
+
+Seven fixed integrated policies: snapshot, prev1, prev8, anchor8, frozen four-candidate policy, latest-only literal anchor, and tighter 1.1x activation. All use R131/R129 retrieval contract and exact source, ranking, receipt and process-death checks. Record machine/software environment and SHA256 of ordered source encoding decisions including payload digests. This distinguishes matching aggregate metrics from identical encodings. Cross-run manifests, query plans, deterministic costs and encoding hashes must agree before pooling. Timing variation is reported separately.
+
+The primary policy remains the original frozen bounded_anchor. Latest-only and tight activation are exploratory candidates preselected after R131, now checked on new repositories. Do not change thresholds based on R132 then describe R132 as held out. VCDIFF remains source-only; no universal codec superiority.

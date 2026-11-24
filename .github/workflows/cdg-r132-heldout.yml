@@ -1,0 +1,49 @@
+name: CDG R132 fresh histories and scaling
+on:
+  push:
+    branches: ['research/round-132-*']
+    paths: ['experiments/round-132/**','.github/workflows/cdg-r132-heldout.yml','research/rounds/round-132/**']
+  pull_request:
+    paths: ['experiments/round-132/**','.github/workflows/cdg-r132-heldout.yml','research/rounds/round-132/**']
+  workflow_dispatch:
+jobs:
+  corpus:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {corpus: gitdocs, repository: git/git, pin: 777489f9e09c8d0dd6b12f9d90de6376330577a2, window: 400, cohort: 80, seed: 132}
+          - {corpus: gitdocs, repository: git/git, pin: 777489f9e09c8d0dd6b12f9d90de6376330577a2, window: 800, cohort: 160, seed: 132}
+          - {corpus: gitdocs, repository: git/git, pin: 777489f9e09c8d0dd6b12f9d90de6376330577a2, window: 800, cohort: 160, seed: 133}
+          - {corpus: k8sdocs, repository: kubernetes/website, pin: cd5dc586db87bc80666a54ce7ba113e19b062b91, window: 400, cohort: 80, seed: 132}
+          - {corpus: k8sdocs, repository: kubernetes/website, pin: cd5dc586db87bc80666a54ce7ba113e19b062b91, window: 800, cohort: 160, seed: 132}
+          - {corpus: k8sdocs, repository: kubernetes/website, pin: cd5dc586db87bc80666a54ce7ba113e19b062b91, window: 800, cohort: 160, seed: 133}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-118/cdgfts.c -o experiments/round-118/cdgfts.so
+      - run: CDG_FTS_EXTENSION="$PWD/experiments/round-118/cdgfts.so" PYTHONPATH=experiments/round-132 python -m pytest -q experiments/round-132
+      - name: Fetch pinned history
+        env:
+          UPSTREAM: ${{ matrix.repository }}
+          PIN: ${{ matrix.pin }}
+        run: |
+          mkdir -p external/history
+          git -C external/history init
+          git -C external/history remote add origin "https://github.com/$UPSTREAM.git"
+          git -C external/history config remote.origin.promisor true
+          git -C external/history config remote.origin.partialclonefilter blob:none
+          git -C external/history -c protocol.version=2 fetch --filter=blob:none --no-tags --depth=20000 origin "$PIN"
+          test "$(git -C external/history rev-parse FETCH_HEAD)" = "$PIN"
+      - name: Fresh matched archive evaluation
+        run: python experiments/round-132/heldout_archive.py --root external/history --corpus ${{ matrix.corpus }} --window ${{ matrix.window }} --cohort ${{ matrix.cohort }} --seed ${{ matrix.seed }} --extension experiments/round-118/cdgfts.so --out experiments/round-132/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r132-${{ matrix.corpus }}-${{ matrix.window }}-${{ matrix.seed }}
+          path: experiments/round-132/ci.json
