@@ -1,0 +1,9 @@
+# R142: native Git pack at NewsEdits scale
+
+Status: implemented, measurements pending.
+
+Extend R134/R137/R138 to frozen nested AP cohorts (10,009 and 74,364 derived revisions). Reproduce exact source manifest, query hash, snapshot and CDG payload and complete archive sizes from R138. Native Git hash-object --stdin-paths batches real blob writes; use R134 actual pack-objects, compression 9, window 10, depths 1/8/50, one thread, no reuse and path hints. Permit offline cross-document and future-object delta selection and exact-object deduplication. Charge .pack/.idx/sidecars and compacted identical retrieval/provenance database with per-revision SHA1 pointer; exclude scratch loose objects and generic empty repo scaffolding. Record exact duplicates.
+
+Additional layout controls coalesce identical encoded frames for both snapshot and CDG, retaining per-revision dependency metadata and byte-for-byte frame equality checks. They are finalized read-only archives, not valid append-mode layouts (offsets need not form a contiguous generation sequence); do not use transactional writer or contiguous audit on them. Their reconstruction cost metrics must match the original arms exactly. Charge all pointer metadata, header, state and frame bytes.
+
+All seven arms use identical historical positional ranking, native active snapshot oracles, receipt bodies, and exact source bytes. Randomized source read order fixed across arms; timing descriptive with differing IPC. Validate each source read and 256 rank checks per arm. No claim of equal incremental/crash guarantees for Git or coalesced representations. No semantic QA result. Report losses rather than tune post hoc.
