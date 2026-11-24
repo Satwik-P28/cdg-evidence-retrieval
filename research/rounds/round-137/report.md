@@ -1,0 +1,9 @@
+# R137: commit-last transactional packed source storage
+
+Status: implementation and protocol; no measurements yet.
+
+A single SQLite BEGIN IMMEDIATE serializes cooperating writers. File header identity and committed end offset are stored in SQLite. Under the lock, reject a truncated committed prefix and truncate only orphan suffix bytes. Append the new frame, fsync the file, then write source pointer, revision, origin, FTS5, ledger and end offset in one SQLite FULL-synchronous transaction. Publish by SQLite commit. Never truncate on ambiguous commit error; resolve visibility under a fresh writer transaction. Readers use explicit SQLite snapshots and pread into the immutable committed prefix; old readers never reference orphan suffixes. No global monkeypatch in the packed reader.
+
+Process-death audit at before-write, partial-write, written, synced, source, index, ledger, meta and commit. Verify pinned readers, exact generation visibility, complete audits, recovery/truncation and retry. Additional corruption tests for wrong file identity and committed truncation. Validate four frozen cohorts with identical snapshot and bounded-anchor payload sizes, historical native BM25 oracle and identical receipt bodies. Compare total bytes including header and state metadata, append latency including fsync, read work and source exactness. Two matched transactional packed arms; prior inline timings are descriptive cross-run comparisons only.
+
+Assumptions: local Linux filesystem, cooperating writers, immutable committed prefix, correctly implemented fsync and SQLite durability, no external file mutation, no compaction. Crash during initial archive creation, actual power loss, malicious modifications, filesystem corruption and concurrent noncooperating writers are not proven. Revision atomicity only. Before making a power-loss claim, need fault-injection filesystem tests. No results yet.
