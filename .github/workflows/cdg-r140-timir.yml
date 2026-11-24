@@ -1,0 +1,70 @@
+name: CDG R140 TimIR native component reproduction
+on:
+  push:
+    branches: ['research/round-140-*']
+    paths: ['experiments/round-140/**','.github/workflows/cdg-r140-timir.yml','research/rounds/round-140/**']
+  workflow_dispatch:
+jobs:
+  comparison:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {corpus: bips, repository: bitcoin/bips, pin: 0d99ffd39fdaf75209c43b1f8ec3fbbc23f10814}
+          - {corpus: gitdocs, repository: git/git, pin: 777489f9e09c8d0dd6b12f9d90de6376330577a2}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+      - run: pip install zstandard==0.25.0 pymonetdb
+      - run: |
+          docker pull monetdb/monetdb:latest
+          docker image inspect monetdb/monetdb:latest --format '{{json .RepoDigests}}'
+          docker run -d --name timir-monet -p 127.0.0.1:50000:50000 -e MDB_DB_ADMIN_PASS=monetdb -e MDB_CREATE_DBS=demo monetdb/monetdb:latest
+      - run: |
+          mkdir -p external/timir external/history
+          git -C external/timir init
+          git -C external/timir remote add origin https://github.com/MoritzStaudinger/TimIR.git
+          git -C external/timir fetch --depth=1 origin 90df24ba022f18280c30ffcf68fcbd0f4b7685a6
+          git -C external/timir checkout --detach FETCH_HEAD
+          mvn -B dependency:get -Dartifact=org.apache.lucene:lucene-core:8.4.1
+          mvn -B dependency:get -Dartifact=org.apache.lucene:lucene-analyzers-common:8.4.1
+      - env:
+          UPSTREAM: ${{ matrix.repository }}
+          PIN: ${{ matrix.pin }}
+        run: |
+          git -C external/history init
+          git -C external/history remote add origin "https://github.com/$UPSTREAM.git"
+          git -C external/history config remote.origin.promisor true
+          git -C external/history config remote.origin.partialclonefilter blob:none
+          git -C external/history -c protocol.version=2 fetch --filter=blob:none --no-tags --depth=20000 origin "$PIN"
+          test "$(git -C external/history rev-parse FETCH_HEAD)" = "$PIN"
+      - run: |
+          CP="$HOME/.m2/repository/org/apache/lucene/lucene-core/8.4.1/lucene-core-8.4.1.jar:$HOME/.m2/repository/org/apache/lucene/lucene-analyzers-common/8.4.1/lucene-analyzers-common-8.4.1.jar"
+          python experiments/round-140/timir_component.py --root external/history --corpus ${{ matrix.corpus }} --upstream external/timir --classpath "$CP" --out experiments/round-140/ci.json
+      - if: always()
+        run: docker logs timir-monet --tail 100
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r140-${{ matrix.corpus }}
+          path: experiments/round-140/ci.json
+  upstream-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+      - run: |
+          git clone https://github.com/MoritzStaudinger/TimIR.git upstream
+          git -C upstream checkout --detach 90df24ba022f18280c30ffcf68fcbd0f4b7685a6
+          cd upstream/backend
+          mvn -B -DskipTests package
