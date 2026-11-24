@@ -1,0 +1,7 @@
+# R125: Fragment-relative positional index
+
+Status: pending original-source CI.
+
+[He and Suel, Optimizing Positional Index Structures for Versioned Document Collections (SIGIR 2012)](https://research.engineering.nyu.edu/~suel/papers/frag.pdf), sections 2.2–4.2, establishes fragment-based reuse, relative positions and version/fragment application mapping. Their scheme includes optimized partitioning and separate nonpositional candidate ranking. Our comparison is a deliberately simpler 2MIN-inspired strict local-minimum hash partitioning with maximum-length fallback, compared to fixed 32-token chunks and optional exact application-interval coalescing. It does not reproduce their full optimizer, OPT-PFD codec or reranking system.
+
+Index unique normalized Unicode61 token fragments in native contentless positional FTS5. Reconstruct exact global token positions by joining fragment occurrences to active version applications and adding their offsets. Count phrases across fragment boundaries, including overlaps and repeated terms, using positional intersections. Independent source-derived token-vector reconstruction and exhaustive persisted fragment re-tokenization audit are required. Match R124 query plan, compare native historical and native active-only controls, preserve metadata and all original token positions; no original byte-exact source payload in index. Four cutoffs, same corpus, randomized warm rank timings; exact phrase counts rather than top-k TF candidate truncation. No online maintenance, independent corpus or novel fragment indexing claim.
