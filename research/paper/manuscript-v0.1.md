@@ -57,6 +57,7 @@ storage or proof of power-loss durability. Define supported query grammar.
   larger than native.
 - R127: hot4 4,947,968 B vs native 4,657,152 B; common-term median 681 vs
   1474 us, overall p95 832 vs 1604 us; worse overall median/phrase latency.
+- R128: proposal-prioritized safe block scoring skips 68.79% of final candidate scores but is slower including bound construction. Prior-snapshot proposals do not improve the bound-ordered control. No compressed reads avoided or diffusion execution measured.
 Every figure must link its source report/JSON; avoid treating repeated
 queries, revisions, layouts or CI runners as independent trials.
 
@@ -86,3 +87,20 @@ tuning makes it development data. All index-only rounds exclude source
 payload; no cross-round multiplication of speedups or compression ratios.
 Restricted query grammar, no claim of general FTS5 parity. Exact source
 bytes and lexical ranks do not establish semantic truth.
+
+
+## Evidence pointers
+
+- [R115 report](../rounds/round-115/report.md), [R115 raw results](../../experiments/round-115/results.json)
+- [R119 report](../rounds/round-119/report.md), [R119 raw results](../../experiments/round-119/results.json)
+- [R120 report](../rounds/round-120/report.md), [R120 raw results](../../experiments/round-120/results.json)
+- [R123 report](../rounds/round-123/report.md), [R123 raw results](../../experiments/round-123/results.json)
+- [R124 report](../rounds/round-124/report.md), [R124 raw results](../../experiments/round-124/results.json)
+- [R125 report](../rounds/round-125/report.md), [R125 raw results](../../experiments/round-125/results.json)
+- [R126 report](../rounds/round-126/report.md), [R126 raw results](../../experiments/round-126/results.json)
+- [R127 report](../rounds/round-127/report.md), [R127 raw results](../../experiments/round-127/results.json)
+- [R128 report](../rounds/round-128/report.md), [R128 raw results](../../experiments/round-128/results.json)
+
+## Submission gate
+
+Freeze R127/R128 exploration as development evidence. Select and pin two independent revision-history corpora, record a fixed workload and parameter budget before evaluating, and compare the integrated bounded-anchor/native-FTS5 system to full snapshots/native-FTS5. Run independent exact source/replay checks. If compression improvements do not survive full accounting, present the measured negative tradeoff rather than promote an unvalidated method. No new LLM training in this paper.

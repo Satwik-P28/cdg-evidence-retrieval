@@ -49,3 +49,8 @@ native positional FTS5 remains default. Validate on independent genuine
 revision histories and charge all source/index/mapping/WAL bytes before
 claiming end-to-end storage or speed improvement. No hallucination
 reduction claim. No further tuning on Versions as primary evaluation.
+
+
+## R128 outcome
+
+Rank-stage experiment passed exact comparisons (636 per method). On the final cutoff, dynamic block bounds skip 68.79% of candidate scoring, but bound construction makes median rank-stage latency 1.94x slower than exhaustive sorting. Prior-cutoff proposals further worsen median/p95. No compressed data activation was avoided or measured. Defer speculative scheduling until an inexpensive persisted bound scheme is evaluated on independent data. [Report](rounds/round-128/report.md).

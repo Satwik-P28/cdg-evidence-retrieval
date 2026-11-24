@@ -1,0 +1,373 @@
+{
+  "round": 128,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 445,
+  "result": {
+    "revisions": 2504,
+    "vocabulary": 43147,
+    "cutoffs": [
+      {
+        "cutoff": 626,
+        "queries": 159,
+        "ranked_hits": 772,
+        "previous_proposals": 0,
+        "max_error": {
+          "heap": 0,
+          "bound16": 0,
+          "bound64": 0,
+          "draft16": 0,
+          "draft64": 0,
+          "bad_draft16": 0
+        },
+        "work": {
+          "heap": {
+            "candidates": 10466,
+            "scored": 10466,
+            "pruned": 0,
+            "blocks": 0,
+            "pruned_blocks": 0,
+            "draft_scored": 0,
+            "bound_terms": 0
+          },
+          "bound16": {
+            "candidates": 10466,
+            "scored": 3540,
+            "pruned": 6926,
+            "blocks": 1453,
+            "pruned_blocks": 810,
+            "draft_scored": 0,
+            "bound_terms": 7171
+          },
+          "bound64": {
+            "candidates": 10466,
+            "scored": 7592,
+            "pruned": 2874,
+            "blocks": 541,
+            "pruned_blocks": 93,
+            "draft_scored": 0,
+            "bound_terms": 4076
+          },
+          "draft16": {
+            "candidates": 10466,
+            "scored": 3540,
+            "pruned": 6926,
+            "blocks": 1453,
+            "pruned_blocks": 810,
+            "draft_scored": 0,
+            "bound_terms": 7171
+          },
+          "draft64": {
+            "candidates": 10466,
+            "scored": 7592,
+            "pruned": 2874,
+            "blocks": 541,
+            "pruned_blocks": 93,
+            "draft_scored": 0,
+            "bound_terms": 4076
+          },
+          "bad_draft16": {
+            "candidates": 10466,
+            "scored": 3659,
+            "pruned": 6807,
+            "blocks": 1453,
+            "pruned_blocks": 807,
+            "draft_scored": 164,
+            "bound_terms": 7171
+          }
+        },
+        "median_us": {
+          "sort": 6.625,
+          "heap": 7.059,
+          "bound16": 12.806,
+          "bound64": 11.831,
+          "draft16": 12.867,
+          "draft64": 12.752,
+          "bad_draft16": 13.762
+        },
+        "p95_us": {
+          "sort": 307.256,
+          "heap": 356.367,
+          "bound16": 296.663,
+          "bound64": 354.115,
+          "draft16": 314.951,
+          "draft64": 373.339,
+          "bad_draft16": 318.269
+        }
+      },
+      {
+        "cutoff": 1252,
+        "queries": 159,
+        "ranked_hits": 799,
+        "previous_proposals": 159,
+        "max_error": {
+          "heap": 0,
+          "bound16": 0,
+          "bound64": 0,
+          "draft16": 0,
+          "draft64": 0,
+          "bad_draft16": 0
+        },
+        "work": {
+          "heap": {
+            "candidates": 11667,
+            "scored": 11667,
+            "pruned": 0,
+            "blocks": 0,
+            "pruned_blocks": 0,
+            "draft_scored": 0,
+            "bound_terms": 0
+          },
+          "bound16": {
+            "candidates": 11667,
+            "scored": 3925,
+            "pruned": 7742,
+            "blocks": 1563,
+            "pruned_blocks": 896,
+            "draft_scored": 0,
+            "bound_terms": 8291
+          },
+          "bound64": {
+            "candidates": 11667,
+            "scored": 8647,
+            "pruned": 3020,
+            "blocks": 559,
+            "pruned_blocks": 105,
+            "draft_scored": 0,
+            "bound_terms": 4953
+          },
+          "draft16": {
+            "candidates": 11667,
+            "scored": 4035,
+            "pruned": 7632,
+            "blocks": 1563,
+            "pruned_blocks": 880,
+            "draft_scored": 688,
+            "bound_terms": 8291
+          },
+          "draft64": {
+            "candidates": 11667,
+            "scored": 8693,
+            "pruned": 2974,
+            "blocks": 559,
+            "pruned_blocks": 104,
+            "draft_scored": 688,
+            "bound_terms": 4953
+          },
+          "bad_draft16": {
+            "candidates": 11667,
+            "scored": 4134,
+            "pruned": 7533,
+            "blocks": 1563,
+            "pruned_blocks": 891,
+            "draft_scored": 256,
+            "bound_terms": 8291
+          }
+        },
+        "median_us": {
+          "sort": 7.237,
+          "heap": 8.288,
+          "bound16": 14.909,
+          "bound64": 14.981,
+          "draft16": 16.024,
+          "draft64": 15.387,
+          "bad_draft16": 16.461
+        },
+        "p95_us": {
+          "sort": 313.465,
+          "heap": 364.305,
+          "bound16": 320.13,
+          "bound64": 398.13,
+          "draft16": 343.101,
+          "draft64": 413.733,
+          "bad_draft16": 347.679
+        }
+      },
+      {
+        "cutoff": 1878,
+        "queries": 159,
+        "ranked_hits": 807,
+        "previous_proposals": 159,
+        "max_error": {
+          "heap": 0,
+          "bound16": 0,
+          "bound64": 0,
+          "draft16": 0,
+          "draft64": 0,
+          "bad_draft16": 0
+        },
+        "work": {
+          "heap": {
+            "candidates": 12166,
+            "scored": 12166,
+            "pruned": 0,
+            "blocks": 0,
+            "pruned_blocks": 0,
+            "draft_scored": 0,
+            "bound_terms": 0
+          },
+          "bound16": {
+            "candidates": 12166,
+            "scored": 3817,
+            "pruned": 8349,
+            "blocks": 1613,
+            "pruned_blocks": 963,
+            "draft_scored": 0,
+            "bound_terms": 8786
+          },
+          "bound64": {
+            "candidates": 12166,
+            "scored": 9242,
+            "pruned": 2924,
+            "blocks": 565,
+            "pruned_blocks": 113,
+            "draft_scored": 0,
+            "bound_terms": 5366
+          },
+          "draft16": {
+            "candidates": 12166,
+            "scored": 3936,
+            "pruned": 8230,
+            "blocks": 1613,
+            "pruned_blocks": 941,
+            "draft_scored": 731,
+            "bound_terms": 8786
+          },
+          "draft64": {
+            "candidates": 12166,
+            "scored": 9273,
+            "pruned": 2893,
+            "blocks": 565,
+            "pruned_blocks": 110,
+            "draft_scored": 731,
+            "bound_terms": 5366
+          },
+          "bad_draft16": {
+            "candidates": 12166,
+            "scored": 3991,
+            "pruned": 8175,
+            "blocks": 1613,
+            "pruned_blocks": 956,
+            "draft_scored": 252,
+            "bound_terms": 8786
+          }
+        },
+        "median_us": {
+          "sort": 7.547,
+          "heap": 8.526,
+          "bound16": 15.286,
+          "bound64": 15.149,
+          "draft16": 15.751,
+          "draft64": 15.99,
+          "bad_draft16": 16.561
+        },
+        "p95_us": {
+          "sort": 316.084,
+          "heap": 375.08,
+          "bound16": 315.724,
+          "bound64": 438.167,
+          "draft16": 339.68,
+          "draft64": 449.509,
+          "bad_draft16": 344.131
+        }
+      },
+      {
+        "cutoff": 2504,
+        "queries": 159,
+        "ranked_hits": 826,
+        "previous_proposals": 159,
+        "max_error": {
+          "heap": 0,
+          "bound16": 0,
+          "bound64": 0,
+          "draft16": 0,
+          "draft64": 0,
+          "bad_draft16": 0
+        },
+        "work": {
+          "heap": {
+            "candidates": 12502,
+            "scored": 12502,
+            "pruned": 0,
+            "blocks": 0,
+            "pruned_blocks": 0,
+            "draft_scored": 0,
+            "bound_terms": 0
+          },
+          "bound16": {
+            "candidates": 12502,
+            "scored": 3902,
+            "pruned": 8600,
+            "blocks": 1658,
+            "pruned_blocks": 1001,
+            "draft_scored": 0,
+            "bound_terms": 9161
+          },
+          "bound64": {
+            "candidates": 12502,
+            "scored": 8976,
+            "pruned": 3526,
+            "blocks": 578,
+            "pruned_blocks": 130,
+            "draft_scored": 0,
+            "bound_terms": 5741
+          },
+          "draft16": {
+            "candidates": 12502,
+            "scored": 3989,
+            "pruned": 8513,
+            "blocks": 1658,
+            "pruned_blocks": 992,
+            "draft_scored": 742,
+            "bound_terms": 9161
+          },
+          "draft64": {
+            "candidates": 12502,
+            "scored": 9009,
+            "pruned": 3493,
+            "blocks": 578,
+            "pruned_blocks": 129,
+            "draft_scored": 742,
+            "bound_terms": 5741
+          },
+          "bad_draft16": {
+            "candidates": 12502,
+            "scored": 4115,
+            "pruned": 8387,
+            "blocks": 1658,
+            "pruned_blocks": 991,
+            "draft_scored": 259,
+            "bound_terms": 9161
+          }
+        },
+        "median_us": {
+          "sort": 8.39,
+          "heap": 9.219,
+          "bound16": 16.237,
+          "bound64": 16.389,
+          "draft16": 17.497,
+          "draft64": 17.098,
+          "bad_draft16": 17.977
+        },
+        "p95_us": {
+          "sort": 330.212,
+          "heap": 385.284,
+          "bound16": 321.66,
+          "bound64": 409.436,
+          "draft16": 344.541,
+          "draft64": 426.365,
+          "bad_draft16": 357.884
+        }
+      }
+    ],
+    "repetitions": 5
+  },
+  "limits": [
+    "same previously tuned Versions corpus, synthetic chronology, R124 prefix-selected query plan",
+    "rank-stage only: native exact phrase counts prepared outside timing for every method",
+    "block bounds and candidate sets constructed inside timing; no saved compressed block reads or I/O measured",
+    "previous snapshot top-k article proposals, no real query trace, no diffusion model",
+    "established safe dynamic pruning (WAND/Block-Max family), not a novelty claim",
+    "strict upper-bound comparison, score and row-ID tie parity checked against native"
+  ]
+}
