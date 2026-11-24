@@ -1,0 +1,43 @@
+name: CDG R135 layout and published WikECD
+on:
+  push:
+    branches: ['research/round-135-*']
+    paths: ['experiments/round-135/**','.github/workflows/cdg-r135-layout.yml','research/rounds/round-135/**']
+  workflow_dispatch:
+jobs:
+  pack:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {corpus: cpython, repository: python/cpython, pin: 60403a5409ff2c3f3b07dd2ca91a7a3e096839c7}
+          - {corpus: bips, repository: bitcoin/bips, pin: 0d99ffd39fdaf75209c43b1f8ec3fbbc23f10814}
+          - {corpus: gitdocs, repository: git/git, pin: 777489f9e09c8d0dd6b12f9d90de6376330577a2}
+          - {corpus: k8sdocs, repository: kubernetes/website, pin: cd5dc586db87bc80666a54ce7ba113e19b062b91}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2 wikecd==0.1.1
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-118/cdgfts.c -o experiments/round-118/cdgfts.so
+      - run: PYTHONPATH=experiments/round-135 python -m pytest -q experiments/round-135
+      - name: Fetch pinned Git ancestry
+        env:
+          UPSTREAM: ${{ matrix.repository }}
+          PIN: ${{ matrix.pin }}
+        run: |
+          mkdir -p external/history
+          git -C external/history init
+          git -C external/history remote add origin "https://github.com/$UPSTREAM.git"
+          git -C external/history config remote.origin.promisor true
+          git -C external/history config remote.origin.partialclonefilter blob:none
+          git -C external/history -c protocol.version=2 fetch --filter=blob:none --no-tags --depth=20000 origin "$PIN"
+          test "$(git -C external/history rev-parse FETCH_HEAD)" = "$PIN"
+      - run: python experiments/round-135/layout_archive.py --root external/history --corpus ${{ matrix.corpus }} --extension experiments/round-118/cdgfts.so --out experiments/round-135/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r135-${{ matrix.corpus }}
+          path: experiments/round-135/ci.json

@@ -1,0 +1,9 @@
+# R135: published WikECD and physical layout control
+
+Status: implemented, not measured.
+
+R134 compares packed external files to source BLOBs inline in SQLite; SQLite allocation can confound storage comparison. Export exactly the existing snapshot and CDG encoded frames, unchanged, to a contiguous sidecar and replace each BLOB with a fixed 16-byte offset/length. Retain original dependency metadata and all index, ledger and provenance fields. Charge the entire sidecar and compacted SQLite database. Verify source bytes, identical rank receipts and equal logical decode/activation costs to original inline arms. This measures finalized layout effects, not an atomic append implementation.
+
+Published wikecd==0.1.1, native compress_article, gzip JSON serializer and retrieve_range. Two settings: upstream default heuristic budget and explicit larger budget equal to twice total source character count per document. Input real UTF-8 revisions and original commit timestamps, per-document ordinal order. Store complete native artifacts contiguously with a per-revision offset/length pointer in the same SQLite retrieval archive. Charge every serialized byte. No adaptation of WikECD's compression algorithm. Exact byte checks are mandatory and any incompatible revision/API fails the arm. Distinguish cold per-article gzip JSON inflation and partition-prefix logical source volume (proxy, not decoder traffic) from actual CDG frame activation. Full native WikECD and TimIR system-level transaction equivalence is not claimed.
+
+All arms reuse four largest frozen cohorts, verify manifest/query hashes, and preserve same full historical BM25 and evidence receipts. R134 Git results are the established comparison. No post-result parameter tuning.
