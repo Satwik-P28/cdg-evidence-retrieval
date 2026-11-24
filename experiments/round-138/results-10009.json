@@ -1,0 +1,3597 @@
+{
+  "round": 138,
+  "result": {
+    "revisions": 10009,
+    "documents": 1744,
+    "manifest": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+    "source_sha256": "005cf42b35f6b42700e16bf69d9a9e7cbd541d74faa0cd3b4c5b666e5c319e1e",
+    "query_plan_sha256": "01f3300bfc3022ccfe9e2ea292f383c8ffd05d1b3e752675b6f90b22aed0aba4",
+    "cuts": [
+      1744,
+      4499,
+      7254,
+      10009
+    ],
+    "queries_per_cutoff": 64,
+    "current_only_drift": [
+      {
+        "cutoff": 1744,
+        "counts": {
+          "queries": 64,
+          "nonempty_old_queries": 59,
+          "rank_order_changed": 56,
+          "revision_order_changed": 63,
+          "score_only_changed": 0,
+          "historical_hits": 465,
+          "same_article_overlap": 286,
+          "same_revision_overlap": 0,
+          "citations": 465,
+          "latest_version_changed": 465,
+          "latest_source_changed": 340,
+          "query_matched_spans": 465,
+          "span_missing_from_latest": 226
+        },
+        "per_query": [
+          {
+            "phrases": [
+              "oman"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 7,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 5,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "references"
+            ],
+            "op": "AND",
+            "old_hits": 6,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 6,
+            "latest_version_changed": 6,
+            "latest_source_changed": 4,
+            "query_matched_spans": 6,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "turin"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 5,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 5,
+            "latest_version_changed": 5,
+            "latest_source_changed": 1,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "factions"
+            ],
+            "op": "AND",
+            "old_hits": 7,
+            "new_hits": 9,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 7,
+            "latest_version_changed": 7,
+            "latest_source_changed": 6,
+            "query_matched_spans": 7,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "ecologist"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "binkley"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "imagination"
+            ],
+            "op": "AND",
+            "old_hits": 7,
+            "new_hits": 8,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 7,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 7,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "unfinished"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "poachers"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "2040"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "submission"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 4,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 3,
+            "latest_version_changed": 3,
+            "latest_source_changed": 0,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "rachelle"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 4,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "abella"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "entrances"
+            ],
+            "op": "AND",
+            "old_hits": 6,
+            "new_hits": 8,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 6,
+            "latest_version_changed": 6,
+            "latest_source_changed": 2,
+            "query_matched_spans": 6,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "mattresses"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 3,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "insignia"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 3,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "inspire"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "lawmaker"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 8
+          },
+          {
+            "phrases": [
+              "consumers"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "upcoming"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "inches"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "dropping"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "escalation"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "miami"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "trapped"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "springs"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "mission"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "stephen"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "maintaining"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "persecution"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "footage"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "unit"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "become"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "cases"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "wants"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 8
+          },
+          {
+            "phrases": [
+              "ahead"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 8
+          },
+          {
+            "phrases": [
+              "allowed"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "police"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 9
+          },
+          {
+            "phrases": [
+              "will"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "message"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "north"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "access"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "held"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "using"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 10,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "immigration"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "those"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "event"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "30"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "oman",
+              "30"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 1,
+            "latest_version_changed": true,
+            "latest_source_changed": true,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "oman",
+              "30"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "references",
+              "event"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "references",
+              "event"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "turin",
+              "those"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "turin",
+              "those"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "factions",
+              "immigration"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "factions",
+              "immigration"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "ecologist",
+              "using"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 1,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 1,
+            "latest_version_changed": true,
+            "latest_source_changed": false,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "ecologist",
+              "using"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "binkley",
+              "held"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "binkley",
+              "held"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "imagination",
+              "access"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "imagination",
+              "access"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "unfinished",
+              "north"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "unfinished",
+              "north"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 9,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          }
+        ]
+      },
+      {
+        "cutoff": 4499,
+        "counts": {
+          "queries": 64,
+          "nonempty_old_queries": 61,
+          "rank_order_changed": 53,
+          "revision_order_changed": 62,
+          "score_only_changed": 1,
+          "historical_hits": 477,
+          "same_article_overlap": 351,
+          "same_revision_overlap": 146,
+          "citations": 477,
+          "latest_version_changed": 324,
+          "latest_source_changed": 190,
+          "query_matched_spans": 477,
+          "span_missing_from_latest": 142
+        },
+        "per_query": [
+          {
+            "phrases": [
+              "oman"
+            ],
+            "op": "AND",
+            "old_hits": 6,
+            "new_hits": 7,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 2,
+            "citations": 6,
+            "latest_version_changed": 4,
+            "latest_source_changed": 2,
+            "query_matched_spans": 6,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "references"
+            ],
+            "op": "AND",
+            "old_hits": 8,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 8,
+            "latest_version_changed": 5,
+            "latest_source_changed": 2,
+            "query_matched_spans": 8,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "turin"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 5,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 1,
+            "citations": 5,
+            "latest_version_changed": 4,
+            "latest_source_changed": 0,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "factions"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 9,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "ecologist"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 1,
+            "citations": 2,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "binkley"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "imagination"
+            ],
+            "op": "AND",
+            "old_hits": 8,
+            "new_hits": 8,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 3,
+            "citations": 8,
+            "latest_version_changed": 5,
+            "latest_source_changed": 1,
+            "query_matched_spans": 8,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "unfinished"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "poachers"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 1,
+            "citations": 2,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "2040"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "submission"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 4,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 1,
+            "citations": 4,
+            "latest_version_changed": 3,
+            "latest_source_changed": 0,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "rachelle"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 0,
+            "citations": 4,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "abella"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 2,
+            "citations": 2,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "entrances"
+            ],
+            "op": "AND",
+            "old_hits": 8,
+            "new_hits": 8,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 2,
+            "citations": 8,
+            "latest_version_changed": 6,
+            "latest_source_changed": 1,
+            "query_matched_spans": 8,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "mattresses"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 1,
+            "citations": 3,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "insignia"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 3,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "inspire"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "lawmaker"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "consumers"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "upcoming"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "inches"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "dropping"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "escalation"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "miami"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "trapped"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "springs"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "mission"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "stephen"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "maintaining"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "persecution"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "footage"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "unit"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "become"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "cases"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "wants"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "ahead"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "allowed"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "police"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "will"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "message"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "north"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "access"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "held"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "using"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "immigration"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 2,
+            "citations": 10,
+            "latest_version_changed": 8,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "those"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          },
+          {
+            "phrases": [
+              "event"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "30"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "oman",
+              "30"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 1,
+            "latest_version_changed": true,
+            "latest_source_changed": true,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "oman",
+              "30"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "references",
+              "event"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "references",
+              "event"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "turin",
+              "those"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "turin",
+              "those"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "factions",
+              "immigration"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0,
+            "citations": 1,
+            "latest_version_changed": true,
+            "latest_source_changed": true,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "factions",
+              "immigration"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 0,
+            "citations": 10,
+            "latest_version_changed": 10,
+            "latest_source_changed": 7,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 7
+          },
+          {
+            "phrases": [
+              "ecologist",
+              "using"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 1,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 0,
+            "citations": 1,
+            "latest_version_changed": true,
+            "latest_source_changed": false,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "ecologist",
+              "using"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "binkley",
+              "held"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "binkley",
+              "held"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 1,
+            "citations": 10,
+            "latest_version_changed": 9,
+            "latest_source_changed": 5,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "imagination",
+              "access"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 1,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 1,
+            "citations": 1,
+            "latest_version_changed": false,
+            "latest_source_changed": false,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "imagination",
+              "access"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "unfinished",
+              "north"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "unfinished",
+              "north"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 1,
+            "citations": 10,
+            "latest_version_changed": 9,
+            "latest_source_changed": 8,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 5
+          }
+        ]
+      },
+      {
+        "cutoff": 7254,
+        "counts": {
+          "queries": 64,
+          "nonempty_old_queries": 61,
+          "rank_order_changed": 50,
+          "revision_order_changed": 57,
+          "score_only_changed": 6,
+          "historical_hits": 486,
+          "same_article_overlap": 405,
+          "same_revision_overlap": 321,
+          "citations": 486,
+          "latest_version_changed": 148,
+          "latest_source_changed": 94,
+          "query_matched_spans": 486,
+          "span_missing_from_latest": 76
+        },
+        "per_query": [
+          {
+            "phrases": [
+              "oman"
+            ],
+            "op": "AND",
+            "old_hits": 8,
+            "new_hits": 7,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 5,
+            "citations": 8,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 8,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "references"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "turin"
+            ],
+            "op": "AND",
+            "old_hits": 5,
+            "new_hits": 5,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 5,
+            "same_revision_overlap": 4,
+            "citations": 5,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 5,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "factions"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 9,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "ecologist"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 2,
+            "citations": 2,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "binkley"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 1,
+            "citations": 3,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "imagination"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 8,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "unfinished"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 0,
+            "citations": 2,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "poachers"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 2,
+            "citations": 2,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "2040"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 1,
+            "citations": 2,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "submission"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 4,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 4,
+            "same_revision_overlap": 4,
+            "citations": 4,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "rachelle"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 2,
+            "citations": 3,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "abella"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 3,
+            "citations": 3,
+            "latest_version_changed": 0,
+            "latest_source_changed": 0,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "entrances"
+            ],
+            "op": "AND",
+            "old_hits": 8,
+            "new_hits": 8,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 7,
+            "citations": 8,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 8,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "mattresses"
+            ],
+            "op": "AND",
+            "old_hits": 3,
+            "new_hits": 3,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 2,
+            "citations": 3,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 3,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "insignia"
+            ],
+            "op": "AND",
+            "old_hits": 4,
+            "new_hits": 3,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 3,
+            "same_revision_overlap": 2,
+            "citations": 4,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 4,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "inspire"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "lawmaker"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "consumers"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "upcoming"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "inches"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 6
+          },
+          {
+            "phrases": [
+              "dropping"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "escalation"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 6,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "miami"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "trapped"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "springs"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "mission"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "stephen"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "maintaining"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "persecution"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "footage"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "unit"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "become"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "cases"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "wants"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "ahead"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "allowed"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "police"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "will"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 4,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "message"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "north"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "access"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 10,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "held"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "using"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "immigration"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "those"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 7,
+            "same_revision_overlap": 3,
+            "citations": 10,
+            "latest_version_changed": 7,
+            "latest_source_changed": 6,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "event"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 2,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "30"
+            ],
+            "op": "AND",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 3,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 3
+          },
+          {
+            "phrases": [
+              "oman",
+              "30"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 1,
+            "citations": 2,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "oman",
+              "30"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 7,
+            "citations": 10,
+            "latest_version_changed": 3,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "references",
+              "event"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 2,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 1,
+            "citations": 1,
+            "latest_version_changed": false,
+            "latest_source_changed": false,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "references",
+              "event"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 9,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "turin",
+              "those"
+            ],
+            "op": "AND",
+            "old_hits": 2,
+            "new_hits": 2,
+            "rank_order_changed": false,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 2,
+            "same_revision_overlap": 1,
+            "citations": 2,
+            "latest_version_changed": 1,
+            "latest_source_changed": 0,
+            "query_matched_spans": 2,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "turin",
+              "those"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 2,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "factions",
+              "immigration"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "factions",
+              "immigration"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 6,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          },
+          {
+            "phrases": [
+              "ecologist",
+              "using"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 1,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 1,
+            "citations": 1,
+            "latest_version_changed": false,
+            "latest_source_changed": false,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "ecologist",
+              "using"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 8,
+            "citations": 10,
+            "latest_version_changed": 1,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "binkley",
+              "held"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 0,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "binkley",
+              "held"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 5,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 2
+          },
+          {
+            "phrases": [
+              "imagination",
+              "access"
+            ],
+            "op": "AND",
+            "old_hits": 1,
+            "new_hits": 1,
+            "rank_order_changed": false,
+            "revision_order_changed": false,
+            "rank_score_changed": true,
+            "same_article_overlap": 1,
+            "same_revision_overlap": 1,
+            "citations": 1,
+            "latest_version_changed": false,
+            "latest_source_changed": false,
+            "query_matched_spans": 1,
+            "span_missing_from_latest": 0
+          },
+          {
+            "phrases": [
+              "imagination",
+              "access"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 9,
+            "same_revision_overlap": 6,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 1,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 1
+          },
+          {
+            "phrases": [
+              "unfinished",
+              "north"
+            ],
+            "op": "AND",
+            "old_hits": 0,
+            "new_hits": 1,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 0,
+            "same_revision_overlap": 0
+          },
+          {
+            "phrases": [
+              "unfinished",
+              "north"
+            ],
+            "op": "OR",
+            "old_hits": 10,
+            "new_hits": 10,
+            "rank_order_changed": true,
+            "revision_order_changed": true,
+            "rank_score_changed": false,
+            "same_article_overlap": 8,
+            "same_revision_overlap": 5,
+            "citations": 10,
+            "latest_version_changed": 4,
+            "latest_source_changed": 4,
+            "query_matched_spans": 10,
+            "span_missing_from_latest": 4
+          }
+        ]
+      }
+    ],
+    "policies": {
+      "snapshot": {
+        "total_archive_bytes": 42846800,
+        "sqlite_bytes": 22671360,
+        "sidecar_bytes": 20175440,
+        "payload_bytes": 20175408,
+        "source_reads": 10009,
+        "rank_checks": 256,
+        "receipt_replays": 256,
+        "extractive_packets": 1913,
+        "max_score_error": 0,
+        "mean_decode_ratio": 1,
+        "max_decode_ratio": 1,
+        "max_activation_ratio": 1,
+        "activated_bytes": 20175408,
+        "append": {
+          "median_us": 697.529,
+          "p95_us": 1649.598,
+          "samples": 10009
+        },
+        "receipt": {
+          "median_us": 3409.8055,
+          "p95_us": 5525.903,
+          "samples": 256
+        },
+        "read": {
+          "median_us": 13.54,
+          "p95_us": 20.231,
+          "samples": 10009
+        }
+      },
+      "bounded_anchor": {
+        "total_archive_bytes": 30691764,
+        "sqlite_bytes": 22671360,
+        "sidecar_bytes": 8020404,
+        "payload_bytes": 8020372,
+        "source_reads": 10009,
+        "rank_checks": 256,
+        "receipt_replays": 256,
+        "extractive_packets": 1913,
+        "max_score_error": 0,
+        "mean_decode_ratio": 1.645910671385138,
+        "max_decode_ratio": 2.4825581395348837,
+        "max_activation_ratio": 1.4983063605570193,
+        "activated_bytes": 21201943,
+        "append": {
+          "median_us": 749.068,
+          "p95_us": 1805.41,
+          "samples": 10009
+        },
+        "receipt": {
+          "median_us": 3269.4494999999997,
+          "p95_us": 4058.017,
+          "samples": 256
+        },
+        "read": {
+          "median_us": 23.766,
+          "p95_us": 35.614,
+          "samples": 10009
+        }
+      }
+    },
+    "limitations": [
+      "derived text, synthetic round-robin global order, no original publication timeline",
+      "query probes selected from initial snapshot token frequencies, no human relevance labels",
+      "extractive citation packets only; no generated answers, semantic correctness or hallucination claims",
+      "current-only baseline resolves latest version by stable article ID; not a content-addressed archive",
+      "same hardware per job, sequential policy builds; timing descriptive, not cold I/O"
+    ]
+  }
+}
