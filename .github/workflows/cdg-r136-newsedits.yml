@@ -1,0 +1,39 @@
+name: CDG R136 NewsEdits source scale
+on:
+  push:
+    branches: ['research/round-136-*']
+    paths: ['experiments/round-136/**','.github/workflows/cdg-r136-newsedits.yml','research/rounds/round-136/**']
+  workflow_dispatch:
+    inputs:
+      file_id:
+        description: Public AP NewsEdits Drive file ID override
+        required: false
+        type: string
+      filename:
+        description: AP file name
+        default: ap-matched-sentences.db.gz
+        type: string
+jobs:
+  scale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2 gdown==5.2.0
+      - run: PYTHONPATH=experiments/round-136 python -m pytest -q experiments/round-136
+      - name: Acquire public source
+        env:
+          FILE_ID: ${{ inputs.file_id }}
+          FILE_NAME: ${{ inputs.filename }}
+        run: python experiments/round-136/download_source.py --out external/newsedits --file-id "$FILE_ID" --filename "${FILE_NAME:-ap-matched-sentences.db.gz}"
+      - name: Run source-only scale trial
+        run: python experiments/round-136/newsedits_scale.py --source external/newsedits/ap.db --target 100000 --out experiments/round-136/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r136-newsedits
+          path: |
+            experiments/round-136/ci.json
+            external/newsedits/source.json
