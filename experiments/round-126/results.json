@@ -1,0 +1,864 @@
+{
+  "round": 126,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 445,
+  "result": {
+    "revisions": 2504,
+    "original_tokens": 1663050,
+    "crossing_ngram_occurrences": 79760,
+    "layouts": {
+      "positions": {
+        "sqlite_bytes": 4255744,
+        "unique_fragments": 18328,
+        "unique_fragment_tokens": 1062014,
+        "application_intervals": 24434,
+        "expanded_applications": 29120,
+        "verified_original_tokens": 1663050,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1134,
+            "unused": 2812
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "sparse": {
+        "sqlite_bytes": 5332992,
+        "intervals": 36005,
+        "expanded_entries": 79333,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "crossing",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 6965,
+            "unused": 7565
+          },
+          {
+            "name": "crossing",
+            "type": "leaf",
+            "pages": 259,
+            "page_bytes": 1060864,
+            "payload": 945917,
+            "unused": 5634
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1357,
+            "unused": 2584
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "window": {
+        "sqlite_bytes": 4939776,
+        "unique_contexts": 11806,
+        "indexed_context_tokens": 47172,
+        "intervals": 12186,
+        "expanded_entries": 26544,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "edge_apps",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 668,
+            "unused": 3073
+          },
+          {
+            "name": "edge_apps",
+            "type": "leaf",
+            "pages": 50,
+            "page_bytes": 204800,
+            "payload": 165710,
+            "unused": 2279
+          },
+          {
+            "name": "edge_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "edge_data",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3393
+          },
+          {
+            "name": "edge_data",
+            "type": "leaf",
+            "pages": 59,
+            "page_bytes": 241664,
+            "payload": 233915,
+            "unused": 6689
+          },
+          {
+            "name": "edge_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3884
+          },
+          {
+            "name": "edge_docsize",
+            "type": "leaf",
+            "pages": 26,
+            "page_bytes": 106496,
+            "payload": 47224,
+            "unused": 161
+          },
+          {
+            "name": "edge_idx",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 616,
+            "unused": 3301
+          },
+          {
+            "name": "edge_meta",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3884
+          },
+          {
+            "name": "edge_meta",
+            "type": "leaf",
+            "pages": 26,
+            "page_bytes": 106496,
+            "payload": 47172,
+            "unused": 213
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1916,
+            "unused": 2001
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "native_history": {
+        "sqlite_bytes": 4657152,
+        "logical_postings": null,
+        "build_seconds_exploratory": 0.3753980030000008
+      }
+    },
+    "cutoffs": [
+      {
+        "cutoff": 626,
+        "queries": 183,
+        "phrase_queries": 80,
+        "ranked_hits": 809,
+        "unique_phrases_terms": 149,
+        "positive_native_frequency_pairs": 6518,
+        "unique_queries_with_crossing_hits": 32,
+        "crossing_occurrences": 114,
+        "max_error": {
+          "positions": 0,
+          "sparse_join": 0,
+          "sparse_cte": 0,
+          "window_cte": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "logical_rows": {
+          "sparse_join": {
+            "internal_occurrences": 49900,
+            "crossing_occurrences": 114,
+            "returned_local_rows": 24193,
+            "returned_crossing_rows": 109
+          },
+          "sparse_cte": {
+            "internal_occurrences": 49900,
+            "crossing_occurrences": 114,
+            "returned_local_rows": 6478,
+            "returned_crossing_rows": 109
+          },
+          "window_cte": {
+            "internal_occurrences": 49900,
+            "crossing_occurrences": 114,
+            "returned_local_rows": 6478,
+            "returned_crossing_rows": 109
+          }
+        },
+        "median_us": {
+          "positions": 458.666,
+          "sparse_join": 54.771,
+          "sparse_cte": 58.648,
+          "window_cte": 67.821,
+          "native_history": 31.297,
+          "native_active": 31.427
+        },
+        "phrase_median_us": {
+          "positions": 2012.3195,
+          "sparse_join": 55.473,
+          "sparse_cte": 56.575,
+          "window_cte": 69.3735,
+          "native_history": 29.1885,
+          "native_active": 34.436
+        },
+        "term_median_us": {
+          "positions": 72.318,
+          "sparse_join": 53.45,
+          "sparse_cte": 64.777,
+          "window_cte": 65.999,
+          "native_history": 39.739,
+          "native_active": 23.716
+        },
+        "p95_us": {
+          "positions": 6324.068,
+          "sparse_join": 3111.083,
+          "sparse_cte": 4340.251,
+          "window_cte": 4298.659,
+          "native_history": 598.285,
+          "native_active": 235.292
+        }
+      },
+      {
+        "cutoff": 1252,
+        "queries": 183,
+        "phrase_queries": 80,
+        "ranked_hits": 832,
+        "unique_phrases_terms": 149,
+        "positive_native_frequency_pairs": 7496,
+        "unique_queries_with_crossing_hits": 23,
+        "crossing_occurrences": 117,
+        "max_error": {
+          "positions": 0,
+          "sparse_join": 0,
+          "sparse_cte": 0,
+          "window_cte": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "logical_rows": {
+          "sparse_join": {
+            "internal_occurrences": 73419,
+            "crossing_occurrences": 117,
+            "returned_local_rows": 35057,
+            "returned_crossing_rows": 113
+          },
+          "sparse_cte": {
+            "internal_occurrences": 73419,
+            "crossing_occurrences": 117,
+            "returned_local_rows": 7462,
+            "returned_crossing_rows": 113
+          },
+          "window_cte": {
+            "internal_occurrences": 73419,
+            "crossing_occurrences": 117,
+            "returned_local_rows": 7462,
+            "returned_crossing_rows": 113
+          }
+        },
+        "median_us": {
+          "positions": 522.695,
+          "sparse_join": 59.249,
+          "sparse_cte": 60.15,
+          "window_cte": 72.008,
+          "native_history": 37.909,
+          "native_active": 30.798
+        },
+        "phrase_median_us": {
+          "positions": 2642.9455,
+          "sparse_join": 54.7185,
+          "sparse_cte": 56.361000000000004,
+          "window_cte": 70.8365,
+          "native_history": 33.9505,
+          "native_active": 33.7805
+        },
+        "term_median_us": {
+          "positions": 90.155,
+          "sparse_join": 64.908,
+          "sparse_cte": 69.568,
+          "window_cte": 75.457,
+          "native_history": 51.351,
+          "native_active": 25.5
+        },
+        "p95_us": {
+          "positions": 8235.487,
+          "sparse_join": 3709.863,
+          "sparse_cte": 4682.024,
+          "window_cte": 4683.646,
+          "native_history": 685.409,
+          "native_active": 271.444
+        }
+      },
+      {
+        "cutoff": 1878,
+        "queries": 183,
+        "phrase_queries": 80,
+        "ranked_hits": 839,
+        "unique_phrases_terms": 149,
+        "positive_native_frequency_pairs": 7923,
+        "unique_queries_with_crossing_hits": 21,
+        "crossing_occurrences": 137,
+        "max_error": {
+          "positions": 0,
+          "sparse_join": 0,
+          "sparse_cte": 0,
+          "window_cte": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "logical_rows": {
+          "sparse_join": {
+            "internal_occurrences": 87650,
+            "crossing_occurrences": 137,
+            "returned_local_rows": 41414,
+            "returned_crossing_rows": 130
+          },
+          "sparse_cte": {
+            "internal_occurrences": 87650,
+            "crossing_occurrences": 137,
+            "returned_local_rows": 7890,
+            "returned_crossing_rows": 130
+          },
+          "window_cte": {
+            "internal_occurrences": 87650,
+            "crossing_occurrences": 137,
+            "returned_local_rows": 7890,
+            "returned_crossing_rows": 130
+          }
+        },
+        "median_us": {
+          "positions": 593.161,
+          "sparse_join": 59.89,
+          "sparse_cte": 61.843,
+          "window_cte": 72.91,
+          "native_history": 44.737,
+          "native_active": 37.777
+        },
+        "phrase_median_us": {
+          "positions": 3077.3925,
+          "sparse_join": 56.374,
+          "sparse_cte": 58.1725,
+          "window_cte": 70.54050000000001,
+          "native_history": 41.232,
+          "native_active": 44.587
+        },
+        "term_median_us": {
+          "positions": 96.445,
+          "sparse_join": 66.871,
+          "sparse_cte": 77.426,
+          "window_cte": 77.656,
+          "native_history": 61.813,
+          "native_active": 31.137
+        },
+        "p95_us": {
+          "positions": 9463.247,
+          "sparse_join": 4194.962,
+          "sparse_cte": 4927.272,
+          "window_cte": 4879.971,
+          "native_history": 733.542,
+          "native_active": 300.131
+        }
+      },
+      {
+        "cutoff": 2504,
+        "queries": 183,
+        "phrase_queries": 80,
+        "ranked_hits": 856,
+        "unique_phrases_terms": 149,
+        "positive_native_frequency_pairs": 8210,
+        "unique_queries_with_crossing_hits": 18,
+        "crossing_occurrences": 173,
+        "max_error": {
+          "positions": 0,
+          "sparse_join": 0,
+          "sparse_cte": 0,
+          "window_cte": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "logical_rows": {
+          "sparse_join": {
+            "internal_occurrences": 102442,
+            "crossing_occurrences": 173,
+            "returned_local_rows": 47963,
+            "returned_crossing_rows": 160
+          },
+          "sparse_cte": {
+            "internal_occurrences": 102442,
+            "crossing_occurrences": 173,
+            "returned_local_rows": 8183,
+            "returned_crossing_rows": 160
+          },
+          "window_cte": {
+            "internal_occurrences": 102442,
+            "crossing_occurrences": 173,
+            "returned_local_rows": 8183,
+            "returned_crossing_rows": 160
+          }
+        },
+        "median_us": {
+          "positions": 632.823,
+          "sparse_join": 59.069,
+          "sparse_cte": 62.124,
+          "window_cte": 72.659,
+          "native_history": 48.153,
+          "native_active": 41.573
+        },
+        "phrase_median_us": {
+          "positions": 3519.3935,
+          "sparse_join": 54.126,
+          "sparse_cte": 57.171,
+          "window_cte": 70.4965,
+          "native_history": 39.695,
+          "native_active": 47.036
+        },
+        "term_median_us": {
+          "positions": 100.451,
+          "sparse_join": 72.739,
+          "sparse_cte": 75.654,
+          "window_cte": 80.491,
+          "native_history": 62.855,
+          "native_active": 32.459
+        },
+        "p95_us": {
+          "positions": 10726.539,
+          "sparse_join": 4734.948,
+          "sparse_cte": 5174.781,
+          "window_cte": 5140.188,
+          "native_history": 780.616,
+          "native_active": 309.216
+        }
+      }
+    ],
+    "repetitions": 3
+  },
+  "limits": [
+    "same processed Versions corpus, synthetic order, not independent",
+    "normalized token exact phrases of length 1 to 3 and distinct AND/OR; longer phrases rejected; not arbitrary FTS grammar",
+    "boundary counts and windows are added to the complete R125 positional index, all physical bytes charged",
+    "offline bulk builds, source payload and online maintenance/WAL excluded",
+    "logical returned SQL rows not native internal posting work or physical I/O",
+    "warm rank-only one-runner timings, prepared active maps, no real user access trace",
+    "fragment-local phrase matching and boundary correction are established ideas, no novelty claim"
+  ]
+}
