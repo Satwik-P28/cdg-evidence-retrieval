@@ -1,0 +1,977 @@
+{
+  "round": 125,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 445,
+  "result": {
+    "revisions": 2504,
+    "original_tokens": 1663050,
+    "vocabulary": 43147,
+    "layouts": {
+      "fixed32_version": {
+        "sqlite_bytes": 6508544,
+        "unique_fragments": 43716,
+        "unique_fragment_tokens": 1364344,
+        "application_intervals": 53172,
+        "expanded_applications": 53172,
+        "verified_original_tokens": 1663050,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 3794,
+            "unused": 6764
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 243,
+            "page_bytes": 995328,
+            "payload": 830041,
+            "unused": 4553
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 5,
+            "page_bytes": 20480,
+            "payload": 0,
+            "unused": 7465
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 1081,
+            "page_bytes": 4427776,
+            "payload": 4372192,
+            "unused": 35967
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3193
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 104,
+            "page_bytes": 425984,
+            "payload": 174864,
+            "unused": 4502
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 42,
+            "unused": 4021
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 11424,
+            "unused": 2444
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3193
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 104,
+            "page_bytes": 425984,
+            "payload": 174808,
+            "unused": 4558
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1134,
+            "unused": 2812
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "fixed32_coalesced": {
+        "sqlite_bytes": 6348800,
+        "unique_fragments": 43716,
+        "unique_fragment_tokens": 1364344,
+        "application_intervals": 44637,
+        "expanded_applications": 53172,
+        "verified_original_tokens": 1663050,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 3207,
+            "unused": 7624
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 204,
+            "page_bytes": 835584,
+            "payload": 698793,
+            "unused": 1857
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 5,
+            "page_bytes": 20480,
+            "payload": 0,
+            "unused": 7465
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 1081,
+            "page_bytes": 4427776,
+            "payload": 4372192,
+            "unused": 35967
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3193
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 104,
+            "page_bytes": 425984,
+            "payload": 174864,
+            "unused": 4502
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 42,
+            "unused": 4021
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 11424,
+            "unused": 2444
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3193
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 104,
+            "page_bytes": 425984,
+            "payload": 174808,
+            "unused": 4558
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1134,
+            "unused": 2812
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "min32_version": {
+        "sqlite_bytes": 4939776,
+        "unique_fragments": 30456,
+        "unique_fragment_tokens": 942219,
+        "application_intervals": 54358,
+        "expanded_applications": 54358,
+        "verified_original_tokens": 1663050,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 3766,
+            "unused": 6778
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 245,
+            "page_bytes": 1003520,
+            "payload": 834025,
+            "unused": 5193
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 7185
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 764,
+            "page_bytes": 3129344,
+            "payload": 3090858,
+            "unused": 24664
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3490
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 71,
+            "page_bytes": 290816,
+            "payload": 121824,
+            "unused": 2198
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 30,
+            "unused": 4040
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8401,
+            "unused": 2024
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3490
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 71,
+            "page_bytes": 290816,
+            "payload": 121712,
+            "unused": 2310
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1134,
+            "unused": 2812
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "min32_coalesced": {
+        "sqlite_bytes": 4775936,
+        "unique_fragments": 30456,
+        "unique_fragment_tokens": 942219,
+        "application_intervals": 45460,
+        "expanded_applications": 54358,
+        "verified_original_tokens": 1663050,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 3160,
+            "unused": 7664
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 205,
+            "page_bytes": 839680,
+            "payload": 698910,
+            "unused": 3362
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 7185
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 764,
+            "page_bytes": 3129344,
+            "payload": 3090858,
+            "unused": 24664
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3490
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 71,
+            "page_bytes": 290816,
+            "payload": 121824,
+            "unused": 2198
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 30,
+            "unused": 4040
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8401,
+            "unused": 2024
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3490
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 71,
+            "page_bytes": 290816,
+            "payload": 121712,
+            "unused": 2310
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1134,
+            "unused": 2812
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "min64_coalesced": {
+        "sqlite_bytes": 4255744,
+        "unique_fragments": 18328,
+        "unique_fragment_tokens": 1062014,
+        "application_intervals": 24434,
+        "expanded_applications": 29120,
+        "verified_original_tokens": 1663050,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1134,
+            "unused": 2812
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "native_history": {
+        "sqlite_bytes": 4657152,
+        "logical_postings": null,
+        "build_seconds_exploratory": 0.4565956219999947
+      }
+    },
+    "cutoffs": [
+      {
+        "cutoff": 626,
+        "queries": 159,
+        "ranked_hits": 772,
+        "positive_phrase_frequency_pairs": 6466,
+        "positive_term_positions_checked": 56715,
+        "unique_terms_checked": 143,
+        "max_error": {
+          "fixed32_version": 0,
+          "fixed32_coalesced": 0,
+          "min32_version": 0,
+          "min32_coalesced": 0,
+          "min64_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "fixed32_version": 543.158,
+          "fixed32_coalesced": 513.539,
+          "min32_version": 474.097,
+          "min32_coalesced": 463.007,
+          "min64_coalesced": 440.187,
+          "native_history": 55.463,
+          "native_active": 55.949
+        },
+        "phrase_median_us": {
+          "fixed32_version": 5702.9015,
+          "fixed32_coalesced": 5607.862,
+          "min32_version": 4852.4259999999995,
+          "min32_coalesced": 4770.742,
+          "min64_coalesced": 4141.2325,
+          "native_history": 59.1205,
+          "native_active": 69.9505
+        },
+        "p95_us": {
+          "fixed32_version": 14890.821,
+          "fixed32_coalesced": 14241.966,
+          "min32_version": 12234.56,
+          "min32_coalesced": 12147.915,
+          "min64_coalesced": 8298.366,
+          "native_history": 833.494,
+          "native_active": 342.146
+        }
+      },
+      {
+        "cutoff": 1252,
+        "queries": 159,
+        "ranked_hits": 799,
+        "positive_phrase_frequency_pairs": 7442,
+        "positive_term_positions_checked": 83296,
+        "unique_terms_checked": 143,
+        "max_error": {
+          "fixed32_version": 0,
+          "fixed32_coalesced": 0,
+          "min32_version": 0,
+          "min32_coalesced": 0,
+          "min64_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "fixed32_version": 655.773,
+          "fixed32_coalesced": 646.002,
+          "min32_version": 593.447,
+          "min32_coalesced": 577.533,
+          "min64_coalesced": 547.97,
+          "native_history": 65.724,
+          "native_active": 54.435
+        },
+        "phrase_median_us": {
+          "fixed32_version": 7054.707,
+          "fixed32_coalesced": 6922.7545,
+          "min32_version": 6219.049000000001,
+          "min32_coalesced": 6104.415999999999,
+          "min64_coalesced": 5363.357,
+          "native_history": 64.2735,
+          "native_active": 66.458
+        },
+        "p95_us": {
+          "fixed32_version": 18776.638,
+          "fixed32_coalesced": 18130.964,
+          "min32_version": 16729.377,
+          "min32_coalesced": 16055.174,
+          "min64_coalesced": 10996.308,
+          "native_history": 940.526,
+          "native_active": 376.375
+        }
+      },
+      {
+        "cutoff": 1878,
+        "queries": 159,
+        "ranked_hits": 807,
+        "positive_phrase_frequency_pairs": 7870,
+        "positive_term_positions_checked": 98821,
+        "unique_terms_checked": 143,
+        "max_error": {
+          "fixed32_version": 0,
+          "fixed32_coalesced": 0,
+          "min32_version": 0,
+          "min32_coalesced": 0,
+          "min64_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "fixed32_version": 717.25,
+          "fixed32_coalesced": 697.288,
+          "min32_version": 666.917,
+          "min32_coalesced": 643.763,
+          "min64_coalesced": 604.82,
+          "native_history": 75.166,
+          "native_active": 61.694
+        },
+        "phrase_median_us": {
+          "fixed32_version": 8029.633,
+          "fixed32_coalesced": 7850.126,
+          "min32_version": 7221.425,
+          "min32_coalesced": 7056.436,
+          "min64_coalesced": 6389.4735,
+          "native_history": 73.17699999999999,
+          "native_active": 81.0375
+        },
+        "p95_us": {
+          "fixed32_version": 21852.045,
+          "fixed32_coalesced": 21362.17,
+          "min32_version": 19727.105,
+          "min32_coalesced": 18749.335,
+          "min64_coalesced": 12643.127,
+          "native_history": 1014.638,
+          "native_active": 409.216
+        }
+      },
+      {
+        "cutoff": 2504,
+        "queries": 159,
+        "ranked_hits": 826,
+        "positive_phrase_frequency_pairs": 8156,
+        "positive_term_positions_checked": 115274,
+        "unique_terms_checked": 143,
+        "max_error": {
+          "fixed32_version": 0,
+          "fixed32_coalesced": 0,
+          "min32_version": 0,
+          "min32_coalesced": 0,
+          "min64_coalesced": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "median_us": {
+          "fixed32_version": 780.586,
+          "fixed32_coalesced": 756.389,
+          "min32_version": 718.452,
+          "min32_coalesced": 694.449,
+          "min64_coalesced": 680.622,
+          "native_history": 82.827,
+          "native_active": 69.498
+        },
+        "phrase_median_us": {
+          "fixed32_version": 9023.8345,
+          "fixed32_coalesced": 8700.8295,
+          "min32_version": 8217.2255,
+          "min32_coalesced": 7958.1720000000005,
+          "min64_coalesced": 6966.047500000001,
+          "native_history": 79.14,
+          "native_active": 89.834
+        },
+        "p95_us": {
+          "fixed32_version": 23531.92,
+          "fixed32_coalesced": 24532.234,
+          "min32_version": 21971.67,
+          "min32_coalesced": 21252.986,
+          "min64_coalesced": 14454.839,
+          "native_history": 1141.407,
+          "native_active": 443.071
+        }
+      }
+    ],
+    "repetitions": 3
+  },
+  "limits": [
+    "same processed Versions corpus, synthetic cross-article order; no independent corpus",
+    "normalized token fragments not exact source-byte fragments; source payload excluded",
+    "fixed and 2MIN-inspired strict minima with maximum length cap; not He/Suel optimized partitioning",
+    "global exact fragment deduplication plus optional application interval coalescing",
+    "exact quoted phrase AND/OR only; no general FTS5 grammar or prefix/NEAR",
+    "full active phrase frequency counts, not approximate candidate rerank",
+    "offline builds; no updates/WAL or source receipt integration",
+    "warm one-runner rank timings, prepared active heads; no device I/O claims"
+  ]
+}
