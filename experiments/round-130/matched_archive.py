@@ -319,10 +319,16 @@ def crash_audit(folder,ext):
 
 def run(root,kind,ext,repeats,seed):
     events,manifest=collect(root,kind)
+    frozen=json.loads((HERE.parent/"round-129"/("results-"+kind+".json")).read_text())
+    if sha(canonical(manifest)).hex()!=frozen["manifest_sha256"] or manifest!=frozen["manifest"]:
+        raise AssertionError("R129 manifest drift")
     print("CORPUS",kind,len(events),len(manifest["retained_paths"]),manifest["changed_paths"],manifest["cutoffs"],flush=True)
     with tempfile.TemporaryDirectory() as tmp:
         r=experiment(Path(tmp),events,manifest,ext,repeats,seed)
         r["crash_stages_passed"]=crash_audit(Path(tmp),ext)
+    if canonical(r["query_plan"])!=canonical(frozen["result"]["query_plan"]):
+        raise AssertionError("R129 query plan drift")
+    r["r129_manifest_and_query_plan_match"]=True
     return dict(round=130,corpus=kind,manifest_sha256=sha(canonical(manifest)).hex(),manifest=manifest,result=r,
        limits=["fixed first-parent path-touch commit snapshots; ancestry order, not globally sorted wall-clock timestamps; initial cohort seeded at common baseline",
        "sampled paths absent at any observed snapshot excluded and reported; no deletion/rename/new-file support",

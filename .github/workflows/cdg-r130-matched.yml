@@ -4,7 +4,7 @@ on:
     branches: ['research/round-130-*']
     paths: ['experiments/round-130/**','.github/workflows/cdg-r130-matched.yml','research/rounds/round-130/**']
   pull_request:
-    paths: ['experiments/round-130/**','.github/workflows/cdg-r130-independent.yml','research/rounds/round-130/**']
+    paths: ['experiments/round-130/**','.github/workflows/cdg-r130-matched.yml','research/rounds/round-130/**']
   workflow_dispatch:
 jobs:
   corpus:
