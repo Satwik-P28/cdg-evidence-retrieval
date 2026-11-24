@@ -1,0 +1,1788 @@
+{
+  "round": 127,
+  "upstream_commit": "06b32f753c4ac6fd154ffa8b5a9af2cd11b777c0",
+  "full_corpus_sha256": "fd24e20eff865dd34567f7b94b1323cb86c3cd4046b09a7d47118547dc14f7a7",
+  "articles": 445,
+  "result": {
+    "revisions": 2504,
+    "original_tokens": 1663050,
+    "crossing_intervals": 36005,
+    "expanded_crossing_entries": 79333,
+    "tf_intervals": 316448,
+    "expanded_tf_entries": 754641,
+    "layouts": {
+      "base": {
+        "sqlite_bytes": 4255744,
+        "unique_fragments": 18328,
+        "unique_fragment_tokens": 1062014,
+        "application_intervals": 24434,
+        "expanded_applications": 29120,
+        "verified_original_tokens": 1663050,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1134,
+            "unused": 2812
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "sparse_join": {
+        "sqlite_bytes": 5332992,
+        "intervals": 36005,
+        "expanded_entries": 79333,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "crossing",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 6965,
+            "unused": 7565
+          },
+          {
+            "name": "crossing",
+            "type": "leaf",
+            "pages": 259,
+            "page_bytes": 1060864,
+            "payload": 945917,
+            "unused": 5634
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1357,
+            "unused": 2584
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "boundary4": {
+        "sqlite_bytes": 4780032,
+        "blocks": 245,
+        "encoded_block_bytes": 355496,
+        "term_entries": 0,
+        "crossing_entries": 33038,
+        "persisted_intervals_checked": 36005,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3171
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 123,
+            "page_bytes": 503808,
+            "payload": 360339,
+            "unused": 141142
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "hot_terms",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 23,
+            "unused": 4054
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 2,
+            "page_bytes": 8192,
+            "payload": 4937,
+            "unused": 2507
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1357,
+            "unused": 2577
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "boundary16": {
+        "sqlite_bytes": 4603904,
+        "blocks": 62,
+        "encoded_block_bytes": 321845,
+        "term_entries": 0,
+        "crossing_entries": 33038,
+        "persisted_intervals_checked": 36005,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3944
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 21,
+            "page_bytes": 86016,
+            "payload": 73555,
+            "unused": 11739
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 61,
+            "page_bytes": 249856,
+            "payload": 249612,
+            "unused": 0
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "hot_terms",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1321,
+            "unused": 2581
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1357,
+            "unused": 2577
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "hot4": {
+        "sqlite_bytes": 4947968,
+        "blocks": 726,
+        "encoded_block_bytes": 546680,
+        "term_entries": 301,
+        "crossing_entries": 33038,
+        "persisted_intervals_checked": 138166,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 2824
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 162,
+            "page_bytes": 663552,
+            "payload": 556397,
+            "unused": 101637
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "hot_terms",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1932,
+            "unused": 1253
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 40,
+            "unused": 4023
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 10279,
+            "unused": 3904
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1357,
+            "unused": 2577
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "all4": {
+        "sqlite_bytes": 5849088,
+        "blocks": 1103,
+        "encoded_block_bytes": 1276801,
+        "term_entries": 43147,
+        "crossing_entries": 33038,
+        "persisted_intervals_checked": 352453,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 1086
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 381,
+            "page_bytes": 1560576,
+            "payload": 1291190,
+            "unused": 259855
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "hot_terms",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 85,
+            "unused": 3971
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 5,
+            "page_bytes": 20480,
+            "payload": 15284,
+            "unused": 1859
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1357,
+            "unused": 2577
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "all16": {
+        "sqlite_bytes": 5713920,
+        "blocks": 661,
+        "encoded_block_bytes": 1218347,
+        "term_entries": 43147,
+        "crossing_entries": 33038,
+        "persisted_intervals_checked": 352453,
+        "dbstat": [
+          {
+            "name": "applications",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1688,
+            "unused": 1633
+          },
+          {
+            "name": "applications",
+            "type": "leaf",
+            "pages": 110,
+            "page_bytes": 450560,
+            "payload": 373794,
+            "unused": 2911
+          },
+          {
+            "name": "article",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4068
+          },
+          {
+            "name": "article",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8415,
+            "unused": 1751
+          },
+          {
+            "name": "blocks",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 2230
+          },
+          {
+            "name": "blocks",
+            "type": "leaf",
+            "pages": 238,
+            "page_bytes": 974848,
+            "payload": 771706,
+            "unused": 196952
+          },
+          {
+            "name": "blocks",
+            "type": "overflow",
+            "pages": 112,
+            "page_bytes": 458752,
+            "payload": 454679,
+            "unused": 3625
+          },
+          {
+            "name": "docs_config",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 11,
+            "unused": 4074
+          },
+          {
+            "name": "docs_data",
+            "type": "internal",
+            "pages": 4,
+            "page_bytes": 16384,
+            "payload": 0,
+            "unused": 6825
+          },
+          {
+            "name": "docs_data",
+            "type": "leaf",
+            "pages": 794,
+            "page_bytes": 3252224,
+            "payload": 3214102,
+            "unused": 23751
+          },
+          {
+            "name": "docs_docsize",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "docs_docsize",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73650,
+            "unused": 500
+          },
+          {
+            "name": "docs_idx",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 31,
+            "unused": 4039
+          },
+          {
+            "name": "docs_idx",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8841,
+            "unused": 1491
+          },
+          {
+            "name": "fragment_length",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3760
+          },
+          {
+            "name": "fragment_length",
+            "type": "leaf",
+            "pages": 41,
+            "page_bytes": 167936,
+            "payload": 73611,
+            "unused": 539
+          },
+          {
+            "name": "hot_terms",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 4088
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 48,
+            "unused": 4022
+          },
+          {
+            "name": "sqlite_autoindex_article_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 9129,
+            "unused": 1806
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 33,
+            "unused": 4037
+          },
+          {
+            "name": "sqlite_autoindex_blocks_1",
+            "type": "leaf",
+            "pages": 3,
+            "page_bytes": 12288,
+            "payload": 8538,
+            "unused": 1749
+          },
+          {
+            "name": "sqlite_schema",
+            "type": "leaf",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 1357,
+            "unused": 2577
+          },
+          {
+            "name": "versions",
+            "type": "internal",
+            "pages": 1,
+            "page_bytes": 4096,
+            "payload": 0,
+            "unused": 3845
+          },
+          {
+            "name": "versions",
+            "type": "leaf",
+            "pages": 31,
+            "page_bytes": 126976,
+            "payload": 113211,
+            "unused": 1124
+          }
+        ]
+      },
+      "native_history": {
+        "sqlite_bytes": 4657152,
+        "logical_postings": null,
+        "build_seconds_exploratory": 0.5272275580000496
+      }
+    },
+    "cutoffs": [
+      {
+        "cutoff": 626,
+        "queries": 183,
+        "phrase_queries": 80,
+        "ranked_hits": 809,
+        "positive_native_frequency_pairs": 6518,
+        "max_error": {
+          "boundary4": 0,
+          "boundary16": 0,
+          "hot4": 0,
+          "all4": 0,
+          "all16": 0,
+          "sparse_join": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "work": {
+          "boundary4": {
+            "compact_lookups": 64,
+            "tf_dispatch": 0,
+            "encoded_bytes": 92707,
+            "decoded_bytes": 152962,
+            "intervals_examined": 309,
+            "returned_local_rows": 24193,
+            "crossing_occurrences": 114
+          },
+          "boundary16": {
+            "compact_lookups": 64,
+            "tf_dispatch": 0,
+            "encoded_bytes": 336929,
+            "decoded_bytes": 613129,
+            "intervals_examined": 309,
+            "returned_local_rows": 24193,
+            "crossing_occurrences": 114
+          },
+          "hot4": {
+            "compact_lookups": 83,
+            "tf_dispatch": 19,
+            "encoded_bytes": 106228,
+            "decoded_bytes": 196909,
+            "intervals_examined": 18659,
+            "returned_local_rows": 3959,
+            "crossing_occurrences": 114
+          },
+          "all4": {
+            "compact_lookups": 149,
+            "tf_dispatch": 85,
+            "encoded_bytes": 228684,
+            "decoded_bytes": 399353,
+            "intervals_examined": 20136,
+            "returned_local_rows": 3371,
+            "crossing_occurrences": 114
+          },
+          "all16": {
+            "compact_lookups": 149,
+            "tf_dispatch": 85,
+            "encoded_bytes": 607177,
+            "decoded_bytes": 1080774,
+            "intervals_examined": 20136,
+            "returned_local_rows": 3371,
+            "crossing_occurrences": 114
+          }
+        },
+        "median_us": {
+          "boundary4": 150.883,
+          "boundary16": 160.631,
+          "hot4": 152.165,
+          "all4": 124.422,
+          "all16": 136.966,
+          "sparse_join": 128.911,
+          "native_history": 76.583,
+          "native_active": 75.542
+        },
+        "phrase_median_us": {
+          "boundary4": 162.1335,
+          "boundary16": 175.664,
+          "hot4": 154.43900000000002,
+          "all4": 155.4965,
+          "all16": 167.56400000000002,
+          "sparse_join": 128.4855,
+          "native_history": 70.422,
+          "native_active": 85.0995
+        },
+        "term_median_us": {
+          "boundary4": 133.069,
+          "boundary16": 139.541,
+          "hot4": 146.625,
+          "all4": 84.168,
+          "all16": 98.143,
+          "sparse_join": 136.846,
+          "native_history": 92.022,
+          "native_active": 62.226
+        },
+        "common_median_us": {
+          "boundary4": 5352.361,
+          "boundary16": 5268.048000000001,
+          "hot4": 677.5540000000001,
+          "all4": 627.189,
+          "all16": 637.163,
+          "sparse_join": 5377.548000000001,
+          "native_history": 1163.1025,
+          "native_active": 423.27750000000003
+        },
+        "p95_us": {
+          "boundary4": 5793.697,
+          "boundary16": 5766.476,
+          "hot4": 800.799,
+          "all4": 803.044,
+          "all16": 794.968,
+          "sparse_join": 5920.084,
+          "native_history": 1227.458,
+          "native_active": 474.508
+        }
+      },
+      {
+        "cutoff": 1252,
+        "queries": 183,
+        "phrase_queries": 80,
+        "ranked_hits": 832,
+        "positive_native_frequency_pairs": 7496,
+        "max_error": {
+          "boundary4": 0,
+          "boundary16": 0,
+          "hot4": 0,
+          "all4": 0,
+          "all16": 0,
+          "sparse_join": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "work": {
+          "boundary4": {
+            "compact_lookups": 64,
+            "tf_dispatch": 0,
+            "encoded_bytes": 92707,
+            "decoded_bytes": 152962,
+            "intervals_examined": 309,
+            "returned_local_rows": 35057,
+            "crossing_occurrences": 117
+          },
+          "boundary16": {
+            "compact_lookups": 64,
+            "tf_dispatch": 0,
+            "encoded_bytes": 336929,
+            "decoded_bytes": 613129,
+            "intervals_examined": 309,
+            "returned_local_rows": 35057,
+            "crossing_occurrences": 117
+          },
+          "hot4": {
+            "compact_lookups": 83,
+            "tf_dispatch": 19,
+            "encoded_bytes": 106228,
+            "decoded_bytes": 196909,
+            "intervals_examined": 18659,
+            "returned_local_rows": 5734,
+            "crossing_occurrences": 117
+          },
+          "all4": {
+            "compact_lookups": 149,
+            "tf_dispatch": 85,
+            "encoded_bytes": 228684,
+            "decoded_bytes": 399353,
+            "intervals_examined": 20136,
+            "returned_local_rows": 4858,
+            "crossing_occurrences": 117
+          },
+          "all16": {
+            "compact_lookups": 149,
+            "tf_dispatch": 85,
+            "encoded_bytes": 607177,
+            "decoded_bytes": 1080774,
+            "intervals_examined": 20136,
+            "returned_local_rows": 4858,
+            "crossing_occurrences": 117
+          }
+        },
+        "median_us": {
+          "boundary4": 156.613,
+          "boundary16": 169.146,
+          "hot4": 157.625,
+          "all4": 131.276,
+          "all16": 144.821,
+          "sparse_join": 138.61,
+          "native_history": 90.56,
+          "native_active": 73.949
+        },
+        "phrase_median_us": {
+          "boundary4": 155.7215,
+          "boundary16": 170.94,
+          "hot4": 154.7745,
+          "all4": 160.4655,
+          "all16": 167.298,
+          "sparse_join": 131.8915,
+          "native_history": 83.0005,
+          "native_active": 83.37100000000001
+        },
+        "term_median_us": {
+          "boundary4": 159.198,
+          "boundary16": 144.942,
+          "hot4": 166.031,
+          "all4": 94.467,
+          "all16": 111.268,
+          "sparse_join": 155.672,
+          "native_history": 115.416,
+          "native_active": 66.534
+        },
+        "common_median_us": {
+          "boundary4": 6486.87,
+          "boundary16": 6503.456,
+          "hot4": 673.296,
+          "all4": 666.3230000000001,
+          "all16": 663.182,
+          "sparse_join": 6539.974,
+          "native_history": 1306.3715,
+          "native_active": 464.1145
+        },
+        "p95_us": {
+          "boundary4": 6945.693,
+          "boundary16": 6904.917,
+          "hot4": 818.252,
+          "all4": 836.135,
+          "all16": 777.486,
+          "sparse_join": 7018.911,
+          "native_history": 1415.651,
+          "native_active": 535.472
+        }
+      },
+      {
+        "cutoff": 1878,
+        "queries": 183,
+        "phrase_queries": 80,
+        "ranked_hits": 839,
+        "positive_native_frequency_pairs": 7923,
+        "max_error": {
+          "boundary4": 0,
+          "boundary16": 0,
+          "hot4": 0,
+          "all4": 0,
+          "all16": 0,
+          "sparse_join": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "work": {
+          "boundary4": {
+            "compact_lookups": 64,
+            "tf_dispatch": 0,
+            "encoded_bytes": 92707,
+            "decoded_bytes": 152962,
+            "intervals_examined": 309,
+            "returned_local_rows": 41414,
+            "crossing_occurrences": 137
+          },
+          "boundary16": {
+            "compact_lookups": 64,
+            "tf_dispatch": 0,
+            "encoded_bytes": 336929,
+            "decoded_bytes": 613129,
+            "intervals_examined": 309,
+            "returned_local_rows": 41414,
+            "crossing_occurrences": 137
+          },
+          "hot4": {
+            "compact_lookups": 83,
+            "tf_dispatch": 19,
+            "encoded_bytes": 106228,
+            "decoded_bytes": 196909,
+            "intervals_examined": 18659,
+            "returned_local_rows": 6952,
+            "crossing_occurrences": 137
+          },
+          "all4": {
+            "compact_lookups": 149,
+            "tf_dispatch": 85,
+            "encoded_bytes": 228684,
+            "decoded_bytes": 399353,
+            "intervals_examined": 20136,
+            "returned_local_rows": 5877,
+            "crossing_occurrences": 137
+          },
+          "all16": {
+            "compact_lookups": 149,
+            "tf_dispatch": 85,
+            "encoded_bytes": 607177,
+            "decoded_bytes": 1080774,
+            "intervals_examined": 20136,
+            "returned_local_rows": 5877,
+            "crossing_occurrences": 137
+          }
+        },
+        "median_us": {
+          "boundary4": 155.592,
+          "boundary16": 167.523,
+          "hot4": 158.076,
+          "all4": 131.196,
+          "all16": 142.788,
+          "sparse_join": 134.411,
+          "native_history": 104.355,
+          "native_active": 89.998
+        },
+        "phrase_median_us": {
+          "boundary4": 155.7015,
+          "boundary16": 170.084,
+          "hot4": 153.888,
+          "all4": 153.65800000000002,
+          "all16": 166.4115,
+          "sparse_join": 129.1015,
+          "native_history": 92.6585,
+          "native_active": 103.208
+        },
+        "term_median_us": {
+          "boundary4": 153.848,
+          "boundary16": 155.391,
+          "hot4": 172.994,
+          "all4": 98.685,
+          "all16": 116.448,
+          "sparse_join": 151.905,
+          "native_history": 128.771,
+          "native_active": 79.118
+        },
+        "common_median_us": {
+          "boundary4": 7496.925,
+          "boundary16": 7457.4575,
+          "hot4": 708.8065,
+          "all4": 675.4445000000001,
+          "all16": 657.7115,
+          "sparse_join": 7542.626,
+          "native_history": 1382.1975000000002,
+          "native_active": 503.1275
+        },
+        "p95_us": {
+          "boundary4": 7811.264,
+          "boundary16": 7961.155,
+          "hot4": 850.893,
+          "all4": 796.611,
+          "all16": 814.906,
+          "sparse_join": 8036.867,
+          "native_history": 1487.054,
+          "native_active": 558.786
+        }
+      },
+      {
+        "cutoff": 2504,
+        "queries": 183,
+        "phrase_queries": 80,
+        "ranked_hits": 856,
+        "positive_native_frequency_pairs": 8210,
+        "max_error": {
+          "boundary4": 0,
+          "boundary16": 0,
+          "hot4": 0,
+          "all4": 0,
+          "all16": 0,
+          "sparse_join": 0,
+          "native_history": 0,
+          "native_active": 0
+        },
+        "work": {
+          "boundary4": {
+            "compact_lookups": 64,
+            "tf_dispatch": 0,
+            "encoded_bytes": 92707,
+            "decoded_bytes": 152962,
+            "intervals_examined": 309,
+            "returned_local_rows": 47963,
+            "crossing_occurrences": 173
+          },
+          "boundary16": {
+            "compact_lookups": 64,
+            "tf_dispatch": 0,
+            "encoded_bytes": 336929,
+            "decoded_bytes": 613129,
+            "intervals_examined": 309,
+            "returned_local_rows": 47963,
+            "crossing_occurrences": 173
+          },
+          "hot4": {
+            "compact_lookups": 83,
+            "tf_dispatch": 19,
+            "encoded_bytes": 106228,
+            "decoded_bytes": 196909,
+            "intervals_examined": 18659,
+            "returned_local_rows": 8159,
+            "crossing_occurrences": 173
+          },
+          "all4": {
+            "compact_lookups": 149,
+            "tf_dispatch": 85,
+            "encoded_bytes": 228684,
+            "decoded_bytes": 399353,
+            "intervals_examined": 20136,
+            "returned_local_rows": 6922,
+            "crossing_occurrences": 173
+          },
+          "all16": {
+            "compact_lookups": 149,
+            "tf_dispatch": 85,
+            "encoded_bytes": 607177,
+            "decoded_bytes": 1080774,
+            "intervals_examined": 20136,
+            "returned_local_rows": 6922,
+            "crossing_occurrences": 173
+          }
+        },
+        "median_us": {
+          "boundary4": 160.24,
+          "boundary16": 168.675,
+          "hot4": 161.112,
+          "all4": 136.305,
+          "all16": 146.054,
+          "sparse_join": 138.94,
+          "native_history": 109.365,
+          "native_active": 95.399
+        },
+        "phrase_median_us": {
+          "boundary4": 159.679,
+          "boundary16": 169.78750000000002,
+          "hot4": 153.2975,
+          "all4": 158.8275,
+          "all16": 165.9555,
+          "sparse_join": 129.6775,
+          "native_history": 93.65549999999999,
+          "native_active": 109.971
+        },
+        "term_median_us": {
+          "boundary4": 163.577,
+          "boundary16": 167.184,
+          "hot4": 181.329,
+          "all4": 97.322,
+          "all16": 121.959,
+          "sparse_join": 167.624,
+          "native_history": 146.094,
+          "native_active": 84.629
+        },
+        "common_median_us": {
+          "boundary4": 8072.431500000001,
+          "boundary16": 8070.798,
+          "hot4": 681.3555,
+          "all4": 680.8395,
+          "all16": 671.3520000000001,
+          "sparse_join": 8587.6505,
+          "native_history": 1474.4705,
+          "native_active": 504.7445
+        },
+        "p95_us": {
+          "boundary4": 8718.771,
+          "boundary16": 8688.885,
+          "hot4": 832.088,
+          "all4": 822.8,
+          "all16": 831.507,
+          "sparse_join": 9022.659,
+          "native_history": 1603.762,
+          "native_active": 617.195
+        }
+      }
+    ],
+    "repetitions": 3
+  },
+  "limits": [
+    "same processed Versions corpus and R126 query plan, synthetic global order, not independent data",
+    "entire positional fragment index retained, all sidecar metadata/bytes charged, source payload excluded",
+    "exact 1–3 canonical token phrases and distinct AND/OR, not arbitrary grammar",
+    "hot selected by posting interval cardinality >=128, no query log training",
+    "R123 native selected-list decoder, offline immutable index; no update/WAL or adversarial-file guarantee",
+    "warm rank-only single-runner timings, prepared active maps, logical wire bytes not device I/O",
+    "established codecs and boundary correction, no novel algorithm claim"
+  ]
+}
