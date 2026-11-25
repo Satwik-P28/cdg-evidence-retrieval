@@ -1,0 +1,28 @@
+name: CDG R141 CLARK-News labeled temporal retrieval
+on:
+  push:
+    branches: ['research/round-141-*']
+    paths: ['experiments/round-141/**','.github/workflows/cdg-r141-clark.yml','research/rounds/round-141/**']
+  workflow_dispatch:
+jobs:
+  clark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-118/cdgfts.c -o experiments/round-118/cdgfts.so
+      - run: PYTHONPATH=experiments/round-141 python -m pytest -q experiments/round-141
+      - run: |
+          git init external/clark
+          git -C external/clark remote add origin https://github.com/belindal/ERASE.git
+          git -C external/clark fetch --depth=1 origin b93f898780b3cf40fedd4e9a00c51af9a27688bc
+          git -C external/clark checkout --detach FETCH_HEAD
+      - run: python experiments/round-141/clark_retrieval.py --upstream external/clark --extension experiments/round-118/cdgfts.so --target 256 --out experiments/round-141/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r141-clark
+          path: experiments/round-141/ci.json

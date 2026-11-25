@@ -1,0 +1,119 @@
+{
+  "round": 143,
+  "seed": 143,
+  "workers": 4,
+  "operations_per_writer": 32,
+  "concurrency": [
+    {
+      "seed": 143,
+      "workers": 4,
+      "acks": 128,
+      "death_stage": "partial_write",
+      "visible": 129,
+      "pinned_checks": 17,
+      "rank_checks": 12,
+      "source_checks": 129
+    },
+    {
+      "seed": 144,
+      "workers": 4,
+      "acks": 128,
+      "death_stage": "synced",
+      "visible": 129,
+      "pinned_checks": 17,
+      "rank_checks": 12,
+      "source_checks": 129
+    },
+    {
+      "seed": 145,
+      "workers": 4,
+      "acks": 128,
+      "death_stage": "meta",
+      "visible": 129,
+      "pinned_checks": 17,
+      "rank_checks": 12,
+      "source_checks": 129
+    },
+    {
+      "seed": 146,
+      "workers": 4,
+      "acks": 128,
+      "death_stage": "commit",
+      "visible": 130,
+      "pinned_checks": 17,
+      "rank_checks": 12,
+      "source_checks": 130
+    }
+  ],
+  "failures": [
+    {
+      "mode": "short_writes",
+      "visible": 2,
+      "orphan_bytes": 0,
+      "retry": true
+    },
+    {
+      "mode": "write_enospc",
+      "visible": 1,
+      "orphan_bytes": 15,
+      "retry": true
+    },
+    {
+      "mode": "write_eio",
+      "visible": 1,
+      "orphan_bytes": 15,
+      "retry": true
+    },
+    {
+      "mode": "fsync_eio",
+      "visible": 1,
+      "orphan_bytes": 30,
+      "retry": true
+    },
+    {
+      "mode": "commit_before",
+      "visible": 1,
+      "orphan_bytes": 30,
+      "retry": true
+    },
+    {
+      "mode": "commit_after",
+      "visible": 2,
+      "orphan_bytes": 0,
+      "retry": true
+    }
+  ],
+  "corruption": [
+    {
+      "mode": "frame_flip",
+      "rejected": true,
+      "unchanged_receipt": false
+    },
+    {
+      "mode": "pointer_out_of_range",
+      "rejected": true,
+      "unchanged_receipt": false
+    },
+    {
+      "mode": "pointer_wrong_frame",
+      "rejected": true,
+      "unchanged_receipt": false
+    },
+    {
+      "mode": "source_digest",
+      "rejected": true,
+      "unchanged_receipt": false
+    },
+    {
+      "mode": "origin_metadata",
+      "rejected": false,
+      "unchanged_receipt": true
+    }
+  ],
+  "limitations": [
+    "cooperating processes on Linux local storage, no hardware power-loss test",
+    "Python-layer I/O error injection and simulated commit exceptions, not SQLite VFS faults",
+    "synthetic stress workload, scheduler-dependent ordering",
+    "v1 receipt does not bind origin metadata; known negative control"
+  ]
+}

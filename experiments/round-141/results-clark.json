@@ -1,0 +1,5701 @@
+{
+  "round": 141,
+  "upstream_pin": "b93f898780b3cf40fedd4e9a00c51af9a27688bc",
+  "input_sha256": {
+    "questions.csv": "76084745b92a26115b0459ae3cc09041fb16c88842518577d3b445744692fbeb",
+    "timestamp_to_questions.json": "979007bd115d271aec313defde0479f8e5b3622f90aa09ba7af496eeca228f40",
+    "external_sources.json": "7cced9f9757b46aa277e42da7df52a75b2e1196fdcc771d323178554ea7bc43b"
+  },
+  "source_manifest_sha256": "1567b6c765b7a648e1a2a6d4221bf22543a7011377fda94161c37c04a29b6e2f",
+  "documents": 1157,
+  "revisions": 1161,
+  "changed_urls": 4,
+  "eligible_cases": 1621,
+  "evaluated_cases": 256,
+  "excluded": {
+    "ambiguous_or_nonextractive_gold": 3700
+  },
+  "unique_cutoffs": 6,
+  "counts": {
+    "cases": 256,
+    "historical_top10": 146,
+    "current_top10": 151,
+    "latest_url_top10": 146,
+    "historical_only_top10": 2,
+    "current_only_top10": 7,
+    "historical_top1": 93,
+    "current_top1": 82,
+    "historical_top5": 140,
+    "current_top5": 144,
+    "revision_rank_changed": 220,
+    "document_rank_changed": 220
+  },
+  "policies": {
+    "snapshot": {
+      "total_archive_bytes": 6583848,
+      "payload_bytes": 2557448,
+      "source_reads": 1161,
+      "rank_checks": 256,
+      "receipt_replays": 256,
+      "evidence_hits": 2547,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1
+    },
+    "bounded_anchor": {
+      "total_archive_bytes": 6564548,
+      "payload_bytes": 2538148,
+      "source_reads": 1161,
+      "rank_checks": 256,
+      "receipt_replays": 256,
+      "evidence_hits": 2547,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1.007872959053636,
+      "max_decode_ratio": 2,
+      "max_activation_ratio": 1.0104956268221574
+    }
+  },
+  "details": [
+    {
+      "case_sha256": "792255f898c212e8839afe57b51e98950ead8c017c6c383c9a974d36a3df8e2a",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "c2f15f9df70003da9e73485ca1f90d2f45fb1d37821bebd975463a8ddb1a8a1e",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "7d355396ebfe79cb790b9dbf946bd2a1f7f9d5f02b604ef6cf75730062ed5143",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "88953a633922ffb3059ad7b4a1771b1e9fa3baeb80a03932f9a8009c19401ffa",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "92049e442966e56db26986a93b4549843c17226b3bae6cf0dbbfd6d75a408a72",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "51c135fc9471f9cf625d0e9c3642d267e39db21cd35d72b3122eaecb8bd3add6",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "b4f17a346d0a24a042cc77215b8e24d54c9946e800d8851763a8883a4daa7bfb",
+      "cutoff": 1161,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "3f27362c7068735cbd559a9a9642910612391fa9a456809929d92c400bf683ab",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "df1b343a13cabba26c3470404d988d24a3b83bf137ea51e23bb2ba97d2a69e2e",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "afc1744f1c1621258d8ff33a0e13548f6cb38f74cf5295a97f3be318ecb8b101",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "2d9447a344a7eb9b3454bc4bad92e5448bf3a0a247741031353f96bb5ba234f9",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "596407d9dee75de969819dd512fd8135b5b08ae1f969577f2891315b951d7366",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6a57d2929fe3c8beff39a485024e495a4b2b07e7e8528c93baf423acd65b0edb",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "96f84052843d15b277592781482e34ae61242d4ffbbf921470ec0174a8870666",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6870172e9d6751756ba0daeff4d396a61d919e753d501239d4ac2320a3717bcc",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "251a9cb3225b295c7e41b8ec73cef9cb64589463ebc9552d9d7633fba9aca509",
+      "cutoff": 1014,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "f1b451fb145a02b29a8df79ed95ff4bc2b3b5f16ae5e10c1226f7cd3c8040914",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "149549fc8e76a3c942bb8956249b6afc8b5542ba658b1b2b442ee70a6881c771",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e57fcc30abb469ed1c07e4e9216608465d4e6aab819636dc6780500b908b2734",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "da9774410fa30e0e3506ff7aeaab0ac6c8bae5c4cce69c6b72366031b0b9fd01",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0a4ccb63da348884e63d903922f8d974ef3d7f396d3e1475fb9bdabf4418c427",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "81807a4c01aaeae6228650ad1f5c2bf42d3c5d2ef741f99d7bed31e65e8ea506",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "c5f437883bc5f05d2b300609bb9eefbc52fdde2390288e084bcbb611908fea20",
+      "cutoff": 1161,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "fbdea06991683946144fc6e4556e2c7f0a655f31538b7b70303da0b913e948b1",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "f276e61db3a92be9a55f7b48e2444683d8278881ea6bde5377550e561a791a6c",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "355315abebb45d29fc389a11aa0f06baa2fecbe2e998d200df3bcbfe0bfe8606",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "082627f153364a8e0ce342ca6f73bac7ad06a1695231f4bedf2cc1a788406d27",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "8548dde99a641dc6e09cecddfbadcf803556387e621c5f2a52516a4bc3d1c6df",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "d45c9f9d4a865c1d91127936d1a26c3f9b80b0b096ceacdb5d2f5a0919bbcb7b",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "796f01699ff3e140b12ae53f9595154f25a209f1d078085d34278898064f0d0f",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "2a0c98cc2862214cf15092e50b79f5003b6219f5da5ac75c017096494810e8de",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "cf9681088b960f933d45ca2fe31bd8bcce306fe3a5dcfb5aba42cb6de9bffffa",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "95681ee1d8a431ab247a5285268860998ba57a8629cf42f7662656d7a887db3e",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "fedb91af065a882fbada02a494d328fee2dd8ff695b6a0f2a6519c8d8e76197b",
+      "cutoff": 1014,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "3829e92b31544fec54c09ddaf6ed9b90e9fef03b810039ba14cc4c463f5b454a",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "a8b68e1e960250b4d5b2f0bc5f95cbbe6dedd7fb45a322cc8aadafde360eb78b",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 6
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 6
+      }
+    },
+    {
+      "case_sha256": "c949c3ac41172a50e70dcee978c5793d53452845e9a98e7d82a9b574a77415a8",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "b0a6ff4e88216e788400bc714b00e3d222d4d76b744262766b357438841054c1",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0233ffbdd9991c661d7cd140c19a990373893df01e267663a94aa33428a7b00b",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "4874e1c1da1c51a349a20c89318c54dff1c6c8d31146c46669c233b63192c959",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9afae29be3f57c0d2c03b5dc673c80e3edb3a2c7d1771a8e200cd5af4bad4df8",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "87b7419ec992eda66a4887f8745a3dd17d28ab76f99185d8733e5b08b24b52d7",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0239c3c38e34fd20c7f150895e66c1ab75b2d38e3795b5960d400f23dcd17033",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e812631aca21aea15fc1359d04812d088f4f5723b915504beae0ccd41bf9d611",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0a93fa5b30393962d3a5a31df4261a93b92f2012aba41cdd9e9223c68d06e7a5",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9aa496e701ece60b0332340a5b2bad6f88b0c5936f24fb951ad6eacad29a8bd4",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e4c237764f40a688adbb0526fccb0eadb17386f6549f5d01a1d32dc6be56575a",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "a4e4304a40b3a4e0e581f9b8c9d690619297bcf5a061084d40c37c94b3adfc4a",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "ff731df14c05cb7e65629bf6e51e4fc51fd9bec26ae494bd993d4f299fabe6e0",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "07e06fcda5d5fbdc5193215ded12db26c66556d48212b402b830d3bee89c3a2b",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "1ad7d7f5d2e0d1d5b8a95cd6f38fc516ebba833064ab0c9deed13ea3367b817c",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "09b9aa02fc53fbc8a55644826ec3ec35c29a3ed036cc55e69cbe464251d19dff",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "005a7f10a1f8cf7a7a353805050178c3bbdb0dd0e9ba673dfc13f46416d1eeab",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "5931ace6530750e007ea3ab4cc5660700b3713b8c9bfb6878a1ce46ca4252f63",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "1b7410dc1d68baa6b79871aa2fb57db0ca484aaace52d8ab48e4feb5b9e9d508",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "d905e4bc9d0c144d19bf0251205e0da0138ca2392a9d093e2881e8581a3d3148",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "f9e2a524a2e3f22552d7901a0c6a06b8b467f8d9efd48183a6dfc0a9dbdf437b",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "904306800df235ade6d9c57cfbc173307f2c69328bdb16ee398811a88db9549b",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "690c8da5909681f7990cbe9dc45fc4fbf3d6ccb33f256a3601c0254111102461",
+      "cutoff": 1161,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "14debaf1ea867a4b4bf39e112b3e0babbfd5d6baf8042eb973f49b887b08f065",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "8585e957742ff35d102ce945f77ec5865328478377de0ecbbe4c8c897c7b2352",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "8669016a3f3774b51ca6040c84962fe4f6932120e24894850f9ede065e571584",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 6
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 6
+      }
+    },
+    {
+      "case_sha256": "8728b4f1de3c849afee952355841a456be2f4528b64ed1461d6eca0b88c9fdba",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "29585a105c2d5a4c7500befc53188ad56c3616ca6fab68fea10889f79cad4c51",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6ea88c42195d3223b5bc013d5f6db63b9eeae34b7149094c3473c81e2602b5fe",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "667d4da90c972022e97f8c932b529ad5cdb91eb9839329e08333398142bd41ee",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "310442ad522b8284970651742c1c4f2b54a522e5b5318ee05a7c8dc102b233c2",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0e361fc141a11f097519315779e314e5d1fc4358b340a9124ef19e9b121e9bb0",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "970aafa31adf150deb20986a9c728ae84b10d866bf6d47790370752b6ea44d68",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "843a78b7bbce6b346c813d37b35f5b946f13c6a87304da7edcd757516f06a16a",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "8265b52ed19883538e4764b7cc0b7ba32818630c2dc04e889b4a798e02c228ae",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "8cacb4f97c14dd3683ff0d4859b19caf1e8fd78bbb8f3024bf5ab9e436cce8f9",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "3680cdf23e85b88f04650781a69a4a3bf9b8954fe63e515d0f4d5042f4cdb393",
+      "cutoff": 1161,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "71ea86329e2c90afddcc14682c1617404b828cf0725c6feaf5d8fc3b4acaa1fd",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e4bfda8dda7c85c7e620ce10ee643200a4c9c5ce7867b926b815bb02b5baed77",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "ea7763850a47ca8d2fd50e8aec9c5399b818f722a4dbc3dec15821f1728e8f00",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "88e49da111583aa0940e5a895364235ae05bb905d613cc593fdba587af8b7b28",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "d4af5a7f6e629bc645452875d0c104cff1a1ccdb225b18f9dac6632d87ad1789",
+      "cutoff": 1014,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "fc42c94a0dc365a9321f5124f921a0c5edaae7de69d8c8a95aaecee9d67f24d6",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "79176efd0a497a737c375210e8ca731921cb56f9bc8ae48d93078a95c6cc64b9",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "16cb0d610cdcc9b2f60d8ccce12cdfe2c64af5ed07ba744f963f896d6bd1e113",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "5465ce519845d8c67190416e70616338d14e7a807ef9eb6550ff53aab817cfb5",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "d2a511e3a2d2ef8cdb941762f73e2104df9774eee484fac2f29e8fd1b0f04cb7",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "a14fb914c76b29061ddedf6f1145a0ee40d2bc5b1680d289d4d12027fdbedef8",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "38fc8a3f12367fa32ab48211dd023aa70e2eca5c66e5ddbd3f709d4808c4df00",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "2656d4a1e2a0629ce042374d53f1aa7f72ec51828619728e3a5cd8b9753a546c",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "47d91f38e9add9f16dca36e6638eaf96d875b9dcbd7e7a664ae487919c292dab",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "204ca961e214827155b4d2911b7a5f1ac614f9dd47a6c765f6988579a5378d5a",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "528c8b46817fc736015cf502dae34601828345adc78ece6cb02c46ddfbd6258b",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9461c4c9299c0688210c04498ae68130e6bbdef5c5bba30e317ce3c38bebc470",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0ec6c9629e1cb5922862ca28c81a9dc63de50b23c5aaadcc82c13061c8c561e2",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "51f97e8b4614016ea12630cecf5fd88da9d4f4482d266049fd2d4af105992c49",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "4f79e5ce62d6a2c5d6dc57c1f2326a1fed71d4e766801ffb5228cb8acc56c521",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "13c7b58fbc7f71d50b286a99eb74e3d5c369cbd6eb5606bae37773435e215290",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "dec885eba34bd2dbc49d164ce7f3de0ad67cbac0985769099e0f3b7fc141f408",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "fe9da428e2dadff4d009b5cb82b4ca3db2308dccb980755cafdf8d03d0105e66",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "55634ce2839c2c7d2f79084c45d765d8a94a2bf0989301b60178c9e4f85d5760",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "5e7b2feb4dfacf091e2a0d0d68cf99e9f947ebcaea86cf3be79893e67f64697a",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "7a5804171a67e6e001b2b9f84ab511a68d945da69c3de67866d35ff0eaf26d0e",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "8064a5d04d82e2e1e6c21e473d07d69c3679959ff1f981eb8688d3e505fd5c27",
+      "cutoff": 1161,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e4a3bffd46bbcf06d618b4a941f74899caa2729a2b4812975127854e41d8fb4d",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "de6d98f861c06b57e61912961eaf51090585ac391f7168f1165b5753f91a0f46",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6c0eefa1f1f118f0d6e16f1166de901db759cbac97cdf4871b7e2ce1d7f5dbcd",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "cecac0a0f083dc8f360732d4caf5c8e2433ecc0568d254c37cf3902b57a3a678",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "4359ad21ab66e60771c57c1a345b1c6923abcc50fd8803449983c24ec21225b8",
+      "cutoff": 1014,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "64d7ec11824fa137606c131ddcdc2365f8409b91bbb7e695f7a3c2c63a7c6e5e",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9c1cd32cc58625d0276f3a3ab9d5ed532e734dc092617eac441709cbd18caf97",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "30bdb1b621d2a65e6825cd9a1b979089d9f95522c05aa697f71ca6589e7360bd",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "2d256e99298770292d958ae73f53ca4122c9cb15e5059bbe6bbc9dd2b7d81866",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "a9ffe9673818a3781a67692fb6a4bf1ae902da40d297133a1b68317800925d2e",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "80ff94d3073a5a5845f9fb21fd41985c8b3369bf08745794660dd2561f4cc8cc",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "1e3c66cb6ab314d8b3c8c618113afb7bf41036619ef009749757dd5a6f19d760",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9a090cf26eeebc6dc7b607369cd9f45b29c587700da7bb71142c37e0fa88676a",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "4d2f4a62f51ecf550dea8a0337123c5931672abc96ad0ee17deadc2c111798fc",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "400a3180954b664825ee404b4aaa0675f91938d7922cfe86c0046d93a62fa83d",
+      "cutoff": 1161,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "c179541c0ccf33ca43e059bbb35197b03762c88d882102025f5b5b2eb3fa6c01",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "32c4595ed4109aa7d7b07d672e4dc9d07067951d40898c6f6da7e7263e3e5130",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "950e39f0feda3c599d0822f075cbe4373cf0ebf017832f4b596e6a5b11644cff",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "c1d8c2e62fa200ebcf3b8a370368e33caf463dca5e40a15223d972cef780301f",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "4d6f66757ce9651fa6701a03cabbd61f2d6c2784a65fe6f8fbe417a0b0fd115f",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "d4a6badd83f1f032bd938829323d675568fcd5c5785dea6b0cce68a7a0c50541",
+      "cutoff": 1014,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9b2b81bcf3b697a6223518d17466a39a5db191db9793548f380d4e58fc9e271c",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "cc22980cb473c015124af016c91b331dd0c10566a5c2fc60565c2da2caf6f4bd",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6a3debab648947bf57aa56ecc4c9651e1609d7f6c0cc7f95f88b3cf0f016d17b",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "506faa3c7f76b07a1f1f76868f9989cd20eddaa9dc0c24a6683574f6d5045b48",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "5a1bc8ce617b2f8facd0455a049ae7f669a6162720389adf607ca08adf7f6367",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "b6de6d2789ff731f8a451515889b5edfe2ce5bdf8673285c5f473581f2b4fcee",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0899e1b3e199128ffe39bb6e1e57fe2131f76e828dc2da0082d3299f336cc5fd",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "c907477797939d0c5e7a6b3045dbd902fbbab1b4e6041e64a736549b2de8ef29",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "5bd85a8f073598cac33ae5a9e66a689992d649d003d39e6a5dc27174a485ad3e",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0c7ee612e42685e9bd1988f77f7a399e4a971b60070582505a90630b59b2da48",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "4a524d80633750448cea1083852a801f52c61a134665b7b5b51e3beb0f857e15",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "a08725d9d55bb4e0db909da11996bc1ee3129e0c82ba1b3a2bbbbf844b0c18f1",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "75fddab35c4c2c63d67fe91ebfd3740d9c06887fbac7856c09f9fbe11c80cfce",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "8822375a5b4ee5c89d6705f12ebc78a4c88641290f8fa2265fed9da320b79f8e",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "68aef6d453212e19240f04d126ca157a62d049b7039474aa68793a5ce5d906ed",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "deed7bfe5b5660b29335795b641f42f246cf0c1d7e7c5d24a67d2bc90d338a32",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "f7230dd92eda9b221702332a95d5fe3ce066f1da8e077f3cab016bd3d9826789",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "d367ff86b7e8994e85a8011764ca32f38bafed5e04ad3cd9f6e13ec5f79f8824",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "8a1d4422af211d20e06fbaf879bb3e6d8bd4b8b67c4c7c522662640b0e8d8b9c",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9ce774a76de198d77d502d9c449f331c906352b7293ab339af00d9ec49db76ab",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "afa7c72d24caaa39c8d183e729e825c8850bfeab311b527d3fbe910504ae42bb",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "2d467354fa70bbed780aabfa505504018e072ad76e8668beff2fb927f74acbc2",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9965fd444dcd62c36aa75c007cbdec18b7a6b8917113333a033d1b991804d55d",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "311df4f577bf82586ce67706f0380c6ce117fdfa3c0a5931c09732efe7d511f8",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "56cd84a4d12a4bcf18b44a06d28f9256a1fb7aa0148a19b4ee29820756f09faf",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e88b74594ae4dc7671272a9b2bcc4a830e6f124dfc12c867a767f0ec25577e37",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "194a1d0ca2f3eaf0c9418d5acc99968da89817f623ba75ad43c565ffe177b9d0",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "53414374c7697b17de5e1ad863269f138bf79359e0c0de32acb736556386e883",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "afd8724e7960c74e2c71043408865b6fce12bbf6fe7c12acd59d02ce7912e2d5",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "2c7e3063ec076a76ab2e88a64608eaa9eb125d2ef016cafd5381ab307fac66b4",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "925a505a911eac10b8403bdf4b520239d14f8c472e78e71ffc9036aa9ad56b60",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6bd7534432a7a06027c65ab36f7c3882eabcbdb7beccce8c27196c80077cbf19",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "67dae47c4b1bc25b63bbb659f6455f931b9ef21e7a7e0d9096d7d05360bc1c7a",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "38ae37fb1148e0a68aac6ed3933438f632cca6c525649d16ae830df05bca257a",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "93298c69a2c71ed729188b95572d192673da23446eab2315cafc1b9744feba91",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "4aae4f405316a4ff62402b2c1588731d834fc99206a8af63c06fe97df68fc335",
+      "cutoff": 1014,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "fbda5d91de2314e40ff48dad46d34ebd5f8c7afdbc022bbac094dbde7b80d48b",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 8
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 8
+      }
+    },
+    {
+      "case_sha256": "beaacc88101048b3ce494ee54d0fa3c91d1ffd5da4f7cc15e9efa63fc4833265",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "36f808379f4d4a79eae6df13faba991fa718cb2ab5e3dafd3e21365eff52ddba",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "66825cfe2b60f1bc975415b5acd810194b5fa897c1f545e4baaa8c289de42bfb",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "248f51064d551f6813c4dde85801dc048de7b9d93e82c9bb2ecfb42b8a6a0de9",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "34d4e2dd3d871c0b8fe6f36aa4571c7716881a2e723509bbae92eb82bd50844e",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "99bc290bc75083b95a5c30a2ebb1879f5dad7353b6e8d1c08248af1c2c0614fa",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "842bd7dca9ef84072672ceb4a08d2596774b8f02dee924ca8b844e810e3369ed",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "de100c0e205b289218645356f53f3c3a3e351faed52fed9691b59817e3748125",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "57e04dfe9cf897a081a829ac7b3fa86d233b13f405aeb1799db95752fd1a982e",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "ddb8f8c438ee17a24fbfd19e12e5d4722cda94f0800e9f47f559aec856bd7604",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "7ef7efd6b48b27e0d10b16ae695643897ce71c6622d07a17c881ab0ae87ee929",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "7cc55464d5079f1cd818220061d80e36a111136e37674045a1c1b70dd294e15e",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "17706d9144d82327ebed8c54545123adf6a4aad0258be80b182bf427cc819855",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "ef8f7eea5e2e7ce4675b502558e4c2ce15463b66c66c1581df5dbd6573afdb5a",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "f802ed62bbe2d44ad31ac44c4a47f30d562b631db9e24dfd1cae7c664f97a7f6",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6a923fff87c236d227ebaa625813a6986aa14bc8e75fef0c1389227635e984b5",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "c0a1367cb11873a0f6633ce081e6e12c2a11a108e33b53a3cb38e27c9c65dad6",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6a585caa138925a95cfe98241af1664e82ae54be47127e1576996e6ec8eb2148",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e0e4138ed3d6f8b92b96c2ae6ef7681641dace2355b930cf0e34e32aa5741292",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "2f6f91c78ea41f4e4d75b49433bb6fd3f1ff62f943b9b7976399208065ad97eb",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "16fbdffdb96114c8d7abe1f69364958873a45aefb113f0d2e7245552ad71d237",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "5b574edfb7b39406eb907a365e191b5852d6c2e1728f05be7df246d615f020d9",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "542cbebe9015d9094163216d7575cb9fc3e41207f555d9c2dde6635fc6f1ecc7",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 9
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 9
+      }
+    },
+    {
+      "case_sha256": "a99c1717a092321a7fde34ed99505886f5c48031c75c129385958f1f38375d35",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "85228a52cf3ad82d2fe3c0c6c5bdac2422fad6d5fbe5760954a32c998161a336",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "50a044787ebab6a3a96cff746ffabc3d3d79a4ed5d61e4eae3f21af5cc685ccf",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "7c2f448d91bfbd4e5ba6093e759b6456d874172fde113b4e7956375272b86ea6",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "86c88d60d6ba42b76d40715117e102890490d22d6f8493a74a9e97eab9f7ab79",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "236b061e1724e5851b42442cbba26a0492f21214296456f52d54430b4f2dc9d9",
+      "cutoff": 1161,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "d914510b8f23395824f272ca1077ed51a93c33973959c93526246f821fbfb52a",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "edb29ac4aa7154cbe113071105923ad0672b93299b7e8006105f990932a6c0b4",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "a7afcf8fb132789bdd2a6e27a749e780f771c797177f39f31b338da41889784d",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "902ce74138472eb67e57512339944c4a51075fca73bdf473aa83c586adbbfa10",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "ef64139f4394c92baa3500852c03af40fcc805278da070ab56f24e935edabc57",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "95011849fdb2053f477c3d1a67a86722e61c928f4aef9da500a2fa6833fcb093",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "7bda7da57720c929916ecb54a94fb5684e4b0d06cf556181b312da1d0fa62403",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "f7061e6b8248342536bfd8a8e182102805c305ba1e94d74f1f1ad03e3864eed0",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e87fe739800d81e5a68d2a11127dbddbbf71afc9c689e0caeb0cf358e5ee111d",
+      "cutoff": 1161,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "48e4c51e2e0c2d6a9211296363b6758772ca000b79526006342acc5f43f5d698",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "94e7a819adf2c2707d5dbce9494ff0452d38554471af4f7eb14c0d38c4cfca9e",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "d856bc8b7e9840dcca9d3f4f206d19ba9f6ca61f239151d5df8e7d70af78726a",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6b727fa194d7595635067ff4063c769cb7b08277fdd7427a37b76c82bcd0079b",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "51d1df844cd0eaff197a28f0fe3020fee304c238147c6c430d47d52e3617de5c",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "7926f60dd3dec3d41430d0295e62e5ecb85bc97ab934519fe15368b782ffbd82",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "da4efe058dbec813a9458b8f2856d09dd929ce47afa13dafa621f3a9a3c5a08f",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9a859051b8011eafe66f09341d175a2d911a2969d0e1230a52427f2ea462d326",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "1d81d25ac2ac2b4f42d925e63e34d37a5041c7e280eee8b3a00b278c1ac43901",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "85f3b770df60b053a2b91381a968ab9bec366511ae7fcfec6ee4641e5aec7f73",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "12fcc70b100499567dfaf3ec77033fd262edf6246224f210ca1fcf9ea88b9721",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "ec97d78f70a95be43537fd4c7a1954d9c405ca5de4394c402112c392f92c8e4c",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "f5fff2c2706e8f7f31370cb9496d49412f37b71b20578a24798395b2ef28e38b",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6e8da63d9619388558143477b29f36d8523d22ece345848a2cbb2c1fbd58418b",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "875fca666ede876bda220bd0c209c744059fff6039fd6a166523fbee77401721",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "242d470da840b7ca04805a6e068a079e2609573dd238b85a32fcb9cd30284213",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "94d4c706b0e64af4c2558245ade2a224148267be035006740e39778157083053",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "fd360eb247e96ae3fab21fb94a87ba69d93c9d99db5cedf047a9209a8c735aa5",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "93a2b841ac66f69b84b40eb13bd3c18e57827694d878c5dafb8b3e6eb579f462",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "86f3d99c4b605cdc2bdd3b53bc7ce1bd3f11dcae8d4d5c5b83062ae95cd6eb5c",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "994f966d571baf37f4d8b822ddc70afd0589b069479ccdf551b7dc1a25ac0ee9",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "a7982983a33cde139086b9f3e29dfbb8bfe7e0485b5bfd7667284ecd46f31b3a",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 8
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 8
+      }
+    },
+    {
+      "case_sha256": "036812e6f109465cf5836b5e1451541fadbcd963cf2203aaba1682ccff493706",
+      "cutoff": 1014,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "b70f55eff65c304e30c723b40b050c3c3867678c8050dbaf2917339b8ac91b02",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "9db030ee53a18347d832c2d00f08f08ef008e45c9acb31340fa04bcd5c448f75",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "d1bfefc283a343fc48c1fcd2eae3583fb9f74dd0232e8180cab09de093cc63c9",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "36df08fc2b38372fcd05b91510d244c42b1154dfa5d2a9792def40db3d5265e3",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "92b0de9cf5ca8ede37e255670428669904ef653af273d042b751d5cd4d6a12e7",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "53128472f21e1eb93e003df25e88cd7d31247710d5e01a3dab3411cb301a9dde",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "78dab3bff439ba53f35fb92ea154edad5a09893b4d0b051c4615d078fc19c385",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "32a35869bcc4575d8f6ee2e3eab6f0df3dc9299f548400c78cbec80b2fb8b1a8",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "b682ea8bf20673df9e4eda7a1bd8314749939dc30bbaf217ff0460fc058a314b",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "f081c01cea710d3d9d7e094aeb173471c1728c8425bba940991af550b96b1c9d",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "24c0b14c079c05e9fe686cb4b62106d5df88a94fbbb6a84d22d97fe9d6554b99",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0bd10704502e38bcbe70b3cf4c7a71546906ae0538fab6db095dca2e398ec578",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e52881891dcfe43a5c27c202e7364e321c63dc22b7993a3416160eafe6f7c74f",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "048087af32dd66357adccc297d0248ed032114fffddf4c9ec3aa5f65ea58b0ab",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0e7e78c9a8353e17e004a9c193bbebfee4626cd27258b384f3889ea11653334b",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e09f9084fb8d1863b2997578aac3f733df5f4b9563cf2752f0e3468a698c9796",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "2b936894ac5aebfea6f6173e1a0db6a3f715fc7fada2ae4d2969a9d158644cf4",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "c3bfa236145d31f5690851c3d8fee71c2dc96fb03cc11e023c95210b12660b63",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "5d3ebe110ac8faa0c37f3cb637b3b64a16157aba3bd8d7d56efedc3f06ade46d",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "e5a4d68580b389baec65e7beb47621bf3f8890928bf50b701f92fac087751f2e",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "7a137fabf78081e0e8f9b31c288b79bef9804cb886870fb526a413cb34d535a5",
+      "cutoff": 1014,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "91ce47ec53f1058b73952a66e3f5d3a95314beaefac5e10ea93cd753672ac1ba",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "85c53b3e105996d33cf309ba333b8d5b7a18fe482ecba71180383ff60a0ce8c9",
+      "cutoff": 1161,
+      "old": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "6d6a624aea56b9e4ff9ca00aca48822f1e3c46ca6e23d8ba95cbc249dad28ae4",
+      "cutoff": 306,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "41b0dae9feaf158e12a1c37f93aca08f05b527162eb26ef558d7acfe23c083f6",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "dc22017cfae7085189dcaa6ba5133f1dd3ba7b53c2f8c268cd7b1cd569d3cfb1",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0302477168f39dc90545c324d42f6d2308b5c41e6176f51ea5a48481bed4c680",
+      "cutoff": 729,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "7eb91ab9a60cc259ac43527880a3d7aa05c955e4756af943c98e51289deeb8c0",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "87aaea0a879d53060a3247035df593560cdd3563cf254644e55b63e8325d58e3",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "1fd10add830f70903d1ff763ead478cb60c144db801812b94ac9dcf2b3bef636",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "eb086b6f7df7ce77628bd60f008a47abffb7d4b7fb5c78ba986d89dc6b5f59b9",
+      "cutoff": 894,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "62482eb9f929556e0be995aa9baee2f4884a147e32ba7f86d2bd17e3cce14dce",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "be0ab2e692801a0c57655cf9177548bf3be78c23491800cbda2773cc609f2dff",
+      "cutoff": 894,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "0cc5f9b24f77b762957cb26684ed5149aee78752bd839146fdbfa196fe256ed0",
+      "cutoff": 555,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "05b616574c7181cfd40c84f30e9043e983e6e16fe036a3f34083806ccae1f76d",
+      "cutoff": 555,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "aef6007c5a930ed658d410a5d61df1449c0fe25b7fedce0d0c804d103a604c80",
+      "cutoff": 729,
+      "old": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "current": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": false,
+        "top5": false,
+        "top10": false,
+        "hits": 10
+      }
+    },
+    {
+      "case_sha256": "4411ac42943e88fb2d8faeb4b1f860357da6f961ed37f80ce48516e45a403e17",
+      "cutoff": 306,
+      "old": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "current": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      },
+      "latest_url_resolved": {
+        "top1": true,
+        "top5": true,
+        "top10": true,
+        "hits": 10
+      }
+    }
+  ],
+  "limitations": [
+    "published extracted source text, not original HTML bytes",
+    "upstream relation-derived questions with human-validated source annotations, not independently human-authored questions",
+    "gold token-sequence presence is retrieval coverage proxy, not semantic answer correctness",
+    "known-answer intervals and upstream query schedule; ambiguous and yes/no labels excluded",
+    "latest-only active URL archive is not the original ERASE system; no LLM generation",
+    "read-time chronology is upstream availability time, not inferred real event time"
+  ]
+}

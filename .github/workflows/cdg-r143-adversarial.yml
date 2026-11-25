@@ -1,0 +1,28 @@
+name: CDG R143 adversarial transactional archive
+on:
+  push:
+    branches: ['research/round-143-*']
+    paths: ['experiments/round-143/**','.github/workflows/cdg-r143-adversarial.yml','research/rounds/round-143/**']
+  workflow_dispatch:
+jobs:
+  stress:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {seed: 143, workers: 4, count: 32}
+          - {seed: 144, workers: 8, count: 24}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-118/cdgfts.c -o experiments/round-118/cdgfts.so
+      - run: python experiments/round-143/adversarial_pack.py --extension experiments/round-118/cdgfts.so --seed ${{ matrix.seed }} --workers ${{ matrix.workers }} --count ${{ matrix.count }} --out experiments/round-143/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r143-${{ matrix.seed }}
+          path: experiments/round-143/ci.json
