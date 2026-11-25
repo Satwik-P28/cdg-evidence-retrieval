@@ -52,3 +52,12 @@ def test_crash(tmp_path,stage):
     reader.rollback();reader.close()
     db.execute("BEGIN");assert p.audit(db,fd)==n+1;assert p.replay(db,fd,body,digest)==body
     db.rollback();db.close();os.close(fd)
+
+
+def test_udf_contract(tmp_path):
+    import inspect
+    db=sqlite3.connect(":memory:");p.register(db)
+    values=(b"x"*32,1,"article",0,b"y"*32,"a"*40,0,"b"*40,b"z"*32)
+    assert len(values)==len(inspect.signature(p.entry).parameters)
+    assert db.execute("SELECT cdg_origin_entry(?,?,?,?,?,?,?,?,?)",values).fetchone()[0]==p.entry(*values)
+    db.close()

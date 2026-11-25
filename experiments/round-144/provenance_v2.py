@@ -20,7 +20,7 @@ def entry(previous,g,a,i,digest,commit,timestamp,blob,rank_prefix):
         [g,a,i,digest.hex(),commit,timestamp,blob,rank_prefix.hex()]))
 def register(db):
     db.create_function("cdg_origin_seed",1,manifest_seed,deterministic=True)
-    db.create_function("cdg_origin_entry",8,entry,deterministic=True)
+    db.create_function("cdg_origin_entry",9,entry,deterministic=True)
     return db
 def setup(path,ext,manifest):
     db=register(tp.setup(path,ext,manifest))
