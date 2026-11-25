@@ -1,5 +1,5 @@
 """R145: transactional exact encoded-frame reuse. Separate from R144 v2."""
-import argparse,collections,json,os,sqlite3,sys,tempfile,time
+import argparse,collections,hashlib,json,os,sqlite3,sys,tempfile,time
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent/"round-138"))

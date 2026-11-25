@@ -17,7 +17,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install zstandard==0.25.0 pytest==9.0.2 gdown==5.2.0
+      - run: pip install zstandard==0.25.0 pytest==9.0.2 gdown==5.2.0 pyflakes==3.4.0
+      - run: python -m pyflakes experiments/round-145/dedup_pack.py
       - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-118/cdgfts.c -o experiments/round-118/cdgfts.so
       - run: CDG_FTS_EXTENSION="$PWD/experiments/round-118/cdgfts.so" PYTHONPATH=experiments/round-145 python -m pytest -q experiments/round-145
       - run: python experiments/round-136/download_source.py --out external/newsedits
