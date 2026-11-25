@@ -37,3 +37,8 @@ Two 10,009-revision jobs on 2af1dea6 passed (https://github.com/Satwik-P28/cdg-e
 | original | marginal | 7149439 | 5662 | 1.335114 | 2.482558 | 1.498306 |
 | original | recipe | 7122926 | 5651 | 1.340499 | 2.482558 | 1.498306 |
 | original | recipe_sketch | 7096152 | 5651 | 1.345258 | 2.482558 | 1.498306 |
+
+
+## Full verified results
+
+Full AP job passed on 2af1dea6; 52,029,958 B baseline payload, 51,804,679 B marginal (mean logical decode 1.642834 -> 1.337043), 51,482,132 B global recipe (1.341151), 49,911,202 B sketch (1.372171). All exact source reconstructions and hard bounds passed; sketch elapsed 56.97 s vs baseline 22.51 s, descriptive. Marginal maintains per-article local anchor schema and is simplest candidate. Source-only, not complete archive.
