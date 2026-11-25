@@ -14,3 +14,8 @@ Both jobs on 3486a9df failed before data acquisition because hashlib was not imp
 ## Partial verified results
 
 Corrected R145 commit 0028b46a: 10,009-revision job passed (https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45691626610); full job still pending at archival. Snapshot 42,846,800 B, snapshot reuse 33,673,706 B, bounded anchor 30,691,764 B, bounded anchor reuse 30,111,765 B. Reuses 3,566 encoded frames, identical logical reconstruction metrics, 40,036 exact reads and 1,024 historical rank comparisons with zero observed score error. Catalog overhead charged. No full cohort claim.
+
+
+## Full verified results
+
+Both corrected R145 jobs passed on 0028b46a (https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45691626610). Full AP: ordinary transactional snapshots 312,521,715 B, snapshot reuse 242,336,527 B, bounded-anchor 223,142,857 B, bounded-anchor reuse 217,258,534 B. Reuse eliminates 28,649 encoded frames and saves 5,884,323 complete archive bytes after catalog overhead (2.637%). Identical logical costs and source bytes. Across both cohorts, 337,492 exact source reads, 2,048 ranking comparisons, zero observed score error. Seventeen tests per job including 15 process-death configurations. No v2 provenance in these arms.

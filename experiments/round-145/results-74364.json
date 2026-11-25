@@ -1,0 +1,120 @@
+{
+  "round": 145,
+  "revisions": 74364,
+  "documents": 12841,
+  "manifest_sha256": "e12f3c397333e78a5ab3394dbb119bbab95985161e53dadf9eef71b6b5508319",
+  "query_plan_sha256": "d458e8227abf254e9d0168249177e56972077617fc5dcc87f5bae104ed35cf24",
+  "policies": {
+    "snapshot": {
+      "total_archive_bytes": 312521715,
+      "sqlite_bytes": 163151872,
+      "sidecar_bytes": 149369843,
+      "payload_bytes": 149369811,
+      "unique_frames": 74364,
+      "duplicate_revisions": 0,
+      "append": {
+        "median_us": 1050.3899999999999,
+        "p95_us": 2646.661,
+        "samples": 74364
+      },
+      "read": {
+        "median_us": 19.909,
+        "p95_us": 29.713,
+        "samples": 74364
+      },
+      "source_reads": 74364,
+      "rank_checks": 256,
+      "pinned_checks": 16,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "activated_bytes": 149369811
+    },
+    "bounded_anchor": {
+      "total_archive_bytes": 223142857,
+      "sqlite_bytes": 163160064,
+      "sidecar_bytes": 59982793,
+      "payload_bytes": 59982761,
+      "unique_frames": 74364,
+      "duplicate_revisions": 0,
+      "append": {
+        "median_us": 1098.7795,
+        "p95_us": 2735.398,
+        "samples": 74364
+      },
+      "read": {
+        "median_us": 32.127,
+        "p95_us": 47.32,
+        "samples": 74364
+      },
+      "source_reads": 74364,
+      "rank_checks": 256,
+      "pinned_checks": 16,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1.6428339389241737,
+      "max_decode_ratio": 2.4876543209876543,
+      "max_activation_ratio": 1.5,
+      "activated_bytes": 157263276
+    },
+    "snapshot_reuse": {
+      "total_archive_bytes": 242336527,
+      "sqlite_bytes": 165027840,
+      "sidecar_bytes": 77308687,
+      "payload_bytes": 77308655,
+      "unique_frames": 41282,
+      "duplicate_revisions": 33082,
+      "append": {
+        "median_us": 894.6045,
+        "p95_us": 2406.997,
+        "samples": 74364
+      },
+      "read": {
+        "median_us": 19.859,
+        "p95_us": 30.004,
+        "samples": 74364
+      },
+      "source_reads": 74364,
+      "rank_checks": 256,
+      "pinned_checks": 16,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "activated_bytes": 149369811
+    },
+    "bounded_anchor_reuse": {
+      "total_archive_bytes": 217258534,
+      "sqlite_bytes": 165228544,
+      "sidecar_bytes": 52029990,
+      "payload_bytes": 52029958,
+      "unique_frames": 45715,
+      "duplicate_revisions": 28649,
+      "append": {
+        "median_us": 1049.0720000000001,
+        "p95_us": 2838.121,
+        "samples": 74364
+      },
+      "read": {
+        "median_us": 32.598,
+        "p95_us": 47.41,
+        "samples": 74364
+      },
+      "source_reads": 74364,
+      "rank_checks": 256,
+      "pinned_checks": 16,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1.6428339389241737,
+      "max_decode_ratio": 2.4876543209876543,
+      "max_activation_ratio": 1.5,
+      "activated_bytes": 157263276
+    }
+  },
+  "limitations": [
+    "exact encoded-frame reuse, not source-object equivalence across different anchor contexts",
+    "catalog lookup charged; physical layout and metadata overhead measured",
+    "append-only, no deletion/compaction, cooperating writers, no hardware power-loss validation",
+    "v1 receipts only; provenance v2 separately evaluated",
+    "derived text and synthetic global ingestion chronology"
+  ]
+}

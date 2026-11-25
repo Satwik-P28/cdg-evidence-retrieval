@@ -1,0 +1,34 @@
+{
+  "round": 147,
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "total_archive_bytes": 30525461,
+  "source_payload_bytes": 7149557,
+  "unique_frames": 6443,
+  "duplicate_revisions": 3566,
+  "append": {
+    "median_us": 1142.682,
+    "p95_us": 2534.48,
+    "samples": 10009
+  },
+  "batch_receipts": 64,
+  "batch_metadata_rows": 10009,
+  "batch_us": 390567.251,
+  "rank_checks": 256,
+  "pinned_checks": 16,
+  "source_reads": 10009,
+  "max_score_error": 0,
+  "mean_decode_ratio": 1.645910671385138,
+  "max_decode_ratio": 2.4825581395348837,
+  "max_activation_ratio": 1.4983063605570193,
+  "activated_bytes": 21201943,
+  "reference_v2_archive_bytes": 31109556,
+  "reference_git_depth1_bytes": 29657017,
+  "limitations": [
+    "cooperating local writers; no power-loss, deletion or garbage collection",
+    "v2 trusted external digest required; no publisher authentication",
+    "metadata scan amortization, not sublinear single receipt verification",
+    "one combined build per cohort, prior-run v2 and Git size references, no cross-run latency comparison",
+    "derived news text and synthetic global schedule"
+  ]
+}
