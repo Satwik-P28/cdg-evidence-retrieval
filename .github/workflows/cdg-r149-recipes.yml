@@ -1,0 +1,31 @@
+name: CDG R149 causal marginal frame and recipe selection
+on:
+  push:
+    branches: ['research/round-149-*']
+    paths: ['experiments/round-149/**','.github/workflows/cdg-r149-recipes.yml','research/rounds/round-149/**']
+  workflow_dispatch:
+jobs:
+  compare:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {target: 10000, order: original}
+          - {target: 100000, order: original}
+          - {target: 10000, order: reordered}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 gdown==5.2.0 pyflakes==3.4.0 pytest==9.0.2
+      - run: python -m pyflakes experiments/round-149
+      - run: PYTHONPATH=experiments/round-149 python -m pytest -q experiments/round-149
+      - run: python experiments/round-136/download_source.py --out external/newsedits
+      - run: python experiments/round-149/marginal_recipes.py --source external/newsedits/ap.db --target ${{ matrix.target }} --order ${{ matrix.order }} --out experiments/round-149/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r149-${{ matrix.target }}-${{ matrix.order }}
+          path: experiments/round-149/ci.json
