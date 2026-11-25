@@ -9,3 +9,8 @@ Compare matched transactional snapshot/CDG with and without reuse, on both froze
 ## Initial failure
 
 Both jobs on 3486a9df failed before data acquisition because hashlib was not imported. Corrected import, added static undefined-name check before existing tests. Original run https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45568600037. No dedup measurements yet.
+
+
+## Partial verified results
+
+Corrected R145 commit 0028b46a: 10,009-revision job passed (https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45691626610); full job still pending at archival. Snapshot 42,846,800 B, snapshot reuse 33,673,706 B, bounded anchor 30,691,764 B, bounded anchor reuse 30,111,765 B. Reuses 3,566 encoded frames, identical logical reconstruction metrics, 40,036 exact reads and 1,024 historical rank comparisons with zero observed score error. Catalog overhead charged. No full cohort claim.
