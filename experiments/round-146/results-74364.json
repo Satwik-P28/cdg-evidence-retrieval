@@ -1,0 +1,109 @@
+{
+  "round": 146,
+  "revisions": 74364,
+  "manifest_sha256": "e12f3c397333e78a5ab3394dbb119bbab95985161e53dadf9eef71b6b5508319",
+  "trials": {
+    "single": {
+      "receipts": 1,
+      "metadata_rows": {
+        "individual": 74364,
+        "batch": 74364
+      },
+      "timing": {
+        "individual": {
+          "median_us": 417195.066,
+          "p95_us": 417195.066,
+          "samples": 3
+        },
+        "batch": {
+          "median_us": 420842.438,
+          "p95_us": 420842.438,
+          "samples": 3
+        }
+      },
+      "raw_timing_us": {
+        "individual": [
+          414034.165,
+          421043.615,
+          417195.066
+        ],
+        "batch": [
+          420271.312,
+          421644.167,
+          420842.438
+        ]
+      }
+    },
+    "same_cutoff": {
+      "receipts": 16,
+      "metadata_rows": {
+        "batch": 74364,
+        "individual": 1189824
+      },
+      "timing": {
+        "individual": {
+          "median_us": 6652148.847,
+          "p95_us": 6652148.847,
+          "samples": 3
+        },
+        "batch": {
+          "median_us": 887359.303,
+          "p95_us": 887359.303,
+          "samples": 3
+        }
+      },
+      "raw_timing_us": {
+        "individual": [
+          6652148.847,
+          6643164.354,
+          6663014.392
+        ],
+        "batch": [
+          887359.303,
+          879757.976,
+          888019.068
+        ]
+      }
+    },
+    "mixed": {
+      "receipts": 64,
+      "metadata_rows": {
+        "individual": 2790544,
+        "batch": 74364
+      },
+      "timing": {
+        "individual": {
+          "median_us": 16487767.742,
+          "p95_us": 16487767.742,
+          "samples": 3
+        },
+        "batch": {
+          "median_us": 2329397.892,
+          "p95_us": 2329397.892,
+          "samples": 3
+        }
+      },
+      "raw_timing_us": {
+        "individual": [
+          16448907.002,
+          16536916.416,
+          16487767.742
+        ],
+        "batch": [
+          2314840.821,
+          2334013.652,
+          2329397.892
+        ]
+      }
+    }
+  },
+  "archive_bytes": 226223049,
+  "source_payload_bytes": 59982761,
+  "limitations": [
+    "same SQLite read snapshot per batch, no reuse across transactions",
+    "requires trusted individual external receipt digests; no publisher authentication",
+    "does not reduce single-receipt asymptotic cost; per-receipt ranking and hit checks unchanged",
+    "three randomized method-order warm repetitions; descriptive timings",
+    "derived AP text and synthetic ingestion schedule"
+  ]
+}
