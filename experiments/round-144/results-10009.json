@@ -1,0 +1,57 @@
+{
+  "round": 144,
+  "result": {
+    "revisions": 10009,
+    "source_manifest": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+    "query_count": 16,
+    "cutoffs": [
+      1744,
+      4499,
+      7254,
+      10009
+    ],
+    "policies": {
+      "v1": {
+        "total_archive_bytes": 30691764,
+        "payload_bytes": 8020372,
+        "append": {
+          "median_us": 1028.605,
+          "p95_us": 2492.149,
+          "samples": 10009
+        },
+        "replay": {
+          "median_us": 6142.7435000000005,
+          "p95_us": 7009.253,
+          "samples": 64
+        },
+        "rank_checks": 64,
+        "max_score_error": 0,
+        "audited_sources": 10009
+      },
+      "v2": {
+        "total_archive_bytes": 31109556,
+        "payload_bytes": 8020372,
+        "append": {
+          "median_us": 1053.824,
+          "p95_us": 2525.054,
+          "samples": 10009
+        },
+        "replay": {
+          "median_us": 47086.747,
+          "p95_us": 74877.047,
+          "samples": 64
+        },
+        "rank_checks": 64,
+        "max_score_error": 0,
+        "audited_sources": 10009
+      }
+    },
+    "limitations": [
+      "prefix metadata scan O(c), no cached verification claim",
+      "trusted external receipt digest required; no signature or publisher authentication",
+      "synthetic ordinal schedule and derived text",
+      "only hit source bytes checked by replay; full audit verifies all source bytes",
+      "same runner sequential arms, timings descriptive"
+    ]
+  }
+}
