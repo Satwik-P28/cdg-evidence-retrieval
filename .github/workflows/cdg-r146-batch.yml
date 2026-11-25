@@ -1,0 +1,28 @@
+name: CDG R146 batched provenance replay
+on:
+  push:
+    branches: ['research/round-146-*']
+    paths: ['experiments/round-146/**','.github/workflows/cdg-r146-batch.yml','research/rounds/round-146/**']
+  workflow_dispatch:
+jobs:
+  batch:
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [10000, 100000]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 pytest==9.0.2 gdown==5.2.0
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-118/cdgfts.c -o experiments/round-118/cdgfts.so
+      - run: CDG_FTS_EXTENSION="$PWD/experiments/round-118/cdgfts.so" PYTHONPATH=experiments/round-146 python -m pytest -q experiments/round-146
+      - run: python experiments/round-136/download_source.py --out external/newsedits
+      - run: python experiments/round-146/batch_verify.py --source external/newsedits/ap.db --target ${{ matrix.target }} --extension experiments/round-118/cdgfts.so --out experiments/round-146/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r146-${{ matrix.target }}
+          path: experiments/round-146/ci.json

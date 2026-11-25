@@ -1,0 +1,7 @@
+# R146: batched provenance prefix replay
+
+Status: implemented, unverified.
+
+R144 v2 median full-AP replay latency 393.885 ms vs 45.217 ms for v1. Eliminate redundant metadata scans without weakening the trusted digest contract. Each batch owns a fresh SQLite read transaction, verifies all supplied receipt digests, scans actual provenance rows through maximum requested cutoff, checks every stored prefix and retains recomputed roots only for requested cutoffs. Reissue each ranking and verify exact source bytes and hit origin metadata, compare full individual bodies/digests. No persistent trust cache and no return of partial successes. Cost of prefix metadata rows falls from sum(c_i) to max(c_i), independent of request order. Single receipt remains linear; ranking cost unchanged. External trusted digest and local immutable source prefix assumptions remain. This is ordinary amortization, not new cryptography.
+
+Frozen R144 nested AP cohorts, identical archive sizes, same 16 queries and four cutoffs, compare one receipt, 16 same-cutoff receipts, and 64 mixed-cutoff receipts. Individual arm owns one snapshot too, so not inflated by connection-per-receipt overhead. Three randomized method-order repetitions; compare total batch latency and actual prefix row counts. Test duplicate/mixed order and five mutations, plus cross-transaction revalidation and suffix-scoped behavior. No timing or correctness claim before CI.
