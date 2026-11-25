@@ -1,0 +1,5 @@
+# R148: final feature-matched control
+
+Status: implemented, pending validation.
+
+R147's 29.50% complete-archive saving versus R138 snapshots confounds compression and exact-frame deduplication; the v2 origin ledger is also absent in the snapshot and Git controls. Compare snapshot and bounded-anchor encodings under the exact same integrated R147 writer, frame catalog, origin trigger, manifest, index, query plan and receipt protocol. Both nested frozen AP cohorts. All 64 v2 receipts must have identical ordered digest fingerprints across arms; every revision must reconstruct, both bounds must hold, all 256 native rank checks must agree. Compare complete finalized physical bytes including catalog, ledger and sidecar. R147 bounded-anchor deterministic size/cost must reproduce; R142 coalesced payload and frame count must match each arm. Report storage reduction against the matched snapshot control, not a new algorithm. Descriptive sequential-build timing only. Git is an external finalized control without v2 provenance or update parity. No new system features.
