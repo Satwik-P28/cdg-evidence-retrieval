@@ -29,7 +29,8 @@ def test_random_spaced_edits():
 
 @pytest.mark.parametrize("mode",["aligned_single","aligned_multi","independent_multi"])
 def test_native_signed_index(tmp_path,mode):
-    text=(b"alpha beta gamma delta epsilon theta "*150)
+    rng=random.Random(166)
+    text=b"alpha beta gamma delta epsilon theta "+b" ".join(("word"+str(rng.randrange(1000000))).encode() for _ in range(900))
     ev=[("a",0,text),("b",0,text),("a",1,text.replace(b"gamma",b"unique",1)),
         ("a",2,text[:-30]+b"another finish"),("c",0,b""),("d",0,"CAFÉ café 中文!".encode())]
     path=tmp_path/"db";db,_=f.build(path,EXT,ev,"marginal",False);size=build_delta(db,path,ev,mode)
