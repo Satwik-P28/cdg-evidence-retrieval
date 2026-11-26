@@ -3,7 +3,7 @@ import argparse,json,os,platform,random,sys,tempfile,time
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent/"round-159"))
-from physical_io import j,h,pv,tp,bv,fr,recover,proc_io,difference,reader,workloads,IO_FIELDS
+from physical_io import j,h,tp,bv,fr,recover,proc_io,difference,reader,workloads,IO_FIELDS
 
 def check_trees(root,corpus,collector,events,m):
     # Fresh Git tree reads, at the designated query cutoffs plus fixed
