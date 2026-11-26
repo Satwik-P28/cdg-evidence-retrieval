@@ -1,0 +1,238 @@
+{
+  "round": 156,
+  "corpus": "clark",
+  "revisions": 1161,
+  "manifest_sha256": "1567b6c765b7a648e1a2a6d4221bf22543a7011377fda94161c37c04a29b6e2f",
+  "cutoffs": [
+    290,
+    580,
+    870,
+    1161
+  ],
+  "query_count": 80,
+  "policies": {
+    "marginal": {
+      "sqlite_bytes": 5988352,
+      "frame_payload_bytes": 2538073,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 2527232,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "docs_0_config": 4096,
+        "docs_0_data": 2490368,
+        "docs_0_docsize": 16384,
+        "docs_0_idx": 16384,
+        "frames": 3190784,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 747969.2,
+      "kind_0": 1161,
+      "source_checks": 1161,
+      "audit_us": 32875.866,
+      "uniform_read": {
+        "median_us": 27.171,
+        "p95_us": 36.929,
+        "samples": 12
+      },
+      "residual_read": null,
+      "query": {
+        "median_us": 175.8675,
+        "p95_us": 2478.943,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0
+    },
+    "self_unsharded": {
+      "sqlite_bytes": 3981312,
+      "frame_payload_bytes": 1016466,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 2527232,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "docs_0_config": 4096,
+        "docs_0_data": 2490368,
+        "docs_0_docsize": 16384,
+        "docs_0_idx": 16384,
+        "frames": 1183744,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 861854.024,
+      "kind_2": 1159,
+      "kind_0": 2,
+      "source_checks": 1161,
+      "audit_us": 1084846.151,
+      "uniform_read": {
+        "median_us": 47902.061,
+        "p95_us": 48825.433,
+        "samples": 12
+      },
+      "residual_read": {
+        "median_us": 47826.2045,
+        "p95_us": 47915.016,
+        "samples": 8
+      },
+      "query": {
+        "median_us": 171.845,
+        "p95_us": 2497.217,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0
+    },
+    "self_512": {
+      "sqlite_bytes": 4161536,
+      "frame_payload_bytes": 1016466,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 3,
+      "max_shard_rows": 512,
+      "fts_bytes": 2707456,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "docs_0_config": 4096,
+        "docs_0_data": 1183744,
+        "docs_0_docsize": 12288,
+        "docs_0_idx": 12288,
+        "docs_1_config": 4096,
+        "docs_1_data": 1097728,
+        "docs_1_docsize": 12288,
+        "docs_1_idx": 4096,
+        "docs_2_config": 4096,
+        "docs_2_data": 364544,
+        "docs_2_docsize": 4096,
+        "docs_2_idx": 4096,
+        "frames": 1183744,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 830896.666,
+      "kind_2": 1159,
+      "kind_0": 2,
+      "source_checks": 1161,
+      "audit_us": 1068967.646,
+      "uniform_read": {
+        "median_us": 21642.7555,
+        "p95_us": 22834.948,
+        "samples": 12
+      },
+      "residual_read": {
+        "median_us": 22482.482,
+        "p95_us": 22690.019,
+        "samples": 8
+      },
+      "query": {
+        "median_us": 212.78199999999998,
+        "p95_us": 2637.619,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0
+    },
+    "self_128": {
+      "sqlite_bytes": 4591616,
+      "frame_payload_bytes": 1016466,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 10,
+      "max_shard_rows": 128,
+      "fts_bytes": 3129344,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "docs_0_config": 4096,
+        "docs_0_data": 364544,
+        "docs_0_docsize": 4096,
+        "docs_0_idx": 4096,
+        "docs_1_config": 4096,
+        "docs_1_data": 335872,
+        "docs_1_docsize": 4096,
+        "docs_1_idx": 4096,
+        "docs_2_config": 4096,
+        "docs_2_data": 348160,
+        "docs_2_docsize": 4096,
+        "docs_2_idx": 4096,
+        "docs_3_config": 4096,
+        "docs_3_data": 315392,
+        "docs_3_docsize": 4096,
+        "docs_3_idx": 4096,
+        "docs_4_config": 4096,
+        "docs_4_data": 331776,
+        "docs_4_docsize": 4096,
+        "docs_4_idx": 4096,
+        "docs_5_config": 4096,
+        "docs_5_data": 311296,
+        "docs_5_docsize": 4096,
+        "docs_5_idx": 4096,
+        "docs_6_config": 4096,
+        "docs_6_data": 315392,
+        "docs_6_docsize": 4096,
+        "docs_6_idx": 4096,
+        "docs_7_config": 4096,
+        "docs_7_data": 303104,
+        "docs_7_docsize": 4096,
+        "docs_7_idx": 4096,
+        "docs_8_config": 4096,
+        "docs_8_data": 360448,
+        "docs_8_docsize": 4096,
+        "docs_8_idx": 4096,
+        "docs_9_config": 4096,
+        "docs_9_data": 20480,
+        "docs_9_docsize": 4096,
+        "docs_9_idx": 4096,
+        "frames": 1183744,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 12288
+      },
+      "build_us": 814735.991,
+      "kind_2": 1159,
+      "kind_0": 2,
+      "source_checks": 1161,
+      "audit_us": 1059569.44,
+      "uniform_read": {
+        "median_us": 5955.357,
+        "p95_us": 6674.459,
+        "samples": 12
+      },
+      "residual_read": {
+        "median_us": 5863.0345,
+        "p95_us": 7326.193,
+        "samples": 8
+      },
+      "query": {
+        "median_us": 343.576,
+        "p95_us": 2727.718,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0
+    }
+  },
+  "limitations": [
+    "physical finalized source+index subset, identical revision/source schemas; no transactional provenance ledger, not full R151 archive",
+    "Zstd residual uses reconstructed normalized bytes as dictionary, source identity separate; no semantic normalization equivalence claim",
+    "logical predictor length admission only; index scan cost not bounded by source-frame activation",
+    "shards cap content rows, not postings bytes; every query fans out across shards",
+    "one shuffled query pass, tiny random read sample, warm descriptive timing; no production guarantees",
+    "AP synthetic global schedule"
+  ]
+}
