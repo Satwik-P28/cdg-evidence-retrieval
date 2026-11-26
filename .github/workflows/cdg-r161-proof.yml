@@ -1,0 +1,43 @@
+name: CDG R161 proof dependency packing
+on:
+  push:
+    branches: ['research/round-161-*']
+    paths: ['experiments/round-161/**','.github/workflows/cdg-r161-proof.yml','research/rounds/round-161/**']
+  workflow_dispatch:
+jobs:
+  proof:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {corpus: grh, repo: lsernau/grh-lean, pin: 72fead102f663d5c7a407964a13dc0cf9d977207}
+          - {corpus: grh-compact, repo: lsernau/grh-lean, pin: 72fead102f663d5c7a407964a13dc0cf9d977207}
+          - {corpus: masullo, repo: mccorvie/riemann-masullo, pin: ca6e92b821abdbb36ba7aadb97bd2e2400dff9f7}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install zstandard==0.25.0 pyflakes==3.4.0
+      - run: python -m pyflakes experiments/round-161
+      - name: Clone pinned proof and NetworkX sources
+        env:
+          UPSTREAM: ${{ matrix.repo }}
+          PIN: ${{ matrix.pin }}
+        run: |
+          mkdir -p external
+          git init external/proof
+          git -C external/proof fetch --depth=1 https://github.com/$UPSTREAM.git "$PIN"
+          git -C external/proof checkout --detach FETCH_HEAD
+          test "$(git -C external/proof rev-parse HEAD)" = "$PIN"
+          git init external/networkx
+          git -C external/networkx fetch --depth=1 https://github.com/networkx/networkx.git c220ac4fa9ee3f42ef927b8bf13fc933924ae763
+          git -C external/networkx checkout --detach FETCH_HEAD
+          test "$(git -C external/networkx rev-parse HEAD)" = c220ac4fa9ee3f42ef927b8bf13fc933924ae763
+      - run: PYTHONPATH="$PWD/external/networkx" python experiments/round-161/proof_pack.py --root external/proof --corpus ${{ matrix.corpus }} --out experiments/round-161/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r161-${{ matrix.corpus }}
+          path: experiments/round-161/ci.json
