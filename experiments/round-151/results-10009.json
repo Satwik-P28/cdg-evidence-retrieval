@@ -1,0 +1,113 @@
+{
+  "round": 151,
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "policies": {
+    "bounded_anchor_revision": {
+      "total_archive_bytes": 30525461,
+      "payload_bytes": 7149557,
+      "unique_frames": 6443,
+      "index_rows": 10009,
+      "mean_decode_ratio": 1.645910671385138,
+      "max_decode_ratio": 2.4825581395348837,
+      "max_activation_ratio": 1.4983063605570193,
+      "append": {
+        "median_us": 1254.406,
+        "p95_us": 2854.075,
+        "samples": 10009
+      },
+      "rank_receipt": {
+        "median_us": 6164.725,
+        "p95_us": 7575.509,
+        "samples": 256
+      },
+      "batch_us": 483970.007,
+      "rank_checks": 256,
+      "batch_receipts": 64,
+      "pinned_checks": 16,
+      "source_reads": 10009,
+      "max_score_error": 0
+    },
+    "marginal_revision": {
+      "total_archive_bytes": 30492575,
+      "payload_bytes": 7149439,
+      "unique_frames": 5662,
+      "index_rows": 10009,
+      "mean_decode_ratio": 1.3351140949498168,
+      "max_decode_ratio": 2.4825581395348837,
+      "max_activation_ratio": 1.4983063605570193,
+      "append": {
+        "median_us": 1210.607,
+        "p95_us": 2864.764,
+        "samples": 10009
+      },
+      "rank_receipt": {
+        "median_us": 6074.388,
+        "p95_us": 7559.268,
+        "samples": 256
+      },
+      "batch_us": 493968.805,
+      "rank_checks": 256,
+      "batch_receipts": 64,
+      "pinned_checks": 16,
+      "source_reads": 10009,
+      "max_score_error": 0
+    },
+    "bounded_anchor_quotient": {
+      "total_archive_bytes": 21862421,
+      "payload_bytes": 7149557,
+      "unique_frames": 6443,
+      "index_rows": 5651,
+      "mean_decode_ratio": 1.645910671385138,
+      "max_decode_ratio": 2.4825581395348837,
+      "max_activation_ratio": 1.4983063605570193,
+      "append": {
+        "median_us": 1090.774,
+        "p95_us": 2454.204,
+        "samples": 10009
+      },
+      "rank_receipt": {
+        "median_us": 964.0095,
+        "p95_us": 3780.016,
+        "samples": 256
+      },
+      "batch_us": 171687.422,
+      "rank_checks": 256,
+      "batch_receipts": 64,
+      "pinned_checks": 16,
+      "source_reads": 10009,
+      "max_score_error": 0
+    },
+    "marginal_quotient": {
+      "total_archive_bytes": 21829535,
+      "payload_bytes": 7149439,
+      "unique_frames": 5662,
+      "index_rows": 5651,
+      "mean_decode_ratio": 1.3351140949498168,
+      "max_decode_ratio": 2.4825581395348837,
+      "max_activation_ratio": 1.4983063605570193,
+      "append": {
+        "median_us": 1144.274,
+        "p95_us": 2512.343,
+        "samples": 10009
+      },
+      "rank_receipt": {
+        "median_us": 943.928,
+        "p95_us": 3804.054,
+        "samples": 256
+      },
+      "batch_us": 168452.283,
+      "rank_checks": 256,
+      "batch_receipts": 64,
+      "pinned_checks": 16,
+      "source_reads": 10009,
+      "max_score_error": 0
+    }
+  },
+  "limitations": [
+    "local marginal candidates only, no cross-article recipe extension",
+    "same manifest/provenance receipt format, no untrusted-index completeness proof",
+    "synthetic AP chronology, same runner sequential arms; timing descriptive",
+    "cooperating writers, no power-loss or deletion/compaction guarantee"
+  ]
+}
