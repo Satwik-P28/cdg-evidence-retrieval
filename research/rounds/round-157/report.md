@@ -1,6 +1,6 @@
 # R157: bounded forward projection and presence-only index
 
-Status: implemented, unverified.
+Status: all three jobs passed.
 
 R156 index-derived residuals reduced source/index storage 26.38% but individual extraction took 1.143 s median at scale. Replace full positional postings with presence-only FTS5 (detail=none, columnsize=0) and verify exact phrase counts against a compressed materialized canonical token stream. The stream also serves as the dictionary for a byte-exact Zstd source residual. Both its compressed frame and residual are charged to activation: 2*(predictor frame bytes+residual bytes)<=3*standalone Zstd bytes; decoded source+predictor <=2.5 source length. Fallback literal on ineligible predictor. No full inverted scan for source recovery. Candidate conjunction is a necessary condition for every phrase; exact overlapping starts counted on native normalized token stream, one space between tokens, both boundaries verified. Active revision multiplicities and BM25 scoring unchanged. No novel index primitive: compare nonpositional inverted indexes with compressed text and word-based self-indexes (https://www.mdpi.com/1999-4893/10/1/30, https://doi.org/10.1145/348751.348754, https://arxiv.org/abs/1604.08897).
 
@@ -9,3 +9,8 @@ Factorial controls marginal source vs materialized forward residual, full positi
 ## Partial verified results
 
 Two R157 jobs passed on a69fa82b (https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/45884498231), full AP pending. Small AP marginal positional 20,684,800 B, marginal presence 12,734,464 B, forward positional 27,938,816 B, forward presence 19,988,480 B. Median query 287.937, 17,920.943,295.595,1274.113 us respectively. Median read 32.607,31.760,55.886,55.835 us. CLARK marginal positional 5,992,448 B, marginal presence 4,145,152 B, forward positional 6,660,096 B, forward presence 4,812,800 B. All 44,680 exact reads and 2,560 rank comparisons pass, hard logical source bounds preserved. Materialized predictor storage erases much of R156 advantage; presence-only marginal saves physical storage but retokenization makes queries expensive. R158 tests exact compressed frequency lists with longer phrase fallback; finalized subset only, no production or full archive claim.
+
+
+## Full verified results
+
+All three R157 jobs passed. Full AP positional/marginal 148,459,520 B; presence/marginal 91,381,760 B; positional/forward 200,138,752 B; presence/forward 143,060,992 B. Median query 362.591, 25,434.407, 353.117, 1,895.014 us respectively. Forward source read 44.275 us vs marginal 27.761 us, descriptive. Predictor 69,065,255 B erases much of unmaterialized self-index saving. 342,136 exact readbacks, 3,840 native ranks across all three configurations, zero observed errors. All logical source bounds passed; finalized subset only.
