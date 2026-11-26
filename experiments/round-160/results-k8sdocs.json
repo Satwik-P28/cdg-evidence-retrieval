@@ -1,0 +1,1930 @@
+{
+  "round": 160,
+  "corpus": "k8sdocs",
+  "revisions": 378,
+  "manifest_sha256": "5f5c0aadac33c4b32c3bad6be6c78aa2c3115d5844291a6a9fbc837c11d863fb",
+  "cutoffs": [
+    141,
+    211,
+    291,
+    378
+  ],
+  "query_count": 80,
+  "query_plan_sha256": "caf16ca5db09191e9ed7bd53fb741cf0438f5190afdc383d31399a1d47b678eb",
+  "tree_checks": {
+    "snapshots": 17,
+    "path_checks": 2397,
+    "rows": [
+      {
+        "commit": "9babd649b90d5dece578003ae4253cdca297f6e1",
+        "cutoff": 141,
+        "committer_unix": 1736412871,
+        "checked_paths": 141
+      },
+      {
+        "commit": "7dd87ef1fbce14bfaa58140b890e93deeae16cd0",
+        "cutoff": 156,
+        "committer_unix": 1744969988,
+        "checked_paths": 141
+      },
+      {
+        "commit": "00643688a18a6f9ac6e534746d13671568e67d87",
+        "cutoff": 178,
+        "committer_unix": 1748072801,
+        "checked_paths": 141
+      },
+      {
+        "commit": "b646a981eeaeb277eb9eb69250b83777c1c94db7",
+        "cutoff": 182,
+        "committer_unix": 1752513744,
+        "checked_paths": 141
+      },
+      {
+        "commit": "f03ca4b68f9bb9aab1aa5c1dd63bdc72bcc1282a",
+        "cutoff": 211,
+        "committer_unix": 1756984035,
+        "checked_paths": 141
+      },
+      {
+        "commit": "545278ac12ceb1fcad4d3f6d83c2e550736f0915",
+        "cutoff": 232,
+        "committer_unix": 1762383891,
+        "checked_paths": 141
+      },
+      {
+        "commit": "7d193d74d786f20efa4c85313a8e6ef0e14e8a29",
+        "cutoff": 235,
+        "committer_unix": 1762816375,
+        "checked_paths": 141
+      },
+      {
+        "commit": "23820c08ab6883d0f05993618de0bc7121c1ddd5",
+        "cutoff": 256,
+        "committer_unix": 1766760152,
+        "checked_paths": 141
+      },
+      {
+        "commit": "7fe378e0b8e0d56a8a388abfaddaeb3c682a8a8e",
+        "cutoff": 277,
+        "committer_unix": 1773591696,
+        "checked_paths": 141
+      },
+      {
+        "commit": "16b99c2c37db8aac1a667413e0021b5e3b2e2740",
+        "cutoff": 280,
+        "committer_unix": 1774348939,
+        "checked_paths": 141
+      },
+      {
+        "commit": "3cebdb9bb35fea09a3f2ef54b2e69224a71a5202",
+        "cutoff": 291,
+        "committer_unix": 1774554976,
+        "checked_paths": 141
+      },
+      {
+        "commit": "6f4bacecad6ede009d6aa66c456cd37cabc47026",
+        "cutoff": 292,
+        "committer_unix": 1775601570,
+        "checked_paths": 141
+      },
+      {
+        "commit": "283359ef0679569a4ae02225e882033c7a0888e2",
+        "cutoff": 295,
+        "committer_unix": 1776344223,
+        "checked_paths": 141
+      },
+      {
+        "commit": "ecc7b6665a52dff428bf72f32eb09d9db81a4a81",
+        "cutoff": 325,
+        "committer_unix": 1780502749,
+        "checked_paths": 141
+      },
+      {
+        "commit": "2b3d24bcaa5923da200ae08ba35c30b5360682bc",
+        "cutoff": 370,
+        "committer_unix": 1791410035,
+        "checked_paths": 141
+      },
+      {
+        "commit": "46728d2c27a129c956ad45f339616b523a6bc210",
+        "cutoff": 378,
+        "committer_unix": 1795426596,
+        "checked_paths": 141
+      },
+      {
+        "commit": "eaffd1df82626570604ea5975216c09847edbae0",
+        "cutoff": 378,
+        "committer_unix": 1795461500,
+        "checked_paths": 141
+      }
+    ]
+  },
+  "retained_paths": 141,
+  "changed_paths": 93,
+  "committer_timestamp_regressions": 0,
+  "pin": "cd5dc586db87bc80666a54ce7ba113e19b062b91",
+  "kernel": "7.0.0-1020-azure",
+  "machine": "x86_64",
+  "filesystem": 4096,
+  "policies": {
+    "snapshot_revision": {
+      "total_archive_bytes": 2912939,
+      "allocated_bytes": 2920448,
+      "source_payload_bytes": 1225355,
+      "append": {
+        "median_us": 1226.9634999999998,
+        "p95_us": 3195.84,
+        "samples": 378
+      },
+      "ingestion_process_io": {
+        "rchar": 6276462,
+        "wchar": 49500139,
+        "syscr": 1915,
+        "syscw": 22687,
+        "read_bytes": 4096,
+        "write_bytes": 52596736,
+        "cancelled_write_bytes": 0
+      },
+      "finalization_process_io": {
+        "rchar": 2236581,
+        "wchar": 3809536,
+        "syscr": 552,
+        "syscw": 1759,
+        "read_bytes": 0,
+        "write_bytes": 3821568,
+        "cancelled_write_bytes": 32768
+      },
+      "source_checks": 378,
+      "rank_checks": 320,
+      "receipt_checks": 80,
+      "workloads": {
+        "warm_source": {
+          "elapsed_us": {
+            "total": 2901.2609999999995,
+            "median_us": 35.095,
+            "p95_us": 121.677,
+            "samples": 64
+          },
+          "sidecar_pread_calls": {
+            "total": 128,
+            "median_us": 2,
+            "p95_us": 2,
+            "samples": 64
+          },
+          "sidecar_requested_bytes": {
+            "total": 209123,
+            "median_us": 1951.5,
+            "p95_us": 15243,
+            "samples": 64
+          },
+          "sidecar_returned_bytes": {
+            "total": 209123,
+            "median_us": 1951.5,
+            "p95_us": 15243,
+            "samples": 64
+          },
+          "rchar": {
+            "total": 217635,
+            "median_us": 2084.5,
+            "p95_us": 15376,
+            "samples": 64
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "syscr": {
+            "total": 256,
+            "median_us": 4,
+            "p95_us": 4,
+            "samples": 64
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          }
+        },
+        "warm_rank": {
+          "elapsed_us": {
+            "total": 13650.197999999999,
+            "median_us": 379.58299999999997,
+            "p95_us": 811.444,
+            "samples": 32
+          },
+          "sidecar_pread_calls": {
+            "total": 332,
+            "median_us": 8,
+            "p95_us": 20,
+            "samples": 32
+          },
+          "sidecar_requested_bytes": {
+            "total": 479656,
+            "median_us": 12295,
+            "p95_us": 30781,
+            "samples": 32
+          },
+          "sidecar_returned_bytes": {
+            "total": 479656,
+            "median_us": 12295,
+            "p95_us": 30781,
+            "samples": 32
+          },
+          "rchar": {
+            "total": 483912,
+            "median_us": 12428,
+            "p95_us": 30914,
+            "samples": 32
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "syscr": {
+            "total": 396,
+            "median_us": 10,
+            "p95_us": 22,
+            "samples": 32
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          }
+        },
+        "warm_batch": {
+          "elapsed_us": {
+            "total": 170411.694,
+            "median_us": 56696.755,
+            "p95_us": 56696.755,
+            "samples": 3
+          },
+          "sidecar_pread_calls": {
+            "total": 4656,
+            "median_us": 1552,
+            "p95_us": 1552,
+            "samples": 3
+          },
+          "sidecar_requested_bytes": {
+            "total": 7511442,
+            "median_us": 2503814,
+            "p95_us": 2503814,
+            "samples": 3
+          },
+          "sidecar_returned_bytes": {
+            "total": 7511442,
+            "median_us": 2503814,
+            "p95_us": 2503814,
+            "samples": 3
+          },
+          "rchar": {
+            "total": 8159427,
+            "median_us": 2719809,
+            "p95_us": 2719809,
+            "samples": 3
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "syscr": {
+            "total": 4824,
+            "median_us": 1608,
+            "p95_us": 1608,
+            "samples": 3
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          }
+        },
+        "reopen_advised_source": {
+          "elapsed_us": {
+            "total": 48507.97499999999,
+            "median_us": 732.8465,
+            "p95_us": 942.017,
+            "samples": 64
+          },
+          "sidecar_pread_calls": {
+            "total": 128,
+            "median_us": 2,
+            "p95_us": 2,
+            "samples": 64
+          },
+          "sidecar_requested_bytes": {
+            "total": 209123,
+            "median_us": 1951.5,
+            "p95_us": 15243,
+            "samples": 64
+          },
+          "sidecar_returned_bytes": {
+            "total": 209123,
+            "median_us": 1951.5,
+            "p95_us": 15243,
+            "samples": 64
+          },
+          "rchar": {
+            "total": 1005091,
+            "median_us": 14388.5,
+            "p95_us": 27680,
+            "samples": 64
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "syscr": {
+            "total": 512,
+            "median_us": 8,
+            "p95_us": 8,
+            "samples": 64
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "read_bytes": {
+            "total": 4124672,
+            "median_us": 61440,
+            "p95_us": 73728,
+            "samples": 64
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          }
+        },
+        "reopen_advised_rank": {
+          "elapsed_us": {
+            "total": 237706.28699999998,
+            "median_us": 7450.8555,
+            "p95_us": 9962.93,
+            "samples": 32
+          },
+          "sidecar_pread_calls": {
+            "total": 332,
+            "median_us": 8,
+            "p95_us": 20,
+            "samples": 32
+          },
+          "sidecar_requested_bytes": {
+            "total": 479656,
+            "median_us": 12295,
+            "p95_us": 30781,
+            "samples": 32
+          },
+          "sidecar_returned_bytes": {
+            "total": 479656,
+            "median_us": 12295,
+            "p95_us": 30781,
+            "samples": 32
+          },
+          "rchar": {
+            "total": 5932128,
+            "median_us": 183041.5,
+            "p95_us": 233755,
+            "samples": 32
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "syscr": {
+            "total": 1758,
+            "median_us": 57.5,
+            "p95_us": 66,
+            "samples": 32
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "read_bytes": {
+            "total": 10563584,
+            "median_us": 315392,
+            "p95_us": 421888,
+            "samples": 32
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          }
+        },
+        "reopen_advised_batch": {
+          "elapsed_us": {
+            "total": 287775.89,
+            "median_us": 95545.385,
+            "p95_us": 95545.385,
+            "samples": 3
+          },
+          "sidecar_pread_calls": {
+            "total": 4656,
+            "median_us": 1552,
+            "p95_us": 1552,
+            "samples": 3
+          },
+          "sidecar_requested_bytes": {
+            "total": 7511442,
+            "median_us": 2503814,
+            "p95_us": 2503814,
+            "samples": 3
+          },
+          "sidecar_returned_bytes": {
+            "total": 7511442,
+            "median_us": 2503814,
+            "p95_us": 2503814,
+            "samples": 3
+          },
+          "rchar": {
+            "total": 10174710,
+            "median_us": 3391570,
+            "p95_us": 3391570,
+            "samples": 3
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "syscr": {
+            "total": 5319,
+            "median_us": 1773,
+            "p95_us": 1773,
+            "samples": 3
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "read_bytes": {
+            "total": 6377472,
+            "median_us": 2125824,
+            "p95_us": 2125824,
+            "samples": 3
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          }
+        }
+      },
+      "advice_errors": [],
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "activated_source_bytes": 1234598,
+      "receipt_commitments_sha256": "c817e0e09f701d9a3ee8df0c24b7b0030cda1b75ab86bd96c995cdd2dd19bc57"
+    },
+    "snapshot_quotient": {
+      "total_archive_bytes": 2970283,
+      "allocated_bytes": 2973696,
+      "source_payload_bytes": 1225355,
+      "append": {
+        "median_us": 1246.3595,
+        "p95_us": 3437.811,
+        "samples": 378
+      },
+      "ingestion_process_io": {
+        "rchar": 7244240,
+        "wchar": 57021827,
+        "syscr": 2153,
+        "syscw": 26109,
+        "read_bytes": 4096,
+        "write_bytes": 60112896,
+        "cancelled_write_bytes": 0
+      },
+      "finalization_process_io": {
+        "rchar": 2322601,
+        "wchar": 3965296,
+        "syscr": 573,
+        "syscw": 1825,
+        "read_bytes": 0,
+        "write_bytes": 3977216,
+        "cancelled_write_bytes": 32768
+      },
+      "source_checks": 378,
+      "rank_checks": 320,
+      "receipt_checks": 80,
+      "workloads": {
+        "warm_source": {
+          "elapsed_us": {
+            "total": 2917.214,
+            "median_us": 34.885000000000005,
+            "p95_us": 119.851,
+            "samples": 64
+          },
+          "sidecar_pread_calls": {
+            "total": 128,
+            "median_us": 2,
+            "p95_us": 2,
+            "samples": 64
+          },
+          "sidecar_requested_bytes": {
+            "total": 209123,
+            "median_us": 1951.5,
+            "p95_us": 15243,
+            "samples": 64
+          },
+          "sidecar_returned_bytes": {
+            "total": 209123,
+            "median_us": 1951.5,
+            "p95_us": 15243,
+            "samples": 64
+          },
+          "rchar": {
+            "total": 217955,
+            "median_us": 2089.5,
+            "p95_us": 15381,
+            "samples": 64
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "syscr": {
+            "total": 256,
+            "median_us": 4,
+            "p95_us": 4,
+            "samples": 64
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          }
+        },
+        "warm_rank": {
+          "elapsed_us": {
+            "total": 14839.987000000003,
+            "median_us": 406.86400000000003,
+            "p95_us": 932.718,
+            "samples": 32
+          },
+          "sidecar_pread_calls": {
+            "total": 332,
+            "median_us": 8,
+            "p95_us": 20,
+            "samples": 32
+          },
+          "sidecar_requested_bytes": {
+            "total": 479656,
+            "median_us": 12295,
+            "p95_us": 30781,
+            "samples": 32
+          },
+          "sidecar_returned_bytes": {
+            "total": 479656,
+            "median_us": 12295,
+            "p95_us": 30781,
+            "samples": 32
+          },
+          "rchar": {
+            "total": 484072,
+            "median_us": 12433,
+            "p95_us": 30919,
+            "samples": 32
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "syscr": {
+            "total": 396,
+            "median_us": 10,
+            "p95_us": 22,
+            "samples": 32
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          }
+        },
+        "warm_batch": {
+          "elapsed_us": {
+            "total": 178224.96399999998,
+            "median_us": 59232.791,
+            "p95_us": 59232.791,
+            "samples": 3
+          },
+          "sidecar_pread_calls": {
+            "total": 4656,
+            "median_us": 1552,
+            "p95_us": 1552,
+            "samples": 3
+          },
+          "sidecar_requested_bytes": {
+            "total": 7511442,
+            "median_us": 2503814,
+            "p95_us": 2503814,
+            "samples": 3
+          },
+          "sidecar_returned_bytes": {
+            "total": 7511442,
+            "median_us": 2503814,
+            "p95_us": 2503814,
+            "samples": 3
+          },
+          "rchar": {
+            "total": 8159442,
+            "median_us": 2719814,
+            "p95_us": 2719814,
+            "samples": 3
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "syscr": {
+            "total": 4824,
+            "median_us": 1608,
+            "p95_us": 1608,
+            "samples": 3
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          }
+        },
+        "reopen_advised_source": {
+          "elapsed_us": {
+            "total": 51937.40000000001,
+            "median_us": 743.626,
+            "p95_us": 1021.767,
+            "samples": 64
+          },
+          "sidecar_pread_calls": {
+            "total": 128,
+            "median_us": 2,
+            "p95_us": 2,
+            "samples": 64
+          },
+          "sidecar_requested_bytes": {
+            "total": 209123,
+            "median_us": 1951.5,
+            "p95_us": 15243,
+            "samples": 64
+          },
+          "sidecar_returned_bytes": {
+            "total": 209123,
+            "median_us": 1951.5,
+            "p95_us": 15243,
+            "samples": 64
+          },
+          "rchar": {
+            "total": 1005411,
+            "median_us": 14393.5,
+            "p95_us": 27685,
+            "samples": 64
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "syscr": {
+            "total": 512,
+            "median_us": 8,
+            "p95_us": 8,
+            "samples": 64
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "read_bytes": {
+            "total": 4124672,
+            "median_us": 61440,
+            "p95_us": 73728,
+            "samples": 64
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          }
+        },
+        "reopen_advised_rank": {
+          "elapsed_us": {
+            "total": 221620.74,
+            "median_us": 6903.5869999999995,
+            "p95_us": 8774.178,
+            "samples": 32
+          },
+          "sidecar_pread_calls": {
+            "total": 332,
+            "median_us": 8,
+            "p95_us": 20,
+            "samples": 32
+          },
+          "sidecar_requested_bytes": {
+            "total": 479656,
+            "median_us": 12295,
+            "p95_us": 30781,
+            "samples": 32
+          },
+          "sidecar_returned_bytes": {
+            "total": 479656,
+            "median_us": 12295,
+            "p95_us": 30781,
+            "samples": 32
+          },
+          "rchar": {
+            "total": 5993704,
+            "median_us": 180254,
+            "p95_us": 234562,
+            "samples": 32
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "syscr": {
+            "total": 1773,
+            "median_us": 58.5,
+            "p95_us": 66,
+            "samples": 32
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "read_bytes": {
+            "total": 11243520,
+            "median_us": 368640,
+            "p95_us": 458752,
+            "samples": 32
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          }
+        },
+        "reopen_advised_batch": {
+          "elapsed_us": {
+            "total": 270276.81299999997,
+            "median_us": 90704.015,
+            "p95_us": 90704.015,
+            "samples": 3
+          },
+          "sidecar_pread_calls": {
+            "total": 4656,
+            "median_us": 1552,
+            "p95_us": 1552,
+            "samples": 3
+          },
+          "sidecar_requested_bytes": {
+            "total": 7511442,
+            "median_us": 2503814,
+            "p95_us": 2503814,
+            "samples": 3
+          },
+          "sidecar_returned_bytes": {
+            "total": 7511442,
+            "median_us": 2503814,
+            "p95_us": 2503814,
+            "samples": 3
+          },
+          "rchar": {
+            "total": 10199298,
+            "median_us": 3399766,
+            "p95_us": 3399766,
+            "samples": 3
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "syscr": {
+            "total": 5325,
+            "median_us": 1775,
+            "p95_us": 1775,
+            "samples": 3
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "read_bytes": {
+            "total": 6561792,
+            "median_us": 2187264,
+            "p95_us": 2187264,
+            "samples": 3
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          }
+        }
+      },
+      "advice_errors": [],
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "activated_source_bytes": 1234598,
+      "receipt_commitments_sha256": "c817e0e09f701d9a3ee8df0c24b7b0030cda1b75ab86bd96c995cdd2dd19bc57"
+    },
+    "marginal_revision": {
+      "total_archive_bytes": 2036656,
+      "allocated_bytes": 2039808,
+      "source_payload_bytes": 349072,
+      "append": {
+        "median_us": 1272.8785,
+        "p95_us": 3475.061,
+        "samples": 378
+      },
+      "ingestion_process_io": {
+        "rchar": 7273925,
+        "wchar": 48516736,
+        "syscr": 2404,
+        "syscw": 22635,
+        "read_bytes": 0,
+        "write_bytes": 51613696,
+        "cancelled_write_bytes": 0
+      },
+      "finalization_process_io": {
+        "rchar": 2314410,
+        "wchar": 3887360,
+        "syscr": 571,
+        "syscw": 1778,
+        "read_bytes": 0,
+        "write_bytes": 3899392,
+        "cancelled_write_bytes": 32768
+      },
+      "source_checks": 378,
+      "rank_checks": 320,
+      "receipt_checks": 80,
+      "workloads": {
+        "warm_source": {
+          "elapsed_us": {
+            "total": 4180.3679999999995,
+            "median_us": 49.6075,
+            "p95_us": 185.757,
+            "samples": 64
+          },
+          "sidecar_pread_calls": {
+            "total": 202,
+            "median_us": 4,
+            "p95_us": 4,
+            "samples": 64
+          },
+          "sidecar_requested_bytes": {
+            "total": 217434,
+            "median_us": 1951.5,
+            "p95_us": 15432,
+            "samples": 64
+          },
+          "sidecar_returned_bytes": {
+            "total": 217434,
+            "median_us": 1951.5,
+            "p95_us": 15432,
+            "samples": 64
+          },
+          "rchar": {
+            "total": 226266,
+            "median_us": 2089.5,
+            "p95_us": 15570,
+            "samples": 64
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "syscr": {
+            "total": 330,
+            "median_us": 6,
+            "p95_us": 6,
+            "samples": 64
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          }
+        },
+        "warm_rank": {
+          "elapsed_us": {
+            "total": 15822.678999999998,
+            "median_us": 460.975,
+            "p95_us": 862.389,
+            "samples": 32
+          },
+          "sidecar_pread_calls": {
+            "total": 466,
+            "median_us": 13,
+            "p95_us": 32,
+            "samples": 32
+          },
+          "sidecar_requested_bytes": {
+            "total": 494531,
+            "median_us": 13182,
+            "p95_us": 31477,
+            "samples": 32
+          },
+          "sidecar_returned_bytes": {
+            "total": 494531,
+            "median_us": 13182,
+            "p95_us": 31477,
+            "samples": 32
+          },
+          "rchar": {
+            "total": 498947,
+            "median_us": 13320,
+            "p95_us": 31615,
+            "samples": 32
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "syscr": {
+            "total": 530,
+            "median_us": 15,
+            "p95_us": 34,
+            "samples": 32
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          }
+        },
+        "warm_batch": {
+          "elapsed_us": {
+            "total": 201184.39399999997,
+            "median_us": 67224.439,
+            "p95_us": 67224.439,
+            "samples": 3
+          },
+          "sidecar_pread_calls": {
+            "total": 6804,
+            "median_us": 2268,
+            "p95_us": 2268,
+            "samples": 3
+          },
+          "sidecar_requested_bytes": {
+            "total": 7784142,
+            "median_us": 2594714,
+            "p95_us": 2594714,
+            "samples": 3
+          },
+          "sidecar_returned_bytes": {
+            "total": 7784142,
+            "median_us": 2594714,
+            "p95_us": 2594714,
+            "samples": 3
+          },
+          "rchar": {
+            "total": 8432142,
+            "median_us": 2810714,
+            "p95_us": 2810714,
+            "samples": 3
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "syscr": {
+            "total": 6972,
+            "median_us": 2324,
+            "p95_us": 2324,
+            "samples": 3
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          }
+        },
+        "reopen_advised_source": {
+          "elapsed_us": {
+            "total": 60828.723,
+            "median_us": 888.742,
+            "p95_us": 1238.079,
+            "samples": 64
+          },
+          "sidecar_pread_calls": {
+            "total": 202,
+            "median_us": 4,
+            "p95_us": 4,
+            "samples": 64
+          },
+          "sidecar_requested_bytes": {
+            "total": 217434,
+            "median_us": 1951.5,
+            "p95_us": 15432,
+            "samples": 64
+          },
+          "sidecar_returned_bytes": {
+            "total": 217434,
+            "median_us": 1951.5,
+            "p95_us": 15432,
+            "samples": 64
+          },
+          "rchar": {
+            "total": 1026010,
+            "median_us": 14708,
+            "p95_us": 27874,
+            "samples": 64
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "syscr": {
+            "total": 589,
+            "median_us": 10,
+            "p95_us": 10,
+            "samples": 64
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "read_bytes": {
+            "total": 4296704,
+            "median_us": 65536,
+            "p95_us": 81920,
+            "samples": 64
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          }
+        },
+        "reopen_advised_rank": {
+          "elapsed_us": {
+            "total": 219043.22600000002,
+            "median_us": 7005.5244999999995,
+            "p95_us": 8431.433,
+            "samples": 32
+          },
+          "sidecar_pread_calls": {
+            "total": 466,
+            "median_us": 13,
+            "p95_us": 32,
+            "samples": 32
+          },
+          "sidecar_requested_bytes": {
+            "total": 494531,
+            "median_us": 13182,
+            "p95_us": 31477,
+            "samples": 32
+          },
+          "sidecar_returned_bytes": {
+            "total": 494531,
+            "median_us": 13182,
+            "p95_us": 31477,
+            "samples": 32
+          },
+          "rchar": {
+            "total": 5955331,
+            "median_us": 183045.5,
+            "p95_us": 234914,
+            "samples": 32
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "syscr": {
+            "total": 1894,
+            "median_us": 59.5,
+            "p95_us": 76,
+            "samples": 32
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "read_bytes": {
+            "total": 10809344,
+            "median_us": 327680,
+            "p95_us": 442368,
+            "samples": 32
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          }
+        },
+        "reopen_advised_batch": {
+          "elapsed_us": {
+            "total": 274818.355,
+            "median_us": 91075.519,
+            "p95_us": 91075.519,
+            "samples": 3
+          },
+          "sidecar_pread_calls": {
+            "total": 6804,
+            "median_us": 2268,
+            "p95_us": 2268,
+            "samples": 3
+          },
+          "sidecar_requested_bytes": {
+            "total": 7784142,
+            "median_us": 2594714,
+            "p95_us": 2594714,
+            "samples": 3
+          },
+          "sidecar_returned_bytes": {
+            "total": 7784142,
+            "median_us": 2594714,
+            "p95_us": 2594714,
+            "samples": 3
+          },
+          "rchar": {
+            "total": 10447422,
+            "median_us": 3482474,
+            "p95_us": 3482474,
+            "samples": 3
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "syscr": {
+            "total": 7467,
+            "median_us": 2489,
+            "p95_us": 2489,
+            "samples": 3
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "read_bytes": {
+            "total": 4546560,
+            "median_us": 1515520,
+            "p95_us": 1515520,
+            "samples": 3
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          }
+        }
+      },
+      "advice_errors": [],
+      "mean_decode_ratio": 1.7760673788409822,
+      "max_decode_ratio": 2.2496429300142826,
+      "max_activation_ratio": 1.4089924160346696,
+      "activated_source_bytes": 1293510,
+      "receipt_commitments_sha256": "c817e0e09f701d9a3ee8df0c24b7b0030cda1b75ab86bd96c995cdd2dd19bc57"
+    },
+    "marginal_quotient": {
+      "total_archive_bytes": 2094000,
+      "allocated_bytes": 2097152,
+      "source_payload_bytes": 349072,
+      "append": {
+        "median_us": 1289.179,
+        "p95_us": 3431.48,
+        "samples": 378
+      },
+      "ingestion_process_io": {
+        "rchar": 8241768,
+        "wchar": 56038424,
+        "syscr": 2644,
+        "syscw": 26057,
+        "read_bytes": 0,
+        "write_bytes": 59138048,
+        "cancelled_write_bytes": 0
+      },
+      "finalization_process_io": {
+        "rchar": 2314410,
+        "wchar": 3957104,
+        "syscr": 571,
+        "syscw": 1823,
+        "read_bytes": 0,
+        "write_bytes": 3969024,
+        "cancelled_write_bytes": 32768
+      },
+      "source_checks": 378,
+      "rank_checks": 320,
+      "receipt_checks": 80,
+      "workloads": {
+        "warm_source": {
+          "elapsed_us": {
+            "total": 4229.909999999999,
+            "median_us": 51.496,
+            "p95_us": 193.18,
+            "samples": 64
+          },
+          "sidecar_pread_calls": {
+            "total": 202,
+            "median_us": 4,
+            "p95_us": 4,
+            "samples": 64
+          },
+          "sidecar_requested_bytes": {
+            "total": 217434,
+            "median_us": 1951.5,
+            "p95_us": 15432,
+            "samples": 64
+          },
+          "sidecar_returned_bytes": {
+            "total": 217434,
+            "median_us": 1951.5,
+            "p95_us": 15432,
+            "samples": 64
+          },
+          "rchar": {
+            "total": 226266,
+            "median_us": 2089.5,
+            "p95_us": 15570,
+            "samples": 64
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "syscr": {
+            "total": 330,
+            "median_us": 6,
+            "p95_us": 6,
+            "samples": 64
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          }
+        },
+        "warm_rank": {
+          "elapsed_us": {
+            "total": 31530.886000000002,
+            "median_us": 906.2155,
+            "p95_us": 1785.941,
+            "samples": 32
+          },
+          "sidecar_pread_calls": {
+            "total": 466,
+            "median_us": 13,
+            "p95_us": 32,
+            "samples": 32
+          },
+          "sidecar_requested_bytes": {
+            "total": 494531,
+            "median_us": 13182,
+            "p95_us": 31477,
+            "samples": 32
+          },
+          "sidecar_returned_bytes": {
+            "total": 494531,
+            "median_us": 13182,
+            "p95_us": 31477,
+            "samples": 32
+          },
+          "rchar": {
+            "total": 498947,
+            "median_us": 13320,
+            "p95_us": 31615,
+            "samples": 32
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "syscr": {
+            "total": 530,
+            "median_us": 15,
+            "p95_us": 34,
+            "samples": 32
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          }
+        },
+        "warm_batch": {
+          "elapsed_us": {
+            "total": 233132.395,
+            "median_us": 70245.943,
+            "p95_us": 70245.943,
+            "samples": 3
+          },
+          "sidecar_pread_calls": {
+            "total": 6804,
+            "median_us": 2268,
+            "p95_us": 2268,
+            "samples": 3
+          },
+          "sidecar_requested_bytes": {
+            "total": 7784142,
+            "median_us": 2594714,
+            "p95_us": 2594714,
+            "samples": 3
+          },
+          "sidecar_returned_bytes": {
+            "total": 7784142,
+            "median_us": 2594714,
+            "p95_us": 2594714,
+            "samples": 3
+          },
+          "rchar": {
+            "total": 8432142,
+            "median_us": 2810714,
+            "p95_us": 2810714,
+            "samples": 3
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "syscr": {
+            "total": 6972,
+            "median_us": 2324,
+            "p95_us": 2324,
+            "samples": 3
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "read_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          }
+        },
+        "reopen_advised_source": {
+          "elapsed_us": {
+            "total": 57721.42099999999,
+            "median_us": 860.615,
+            "p95_us": 1335.601,
+            "samples": 64
+          },
+          "sidecar_pread_calls": {
+            "total": 202,
+            "median_us": 4,
+            "p95_us": 4,
+            "samples": 64
+          },
+          "sidecar_requested_bytes": {
+            "total": 217434,
+            "median_us": 1951.5,
+            "p95_us": 15432,
+            "samples": 64
+          },
+          "sidecar_returned_bytes": {
+            "total": 217434,
+            "median_us": 1951.5,
+            "p95_us": 15432,
+            "samples": 64
+          },
+          "rchar": {
+            "total": 1026010,
+            "median_us": 14708,
+            "p95_us": 27874,
+            "samples": 64
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "syscr": {
+            "total": 589,
+            "median_us": 10,
+            "p95_us": 10,
+            "samples": 64
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "read_bytes": {
+            "total": 4296704,
+            "median_us": 65536,
+            "p95_us": 81920,
+            "samples": 64
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 64
+          }
+        },
+        "reopen_advised_rank": {
+          "elapsed_us": {
+            "total": 230143.21899999995,
+            "median_us": 7313.214,
+            "p95_us": 8428.649,
+            "samples": 32
+          },
+          "sidecar_pread_calls": {
+            "total": 466,
+            "median_us": 13,
+            "p95_us": 32,
+            "samples": 32
+          },
+          "sidecar_requested_bytes": {
+            "total": 494531,
+            "median_us": 13182,
+            "p95_us": 31477,
+            "samples": 32
+          },
+          "sidecar_returned_bytes": {
+            "total": 494531,
+            "median_us": 13182,
+            "p95_us": 31477,
+            "samples": 32
+          },
+          "rchar": {
+            "total": 6016771,
+            "median_us": 180682.5,
+            "p95_us": 234766,
+            "samples": 32
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "syscr": {
+            "total": 1909,
+            "median_us": 60.5,
+            "p95_us": 75,
+            "samples": 32
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "read_bytes": {
+            "total": 11489280,
+            "median_us": 376832,
+            "p95_us": 454656,
+            "samples": 32
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 32
+          }
+        },
+        "reopen_advised_batch": {
+          "elapsed_us": {
+            "total": 272434.28,
+            "median_us": 90343.755,
+            "p95_us": 90343.755,
+            "samples": 3
+          },
+          "sidecar_pread_calls": {
+            "total": 6804,
+            "median_us": 2268,
+            "p95_us": 2268,
+            "samples": 3
+          },
+          "sidecar_requested_bytes": {
+            "total": 7784142,
+            "median_us": 2594714,
+            "p95_us": 2594714,
+            "samples": 3
+          },
+          "sidecar_returned_bytes": {
+            "total": 7784142,
+            "median_us": 2594714,
+            "p95_us": 2594714,
+            "samples": 3
+          },
+          "rchar": {
+            "total": 10471998,
+            "median_us": 3490666,
+            "p95_us": 3490666,
+            "samples": 3
+          },
+          "wchar": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "syscr": {
+            "total": 7473,
+            "median_us": 2491,
+            "p95_us": 2491,
+            "samples": 3
+          },
+          "syscw": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "read_bytes": {
+            "total": 4730880,
+            "median_us": 1576960,
+            "p95_us": 1576960,
+            "samples": 3
+          },
+          "write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          },
+          "cancelled_write_bytes": {
+            "total": 0,
+            "median_us": 0,
+            "p95_us": 0,
+            "samples": 3
+          }
+        }
+      },
+      "advice_errors": [],
+      "mean_decode_ratio": 1.7760673788409822,
+      "max_decode_ratio": 2.2496429300142826,
+      "max_activation_ratio": 1.4089924160346696,
+      "activated_source_bytes": 1293510,
+      "receipt_commitments_sha256": "c817e0e09f701d9a3ee8df0c24b7b0030cda1b75ab86bd96c995cdd2dd19bc57"
+    }
+  },
+  "limitations": [
+    "Linux /proc/self/io read_bytes/write_bytes are process storage-layer accounting, not device-sector or exclusive filesystem measurements",
+    "rchar/syscr include measurement and other process reads; sidecar pread counts are exact Python requests, not physical disk IO",
+    "reopen with POSIX_FADV_DONTNEED is best effort, excludes connection open and does not establish cold cache",
+    "warm primes same workload in a 2 MiB SQLite page cache; OS cache may persist or evict",
+    "same runner sequential builds, 64 source and 32 rank samples, three batches; descriptive timing",
+    "rank-only workload excludes origin-prefix verification; batch includes it",
+    "real pinned first-parent path-touch ancestry, not sorted wall-clock time; no deletion/new-file/rename or whole-commit atomicity",
+    "four previously studied technical corpora, not new independent human replication",
+    "no power-loss durability"
+  ]
+}
