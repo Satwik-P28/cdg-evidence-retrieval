@@ -1,0 +1,209 @@
+{
+  "round": 157,
+  "corpus": "ap",
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "cutoffs": [
+    1744,
+    4499,
+    7254,
+    10009
+  ],
+  "query_count": 80,
+  "policies": {
+    "marginal_positional": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 20684800,
+      "frame_payload_bytes": 7149439,
+      "unique_frames": 5662,
+      "unique_contents": 5651,
+      "shards": 1,
+      "max_shard_rows": 5651,
+      "fts_bytes": 10387456,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "docs_0_config": 4096,
+        "docs_0_data": 10285056,
+        "docs_0_docsize": 61440,
+        "docs_0_idx": 36864,
+        "frames": 9224192,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "source": 495616,
+        "sqlite_schema": 4096
+      },
+      "build_us": 5275516.361,
+      "kind_0": 6333,
+      "kind_1": 3676,
+      "source_checks": 10009,
+      "audit_us": 1244826.058,
+      "read": {
+        "median_us": 32.607,
+        "p95_us": 63.61,
+        "samples": 64
+      },
+      "mean_decode_ratio": 1.3351140949498168,
+      "max_decode_ratio": 2.4825581395348837,
+      "max_activation_ratio": 1.4983063605570193,
+      "activated_source_bytes": 21141937,
+      "query": {
+        "median_us": 287.9365,
+        "p95_us": 2677.401,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "candidate_content_occurrences": 0,
+      "query_activated_frame_bytes": 0
+    },
+    "marginal_presence": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 12734464,
+      "frame_payload_bytes": 7149439,
+      "unique_frames": 5662,
+      "unique_contents": 5651,
+      "shards": 1,
+      "max_shard_rows": 5651,
+      "fts_bytes": 2437120,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "docs_0_config": 4096,
+        "docs_0_data": 2416640,
+        "docs_0_idx": 16384,
+        "frames": 9224192,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "source": 495616,
+        "sqlite_schema": 4096
+      },
+      "build_us": 4781340.527,
+      "kind_0": 6333,
+      "kind_1": 3676,
+      "source_checks": 10009,
+      "audit_us": 1239636.247,
+      "read": {
+        "median_us": 31.759500000000003,
+        "p95_us": 66.485,
+        "samples": 64
+      },
+      "mean_decode_ratio": 1.3351140949498168,
+      "max_decode_ratio": 2.4825581395348837,
+      "max_activation_ratio": 1.4983063605570193,
+      "activated_source_bytes": 21141937,
+      "query": {
+        "median_us": 17920.9425,
+        "p95_us": 135369.122,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "candidate_content_occurrences": 42566,
+      "query_activated_frame_bytes": 108118999
+    },
+    "forward_positional": {
+      "predictor_bytes": 9602172,
+      "sqlite_bytes": 27938816,
+      "frame_payload_bytes": 3366048,
+      "unique_frames": 5636,
+      "unique_contents": 5651,
+      "shards": 1,
+      "max_shard_rows": 5651,
+      "fts_bytes": 10387456,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "docs_0_config": 4096,
+        "docs_0_data": 10285056,
+        "docs_0_docsize": 61440,
+        "docs_0_idx": 36864,
+        "frames": 3870720,
+        "predictors": 12607488,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "source": 499712,
+        "sqlite_schema": 4096
+      },
+      "build_us": 4946074.375,
+      "kind_2": 10007,
+      "kind_0": 2,
+      "source_checks": 10009,
+      "audit_us": 1580307.181,
+      "read": {
+        "median_us": 55.8855,
+        "p95_us": 75.582,
+        "samples": 64
+      },
+      "mean_decode_ratio": 1.9556173391525857,
+      "max_decode_ratio": 1.9917355371900827,
+      "max_activation_ratio": 1.4668508287292819,
+      "activated_source_bytes": 24380313,
+      "query": {
+        "median_us": 295.595,
+        "p95_us": 2678.431,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "candidate_content_occurrences": 0,
+      "query_activated_frame_bytes": 0
+    },
+    "forward_presence": {
+      "predictor_bytes": 9602172,
+      "sqlite_bytes": 19988480,
+      "frame_payload_bytes": 3366048,
+      "unique_frames": 5636,
+      "unique_contents": 5651,
+      "shards": 1,
+      "max_shard_rows": 5651,
+      "fts_bytes": 2437120,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "docs_0_config": 4096,
+        "docs_0_data": 2416640,
+        "docs_0_idx": 16384,
+        "frames": 3870720,
+        "predictors": 12607488,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "source": 499712,
+        "sqlite_schema": 4096
+      },
+      "build_us": 4439075.834,
+      "kind_2": 10007,
+      "kind_0": 2,
+      "source_checks": 10009,
+      "audit_us": 1412638.263,
+      "read": {
+        "median_us": 55.834500000000006,
+        "p95_us": 73.137,
+        "samples": 64
+      },
+      "mean_decode_ratio": 1.9556173391525857,
+      "max_decode_ratio": 1.9917355371900827,
+      "max_activation_ratio": 1.4668508287292819,
+      "activated_source_bytes": 24380313,
+      "query": {
+        "median_us": 1274.1129999999998,
+        "p95_us": 9731.989,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "candidate_content_occurrences": 42566,
+      "query_activated_frame_bytes": 93163444
+    }
+  },
+  "limitations": [
+    "finalized matched source/index subset, no provenance or transaction integration",
+    "presence index filters exact token conjunction, exact overlapping phrase counts verified in forward stream or reconstructed raw",
+    "forward predictor and residual both charged in source activation bound, logical bytes only, no physical page/CPU bound",
+    "one warm shuffled query pass and 64 uniform reads; query cache only within one request",
+    "forward admission compares source byte bounds, not total optimal storage; no novel indexing primitive claim",
+    "AP synthetic global schedule"
+  ]
+}

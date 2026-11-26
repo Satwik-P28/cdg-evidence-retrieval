@@ -1,0 +1,207 @@
+{
+  "round": 157,
+  "corpus": "clark",
+  "revisions": 1161,
+  "manifest_sha256": "1567b6c765b7a648e1a2a6d4221bf22543a7011377fda94161c37c04a29b6e2f",
+  "cutoffs": [
+    290,
+    580,
+    870,
+    1161
+  ],
+  "query_count": 80,
+  "policies": {
+    "marginal_positional": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 5992448,
+      "frame_payload_bytes": 2538073,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 2527232,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "docs_0_config": 4096,
+        "docs_0_data": 2490368,
+        "docs_0_docsize": 16384,
+        "docs_0_idx": 16384,
+        "frames": 3190784,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 523797.834,
+      "kind_0": 1161,
+      "source_checks": 1161,
+      "audit_us": 100673.695,
+      "read": {
+        "median_us": 14.8255,
+        "p95_us": 25.867,
+        "samples": 64
+      },
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "activated_source_bytes": 2557448,
+      "query": {
+        "median_us": 94.4605,
+        "p95_us": 1449.268,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "candidate_content_occurrences": 0,
+      "query_activated_frame_bytes": 0
+    },
+    "marginal_presence": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 4145152,
+      "frame_payload_bytes": 2538073,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 679936,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "docs_0_config": 4096,
+        "docs_0_data": 671744,
+        "docs_0_idx": 4096,
+        "frames": 3190784,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 459078.225,
+      "kind_0": 1161,
+      "source_checks": 1161,
+      "audit_us": 100268.51,
+      "read": {
+        "median_us": 15.0445,
+        "p95_us": 28.457,
+        "samples": 64
+      },
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "activated_source_bytes": 2557448,
+      "query": {
+        "median_us": 17512.79,
+        "p95_us": 185932.948,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "candidate_content_occurrences": 63000,
+      "query_activated_frame_bytes": 167288571
+    },
+    "forward_positional": {
+      "predictor_bytes": 2097659,
+      "sqlite_bytes": 6660096,
+      "frame_payload_bytes": 1041410,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 2527232,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "docs_0_config": 4096,
+        "docs_0_data": 2490368,
+        "docs_0_docsize": 16384,
+        "docs_0_idx": 16384,
+        "frames": 1204224,
+        "predictors": 2658304,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 720860.102,
+      "kind_2": 1150,
+      "kind_0": 11,
+      "source_checks": 1161,
+      "audit_us": 122445.182,
+      "read": {
+        "median_us": 34.4175,
+        "p95_us": 51.241,
+        "samples": 64
+      },
+      "mean_decode_ratio": 1.9175825740521621,
+      "max_decode_ratio": 1.9906976744186047,
+      "max_activation_ratio": 1.4994216310005783,
+      "activated_source_bytes": 3164952,
+      "query": {
+        "median_us": 100.465,
+        "p95_us": 1461.782,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "candidate_content_occurrences": 0,
+      "query_activated_frame_bytes": 0
+    },
+    "forward_presence": {
+      "predictor_bytes": 2097659,
+      "sqlite_bytes": 4812800,
+      "frame_payload_bytes": 1041410,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 679936,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "docs_0_config": 4096,
+        "docs_0_data": 671744,
+        "docs_0_idx": 4096,
+        "frames": 1204224,
+        "predictors": 2658304,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 658082.208,
+      "kind_2": 1150,
+      "kind_0": 11,
+      "source_checks": 1161,
+      "audit_us": 122734.898,
+      "read": {
+        "median_us": 34.536500000000004,
+        "p95_us": 51.624,
+        "samples": 64
+      },
+      "mean_decode_ratio": 1.9175825740521621,
+      "max_decode_ratio": 1.9906976744186047,
+      "max_activation_ratio": 1.4994216310005783,
+      "activated_source_bytes": 3164952,
+      "query": {
+        "median_us": 1582.4125,
+        "p95_us": 21755.604,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "candidate_content_occurrences": 63000,
+      "query_activated_frame_bytes": 144602549
+    }
+  },
+  "limitations": [
+    "finalized matched source/index subset, no provenance or transaction integration",
+    "presence index filters exact token conjunction, exact overlapping phrase counts verified in forward stream or reconstructed raw",
+    "forward predictor and residual both charged in source activation bound, logical bytes only, no physical page/CPU bound",
+    "one warm shuffled query pass and 64 uniform reads; query cache only within one request",
+    "forward admission compares source byte bounds, not total optimal storage; no novel indexing primitive claim",
+    "AP synthetic global schedule"
+  ]
+}
