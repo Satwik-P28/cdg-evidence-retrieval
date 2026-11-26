@@ -1,0 +1,137 @@
+{
+  "round": 154,
+  "corpus": "clark",
+  "revisions": 1161,
+  "manifest_sha256": "1567b6c765b7a648e1a2a6d4221bf22543a7011377fda94161c37c04a29b6e2f",
+  "cutoffs": [
+    290,
+    580,
+    870,
+    1161
+  ],
+  "query_count": 104,
+  "query_plan_sha256": "f6a1a39b8cf600ff83be9fe488fd98dfaaabe2b4820aec197e60832ee73e3131",
+  "policies": {
+    "raw": {
+      "raw_unique": 1157,
+      "token_unique": 1157,
+      "byte_distinct_reuses": 0,
+      "index_rows": 1157,
+      "sqlite_bytes": 2777088,
+      "fts_bytes": 2527232,
+      "catalog_bytes": 57344,
+      "build_us": 278462.819,
+      "query": {
+        "median_us": 147.79500000000002,
+        "p95_us": 2665.093,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "fixed32": {
+      "sqlite_bytes": 7049216,
+      "fts_bytes": 3944448,
+      "content_rows": 1157,
+      "index_rows": 30191,
+      "fragment_occurrences": 30198,
+      "mapping_rows": 30197,
+      "halo_tokens": 202486,
+      "unique_indexed_tokens": 1150701,
+      "physical_table_bytes": {
+        "active_stats": 20480,
+        "content_catalog": 57344,
+        "docs_config": 4096,
+        "docs_data": 3633152,
+        "docs_docsize": 290816,
+        "docs_idx": 16384,
+        "fragments": 1294336,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "sqlite_autoindex_fragments_1": 1224704,
+        "sqlite_schema": 4096,
+        "uses": 335872
+      },
+      "build_us": 1510565.273,
+      "query": {
+        "median_us": 298.753,
+        "p95_us": 27871.483,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "cdc32": {
+      "sqlite_bytes": 6275072,
+      "fts_bytes": 3694592,
+      "content_rows": 1157,
+      "index_rows": 24697,
+      "fragment_occurrences": 24787,
+      "mapping_rows": 24747,
+      "halo_tokens": 164179,
+      "unique_indexed_tokens": 1109608,
+      "physical_table_bytes": {
+        "active_stats": 20480,
+        "content_catalog": 57344,
+        "docs_config": 4096,
+        "docs_data": 3436544,
+        "docs_docsize": 237568,
+        "docs_idx": 16384,
+        "fragments": 1056768,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "sqlite_autoindex_fragments_1": 999424,
+        "sqlite_schema": 4096,
+        "uses": 274432
+      },
+      "build_us": 1745163.726,
+      "query": {
+        "median_us": 279.0095,
+        "p95_us": 24187.202,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "cdc64": {
+      "sqlite_bytes": 4591616,
+      "fts_bytes": 3145728,
+      "content_rows": 1157,
+      "index_rows": 12565,
+      "fragment_occurrences": 12595,
+      "mapping_rows": 12580,
+      "halo_tokens": 79564,
+      "unique_indexed_tokens": 1026193,
+      "physical_table_bytes": {
+        "active_stats": 20480,
+        "content_catalog": 57344,
+        "docs_config": 4096,
+        "docs_data": 3002368,
+        "docs_docsize": 122880,
+        "docs_idx": 16384,
+        "fragments": 540672,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "sqlite_autoindex_fragments_1": 512000,
+        "sqlite_schema": 4096,
+        "uses": 143360
+      },
+      "build_us": 1484764.149,
+      "query": {
+        "median_us": 252.079,
+        "p95_us": 16281.704,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    }
+  },
+  "limitations": [
+    "index-only, no raw reconstruction or transactional integration",
+    "exact one-column unicode61 phrases 1..8 tokens, AND/OR; longer phrases rejected",
+    "ordered core spans checked at ingestion; stored uses are a multiset sufficient for bounded phrase TF, not a source representation",
+    "right halo of seven tokens, match-start ownership avoids double counting",
+    "physical catalog, mapping and metadata charged; two warm shuffled repeats, descriptive timing",
+    "no novelty claim over established fragment indexing; AP synthetic global order"
+  ]
+}

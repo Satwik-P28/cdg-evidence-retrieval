@@ -1,0 +1,137 @@
+{
+  "round": 154,
+  "corpus": "ap",
+  "revisions": 74364,
+  "manifest_sha256": "e12f3c397333e78a5ab3394dbb119bbab95985161e53dadf9eef71b6b5508319",
+  "cutoffs": [
+    12841,
+    33348,
+    53856,
+    74364
+  ],
+  "query_count": 104,
+  "query_plan_sha256": "0e02b656b385353d40d206725873a52fdd3fbe0fbbfcd34c1a21f4c9300d302a",
+  "policies": {
+    "raw": {
+      "raw_unique": 41282,
+      "token_unique": 41136,
+      "byte_distinct_reuses": 0,
+      "index_rows": 41282,
+      "sqlite_bytes": 79261696,
+      "fts_bytes": 73351168,
+      "catalog_bytes": 1806336,
+      "build_us": 9549145.302,
+      "query": {
+        "median_us": 537.1695,
+        "p95_us": 5220.286,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "fixed32": {
+      "sqlite_bytes": 187731968,
+      "fts_bytes": 101036032,
+      "content_rows": 41282,
+      "index_rows": 816849,
+      "fragment_occurrences": 936085,
+      "mapping_rows": 936062,
+      "halo_tokens": 5442183,
+      "unique_indexed_tokens": 31066618,
+      "physical_table_bytes": {
+        "active_stats": 1171456,
+        "content_catalog": 1806336,
+        "docs_config": 4096,
+        "docs_data": 92688384,
+        "docs_docsize": 8208384,
+        "docs_idx": 135168,
+        "fragments": 35299328,
+        "revision_cid": 1089536,
+        "revisions": 1839104,
+        "sqlite_autoindex_fragments_1": 33832960,
+        "sqlite_schema": 4096,
+        "uses": 11653120
+      },
+      "build_us": 36557562.605,
+      "query": {
+        "median_us": 1050.151,
+        "p95_us": 14737.22,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "cdc32": {
+      "sqlite_bytes": 125558784,
+      "fts_bytes": 69537792,
+      "content_rows": 41282,
+      "index_rows": 481112,
+      "fragment_occurrences": 757363,
+      "mapping_rows": 757205,
+      "halo_tokens": 3163337,
+      "unique_indexed_tokens": 22043644,
+      "physical_table_bytes": {
+        "active_stats": 1171456,
+        "content_catalog": 1806336,
+        "docs_config": 4096,
+        "docs_data": 64589824,
+        "docs_docsize": 4833280,
+        "docs_idx": 110592,
+        "fragments": 20787200,
+        "revision_cid": 1089536,
+        "revisions": 1839104,
+        "sqlite_autoindex_fragments_1": 19922944,
+        "sqlite_schema": 4096,
+        "uses": 9400320
+      },
+      "build_us": 36203440.709,
+      "query": {
+        "median_us": 815.433,
+        "p95_us": 12293.033,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "cdc64": {
+      "sqlite_bytes": 96403456,
+      "fts_bytes": 63143936,
+      "content_rows": 41282,
+      "index_rows": 265950,
+      "fragment_occurrences": 387523,
+      "mapping_rows": 387507,
+      "halo_tokens": 1644862,
+      "unique_indexed_tokens": 22008059,
+      "physical_table_bytes": {
+        "active_stats": 1171456,
+        "content_catalog": 1806336,
+        "docs_config": 4096,
+        "docs_data": 60309504,
+        "docs_docsize": 2719744,
+        "docs_idx": 110592,
+        "fragments": 11608064,
+        "revision_cid": 1089536,
+        "revisions": 1839104,
+        "sqlite_autoindex_fragments_1": 10952704,
+        "sqlite_schema": 4096,
+        "uses": 4788224
+      },
+      "build_us": 32283855.848,
+      "query": {
+        "median_us": 772.808,
+        "p95_us": 10819.738,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    }
+  },
+  "limitations": [
+    "index-only, no raw reconstruction or transactional integration",
+    "exact one-column unicode61 phrases 1..8 tokens, AND/OR; longer phrases rejected",
+    "ordered core spans checked at ingestion; stored uses are a multiset sufficient for bounded phrase TF, not a source representation",
+    "right halo of seven tokens, match-start ownership avoids double counting",
+    "physical catalog, mapping and metadata charged; two warm shuffled repeats, descriptive timing",
+    "no novelty claim over established fragment indexing; AP synthetic global order"
+  ]
+}

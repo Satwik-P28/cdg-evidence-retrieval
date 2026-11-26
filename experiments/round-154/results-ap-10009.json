@@ -1,0 +1,137 @@
+{
+  "round": 154,
+  "corpus": "ap",
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "cutoffs": [
+    1744,
+    4499,
+    7254,
+    10009
+  ],
+  "query_count": 104,
+  "query_plan_sha256": "7df1506629d867e40556847deb37e610c1517b4821a2e6626c8ac17bf0132533",
+  "policies": {
+    "raw": {
+      "raw_unique": 5651,
+      "token_unique": 5637,
+      "byte_distinct_reuses": 0,
+      "index_rows": 5651,
+      "sqlite_bytes": 11153408,
+      "fts_bytes": 10387456,
+      "catalog_bytes": 245760,
+      "build_us": 1091787.18,
+      "query": {
+        "median_us": 133.704,
+        "p95_us": 1782.155,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "fixed32": {
+      "sqlite_bytes": 26726400,
+      "fts_bytes": 14606336,
+      "content_rows": 5651,
+      "index_rows": 116651,
+      "fragment_occurrences": 129950,
+      "mapping_rows": 129947,
+      "halo_tokens": 777240,
+      "unique_indexed_tokens": 4435408,
+      "physical_table_bytes": {
+        "active_stats": 147456,
+        "content_catalog": 245760,
+        "docs_config": 4096,
+        "docs_data": 13406208,
+        "docs_docsize": 1159168,
+        "docs_idx": 36864,
+        "fragments": 5033984,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "sqlite_autoindex_fragments_1": 4788224,
+        "sqlite_schema": 4096,
+        "uses": 1531904
+      },
+      "build_us": 4304452.59,
+      "query": {
+        "median_us": 384.9765,
+        "p95_us": 6581.116,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "cdc32": {
+      "sqlite_bytes": 18771968,
+      "fts_bytes": 10657792,
+      "content_rows": 5651,
+      "index_rows": 72775,
+      "fragment_occurrences": 105221,
+      "mapping_rows": 105199,
+      "halo_tokens": 479171,
+      "unique_indexed_tokens": 3323302,
+      "physical_table_bytes": {
+        "active_stats": 147456,
+        "content_catalog": 245760,
+        "docs_config": 4096,
+        "docs_data": 9900032,
+        "docs_docsize": 720896,
+        "docs_idx": 32768,
+        "fragments": 3137536,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "sqlite_autoindex_fragments_1": 2985984,
+        "sqlite_schema": 4096,
+        "uses": 1224704
+      },
+      "build_us": 4519116.345,
+      "query": {
+        "median_us": 310.7315,
+        "p95_us": 5345.194,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "cdc64": {
+      "sqlite_bytes": 14295040,
+      "fts_bytes": 9580544,
+      "content_rows": 5651,
+      "index_rows": 39702,
+      "fragment_occurrences": 53786,
+      "mapping_rows": 53786,
+      "halo_tokens": 246549,
+      "unique_indexed_tokens": 3276717,
+      "physical_table_bytes": {
+        "active_stats": 147456,
+        "content_catalog": 245760,
+        "docs_config": 4096,
+        "docs_data": 9146368,
+        "docs_docsize": 397312,
+        "docs_idx": 32768,
+        "fragments": 1720320,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "sqlite_autoindex_fragments_1": 1622016,
+        "sqlite_schema": 4096,
+        "uses": 606208
+      },
+      "build_us": 4021302.559,
+      "query": {
+        "median_us": 262.159,
+        "p95_us": 4350.133,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    }
+  },
+  "limitations": [
+    "index-only, no raw reconstruction or transactional integration",
+    "exact one-column unicode61 phrases 1..8 tokens, AND/OR; longer phrases rejected",
+    "ordered core spans checked at ingestion; stored uses are a multiset sufficient for bounded phrase TF, not a source representation",
+    "right halo of seven tokens, match-start ownership avoids double counting",
+    "physical catalog, mapping and metadata charged; two warm shuffled repeats, descriptive timing",
+    "no novelty claim over established fragment indexing; AP synthetic global order"
+  ]
+}
