@@ -1,0 +1,270 @@
+{
+  "round": 162,
+  "corpus": "grh",
+  "modules": 803,
+  "edges": 1733,
+  "external_import_occurrences": 9,
+  "manifest_sha256": "3843c7e33c0d5ed3d256400015fcc119483cbec745f1a3806c7d85d0e4e2cece",
+  "train_roots": 128,
+  "test_roots": 128,
+  "train_sha256": "52cf58285791bb15c1927a624e87e8d839f7f792f5aff20a47701ff9ad6b9ca3",
+  "test_sha256": "9a6f6f0c1bb874bb41ecfb0024ea8a75726fd72695539b62ba25d8fde612294e",
+  "policies": {
+    "individual": {
+      "total_bytes": 8753155,
+      "payload_bytes": 8659723,
+      "directory_bytes": 93432,
+      "blocks": 803,
+      "source_checks": 803,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "train": {
+        "activated": {
+          "median": 808175,
+          "p95": 3052748,
+          "max": 4748439,
+          "total": 141478892
+        },
+        "decoded": {
+          "median": 2658541,
+          "p95": 10249971,
+          "max": 15939709,
+          "total": 468851149
+        },
+        "checks": 13932
+      },
+      "test": {
+        "activated": {
+          "median": 783074,
+          "p95": 3588609,
+          "max": 8199788,
+          "total": 154712241
+        },
+        "decoded": {
+          "median": 2549293,
+          "p95": 12109359,
+          "max": 28394266,
+          "total": 515440321
+        },
+        "checks": 15180
+      },
+      "lambda_scaled": 0,
+      "mu_scaled": 0,
+      "objective_scaled": 112040384000,
+      "merge_trace": [],
+      "build_us": 1324606.196
+    },
+    "greedy_storage": {
+      "total_bytes": 8753155,
+      "payload_bytes": 8659723,
+      "directory_bytes": 93432,
+      "blocks": 803,
+      "source_checks": 803,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "train": {
+        "activated": {
+          "median": 808175,
+          "p95": 3052748,
+          "max": 4748439,
+          "total": 141478892
+        },
+        "decoded": {
+          "median": 2658541,
+          "p95": 10249971,
+          "max": 15939709,
+          "total": 468851149
+        },
+        "checks": 13932
+      },
+      "test": {
+        "activated": {
+          "median": 783074,
+          "p95": 3588609,
+          "max": 8199788,
+          "total": 154712241
+        },
+        "decoded": {
+          "median": 2549293,
+          "p95": 12109359,
+          "max": 28394266,
+          "total": 515440321
+        },
+        "checks": 15180
+      },
+      "lambda_scaled": 0,
+      "mu_scaled": 0,
+      "objective_scaled": 112040384000,
+      "merge_trace": [
+        {
+          "pass_": 0,
+          "considered": 9032,
+          "feasible": 0,
+          "merges": 0
+        }
+      ],
+      "build_us": 17835970.735
+    },
+    "matching_storage": {
+      "total_bytes": 8753155,
+      "payload_bytes": 8659723,
+      "directory_bytes": 93432,
+      "blocks": 803,
+      "source_checks": 803,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "train": {
+        "activated": {
+          "median": 808175,
+          "p95": 3052748,
+          "max": 4748439,
+          "total": 141478892
+        },
+        "decoded": {
+          "median": 2658541,
+          "p95": 10249971,
+          "max": 15939709,
+          "total": 468851149
+        },
+        "checks": 13932
+      },
+      "test": {
+        "activated": {
+          "median": 783074,
+          "p95": 3588609,
+          "max": 8199788,
+          "total": 154712241
+        },
+        "decoded": {
+          "median": 2549293,
+          "p95": 12109359,
+          "max": 28394266,
+          "total": 515440321
+        },
+        "checks": 15180
+      },
+      "lambda_scaled": 0,
+      "mu_scaled": 0,
+      "objective_scaled": 112040384000,
+      "merge_trace": [
+        {
+          "pass_": 0,
+          "considered": 9032,
+          "feasible": 0,
+          "merges": 0
+        }
+      ],
+      "build_us": 17803034.02
+    },
+    "matching_balanced": {
+      "total_bytes": 8753155,
+      "payload_bytes": 8659723,
+      "directory_bytes": 93432,
+      "blocks": 803,
+      "source_checks": 803,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "train": {
+        "activated": {
+          "median": 808175,
+          "p95": 3052748,
+          "max": 4748439,
+          "total": 141478892
+        },
+        "decoded": {
+          "median": 2658541,
+          "p95": 10249971,
+          "max": 15939709,
+          "total": 468851149
+        },
+        "checks": 13932
+      },
+      "test": {
+        "activated": {
+          "median": 783074,
+          "p95": 3588609,
+          "max": 8199788,
+          "total": 154712241
+        },
+        "decoded": {
+          "median": 2549293,
+          "p95": 12109359,
+          "max": 28394266,
+          "total": 515440321
+        },
+        "checks": 15180
+      },
+      "lambda_scaled": 100,
+      "mu_scaled": 25,
+      "objective_scaled": 137909551925,
+      "merge_trace": [
+        {
+          "pass_": 0,
+          "considered": 9032,
+          "feasible": 0,
+          "merges": 0
+        }
+      ],
+      "build_us": 17832789.392
+    },
+    "matching_readheavy": {
+      "total_bytes": 8753155,
+      "payload_bytes": 8659723,
+      "directory_bytes": 93432,
+      "blocks": 803,
+      "source_checks": 803,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "train": {
+        "activated": {
+          "median": 808175,
+          "p95": 3052748,
+          "max": 4748439,
+          "total": 141478892
+        },
+        "decoded": {
+          "median": 2658541,
+          "p95": 10249971,
+          "max": 15939709,
+          "total": 468851149
+        },
+        "checks": 13932
+      },
+      "test": {
+        "activated": {
+          "median": 783074,
+          "p95": 3588609,
+          "max": 8199788,
+          "total": 154712241
+        },
+        "decoded": {
+          "median": 2549293,
+          "p95": 12109359,
+          "max": 28394266,
+          "total": 515440321
+        },
+        "checks": 15180
+      },
+      "lambda_scaled": 500,
+      "mu_scaled": 100,
+      "objective_scaled": 229664944900,
+      "merge_trace": [
+        {
+          "pass_": 0,
+          "considered": 9032,
+          "feasible": 0,
+          "merges": 0
+        }
+      ],
+      "build_us": 17743692.916
+    }
+  },
+  "limitations": [
+    "syntactic local imports only; held-out roots in same graph, not independent workload or repository",
+    "candidate generation sees structural graph, but objective uses training root access masks only",
+    "maximum-weight matching optimizes disjoint merges per pass over restricted candidate graph, not global partitioning",
+    "exact logical compressed/decoded bounds, not physical IO or transaction contract",
+    "actual in-memory serialized pack and directory, no historical retrieval or index",
+    "weights fixed before results; no claim novelty for matching or graph packing"
+  ]
+}
