@@ -1,0 +1,315 @@
+{
+  "round": 164,
+  "corpus": "grh-compact",
+  "modules": 794,
+  "edges": 1398,
+  "external_import_occurrences": 2,
+  "manifest_sha256": "c2f27acb040138fca026270344ff07f5abdbb09e24ec12e3b69d97e6abf08d55",
+  "train_sha256": "1a02c585410be1cfadfe013533ce3552ee25ef8ba2b36c580e4a346f70569885",
+  "test_sha256": "7bb409e3e113fd28a7d1e335377e32cca28f889d47b675f062584bb20c7cd105",
+  "candidate_count": 75,
+  "training_failures": 0,
+  "greedy_trace": [
+    {
+      "candidate": 2,
+      "group": "global",
+      "dictionary_raw_bytes": 4096,
+      "clients": 326,
+      "gain_scaled": 2026371200
+    },
+    {
+      "candidate": 1,
+      "group": "global",
+      "dictionary_raw_bytes": 1024,
+      "clients": 393,
+      "gain_scaled": 921477900
+    },
+    {
+      "candidate": 0,
+      "group": "global",
+      "dictionary_raw_bytes": 256,
+      "clients": 69,
+      "gain_scaled": 61091900
+    }
+  ],
+  "expansion_trace": [
+    {
+      "sweep": 0,
+      "moves": 8,
+      "gain": 54432600
+    },
+    {
+      "sweep": 1,
+      "moves": 1,
+      "gain": 445200
+    },
+    {
+      "sweep": 2,
+      "moves": 0,
+      "gain": 0
+    }
+  ],
+  "unrestricted_gain_upper_bound": 3108702711,
+  "bound_trace": [
+    {
+      "step": 0,
+      "upper_bound": 4269444050,
+      "best": 3784925500
+    },
+    {
+      "step": 1,
+      "upper_bound": 3202875850,
+      "best": 3202875850
+    },
+    {
+      "step": 2,
+      "upper_bound": 3192388510,
+      "best": 3192388510
+    },
+    {
+      "step": 3,
+      "upper_bound": 3143244405,
+      "best": 3143244405
+    },
+    {
+      "step": 4,
+      "upper_bound": 3108702711,
+      "best": 3108702711
+    }
+  ],
+  "bound_us": 1433292.71,
+  "restricted_solver": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "variables": 6121,
+    "constraints": 46080,
+    "upper_bound": 3070791300,
+    "mip_gap": 0,
+    "solver_incumbent_gain": 3070791300,
+    "selected_gain": 3070791300
+  },
+  "full_assignment_edges": 3588,
+  "restricted_assignment_edges": 2272,
+  "policies": {
+    "individual": {
+      "total_bytes": 3228145,
+      "clients": 0,
+      "dictionaries": 0,
+      "gain_scaled": 0,
+      "objective_scaled": 49475318575,
+      "source_checks": 794,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "train": {
+        "activated": {
+          "median": 224528,
+          "p95": 1310593,
+          "max": 2792260,
+          "total": 51218279
+        },
+        "decoded": {
+          "median": 527911,
+          "p95": 3102957,
+          "max": 6597393,
+          "total": 121329387
+        },
+        "checks": 14627,
+        "read_us": {
+          "median": 793.209,
+          "p95": 4674.239,
+          "max": 9951.922,
+          "total": 181898.113
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 229720,
+          "p95": 1502518,
+          "max": 2799725,
+          "total": 54492779
+        },
+        "decoded": {
+          "median": 547099,
+          "p95": 3558954,
+          "max": 6611870,
+          "total": 129300907
+        },
+        "checks": 15336,
+        "read_us": {
+          "median": 807.26,
+          "p95": 5328.038,
+          "max": 9765.713,
+          "total": 192170.087
+        }
+      },
+      "optimization_us": 0
+    },
+    "greedy": {
+      "total_bytes": 3017265,
+      "clients": 788,
+      "dictionaries": 3,
+      "gain_scaled": 3008941000,
+      "objective_scaled": 46466377575,
+      "source_checks": 794,
+      "max_decode_ratio": 1.4612612612612612,
+      "max_activation_ratio": 1.4977011494252874,
+      "train": {
+        "activated": {
+          "median": 211016,
+          "p95": 1219391,
+          "max": 2603899,
+          "total": 47954917
+        },
+        "decoded": {
+          "median": 533287,
+          "p95": 3108333,
+          "max": 6602769,
+          "total": 121995755
+        },
+        "checks": 14627,
+        "read_us": {
+          "median": 888.081,
+          "p95": 4883.282,
+          "max": 10247.344,
+          "total": 194066.188
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 216883,
+          "p95": 1397970,
+          "max": 2610468,
+          "total": 51019682
+        },
+        "decoded": {
+          "median": 552475,
+          "p95": 3564330,
+          "max": 6617246,
+          "total": 129967531
+        },
+        "checks": 15336,
+        "read_us": {
+          "median": 880.591,
+          "p95": 5594.809,
+          "max": 10374.365,
+          "total": 205746.664
+        }
+      },
+      "optimization_us": 846396.744
+    },
+    "expansion": {
+      "total_bytes": 3011894,
+      "clients": 788,
+      "dictionaries": 10,
+      "gain_scaled": 3063818800,
+      "objective_scaled": 46411499775,
+      "source_checks": 794,
+      "max_decode_ratio": 1.4894252598876807,
+      "max_activation_ratio": 1.4995102840352597,
+      "train": {
+        "activated": {
+          "median": 211600,
+          "p95": 1219876,
+          "max": 2600198,
+          "total": 47992507
+        },
+        "decoded": {
+          "median": 534311,
+          "p95": 3115501,
+          "max": 6619153,
+          "total": 122400235
+        },
+        "checks": 14627,
+        "read_us": {
+          "median": 884.567,
+          "p95": 5043.953,
+          "max": 13528.634,
+          "total": 205450.771
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 217571,
+          "p95": 1397882,
+          "max": 2606792,
+          "total": 51062616
+        },
+        "decoded": {
+          "median": 556480,
+          "p95": 3571498,
+          "max": 6633630,
+          "total": 130440619
+        },
+        "checks": 15336,
+        "read_us": {
+          "median": 1394.33,
+          "p95": 5924.633,
+          "max": 11074.635,
+          "total": 246880.266
+        }
+      },
+      "optimization_us": 1579076.766
+    },
+    "restricted_mip": {
+      "total_bytes": 3011523,
+      "clients": 788,
+      "dictionaries": 9,
+      "gain_scaled": 3070791300,
+      "objective_scaled": 46404527275,
+      "source_checks": 794,
+      "max_decode_ratio": 1.4894252598876807,
+      "max_activation_ratio": 1.4995102840352597,
+      "train": {
+        "activated": {
+          "median": 211600,
+          "p95": 1219213,
+          "max": 2599883,
+          "total": 47977182
+        },
+        "decoded": {
+          "median": 534311,
+          "p95": 3114477,
+          "max": 6618129,
+          "total": 122372587
+        },
+        "checks": 14627,
+        "read_us": {
+          "median": 886.98,
+          "p95": 5008.92,
+          "max": 10331.471,
+          "total": 197190.5
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 217571,
+          "p95": 1397219,
+          "max": 2606477,
+          "total": 51045805
+        },
+        "decoded": {
+          "median": 556480,
+          "p95": 3570474,
+          "max": 6632606,
+          "total": 130408875
+        },
+        "checks": 15336,
+        "read_us": {
+          "median": 895.112,
+          "p95": 5885.314,
+          "max": 10730.629,
+          "total": 213122.712
+        }
+      },
+      "optimization_us": 475573.596
+    }
+  },
+  "limitations": [
+    "same R163 offline candidate dictionaries, not an optimum over all dictionaries/codecs",
+    "alpha expansion label-cost optimization and Lagrangian relaxation are established; no generic novelty claim",
+    "exact each expansion move; 3 sweeps only, not globally optimal",
+    "unrestricted upper bound exact integer for fixed candidate set; may be loose",
+    "MILP restricted to top3 assignment edges plus greedy and expansion incumbents; HiGHS numerical solver bound not full graph proof",
+    "same graph heldout roots, synthetic dependency access, no transactional historical index or device IO"
+  ]
+}
