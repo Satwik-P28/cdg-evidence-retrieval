@@ -1,0 +1,83 @@
+{
+  "round": 148,
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "policies": {
+    "snapshot": {
+      "policy": "snapshot",
+      "revisions": 10009,
+      "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+      "total_archive_bytes": 34087402,
+      "source_payload_bytes": 10744266,
+      "unique_frames": 5651,
+      "duplicate_revisions": 4358,
+      "append": {
+        "median_us": 956.179,
+        "p95_us": 3137.669,
+        "samples": 10009
+      },
+      "batch_receipts": 64,
+      "batch_metadata_rows": 10009,
+      "batch_us": 377124.422,
+      "rank_checks": 256,
+      "pinned_checks": 16,
+      "source_reads": 10009,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "activated_bytes": 20175408,
+      "reference_v2_archive_bytes": 31109556,
+      "reference_git_depth1_bytes": 29657017,
+      "receipt_commitments_sha256": "f3b6c20188a74597012831293b39662fe3015db8de573f10ae212d61028fed34",
+      "limitations": [
+        "cooperating local writers; no power-loss, deletion or garbage collection",
+        "v2 trusted external digest required; no publisher authentication",
+        "metadata scan amortization, not sublinear single receipt verification",
+        "one build per arm/cohort; timing descriptive, no Git update parity",
+        "derived news text and synthetic global schedule"
+      ]
+    },
+    "bounded_anchor": {
+      "policy": "bounded_anchor",
+      "revisions": 10009,
+      "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+      "total_archive_bytes": 30525461,
+      "source_payload_bytes": 7149557,
+      "unique_frames": 6443,
+      "duplicate_revisions": 3566,
+      "append": {
+        "median_us": 1041.393,
+        "p95_us": 3764.84,
+        "samples": 10009
+      },
+      "batch_receipts": 64,
+      "batch_metadata_rows": 10009,
+      "batch_us": 378646.161,
+      "rank_checks": 256,
+      "pinned_checks": 16,
+      "source_reads": 10009,
+      "max_score_error": 0,
+      "mean_decode_ratio": 1.645910671385138,
+      "max_decode_ratio": 2.4825581395348837,
+      "max_activation_ratio": 1.4983063605570193,
+      "activated_bytes": 21201943,
+      "reference_v2_archive_bytes": 31109556,
+      "reference_git_depth1_bytes": 29657017,
+      "receipt_commitments_sha256": "f3b6c20188a74597012831293b39662fe3015db8de573f10ae212d61028fed34",
+      "limitations": [
+        "cooperating local writers; no power-loss, deletion or garbage collection",
+        "v2 trusted external digest required; no publisher authentication",
+        "metadata scan amortization, not sublinear single receipt verification",
+        "one build per arm/cohort; timing descriptive, no Git update parity",
+        "derived news text and synthetic global schedule"
+      ]
+    }
+  },
+  "complete_archive_reduction": 0.10449435248834749,
+  "limitations": [
+    "matched deduplication, provenance v2, index, historical query plan and source bytes",
+    "same runner sequential arms, descriptive timing; no power-loss or Git transactional parity",
+    "derived AP sentence text; synthetic global order; nested cohorts not independent"
+  ]
+}

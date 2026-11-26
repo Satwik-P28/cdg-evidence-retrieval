@@ -1,0 +1,84 @@
+{
+  "round": 150,
+  "corpus": "clark",
+  "revisions": 1161,
+  "manifest_sha256": "1567b6c765b7a648e1a2a6d4221bf22543a7011377fda94161c37c04a29b6e2f",
+  "cutoffs": [
+    290,
+    580,
+    870,
+    1161
+  ],
+  "query_count": 80,
+  "query_plan_sha256": "fe807ab4348d1a430c9065b436a6716122ddf5d61adc90f4a654e375c8d34542",
+  "policies": {
+    "revision_expanded": {
+      "index_rows": 1161,
+      "sqlite_bytes": 2715648,
+      "fts_bytes": 2543616,
+      "catalog_bytes": 0,
+      "build_us": 235618.488,
+      "prepare": {
+        "median_us": 737.5865,
+        "p95_us": 942.569,
+        "samples": 4
+      },
+      "query": {
+        "median_us": 182.596,
+        "p95_us": 2455.451,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "scored_candidates": 46298
+    },
+    "content_expanded": {
+      "index_rows": 1157,
+      "sqlite_bytes": 2756608,
+      "fts_bytes": 2527232,
+      "catalog_bytes": 57344,
+      "build_us": 228545.581,
+      "prepare": {
+        "median_us": 591.8395,
+        "p95_us": 702.221,
+        "samples": 4
+      },
+      "query": {
+        "median_us": 188.97699999999998,
+        "p95_us": 2483.473,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "scored_candidates": 46298
+    },
+    "content_grouped": {
+      "index_rows": 1157,
+      "sqlite_bytes": 2756608,
+      "fts_bytes": 2527232,
+      "catalog_bytes": 57344,
+      "build_us": 228545.581,
+      "prepare": {
+        "median_us": 643.997,
+        "p95_us": 792.79,
+        "samples": 4
+      },
+      "query": {
+        "median_us": 197.0875,
+        "p95_us": 2677.015,
+        "samples": 320
+      },
+      "rank_checks": 320,
+      "max_score_error": 0,
+      "scored_candidates": 46298
+    }
+  },
+  "limitations": [
+    "physical index-only comparison; common revision mapping and active statistics charged, source/provenance/receipt archive not built",
+    "offline construction, no transactional update or end-to-end retrieval latency claim",
+    "exact raw source equivalence only, no near-duplicate or fragment indexing",
+    "prepared snapshot mapping cost reported separately, query timings descriptive",
+    "active multiplicity retained in df/N/total; grouped scores use same native phrase counts",
+    "AP synthetic ordinal schedule; CLARK sampled generation cutoffs not time-label benchmark"
+  ]
+}

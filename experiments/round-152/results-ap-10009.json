@@ -1,0 +1,74 @@
+{
+  "round": 152,
+  "corpus": "ap",
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "cutoffs": [
+    1744,
+    4499,
+    7254,
+    10009
+  ],
+  "query_count": 80,
+  "query_plan_sha256": "c6f41c9c9b4bc59df09cbf92f79e90ea05e76ea5b19426584172d58dbcc91e2d",
+  "policies": {
+    "revision": {
+      "raw_unique": 5651,
+      "token_unique": 5637,
+      "byte_distinct_reuses": 0,
+      "index_rows": 10009,
+      "sqlite_bytes": 19660800,
+      "fts_bytes": 19136512,
+      "catalog_bytes": 0,
+      "build_us": 1750624.908,
+      "query": {
+        "median_us": 277.4665,
+        "p95_us": 3138.385,
+        "samples": 960
+      },
+      "rank_checks": 960,
+      "max_score_error": 0
+    },
+    "raw": {
+      "raw_unique": 5651,
+      "token_unique": 5637,
+      "byte_distinct_reuses": 0,
+      "index_rows": 5651,
+      "sqlite_bytes": 11153408,
+      "fts_bytes": 10387456,
+      "catalog_bytes": 245760,
+      "build_us": 1095782.698,
+      "query": {
+        "median_us": 209.2575,
+        "p95_us": 1983.125,
+        "samples": 960
+      },
+      "rank_checks": 960,
+      "max_score_error": 0
+    },
+    "token": {
+      "raw_unique": 5651,
+      "token_unique": 5637,
+      "byte_distinct_reuses": 52,
+      "index_rows": 5637,
+      "sqlite_bytes": 11116544,
+      "fts_bytes": 10350592,
+      "catalog_bytes": 245760,
+      "build_us": 1208280.892,
+      "query": {
+        "median_us": 212.2055,
+        "p95_us": 2006.731,
+        "samples": 960
+      },
+      "rank_checks": 960,
+      "max_score_error": 0
+    }
+  },
+  "limitations": [
+    "index-only, shared mapping index charged, no source or provenance writer",
+    "native default unicode61 only; no synonyms, custom tokenization, highlighting or byte-offset equivalence",
+    "matching native phrase frequencies and exact rank identity, not semantic equivalence",
+    "all arms use same SQL join and expanded per-revision scoring, no full ledger scan",
+    "three shuffled warm query passes; timings descriptive; synthetic variants not real corpus"
+  ]
+}
