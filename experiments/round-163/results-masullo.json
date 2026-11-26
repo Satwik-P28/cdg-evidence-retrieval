@@ -1,0 +1,469 @@
+{
+  "round": 163,
+  "corpus": "masullo",
+  "modules": 631,
+  "edges": 1455,
+  "external_import_occurrences": 2771,
+  "manifest_sha256": "6e8d96b96b2294da6abb900c0750afab59717291f64e73f83e2c16eff2db92d5",
+  "train_sha256": "4c24d59f7cb70e605cece70322bdee526b7c099aa479b178e297c7e6c09b4b0b",
+  "test_sha256": "860e710406a31d1b356e7204db53e3ceaa62f30f1be758d1c8dc895b66e586b2",
+  "candidate_count": 73,
+  "training_failures": 0,
+  "candidate_us": 20062608.022,
+  "policies": {
+    "individual": {
+      "total_bytes": 7784222,
+      "payload_bytes": 7709210,
+      "directory_bytes": 75012,
+      "dictionaries": 0,
+      "clients": 0,
+      "dictionary_stored_bytes": 0,
+      "max_decode_ratio": 1,
+      "max_activation_ratio": 1,
+      "source_checks": 631,
+      "train": {
+        "activated": {
+          "median": 14134,
+          "p95": 4669749,
+          "max": 5563566,
+          "total": 113610922
+        },
+        "decoded": {
+          "median": 51712,
+          "p95": 20445485,
+          "max": 24534128,
+          "total": 495325629
+        },
+        "checks": 8637,
+        "read_us": {
+          "median": 82.986,
+          "p95": 27973.585,
+          "max": 33005.509,
+          "total": 673717.353
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 26067,
+          "p95": 3855147,
+          "max": 5568257,
+          "total": 96745652
+        },
+        "decoded": {
+          "median": 101601,
+          "p95": 16855320,
+          "max": 24539179,
+          "total": 419386957
+        },
+        "checks": 7778,
+        "read_us": {
+          "median": 175.145,
+          "p95": 22967.82,
+          "max": 33188.446,
+          "total": 574898.291
+        }
+      },
+      "objective_scaled": 99638041600,
+      "trace": [],
+      "elapsed_us": 1318318.11
+    },
+    "global_storage": {
+      "total_bytes": 7678871,
+      "payload_bytes": 7603691,
+      "directory_bytes": 75180,
+      "dictionaries": 3,
+      "clients": 509,
+      "dictionary_stored_bytes": 3504,
+      "max_decode_ratio": 1.3956723338485317,
+      "max_activation_ratio": 1.5,
+      "source_checks": 631,
+      "train": {
+        "activated": {
+          "median": 16039,
+          "p95": 4627301,
+          "max": 5516433,
+          "total": 112729803
+        },
+        "decoded": {
+          "median": 56064,
+          "p95": 20450861,
+          "max": 24539504,
+          "total": 495764157
+        },
+        "checks": 8637,
+        "read_us": {
+          "median": 118.6,
+          "p95": 27998.142,
+          "max": 33513.376,
+          "total": 677443.467
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 26067,
+          "p95": 3819414,
+          "max": 5519326,
+          "total": 96037799
+        },
+        "decoded": {
+          "median": 105697,
+          "p95": 16860696,
+          "max": 24544555,
+          "total": 419832397
+        },
+        "checks": 7778,
+        "read_us": {
+          "median": 176.606,
+          "p95": 23113.17,
+          "max": 33146.051,
+          "total": 578883.887
+        }
+      },
+      "objective_scaled": 98289548800,
+      "trace": [
+        {
+          "candidate": 2,
+          "group": "global",
+          "dictionary_raw_bytes": 4096,
+          "clients": 210,
+          "gain_scaled": 928486400
+        },
+        {
+          "candidate": 1,
+          "group": "global",
+          "dictionary_raw_bytes": 1024,
+          "clients": 209,
+          "gain_scaled": 355712000
+        },
+        {
+          "candidate": 0,
+          "group": "global",
+          "dictionary_raw_bytes": 256,
+          "clients": 90,
+          "gain_scaled": 64294400
+        }
+      ],
+      "elapsed_us": 1337004.58
+    },
+    "facility_storage": {
+      "total_bytes": 7678871,
+      "payload_bytes": 7603691,
+      "directory_bytes": 75180,
+      "dictionaries": 3,
+      "clients": 509,
+      "dictionary_stored_bytes": 3504,
+      "max_decode_ratio": 1.3956723338485317,
+      "max_activation_ratio": 1.5,
+      "source_checks": 631,
+      "train": {
+        "activated": {
+          "median": 16039,
+          "p95": 4627301,
+          "max": 5516433,
+          "total": 112729803
+        },
+        "decoded": {
+          "median": 56064,
+          "p95": 20450861,
+          "max": 24539504,
+          "total": 495764157
+        },
+        "checks": 8637,
+        "read_us": {
+          "median": 120.152,
+          "p95": 27535.844,
+          "max": 32856.704,
+          "total": 672925.153
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 26067,
+          "p95": 3819414,
+          "max": 5519326,
+          "total": 96037799
+        },
+        "decoded": {
+          "median": 105697,
+          "p95": 16860696,
+          "max": 24544555,
+          "total": 419832397
+        },
+        "checks": 7778,
+        "read_us": {
+          "median": 175.225,
+          "p95": 22702.329,
+          "max": 32603.803,
+          "total": 574836.372
+        }
+      },
+      "objective_scaled": 98289548800,
+      "trace": [
+        {
+          "candidate": 2,
+          "group": "global",
+          "dictionary_raw_bytes": 4096,
+          "clients": 210,
+          "gain_scaled": 928486400
+        },
+        {
+          "candidate": 1,
+          "group": "global",
+          "dictionary_raw_bytes": 1024,
+          "clients": 209,
+          "gain_scaled": 355712000
+        },
+        {
+          "candidate": 0,
+          "group": "global",
+          "dictionary_raw_bytes": 256,
+          "clients": 90,
+          "gain_scaled": 64294400
+        }
+      ],
+      "elapsed_us": 1327037.216
+    },
+    "all_clients_balanced": {
+      "total_bytes": 7678871,
+      "payload_bytes": 7603691,
+      "directory_bytes": 75180,
+      "dictionaries": 3,
+      "clients": 509,
+      "dictionary_stored_bytes": 3504,
+      "max_decode_ratio": 1.3956723338485317,
+      "max_activation_ratio": 1.5,
+      "source_checks": 631,
+      "train": {
+        "activated": {
+          "median": 16039,
+          "p95": 4627301,
+          "max": 5516433,
+          "total": 112729803
+        },
+        "decoded": {
+          "median": 56064,
+          "p95": 20450861,
+          "max": 24539504,
+          "total": 495764157
+        },
+        "checks": 8637,
+        "read_us": {
+          "median": 123.286,
+          "p95": 27700.562,
+          "max": 34738.628,
+          "total": 680497.144
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 26067,
+          "p95": 3819414,
+          "max": 5519326,
+          "total": 96037799
+        },
+        "decoded": {
+          "median": 105697,
+          "p95": 16860696,
+          "max": 24544555,
+          "total": 419832397
+        },
+        "checks": 7778,
+        "read_us": {
+          "median": 175.766,
+          "p95": 22791.063,
+          "max": 32916.201,
+          "total": 570035.306
+        }
+      },
+      "objective_scaled": 121956633025,
+      "trace": [
+        {
+          "candidate": 2,
+          "group": "global",
+          "dictionary_raw_bytes": 4096,
+          "clients": 210,
+          "gain_scaled": 958087400
+        },
+        {
+          "candidate": 1,
+          "group": "global",
+          "dictionary_raw_bytes": 1024,
+          "clients": 209,
+          "gain_scaled": 392828600
+        },
+        {
+          "candidate": 0,
+          "group": "global",
+          "dictionary_raw_bytes": 256,
+          "clients": 90,
+          "gain_scaled": 74725500
+        }
+      ],
+      "elapsed_us": 1331440.514
+    },
+    "cut_balanced": {
+      "total_bytes": 7678909,
+      "payload_bytes": 7603729,
+      "directory_bytes": 75180,
+      "dictionaries": 3,
+      "clients": 508,
+      "dictionary_stored_bytes": 3504,
+      "max_decode_ratio": 1.3956723338485317,
+      "max_activation_ratio": 1.5,
+      "source_checks": 631,
+      "train": {
+        "activated": {
+          "median": 16039,
+          "p95": 4627339,
+          "max": 5516471,
+          "total": 112726353
+        },
+        "decoded": {
+          "median": 56064,
+          "p95": 20450861,
+          "max": 24539504,
+          "total": 495755965
+        },
+        "checks": 8637,
+        "read_us": {
+          "median": 116.816,
+          "p95": 27670.241,
+          "max": 32889.069,
+          "total": 673076.796
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 26067,
+          "p95": 3819452,
+          "max": 5519364,
+          "total": 96029797
+        },
+        "decoded": {
+          "median": 105697,
+          "p95": 16860696,
+          "max": 24544555,
+          "total": 419816013
+        },
+        "checks": 7778,
+        "read_us": {
+          "median": 175.565,
+          "p95": 22753.768,
+          "max": 33071.165,
+          "total": 570186.118
+        }
+      },
+      "objective_scaled": 121956569625,
+      "trace": [
+        {
+          "candidate": 2,
+          "group": "global",
+          "dictionary_raw_bytes": 4096,
+          "clients": 209,
+          "gain_scaled": 958150800
+        },
+        {
+          "candidate": 1,
+          "group": "global",
+          "dictionary_raw_bytes": 1024,
+          "clients": 209,
+          "gain_scaled": 392828600
+        },
+        {
+          "candidate": 0,
+          "group": "global",
+          "dictionary_raw_bytes": 256,
+          "clients": 90,
+          "gain_scaled": 74725500
+        }
+      ],
+      "elapsed_us": 1957708.602
+    },
+    "cut_readheavy": {
+      "total_bytes": 7678909,
+      "payload_bytes": 7603729,
+      "directory_bytes": 75180,
+      "dictionaries": 3,
+      "clients": 508,
+      "dictionary_stored_bytes": 3504,
+      "max_decode_ratio": 1.3956723338485317,
+      "max_activation_ratio": 1.5,
+      "source_checks": 631,
+      "train": {
+        "activated": {
+          "median": 16039,
+          "p95": 4627339,
+          "max": 5516471,
+          "total": 112726353
+        },
+        "decoded": {
+          "median": 56064,
+          "p95": 20450861,
+          "max": 24539504,
+          "total": 495755965
+        },
+        "checks": 8637,
+        "read_us": {
+          "median": 119.37,
+          "p95": 27557.932,
+          "max": 32870.732,
+          "total": 672502.802
+        }
+      },
+      "test": {
+        "activated": {
+          "median": 26067,
+          "p95": 3819452,
+          "max": 5519364,
+          "total": 96029797
+        },
+        "decoded": {
+          "median": 105697,
+          "p95": 16860696,
+          "max": 24544555,
+          "total": 419816013
+        },
+        "checks": 7778,
+        "read_us": {
+          "median": 185.68,
+          "p95": 22663.001,
+          "max": 32849.35,
+          "total": 569156.252
+        }
+      },
+      "objective_scaled": 204228808200,
+      "trace": [
+        {
+          "candidate": 2,
+          "group": "global",
+          "dictionary_raw_bytes": 4096,
+          "clients": 209,
+          "gain_scaled": 1086741200
+        },
+        {
+          "candidate": 1,
+          "group": "global",
+          "dictionary_raw_bytes": 1024,
+          "clients": 209,
+          "gain_scaled": 543624600
+        },
+        {
+          "candidate": 0,
+          "group": "global",
+          "dictionary_raw_bytes": 256,
+          "clients": 90,
+          "gain_scaled": 116891500
+        }
+      ],
+      "elapsed_us": 1962438.844
+    }
+  },
+  "limitations": [
+    "offline finalized archive, dictionary training sees source collection, held-out query roots only",
+    "cold per-object dictionary bytes charged, per-query dictionary reuse exactly once, no OS cache assumption",
+    "candidate dictionaries from global/path/graph groups, fixed sample/size, no global optimization",
+    "min-cut is exact for one candidate and remaining unassigned clients; greedy openings irreversible",
+    "syntactic local imports, not kernel-certified theorem dependency graph; no historical retrieval or transaction guarantee",
+    "no new dictionary codec claim; logical byte work not physical IO"
+  ]
+}
