@@ -1,0 +1,70 @@
+{
+  "round": 153,
+  "revisions": 74364,
+  "manifest_sha256": "e12f3c397333e78a5ab3394dbb119bbab95985161e53dadf9eef71b6b5508319",
+  "policies": {
+    "legacy": {
+      "rank_receipt": {
+        "median_us": 21710.8085,
+        "p95_us": 25412.216,
+        "samples": 768
+      },
+      "batch": {
+        "median_us": 1731920.975,
+        "p95_us": 1731920.975,
+        "samples": 3
+      },
+      "batch_raw_us": [
+        1834904.569,
+        1726268.406,
+        1731920.975
+      ],
+      "rank_checks": 768,
+      "max_score_error": 0
+    },
+    "fast_revision": {
+      "rank_receipt": {
+        "median_us": 1102.9879999999998,
+        "p95_us": 6327.981,
+        "samples": 768
+      },
+      "batch": {
+        "median_us": 452519.388,
+        "p95_us": 452519.388,
+        "samples": 3
+      },
+      "batch_raw_us": [
+        454855.574,
+        452519.388,
+        443961.962
+      ],
+      "rank_checks": 768,
+      "max_score_error": 0
+    },
+    "quotient": {
+      "rank_receipt": {
+        "median_us": 1128.3110000000001,
+        "p95_us": 5841.181,
+        "samples": 768
+      },
+      "batch": {
+        "median_us": 435355.909,
+        "p95_us": 435355.909,
+        "samples": 3
+      },
+      "batch_raw_us": [
+        447041.367,
+        435355.909,
+        423134.288
+      ],
+      "rank_checks": 768,
+      "max_score_error": 0
+    }
+  },
+  "limitations": [
+    "same revision physical archive for legacy and fast revision, same R151 quotient archive",
+    "same native tokenizer, phrase/boolean grammar and source verification, 3 warm interleaved repetitions",
+    "full prefix provenance scan once per batch; single receipt rank timing excludes origin-prefix verification",
+    "synthetic AP schedule, descriptive single-runner timings, no production SLA"
+  ]
+}
