@@ -1,0 +1,39 @@
+name: CDG R155 compact fragment mappings and boundary bridges
+on:
+  push:
+    branches: ['research/round-155-*']
+    paths: ['experiments/round-155/**','.github/workflows/cdg-r155-compact.yml','research/rounds/round-155/**']
+  workflow_dispatch:
+jobs:
+  fragment:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {corpus: ap, target: 10000, source: external/newsedits/ap.db}
+          - {corpus: ap, target: 100000, source: external/newsedits/ap.db}
+          - {corpus: clark, target: 10000, source: external/clark}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 gdown==5.2.0 pytest==9.0.2 pyflakes==3.4.0
+      - run: python -m pyflakes experiments/round-155
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-155/cdgfts.c -o experiments/round-155/cdgfts.so
+      - run: CDG_FTS_EXTENSION="$PWD/experiments/round-155/cdgfts.so" PYTHONPATH=experiments/round-155 python -m pytest -q experiments/round-155
+      - if: matrix.corpus == 'ap'
+        run: python experiments/round-136/download_source.py --out external/newsedits
+      - if: matrix.corpus == 'clark'
+        run: |
+          git init external/clark
+          git -C external/clark remote add origin https://github.com/belindal/ERASE.git
+          git -C external/clark fetch --depth=1 origin b93f898780b3cf40fedd4e9a00c51af9a27688bc
+          git -C external/clark checkout --detach FETCH_HEAD
+      - run: python experiments/round-155/compact_fragments.py --corpus ${{ matrix.corpus }} --source ${{ matrix.source }} --target ${{ matrix.target }} --extension experiments/round-155/cdgfts.so --out experiments/round-155/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r155-${{ matrix.corpus }}-${{ matrix.target }}
+          path: experiments/round-155/ci.json
