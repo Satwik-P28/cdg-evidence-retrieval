@@ -1,0 +1,357 @@
+{
+  "round": 161,
+  "corpus": "grh",
+  "modules": 803,
+  "edges": 1733,
+  "external_import_occurrences": 9,
+  "raw_bytes": 30050271,
+  "manifest_sha256": "3843c7e33c0d5ed3d256400015fcc119483cbec745f1a3806c7d85d0e4e2cece",
+  "root_count": 128,
+  "root_sha256": "4ce43cbbf3ecb0fd2886ceff9f76ef9ab0b1987dd061aa215bfed088076ad359",
+  "closure_sizes": {
+    "median": 83,
+    "p95": 295,
+    "max": 451,
+    "total": 14108
+  },
+  "networkx_version": "3.7.1rc0.dev0",
+  "policies": {
+    "individual": {
+      "payload_bytes": 8659723,
+      "directory_bytes": 93424,
+      "total_bytes": 8753147,
+      "blocks": 803,
+      "max_block_raw": 96004,
+      "source_checks": 803,
+      "closure_checks": 14108,
+      "closure_activated": {
+        "median": 762890,
+        "p95": 3086551,
+        "max": 4709705,
+        "total": 143277124
+      },
+      "closure_decoded": {
+        "median": 2461128,
+        "p95": 10379310,
+        "max": 16295549,
+        "total": 475188682
+      },
+      "closure_blocks": {
+        "median": 83,
+        "p95": 295,
+        "max": 451,
+        "total": 14108
+      },
+      "closure_read_us": {
+        "median": 3077.388,
+        "p95": 12912.353,
+        "max": 20106.934,
+        "total": 576439.267
+      },
+      "single_activated": {
+        "median": 10850,
+        "p95": 18552,
+        "max": 24359,
+        "total": 1431567
+      },
+      "single_decoded": {
+        "median": 39720,
+        "p95": 68300,
+        "max": 81934,
+        "total": 5002200
+      },
+      "closure_activation_relative": 1,
+      "build_us": 675006.879
+    },
+    "random": {
+      "payload_bytes": 8296647,
+      "directory_bytes": 80944,
+      "total_bytes": 8377591,
+      "blocks": 283,
+      "max_block_raw": 130836,
+      "source_checks": 803,
+      "closure_checks": 14108,
+      "closure_activated": {
+        "median": 2038602,
+        "p95": 5672524,
+        "max": 6871533,
+        "total": 313784933
+      },
+      "closure_decoded": {
+        "median": 7285985,
+        "p95": 20386149,
+        "max": 24833887,
+        "total": 1123294198
+      },
+      "closure_blocks": {
+        "median": 67,
+        "p95": 189,
+        "max": 232,
+        "total": 10392
+      },
+      "closure_read_us": {
+        "median": 7186.195,
+        "p95": 20676.864,
+        "max": 26062.208,
+        "total": 1124605.68
+      },
+      "single_activated": {
+        "median": 31547,
+        "p95": 36629,
+        "max": 37854,
+        "total": 3872609
+      },
+      "single_decoded": {
+        "median": 114276,
+        "p95": 129636,
+        "max": 130836,
+        "total": 13954992
+      },
+      "closure_activation_relative": 2.190056055284862,
+      "build_us": 693441.762
+    },
+    "path": {
+      "payload_bytes": 8092431,
+      "directory_bytes": 80872,
+      "total_bytes": 8173303,
+      "blocks": 280,
+      "max_block_raw": 130975,
+      "source_checks": 803,
+      "closure_checks": 14108,
+      "closure_activated": {
+        "median": 1451268,
+        "p95": 3963572,
+        "max": 5359435,
+        "total": 222631594
+      },
+      "closure_decoded": {
+        "median": 5203041,
+        "p95": 14410837,
+        "max": 19821275,
+        "total": 798222699
+      },
+      "closure_blocks": {
+        "median": 47,
+        "p95": 133,
+        "max": 183,
+        "total": 7316
+      },
+      "closure_read_us": {
+        "median": 5131.411,
+        "p95": 14570.41,
+        "max": 20554.237,
+        "total": 805702.191
+      },
+      "single_activated": {
+        "median": 30433,
+        "p95": 35411,
+        "max": 37284,
+        "total": 3802619
+      },
+      "single_decoded": {
+        "median": 114985,
+        "p95": 129235,
+        "max": 130975,
+        "total": 14070141
+      },
+      "closure_activation_relative": 1.5538530351851563,
+      "build_us": 687332.34
+    },
+    "topological": {
+      "payload_bytes": 8094957,
+      "directory_bytes": 80848,
+      "total_bytes": 8175805,
+      "blocks": 279,
+      "max_block_raw": 130984,
+      "source_checks": 803,
+      "closure_checks": 14108,
+      "closure_activated": {
+        "median": 1231624,
+        "p95": 3798039,
+        "max": 5213181,
+        "total": 197266373
+      },
+      "closure_decoded": {
+        "median": 4313559,
+        "p95": 13702675,
+        "max": 19247647,
+        "total": 703428847
+      },
+      "closure_blocks": {
+        "median": 39,
+        "p95": 125,
+        "max": 178,
+        "total": 6358
+      },
+      "closure_read_us": {
+        "median": 4455.563,
+        "p95": 15155.488,
+        "max": 20405.189,
+        "total": 720210.874
+      },
+      "single_activated": {
+        "median": 30096,
+        "p95": 36625,
+        "max": 37681,
+        "total": 3825765
+      },
+      "single_decoded": {
+        "median": 113923,
+        "p95": 129141,
+        "max": 130926,
+        "total": 14192175
+      },
+      "closure_activation_relative": 1.3768169509041792,
+      "build_us": 690403.847
+    },
+    "louvain": {
+      "payload_bytes": 8099986,
+      "directory_bytes": 80824,
+      "total_bytes": 8180810,
+      "blocks": 278,
+      "max_block_raw": 130694,
+      "source_checks": 803,
+      "closure_checks": 14108,
+      "closure_activated": {
+        "median": 1282383,
+        "p95": 3903910,
+        "max": 5337674,
+        "total": 204828807
+      },
+      "closure_decoded": {
+        "median": 4508891,
+        "p95": 14104663,
+        "max": 19710601,
+        "total": 732225034
+      },
+      "closure_blocks": {
+        "median": 41,
+        "p95": 128,
+        "max": 181,
+        "total": 6662
+      },
+      "closure_read_us": {
+        "median": 4507.579,
+        "p95": 14435.367,
+        "max": 20225.154,
+        "total": 743722.367
+      },
+      "single_activated": {
+        "median": 30431,
+        "p95": 36313,
+        "max": 39348,
+        "total": 3785280
+      },
+      "single_decoded": {
+        "median": 114761,
+        "p95": 128974,
+        "max": 130694,
+        "total": 14011045
+      },
+      "closure_activation_relative": 1.4295988171845213,
+      "build_us": 792643.731
+    },
+    "closure_affinity": {
+      "payload_bytes": 8126455,
+      "directory_bytes": 80896,
+      "total_bytes": 8207351,
+      "blocks": 281,
+      "max_block_raw": 130949,
+      "source_checks": 803,
+      "closure_checks": 14108,
+      "closure_activated": {
+        "median": 1212807,
+        "p95": 4003623,
+        "max": 5475738,
+        "total": 204607250
+      },
+      "closure_decoded": {
+        "median": 4248817,
+        "p95": 14387772,
+        "max": 20092600,
+        "total": 727603685
+      },
+      "closure_blocks": {
+        "median": 39,
+        "p95": 132,
+        "max": 187,
+        "total": 6712
+      },
+      "closure_read_us": {
+        "median": 4323.437,
+        "p95": 14950.226,
+        "max": 20948.6,
+        "total": 742370.775
+      },
+      "single_activated": {
+        "median": 30403,
+        "p95": 36625,
+        "max": 38046,
+        "total": 3818192
+      },
+      "single_decoded": {
+        "median": 112522,
+        "p95": 130242,
+        "max": 130949,
+        "total": 14132974
+      },
+      "closure_activation_relative": 1.4280524642580068,
+      "build_us": 750717.194
+    },
+    "closure_affinity_32k": {
+      "payload_bytes": 8643957,
+      "directory_bytes": 92584,
+      "total_bytes": 8736541,
+      "blocks": 768,
+      "max_block_raw": 96004,
+      "source_checks": 803,
+      "closure_checks": 14108,
+      "closure_activated": {
+        "median": 780355,
+        "p95": 3114584,
+        "max": 4731153,
+        "total": 145189500
+      },
+      "closure_decoded": {
+        "median": 2497265,
+        "p95": 10492499,
+        "max": 16399107,
+        "total": 482592434
+      },
+      "closure_blocks": {
+        "median": 77,
+        "p95": 284,
+        "max": 432,
+        "total": 13424
+      },
+      "closure_read_us": {
+        "median": 3030.992,
+        "p95": 12255.87,
+        "max": 19888.587,
+        "total": 571982.62
+      },
+      "single_activated": {
+        "median": 10850,
+        "p95": 18552,
+        "max": 24359,
+        "total": 1470041
+      },
+      "single_decoded": {
+        "median": 39720,
+        "p95": 68300,
+        "max": 81934,
+        "total": 5133154
+      },
+      "closure_activation_relative": 1.013347392428117,
+      "build_us": 739420.367
+    }
+  },
+  "limitations": [
+    "syntactic local imports only, not declaration proof dependencies or Lean kernel verification",
+    "readable and compact editions related, not independent proof methods; Masullo is unverified",
+    "actual compressed bytes and binary directory, in-memory pack not transactional or indexed RAG archive",
+    "hard block cap except oversized single modules; no per-file 2.5x/1.5x bound",
+    "closure retrieval is exact for this extracted graph only; external Mathlib imports excluded",
+    "single warm timing pass, no physical disk IO; graph methods not claimed novel"
+  ]
+}
