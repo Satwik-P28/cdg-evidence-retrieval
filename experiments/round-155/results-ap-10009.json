@@ -1,0 +1,194 @@
+{
+  "round": 155,
+  "corpus": "ap",
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "cutoffs": [
+    1744,
+    4499,
+    7254,
+    10009
+  ],
+  "query_count": 104,
+  "query_plan_sha256": "7df1506629d867e40556847deb37e610c1517b4821a2e6626c8ac17bf0132533",
+  "policies": {
+    "raw": {
+      "before_compaction_bytes": 11153408,
+      "build": {
+        "raw_unique": 5651,
+        "token_unique": 5637,
+        "byte_distinct_reuses": 0,
+        "index_rows": 5651,
+        "sqlite_bytes": 11153408,
+        "fts_bytes": 10387456,
+        "catalog_bytes": 245760,
+        "build_us": 1426653.639
+      },
+      "sqlite_bytes": 10907648,
+      "physical_table_bytes": {
+        "active_stats": 147456,
+        "docs_config": 4096,
+        "docs_data": 10285056,
+        "docs_docsize": 61440,
+        "docs_idx": 36864,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "sqlite_schema": 4096
+      },
+      "packed_posting_bytes": 0,
+      "compact_us": 255839.323,
+      "prepare": {
+        "median_us": 1700.6145,
+        "p95_us": 1825.244,
+        "samples": 4
+      },
+      "query": {
+        "median_us": 163.9085,
+        "p95_us": 1211.911,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "halo64": {
+      "before_compaction_bytes": 14295040,
+      "build": {
+        "sqlite_bytes": 14295040,
+        "fts_bytes": 9580544,
+        "content_rows": 5651,
+        "index_rows": 39702,
+        "fragment_occurrences": 53786,
+        "mapping_rows": 53786,
+        "halo_tokens": 246549,
+        "unique_indexed_tokens": 3276717,
+        "physical_table_bytes": {
+          "active_stats": 147456,
+          "content_catalog": 245760,
+          "docs_config": 4096,
+          "docs_data": 9146368,
+          "docs_docsize": 397312,
+          "docs_idx": 32768,
+          "fragments": 1720320,
+          "revision_cid": 135168,
+          "revisions": 233472,
+          "sqlite_autoindex_fragments_1": 1622016,
+          "sqlite_schema": 4096,
+          "uses": 606208
+        },
+        "build_us": 5988506.889
+      },
+      "sqlite_bytes": 10993664,
+      "physical_table_bytes": {
+        "active_stats": 147456,
+        "compact_fragments": 434176,
+        "docs_config": 4096,
+        "docs_data": 9146368,
+        "docs_docsize": 397312,
+        "docs_idx": 32768,
+        "packed_uses": 458752,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "sqlite_schema": 4096
+      },
+      "packed_posting_bytes": 112005,
+      "compact_us": 581841.199,
+      "prepare": {
+        "median_us": 1675.888,
+        "p95_us": 1858.978,
+        "samples": 4
+      },
+      "query": {
+        "median_us": 360.7335,
+        "p95_us": 7570.722,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "bridge64": {
+      "before_compaction_bytes": 18681856,
+      "build": {
+        "sqlite_bytes": 18681856,
+        "content_rows": 5651,
+        "core_rows": 39470,
+        "bridge_rows": 30990,
+        "core_occurrences": 53786,
+        "bridge_occurrences": 48135,
+        "build_us": 6372863.15
+      },
+      "sqlite_bytes": 12832768,
+      "physical_table_bytes": {
+        "active_stats": 147456,
+        "compact_fragments": 806912,
+        "docs_config": 4096,
+        "docs_data": 9928704,
+        "docs_docsize": 704512,
+        "docs_idx": 32768,
+        "packed_uses": 835584,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "sqlite_schema": 4096
+      },
+      "packed_posting_bytes": 210943,
+      "compact_us": 852724.77,
+      "prepare": {
+        "median_us": 1568.0655,
+        "p95_us": 1622.543,
+        "samples": 4
+      },
+      "query": {
+        "median_us": 386.98850000000004,
+        "p95_us": 6924.256,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    },
+    "bridge128": {
+      "before_compaction_bytes": 14516224,
+      "build": {
+        "sqlite_bytes": 14516224,
+        "content_rows": 5651,
+        "core_rows": 22412,
+        "bridge_rows": 14928,
+        "core_occurrences": 28480,
+        "bridge_occurrences": 22829,
+        "build_us": 5570873.807
+      },
+      "sqlite_bytes": 11370496,
+      "physical_table_bytes": {
+        "active_stats": 147456,
+        "compact_fragments": 430080,
+        "docs_config": 4096,
+        "docs_data": 9572352,
+        "docs_docsize": 376832,
+        "docs_idx": 32768,
+        "packed_uses": 434176,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "sqlite_schema": 4096
+      },
+      "packed_posting_bytes": 106635,
+      "compact_us": 1259774.364,
+      "prepare": {
+        "median_us": 1609.3229999999999,
+        "p95_us": 1778.877,
+        "samples": 4
+      },
+      "query": {
+        "median_us": 305.41499999999996,
+        "p95_us": 5055.131,
+        "samples": 832
+      },
+      "rank_checks": 832,
+      "max_score_error": 0
+    }
+  },
+  "limitations": [
+    "finalized index only; insertion catalogs omitted in ALL arms; not transactional",
+    "packed mapping lists decoded in Python; common prepared snapshot mapping cost reported separately",
+    "phrase length 1..8, default unicode61, exact AND/OR only; no raw source reconstruction",
+    "bridge scheme assumes nonfinal cores >=8 tokens; distinct crossing matches counted once",
+    "two warm shuffled repeats; no production latency claim; AP synthetic ordinal schedule"
+  ]
+}
