@@ -209,7 +209,8 @@ def build_delta(db,path,events,mode):
                     if existing is not None:assert existing[1]==frame
                     # Charge only a new frame; reclaim old frame only on last reference.
                     marginal=(0 if existing is not None else len(frame)+48)-(len(old_frame)+48 if refs[old_fid]==1 else 0)
-                    if marginal<0 and 5*len(frame)<=4*len(full) and 2*(len(parent_frame)+len(frame))<=3*len(full):
+                    stats["joint_candidate_decode_bound_failures"]+=int(2*(len(old)+n+len(script))>5*n)
+                    if marginal<0 and (existing is None or existing[0]!=old_fid) and 2*(len(old)+n+len(script))<=5*n and 5*len(frame)<=4*len(full) and 2*(len(parent_frame)+len(frame))<=3*len(full):
                         if existing is None:
                             fid=next_fid;next_fid+=1
                             db.execute("INSERT INTO frames VALUES(?,?)",(fid,frame))
@@ -276,7 +277,7 @@ def recover_joint(db,g):
     assert len(script)<=10*n+64
     raw=decode_script(old,script,n)
     assert h.sha(raw)==digest
-    return raw,n+pn,len(frame)+len(pframe)
+    return raw,n+pn+len(script),len(frame)+len(pframe)
 
 def prepare_delta(db,c,global_map=None):
     state=prepare(db,c);active=state[0];parents=dict(db.execute("SELECT cid,base FROM idx_delta"))
@@ -342,8 +343,11 @@ def run(events,manifest,cuts,folder,ext,corpus):
         path=folder/(mode+".sqlite");db,size=f.build(path,ext,events,"marginal",False)
         if mode!="positional":size.update(build_delta(db,path,events,mode))
         db.close();db=connect(path,ext)
+        source_times=[];source_dd=source_ab=0
         for g,(_,_,raw) in enumerate(events,1):
-            got,dd,ab=recover_joint(db,g);assert got==raw
+            t=time.perf_counter_ns();got,dd,ab=recover_joint(db,g);source_times.append((time.perf_counter_ns()-t)/1000)
+            source_dd+=dd;source_ab+=ab
+            assert got==raw
             assert 2*dd<=5*len(raw) and 2*ab<=3*len(h.C.compress(raw))
         size["final_frame_payload_bytes"]=db.execute("SELECT coalesce(sum(length(body)),0) FROM frames").fetchone()[0]
         size["final_unique_frames"]=db.execute("SELECT count(*) FROM frames").fetchone()[0]
@@ -367,6 +371,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
                 if (c,p,o) in sigs:assert sigs[c,p,o]==(hits,df)
                 else:sigs[c,p,o]=(hits,df)
         results[mode]=dict(**size,source_checks=len(events),rank_checks=len(times),max_score_error=err,
+            source_recovery=h.quant(source_times),source_decoded_bytes=source_dd,source_activated_bytes=source_ab,
             map_load_us=map_load_us,query=h.quant(times),query_by_class={k:h.quant(v) for k,v in classes.items()},prepare=h.quant(prep_us),work=dict(work))
         print("ARM_JSON="+json.dumps(results[mode]),flush=True);db.close()
     old=results["aligned_adaptive_weighted_adjusted_multi"];new=results["aligned_joint_adaptive_weighted_adjusted_multi"]
