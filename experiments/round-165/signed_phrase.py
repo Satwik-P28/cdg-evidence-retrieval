@@ -1,7 +1,7 @@
 """R165: one-hop signed phrase corrections over native token edit windows.
 Identical marginal source archive in all arms; no source decode at query time.
 """
-import argparse,collections,json,random,sys,time,tempfile
+import argparse,bisect,collections,json,random,sys,time,tempfile
 from pathlib import Path
 from rapidfuzz.distance import Levenshtein
 HERE=Path(__file__).resolve().parent
@@ -56,6 +56,62 @@ def signed_terms(patches):
         if new:out[tuple(new)]+=1
     return {w:c for w,c in out.items() if c}
 
+def share_window(w,uses):
+    # Fixed, untuned token-equivalent proxy, not a byte-optimal estimator.
+    multiplicity=sum(abs(c) for _,c in uses)
+    return len(uses)>1 and (multiplicity-1)*len(w)>6*len(uses)
+
+def write_runs(db,terms,insert,stats,adaptive):
+    """Direct signed rows grouped by cid; shared rows occupy a separate range."""
+    uses=collections.defaultdict(list)
+    for cid,corrections in terms:
+        for w,coeff in corrections.items():uses[w].append((cid,coeff))
+    shared={w for w,v in uses.items() if adaptive and share_window(w,v)}
+    ordinal=0
+    for cid,corrections in terms:
+        before=ordinal
+        for w,coeff in corrections.items():
+            if w in shared:continue
+            for _ in range(abs(coeff)):
+                ordinal+=1
+                insert("patch_fts",2*ordinal+int(coeff>0),list(w))
+                stats["direct_rows"]+=1
+                stats["direct_tokens"]+=len(w)
+        if ordinal>before:
+            db.execute("INSERT INTO patch_run VALUES(?,?)",(ordinal,cid))
+            stats["direct_runs"]+=1
+    rid=2*ordinal+1
+    for w,v in uses.items():
+        if w not in shared:continue
+        rid+=1;insert("patch_fts",rid,list(w))
+        stats["shared_rows"]+=1;stats["shared_tokens"]+=len(w)
+        for cid,coeff in v:
+            db.execute("INSERT INTO patch_use VALUES(?,?,?)",(rid,cid,coeff))
+            stats["window_uses"]+=1
+    stats["correction_coeff_l1"]=sum(abs(c) for v in uses.values() for _,c in v)
+
+class PatchRuns:
+    def __init__(self,rows,shared):
+        self.ends=[end for end,_ in rows]
+        self.cids=[cid for _,cid in rows]
+        self.shared=shared
+
+    def get(self,rid,default=()):
+        if self.ends and 2<=rid<=2*self.ends[-1]+1:
+            i=bisect.bisect_left(self.ends,rid//2)
+            return ((self.cids[i],1 if rid&1 else -1),)
+        return self.shared.get(rid,default)
+
+def load_patch_map(db):
+    tables={r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+    if "patch_use" not in tables:return None
+    mapping=collections.defaultdict(list)
+    for wid,cid,coeff in db.execute("SELECT wid,cid,coeff FROM patch_use"):
+        mapping[wid].append((cid,coeff))
+    if "patch_run" in tables:
+        return PatchRuns(list(db.execute("SELECT last_ordinal,cid FROM patch_run ORDER BY last_ordinal")),mapping)
+    return mapping
+
 def build_delta(db,path,events,mode):
     start=time.perf_counter_ns()
     db.executescript("""
@@ -65,8 +121,11 @@ def build_delta(db,path,events,mode):
     """)
     quotient="_quotient_" in mode
     dense="_dense_" in mode
-    mapped=quotient or dense
-    window_ids={}
+    runs="_runs_" in mode or "_adaptive_" in mode
+    mapped=quotient or dense or runs
+    window_ids={};pending=[]
+    if runs:
+        db.execute("CREATE TABLE patch_run(last_ordinal INTEGER PRIMARY KEY,cid INTEGER NOT NULL)")
     if mapped:
         db.execute("CREATE TABLE patch_use(wid INTEGER NOT NULL,cid INTEGER NOT NULL,coeff INTEGER NOT NULL CHECK(coeff<>0),PRIMARY KEY(wid,cid)) WITHOUT ROWID")
     gids=dict(db.execute("SELECT g,cid FROM revisions"));parents=dict(db.execute("SELECT g,parent FROM source"))
@@ -109,7 +168,9 @@ def build_delta(db,path,events,mode):
                     if new:insert("patch_fts",(cid<<16)|(i<<1)|1,new)
                 stats["patch_pairs"]+=1;stats["patch_tokens"]+=len(old)+len(new)
                 stats["raw_nonempty_windows"]+=int(bool(old))+int(bool(new))
-            if mapped:
+            if runs:
+                pending.append((cid,signed_terms(patches)))
+            elif mapped:
                 terms=(signed_terms(patches).items() if quotient else
                     [(tuple(w),sign) for old,new in patches for w,sign in ((old,-1),(new,1)) if w])
                 for w,coeff in terms:
@@ -131,6 +192,7 @@ def build_delta(db,path,events,mode):
         else:
             insert("base_fts",cid,target);bases.add(cid);stats["base_contents"]+=1;stats["base_tokens"]+=len(target)
         hist[article].append(cid)
+    if runs:write_runs(db,pending,insert,stats,"_adaptive_" in mode)
     db.execute("DROP TABLE docs_0")
     for table in ("base_fts","patch_fts"):
         db.execute(f"INSERT INTO {table}({table}) VALUES('optimize')")
@@ -140,12 +202,12 @@ def build_delta(db,path,events,mode):
     return dict(sqlite_bytes=path.stat().st_size,fts_bytes=sum(v for k,v in sizes.items() if k.startswith(("base_fts_","patch_fts_"))),
         table_bytes=sizes,delta_build_us=(time.perf_counter_ns()-start)/1000,**stats)
 
-def prepare_delta(db,c):
+def prepare_delta(db,c,global_map=None):
     state=prepare(db,c);active=state[0];parents=dict(db.execute("SELECT cid,base FROM idx_delta"))
     children=collections.defaultdict(list)
     for cid in active:children[parents.get(cid,cid)].append(cid)
-    patch_children=None
-    if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='patch_use'").fetchone():
+    patch_children=global_map
+    if global_map is None and db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='patch_use'").fetchone():
         patch_children=collections.defaultdict(list)
         for wid,cid,coeff in db.execute("SELECT wid,cid,coeff FROM patch_use"):
             if cid in active:patch_children[wid].append((cid,coeff))
@@ -167,8 +229,10 @@ def rank_delta(db,p,o,prep):
                 if cid in active:counts[cid]+=tf if rid&1 else -tf
             else:
                 for cid,coeff in patch_children.get(rid,()):
-                    counts[cid]+=coeff*tf
-                    work["patch_expansions"]+=1
+                    work["patch_mapping_visits"]+=1
+                    if cid in active:
+                        counts[cid]+=coeff*tf
+                        work["patch_expansions"]+=1
         assert all(v>=0 for v in counts.values())
         matches={g:tf for cid,tf in counts.items() if tf for g in active[cid]}
         assert all(1<=tf<=lens[g] for g,tf in matches.items())
@@ -196,7 +260,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
     qs=[(p,o) for p,o in qs if all(1<=len(tokens(check,t))<=L for t in p)];check.close()
     expected={(c,p,o):h.native(ref,p,o) for c,ref in refs.items() for p,o in qs}
     results={};sigs={}
-    for mode in ("positional","aligned_single","aligned_multi","independent_multi","aligned_quotient_multi","independent_quotient_multi","independent_dense_multi"):
+    for mode in ("positional","aligned_single","aligned_multi","independent_multi","aligned_quotient_multi","independent_quotient_multi","independent_dense_multi","independent_quotient_global_multi","independent_runs_multi","independent_adaptive_multi"):
         path=folder/(mode+".sqlite");db,size=f.build(path,ext,events,"marginal",False)
         if mode!="positional":size.update(build_delta(db,path,events,mode))
         db.close();db=connect(path,ext)
@@ -204,8 +268,11 @@ def run(events,manifest,cuts,folder,ext,corpus):
             got,dd,ab=recover(db,g);assert got==raw
             assert 2*dd<=5*len(raw) and 2*ab<=3*len(h.C.compress(raw))
         prep={};prep_us=[]
+        global_map=None;map_load_us=0
+        if any(tag in mode for tag in ("_global_","_runs_","_adaptive_")):
+            t=time.perf_counter_ns();global_map=load_patch_map(db);map_load_us=(time.perf_counter_ns()-t)/1000
         for c in cuts:
-            t=time.perf_counter_ns();prep[c]=prepare(db,c) if mode=="positional" else prepare_delta(db,c)
+            t=time.perf_counter_ns();prep[c]=prepare(db,c) if mode=="positional" else prepare_delta(db,c,global_map)
             prep_us.append((time.perf_counter_ns()-t)/1000)
         plan=list(expected);rng=random.Random(165);times=[];classes=collections.defaultdict(list);work=collections.Counter();err=0.
         for repeat in range(2):
@@ -220,19 +287,21 @@ def run(events,manifest,cuts,folder,ext,corpus):
                 if (c,p,o) in sigs:assert sigs[c,p,o]==(hits,df)
                 else:sigs[c,p,o]=(hits,df)
         results[mode]=dict(**size,source_checks=len(events),rank_checks=len(times),max_score_error=err,
-            query=h.quant(times),query_by_class={k:h.quant(v) for k,v in classes.items()},prepare=h.quant(prep_us),work=dict(work))
+            map_load_us=map_load_us,query=h.quant(times),query_by_class={k:h.quant(v) for k,v in classes.items()},prepare=h.quant(prep_us),work=dict(work))
         print("ARM_JSON="+json.dumps(results[mode]),flush=True);db.close()
-    for old,new in (("aligned_multi","aligned_quotient_multi"),("independent_multi","independent_quotient_multi"),("independent_multi","independent_dense_multi")):
+    for old,new in (("aligned_multi","aligned_quotient_multi"),("independent_multi","independent_quotient_multi"),("independent_multi","independent_dense_multi"),("independent_multi","independent_runs_multi"),("independent_multi","independent_adaptive_multi"),("independent_multi","independent_quotient_global_multi")):
         for key in ("base_contents","base_tokens","patch_pairs","patch_tokens","delta_contents","aligned_selected"):
             assert results[old].get(key,0)==results[new].get(key,0),(old,new,key)
     for ref in refs.values():ref.close()
-    return dict(round=166,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
+    return dict(round=167,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
         query_count=len(qs),query_plan_sha256=h.sha(h.canonical(qs)).hex(),policies=results,
         limitations=["finalized source/index subset, identical source encoding, no transactional origin ledger",
           "exact default unicode61 phrase counts up to eight tokens, AND/OR, no highlighting or arbitrary positional query semantics",
           "one-hop base with signed edit-context windows, no source reconstruction during ranking",
           "quotient arms intern exact token windows with signed multiplicity; full active-use map prepared at every cutoff",
           "dense arm assigns consecutive row IDs with identical mapping layout but no window sharing or cancellation",
+          "run arms build offline signed terms; global maps loaded once per opened archive and measured separately; active membership checked at query time",
+          "adaptive sharing proxy fixed at six token-equivalents per use, not actual byte-optimal; no peak-memory measure",
           "base/patch anchor selection proxy not physical byte optimum; aligned only when source parent is an index base",
           "two warm prepared passes, preparation reported separately, no physical IO claim",
           "versioned delta indexing and compressed pattern matching established; no first-of-kind claim"])

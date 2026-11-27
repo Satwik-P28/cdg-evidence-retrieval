@@ -1,7 +1,7 @@
 import itertools,random,os
 from pathlib import Path
 import pytest
-from signed_phrase import windows,count,L,build_delta,rank_delta,prepare_delta,f,h,signed_terms
+from signed_phrase import windows,count,L,build_delta,rank_delta,prepare_delta,f,h,signed_terms,load_patch_map,PatchRuns,share_window
 EXT=Path(os.environ["CDG_FTS_EXTENSION"])
 
 def ngrams(seq):
@@ -77,5 +77,42 @@ def test_native_quotient_multiplicity(tmp_path):
         ref=h.active_oracle(ev,c)
         for p,o in [(("seven old eight",),"AND"),(("seven new eight",),"AND"),(("left","new"),"OR")]:
             hits,_,_=rank_delta(db,p,o,prepare_delta(db,c));h.verify(hits,h.native(ref,p,o))
+        ref.close()
+    db.close()
+
+
+def test_run_boundaries():
+    runs=PatchRuns([(2,10),(5,50)],{12:[(99,-2),(100,3)]})
+    assert runs.get(2)==((10,-1),)
+    assert runs.get(5)==((10,1),)
+    assert runs.get(6)==((50,-1),)
+    assert runs.get(11)==((50,1),)
+    assert runs.get(12)==[(99,-2),(100,3)]
+    assert runs.get(13)==()
+    assert not share_window(tuple(range(15)),[(1,1)])
+    assert share_window(tuple(range(15)),[(1,1),(2,-1)])
+
+@pytest.mark.parametrize("mode",["independent_runs_multi","independent_adaptive_multi","independent_quotient_global_multi"])
+def test_global_map_native(tmp_path,mode):
+    rng=random.Random(167)
+    shared=b" one two three four five six seven OLD eight nine ten eleven twelve thirteen fourteen "
+    def doc():
+        return b" ".join(("tok"+str(rng.randrange(1000000))).encode() for _ in range(900))+shared
+    a,b=doc(),doc()
+    ev=[("a",0,a),("b",0,b),("a",1,a.replace(b"OLD",b"NEW")),
+        ("b",1,b.replace(b"OLD",b"NEW")),("a",2,a.replace(b"OLD",b"DIFFERENT"))]
+    path=tmp_path/"db";db,_=f.build(path,EXT,ev,"marginal",False)
+    size=build_delta(db,path,ev,mode)
+    if "_runs_" in mode:assert size["direct_rows"]>0
+    if "_adaptive_" in mode:
+        assert size["shared_rows"]>0 and size["direct_rows"]>0
+    mapping=load_patch_map(db)
+    assert mapping is not None
+    for c in range(1,len(ev)+1):
+        ref=h.active_oracle(ev,c)
+        for p,o in [(("seven old eight",),"AND"),(("seven new eight",),"AND"),
+                    (("seven different eight",),"AND"),(("one","old"),"OR")]:
+            hits,_,_=rank_delta(db,p,o,prepare_delta(db,c,mapping))
+            h.verify(hits,h.native(ref,p,o))
         ref.close()
     db.close()
