@@ -1,0 +1,526 @@
+{
+  "round": 175,
+  "corpus": "ap",
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "cutoffs": [
+    1744,
+    4499,
+    7254,
+    10009
+  ],
+  "query_count": 80,
+  "query_plan_sha256": "c6f41c9c9b4bc59df09cbf92f79e90ea05e76ea5b19426584172d58dbcc91e2d",
+  "selection": {
+    "terms": 22,
+    "payload_bytes": 404442,
+    "bytes": 404442.0,
+    "split_sizes": {
+      "train": 57,
+      "validation": 11,
+      "heldout": 12
+    }
+  },
+  "layouts": {
+    "freq": {
+      "sqlite_bytes": 14090240,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 4096,
+        "token_postings": 3059712
+      },
+      "base_archive_bytes": 14082048,
+      "selected_terms": 0,
+      "selected_payload_bytes": 0,
+      "unified_terms": 0,
+      "hot_contents": 0,
+      "hot_index_bytes": 0,
+      "index_dependency_depth": 0,
+      "source_dependency_depth_max": 1,
+      "query": {
+        "median_us": 435.399,
+        "p95_us": 19353.313,
+        "p99_us": 89336.149,
+        "max_us": 113774.852,
+        "samples": 640
+      },
+      "query_by_class": {
+        "unigram_only": {
+          "median_us": 269.16,
+          "p95_us": 1205.507,
+          "p99_us": 2751.825,
+          "max_us": 2921.624,
+          "samples": 512
+        },
+        "has_phrase": {
+          "median_us": 9054.063,
+          "p95_us": 89336.149,
+          "p99_us": 102196.934,
+          "max_us": 113774.852,
+          "samples": 128
+        }
+      },
+      "rank_checks": 640,
+      "score_error": 0.0,
+      "work": {
+        "posting_bytes": 707072,
+        "candidate_checks": 7132,
+        "source_reads": 7132,
+        "source_decoded_bytes": 56862882,
+        "source_activated_bytes": 19427710,
+        "source_resolved": 7132
+      },
+      "decoded_bytes_per_query": 88848.253125,
+      "activated_bytes_per_query": 30355.796875,
+      "peak_rss_kb": 206712
+    },
+    "sel": {
+      "sqlite_bytes": 14503936,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "base_archive_bytes": 14082048,
+      "selected_terms": 22,
+      "selected_payload_bytes": 404442,
+      "unified_terms": 0,
+      "hot_contents": 0,
+      "hot_index_bytes": 0,
+      "index_dependency_depth": 0,
+      "source_dependency_depth_max": 1,
+      "query": {
+        "median_us": 409.959,
+        "p95_us": 6517.208,
+        "p99_us": 28178.166,
+        "max_us": 31169.23,
+        "samples": 640
+      },
+      "query_by_class": {
+        "unigram_only": {
+          "median_us": 304.999,
+          "p95_us": 1310.828,
+          "p99_us": 2725.315,
+          "max_us": 3476.834,
+          "samples": 512
+        },
+        "has_phrase": {
+          "median_us": 3906.643,
+          "p95_us": 28178.166,
+          "p99_us": 29807.103,
+          "max_us": 31169.23,
+          "samples": 128
+        }
+      },
+      "rank_checks": 640,
+      "score_error": 0.0,
+      "work": {
+        "posting_bytes": 707072,
+        "candidate_checks": 7132,
+        "directory_bytes_activated": 3567,
+        "blocks_activated": 3444,
+        "storage_bytes_activated": 1578036,
+        "decoded_bytes": 1817554,
+        "position_rejections": 5696,
+        "position_exact": 578,
+        "source_reads": 858,
+        "source_decoded_bytes": 6544302,
+        "source_activated_bytes": 2277228,
+        "source_resolved": 858
+      },
+      "decoded_bytes_per_query": 13065.4,
+      "activated_bytes_per_query": 6023.85,
+      "peak_rss_kb": 206712
+    },
+    "sel_unified": {
+      "sqlite_bytes": 14467072,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3022848
+      },
+      "base_archive_bytes": 14082048,
+      "selected_terms": 22,
+      "selected_payload_bytes": 404442,
+      "unified_terms": 22,
+      "hot_contents": 0,
+      "hot_index_bytes": 0,
+      "index_dependency_depth": 0,
+      "source_dependency_depth_max": 1,
+      "query": {
+        "median_us": 429.16,
+        "p95_us": 6803.527,
+        "p99_us": 29240.733,
+        "max_us": 63460.598,
+        "samples": 640
+      },
+      "query_by_class": {
+        "unigram_only": {
+          "median_us": 312.779,
+          "p95_us": 1330.177,
+          "p99_us": 2795.245,
+          "max_us": 3326.623,
+          "samples": 512
+        },
+        "has_phrase": {
+          "median_us": 4064.722,
+          "p95_us": 29240.733,
+          "p99_us": 31728.699,
+          "max_us": 63460.598,
+          "samples": 128
+        }
+      },
+      "rank_checks": 640,
+      "score_error": 0.0,
+      "work": {
+        "posting_bytes": 280184,
+        "directory_bytes_activated": 3567,
+        "blocks_activated": 12408,
+        "storage_bytes_activated": 7578240,
+        "decoded_bytes": 2383642,
+        "candidate_checks": 7132,
+        "blocks_upgraded": 3444,
+        "position_rejections": 5696,
+        "position_exact": 578,
+        "source_reads": 858,
+        "source_decoded_bytes": 6544302,
+        "source_activated_bytes": 2277228,
+        "source_resolved": 858
+      },
+      "decoded_bytes_per_query": 13949.9125,
+      "activated_bytes_per_query": 15399.16875,
+      "peak_rss_kb": 206712
+    },
+    "hot256": {
+      "sqlite_bytes": 15650816,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "hot_docs_config": 4096,
+        "hot_docs_data": 1134592,
+        "hot_docs_docsize": 4096,
+        "hot_docs_idx": 4096,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "base_archive_bytes": 14082048,
+      "selected_terms": 22,
+      "selected_payload_bytes": 404442,
+      "unified_terms": 0,
+      "hot_contents": 256,
+      "hot_index_bytes": 1146880,
+      "index_dependency_depth": 1,
+      "source_dependency_depth_max": 1,
+      "query": {
+        "median_us": 423.899,
+        "p95_us": 6000.279,
+        "p99_us": 21785.288,
+        "max_us": 23537.005,
+        "samples": 640
+      },
+      "query_by_class": {
+        "unigram_only": {
+          "median_us": 307.209,
+          "p95_us": 1320.708,
+          "p99_us": 2751.165,
+          "max_us": 3251.404,
+          "samples": 512
+        },
+        "has_phrase": {
+          "median_us": 3610.373,
+          "p95_us": 21785.288,
+          "p99_us": 23118.056,
+          "max_us": 23537.005,
+          "samples": 128
+        }
+      },
+      "rank_checks": 640,
+      "score_error": 0.0,
+      "work": {
+        "posting_bytes": 707072,
+        "candidate_checks": 7132,
+        "hot_phrase_queries": 128,
+        "hot_matches": 208,
+        "directory_bytes_activated": 3567,
+        "blocks_activated": 3030,
+        "storage_bytes_activated": 1335160,
+        "decoded_bytes": 1535598,
+        "position_rejections": 4588,
+        "hot_exact": 1374,
+        "position_exact": 450,
+        "source_reads": 720,
+        "source_decoded_bytes": 5259582,
+        "source_activated_bytes": 1745100,
+        "source_resolved": 720
+      },
+      "decoded_bytes_per_query": 10617.46875,
+      "activated_bytes_per_query": 4812.90625,
+      "peak_rss_kb": 206712
+    },
+    "hot1024": {
+      "sqlite_bytes": 17985536,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "hot_docs_config": 4096,
+        "hot_docs_data": 3444736,
+        "hot_docs_docsize": 16384,
+        "hot_docs_idx": 16384,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "base_archive_bytes": 14082048,
+      "selected_terms": 22,
+      "selected_payload_bytes": 404442,
+      "unified_terms": 0,
+      "hot_contents": 1024,
+      "hot_index_bytes": 3481600,
+      "index_dependency_depth": 1,
+      "source_dependency_depth_max": 1,
+      "query": {
+        "median_us": 449.569,
+        "p95_us": 5416.559,
+        "p99_us": 17378.417,
+        "max_us": 68776.168,
+        "samples": 640
+      },
+      "query_by_class": {
+        "unigram_only": {
+          "median_us": 345.079,
+          "p95_us": 1422.437,
+          "p99_us": 3007.275,
+          "max_us": 3584.873,
+          "samples": 512
+        },
+        "has_phrase": {
+          "median_us": 3624.643,
+          "p95_us": 17378.417,
+          "p99_us": 19016.483,
+          "max_us": 68776.168,
+          "samples": 128
+        }
+      },
+      "rank_checks": 640,
+      "score_error": 0.0,
+      "work": {
+        "posting_bytes": 707072,
+        "candidate_checks": 7132,
+        "hot_phrase_queries": 128,
+        "hot_matches": 624,
+        "directory_bytes_activated": 3567,
+        "hot_exact": 3510,
+        "blocks_activated": 2060,
+        "storage_bytes_activated": 898410,
+        "decoded_bytes": 1035194,
+        "position_rejections": 2858,
+        "position_exact": 286,
+        "source_reads": 478,
+        "source_decoded_bytes": 3743962,
+        "source_activated_bytes": 1149646,
+        "source_resolved": 478
+      },
+      "decoded_bytes_per_query": 7467.43125,
+      "activated_bytes_per_query": 3200.0875,
+      "peak_rss_kb": 206712
+    },
+    "hot4096": {
+      "sqlite_bytes": 24363008,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "hot_docs_config": 4096,
+        "hot_docs_data": 9768960,
+        "hot_docs_docsize": 49152,
+        "hot_docs_idx": 36864,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "base_archive_bytes": 14082048,
+      "selected_terms": 22,
+      "selected_payload_bytes": 404442,
+      "unified_terms": 0,
+      "hot_contents": 4096,
+      "hot_index_bytes": 9859072,
+      "index_dependency_depth": 1,
+      "source_dependency_depth_max": 1,
+      "query": {
+        "median_us": 366.469,
+        "p95_us": 3625.793,
+        "p99_us": 5436.3,
+        "max_us": 6923.927,
+        "samples": 640
+      },
+      "query_by_class": {
+        "unigram_only": {
+          "median_us": 276.84,
+          "p95_us": 1355.107,
+          "p99_us": 2998.994,
+          "max_us": 3380.323,
+          "samples": 512
+        },
+        "has_phrase": {
+          "median_us": 2398.256,
+          "p95_us": 5436.3,
+          "p99_us": 5755.519,
+          "max_us": 6923.927,
+          "samples": 128
+        }
+      },
+      "rank_checks": 640,
+      "score_error": 0.0,
+      "work": {
+        "posting_bytes": 707072,
+        "candidate_checks": 7132,
+        "hot_phrase_queries": 128,
+        "hot_matches": 1624,
+        "directory_bytes_activated": 3567,
+        "hot_exact": 6710,
+        "blocks_activated": 534,
+        "storage_bytes_activated": 218278,
+        "decoded_bytes": 252380,
+        "position_rejections": 330,
+        "source_reads": 38,
+        "source_decoded_bytes": 88424,
+        "source_activated_bytes": 37942,
+        "source_resolved": 38,
+        "position_exact": 54
+      },
+      "decoded_bytes_per_query": 532.50625,
+      "activated_bytes_per_query": 400.34375,
+      "peak_rss_kb": 206712
+    },
+    "sel_unified_hot1024": {
+      "sqlite_bytes": 17948672,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "hot_docs_config": 4096,
+        "hot_docs_data": 3444736,
+        "hot_docs_docsize": 16384,
+        "hot_docs_idx": 16384,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3022848
+      },
+      "base_archive_bytes": 14082048,
+      "selected_terms": 22,
+      "selected_payload_bytes": 404442,
+      "unified_terms": 22,
+      "hot_contents": 1024,
+      "hot_index_bytes": 3481600,
+      "index_dependency_depth": 1,
+      "source_dependency_depth_max": 1,
+      "query": {
+        "median_us": 429.55,
+        "p95_us": 5828.049,
+        "p99_us": 15978.299,
+        "max_us": 19373.893,
+        "samples": 640
+      },
+      "query_by_class": {
+        "unigram_only": {
+          "median_us": 314.999,
+          "p95_us": 1327.917,
+          "p99_us": 2827.595,
+          "max_us": 3904.322,
+          "samples": 512
+        },
+        "has_phrase": {
+          "median_us": 3767.703,
+          "p95_us": 15978.299,
+          "p99_us": 17938.386,
+          "max_us": 19373.893,
+          "samples": 128
+        }
+      },
+      "rank_checks": 640,
+      "score_error": 0.0,
+      "work": {
+        "posting_bytes": 280184,
+        "directory_bytes_activated": 3567,
+        "blocks_activated": 12408,
+        "storage_bytes_activated": 7578240,
+        "decoded_bytes": 1601282,
+        "candidate_checks": 7132,
+        "hot_phrase_queries": 128,
+        "hot_matches": 624,
+        "hot_exact": 3510,
+        "blocks_upgraded": 2060,
+        "position_rejections": 2858,
+        "position_exact": 286,
+        "source_reads": 478,
+        "source_decoded_bytes": 3743962,
+        "source_activated_bytes": 1149646,
+        "source_resolved": 478
+      },
+      "decoded_bytes_per_query": 8351.94375,
+      "activated_bytes_per_query": 13637.321875,
+      "peak_rss_kb": 206712
+    }
+  },
+  "limitations": [
+    "source layer fixed to the R149 marginal recipe in every layout",
+    "the hot region is a native positional FTS5 table over the k highest service-cost contents",
+    "legacy R167 signed corrections were not re-measured in this run; R173's adaptive arm is the reference",
+    "logical activation only, no physical I/O; peak RSS is process-wide",
+    "one machine, two shuffled warm passes, 640 rank checks per layout"
+  ]
+}
