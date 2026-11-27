@@ -125,3 +125,13 @@ The same frequency-only configuration measured 24,267 µs (R173/R174) and 19,353
 repetitions vary only 1.3–4.8% (R177). Any claim resting on a <25% between-run
 difference is unfounded, which is why the size comparisons are described as modest
 and the latency comparisons are all ≥ 2.5×.
+
+## N12. A 2% budget is not on the frontier, and neither is anything above 10%
+
+Across the six requested budgets the trained policy saturates: 20 and 22 terms are
+selected at 5%, 10%, 20% and 40%, so those four arms are the same archive
+(14,503,936 B on AP). The 1% and 2% points are distinct (20 terms) and slower
+(12,650 / 11,364 µs versus 7,054–7,263 µs), and a 40% budget changes nothing. The
+usable region for this selection method is therefore 1–10% of the frequency archive;
+the larger budgets in the brief are dominated by the smaller ones and are reported as
+such rather than as a widening frontier.

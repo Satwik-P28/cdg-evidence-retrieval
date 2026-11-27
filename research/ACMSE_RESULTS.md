@@ -47,8 +47,10 @@ and +1.0% storage already buys 1.9×. Every statistics-only policy either wastes
 storage or fails to reduce latency; the best of them (cost-aware document frequency)
 is 3.1× slower than the trained point at comparable size.
 
-CLARK shows the same shape: 5.01 MB / 8.22 ms (frequency) → 5.07 MB / 3.03 ms
-(trained) → 7.26 MB / 1.56 ms (unified b64) → 7.44 MB / 1.53 ms (native-free point).
+CLARK shows the same shape: 5.01 MB / 8.22 ms (frequency) → 5.07 MB / 3.06 ms
+(trained, 2.7×) → 7.26 MB / 1.56 ms (unified b64) → 7.44 MB / 1.53 ms (native-free
+point). Two independent runs of the trained arm gave 3,258 and 3,059 µs on CLARK and
+7,054 and 7,126 µs on AP, so the effect is stable while individual arms vary.
 
 ## RQ2: block-addressable positions
 

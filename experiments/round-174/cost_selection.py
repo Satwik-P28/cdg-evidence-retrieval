@@ -26,7 +26,7 @@ from compact_fragments import unpack
 BLOCK=32
 CODEC="best"
 COMPRESS=True
-BUDGETS=(1,5,10,40)
+BUDGETS=(1,2,5,10,20,40)
 POLICIES=("df","cf","srccost","redundancy","train_candidates")
 
 def split_plan(queries,salt="r174"):
@@ -223,9 +223,11 @@ def run(events,manifest,cuts,folder,ext,corpus,only=None,max_arms=None):
     splits=split_plan(qs)
     for ref in refs.values():ref.close()
     base=folder/"base.sqlite"
+    build_start=time.perf_counter()
     db,base_size=f.build(base,ext,events,"marginal",False)
     terms=extract(db)
     base_size.update(tt.build_tape(db,base,events,"frequency"))
+    build_seconds=time.perf_counter()-build_start
     ids,_=tt.vocabulary(db)
     if set(terms)!=set(ids):raise AssertionError("statistics and vocabulary differ")
     lookup=make_freq_lookup(db)
@@ -261,7 +263,9 @@ def run(events,manifest,cuts,folder,ext,corpus,only=None,max_arms=None):
             else:
                 seed,_=greedy(rows,budget);chosen,spent=local_search(rows,budget,seed)
         path=folder/("arm-%d.sqlite"%i)
+        materialize_start=time.perf_counter()
         size=materialize(base,path,terms,ids,chosen)
+        materialize_seconds=time.perf_counter()-materialize_start
         db=connect(path,ext)
         stats=evaluate(db,ids,cuts,expected,splits,size["sqlite_bytes"])
         db.close();path.unlink()
@@ -269,6 +273,7 @@ def run(events,manifest,cuts,folder,ext,corpus,only=None,max_arms=None):
             table_bytes=size["table_bytes"],selection_bytes=spent,
             budget_bytes=(None if budget==float("inf") else budget),
             budget_fraction=size["sqlite_bytes"]/base_bytes,
+            build_seconds=round(build_seconds,3),materialize_seconds=round(materialize_seconds,3),
             splits=stats)
         print("ARM_JSON="+json.dumps(dict(name=name,sqlite=size["sqlite_bytes"],selected=len(chosen),
             heldout_p95=stats["heldout"]["query"]["p95_us"],heldout_median=stats["heldout"]["query"]["median_us"],
@@ -276,7 +281,7 @@ def run(events,manifest,cuts,folder,ext,corpus,only=None,max_arms=None):
             all_p95=stats["all"]["query"]["p95_us"])),flush=True)
     sweep=dict(base_archive_bytes=base_bytes,block=BLOCK,codec=CODEC,compression="zstd" if COMPRESS else "raw",
         budgets=BUDGETS,policies=list(POLICIES),split_sizes={k:len(v) for k,v in splits.items()},
-        frequency_archive_bytes=base_bytes,terms=len(terms),
+        frequency_archive_bytes=base_bytes,terms=len(terms),build_seconds=round(build_seconds,3),
         position_bytes_all_terms=sum(s["posbytes"] for s,_ in terms.values()))
     base.unlink()
     return dict(round=174,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
@@ -294,7 +299,7 @@ def parse_args():
     p=argparse.ArgumentParser();p.add_argument("--source",type=Path,required=True)
     p.add_argument("--corpus",choices=("ap","clark"),required=True)
     p.add_argument("--target",type=int,default=10000);p.add_argument("--extension",type=Path,required=True)
-    p.add_argument("--out",type=Path,required=True);p.add_argument("--only",default="")
+    p.add_argument("--out",type=Path,required=True);    p.add_argument("--only",default="")
     p.add_argument("--max-arms",type=int,default=0)
     return p.parse_args()
 

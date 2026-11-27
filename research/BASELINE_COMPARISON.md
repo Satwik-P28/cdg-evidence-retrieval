@@ -59,7 +59,7 @@ beats native FTS5 on latency, and native FTS5 cannot return a source byte.
 | Configuration | Archive B | p95 µs | Source in R |
 |---|---:|---:|---|
 | Frequency only | 5,009,408 | 8,220 | R173 |
-| Trained selective (17 terms) | 5,074,944 | 3,030 | R174 |
+| Trained selective (17 terms) | 5,074,944 | 3,059 (first run 3,258) | R174 |
 | R172 adaptive | 6,021,120 | 1,993 | R173 |
 | R173 unified b64 | 7,262,208 | 1,556 | R173 |
 | R173 unified b128 bp raw | 7,438,336 | 1,532 | R173 |

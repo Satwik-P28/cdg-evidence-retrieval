@@ -93,7 +93,7 @@ split, not a result.
 | `srccost` 40% | 7,630,848 | 22,042 | 1,827 | 1,304 |
 | `redundancy` 40% | 7,589,888 | 19,201 | 1,976 | 1,296 |
 | **`train_candidates` 1%** | 5,070,848 | 16 | 3,316 | 716 |
-| **`train_candidates` 5%** | 5,074,944 | 17 | **3,030** | 708 |
+| **`train_candidates` 5%** | 5,074,944 | 17 | **3,059** (3,258 in run 1) | 708 |
 
 ## Findings
 
@@ -103,8 +103,8 @@ split, not a result.
    frequency *per byte* rather than by frequency alone is the difference.
 2. **Workload-trained selection is the strongest result and is workload-specific.**
    At AP it selects 22 terms (+3.0% storage) and cuts p95 from 24,267 µs to
-   7,054 µs — a 3.4× improvement for 421,888 bytes. On CLARK it selects 17 terms
-   (+1.3%) and cuts p95 from 8,220 µs to 3,030 µs. This is the first configuration
+   7,054 µs — a 3.4× improvement for 421,888 bytes.    On CLARK it selects 17 terms
+   (+1.3%) and cuts p95 from 8,220 µs to 3,059 µs (2.7×). This is the first configuration
    in this series that strictly dominates the frequency-only frontier.
 3. **The trained policy degenerates to "materialize the training vocabulary".** It
    selects exactly the 20–22 terms that appear inside multi-token training phrases,
@@ -159,3 +159,53 @@ still the tail-latency winner at 43% more storage.
 * Only b32/best/zstd was used for the selection cost model; R173 showed the storage
   optimum is b512 and the latency optimum is b32, so the cost model is calibrated to
   the latency-optimal layout, not to the storage-optimal one.
+
+## Full budget grid and replication (second run, 41 arms)
+
+The first run covered budgets 1/5/10/40%; the second covered the requested
+1/2/5/10/20/40% grid and repeated every arm from the first run, so it doubles as a
+replication. Results files: `results-*-run1.json` (first) and `results-*.json`
+(second, superset).
+
+**Bytes are deterministic.** All 31 overlapping arms produce byte-identical archives
+in both runs (e.g. `train_candidates-10%-greedy` 14,503,936 B on AP, 5,074,944 B on
+CLARK). **Latency is not.** Across the 31 arms the median relative p95 difference
+between runs is 7.7% on AP (max 34.2%, `df_topk-k128`) and 4.9% on CLARK (max 114%,
+`train_candidates-10%-local_search`). The shipped arm moves 7,054 → 7,126 µs on AP
+(+1.0%) and 3,258 → 3,059 µs on CLARK (−6.1%), i.e. it is stable within the noise
+band, while single arms that sit close to a rejection threshold are not.
+
+New budget points (second run, `all` query p95):
+
+| Corpus | Arm | Archive B | Terms | p95 µs |
+|---|---|---:|---:|---:|
+| AP | `train_candidates` 2% | 14,372,864 | 20 | 11,364 |
+| AP | `train_candidates` 20% | 14,503,936 | 22 | 7,263 |
+| AP | `cf` 20% | 17,055,744 | 615 | 13,123 |
+| AP | `df` 20% | 17,526,784 | 3,959 | 22,838 |
+| AP | `redundancy` 20% | 17,543,168 | 6,432 | 20,952 |
+| AP | `srccost` 20% | 17,575,936 | 8,153 | 21,137 |
+| CLARK | `train_candidates` 2% | 5,074,944 | 17 | 3,048 |
+| CLARK | `train_candidates` 20% | 5,074,944 | 17 | 3,325 |
+| CLARK | `cf` 20% | 6,180,864 | 1,117 | 4,730 |
+| CLARK | `cf` 40% | 7,479,296 | 13,428 | 1,744 |
+
+The 20% points confirm the shape: spending five times the trained budget on a
+statistics-only policy still loses on both storage and latency at AP
+(`cf` 20%: 17.06 MB / 13,123 µs versus trained 14.50 MB / 7,263 µs), while on CLARK
+`cf` 40% does reach 1,744 µs — at 47% more storage than the trained arm.
+
+## Build and materialization latency
+
+Measured in the second run (`sweep.build_seconds`, per-arm `materialize_seconds`):
+
+| Corpus | Revisions | Build (source + frequency tape + statistics) | Per-arm materialization |
+|---|---:|---:|---:|
+| AP | 10,009 | 22.99 s | 0.12–0.23 s |
+| CLARK | 1,161 | 5.72 s | 0.05–0.12 s |
+
+Build is dominated by source encoding and the FTS5 oracle-free index construction;
+adding a selected term set to an existing base archive costs a fraction of a second
+and is a pure append of `selected_terms` plus the block rows. There is no
+incremental *append-a-revision* path in this codebase, so append latency for new
+revisions is not measured and is listed as an open item.

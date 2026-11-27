@@ -45,6 +45,8 @@ PISA or FastPFor, or that the improvement generalises beyond these two corpora.
 | E11 | Repeated measurement within a process is stable (CV 1.3–4.8%); between processes the same configuration varies up to ~25% | R177 `results-ap-10009.json`, `results-clark-1161.json`; compare R175 `freq` 19,353 µs with R173/R174 `frequency` 24,267 µs | **Established** (it is a methodological finding) |
 | E12 | BM25 coefficients are fixed at k1 = 1.2, b = 0.75 and are not exposed | R177 `coefficients`: 9 cases agree with the closed form, `pinned` records the constants | **Established** (a limitation) |
 | E13 | A corrupted posting block that still parses would be returned silently: the format has no checksum | R177 `corruption` + note; a per-term digest would cost 358,664 B on AP | **Established** (a defect) |
+| E14 | Archive bytes are deterministic across runs; latencies are not | R174 run 1 vs run 2: all 31 overlapping arms byte-identical; median p95 difference 7.7% on AP (max 34.2%), 4.9% on CLARK (max 114%) | **Established** |
+| E15 | Building the AP archive takes 22.99 s and adding a selected term set costs 0.12–0.23 s; CLARK takes 5.72 s | R174 run 2, `sweep.build_seconds` and per-arm `materialize_seconds` | **Established**; no incremental append-a-revision path exists, so append latency is unmeasured |
 
 ## Not verified, and therefore not claimed
 

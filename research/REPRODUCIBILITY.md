@@ -73,10 +73,15 @@ PYTHONPATH=experiments/round-173 /tmp/venv/bin/python experiments/round-173/bloc
   --source external/newsedits/ap.db --target 10000 --extension experiments/round-152/cdgfts.so \
   --out experiments/round-173/results-ap-10009.json
 
-# R174 cost-based selection
+# R174 cost-based selection (41 arms over budgets 1/2/5/10/20/40%)
 PYTHONPATH=experiments/round-173:experiments/round-174 /tmp/venv/bin/python experiments/round-174/cost_selection.py \
-  --source external/newsedits/ap.db --target 10000 --extension experiments/round-152/cdgfts.so \
-  --out experiments/round-174/results-ap-10009.json
+  --source external/newsedits/ap.db --corpus ap --target 10000 \
+  --extension experiments/round-152/cdgfts.so --out experiments/round-174/results-ap-10009.json
+
+# the same run can be split over several invocations: --only takes a comma list and
+# an existing output file with a matching manifest is updated in place, so
+#   --only "df-1%-greedy,train_candidates-2%-greedy"
+# followed by a second invocation covering the remaining arms reproduces the same set.
 
 # R175 joint layout
 PYTHONPATH=experiments/round-173:experiments/round-174:experiments/round-175 /tmp/venv/bin/python \
@@ -129,7 +134,8 @@ the round's tests, then run the measurement and upload the JSON artifact.
 
 ```
 experiments/round-173/{blocked_positions.py, cdgbp.c, tests/, results-ap-10009.json, results-clark-1161.json}
-experiments/round-174/{cost_selection.py, tests/, results-ap-10009.json, results-clark-1161.json}
+experiments/round-174/{cost_selection.py, tests/, results-ap-10009.json, results-clark-1161.json,
+                        results-ap-10009-run1.json, results-clark-1161-run1.json}
 experiments/round-175/{joint_layout.py, tests/, results-ap-10009.json}
 experiments/round-176/{external_codecs.py, tests/, results-ap-10009.json}
 experiments/round-177/{adversarial.py, results-synthetic.json, results-ap-10009.json, results-clark-1161.json}
