@@ -81,7 +81,7 @@ def build_positions(db,limit):
     assert db.execute("SELECT count(*) FROM term_positions").fetchone()[0]==len(chosen)
     return dict(selected_terms=len(chosen),position_build_us=(time.perf_counter_ns()-start)/1000,**stats)
 
-def rank_selective(db,p,o,prep,ids,selected):
+def rank_selective(db,p,o,prep,ids,selected,candidate_filter=None):
     ar.expression(p,o);active,lens,n,total=prep;freq=[];work=collections.Counter()
     cache={};post={};positions={}
     for phrase in p:
@@ -100,6 +100,10 @@ def rank_selective(db,p,o,prep,ids,selected):
             candidates=set.intersection(*(set(post[t]) for t in set(qids)))
             candidates.intersection_update(active)
             work["candidate_checks"]+=len(candidates)
+            if candidate_filter is not None:
+                before=len(candidates)
+                candidates=candidate_filter(qs,candidates)
+                work["filter_rejections"]+=before-len(candidates)
             covered=[(i,t) for i,t in enumerate(qids) if t in selected]
             complete=len(covered)==len(qids)
             # One stored position list for one occurrence cannot check adjacency.
