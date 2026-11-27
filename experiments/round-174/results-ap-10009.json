@@ -1,0 +1,3735 @@
+{
+  "round": 174,
+  "corpus": "ap",
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "cutoffs": [
+    1744,
+    4499,
+    7254,
+    10009
+  ],
+  "query_count": 80,
+  "query_plan_sha256": "c6f41c9c9b4bc59df09cbf92f79e90ea05e76ea5b19426584172d58dbcc91e2d",
+  "split_manifest": {
+    "train": "960c2c8c9418ea80098c1c1cfc06e1919db2a071d7b7750dc6630c14f791e7a3",
+    "validation": "06f0e59d9466456d9414fb9cfcf91008339ca1b2d87f8eaff7b3089cae11e880",
+    "heldout": "b96d932fe94bd1ff5153484a29f333594dbcf2c10b23c55915e9bb698928dbd7"
+  },
+  "sweep": {
+    "base_archive_bytes": 14082048,
+    "block": 32,
+    "codec": "best",
+    "compression": "zstd",
+    "budgets": [
+      1,
+      5,
+      10,
+      40
+    ],
+    "policies": [
+      "df",
+      "cf",
+      "srccost",
+      "redundancy",
+      "ratio_df",
+      "train_candidates",
+      "train_ratio"
+    ],
+    "split_sizes": {
+      "train": 57,
+      "validation": 11,
+      "heldout": 12
+    },
+    "frequency_archive_bytes": 14082048,
+    "terms": 44833,
+    "position_bytes_all_terms": 8908305
+  },
+  "policies": {
+    "df-1%-greedy": {
+      "policy": "df",
+      "budget_pct": 1,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14266368,
+      "selected_terms": 104,
+      "selected_payload_bytes": 135247,
+      "selected_directory_bytes": 5569,
+      "selected_table_bytes": 184320,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 180224,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 140816.0,
+      "budget_bytes": 140820.48,
+      "budget_fraction": 1.013089005235602,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 404.16,
+            "p95_us": 55488.334,
+            "p99_us": 97922.682,
+            "max_us": 110555.668,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 404.16,
+          "archive_bytes": 14266368
+        },
+        "validation": {
+          "query": {
+            "median_us": 444.939,
+            "p95_us": 34084.745,
+            "p99_us": 38966.936,
+            "max_us": 39626.264,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 444.939,
+          "archive_bytes": 14266368
+        },
+        "heldout": {
+          "query": {
+            "median_us": 573.799,
+            "p95_us": 1280.397,
+            "p99_us": 1383.327,
+            "max_us": 1443.957,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 573.799,
+          "archive_bytes": 14266368
+        },
+        "all": {
+          "query": {
+            "median_us": 445.739,
+            "p95_us": 21621.489,
+            "p99_us": 90541.316,
+            "max_us": 121628.837,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 445.739,
+          "archive_bytes": 14266368
+        }
+      }
+    },
+    "df-5%-greedy": {
+      "policy": "df",
+      "budget_pct": 5,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14970880,
+      "selected_terms": 615,
+      "selected_payload_bytes": 675946,
+      "selected_directory_bytes": 28146,
+      "selected_table_bytes": 888832,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 12288,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 876544,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 704092.0,
+      "budget_bytes": 704102.4,
+      "budget_fraction": 1.0631180919139034,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 406.949,
+            "p95_us": 55587.033,
+            "p99_us": 97812.032,
+            "max_us": 109885.529,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 89,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 406.949,
+          "archive_bytes": 14970880
+        },
+        "validation": {
+          "query": {
+            "median_us": 367.339,
+            "p95_us": 29825.803,
+            "p99_us": 31309.05,
+            "max_us": 31323.2,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 29,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 367.339,
+          "archive_bytes": 14970880
+        },
+        "heldout": {
+          "query": {
+            "median_us": 512.899,
+            "p95_us": 1170.868,
+            "p99_us": 1178.218,
+            "max_us": 1190.928,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 512.899,
+          "archive_bytes": 14970880
+        },
+        "all": {
+          "query": {
+            "median_us": 452.319,
+            "p95_us": 22527.346,
+            "p99_us": 98788.2,
+            "max_us": 123920.182,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 452.319,
+          "archive_bytes": 14970880
+        }
+      }
+    },
+    "df-10%-greedy": {
+      "policy": "df",
+      "budget_pct": 10,
+      "optimizer": "greedy",
+      "sqlite_bytes": 15810560,
+      "selected_terms": 1423,
+      "selected_payload_bytes": 1350948,
+      "selected_directory_bytes": 57254,
+      "selected_table_bytes": 1728512,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 16384,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 1712128,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 1408202.0,
+      "budget_bytes": 1408204.8,
+      "budget_fraction": 1.1227457824316462,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 434.639,
+            "p95_us": 55829.793,
+            "p99_us": 103810.691,
+            "max_us": 120855.358,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 89,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 434.639,
+          "archive_bytes": 15810560
+        },
+        "validation": {
+          "query": {
+            "median_us": 379.039,
+            "p95_us": 32012.049,
+            "p99_us": 34279.044,
+            "max_us": 34429.184,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 62,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 379.039,
+          "archive_bytes": 15810560
+        },
+        "heldout": {
+          "query": {
+            "median_us": 541.649,
+            "p95_us": 1217.698,
+            "p99_us": 1251.887,
+            "max_us": 1273.248,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "directory_bytes_activated": 18,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 541.649,
+          "archive_bytes": 15810560
+        },
+        "all": {
+          "query": {
+            "median_us": 454.599,
+            "p95_us": 27042.848,
+            "p99_us": 92115.013,
+            "max_us": 125320.14,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 454.599,
+          "archive_bytes": 15810560
+        }
+      }
+    },
+    "df-40%-greedy": {
+      "policy": "df",
+      "budget_pct": 40,
+      "optimizer": "greedy",
+      "sqlite_bytes": 20787200,
+      "selected_terms": 12955,
+      "selected_payload_bytes": 5359138,
+      "selected_directory_bytes": 273681,
+      "selected_table_bytes": 6705152,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 106496,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 6598656,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 5632819.0,
+      "budget_bytes": 5632819.2,
+      "budget_fraction": 1.4761489237929029,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 381.809,
+            "p95_us": 17158.647,
+            "p99_us": 103227.592,
+            "max_us": 128525.244,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 1188,
+            "candidate_checks": 6274,
+            "blocks_activated": 952,
+            "storage_bytes_activated": 117298,
+            "decoded_bytes": 116362,
+            "position_exact": 104,
+            "position_rejections": 1620,
+            "source_reads": 4550,
+            "source_decoded_bytes": 35650028,
+            "source_activated_bytes": 12324538,
+            "source_resolved": 4550
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 381.809,
+          "archive_bytes": 20787200
+        },
+        "validation": {
+          "query": {
+            "median_us": 340.46,
+            "p95_us": 30029.283,
+            "p99_us": 31245.39,
+            "max_us": 31614.339,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 359,
+            "candidate_checks": 836,
+            "blocks_activated": 24,
+            "storage_bytes_activated": 2146,
+            "decoded_bytes": 2122,
+            "position_rejections": 18,
+            "source_reads": 818,
+            "source_decoded_bytes": 6274352,
+            "source_activated_bytes": 2191004,
+            "source_resolved": 818
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 340.46,
+          "archive_bytes": 20787200
+        },
+        "heldout": {
+          "query": {
+            "median_us": 508.449,
+            "p95_us": 1154.688,
+            "p99_us": 1185.358,
+            "max_us": 1203.308,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "directory_bytes_activated": 32,
+            "candidate_checks": 22,
+            "blocks_activated": 20,
+            "storage_bytes_activated": 2068,
+            "decoded_bytes": 2048,
+            "position_exact": 14,
+            "position_rejections": 8
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 508.449,
+          "archive_bytes": 20787200
+        },
+        "all": {
+          "query": {
+            "median_us": 415.859,
+            "p95_us": 17380.467,
+            "p99_us": 97871.253,
+            "max_us": 121982.726,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "blocks_activated": 996,
+            "storage_bytes_activated": 121512,
+            "decoded_bytes": 120532,
+            "position_exact": 118,
+            "source_reads": 5368,
+            "source_decoded_bytes": 41924380,
+            "source_activated_bytes": 14515542,
+            "source_resolved": 5368,
+            "position_rejections": 1646
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 415.859,
+          "archive_bytes": 20787200
+        }
+      }
+    },
+    "cf-1%-greedy": {
+      "policy": "cf",
+      "budget_pct": 1,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14233600,
+      "selected_terms": 53,
+      "selected_payload_bytes": 139345,
+      "selected_directory_bytes": 1462,
+      "selected_table_bytes": 151552,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 147456,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 140807.0,
+      "budget_bytes": 140820.48,
+      "budget_fraction": 1.010762070971495,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 444.129,
+            "p95_us": 61347.033,
+            "p99_us": 107936.222,
+            "max_us": 144558.182,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 444.129,
+          "archive_bytes": 14233600
+        },
+        "validation": {
+          "query": {
+            "median_us": 369.679,
+            "p95_us": 30109.602,
+            "p99_us": 31385.59,
+            "max_us": 31486.28,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 369.679,
+          "archive_bytes": 14233600
+        },
+        "heldout": {
+          "query": {
+            "median_us": 517.179,
+            "p95_us": 1168.858,
+            "p99_us": 1185.678,
+            "max_us": 1202.707,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 517.179,
+          "archive_bytes": 14233600
+        },
+        "all": {
+          "query": {
+            "median_us": 445.529,
+            "p95_us": 19713.152,
+            "p99_us": 90716.586,
+            "max_us": 110544.278,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 445.529,
+          "archive_bytes": 14233600
+        }
+      }
+    },
+    "cf-5%-greedy": {
+      "policy": "cf",
+      "budget_pct": 5,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14802944,
+      "selected_terms": 72,
+      "selected_payload_bytes": 700014,
+      "selected_directory_bytes": 4077,
+      "selected_table_bytes": 720896,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 716800,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 704091.0,
+      "budget_bytes": 704102.4,
+      "budget_fraction": 1.0511925538103548,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 419.589,
+            "p95_us": 55377.804,
+            "p99_us": 99605.239,
+            "max_us": 120796.948,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274,
+            "directory_bytes_activated": 1263
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 419.589,
+          "archive_bytes": 14802944
+        },
+        "validation": {
+          "query": {
+            "median_us": 351.159,
+            "p95_us": 29861.463,
+            "p99_us": 30977.18,
+            "max_us": 31065.82,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 351.159,
+          "archive_bytes": 14802944
+        },
+        "heldout": {
+          "query": {
+            "median_us": 520.329,
+            "p95_us": 1170.178,
+            "p99_us": 1197.848,
+            "max_us": 1207.058,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 520.329,
+          "archive_bytes": 14802944
+        },
+        "all": {
+          "query": {
+            "median_us": 445.999,
+            "p95_us": 19514.542,
+            "p99_us": 90406.577,
+            "max_us": 109437.65,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 445.999,
+          "archive_bytes": 14802944
+        }
+      }
+    },
+    "cf-10%-greedy": {
+      "policy": "cf",
+      "budget_pct": 10,
+      "optimizer": "greedy",
+      "sqlite_bytes": 15515648,
+      "selected_terms": 125,
+      "selected_payload_bytes": 1396938,
+      "selected_directory_bytes": 11266,
+      "selected_table_bytes": 1433600,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 1429504,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 1408204.0,
+      "budget_bytes": 1408204.8,
+      "budget_fraction": 1.1018033740546829,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 417.129,
+            "p95_us": 55825.453,
+            "p99_us": 97097.373,
+            "max_us": 110506.558,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274,
+            "directory_bytes_activated": 1776
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 417.129,
+          "archive_bytes": 15515648
+        },
+        "validation": {
+          "query": {
+            "median_us": 379.859,
+            "p95_us": 29924.452,
+            "p99_us": 31103.92,
+            "max_us": 31422.499,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 379.859,
+          "archive_bytes": 15515648
+        },
+        "heldout": {
+          "query": {
+            "median_us": 512.319,
+            "p95_us": 1151.178,
+            "p99_us": 1185.658,
+            "max_us": 1189.248,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 512.319,
+          "archive_bytes": 15515648
+        },
+        "all": {
+          "query": {
+            "median_us": 448.339,
+            "p95_us": 19624.482,
+            "p99_us": 90217.187,
+            "max_us": 110523.888,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 448.339,
+          "archive_bytes": 15515648
+        }
+      }
+    },
+    "cf-40%-greedy": {
+      "policy": "cf",
+      "budget_pct": 40,
+      "optimizer": "greedy",
+      "sqlite_bytes": 20520960,
+      "selected_terms": 3116,
+      "selected_payload_bytes": 5490114,
+      "selected_directory_bytes": 142693,
+      "selected_table_bytes": 6438912,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 28672,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 6410240,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 5632807.0,
+      "budget_bytes": 5632819.2,
+      "budget_fraction": 1.4572425828970332,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 477.179,
+            "p95_us": 11161.828,
+            "p99_us": 16375.229,
+            "max_us": 27496.427,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 3463,
+            "candidate_checks": 6274,
+            "blocks_activated": 2804,
+            "storage_bytes_activated": 1231280,
+            "decoded_bytes": 1402066,
+            "position_exact": 506,
+            "position_rejections": 5038,
+            "source_reads": 730,
+            "source_decoded_bytes": 5484932,
+            "source_activated_bytes": 1960200,
+            "source_resolved": 730
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 477.179,
+          "archive_bytes": 20520960
+        },
+        "validation": {
+          "query": {
+            "median_us": 416.509,
+            "p95_us": 30645.371,
+            "p99_us": 31648.15,
+            "max_us": 32167.908,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 598,
+            "source_decoded_bytes": 4803264,
+            "source_activated_bytes": 1659608,
+            "source_resolved": 598,
+            "directory_bytes_activated": 314,
+            "blocks_activated": 224,
+            "storage_bytes_activated": 29566,
+            "decoded_bytes": 29342,
+            "position_exact": 30,
+            "position_rejections": 208
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 416.509,
+          "archive_bytes": 20520960
+        },
+        "heldout": {
+          "query": {
+            "median_us": 541.569,
+            "p95_us": 1184.917,
+            "p99_us": 2572.225,
+            "max_us": 2776.935,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 541.569,
+          "archive_bytes": 20520960
+        },
+        "all": {
+          "query": {
+            "median_us": 522.429,
+            "p95_us": 12064.296,
+            "p99_us": 31366.309,
+            "max_us": 75165.345,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 1350,
+            "source_decoded_bytes": 10410762,
+            "source_activated_bytes": 3662778,
+            "source_resolved": 1350,
+            "blocks_activated": 3028,
+            "storage_bytes_activated": 1260846,
+            "decoded_bytes": 1431408,
+            "position_exact": 536,
+            "position_rejections": 5246
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 522.429,
+          "archive_bytes": 20520960
+        }
+      }
+    },
+    "srccost-1%-greedy": {
+      "policy": "srccost",
+      "budget_pct": 1,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14270464,
+      "selected_terms": 1546,
+      "selected_payload_bytes": 122403,
+      "selected_directory_bytes": 18408,
+      "selected_table_bytes": 188416,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 16384,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 172032,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 140811.0,
+      "budget_bytes": 140820.48,
+      "budget_fraction": 1.0133798720186156,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 440.969,
+            "p95_us": 56490.601,
+            "p99_us": 100611.877,
+            "max_us": 114699.81,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 440.969,
+          "archive_bytes": 14270464
+        },
+        "validation": {
+          "query": {
+            "median_us": 395.439,
+            "p95_us": 30467.122,
+            "p99_us": 31919.489,
+            "max_us": 31978.599,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 395.439,
+          "archive_bytes": 14270464
+        },
+        "heldout": {
+          "query": {
+            "median_us": 526.389,
+            "p95_us": 1185.817,
+            "p99_us": 1212.487,
+            "max_us": 1217.757,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 526.389,
+          "archive_bytes": 14270464
+        },
+        "all": {
+          "query": {
+            "median_us": 472.799,
+            "p95_us": 19906.322,
+            "p99_us": 92407.833,
+            "max_us": 113123.473,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 472.799,
+          "archive_bytes": 14270464
+        }
+      }
+    },
+    "srccost-5%-greedy": {
+      "policy": "srccost",
+      "budget_pct": 5,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14962688,
+      "selected_terms": 3547,
+      "selected_payload_bytes": 650061,
+      "selected_directory_bytes": 54036,
+      "selected_table_bytes": 880640,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 32768,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 847872,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 704097.0,
+      "budget_bytes": 704102.4,
+      "budget_fraction": 1.0625363583478766,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 432.379,
+            "p95_us": 56164.152,
+            "p99_us": 100192.727,
+            "max_us": 113426.703,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274,
+            "directory_bytes_activated": 18
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 432.379,
+          "archive_bytes": 14962688
+        },
+        "validation": {
+          "query": {
+            "median_us": 401.23,
+            "p95_us": 30734.151,
+            "p99_us": 32098.179,
+            "max_us": 32192.718,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 401.23,
+          "archive_bytes": 14962688
+        },
+        "heldout": {
+          "query": {
+            "median_us": 590.079,
+            "p95_us": 1257.168,
+            "p99_us": 1333.907,
+            "max_us": 1418.597,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 590.079,
+          "archive_bytes": 14962688
+        },
+        "all": {
+          "query": {
+            "median_us": 488.209,
+            "p95_us": 25475.851,
+            "p99_us": 92814.752,
+            "max_us": 132687.565,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 488.209,
+          "archive_bytes": 14962688
+        }
+      }
+    },
+    "srccost-10%-greedy": {
+      "policy": "srccost",
+      "budget_pct": 10,
+      "optimizer": "greedy",
+      "sqlite_bytes": 15806464,
+      "selected_terms": 5215,
+      "selected_payload_bytes": 1317491,
+      "selected_directory_bytes": 90712,
+      "selected_table_bytes": 1724416,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 45056,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 1679360,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 1408203.0,
+      "budget_bytes": 1408204.8,
+      "budget_fraction": 1.122454915648633,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 454.559,
+            "p95_us": 57185.62,
+            "p99_us": 107745.383,
+            "max_us": 125137.44,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274,
+            "directory_bytes_activated": 104
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 454.559,
+          "archive_bytes": 15806464
+        },
+        "validation": {
+          "query": {
+            "median_us": 415.019,
+            "p95_us": 30988.38,
+            "p99_us": 32264.538,
+            "max_us": 32584.337,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 47,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 415.019,
+          "archive_bytes": 15806464
+        },
+        "heldout": {
+          "query": {
+            "median_us": 580.059,
+            "p95_us": 1233.568,
+            "p99_us": 1298.177,
+            "max_us": 1378.607,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 580.059,
+          "archive_bytes": 15806464
+        },
+        "all": {
+          "query": {
+            "median_us": 495.14,
+            "p95_us": 22947.626,
+            "p99_us": 93299.151,
+            "max_us": 117342.065,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 495.14,
+          "archive_bytes": 15806464
+        }
+      }
+    },
+    "srccost-40%-greedy": {
+      "policy": "srccost",
+      "budget_pct": 40,
+      "optimizer": "greedy",
+      "sqlite_bytes": 20922368,
+      "selected_terms": 17666,
+      "selected_payload_bytes": 5311284,
+      "selected_directory_bytes": 321532,
+      "selected_table_bytes": 6840320,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 139264,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 6701056,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 5632816.0,
+      "budget_bytes": 5632819.2,
+      "budget_fraction": 1.4857475276323444,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 433.799,
+            "p95_us": 17935.076,
+            "p99_us": 109060.471,
+            "max_us": 125365.619,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 1292,
+            "candidate_checks": 6274,
+            "blocks_activated": 936,
+            "storage_bytes_activated": 115594,
+            "decoded_bytes": 114674,
+            "position_exact": 102,
+            "position_rejections": 1614,
+            "source_reads": 4558,
+            "source_decoded_bytes": 35684074,
+            "source_activated_bytes": 12340822,
+            "source_resolved": 4558
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 433.799,
+          "archive_bytes": 20922368
+        },
+        "validation": {
+          "query": {
+            "median_us": 400.3,
+            "p95_us": 31332.41,
+            "p99_us": 33811.345,
+            "max_us": 36468.98,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 359,
+            "candidate_checks": 836,
+            "blocks_activated": 24,
+            "storage_bytes_activated": 2146,
+            "decoded_bytes": 2122,
+            "position_rejections": 18,
+            "source_reads": 818,
+            "source_decoded_bytes": 6274352,
+            "source_activated_bytes": 2191004,
+            "source_resolved": 818
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 400.3,
+          "archive_bytes": 20922368
+        },
+        "heldout": {
+          "query": {
+            "median_us": 554.159,
+            "p95_us": 1236.018,
+            "p99_us": 1303.668,
+            "max_us": 1333.998,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "directory_bytes_activated": 32,
+            "candidate_checks": 22,
+            "blocks_activated": 20,
+            "storage_bytes_activated": 2068,
+            "decoded_bytes": 2048,
+            "position_exact": 14,
+            "position_rejections": 8
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 554.159,
+          "archive_bytes": 20922368
+        },
+        "all": {
+          "query": {
+            "median_us": 454.489,
+            "p95_us": 17612.806,
+            "p99_us": 94483.478,
+            "max_us": 118837.432,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 5376,
+            "source_decoded_bytes": 41958426,
+            "source_activated_bytes": 14531826,
+            "source_resolved": 5376,
+            "blocks_activated": 980,
+            "storage_bytes_activated": 119808,
+            "decoded_bytes": 118844,
+            "position_rejections": 1640,
+            "position_exact": 116
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 454.489,
+          "archive_bytes": 20922368
+        }
+      }
+    },
+    "redundancy-1%-greedy": {
+      "policy": "redundancy",
+      "budget_pct": 1,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14262272,
+      "selected_terms": 948,
+      "selected_payload_bytes": 128042,
+      "selected_directory_bytes": 12776,
+      "selected_table_bytes": 180224,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 12288,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 167936,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 140818.0,
+      "budget_bytes": 140820.48,
+      "budget_fraction": 1.0127981384525888,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 457.139,
+            "p95_us": 57541.19,
+            "p99_us": 105713.907,
+            "max_us": 137929.645,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 457.139,
+          "archive_bytes": 14262272
+        },
+        "validation": {
+          "query": {
+            "median_us": 405.519,
+            "p95_us": 30659.061,
+            "p99_us": 31833.969,
+            "max_us": 31883.109,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 405.519,
+          "archive_bytes": 14262272
+        },
+        "heldout": {
+          "query": {
+            "median_us": 529.499,
+            "p95_us": 1179.737,
+            "p99_us": 1218.978,
+            "max_us": 1224.688,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 529.499,
+          "archive_bytes": 14262272
+        },
+        "all": {
+          "query": {
+            "median_us": 470.119,
+            "p95_us": 19937.132,
+            "p99_us": 91989.053,
+            "max_us": 114490.171,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 470.119,
+          "archive_bytes": 14262272
+        }
+      }
+    },
+    "redundancy-5%-greedy": {
+      "policy": "redundancy",
+      "budget_pct": 5,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14942208,
+      "selected_terms": 2274,
+      "selected_payload_bytes": 661870,
+      "selected_directory_bytes": 42212,
+      "selected_table_bytes": 860160,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 24576,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 835584,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 704082.0,
+      "budget_bytes": 704102.4,
+      "budget_fraction": 1.0610820244328099,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 431.069,
+            "p95_us": 57205.6,
+            "p99_us": 99064.3,
+            "max_us": 111184.956,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274,
+            "directory_bytes_activated": 18
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 431.069,
+          "archive_bytes": 14942208
+        },
+        "validation": {
+          "query": {
+            "median_us": 399.909,
+            "p95_us": 30341.052,
+            "p99_us": 32014.099,
+            "max_us": 32322.478,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 14,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 399.909,
+          "archive_bytes": 14942208
+        },
+        "heldout": {
+          "query": {
+            "median_us": 521.039,
+            "p95_us": 1180.348,
+            "p99_us": 1214.687,
+            "max_us": 1220.057,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 521.039,
+          "archive_bytes": 14942208
+        },
+        "all": {
+          "query": {
+            "median_us": 470.779,
+            "p95_us": 19863.142,
+            "p99_us": 91389.494,
+            "max_us": 111268.956,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 470.779,
+          "archive_bytes": 14942208
+        }
+      }
+    },
+    "redundancy-10%-greedy": {
+      "policy": "redundancy",
+      "budget_pct": 10,
+      "optimizer": "greedy",
+      "sqlite_bytes": 15818752,
+      "selected_terms": 3724,
+      "selected_payload_bytes": 1331439,
+      "selected_directory_bytes": 76753,
+      "selected_table_bytes": 1736704,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 32768,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 1703936,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 1408192.0,
+      "budget_bytes": 1408204.8,
+      "budget_fraction": 1.123327515997673,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 435.149,
+            "p95_us": 56559.211,
+            "p99_us": 99073.26,
+            "max_us": 111144.336,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274,
+            "directory_bytes_activated": 93
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 435.149,
+          "archive_bytes": 15818752
+        },
+        "validation": {
+          "query": {
+            "median_us": 384.159,
+            "p95_us": 29899.042,
+            "p99_us": 31543.489,
+            "max_us": 31549.23,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 76,
+            "candidate_checks": 836,
+            "blocks_activated": 24,
+            "storage_bytes_activated": 2146,
+            "decoded_bytes": 2122,
+            "position_rejections": 18,
+            "source_reads": 818,
+            "source_decoded_bytes": 6274352,
+            "source_activated_bytes": 2191004,
+            "source_resolved": 818
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 384.159,
+          "archive_bytes": 15818752
+        },
+        "heldout": {
+          "query": {
+            "median_us": 526.569,
+            "p95_us": 1191.657,
+            "p99_us": 1204.648,
+            "max_us": 1232.868,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 526.569,
+          "archive_bytes": 15818752
+        },
+        "all": {
+          "query": {
+            "median_us": 454.109,
+            "p95_us": 20007.762,
+            "p99_us": 91300.675,
+            "max_us": 110866.847,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7114,
+            "source_decoded_bytes": 56715498,
+            "source_activated_bytes": 19384456,
+            "source_resolved": 7114,
+            "blocks_activated": 24,
+            "storage_bytes_activated": 2146,
+            "decoded_bytes": 2122,
+            "position_rejections": 18
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 454.109,
+          "archive_bytes": 15818752
+        }
+      }
+    },
+    "redundancy-40%-greedy": {
+      "policy": "redundancy",
+      "budget_pct": 40,
+      "optimizer": "greedy",
+      "sqlite_bytes": 20840448,
+      "selected_terms": 15362,
+      "selected_payload_bytes": 5334767,
+      "selected_directory_bytes": 298052,
+      "selected_table_bytes": 6758400,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 122880,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 6635520,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 5632819.0,
+      "budget_bytes": 5632819.2,
+      "budget_fraction": 1.4799301919720769,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 411.35,
+            "p95_us": 17280.057,
+            "p99_us": 99664.528,
+            "max_us": 129330.182,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 1165,
+            "candidate_checks": 6274,
+            "blocks_activated": 900,
+            "storage_bytes_activated": 110778,
+            "decoded_bytes": 109894,
+            "position_exact": 94,
+            "position_rejections": 1598,
+            "source_reads": 4582,
+            "source_decoded_bytes": 36006130,
+            "source_activated_bytes": 12432492,
+            "source_resolved": 4582
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 411.35,
+          "archive_bytes": 20840448
+        },
+        "validation": {
+          "query": {
+            "median_us": 381.979,
+            "p95_us": 30254.392,
+            "p99_us": 31294.39,
+            "max_us": 31697.89,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 359,
+            "candidate_checks": 836,
+            "blocks_activated": 24,
+            "storage_bytes_activated": 2146,
+            "decoded_bytes": 2122,
+            "position_rejections": 18,
+            "source_reads": 818,
+            "source_decoded_bytes": 6274352,
+            "source_activated_bytes": 2191004,
+            "source_resolved": 818
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 381.979,
+          "archive_bytes": 20840448
+        },
+        "heldout": {
+          "query": {
+            "median_us": 514.219,
+            "p95_us": 1177.887,
+            "p99_us": 1199.797,
+            "max_us": 1213.868,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "directory_bytes_activated": 32,
+            "candidate_checks": 22,
+            "blocks_activated": 20,
+            "storage_bytes_activated": 2068,
+            "decoded_bytes": 2048,
+            "position_exact": 14,
+            "position_rejections": 8
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 514.219,
+          "archive_bytes": 20840448
+        },
+        "all": {
+          "query": {
+            "median_us": 445.999,
+            "p95_us": 16263.269,
+            "p99_us": 96652.065,
+            "max_us": 139222.613,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 5400,
+            "source_decoded_bytes": 42280482,
+            "source_activated_bytes": 14623496,
+            "source_resolved": 5400,
+            "blocks_activated": 944,
+            "storage_bytes_activated": 114992,
+            "decoded_bytes": 114064,
+            "position_rejections": 1624,
+            "position_exact": 108
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 445.999,
+          "archive_bytes": 20840448
+        }
+      }
+    },
+    "train_candidates-1%-greedy": {
+      "policy": "train_candidates",
+      "budget_pct": 1,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14221312,
+      "selected_terms": 20,
+      "selected_payload_bytes": 121100,
+      "selected_directory_bytes": 2304,
+      "selected_table_bytes": 139264,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 135168,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 123404.0,
+      "budget_bytes": 140820.48,
+      "budget_fraction": 1.0098894706224548,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 391.719,
+            "p95_us": 12203.956,
+            "p99_us": 79007.369,
+            "max_us": 85259.596,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 2304,
+            "candidate_checks": 6274,
+            "blocks_activated": 2006,
+            "storage_bytes_activated": 378922,
+            "decoded_bytes": 376950,
+            "position_exact": 192,
+            "position_rejections": 3804,
+            "source_reads": 2278,
+            "source_decoded_bytes": 17338498,
+            "source_activated_bytes": 6037536,
+            "source_resolved": 2278
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 391.719,
+          "archive_bytes": 14221312
+        },
+        "validation": {
+          "query": {
+            "median_us": 422.609,
+            "p95_us": 30501.522,
+            "p99_us": 32377.638,
+            "max_us": 36078.22,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 422.609,
+          "archive_bytes": 14221312
+        },
+        "heldout": {
+          "query": {
+            "median_us": 546.029,
+            "p95_us": 1205.538,
+            "p99_us": 1235.288,
+            "max_us": 1251.038,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 546.029,
+          "archive_bytes": 14221312
+        },
+        "all": {
+          "query": {
+            "median_us": 455.679,
+            "p95_us": 12683.786,
+            "p99_us": 67356.931,
+            "max_us": 85546.526,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "blocks_activated": 2006,
+            "storage_bytes_activated": 378922,
+            "decoded_bytes": 376950,
+            "position_exact": 192,
+            "source_reads": 3136,
+            "source_decoded_bytes": 23882800,
+            "source_activated_bytes": 8314764,
+            "source_resolved": 3136,
+            "position_rejections": 3804
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 455.679,
+          "archive_bytes": 14221312
+        }
+      }
+    },
+    "train_candidates-5%-greedy": {
+      "policy": "train_candidates",
+      "budget_pct": 5,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14503936,
+      "selected_terms": 22,
+      "selected_payload_bytes": 400875,
+      "selected_directory_bytes": 3567,
+      "selected_table_bytes": 421888,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 404442.0,
+      "budget_bytes": 704102.4,
+      "budget_fraction": 1.0299592786503782,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 447.629,
+            "p95_us": 6204.758,
+            "p99_us": 15006.201,
+            "max_us": 18952.694,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 3567,
+            "candidate_checks": 6274,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "position_rejections": 5696
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 447.629,
+          "archive_bytes": 14503936
+        },
+        "validation": {
+          "query": {
+            "median_us": 420.259,
+            "p95_us": 30583.052,
+            "p99_us": 31989.708,
+            "max_us": 32124.819,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 420.259,
+          "archive_bytes": 14503936
+        },
+        "heldout": {
+          "query": {
+            "median_us": 598.079,
+            "p95_us": 1248.718,
+            "p99_us": 1307.227,
+            "max_us": 1361.307,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 598.079,
+          "archive_bytes": 14503936
+        },
+        "all": {
+          "query": {
+            "median_us": 475.559,
+            "p95_us": 7462.616,
+            "p99_us": 29573.243,
+            "max_us": 67232.711,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "source_reads": 858,
+            "source_decoded_bytes": 6544302,
+            "source_activated_bytes": 2277228,
+            "source_resolved": 858,
+            "position_rejections": 5696
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 475.559,
+          "archive_bytes": 14503936
+        }
+      }
+    },
+    "train_candidates-10%-greedy": {
+      "policy": "train_candidates",
+      "budget_pct": 10,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14503936,
+      "selected_terms": 22,
+      "selected_payload_bytes": 400875,
+      "selected_directory_bytes": 3567,
+      "selected_table_bytes": 421888,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 404442.0,
+      "budget_bytes": 1408204.8,
+      "budget_fraction": 1.0299592786503782,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 430.28,
+            "p95_us": 6182.788,
+            "p99_us": 14697.432,
+            "max_us": 64424.677,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 3567,
+            "candidate_checks": 6274,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "position_rejections": 5696
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 430.28,
+          "archive_bytes": 14503936
+        },
+        "validation": {
+          "query": {
+            "median_us": 419.689,
+            "p95_us": 30659.951,
+            "p99_us": 31867.799,
+            "max_us": 32404.278,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 419.689,
+          "archive_bytes": 14503936
+        },
+        "heldout": {
+          "query": {
+            "median_us": 559.509,
+            "p95_us": 1205.327,
+            "p99_us": 1222.728,
+            "max_us": 1240.768,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 559.509,
+          "archive_bytes": 14503936
+        },
+        "all": {
+          "query": {
+            "median_us": 465.559,
+            "p95_us": 7054.317,
+            "p99_us": 29571.143,
+            "max_us": 34327.824,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "source_reads": 858,
+            "source_decoded_bytes": 6544302,
+            "source_activated_bytes": 2277228,
+            "source_resolved": 858,
+            "position_rejections": 5696
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 465.559,
+          "archive_bytes": 14503936
+        }
+      }
+    },
+    "train_candidates-40%-greedy": {
+      "policy": "train_candidates",
+      "budget_pct": 40,
+      "optimizer": "greedy",
+      "sqlite_bytes": 14503936,
+      "selected_terms": 22,
+      "selected_payload_bytes": 400875,
+      "selected_directory_bytes": 3567,
+      "selected_table_bytes": 421888,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 404442.0,
+      "budget_bytes": 5632819.2,
+      "budget_fraction": 1.0299592786503782,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 450.509,
+            "p95_us": 6827.437,
+            "p99_us": 16418.209,
+            "max_us": 20686.25,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 3567,
+            "candidate_checks": 6274,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "position_rejections": 5696
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 450.509,
+          "archive_bytes": 14503936
+        },
+        "validation": {
+          "query": {
+            "median_us": 473.839,
+            "p95_us": 33715.446,
+            "p99_us": 40305.733,
+            "max_us": 50421.423,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 473.839,
+          "archive_bytes": 14503936
+        },
+        "heldout": {
+          "query": {
+            "median_us": 615.379,
+            "p95_us": 1261.178,
+            "p99_us": 1365.717,
+            "max_us": 1412.357,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 615.379,
+          "archive_bytes": 14503936
+        },
+        "all": {
+          "query": {
+            "median_us": 473.239,
+            "p95_us": 7861.014,
+            "p99_us": 31353.28,
+            "max_us": 78658.299,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "source_reads": 858,
+            "source_decoded_bytes": 6544302,
+            "source_activated_bytes": 2277228,
+            "source_resolved": 858,
+            "position_rejections": 5696
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 473.239,
+          "archive_bytes": 14503936
+        }
+      }
+    },
+    "df_topk-k32-fixed": {
+      "policy": "df_topk",
+      "k": 32,
+      "optimizer": "fixed",
+      "sqlite_bytes": 15851520,
+      "selected_terms": 32,
+      "selected_payload_bytes": 1720510,
+      "selected_directory_bytes": 16298,
+      "selected_table_bytes": 1769472,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 1765376,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 1736808.0,
+      "budget_bytes": null,
+      "budget_fraction": 1.12565445026178,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 470.709,
+            "p95_us": 57784.599,
+            "p99_us": 115365.419,
+            "max_us": 127932.024,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274,
+            "directory_bytes_activated": 2265
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 470.709,
+          "archive_bytes": 15851520
+        },
+        "validation": {
+          "query": {
+            "median_us": 418.409,
+            "p95_us": 30791.101,
+            "p99_us": 32100.239,
+            "max_us": 33152.936,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 418.409,
+          "archive_bytes": 15851520
+        },
+        "heldout": {
+          "query": {
+            "median_us": 543.519,
+            "p95_us": 1230.108,
+            "p99_us": 1260.978,
+            "max_us": 1288.157,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 543.519,
+          "archive_bytes": 15851520
+        },
+        "all": {
+          "query": {
+            "median_us": 487.999,
+            "p95_us": 25184.912,
+            "p99_us": 93715.47,
+            "max_us": 117663.285,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 487.999,
+          "archive_bytes": 15851520
+        }
+      }
+    },
+    "df_topk-k128-fixed": {
+      "policy": "df_topk",
+      "k": 128,
+      "optimizer": "fixed",
+      "sqlite_bytes": 16965632,
+      "selected_terms": 128,
+      "selected_payload_bytes": 2732858,
+      "selected_directory_bytes": 39960,
+      "selected_table_bytes": 2883584,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 2879488,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 2772818.0,
+      "budget_bytes": null,
+      "budget_fraction": 1.2047702152414195,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 451.649,
+            "p95_us": 57032.64,
+            "p99_us": 105731.967,
+            "max_us": 118656.792,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 2900,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 451.649,
+          "archive_bytes": 16965632
+        },
+        "validation": {
+          "query": {
+            "median_us": 420.329,
+            "p95_us": 31084.66,
+            "p99_us": 32166.689,
+            "max_us": 33996.695,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836,
+            "directory_bytes_activated": 283
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 420.329,
+          "archive_bytes": 16965632
+        },
+        "heldout": {
+          "query": {
+            "median_us": 556.229,
+            "p95_us": 1225.248,
+            "p99_us": 1261.947,
+            "max_us": 1432.707,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 556.229,
+          "archive_bytes": 16965632
+        },
+        "all": {
+          "query": {
+            "median_us": 485.589,
+            "p95_us": 21228.119,
+            "p99_us": 97230.574,
+            "max_us": 127393.596,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 485.589,
+          "archive_bytes": 16965632
+        }
+      }
+    },
+    "df_topk-k512-fixed": {
+      "policy": "df_topk",
+      "k": 512,
+      "optimizer": "fixed",
+      "sqlite_bytes": 18657280,
+      "selected_terms": 512,
+      "selected_payload_bytes": 4038964,
+      "selected_directory_bytes": 79395,
+      "selected_table_bytes": 4575232,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 4571136,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 4118359.0,
+      "budget_bytes": null,
+      "budget_fraction": 1.3248981966259452,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 460.539,
+            "p95_us": 11897.188,
+            "p99_us": 19410.513,
+            "max_us": 66271.153,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 3318,
+            "candidate_checks": 6274,
+            "blocks_activated": 2332,
+            "storage_bytes_activated": 1060574,
+            "decoded_bytes": 1230198,
+            "position_exact": 396,
+            "position_rejections": 4626,
+            "source_reads": 1252,
+            "source_decoded_bytes": 10054836,
+            "source_activated_bytes": 3440428,
+            "source_resolved": 1252
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 460.539,
+          "archive_bytes": 18657280
+        },
+        "validation": {
+          "query": {
+            "median_us": 407.569,
+            "p95_us": 30620.581,
+            "p99_us": 31781.039,
+            "max_us": 32238.458,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836,
+            "directory_bytes_activated": 283
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 407.569,
+          "archive_bytes": 18657280
+        },
+        "heldout": {
+          "query": {
+            "median_us": 525.369,
+            "p95_us": 1189.187,
+            "p99_us": 1212.058,
+            "max_us": 1212.968,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 525.369,
+          "archive_bytes": 18657280
+        },
+        "all": {
+          "query": {
+            "median_us": 474.919,
+            "p95_us": 12580.386,
+            "p99_us": 28952.194,
+            "max_us": 31962.719,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 2110,
+            "source_decoded_bytes": 16599138,
+            "source_activated_bytes": 5717656,
+            "source_resolved": 2110,
+            "blocks_activated": 2332,
+            "storage_bytes_activated": 1060574,
+            "decoded_bytes": 1230198,
+            "position_rejections": 4626,
+            "position_exact": 396
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 474.919,
+          "archive_bytes": 18657280
+        }
+      }
+    },
+    "df-5%-knapsack": {
+      "policy": "df",
+      "budget_pct": 5,
+      "optimizer": "knapsack",
+      "sqlite_bytes": 14495744,
+      "selected_terms": 250,
+      "selected_payload_bytes": 309645,
+      "selected_directory_bytes": 12719,
+      "selected_table_bytes": 413696,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 409600,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 322364.0,
+      "budget_bytes": 704102.4,
+      "budget_fraction": 1.0293775450843514,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 442.799,
+            "p95_us": 57596.99,
+            "p99_us": 105467.697,
+            "max_us": 123615.743,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 442.799,
+          "archive_bytes": 14495744
+        },
+        "validation": {
+          "query": {
+            "median_us": 404.599,
+            "p95_us": 30687.751,
+            "p99_us": 31807.149,
+            "max_us": 32004.539,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 29,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 404.599,
+          "archive_bytes": 14495744
+        },
+        "heldout": {
+          "query": {
+            "median_us": 531.959,
+            "p95_us": 1198.927,
+            "p99_us": 1222.357,
+            "max_us": 1225.538,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 531.959,
+          "archive_bytes": 14495744
+        },
+        "all": {
+          "query": {
+            "median_us": 475.32,
+            "p95_us": 20132.942,
+            "p99_us": 92592.412,
+            "max_us": 112601.753,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 475.32,
+          "archive_bytes": 14495744
+        }
+      }
+    },
+    "df-5%-local_search": {
+      "policy": "df",
+      "budget_pct": 5,
+      "optimizer": "local_search",
+      "sqlite_bytes": 14970880,
+      "selected_terms": 615,
+      "selected_payload_bytes": 675946,
+      "selected_directory_bytes": 28146,
+      "selected_table_bytes": 888832,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 12288,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 876544,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 704092.0,
+      "budget_bytes": 704102.4,
+      "budget_fraction": 1.0631180919139034,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 447.63,
+            "p95_us": 56293.962,
+            "p99_us": 99519.909,
+            "max_us": 113053.813,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 89,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 447.63,
+          "archive_bytes": 14970880
+        },
+        "validation": {
+          "query": {
+            "median_us": 410.009,
+            "p95_us": 30545.501,
+            "p99_us": 31745.459,
+            "max_us": 31977.109,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 29,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 410.009,
+          "archive_bytes": 14970880
+        },
+        "heldout": {
+          "query": {
+            "median_us": 525.439,
+            "p95_us": 1167.748,
+            "p99_us": 1198.778,
+            "max_us": 1215.188,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 525.439,
+          "archive_bytes": 14970880
+        },
+        "all": {
+          "query": {
+            "median_us": 501.179,
+            "p95_us": 29209.003,
+            "p99_us": 104524.6,
+            "max_us": 151645.409,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 501.179,
+          "archive_bytes": 14970880
+        }
+      }
+    },
+    "df-10%-knapsack": {
+      "policy": "df",
+      "budget_pct": 10,
+      "optimizer": "knapsack",
+      "sqlite_bytes": 14495744,
+      "selected_terms": 250,
+      "selected_payload_bytes": 309645,
+      "selected_directory_bytes": 12719,
+      "selected_table_bytes": 413696,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 409600,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 322364.0,
+      "budget_bytes": 1408204.8,
+      "budget_fraction": 1.0293775450843514,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 451.679,
+            "p95_us": 57053.251,
+            "p99_us": 109851.349,
+            "max_us": 148001.265,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 451.679,
+          "archive_bytes": 14495744
+        },
+        "validation": {
+          "query": {
+            "median_us": 419.599,
+            "p95_us": 30416.211,
+            "p99_us": 32658.958,
+            "max_us": 32958.287,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 29,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 419.599,
+          "archive_bytes": 14495744
+        },
+        "heldout": {
+          "query": {
+            "median_us": 526.949,
+            "p95_us": 1194.318,
+            "p99_us": 1226.628,
+            "max_us": 1230.518,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 526.949,
+          "archive_bytes": 14495744
+        },
+        "all": {
+          "query": {
+            "median_us": 481.189,
+            "p95_us": 24957.882,
+            "p99_us": 100586.416,
+            "max_us": 114065.912,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 481.189,
+          "archive_bytes": 14495744
+        }
+      }
+    },
+    "df-10%-local_search": {
+      "policy": "df",
+      "budget_pct": 10,
+      "optimizer": "local_search",
+      "sqlite_bytes": 15810560,
+      "selected_terms": 1423,
+      "selected_payload_bytes": 1350948,
+      "selected_directory_bytes": 57254,
+      "selected_table_bytes": 1728512,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 16384,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 1712128,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 1408202.0,
+      "budget_bytes": 1408204.8,
+      "budget_fraction": 1.1227457824316462,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 438.799,
+            "p95_us": 57497.21,
+            "p99_us": 99293.219,
+            "max_us": 130610.3,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 89,
+            "candidate_checks": 6274,
+            "source_reads": 6274,
+            "source_decoded_bytes": 50318580,
+            "source_activated_bytes": 17150482,
+            "source_resolved": 6274
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 438.799,
+          "archive_bytes": 15810560
+        },
+        "validation": {
+          "query": {
+            "median_us": 410.889,
+            "p95_us": 30609.722,
+            "p99_us": 32322.588,
+            "max_us": 46114.791,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "directory_bytes_activated": 62,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 410.889,
+          "archive_bytes": 15810560
+        },
+        "heldout": {
+          "query": {
+            "median_us": 538.699,
+            "p95_us": 2646.485,
+            "p99_us": 3160.734,
+            "max_us": 3216.614,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "directory_bytes_activated": 18,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 538.699,
+          "archive_bytes": 15810560
+        },
+        "all": {
+          "query": {
+            "median_us": 471.629,
+            "p95_us": 23264.596,
+            "p99_us": 92188.293,
+            "max_us": 113173.223,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "source_reads": 7132,
+            "source_decoded_bytes": 56862882,
+            "source_activated_bytes": 19427710,
+            "source_resolved": 7132
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 471.629,
+          "archive_bytes": 15810560
+        }
+      }
+    },
+    "train_candidates-5%-knapsack": {
+      "policy": "train_candidates",
+      "budget_pct": 5,
+      "optimizer": "knapsack",
+      "sqlite_bytes": 14503936,
+      "selected_terms": 22,
+      "selected_payload_bytes": 400875,
+      "selected_directory_bytes": 3567,
+      "selected_table_bytes": 421888,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 404442.0,
+      "budget_bytes": 704102.4,
+      "budget_fraction": 1.0299592786503782,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 422.429,
+            "p95_us": 5958.619,
+            "p99_us": 14201.633,
+            "max_us": 61097.613,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 3567,
+            "candidate_checks": 6274,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "position_rejections": 5696
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 422.429,
+          "archive_bytes": 14503936
+        },
+        "validation": {
+          "query": {
+            "median_us": 395.99,
+            "p95_us": 30236.862,
+            "p99_us": 31691.979,
+            "max_us": 32316.628,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 395.99,
+          "archive_bytes": 14503936
+        },
+        "heldout": {
+          "query": {
+            "median_us": 521.879,
+            "p95_us": 1173.748,
+            "p99_us": 1207.798,
+            "max_us": 1213.427,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 521.879,
+          "archive_bytes": 14503936
+        },
+        "all": {
+          "query": {
+            "median_us": 446.749,
+            "p95_us": 7170.476,
+            "p99_us": 28905.484,
+            "max_us": 31638.219,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "source_reads": 858,
+            "source_decoded_bytes": 6544302,
+            "source_activated_bytes": 2277228,
+            "source_resolved": 858,
+            "position_rejections": 5696
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 446.749,
+          "archive_bytes": 14503936
+        }
+      }
+    },
+    "train_candidates-5%-local_search": {
+      "policy": "train_candidates",
+      "budget_pct": 5,
+      "optimizer": "local_search",
+      "sqlite_bytes": 14503936,
+      "selected_terms": 22,
+      "selected_payload_bytes": 400875,
+      "selected_directory_bytes": 3567,
+      "selected_table_bytes": 421888,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 404442.0,
+      "budget_bytes": 704102.4,
+      "budget_fraction": 1.0299592786503782,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 421.859,
+            "p95_us": 5878.578,
+            "p99_us": 13415.924,
+            "max_us": 17604.906,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 3567,
+            "candidate_checks": 6274,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "position_rejections": 5696
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 421.859,
+          "archive_bytes": 14503936
+        },
+        "validation": {
+          "query": {
+            "median_us": 403.219,
+            "p95_us": 30355.082,
+            "p99_us": 31639.569,
+            "max_us": 31732.729,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 403.219,
+          "archive_bytes": 14503936
+        },
+        "heldout": {
+          "query": {
+            "median_us": 523.669,
+            "p95_us": 1180.107,
+            "p99_us": 1204.218,
+            "max_us": 1229.238,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 523.669,
+          "archive_bytes": 14503936
+        },
+        "all": {
+          "query": {
+            "median_us": 442.229,
+            "p95_us": 6980.697,
+            "p99_us": 28608.125,
+            "max_us": 32109.618,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "source_reads": 858,
+            "source_decoded_bytes": 6544302,
+            "source_activated_bytes": 2277228,
+            "source_resolved": 858,
+            "position_rejections": 5696
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 442.229,
+          "archive_bytes": 14503936
+        }
+      }
+    },
+    "train_candidates-10%-knapsack": {
+      "policy": "train_candidates",
+      "budget_pct": 10,
+      "optimizer": "knapsack",
+      "sqlite_bytes": 14503936,
+      "selected_terms": 22,
+      "selected_payload_bytes": 400875,
+      "selected_directory_bytes": 3567,
+      "selected_table_bytes": 421888,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 404442.0,
+      "budget_bytes": 1408204.8,
+      "budget_fraction": 1.0299592786503782,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 397.679,
+            "p95_us": 5852.509,
+            "p99_us": 14174.643,
+            "max_us": 67736.44,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 3567,
+            "candidate_checks": 6274,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "position_rejections": 5696
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 397.679,
+          "archive_bytes": 14503936
+        },
+        "validation": {
+          "query": {
+            "median_us": 410.719,
+            "p95_us": 30701.301,
+            "p99_us": 31888.359,
+            "max_us": 32000.659,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 410.719,
+          "archive_bytes": 14503936
+        },
+        "heldout": {
+          "query": {
+            "median_us": 545.369,
+            "p95_us": 1195.178,
+            "p99_us": 1255.328,
+            "max_us": 1264.207,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 545.369,
+          "archive_bytes": 14503936
+        },
+        "all": {
+          "query": {
+            "median_us": 430.099,
+            "p95_us": 6688.857,
+            "p99_us": 28910.505,
+            "max_us": 31975.749,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "source_reads": 858,
+            "source_decoded_bytes": 6544302,
+            "source_activated_bytes": 2277228,
+            "source_resolved": 858,
+            "position_rejections": 5696
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 430.099,
+          "archive_bytes": 14503936
+        }
+      }
+    },
+    "train_candidates-10%-local_search": {
+      "policy": "train_candidates",
+      "budget_pct": 10,
+      "optimizer": "local_search",
+      "sqlite_bytes": 14503936,
+      "selected_terms": 22,
+      "selected_payload_bytes": 400875,
+      "selected_directory_bytes": 3567,
+      "selected_table_bytes": 421888,
+      "table_bytes": {
+        "active_stats": 147456,
+        "contents": 53248,
+        "frames": 9224192,
+        "lexicon": 724992,
+        "predictors": 4096,
+        "revision_cid": 135168,
+        "revisions": 233472,
+        "selected_terms": 4096,
+        "source": 495616,
+        "sqlite_schema": 4096,
+        "term_blocks": 417792,
+        "token_postings": 3059712
+      },
+      "selection_bytes": 404442.0,
+      "budget_bytes": 1408204.8,
+      "budget_fraction": 1.0299592786503782,
+      "splits": {
+        "train": {
+          "query": {
+            "median_us": 387.389,
+            "p95_us": 5747.029,
+            "p99_us": 13569.593,
+            "max_us": 17544.057,
+            "samples": 456
+          },
+          "work": {
+            "posting_bytes": 542448,
+            "directory_bytes_activated": 3567,
+            "candidate_checks": 6274,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "position_rejections": 5696
+          },
+          "rank_checks": 456,
+          "score_error": 0.0,
+          "bytes_per_query_median": 387.389,
+          "archive_bytes": 14503936
+        },
+        "validation": {
+          "query": {
+            "median_us": 410.549,
+            "p95_us": 30716.432,
+            "p99_us": 31607.319,
+            "max_us": 31617.66,
+            "samples": 88
+          },
+          "work": {
+            "posting_bytes": 101112,
+            "candidate_checks": 836,
+            "source_reads": 836,
+            "source_decoded_bytes": 6421736,
+            "source_activated_bytes": 2234258,
+            "source_resolved": 836
+          },
+          "rank_checks": 88,
+          "score_error": 0.0,
+          "bytes_per_query_median": 410.549,
+          "archive_bytes": 14503936
+        },
+        "heldout": {
+          "query": {
+            "median_us": 564.569,
+            "p95_us": 1212.108,
+            "p99_us": 1275.638,
+            "max_us": 1316.017,
+            "samples": 96
+          },
+          "work": {
+            "posting_bytes": 63512,
+            "candidate_checks": 22,
+            "source_reads": 22,
+            "source_decoded_bytes": 122566,
+            "source_activated_bytes": 42970,
+            "source_resolved": 22
+          },
+          "rank_checks": 96,
+          "score_error": 0.0,
+          "bytes_per_query_median": 564.569,
+          "archive_bytes": 14503936
+        },
+        "all": {
+          "query": {
+            "median_us": 451.049,
+            "p95_us": 6770.997,
+            "p99_us": 29075.734,
+            "max_us": 31709.919,
+            "samples": 640
+          },
+          "work": {
+            "posting_bytes": 707072,
+            "candidate_checks": 7132,
+            "blocks_activated": 3444,
+            "storage_bytes_activated": 1578036,
+            "decoded_bytes": 1817554,
+            "position_exact": 578,
+            "source_reads": 858,
+            "source_decoded_bytes": 6544302,
+            "source_activated_bytes": 2277228,
+            "source_resolved": 858,
+            "position_rejections": 5696
+          },
+          "rank_checks": 640,
+          "score_error": 0.0,
+          "bytes_per_query_median": 451.049,
+          "archive_bytes": 14503936
+        }
+      }
+    }
+  },
+  "limitations": [
+    "selective materialization on top of an exact frequency archive; sources unchanged",
+    "selection uses the train split only; budgets and optimizers were not tuned on the held-out split",
+    "value models are analytic proxies (candidate opportunities, source bytes), not measured per-query benefit",
+    "logical activation only; two shuffled warm passes per split; no cold cache claim",
+    "the held-out split has 16 queries x 4 cutoffs = 64 rank checks per arm"
+  ]
+}
