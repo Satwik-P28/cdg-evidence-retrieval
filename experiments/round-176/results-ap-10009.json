@@ -1,0 +1,36 @@
+{
+  "round": 176,
+  "corpus": "ap",
+  "revisions": 10009,
+  "manifest_sha256": "2788f97b57da9dabb24ace843b8f4b9b0993fc1041c9dfcca228ab6e26a79857",
+  "frequency_document_id_plus_tf": {
+    "delta_varint": 3896694,
+    "elias_fano": 3468822,
+    "simd_bp128": 3550142,
+    "roaring": 5675968
+  },
+  "frequency_tf_only": {
+    "varint": 1789872
+  },
+  "positional": {
+    "r173_blocks_b512_best_zstd": 8244651,
+    "r173_payload_b512_best_zstd": 7747843,
+    "r173_directory": 496808,
+    "r172_single_blob_dv_zstd_reference": 8998912,
+    "external_flat_simdbp_docid_tf_positions": 8741439,
+    "external_flat_delta_varint_docid_tf_positions": 8913198
+  },
+  "logical": {
+    "terms": 44833,
+    "pairs": 1789540,
+    "occurrences": 4070728,
+    "universe": 10009
+  },
+  "note": "document-only encoders cannot store positions; the frequency table charges 1-3 varint bytes for term frequency on top of the document ids",
+  "limitations": [
+    "size-only comparison of published layouts, not a runtime benchmark of the external systems",
+    "no external source code copied; layouts reimplemented from specifications and validated by unit tests",
+    "document-only encoders are charged the same term-frequency bytes so the comparison is feature-matched",
+    "PISA/CRoaring/folly/FastPFor were not built or executed in this environment"
+  ]
+}
