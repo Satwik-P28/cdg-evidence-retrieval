@@ -24,3 +24,6 @@ SQLite 3.46.1 and system libzstd level 3, fixed seed 170. Independent copy of al
 | 10000 | 2252800 | 1572864 | 1374259 | 1254734 |
 
 Equal physical size at 1000 terms despite smaller integer payload. Local experiment source adjacent. Initial R170 hosted run 45917277426 started for implementation commit b9a2509d4d487dbe8c488fde4b0cb475ac3925df.
+
+## CI fixture correction
+Initial run 45917277426 failed all three unit-test jobs because the fixture supplied a duplicate Boolean phrase (alpha OR alpha), explicitly unsupported by rank_replay.expression. Corpus stages skipped. Replace with a valid overlapping phrase query, alpha OR "alpha alpha", and retain explicit unsupported-query rejection coverage. No corpus performance claims until corrected CI.

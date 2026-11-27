@@ -32,8 +32,10 @@ def test_tape_native_and_reopen(tmp_path,mode):
         assert 2*dd<=5*len(raw) and 2*ab<=3*len(h.C.compress(raw))
     for cutoff in range(1,len(ev)+1):
         ref=h.active_oracle(ev,cutoff)
-        for p,o in [(("alpha alpha",),"AND"),(("cafe 中文",),"AND"),(("beta","gamma"),"OR"),(("absent",),"AND"),(("alpha","alpha"),"OR")]:
+        for p,o in [(("alpha alpha",),"AND"),(("cafe 中文",),"AND"),(("beta","gamma"),"OR"),(("absent",),"AND"),(("alpha","alpha alpha"),"OR")]:
             hits,_,_=rank_tape(db,p,o,prepare(db,cutoff),mode,ids)
             h.verify(hits,h.native(ref,p,o))
         ref.close()
+    with pytest.raises(ValueError,match="unsupported query"):
+        rank_tape(db,("alpha","alpha"),"OR",prepare(db,len(ev)),mode,ids)
     db.close()
