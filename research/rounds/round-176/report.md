@@ -25,15 +25,19 @@ comparisons of published layouts on our data, nothing more.
 
 ### Frequency index: document ids + term frequency
 
-| Encoding | Bytes | vs ours |
-|---|---:|---:|
-| Elias–Fano (no skip pointers) + varint tf | 3,468,822 | −12.1% |
-| SIMD-BP128 (128-value blocks) + varint tf | 3,550,142 | −14.1% |
-| delta-varint + varint tf | 3,896,694 | −21.8% |
-| Roaring bitmaps + varint tf | 5,675,968 | −46.3% |
-| **R158 frequency index (ours, postings + lexicon)** | **3,048,885** | — |
+Both sides need term-level metadata to find a term's list, so every external figure
+below also carries our lexicon's cost (724,992 B, i.e. 16.2 B per term); the column
+"payload only" shows the same figure without that shared charge.
 
-Our frequency index is 12.1% smaller than the best uncompressed external layout on
+| Encoding | Bytes with term metadata | Payload only | vs ours |
+|---|---:|---:|---:|
+| Elias–Fano (no skip pointers) + varint tf | 4,193,814 | 3,468,822 | −27.3% |
+| SIMD-BP128 (128-value blocks) + varint tf | 4,275,134 | 3,550,142 | −28.7% |
+| delta-varint + varint tf | 4,621,686 | 3,896,694 | −34.0% |
+| Roaring bitmaps + varint tf | 6,400,960 | 5,675,968 | −52.4% |
+| **R158 frequency index (ours, postings + lexicon)** | **3,048,885** | 2,323,893 | — |
+
+Our frequency index is 27.3% smaller than the best uncompressed external layout on
 the same postings, because it also applies value packing and Zstandard. The external
 layouts are designed for *decoding speed*, which this round did not measure; the
 comparison is therefore about space only and must not be read as a latency claim.
@@ -44,20 +48,23 @@ do cross it pay a full 8 KiB bitmap for a few thousand ids.
 
 ### Positional index: document ids + tf + positions
 
-| Layout | Bytes | Random access | Block-level activation |
-|---|---:|---|---|
-| **R173 b512 `best`+Zstandard blocks, with directory** | **8,244,651** | yes | yes |
-| R173 payload only (directory excluded) | 7,747,843 | — | — |
-| R173 directory | 496,808 | — | — |
-| External flat SIMD-BP128 (docid + tf + position gaps), no directory | 8,741,439 | no | no |
-| External flat delta-varint, no directory | 8,913,198 | no | no |
-| R172 single Zstandard blob | 8,998,912 | no | no |
+Every layout needs one row per term in the archive, so the comparison charges both
+sides the same 24 B per term (44,833 terms = 1,075,992 B); the middle columns show
+the unshared parts.
 
-The block layout is **5.7% smaller than the best uncompressed external layout even
-after charging its entire directory**, and it is the only one of the three that can
-decode a single posting block without touching the rest of the term. Charging the
-directory honestly matters: the payload alone is 11.4% below SIMD-BP128, and the
-directory eats half of that advantage.
+| Layout | Bytes with 24 B/term | Payload + directory only | Random access | Block activation |
+|---|---:|---:|---|---|
+| **R173 b512 `best`+Zstandard blocks** | **9,320,643** | 8,244,651 (payload 7,747,843 + directory 496,808) | yes | yes |
+| External flat SIMD-BP128 (docid + tf + position gaps) | 9,817,431 | 8,741,439 | no | no |
+| External flat delta-varint | 9,989,190 | 8,913,198 | no | no |
+| R172 single Zstandard blob | 10,074,904 | 8,998,912 | no | no |
+
+The block layout is **5.1% smaller than the best uncompressed external layout once
+every term row is charged on both sides**, and it is the only one of the three that
+can decode a single posting block without touching the rest of the term. Without the
+shared row charge the two are 8,244,651 and 8,741,439, i.e. the same conclusion at
+6% margin; the margin is modest either way and comes from Zstandard on top of value
+packing, not from the blocking itself.
 
 ## What this does and does not establish
 
