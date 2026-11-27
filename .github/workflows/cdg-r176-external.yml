@@ -1,7 +1,7 @@
 name: CDG R176 external codecs
 on:
   push:
-    branches: ['research/round-176-*']
+    branches: ['research/**']
     paths: ['experiments/round-176/**','.github/workflows/cdg-r176-external.yml','research/rounds/round-176/**']
   workflow_dispatch:
 jobs:

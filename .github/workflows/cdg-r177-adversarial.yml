@@ -1,7 +1,7 @@
 name: CDG R177 adversarial
 on:
   push:
-    branches: ['research/round-177-*']
+    branches: ['research/**']
     paths: ['experiments/round-177/**','.github/workflows/cdg-r177-adversarial.yml','research/rounds/round-177/**']
   workflow_dispatch:
 jobs:

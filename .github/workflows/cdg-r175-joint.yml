@@ -1,7 +1,7 @@
 name: CDG R175 joint layout
 on:
   push:
-    branches: ['research/round-175-*']
+    branches: ['research/**']
     paths: ['experiments/round-175/**','.github/workflows/cdg-r175-joint.yml','research/rounds/round-175/**']
   workflow_dispatch:
 jobs:

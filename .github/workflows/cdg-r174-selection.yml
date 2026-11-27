@@ -1,7 +1,7 @@
 name: CDG R174 selective materialization
 on:
   push:
-    branches: ['research/round-174-*']
+    branches: ['research/**']
     paths: ['experiments/round-174/**','experiments/round-173/**','.github/workflows/cdg-r174-selection.yml','research/rounds/round-174/**']
   workflow_dispatch:
 jobs:

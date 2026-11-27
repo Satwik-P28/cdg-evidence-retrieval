@@ -116,3 +116,16 @@ none" and ask **which terms deserve positions under a byte budget**, with block
 addressing making selective coverage genuinely cheap. R175 then mixes
 representations per region. R176 supplies external encoder baselines so the storage
 claim is not self-referential. R177 stresses correctness on adversarial inputs.
+
+## Addendum: R172 CI run completed
+
+Checked after the audit above was written: workflow run `45919907942`
+("CDG R172 selective positions", head `537f3a3`) is **completed / success** —
+created 2026-11-27T00:59:05Z, finished 2026-11-27T01:14:15Z. All three jobs,
+including the AP 100,000 revision arms, concluded successfully.
+
+What this does and does not give us: it confirms the R172 pipeline runs at
+100,000 revisions and that its artefacts were produced, but the artefacts still
+cannot be downloaded from this environment (the download endpoint returns 401
+without a token). Consequently no 74,364-revision *number* in R173–R178 is used as
+evidence; those figures remain labelled CI-reported.
