@@ -7,22 +7,27 @@ from rapidfuzz.distance import Levenshtein
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent/"round-158"))
 from frequency_index import f,h,si,connect,nr,ar,tokens,query_plan,prepare,recover
+from shared_alignment import make_script,decode_script,offsets
 L=8
 HALO=L-1
 
-def windows(a,b,multi,limit=L):
+def alignment(a,b):
+    ids={t:i for i,t in enumerate(dict.fromkeys(a+b))}
+    ops=list(Levenshtein.opcodes([ids[t] for t in a],[ids[t] for t in b]))
+    pa=pb=0
+    for op,i,j,k,l in ops:
+        assert i==pa and k==pb;pa,pb=j,l
+        if op=="equal":assert a[i:j]==b[k:l]
+    assert pa==len(a) and pb==len(b)
+    return ops
+
+def windows(a,b,multi,limit=L,ops=None):
     if not 1<=limit<=L:raise ValueError('unsupported phrase length')
     halo=limit-1
     if a==b:return []
     if multi:
-        # Exact token interning avoids treating a hash collision as equality.
-        ids={t:i for i,t in enumerate(dict.fromkeys(a+b))}
-        edits=[];pa=pb=0
-        for op,i,j,k,l in Levenshtein.opcodes([ids[t] for t in a],[ids[t] for t in b]):
-            assert i==pa and k==pb;pa,pb=j,l
-            if op=="equal":assert a[i:j]==b[k:l]
-            else:edits.append((i,j,k,l))
-        assert pa==len(a) and pb==len(b)
+        if ops is None:ops=alignment(a,b)
+        edits=[(i,j,k,l) for op,i,j,k,l in ops if op!="equal"]
     else:
         p=0
         while p<min(len(a),len(b)) and a[p]==b[p]:p+=1
@@ -135,6 +140,14 @@ def build_delta(db,path,events,mode):
     runs="_runs_" in mode or "_adaptive_" in mode
     mapped=quotient or dense or runs
     window_ids={};pending=[]
+    joint="_joint_" in mode
+    source_rows={}
+    frame_ids={}
+    if joint:
+        source_rows={g:(kind,parent,fid,n) for g,kind,parent,fid,n in db.execute("SELECT g,kind,parent,fid,n FROM source")}
+        frame_ids={h.sha(body):(fid,body) for fid,body in db.execute("SELECT fid,body FROM frames")}
+        next_fid=max((fid for fid,_ in frame_ids.values()),default=0)+1
+        refs=collections.Counter(r[2] for r in source_rows.values())
     if runs:
         db.execute("CREATE TABLE patch_run(last_ordinal INTEGER PRIMARY KEY,cid INTEGER NOT NULL)")
     if mapped:
@@ -165,13 +178,48 @@ def build_delta(db,path,events,mode):
         for base in candidates:
             old=ts(base)
             if len(old)+len(target)>100000:continue
-            patches=windows(old,target,mode.endswith("multi"))
+            ops=alignment(old,target) if joint else None
+            patches=windows(old,target,mode.endswith("multi"),ops=ops)
             cost=sum(len(x)+len(y)+12 for x,y in patches)+8
             if 4*cost<=3*len(target):
-                choices.append((cost,-base,patches))
+                choices.append((cost,-base,patches,ops))
         if choices:
-            _,neg,patches=min(choices,key=lambda x:(x[0],x[1]));base=-neg
+            _,neg,patches,ops=min(choices,key=lambda x:(x[0],x[1]));base=-neg
             db.execute("INSERT INTO idx_delta VALUES(?,?)",(cid,base))
+            if joint:
+                kind,parent_g,old_fid,n=source_rows[g]
+                # Original source parent is full and byte-identical to selected index anchor.
+                # Only replace existing one-hop children, never full anchors.
+                if kind==1 and gids[parent_g]==base:
+                    old=events[parent_g-1][2];raw=events[g-1][2]
+                    assert source_rows[parent_g][0]==0
+                    old_frame=db.execute("SELECT body FROM frames WHERE fid=?",(old_fid,)).fetchone()[0]
+                    parent_frame=db.execute("SELECT body FROM frames WHERE fid=?",(source_rows[parent_g][2],)).fetchone()[0]
+                    full=h.C.compress(raw)
+                    t=time.perf_counter_ns()
+                    script=make_script(old,raw,offsets(db,old,ts(base)),offsets(db,raw,target),ops)
+                    frame=h.C.compress(script)
+                    assert decode_script(old,script,n)==raw
+                    stats["joint_encode_us"]+=(time.perf_counter_ns()-t)/1000
+                    stats["joint_candidates"]+=1
+                    stats["joint_original_candidate_bytes"]+=len(old_frame)
+                    stats["joint_script_candidate_bytes"]+=len(frame)
+                    stats["joint_uncompressed_script_bytes"]+=len(script)
+                    key=h.sha(frame);existing=frame_ids.get(key)
+                    if existing is not None:assert existing[1]==frame
+                    # Charge only a new frame; reclaim old frame only on last reference.
+                    marginal=(0 if existing is not None else len(frame)+48)-(len(old_frame)+48 if refs[old_fid]==1 else 0)
+                    if marginal<0 and 5*len(frame)<=4*len(full) and 2*(len(parent_frame)+len(frame))<=3*len(full):
+                        if existing is None:
+                            fid=next_fid;next_fid+=1
+                            db.execute("INSERT INTO frames VALUES(?,?)",(fid,frame))
+                            frame_ids[key]=(fid,frame)
+                        else:fid=existing[0]
+                        db.execute("UPDATE source SET kind=3,fid=? WHERE g=?",(fid,g))
+                        refs[old_fid]-=1;refs[fid]+=1
+                        stats["joint_selected"]+=1
+                        stats["joint_selected_proxy_savings"]-=marginal
+                else:stats["joint_ineligible"]+=1
             assert len(patches)<32768
             for i,(old,new) in enumerate(patches):
                 if not mapped:
@@ -204,6 +252,7 @@ def build_delta(db,path,events,mode):
             insert("base_fts",cid,target);bases.add(cid);stats["base_contents"]+=1;stats["base_tokens"]+=len(target)
         hist[article].append(cid)
     if runs:write_runs(db,pending,insert,stats,"_adaptive_" in mode,"_weighted_" in mode,"_adjusted_" in mode)
+    if joint:db.execute("DELETE FROM frames WHERE fid NOT IN (SELECT fid FROM source)")
     db.execute("DROP TABLE docs_0")
     for table in ("base_fts","patch_fts"):
         db.execute(f"INSERT INTO {table}({table}) VALUES('optimize')")
@@ -212,6 +261,22 @@ def build_delta(db,path,events,mode):
     sizes=dict(db.execute("SELECT name,sum(pgsize) FROM dbstat GROUP BY name"))
     return dict(sqlite_bytes=path.stat().st_size,fts_bytes=sum(v for k,v in sizes.items() if k.startswith(("base_fts_","patch_fts_"))),
         table_bytes=sizes,delta_build_us=(time.perf_counter_ns()-start)/1000,**stats)
+
+def recover_joint(db,g):
+    kind,=db.execute("SELECT kind FROM source WHERE g=?",(g,)).fetchone()
+    if kind!=3:return recover(db,g)
+    digest,n,parent,frame=db.execute("SELECT s.digest,s.n,s.parent,f.body FROM source s JOIN frames f ON s.fid=f.fid WHERE s.g=?",(g,)).fetchone()
+    assert 0<parent<g
+    pn,pk,pframe=db.execute("SELECT s.n,s.kind,f.body FROM source s JOIN frames f ON s.fid=f.fid WHERE s.g=?",(parent,)).fetchone()
+    assert pk==0
+    from forward_index import D
+    old=D.decompress(pframe,max_output_size=pn+1)
+    assert len(old)==pn
+    script=D.decompress(frame,max_output_size=10*n+64)
+    assert len(script)<=10*n+64
+    raw=decode_script(old,script,n)
+    assert h.sha(raw)==digest
+    return raw,n+pn,len(frame)+len(pframe)
 
 def prepare_delta(db,c,global_map=None):
     state=prepare(db,c);active=state[0];parents=dict(db.execute("SELECT cid,base FROM idx_delta"))
@@ -273,13 +338,15 @@ def run(events,manifest,cuts,folder,ext,corpus):
     qs=[(p,o) for p,o in qs if all(1<=len(tokens(check,t))<=L for t in p)];check.close()
     expected={(c,p,o):h.native(ref,p,o) for c,ref in refs.items() for p,o in qs}
     results={};sigs={}
-    for mode in ("positional","independent_multi","independent_quotient_global_multi","independent_runs_multi","independent_adaptive_multi","independent_runs_weighted_multi","independent_adaptive_weighted_multi","independent_adaptive_weighted_adjusted_multi"):
+    for mode in ("positional","independent_adaptive_weighted_adjusted_multi","aligned_adaptive_weighted_adjusted_multi","aligned_joint_adaptive_weighted_adjusted_multi"):
         path=folder/(mode+".sqlite");db,size=f.build(path,ext,events,"marginal",False)
         if mode!="positional":size.update(build_delta(db,path,events,mode))
         db.close();db=connect(path,ext)
         for g,(_,_,raw) in enumerate(events,1):
-            got,dd,ab=recover(db,g);assert got==raw
+            got,dd,ab=recover_joint(db,g);assert got==raw
             assert 2*dd<=5*len(raw) and 2*ab<=3*len(h.C.compress(raw))
+        size["final_frame_payload_bytes"]=db.execute("SELECT coalesce(sum(length(body)),0) FROM frames").fetchone()[0]
+        size["final_unique_frames"]=db.execute("SELECT count(*) FROM frames").fetchone()[0]
         prep={};prep_us=[]
         global_map=None;map_load_us=0
         if any(tag in mode for tag in ("_global_","_runs_","_adaptive_")):
@@ -302,21 +369,15 @@ def run(events,manifest,cuts,folder,ext,corpus):
         results[mode]=dict(**size,source_checks=len(events),rank_checks=len(times),max_score_error=err,
             map_load_us=map_load_us,query=h.quant(times),query_by_class={k:h.quant(v) for k,v in classes.items()},prepare=h.quant(prep_us),work=dict(work))
         print("ARM_JSON="+json.dumps(results[mode]),flush=True);db.close()
-    for new in results:
-        if new=="positional":continue
-        old="independent_multi"
-        for key in ("base_contents","base_tokens","patch_pairs","patch_tokens","delta_contents","aligned_selected"):
-            assert results[old].get(key,0)==results[new].get(key,0),(old,new,key)
-    for old,new in (("independent_runs_multi","independent_runs_weighted_multi"),
-                    ("independent_adaptive_multi","independent_adaptive_weighted_multi")):
-        assert results[old].get("direct_rows",0)==results[new].get("direct_rows",0)+results[new].get("avoided_rows",0)
-        assert results[old].get("direct_tokens",0)==results[new].get("direct_tokens",0)+results[new].get("avoided_tokens",0)
-        for key in ("shared_rows","shared_tokens","window_uses","correction_coeff_l1"):
-            assert results[old].get(key,0)==results[new].get(key,0),(old,new,key)
+    old=results["aligned_adaptive_weighted_adjusted_multi"];new=results["aligned_joint_adaptive_weighted_adjusted_multi"]
+    for key in ("base_contents","base_tokens","patch_pairs","patch_tokens","delta_contents","aligned_selected","direct_rows","shared_rows","window_uses","correction_coeff_l1","fts_bytes"):
+        assert old.get(key,0)==new.get(key,0),(key,old.get(key,0),new.get(key,0))
     for ref in refs.values():ref.close()
-    return dict(round=168,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
+    return dict(round=169,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
         query_count=len(qs),query_plan_sha256=h.sha(h.canonical(qs)).hex(),policies=results,
-        limitations=["finalized source/index subset, identical source encoding, no transactional origin ledger",
+        limitations=["finalized source/index subset, experimental source kind 3 in joint arm only, no transactional origin ledger",
+          "joint arm reuses normalized token alignment for byte-copy/literal script on matching one-hop source parent; raw byte equality checked before copying",
+          "new frame admitted on marginal catalog proxy and existing bounded source constraints; no claim of globally optimal joint codec",
           "exact default unicode61 phrase counts up to eight tokens, AND/OR, no highlighting or arbitrary positional query semantics",
           "one-hop base with signed edit-context windows, no source reconstruction during ranking",
           "quotient arms intern exact token windows with signed multiplicity; full active-use map prepared at every cutoff",

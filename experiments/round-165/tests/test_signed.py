@@ -181,3 +181,46 @@ def test_native_repeated_private_coefficients(tmp_path):
             h.verify(hits,h.native(ref,p,o))
         ref.close()
     db.close()
+
+
+def test_shared_alignment_native_offsets():
+    from signed_phrase import alignment
+    from shared_alignment import offsets,make_script,decode_script
+    from frequency_index import connect,tokens
+    db=connect(":memory:",EXT)
+    pairs=[("  CAFÉ, old! 中文. ","\nCafe new? 中文!"),
+        ("a b a b a b","a b a c a b"),("","new"),("old",""),
+        ("!!!","???"),("A\u0301 a","á A"),("alpha beta","ALPHA   BETA")]
+    for a,b in pairs:
+        old,raw=a.encode(),b.encode()
+        aa,bb=tokens(db,a),tokens(db,b)
+        ops=alignment(aa,bb)
+        script=make_script(old,raw,offsets(db,old,aa),offsets(db,raw,bb),ops)
+        assert decode_script(old,script,len(raw))==raw
+        assert windows(aa,bb,True,ops=ops)==windows(aa,bb,True)
+    db.close()
+
+def test_shared_alignment_random_native():
+    from signed_phrase import alignment
+    from shared_alignment import offsets,make_script,decode_script
+    from frequency_index import connect,tokens
+    db=connect(":memory:",EXT);rng=random.Random(169)
+    words=["A","a","B","b","café","CAFE","中文","x","!","é","e\u0301"]
+    seps=[" ","  ",", ","!","\n","-"]
+    for _ in range(300):
+        a=[rng.choice(words) for _ in range(rng.randrange(40))]
+        b=a[:]
+        for _ in range(4):
+            i=rng.randrange(len(b)+1);b[i:i+rng.randrange(3)]=[rng.choice(words) for _ in range(rng.randrange(3))]
+        def render(x):return rng.choice(seps)+''.join(w+rng.choice(seps) for w in x)
+        old,raw=render(a).encode(),render(b).encode()
+        aa,bb=tokens(db,old.decode()),tokens(db,raw.decode())
+        ops=alignment(aa,bb)
+        script=make_script(old,raw,offsets(db,old,aa),offsets(db,raw,bb),ops)
+        assert decode_script(old,script,len(raw))==raw
+    db.close()
+
+def test_shared_script_malformed():
+    from shared_alignment import decode_script
+    for script in (b"\x02",b"\x00",b"\x01"+b"\x00"*8,b"\x00\x00\x00\x00\x04x",b"\x01\x00\x00\x00\x05\x00\x00\x00\x01"):
+        with pytest.raises(ValueError):decode_script(b"abc",script,1)

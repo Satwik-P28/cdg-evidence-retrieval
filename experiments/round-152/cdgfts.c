@@ -66,6 +66,35 @@ static int stream_cb(void *ctx,int flags,const char *text,int n,int start,int en
     sqlite3_str_append(s,text,n);
     return sqlite3_str_errcode(s);
 }
+static int offset_cb(void *ctx,int flags,const char *text,int n,int start,int end){
+    sqlite3_str *s=(sqlite3_str*)ctx;
+    unsigned int a=(unsigned int)start,b=(unsigned int)end;
+    unsigned char bytes[8]={(unsigned char)(a>>24),(unsigned char)(a>>16),(unsigned char)(a>>8),(unsigned char)a,
+        (unsigned char)(b>>24),(unsigned char)(b>>16),(unsigned char)(b>>8),(unsigned char)b};
+    (void)text;(void)n;
+    if((flags & FTS5_TOKEN_COLOCATED)||start<0||end<=start)return SQLITE_ERROR;
+    sqlite3_str_append(s,(const char*)bytes,8);
+    return sqlite3_str_errcode(s);
+}
+static void token_offsets(sqlite3_context *ctx,int argc,sqlite3_value **argv){
+    TokenCounter *tc=(TokenCounter*)sqlite3_user_data(ctx);
+    int rc,n,size;char *out;
+    const unsigned char *text;
+    sqlite3_str *s;
+    if(argc!=1 || sqlite3_value_type(argv[0])!=SQLITE_TEXT){
+        sqlite3_result_error(ctx,"expected UTF8 text",-1);return;
+    }
+    text=sqlite3_value_text(argv[0]);n=sqlite3_value_bytes(argv[0]);
+    if(!text){sqlite3_result_error_nomem(ctx);return;}
+    s=sqlite3_str_new(sqlite3_context_db_handle(ctx));
+    rc=tc->tok.xTokenize(tc->instance,s,FTS5_TOKENIZE_DOCUMENT,(const char*)text,n,offset_cb);
+    if(rc==SQLITE_OK)rc=sqlite3_str_errcode(s);
+    size=sqlite3_str_length(s);out=sqlite3_str_finish(s);
+    if(rc!=SQLITE_OK){sqlite3_free(out);sqlite3_result_error_code(ctx,rc);return;}
+    if(size==0){sqlite3_free(out);sqlite3_result_zeroblob(ctx,0);return;}
+    if(!out){sqlite3_result_error_nomem(ctx);return;}
+    sqlite3_result_blob(ctx,out,size,sqlite3_free);
+}
 static void token_stream(sqlite3_context *ctx,int argc,sqlite3_value **argv){
     TokenCounter *tc=(TokenCounter*)sqlite3_user_data(ctx);
     int rc,n,size;char *out;
@@ -120,6 +149,9 @@ int sqlite3_cdgfts_init(sqlite3 *db,char **err,const sqlite3_api_routines *api){
                   tc,count_tokens,0,0,destroy_counter);
     if(rc!=SQLITE_OK)return rc;
     /* Both scalar functions are connection-local; token_count owns tc. */
-    return sqlite3_create_function_v2(db,"cdg_token_stream",1,SQLITE_UTF8|SQLITE_DETERMINISTIC,
+    rc=sqlite3_create_function_v2(db,"cdg_token_stream",1,SQLITE_UTF8|SQLITE_DETERMINISTIC,
                   tc,token_stream,0,0,0);
+    if(rc!=SQLITE_OK)return rc;
+    return sqlite3_create_function_v2(db,"cdg_token_offsets",1,SQLITE_UTF8|SQLITE_DETERMINISTIC,
+                  tc,token_offsets,0,0,0);
 }
