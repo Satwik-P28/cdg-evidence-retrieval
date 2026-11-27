@@ -1,7 +1,7 @@
 import itertools,random,os
 from pathlib import Path
 import pytest
-from signed_phrase import windows,count,L,build_delta,rank_delta,prepare_delta,f,h,signed_terms,load_patch_map,PatchRuns,share_window
+from signed_phrase import windows,count,L,build_delta,rank_delta,prepare_delta,f,h,signed_terms,load_patch_map,PatchRuns,share_window,write_runs
 EXT=Path(os.environ["CDG_FTS_EXTENSION"])
 
 def ngrams(seq):
@@ -92,7 +92,7 @@ def test_run_boundaries():
     assert not share_window(tuple(range(15)),[(1,1)])
     assert share_window(tuple(range(15)),[(1,1),(2,-1)])
 
-@pytest.mark.parametrize("mode",["independent_runs_multi","independent_adaptive_multi","independent_quotient_global_multi"])
+@pytest.mark.parametrize("mode",["independent_runs_multi","independent_adaptive_multi","independent_quotient_global_multi","independent_runs_weighted_multi","independent_adaptive_weighted_multi","independent_adaptive_weighted_adjusted_multi"])
 def test_global_map_native(tmp_path,mode):
     rng=random.Random(167)
     shared=b" one two three four five six seven OLD eight nine ten eleven twelve thirteen fourteen "
@@ -113,6 +113,71 @@ def test_global_map_native(tmp_path,mode):
         for p,o in [(("seven old eight",),"AND"),(("seven new eight",),"AND"),
                     (("seven different eight",),"AND"),(("one","old"),"OR")]:
             hits,_,_=rank_delta(db,p,o,prepare_delta(db,c,mapping))
+            h.verify(hits,h.native(ref,p,o))
+        ref.close()
+    db.close()
+
+
+@pytest.mark.parametrize("adaptive,adjusted",[(False,False),(True,False),(True,True)])
+def test_weighted_private_and_shared(tmp_path,adaptive,adjusted):
+    import collections
+    import sqlite3
+    path=tmp_path/"coeff.db"
+    db=sqlite3.connect(path)
+    db.execute("CREATE VIRTUAL TABLE patch_fts USING fts5(body,content='')")
+    db.execute("CREATE TABLE patch_run(last_ordinal INTEGER PRIMARY KEY,cid INTEGER NOT NULL)")
+    db.execute("CREATE TABLE patch_use(wid INTEGER NOT NULL,cid INTEGER NOT NULL,coeff INTEGER NOT NULL CHECK(coeff<>0),PRIMARY KEY(wid,cid)) WITHOUT ROWID")
+    repeated=tuple(["shared"]*15)
+    a=("a","a","b");b=("b","c");c=("c","a")
+    terms=[(1,{a:-17,b:3,repeated:4}),(4,{c:-2,repeated:-5}),(9,{("unique",):1})]
+    materialized={}
+    def insert(table,rid,w):
+        assert rid not in materialized
+        materialized[rid]=tuple(w)
+        db.execute(f"INSERT INTO {table}(rowid,body) VALUES(?,?)",(rid," ".join(w)))
+    stats=collections.Counter()
+    write_runs(db,terms,insert,stats,adaptive,True,adjusted)
+    assert stats["coefficient_exceptions"]>=3 and stats["avoided_rows"]>=19
+    db.commit();db.close()
+    db=sqlite3.connect(path)
+    mapping=load_patch_map(db)
+    got=collections.defaultdict(collections.Counter)
+    for (rid,) in db.execute("SELECT rowid FROM patch_fts"):
+        for cid,coef in mapping.get(rid,()):got[cid][materialized[rid]]+=coef
+    assert got=={cid:collections.Counter(cs) for cid,cs in terms}
+    for p in [("a",),("a","a"),("shared","shared"),("unique",)]:
+        hits={r[0] for r in db.execute("SELECT rowid FROM patch_fts WHERE patch_fts MATCH ?",('"'+ ' '.join(p)+'"',))}
+        for active in ({1},{4},{1,4,9},set()):
+            observed=collections.Counter()
+            for rid in hits:
+                tf=count(list(materialized[rid]),list(p))
+                for cid,coef in mapping.get(rid,()):
+                    if cid in active:observed[cid]+=tf*coef
+            want={cid:sum(coef*count(list(w),list(p)) for w,coef in cs.items()) for cid,cs in terms if cid in active}
+            assert observed==collections.Counter(want)
+    db.close()
+
+def test_adjusted_sharing():
+    w=tuple(range(4))
+    uses=[(1,20),(2,-20)]
+    assert share_window(w,uses)
+    assert not share_window(w,uses,True)
+
+def test_native_repeated_private_coefficients(tmp_path):
+    rng=random.Random(168)
+    # The same 15-token window is repeated with disjoint contexts, ensuring non-unit signed coefficients.
+    unit=b" one two three four five six seven OLD eight nine ten eleven twelve thirteen fourteen "
+    sep=b" ".join(("sep"+str(i)).encode() for i in range(20))
+    base=b" ".join(("tok"+str(rng.randrange(1000000))).encode() for _ in range(1200))+unit+sep+unit+sep+unit
+    child=base.replace(b"OLD",b"NEW")
+    ev=[("a",0,base),("a",1,child)]
+    path=tmp_path/"db";db,_=f.build(path,EXT,ev,"marginal",False)
+    size=build_delta(db,path,ev,"independent_runs_weighted_multi")
+    assert size["coefficient_exceptions"]>0 and size["avoided_rows"]>0
+    for cutoff in (1,2):
+        ref=h.active_oracle(ev,cutoff)
+        for p,o in [(("seven old eight",),"AND"),(("seven new eight",),"AND"),(("old","new"),"OR")]:
+            hits,_,_=rank_delta(db,p,o,prepare_delta(db,cutoff))
             h.verify(hits,h.native(ref,p,o))
         ref.close()
     db.close()

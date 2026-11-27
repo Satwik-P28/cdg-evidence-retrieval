@@ -56,25 +56,33 @@ def signed_terms(patches):
         if new:out[tuple(new)]+=1
     return {w:c for w,c in out.items() if c}
 
-def share_window(w,uses):
+def share_window(w,uses,adjusted=False):
     # Fixed, untuned token-equivalent proxy, not a byte-optimal estimator.
-    multiplicity=sum(abs(c) for _,c in uses)
+    multiplicity=len(uses) if adjusted else sum(abs(c) for _,c in uses)
     return len(uses)>1 and (multiplicity-1)*len(w)>6*len(uses)
 
-def write_runs(db,terms,insert,stats,adaptive):
+def write_runs(db,terms,insert,stats,adaptive,weighted=False,adjusted=False):
     """Direct signed rows grouped by cid; shared rows occupy a separate range."""
     uses=collections.defaultdict(list)
     for cid,corrections in terms:
         for w,coeff in corrections.items():uses[w].append((cid,coeff))
-    shared={w for w,v in uses.items() if adaptive and share_window(w,v)}
+    shared={w for w,v in uses.items() if adaptive and share_window(w,v,adjusted)}
     ordinal=0
     for cid,corrections in terms:
         before=ordinal
         for w,coeff in corrections.items():
             if w in shared:continue
-            for _ in range(abs(coeff)):
+            for _ in range(1 if weighted else abs(coeff)):
                 ordinal+=1
-                insert("patch_fts",2*ordinal+int(coeff>0),list(w))
+                rid=2*ordinal+int(coeff>0)
+                insert("patch_fts",rid,list(w))
+                if weighted and abs(coeff)>1:
+                    if not stats["coefficient_exceptions"]:
+                        db.execute("CREATE TABLE patch_coeff(rid INTEGER PRIMARY KEY,magnitude INTEGER NOT NULL CHECK(magnitude>1))")
+                    db.execute("INSERT INTO patch_coeff VALUES(?,?)",(rid,abs(coeff)))
+                    stats["coefficient_exceptions"]+=1
+                    stats["avoided_rows"]+=abs(coeff)-1
+                    stats["avoided_tokens"]+=(abs(coeff)-1)*len(w)
                 stats["direct_rows"]+=1
                 stats["direct_tokens"]+=len(w)
         if ordinal>before:
@@ -91,15 +99,17 @@ def write_runs(db,terms,insert,stats,adaptive):
     stats["correction_coeff_l1"]=sum(abs(c) for v in uses.values() for _,c in v)
 
 class PatchRuns:
-    def __init__(self,rows,shared):
+    def __init__(self,rows,shared,coefficients=None):
         self.ends=[end for end,_ in rows]
         self.cids=[cid for _,cid in rows]
         self.shared=shared
+        self.coefficients=coefficients if coefficients is not None else {}
 
     def get(self,rid,default=()):
         if self.ends and 2<=rid<=2*self.ends[-1]+1:
             i=bisect.bisect_left(self.ends,rid//2)
-            return ((self.cids[i],1 if rid&1 else -1),)
+            magnitude=self.coefficients.get(rid,1)
+            return ((self.cids[i],magnitude if rid&1 else -magnitude),)
         return self.shared.get(rid,default)
 
 def load_patch_map(db):
@@ -109,7 +119,8 @@ def load_patch_map(db):
     for wid,cid,coeff in db.execute("SELECT wid,cid,coeff FROM patch_use"):
         mapping[wid].append((cid,coeff))
     if "patch_run" in tables:
-        return PatchRuns(list(db.execute("SELECT last_ordinal,cid FROM patch_run ORDER BY last_ordinal")),mapping)
+        coefficients=dict(db.execute("SELECT rid,magnitude FROM patch_coeff")) if "patch_coeff" in tables else {}
+        return PatchRuns(list(db.execute("SELECT last_ordinal,cid FROM patch_run ORDER BY last_ordinal")),mapping,coefficients)
     return mapping
 
 def build_delta(db,path,events,mode):
@@ -192,7 +203,7 @@ def build_delta(db,path,events,mode):
         else:
             insert("base_fts",cid,target);bases.add(cid);stats["base_contents"]+=1;stats["base_tokens"]+=len(target)
         hist[article].append(cid)
-    if runs:write_runs(db,pending,insert,stats,"_adaptive_" in mode)
+    if runs:write_runs(db,pending,insert,stats,"_adaptive_" in mode,"_weighted_" in mode,"_adjusted_" in mode)
     db.execute("DROP TABLE docs_0")
     for table in ("base_fts","patch_fts"):
         db.execute(f"INSERT INTO {table}({table}) VALUES('optimize')")
@@ -207,7 +218,9 @@ def prepare_delta(db,c,global_map=None):
     children=collections.defaultdict(list)
     for cid in active:children[parents.get(cid,cid)].append(cid)
     patch_children=global_map
-    if global_map is None and db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='patch_use'").fetchone():
+    if global_map is None and db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='patch_run'").fetchone():
+        patch_children=load_patch_map(db)
+    elif global_map is None and db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='patch_use'").fetchone():
         patch_children=collections.defaultdict(list)
         for wid,cid,coeff in db.execute("SELECT wid,cid,coeff FROM patch_use"):
             if cid in active:patch_children[wid].append((cid,coeff))
@@ -260,7 +273,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
     qs=[(p,o) for p,o in qs if all(1<=len(tokens(check,t))<=L for t in p)];check.close()
     expected={(c,p,o):h.native(ref,p,o) for c,ref in refs.items() for p,o in qs}
     results={};sigs={}
-    for mode in ("positional","aligned_single","aligned_multi","independent_multi","aligned_quotient_multi","independent_quotient_multi","independent_dense_multi","independent_quotient_global_multi","independent_runs_multi","independent_adaptive_multi"):
+    for mode in ("positional","independent_multi","independent_quotient_global_multi","independent_runs_multi","independent_adaptive_multi","independent_runs_weighted_multi","independent_adaptive_weighted_multi","independent_adaptive_weighted_adjusted_multi"):
         path=folder/(mode+".sqlite");db,size=f.build(path,ext,events,"marginal",False)
         if mode!="positional":size.update(build_delta(db,path,events,mode))
         db.close();db=connect(path,ext)
@@ -289,11 +302,19 @@ def run(events,manifest,cuts,folder,ext,corpus):
         results[mode]=dict(**size,source_checks=len(events),rank_checks=len(times),max_score_error=err,
             map_load_us=map_load_us,query=h.quant(times),query_by_class={k:h.quant(v) for k,v in classes.items()},prepare=h.quant(prep_us),work=dict(work))
         print("ARM_JSON="+json.dumps(results[mode]),flush=True);db.close()
-    for old,new in (("aligned_multi","aligned_quotient_multi"),("independent_multi","independent_quotient_multi"),("independent_multi","independent_dense_multi"),("independent_multi","independent_runs_multi"),("independent_multi","independent_adaptive_multi"),("independent_multi","independent_quotient_global_multi")):
+    for new in results:
+        if new=="positional":continue
+        old="independent_multi"
         for key in ("base_contents","base_tokens","patch_pairs","patch_tokens","delta_contents","aligned_selected"):
             assert results[old].get(key,0)==results[new].get(key,0),(old,new,key)
+    for old,new in (("independent_runs_multi","independent_runs_weighted_multi"),
+                    ("independent_adaptive_multi","independent_adaptive_weighted_multi")):
+        assert results[old].get("direct_rows",0)==results[new].get("direct_rows",0)+results[new].get("avoided_rows",0)
+        assert results[old].get("direct_tokens",0)==results[new].get("direct_tokens",0)+results[new].get("avoided_tokens",0)
+        for key in ("shared_rows","shared_tokens","window_uses","correction_coeff_l1"):
+            assert results[old].get(key,0)==results[new].get(key,0),(old,new,key)
     for ref in refs.values():ref.close()
-    return dict(round=167,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
+    return dict(round=168,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
         query_count=len(qs),query_plan_sha256=h.sha(h.canonical(qs)).hex(),policies=results,
         limitations=["finalized source/index subset, identical source encoding, no transactional origin ledger",
           "exact default unicode61 phrase counts up to eight tokens, AND/OR, no highlighting or arbitrary positional query semantics",
@@ -302,6 +323,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
           "dense arm assigns consecutive row IDs with identical mapping layout but no window sharing or cancellation",
           "run arms build offline signed terms; global maps loaded once per opened archive and measured separately; active membership checked at query time",
           "adaptive sharing proxy fixed at six token-equivalents per use, not actual byte-optimal; no peak-memory measure",
+          "weighted private rows store one indexed row per nonzero term with sparse magnitude exceptions; adjusted admission uses child count instead of replicated multiplicity",
           "base/patch anchor selection proxy not physical byte optimum; aligned only when source parent is an index base",
           "two warm prepared passes, preparation reported separately, no physical IO claim",
           "versioned delta indexing and compressed pattern matching established; no first-of-kind claim"])
