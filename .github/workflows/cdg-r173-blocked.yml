@@ -1,0 +1,59 @@
+name: CDG R173 blocked positions
+on:
+  push:
+    branches: ['research/round-173-*']
+    paths: ['experiments/round-173/**','.github/workflows/cdg-r173-blocked.yml','research/rounds/round-173/**']
+  workflow_dispatch:
+jobs:
+  selfindex:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {corpus: ap, target: 10000, group: controls, sweep: true}
+          - {corpus: ap, target: 10000, group: duplex, sweep: false}
+          - {corpus: ap, target: 10000, group: unified, sweep: false}
+          - {corpus: ap, target: 100000, group: controls, sweep: false}
+          - {corpus: ap, target: 100000, group: unified, sweep: false}
+          - {corpus: clark, target: 10000, group: all, sweep: true}
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install zstandard==0.25.0 gdown==5.2.0 pytest==9.0.2 pyflakes==3.4.0 rapidfuzz==3.14.3
+      - run: python -m pyflakes experiments/round-173
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-152/cdgfts.c -o experiments/round-152/cdgfts.so
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-173/cdgbp.c -o experiments/round-173/cdgbp.so
+      - name: Native kernel equivalence and unit tests
+        run: CDG_FTS_EXTENSION="$PWD/experiments/round-152/cdgfts.so" PYTHONPATH=experiments/round-173 python -m pytest -q experiments/round-173
+      - name: Pure Python decoder fallback tests
+        run: CDG_BLOCK_KERNEL=off CDG_FTS_EXTENSION="$PWD/experiments/round-152/cdgfts.so" PYTHONPATH=experiments/round-173 python -m pytest -q experiments/round-173
+      - name: Independent probe
+        run: CDG_FTS_EXTENSION="$PWD/experiments/round-152/cdgfts.so" PYTHONPATH=experiments/round-173 python research/rounds/round-173/probe.py
+      - if: matrix.corpus == 'ap'
+        run: python experiments/round-136/download_source.py --out external/newsedits
+      - if: matrix.corpus == 'clark'
+        run: |
+          git init external/clark
+          git -C external/clark remote add origin https://github.com/belindal/ERASE.git
+          git -C external/clark fetch --depth=1 origin b93f898780b3cf40fedd4e9a00c51af9a27688bc
+          git -C external/clark checkout --detach FETCH_HEAD
+      - name: Controls
+        if: matrix.group == 'controls' || matrix.group == 'all'
+        run: python experiments/round-173/blocked_positions.py --corpus ${{ matrix.corpus }} --source external/${{ matrix.corpus == 'ap' && 'newsedits/ap.db' || 'clark' }} --target ${{ matrix.target }} --extension experiments/round-152/cdgfts.so --out experiments/round-173/ci-${{ matrix.group }}.json --only positional,adaptive,frequency,r172_top32,r172_all
+      - name: Duplex block arms
+        if: matrix.group == 'duplex' || matrix.group == 'all'
+        run: python experiments/round-173/blocked_positions.py --corpus ${{ matrix.corpus }} --source external/${{ matrix.corpus == 'ap' && 'newsedits/ap.db' || 'clark' }} --target ${{ matrix.target }} --extension experiments/round-152/cdgfts.so --out experiments/round-173/ci-${{ matrix.group }}.json --only duplex_b32_best_zstd,duplex_b128_best_zstd,duplex_b512_best_zstd
+      - name: Unified block arms
+        if: matrix.group == 'unified' || matrix.group == 'all'
+        run: python experiments/round-173/blocked_positions.py --corpus ${{ matrix.corpus }} --source external/${{ matrix.corpus == 'ap' && 'newsedits/ap.db' || 'clark' }} --target ${{ matrix.target }} --extension experiments/round-152/cdgfts.so --out experiments/round-173/ci-${{ matrix.group }}.json --only unified_b16_best_zstd,unified_b32_best_zstd,unified_b64_best_zstd,unified_b128_best_zstd,unified_b512_best_zstd,unified_b128_dv_raw,unified_b128_bp_raw
+      - name: Storage configuration sweep
+        if: matrix.sweep
+        run: python experiments/round-173/blocked_positions.py --corpus ${{ matrix.corpus }} --source external/${{ matrix.corpus == 'ap' && 'newsedits/ap.db' || 'clark' }} --target ${{ matrix.target }} --extension experiments/round-152/cdgfts.so --out experiments/round-173/ci-${{ matrix.group }}.json --only positional --sweep
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r173-${{ matrix.corpus }}-${{ matrix.target }}-${{ matrix.group }}
+          path: experiments/round-173/ci-${{ matrix.group }}.json
