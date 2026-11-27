@@ -1,0 +1,118 @@
+[
+  {
+    "style": "mixed",
+    "docs": 800,
+    "queries": 240,
+    "cutoffs": 5,
+    "policies": {
+      "0": {
+        "candidates": 108410,
+        "source_reads": 108410,
+        "true_hits": 3066,
+        "checks": 1200,
+        "activated_bytes": 27011202,
+        "archive_bytes": 229376,
+        "p95_us": 4303.546,
+        "resident_filter_bytes": 0
+      },
+      "256": {
+        "candidates": 108410,
+        "source_reads": 36483,
+        "true_hits": 3066,
+        "checks": 1200,
+        "activated_bytes": 9090137,
+        "archive_bytes": 274432,
+        "p95_us": 2663.478,
+        "resident_filter_bytes": 25600
+      },
+      "512": {
+        "candidates": 108410,
+        "source_reads": 10717,
+        "true_hits": 3066,
+        "checks": 1200,
+        "activated_bytes": 2669593,
+        "archive_bytes": 303104,
+        "p95_us": 1317.481,
+        "resident_filter_bytes": 51200
+      },
+      "1024": {
+        "candidates": 108410,
+        "source_reads": 4623,
+        "true_hits": 3066,
+        "checks": 1200,
+        "activated_bytes": 1151366,
+        "archive_bytes": 356352,
+        "p95_us": 688.535,
+        "resident_filter_bytes": 102400
+      },
+      "2048": {
+        "candidates": 108410,
+        "source_reads": 3551,
+        "true_hits": 3066,
+        "checks": 1200,
+        "activated_bytes": 883986,
+        "archive_bytes": 471040,
+        "p95_us": 516.266,
+        "resident_filter_bytes": 204800
+      }
+    }
+  },
+  {
+    "style": "common",
+    "docs": 800,
+    "queries": 238,
+    "cutoffs": 5,
+    "policies": {
+      "0": {
+        "candidates": 173629,
+        "source_reads": 173629,
+        "true_hits": 6389,
+        "checks": 1190,
+        "activated_bytes": 37361188,
+        "archive_bytes": 196608,
+        "p95_us": 4485.971,
+        "resident_filter_bytes": 0
+      },
+      "256": {
+        "candidates": 173629,
+        "source_reads": 55531,
+        "true_hits": 6389,
+        "checks": 1190,
+        "activated_bytes": 11943251,
+        "archive_bytes": 241664,
+        "p95_us": 2926.594,
+        "resident_filter_bytes": 25600
+      },
+      "512": {
+        "candidates": 173629,
+        "source_reads": 18204,
+        "true_hits": 6389,
+        "checks": 1190,
+        "activated_bytes": 3903371,
+        "archive_bytes": 270336,
+        "p95_us": 1685.244,
+        "resident_filter_bytes": 51200
+      },
+      "1024": {
+        "candidates": 173629,
+        "source_reads": 10119,
+        "true_hits": 6389,
+        "checks": 1190,
+        "activated_bytes": 2162692,
+        "archive_bytes": 323584,
+        "p95_us": 1217.781,
+        "resident_filter_bytes": 102400
+      },
+      "2048": {
+        "candidates": 173629,
+        "source_reads": 8855,
+        "true_hits": 6389,
+        "checks": 1190,
+        "activated_bytes": 1889992,
+        "archive_bytes": 438272,
+        "p95_us": 1160.685,
+        "resident_filter_bytes": 204800
+      }
+    }
+  }
+]
