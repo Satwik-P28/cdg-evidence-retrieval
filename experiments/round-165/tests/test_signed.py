@@ -1,7 +1,7 @@
 import itertools,random,os
 from pathlib import Path
 import pytest
-from signed_phrase import windows,count,L,build_delta,rank_delta,prepare_delta,f,h
+from signed_phrase import windows,count,L,build_delta,rank_delta,prepare_delta,f,h,signed_terms
 EXT=Path(os.environ["CDG_FTS_EXTENSION"])
 
 def ngrams(seq):
@@ -27,7 +27,7 @@ def test_random_spaced_edits():
             i=rng.randrange(len(b)+1);b[i:i+rng.randrange(5)]=[rng.randrange(5) for _ in range(rng.randrange(5))]
         check(a,b)
 
-@pytest.mark.parametrize("mode",["aligned_single","aligned_multi","independent_multi"])
+@pytest.mark.parametrize("mode",["aligned_single","aligned_multi","independent_multi","aligned_quotient_multi","independent_quotient_multi"])
 def test_native_signed_index(tmp_path,mode):
     rng=random.Random(166)
     text=b"alpha beta gamma delta epsilon theta "+b" ".join(("word"+str(rng.randrange(1000000))).encode() for _ in range(900))
@@ -41,4 +41,41 @@ def test_native_signed_index(tmp_path,mode):
             hits,df,_=rank_delta(db,p,o,prepare_delta(db,c));h.verify(hits,h.native(ref,p,o))
         ref.close()
     with pytest.raises(ValueError):rank_delta(db,("alpha "*9,),"AND",prepare_delta(db,len(ev)))
+    db.close()
+
+
+def test_signed_multiset_cancellation():
+    assert signed_terms([([1,2],[2,3]),([1,2],[2,3]),([2,3],[1,2])])=={(1,2):-1,(2,3):1}
+    assert signed_terms([([1],[2]),([2],[1]),([],[])])=={}
+
+def test_adaptive_halo():
+    rng=random.Random(166)
+    for _ in range(100):
+        a=[rng.randrange(4) for _ in range(rng.randrange(60))]
+        b=a[:]
+        for _ in range(6):
+            i=rng.randrange(len(b)+1)
+            b[i:i+rng.randrange(4)]=[rng.randrange(4) for _ in range(rng.randrange(4))]
+        for limit in range(1,L+1):
+            terms=signed_terms(windows(a,b,True,limit))
+            for p in ngrams(a)|ngrams(b):
+                if len(p)!=limit:continue
+                q=list(p)
+                assert count(b,q)==count(a,q)+sum(coef*count(list(w),q) for w,coef in terms.items())
+
+def test_native_quotient_multiplicity(tmp_path):
+    rng=random.Random(166)
+    context=b"left one two three four five six seven OLD eight nine ten eleven twelve thirteen right"
+    def document():
+        return b" ".join(("tok"+str(rng.randrange(1000000))).encode() for _ in range(900))+b" "+context
+    a,b=document(),document()
+    ev=[("a",0,a),("b",0,b),("a",1,a.replace(b"OLD",b"NEW")),("b",1,b.replace(b"OLD",b"NEW"))]
+    path=tmp_path/"db";db,_=f.build(path,EXT,ev,"marginal",False)
+    size=build_delta(db,path,ev,"independent_quotient_multi")
+    assert size["window_uses"]>size["distinct_windows"]
+    for c in range(1,len(ev)+1):
+        ref=h.active_oracle(ev,c)
+        for p,o in [(("seven old eight",),"AND"),(("seven new eight",),"AND"),(("left","new"),"OR")]:
+            hits,_,_=rank_delta(db,p,o,prepare_delta(db,c));h.verify(hits,h.native(ref,p,o))
+        ref.close()
     db.close()

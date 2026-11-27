@@ -10,7 +10,9 @@ from frequency_index import f,h,si,connect,nr,ar,tokens,query_plan,prepare,recov
 L=8
 HALO=L-1
 
-def windows(a,b,multi):
+def windows(a,b,multi,limit=L):
+    if not 1<=limit<=L:raise ValueError('unsupported phrase length')
+    halo=limit-1
     if a==b:return []
     if multi:
         # Exact token interning avoids treating a hash collision as equality.
@@ -29,7 +31,7 @@ def windows(a,b,multi):
         edits=[(p,len(a)-s,p,len(b)-s)]
     groups=[]
     for i,j,k,l in edits:
-        if groups and i-groups[-1][1]<2*HALO:
+        if groups and i-groups[-1][1]<2*halo:
             x,y,z,w=groups[-1]
             assert i-y==k-w
             groups[-1]=(x,j,z,l)
@@ -37,14 +39,22 @@ def windows(a,b,multi):
     out=[];pa=pb=0
     for i,j,k,l in groups:
         assert i-pa==k-pb and a[pa:i]==b[pb:k]
-        x,y=max(0,i-HALO),min(len(a),j+HALO)
-        z,w=max(0,k-HALO),min(len(b),l+HALO)
+        x,y=max(0,i-halo),min(len(a),j+halo)
+        z,w=max(0,k-halo),min(len(b),l+halo)
         out.append((a[x:y],b[z:w]));pa,pb=j,l
     assert a[pa:]==b[pb:]
     return out
 
 def count(ts,p):
     return sum(ts[i:i+len(p)]==p for i in range(len(ts)-len(p)+1))
+
+def signed_terms(patches):
+    """Exact sparse signed multiset; never rely on hash equality alone."""
+    out=collections.Counter()
+    for old,new in patches:
+        if old:out[tuple(old)]-=1
+        if new:out[tuple(new)]+=1
+    return {w:c for w,c in out.items() if c}
 
 def build_delta(db,path,events,mode):
     start=time.perf_counter_ns()
@@ -53,6 +63,10 @@ def build_delta(db,path,events,mode):
       CREATE VIRTUAL TABLE patch_fts USING fts5(body,content='');
       CREATE TABLE idx_delta(cid INTEGER PRIMARY KEY,base INTEGER NOT NULL CHECK(base<cid));
     """)
+    quotient="_quotient_" in mode
+    window_ids={}
+    if quotient:
+        db.execute("CREATE TABLE patch_use(wid INTEGER NOT NULL,cid INTEGER NOT NULL,coeff INTEGER NOT NULL CHECK(coeff<>0),PRIMARY KEY(wid,cid)) WITHOUT ROWID")
     gids=dict(db.execute("SELECT g,cid FROM revisions"));parents=dict(db.execute("SELECT g,parent FROM source"))
     bases=set();hist=collections.defaultdict(list);token_cache={};stats=collections.Counter()
     def ts(cid):
@@ -88,9 +102,23 @@ def build_delta(db,path,events,mode):
             db.execute("INSERT INTO idx_delta VALUES(?,?)",(cid,base))
             assert len(patches)<32768
             for i,(old,new) in enumerate(patches):
-                if old:insert("patch_fts",(cid<<16)|(i<<1),old)
-                if new:insert("patch_fts",(cid<<16)|(i<<1)|1,new)
+                if not quotient:
+                    if old:insert("patch_fts",(cid<<16)|(i<<1),old)
+                    if new:insert("patch_fts",(cid<<16)|(i<<1)|1,new)
                 stats["patch_pairs"]+=1;stats["patch_tokens"]+=len(old)+len(new)
+                stats["raw_nonempty_windows"]+=int(bool(old))+int(bool(new))
+            if quotient:
+                terms=signed_terms(patches)
+                for w,coeff in terms.items():
+                    wid=window_ids.get(w)
+                    if wid is None:
+                        wid=len(window_ids)+1;window_ids[w]=wid
+                        insert("patch_fts",wid,list(w))
+                        stats["distinct_windows"]+=1
+                        stats["distinct_window_tokens"]+=len(w)
+                    db.execute("INSERT INTO patch_use VALUES(?,?,?)",(wid,cid,coeff))
+                    stats["window_uses"]+=1
+                    stats["coefficient_l1"]+=abs(coeff)
             stats["delta_contents"]+=1
             stats["aligned_selected"]+=int(base==aligned)
         else:
@@ -109,10 +137,15 @@ def prepare_delta(db,c):
     state=prepare(db,c);active=state[0];parents=dict(db.execute("SELECT cid,base FROM idx_delta"))
     children=collections.defaultdict(list)
     for cid in active:children[parents.get(cid,cid)].append(cid)
-    return state,children
+    patch_children=None
+    if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='patch_use'").fetchone():
+        patch_children=collections.defaultdict(list)
+        for wid,cid,coeff in db.execute("SELECT wid,cid,coeff FROM patch_use"):
+            if cid in active:patch_children[wid].append((cid,coeff))
+    return state,children,patch_children
 
 def rank_delta(db,p,o,prep):
-    ar.expression(p,o);(active,lens,n,total),children=prep;freq=[];work=collections.Counter()
+    ar.expression(p,o);(active,lens,n,total),children,patch_children=prep;freq=[];work=collections.Counter()
     for phrase in p:
         q=tokens(db,phrase)
         if not 1<=len(q)<=L:raise ValueError("unsupported phrase length")
@@ -122,8 +155,13 @@ def rank_delta(db,p,o,prep):
             for cid in children.get(base,()):counts[cid]+=tf;work["expansions"]+=1
         for rid,tf in db.execute("SELECT rowid,cdg_count(patch_fts) FROM patch_fts WHERE patch_fts MATCH ?",(ar.quote(phrase),)):
             work["patch_hits"]+=1
-            cid=rid>>16
-            if cid in active:counts[cid]+=tf if rid&1 else -tf
+            if patch_children is None:
+                cid=rid>>16
+                if cid in active:counts[cid]+=tf if rid&1 else -tf
+            else:
+                for cid,coeff in patch_children.get(rid,()):
+                    counts[cid]+=coeff*tf
+                    work["patch_expansions"]+=1
         assert all(v>=0 for v in counts.values())
         matches={g:tf for cid,tf in counts.items() if tf for g in active[cid]}
         assert all(1<=tf<=lens[g] for g,tf in matches.items())
@@ -151,7 +189,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
     qs=[(p,o) for p,o in qs if all(1<=len(tokens(check,t))<=L for t in p)];check.close()
     expected={(c,p,o):h.native(ref,p,o) for c,ref in refs.items() for p,o in qs}
     results={};sigs={}
-    for mode in ("positional","aligned_single","aligned_multi","independent_multi"):
+    for mode in ("positional","aligned_single","aligned_multi","independent_multi","aligned_quotient_multi","independent_quotient_multi"):
         path=folder/(mode+".sqlite");db,size=f.build(path,ext,events,"marginal",False)
         if mode!="positional":size.update(build_delta(db,path,events,mode))
         db.close();db=connect(path,ext)
@@ -177,12 +215,16 @@ def run(events,manifest,cuts,folder,ext,corpus):
         results[mode]=dict(**size,source_checks=len(events),rank_checks=len(times),max_score_error=err,
             query=h.quant(times),query_by_class={k:h.quant(v) for k,v in classes.items()},prepare=h.quant(prep_us),work=dict(work))
         print("ARM_JSON="+json.dumps(results[mode]),flush=True);db.close()
+    for old,new in (("aligned_multi","aligned_quotient_multi"),("independent_multi","independent_quotient_multi")):
+        for key in ("base_contents","base_tokens","patch_pairs","patch_tokens","delta_contents","aligned_selected"):
+            assert results[old].get(key,0)==results[new].get(key,0),(old,new,key)
     for ref in refs.values():ref.close()
-    return dict(round=165,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
+    return dict(round=166,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
         query_count=len(qs),query_plan_sha256=h.sha(h.canonical(qs)).hex(),policies=results,
         limitations=["finalized source/index subset, identical source encoding, no transactional origin ledger",
           "exact default unicode61 phrase counts up to eight tokens, AND/OR, no highlighting or arbitrary positional query semantics",
           "one-hop base with signed edit-context windows, no source reconstruction during ranking",
+          "quotient arms intern exact token windows with signed multiplicity; full active-use map prepared at every cutoff",
           "base/patch anchor selection proxy not physical byte optimum; aligned only when source parent is an index base",
           "two warm prepared passes, preparation reported separately, no physical IO claim",
           "versioned delta indexing and compressed pattern matching established; no first-of-kind claim"])
