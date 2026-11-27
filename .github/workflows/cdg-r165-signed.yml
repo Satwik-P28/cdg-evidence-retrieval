@@ -1,4 +1,4 @@
-name: CDG R165 signed phrase index
+name: CDG R170 shared token tape
 on:
   push:
     branches: ['research/round-165-*']
@@ -32,8 +32,8 @@ jobs:
           git -C external/clark remote add origin https://github.com/belindal/ERASE.git
           git -C external/clark fetch --depth=1 origin b93f898780b3cf40fedd4e9a00c51af9a27688bc
           git -C external/clark checkout --detach FETCH_HEAD
-      - run: python experiments/round-165/signed_phrase.py --corpus ${{ matrix.corpus }} --source ${{ matrix.source }} --target ${{ matrix.target }} --extension experiments/round-152/cdgfts.so --out experiments/round-165/ci.json
+      - run: python experiments/round-165/token_tape.py --corpus ${{ matrix.corpus }} --source ${{ matrix.source }} --target ${{ matrix.target }} --extension experiments/round-152/cdgfts.so --out experiments/round-165/ci.json
       - uses: actions/upload-artifact@v4
         with:
-          name: cdg-r165-${{ matrix.corpus }}-${{ matrix.target }}
+          name: cdg-r170-${{ matrix.corpus }}-${{ matrix.target }}
           path: experiments/round-165/ci.json
