@@ -15,3 +15,6 @@ System libzstd level 3 via ctypes, SQLite 3.46.1; 100 articles, 10 versions each
 |500|2056192|2056192|1376256|1376256|0/0|
 
 Synthetic only. Strong gains on small edits, no degradation in fully changed regime in this fixture. Corpus and source joint performance unverified. R171 should not assert novelty over dictionary compression; its question is whether reduced tape duplication makes the joint representation viable.
+
+## R170 final large-corpus verification
+Corrected run 45917370202 passed all three jobs. AP 74,364: positional 148459520 bytes, adaptive 132964352, frequency 95735808, text joint 171286528, IDs 171671552, IDs joint identical. Median/p95 query us: positional 212.5395/3352.384; adaptive 185.4895/2574.645; frequency 503.3575/86210.187; text joint 430.6125/9832.554; IDs 434.268/8830.323; IDs joint 406.3665/8793.427. All ranking errors zero. Integer joint rejected 62129 nonempty non-parent candidates on decoded-byte bound. Text joint selected 16137 and cut frame payload to 40276317 from 51804679 but increased total file. Reject standalone integer and text tapes as general archive improvements. Local R171 probe source adjacent; actually executed in container before commit.
