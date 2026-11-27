@@ -14,3 +14,17 @@ Unit tests include positive and negative coefficients, shared/private mixtures, 
 
 ## Next step
 R169 should stop optimizing correction mapping in isolation. The actual source codec is one-hop byte delta against a recent full source revision with compressed-frame and decoded-byte bounds; the retrieval codec currently independently selects a full index content by a token-window proxy. To share dependencies, expose the source candidate list and measure the intersection with feasible index base content IDs. Compare independent and joint policies with identical source recovery bounds, exact ranking, complete archive storage, and charge new token coordinate metadata. An aligned ID alone does not mean shared physical bytes. Do not report novelty until that comparison and stronger prior-art baselines are done.
+
+
+## Executed local synthetic probe
+
+Independent local SQLite copy of the private-row codec, 1,000 children, 2,000 distinct signed correction terms, no shared windows. Actual optimized/VACUUM SQLite bytes, including patch_run and lazy patch_coeff pages (no empty patch_use table in this simplified probe). Native FTS match membership, complete coefficient recovery after reopening, and Python TF aggregation for six queries at four cutoffs; 192 comparisons across eight databases, zero failures. No BM25 latency or complete archive claim.
+
+| Absolute coefficient | Replicated bytes | Weighted bytes | Replicated rows | Weighted rows |
+|---:|---:|---:|---:|---:|
+| 1 | 155648 | 155648 | 2000 | 2000 |
+| 2 | 266240 | 180224 | 4000 | 2000 |
+| 4 | 487424 | 180224 | 8000 | 2000 |
+| 16 | 1830912 | 180224 | 32000 | 2000 |
+
+Probe source is adjacent. R168 hosted implementation run 45916500364 started; no hosted R168 benchmark result at observation.
