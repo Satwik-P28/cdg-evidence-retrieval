@@ -1,0 +1,243 @@
+{
+  "round": 177,
+  "suites": {
+    "empty_documents": {
+      "cutoffs": [
+        2,
+        6,
+        12
+      ],
+      "rank_checks": 45,
+      "latency": {
+        "median_us": 30.77,
+        "p95_us": 87.12,
+        "p99_us": 99.96,
+        "max_us": 267.21,
+        "samples": 45
+      },
+      "blocks_activated": 0,
+      "blocks_decoded": 0,
+      "source_reads": 0,
+      "peak_rss_kb": 35340,
+      "revisions": 12,
+      "terms": 3,
+      "archive_bytes": 45056,
+      "event_digest": "2e3870e8dad90b99ad239d3f918dc84c879839a8c9e7fc6adcfbe835620e5228"
+    },
+    "duplicates": {
+      "cutoffs": [
+        10,
+        30,
+        34
+      ],
+      "rank_checks": 36,
+      "latency": {
+        "median_us": 59.93,
+        "p95_us": 111.87,
+        "p99_us": 117.04,
+        "max_us": 190.5,
+        "samples": 36
+      },
+      "blocks_activated": 2,
+      "blocks_decoded": 0,
+      "source_reads": 0,
+      "peak_rss_kb": 35340,
+      "revisions": 34,
+      "terms": 7,
+      "archive_bytes": 45056,
+      "event_digest": "a22a81178c733124c99f8233307c99b8b5514f313989c50e4ab9f77a09411ed1"
+    },
+    "unicode": {
+      "cutoffs": [
+        3,
+        6
+      ],
+      "rank_checks": 36,
+      "latency": {
+        "median_us": 27.5,
+        "p95_us": 54.4,
+        "p99_us": 55.98,
+        "max_us": 58.179,
+        "samples": 36
+      },
+      "blocks_activated": 0,
+      "blocks_decoded": 0,
+      "source_reads": 0,
+      "peak_rss_kb": 35340,
+      "revisions": 6,
+      "terms": 9,
+      "archive_bytes": 45056,
+      "event_digest": "8856a251208e346a348f7ee0dbd2609c4f72ad33a2f930803bbdcd9884f51edf"
+    },
+    "large_edits": {
+      "cutoffs": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "rank_checks": 48,
+      "latency": {
+        "median_us": 27.94,
+        "p95_us": 107.319,
+        "p99_us": 120.56,
+        "max_us": 208.209,
+        "samples": 48
+      },
+      "blocks_activated": 0,
+      "blocks_decoded": 0,
+      "source_reads": 0,
+      "peak_rss_kb": 44548,
+      "revisions": 5,
+      "terms": 4,
+      "archive_bytes": 45056,
+      "event_digest": "2c6a7d9b8890267f51c1b7b7299049b865332e2ede7c0e760c97b500decb0085"
+    },
+    "repeated_phrases": {
+      "cutoffs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "rank_checks": 48,
+      "latency": {
+        "median_us": 274.66,
+        "p95_us": 312.8,
+        "p99_us": 331.119,
+        "max_us": 362.08,
+        "samples": 48
+      },
+      "blocks_activated": 2,
+      "blocks_decoded": 0,
+      "source_reads": 0,
+      "peak_rss_kb": 44548,
+      "revisions": 4,
+      "terms": 3,
+      "archive_bytes": 45056,
+      "event_digest": "88e3a63fe19a63b70c9d31363604aa2ac94809de470205a684ae304caeb0c0b4"
+    },
+    "unrelated_revisions": {
+      "cutoffs": [
+        5,
+        10
+      ],
+      "rank_checks": 24,
+      "latency": {
+        "median_us": 42.42,
+        "p95_us": 80.57,
+        "p99_us": 91.02,
+        "max_us": 177.62,
+        "samples": 24
+      },
+      "blocks_activated": 0,
+      "blocks_decoded": 0,
+      "source_reads": 0,
+      "peak_rss_kb": 44548,
+      "revisions": 10,
+      "terms": 11,
+      "archive_bytes": 45056,
+      "event_digest": "fa1012232197b151beb9fee90861eb65835e98eeedde4a0704f286337d12e5ee"
+    },
+    "cutoff_boundaries": {
+      "cutoffs": [
+        1,
+        2,
+        8,
+        9
+      ],
+      "rank_checks": 24,
+      "latency": {
+        "median_us": 43.6,
+        "p95_us": 124.71,
+        "p99_us": 134.899,
+        "max_us": 143.079,
+        "samples": 24
+      },
+      "blocks_activated": 0,
+      "blocks_decoded": 0,
+      "source_reads": 0,
+      "peak_rss_kb": 44548,
+      "revisions": 9,
+      "terms": 4,
+      "archive_bytes": 45056,
+      "event_digest": "33322c0395a15624becce82f7887e78115b7e813ecd5d0d8cd614b8475d254b8"
+    },
+    "malformed_input": {
+      "cases": 2,
+      "outcome": "rejected:UnicodeDecodeError",
+      "note": "non-UTF-8 source bytes are refused at build time, never silently replaced"
+    },
+    "corruption": {
+      "body": {
+        "outcome": "detected",
+        "detail": "ValueError: empty block header",
+        "term": "alpha"
+      },
+      "dir": {
+        "outcome": "detected",
+        "detail": "ValueError: truncated varint",
+        "term": "alpha"
+      },
+      "note": "detection comes from the block header/format validation, not from a checksum: a corrupted block whose bytes still parse would be silently wrong. A per-term truncated BLAKE2b digest would cost 8 B per term (358,664 B on AP) and is not part of the archived format."
+    },
+    "coefficients": {
+      "cases": [
+        {
+          "k1": 0.0,
+          "b": 0.0,
+          "score": 3.166152008096118
+        },
+        {
+          "k1": 0.0,
+          "b": 0.75,
+          "score": 3.166152008096118
+        },
+        {
+          "k1": 0.0,
+          "b": 1.0,
+          "score": 3.166152008096118
+        },
+        {
+          "k1": 1.2,
+          "b": 0.0,
+          "score": 4.975381727008185
+        },
+        {
+          "k1": 1.2,
+          "b": 0.75,
+          "score": 4.643689611874307
+        },
+        {
+          "k1": 1.2,
+          "b": 1.0,
+          "score": 4.5427398377031265
+        },
+        {
+          "k1": 10.0,
+          "b": 0.0,
+          "score": 8.037155097474761
+        },
+        {
+          "k1": 10.0,
+          "b": 0.75,
+          "score": 6.740839759172379
+        },
+        {
+          "k1": 10.0,
+          "b": 1.0,
+          "score": 6.396919363296239
+        }
+      ],
+      "pinned": {
+        "k1": 1.2,
+        "b": 0.75
+      },
+      "note": "the scorer uses fixed BM25 constants; the formula is validated for non-unit k1/b, but plumbing them is future work"
+    }
+  },
+  "limitations": [
+    "synthetic fixtures are tiny; they test semantics, not throughput",
+    "physical corruption maps to a documented outcome rather than a guarantee"
+  ]
+}

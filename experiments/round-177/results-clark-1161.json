@@ -1,0 +1,42 @@
+{
+  "round": 177,
+  "corpus": "clark",
+  "revisions": 1161,
+  "manifest_sha256": "1567b6c765b7a648e1a2a6d4221bf22543a7011377fda94161c37c04a29b6e2f",
+  "cutoffs": [
+    290,
+    580,
+    870,
+    1161
+  ],
+  "repeats": 5,
+  "rank_checks": 1600,
+  "archive_bytes": 8212480,
+  "p95_us": [
+    1726.616,
+    1783.036,
+    1770.787,
+    1731.627,
+    1763.796
+  ],
+  "p95_median": 1763.796,
+  "p95_cv": 0.01264888515234182,
+  "median_us": [
+    318.04,
+    322.5,
+    310.999,
+    321.809,
+    310.07
+  ],
+  "median_median": 318.04,
+  "coefficient_of_variation": {
+    "p95": 0.01264888515234182,
+    "median": 0.016589000274943255
+  },
+  "peak_rss_kb": 60512,
+  "limitations": [
+    "warm cache only: dropping the page cache needs root, which this environment lacks",
+    "cold behaviour is represented by the first repetition, not by an eviction",
+    "logical activation only, no physical I/O instrumentation"
+  ]
+}
