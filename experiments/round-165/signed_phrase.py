@@ -64,8 +64,10 @@ def build_delta(db,path,events,mode):
       CREATE TABLE idx_delta(cid INTEGER PRIMARY KEY,base INTEGER NOT NULL CHECK(base<cid));
     """)
     quotient="_quotient_" in mode
+    dense="_dense_" in mode
+    mapped=quotient or dense
     window_ids={}
-    if quotient:
+    if mapped:
         db.execute("CREATE TABLE patch_use(wid INTEGER NOT NULL,cid INTEGER NOT NULL,coeff INTEGER NOT NULL CHECK(coeff<>0),PRIMARY KEY(wid,cid)) WITHOUT ROWID")
     gids=dict(db.execute("SELECT g,cid FROM revisions"));parents=dict(db.execute("SELECT g,parent FROM source"))
     bases=set();hist=collections.defaultdict(list);token_cache={};stats=collections.Counter()
@@ -102,20 +104,25 @@ def build_delta(db,path,events,mode):
             db.execute("INSERT INTO idx_delta VALUES(?,?)",(cid,base))
             assert len(patches)<32768
             for i,(old,new) in enumerate(patches):
-                if not quotient:
+                if not mapped:
                     if old:insert("patch_fts",(cid<<16)|(i<<1),old)
                     if new:insert("patch_fts",(cid<<16)|(i<<1)|1,new)
                 stats["patch_pairs"]+=1;stats["patch_tokens"]+=len(old)+len(new)
                 stats["raw_nonempty_windows"]+=int(bool(old))+int(bool(new))
-            if quotient:
-                terms=signed_terms(patches)
-                for w,coeff in terms.items():
-                    wid=window_ids.get(w)
-                    if wid is None:
-                        wid=len(window_ids)+1;window_ids[w]=wid
+            if mapped:
+                terms=(signed_terms(patches).items() if quotient else
+                    [(tuple(w),sign) for old,new in patches for w,sign in ((old,-1),(new,1)) if w])
+                for w,coeff in terms:
+                    if dense:
+                        stats["dense_rows"]+=1;wid=stats["dense_rows"]
                         insert("patch_fts",wid,list(w))
-                        stats["distinct_windows"]+=1
-                        stats["distinct_window_tokens"]+=len(w)
+                    else:
+                        wid=window_ids.get(w)
+                        if wid is None:
+                            wid=len(window_ids)+1;window_ids[w]=wid
+                            insert("patch_fts",wid,list(w))
+                            stats["distinct_windows"]+=1
+                            stats["distinct_window_tokens"]+=len(w)
                     db.execute("INSERT INTO patch_use VALUES(?,?,?)",(wid,cid,coeff))
                     stats["window_uses"]+=1
                     stats["coefficient_l1"]+=abs(coeff)
@@ -189,7 +196,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
     qs=[(p,o) for p,o in qs if all(1<=len(tokens(check,t))<=L for t in p)];check.close()
     expected={(c,p,o):h.native(ref,p,o) for c,ref in refs.items() for p,o in qs}
     results={};sigs={}
-    for mode in ("positional","aligned_single","aligned_multi","independent_multi","aligned_quotient_multi","independent_quotient_multi"):
+    for mode in ("positional","aligned_single","aligned_multi","independent_multi","aligned_quotient_multi","independent_quotient_multi","independent_dense_multi"):
         path=folder/(mode+".sqlite");db,size=f.build(path,ext,events,"marginal",False)
         if mode!="positional":size.update(build_delta(db,path,events,mode))
         db.close();db=connect(path,ext)
@@ -215,7 +222,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
         results[mode]=dict(**size,source_checks=len(events),rank_checks=len(times),max_score_error=err,
             query=h.quant(times),query_by_class={k:h.quant(v) for k,v in classes.items()},prepare=h.quant(prep_us),work=dict(work))
         print("ARM_JSON="+json.dumps(results[mode]),flush=True);db.close()
-    for old,new in (("aligned_multi","aligned_quotient_multi"),("independent_multi","independent_quotient_multi")):
+    for old,new in (("aligned_multi","aligned_quotient_multi"),("independent_multi","independent_quotient_multi"),("independent_multi","independent_dense_multi")):
         for key in ("base_contents","base_tokens","patch_pairs","patch_tokens","delta_contents","aligned_selected"):
             assert results[old].get(key,0)==results[new].get(key,0),(old,new,key)
     for ref in refs.values():ref.close()
@@ -225,6 +232,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
           "exact default unicode61 phrase counts up to eight tokens, AND/OR, no highlighting or arbitrary positional query semantics",
           "one-hop base with signed edit-context windows, no source reconstruction during ranking",
           "quotient arms intern exact token windows with signed multiplicity; full active-use map prepared at every cutoff",
+          "dense arm assigns consecutive row IDs with identical mapping layout but no window sharing or cancellation",
           "base/patch anchor selection proxy not physical byte optimum; aligned only when source parent is an index base",
           "two warm prepared passes, preparation reported separately, no physical IO claim",
           "versioned delta indexing and compressed pattern matching established; no first-of-kind claim"])

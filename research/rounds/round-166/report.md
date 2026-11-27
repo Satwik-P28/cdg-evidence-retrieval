@@ -10,3 +10,20 @@ Adaptive halo identity: use halo m-1 and group edit regions separated by fewer t
 Controls: original positional, aligned single, aligned multi, independent multi, aligned quotient multi, independent quotient multi; AP 10k/74k and CLARK. Compare complete archive, FTS bytes, delta mappings, distinct window count and tokens, coefficient L1, expansions, preparation and warm query latency. Native snapshot oracle, byte-exact source checks, tests for identical window reuse, signed cancellation, adaptive halo and overlap. No performance claim until hosted results. The first iteration deliberately reuses the R165 workflow on a separate compatible branch; output JSON round=166 distinguishes results.
 
 Prior art: He/Suel positional fragment indexing https://research.engineering.nyu.edu/~suel/papers/frag.pdf ; Gagie et al. Document Retrieval on Repetitive String Collections https://arxiv.org/abs/1605.09362 ; Universal Indexes for Highly Repetitive Document Collections https://arxiv.org/abs/1604.08897 ; Document Listing on Repetitive Collections with Guaranteed Performance https://arxiv.org/abs/1707.06374 . Interning, delta indexes and compressed retrieval are established. Claim only measured tradeoffs of this exact representation and later source/index sharing if demonstrated. Global token tuple interning has transient RAM cost; no transactional integration; preparation may worsen. If total archive savings do not exceed mapping overhead, retain independent multi.
+
+
+## Local falsification probe and dense-row control
+
+An independent local copy of the multi-splice adaptive window kernel and sparse signed multiset passed 137,032 pair/length frequency-map comparisons: 16,129 exhaustive binary pairs (length 0..6) and 1,000 random multi-edit pairs, each tested at lengths 1..8. The test compares all n-gram frequencies, including spurious terms. RapidFuzz 3.14.3; seed 166. This is local algorithm evidence, not hosted corpus validation.
+
+A synthetic SQLite FTS5 patch-subsystem probe with 5,000 children, one replacement each, 15 tokens per nonempty window, and controlled sharing exposed the sparse-rowid confound. All arms optimize and VACUUM. Dense baseline uses cid<<1 plus sign, possible only because the synthetic probe has exactly one pair per child; quotient charges the full patch_use table.
+
+| Distinct window pairs | Sparse baseline bytes | Dense baseline bytes | Quotient bytes |
+|---:|---:|---:|---:|
+| 1 | 761856 | 573440 | 126976 |
+| 10 | 761856 | 573440 | 131072 |
+| 100 | 765952 | 577536 | 151552 |
+| 1000 | 770048 | 581632 | 258048 |
+| 5000 | 786432 | 593920 | 712704 |
+
+At zero sharing quotient loses 20% vs the dense direct-address synthetic baseline, despite appearing to beat sparse row IDs. At high sharing quotient wins. No source or whole archive in this synthetic probe. The corpus dense control now assigns consecutive row IDs, charges the same mapping table as quotient, preserves raw signed windows without merging/cancellation, and fixes the independent anchor policy. It is not a universally optimal dense direct-address encoding. Compare sparse/dense/quotient separately and avoid attributing all storage gains to sharing. First hosted R166 run 45915371243 passed all three unit-test steps and CLARK end-to-end as observed before dense-control revision; the AP corpus results were not yet complete at that observation. New commit requires fresh CI.

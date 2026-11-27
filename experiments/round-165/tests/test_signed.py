@@ -27,7 +27,7 @@ def test_random_spaced_edits():
             i=rng.randrange(len(b)+1);b[i:i+rng.randrange(5)]=[rng.randrange(5) for _ in range(rng.randrange(5))]
         check(a,b)
 
-@pytest.mark.parametrize("mode",["aligned_single","aligned_multi","independent_multi","aligned_quotient_multi","independent_quotient_multi"])
+@pytest.mark.parametrize("mode",["aligned_single","aligned_multi","independent_multi","aligned_quotient_multi","independent_quotient_multi","independent_dense_multi"])
 def test_native_signed_index(tmp_path,mode):
     rng=random.Random(166)
     text=b"alpha beta gamma delta epsilon theta "+b" ".join(("word"+str(rng.randrange(1000000))).encode() for _ in range(900))
