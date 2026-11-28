@@ -6,3 +6,24 @@ R195 validated bounded block partitioning on QASPER but equal aggregate evidence
 Python stdlib first eight lexically sorted top-level .py files with >=160 nonblank lines, 20 eight-line synthetic passages per file, 160 total. Python SQLite 3.46.1, zlib6, contentless FTS5 single column, physical page count after VACUUM, SHA source receipts. Two seeds196/197, two hash admission orders, fixed block groups1/4/8. Exhaustively build every prefix 1..160, 12 curves, 1920 SQLite files, 154560 source byte/hash checks all passed. Across curves, 341 adjacent prefix size decreases (each 4096 B). 268 page-aligned budget checks: R196 fit_prefix always feasible, but missed largest feasible prefix in 64/268, maximum gap21 passages, mean gap1.194 including zeros, median12 size probes. Therefore binary search + sparse neighbor probes is NOT an exact largest-prefix solver. A post-hoc forward grid step16 up to64 passages then refine up to16 consecutive lengths reduces misses to1/268, max8, mean gap0.02985, median19 extra probes (not counting original probes, possible duplicates). This is an exploratory local calibration, not a general guarantee or QASPER improvement; do not silently modify precommitted hosted search. Local full-prefix size 131072 B individual,114688 B groups4/8 across seeds/policies. Complete raw curves, source file digests and exact executed code in companion CDG-R196-physical-prefix-probe.zip, results.json SHA256 07e961c31c8af57def2e9920d27718f3280ba7c12c3256b0421510dbc663478e. Local zlib fixture uses different schema and source corpus from hosted Zstd, no labels or retrieval-quality claim.
 
 Hosted run 46183860963 all four unit-test jobs passed; real QASPER steps still running at report time. https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/46183860963
+
+
+## Final hosted results
+All four QASPER matrix jobs completed successfully, run 46183860963. Raw machine-readable job outputs preserved in hosted-196-balanced.json, hosted-196-global.json, hosted-197-balanced.json and hosted-197-global.json. Identical 4096 context/8192 decompression caps; mean gold hits across the four seed/admission combinations (888 eligible per combination, not independent replicates):
+
+| storage bytes | architecture | mean hits | mean retained |
+|---:|---|---:|---:|
+|6291456|compact_individual|514.5|9387.75|
+|6291456|individual|495.75|8575.5|
+|6291456|fixed4|478.5|9611.25|
+|6291456|greedy2048|503|9578.5|
+|6291456|dp4096_penalty4|512|9279.75|
+|6291456|dp4096|458|9777|
+|8388608|compact_individual|589|12755.25|
+|8388608|individual|565.25|11629.5|
+|8388608|fixed4|538|13093.75|
+|8388608|greedy2048|568|13080.5|
+|8388608|dp4096_penalty4|586.5|12620|
+|8388608|dp4096|502|13266|
+
+Compact R102 independent is the strongest control. DP penalty4 loses or ties it in seven of eight matched comparisons, wins one by one question (536 vs535). R195 matched-schema gain does not generalize to the stronger compact control. No claim of improved evidence recovery vs strongest baseline. Full results include all three context/decode settings. Repeated dev questions not independent observations. Every actual file cap and source audit passed. Prioritize compact independent layout and evidence admission, not further fixed-group tuning.
