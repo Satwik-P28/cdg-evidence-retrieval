@@ -1,4 +1,4 @@
-name: CDG R165 signed phrase index
+name: CDG R184 certified corrections
 on:
   push:
     branches: ['research/round-165-*']
@@ -11,7 +11,6 @@ jobs:
       matrix:
         include:
           - {corpus: ap, target: 10000, source: external/newsedits/ap.db}
-          - {corpus: ap, target: 100000, source: external/newsedits/ap.db}
           - {corpus: clark, target: 10000, source: external/clark}
     runs-on: ubuntu-latest
     timeout-minutes: 150
@@ -32,8 +31,8 @@ jobs:
           git -C external/clark remote add origin https://github.com/belindal/ERASE.git
           git -C external/clark fetch --depth=1 origin b93f898780b3cf40fedd4e9a00c51af9a27688bc
           git -C external/clark checkout --detach FETCH_HEAD
-      - run: python experiments/round-165/signed_phrase.py --corpus ${{ matrix.corpus }} --source ${{ matrix.source }} --target ${{ matrix.target }} --extension experiments/round-152/cdgfts.so --out experiments/round-165/ci.json
+      - run: python experiments/round-165/certified_corrections.py --corpus ${{ matrix.corpus }} --source ${{ matrix.source }} --target ${{ matrix.target }} --extension experiments/round-152/cdgfts.so --out experiments/round-165/ci.json
       - uses: actions/upload-artifact@v4
         with:
-          name: cdg-r165-${{ matrix.corpus }}-${{ matrix.target }}
+          name: cdg-r184-${{ matrix.corpus }}-${{ matrix.target }}
           path: experiments/round-165/ci.json
