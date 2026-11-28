@@ -1,0 +1,154 @@
+{
+  "exhaustive": 119070,
+  "sqlite": "3.46.1",
+  "regimes": [
+    {
+      "regime": "substitution",
+      "pairs": 1800,
+      "queries": 120,
+      "suffixes_before": 111600,
+      "suffixes_after": 28704,
+      "policies": {
+        "fts": {
+          "bytes": 335872,
+          "setup_ms": 235.046543,
+          "median_us": 209.298,
+          "p95_us": 823.251,
+          "checks": 216000
+        },
+        "joint": {
+          "bytes": 151552,
+          "setup_ms": 20.856511,
+          "median_us": 3309.944,
+          "p95_us": 4756.036,
+          "checks": 216000
+        },
+        "factored": {
+          "bytes": 147456,
+          "setup_ms": 16.564237,
+          "median_us": 3491.297,
+          "p95_us": 5139.037,
+          "checks": 216000
+        },
+        "suffix_basis": {
+          "bytes": 212992,
+          "setup_ms": 64.210002,
+          "median_us": 821.454,
+          "p95_us": 1409.761,
+          "checks": 216000
+        }
+      }
+    },
+    {
+      "regime": "insertion",
+      "pairs": 1800,
+      "queries": 120,
+      "suffixes_before": 117000,
+      "suffixes_after": 30578,
+      "policies": {
+        "fts": {
+          "bytes": 348160,
+          "setup_ms": 172.159467,
+          "median_us": 217.28,
+          "p95_us": 4081.446,
+          "checks": 216000
+        },
+        "joint": {
+          "bytes": 159744,
+          "setup_ms": 24.477859,
+          "median_us": 3685.388,
+          "p95_us": 4782.513,
+          "checks": 216000
+        },
+        "factored": {
+          "bytes": 159744,
+          "setup_ms": 17.487731,
+          "median_us": 3782.735,
+          "p95_us": 5251.761,
+          "checks": 216000
+        },
+        "suffix_basis": {
+          "bytes": 229376,
+          "setup_ms": 60.505138,
+          "median_us": 800.295,
+          "p95_us": 1300.58,
+          "checks": 216000
+        }
+      }
+    },
+    {
+      "regime": "deletion",
+      "pairs": 1800,
+      "queries": 120,
+      "suffixes_before": 106200,
+      "suffixes_after": 30360,
+      "policies": {
+        "fts": {
+          "bytes": 323584,
+          "setup_ms": 134.787682,
+          "median_us": 249.41,
+          "p95_us": 992.756,
+          "checks": 216000
+        },
+        "joint": {
+          "bytes": 147456,
+          "setup_ms": 20.652338,
+          "median_us": 3911.552,
+          "p95_us": 5736.259,
+          "checks": 216000
+        },
+        "factored": {
+          "bytes": 147456,
+          "setup_ms": 15.558336,
+          "median_us": 4004.103,
+          "p95_us": 5274.069,
+          "checks": 216000
+        },
+        "suffix_basis": {
+          "bytes": 225280,
+          "setup_ms": 77.025526,
+          "median_us": 794.845,
+          "p95_us": 1165.678,
+          "checks": 216000
+        }
+      }
+    },
+    {
+      "regime": "rewrite",
+      "pairs": 1800,
+      "queries": 120,
+      "suffixes_before": 111600,
+      "suffixes_after": 79172,
+      "policies": {
+        "fts": {
+          "bytes": 352256,
+          "setup_ms": 161.317572,
+          "median_us": 175.492,
+          "p95_us": 943.757,
+          "checks": 216000
+        },
+        "joint": {
+          "bytes": 200704,
+          "setup_ms": 24.002359,
+          "median_us": 7654.405,
+          "p95_us": 10021.284,
+          "checks": 216000
+        },
+        "factored": {
+          "bytes": 200704,
+          "setup_ms": 22.947574,
+          "median_us": 7655.041,
+          "p95_us": 9234.598,
+          "checks": 216000
+        },
+        "suffix_basis": {
+          "bytes": 536576,
+          "setup_ms": 342.881223,
+          "median_us": 1093.429,
+          "p95_us": 1591.221,
+          "checks": 216000
+        }
+      }
+    }
+  ]
+}
