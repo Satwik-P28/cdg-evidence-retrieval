@@ -12,3 +12,5 @@ Local executed quotient-only test, same two seeds and four synthetic regimes as 
 | Scattered |155648|172032|155648|
 
 Scattered active correction expansions local/marginal: 960/758 (191), 861/705 (192). Marginal selects vector difference for 12/13 children, local selects zero. No runtime measurement. Synthetic revert arm has explicit 4KiB empty parent table, real builder avoids creating an empty table. No claim of universal improvement. R192 local adaptive model untested, hosted comparison pending. Actual local scripts/results in accompanying R191-R192 zip. R191 hosted 46180974772 static checks and unit tests passed all jobs, CLARK corpus step passed; AP pending at report time. 
+
+Final run 46181049509: CLARK passed, no admitted index deltas. Both AP jobs blocked by same public download quota before execution. Switch to pinned real Git cohorts instead of repeated download attempts.

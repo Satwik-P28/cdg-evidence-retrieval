@@ -13,12 +13,12 @@ def diff(a,b):
     c=collections.Counter(a);c.subtract(b)
     return {w:v for w,v in c.items() if v}
 
-def path_builder(events,limit,objective='local'):
+def path_builder(events,limit,objective='local',lookback=1):
     def build(db,pending,stats):
         roots=dict(db.execute("SELECT cid,base FROM idx_delta"))
         direct=dict(pending);assert set(direct)==set(roots)
         refs=collections.Counter(w for m in direct.values() for w in m)
-        parent={};depth={};cum={};recent={};out=[]
+        parent={};depth={};cum={};recent=collections.defaultdict(lambda:collections.deque(maxlen=lookback));out=[]
         for cid,m in pending:
             root=roots[cid];d=cost(m);best=(d if objective=="local" else 0,0,root,m,"direct")
             def shared_cost(w,n):
@@ -29,8 +29,8 @@ def path_builder(events,limit,objective='local'):
             def marginal(z):
                 removed=set(m)-set(z);added=set(z)-set(m)
                 return 4+sum(shared_cost(w,refs[w]-1)-shared_cost(w,refs[w]) for w in removed)+sum(shared_cost(w,refs[w]+1)-shared_cost(w,refs[w]) for w in added)
-            prev=recent.get(root)
-            if prev is not None and depth[prev]<limit:
+            for prev in reversed(recent[root]):
+                if depth[prev]>=limit:continue
                 alternatives=[("difference",diff(m,direct[prev]))]
                 a=sp.tokens(db,events[prev-1][2].decode("utf8"))
                 b=sp.tokens(db,events[cid-1][2].decode("utf8"))
@@ -48,7 +48,7 @@ def path_builder(events,limit,objective='local'):
             parent[cid]=p;depth[cid]=1 if p==root else depth[p]+1
             cum[cid]=cost(m2)+(0 if p==root else cum[p])
             assert depth[cid]<=limit and p<cid
-            recent[root]=cid;out.append((cid,m2))
+            recent[root].append(cid);out.append((cid,m2))
             stats["operator_"+kind]+=1;stats["operator_direct_proxy"]+=d
             stats["operator_stored_proxy"]+=cost(m2)
             stats["operator_path_steps"]+=depth[cid]
@@ -94,10 +94,10 @@ def run(events,manifest,cuts,folder,ext,corpus):
     for ref in refs.values():ref.close()
     root=folder/"source.sqlite";db,size0=f.build(root,ext,events,"marginal",False);db.close()
     sigs={};freq_sigs={};results={};anchor_sig=None
-    for mode,limit,objective in (("positional",0,"local"),("signed",1,"local"),("path4",4,"local"),("quotient4",4,"quotient"),("adaptive4",4,"adaptive")):
+    for mode,limit,objective,lookback in (("positional",0,"local",1),("signed",1,"local",1),("path4",4,"local",1),("quotient4",4,"quotient",1),("quotient4_k4",4,"quotient",4),("quotient4_k8",4,"quotient",8),("adaptive4_k4",4,"adaptive",4)):
         path=folder/(mode+".sqlite");shutil.copyfile(root,path);db=connect(path,ext);size=dict(size0)
         if limit:
-            size.update(sp.build_delta(db,path,events,MODE,path_builder(events,limit,objective) if limit>1 else None))
+            size.update(sp.build_delta(db,path,events,MODE,path_builder(events,limit,objective,lookback) if limit>1 else None))
             signature=h.sha(h.canonical(list(db.execute("SELECT cid,base FROM idx_delta ORDER BY cid")))).hex()
             if anchor_sig is None:anchor_sig=signature
             else:assert anchor_sig==signature
@@ -139,7 +139,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
             splits[group]=dict(query=quant(times),rank_checks=len(times),max_score_error=err,work=dict(work))
         results[mode]=dict(**size,source_checks=len(events),setup_us=setup,prepare=quant(pt),splits=splits)
         print("ARM_JSON="+json.dumps(dict(mode=mode,**results[mode])),flush=True);db.close();path.unlink()
-    return dict(round=192,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
+    return dict(round=193,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
         query_counts={k:len(v) for k,v in groups.items()},query_hashes={k:h.sha(h.canonical(v)).hex() for k,v in groups.items()},
         anchors_sha256=anchor_sig,policies=results,limitations=["fixed native source/index roots, finalized archive only",
         "operator path depth distinct from unchanged one-hop source recovery bound",

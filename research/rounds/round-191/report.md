@@ -4,3 +4,5 @@ Keep R168 index roots and exact source archive fixed. If D_i is the signed windo
 
 ## Local independent experiment
 Python 3 / SQLite 3.46.1 / RapidFuzz 3.14.3. Two seeds 191/192, 32 documents x 9 revisions each, 4 edit regimes (accumulating separated edits, localized, revert, scattered), four depth caps, 32 queries at four revision cutoffs. 131072 exact active document/query comparisons, all passed. Patch-only physical SQLite bytes, shared windows quotient with explicit mapping, not R168 adaptive storage; exact counts computed independently in Python, no timing claim. Accumulating both seeds: depth1 81920 B, depth2 77824 B, depth4/8 69632 B (15% lower). Localized 49152->53248; revert 36864->40960; scattered 155648->172032. No general dominance. Direct vector difference never selected in this fixture. Hosted implementation and matrix pending. Source and actual local results supplied separately.
+
+Final run 46180974772: CLARK passed, no admitted index deltas; AP10k and AP74k failed before execution due to Google Drive public download quota (gdown FileURLRetrievalError). All regression and static checks passed; no AP measurements.

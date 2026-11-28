@@ -1,7 +1,7 @@
 name: CDG R192 marginal operator paths
 on:
   push:
-    branches: ['research/round-165-*']
+    branches: ['research/round-165-r192-marginal-paths']
     paths: ['experiments/round-165/**','.github/workflows/cdg-r165-signed.yml','research/rounds/round-165/**']
   workflow_dispatch:
 jobs:
