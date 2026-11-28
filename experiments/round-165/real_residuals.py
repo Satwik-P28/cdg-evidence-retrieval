@@ -2,7 +2,7 @@
 import argparse,collections,json,random,shutil,tempfile,time,zlib
 from pathlib import Path
 import signed_phrase as sp
-from signed_phrase import f,h,si,nr,ar,connect,tokens,query_plan,prepare,recover
+from signed_phrase import f,h,si,nr,connect,tokens,query_plan,prepare,recover
 HERE=Path(__file__).resolve().parent
 MODE="independent_adaptive_weighted_adjusted_multi"
 
