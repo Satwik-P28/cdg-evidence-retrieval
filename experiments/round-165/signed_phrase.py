@@ -229,7 +229,7 @@ def prepare_delta(db,c,global_map=None):
             if cid in active:patch_children[wid].append((cid,coeff))
     return state,children,patch_children
 
-def rank_delta(db,p,o,prep,residual_reader=None,frequency_sink=None):
+def rank_delta(db,p,o,prep,residual_reader=None,frequency_sink=None,patch_cache=None):
     ar.expression(p,o);(active,lens,n,total),children,patch_children=prep;freq=[];work=collections.Counter()
     for phrase in p:
         q=tokens(db,phrase)
@@ -238,17 +238,18 @@ def rank_delta(db,p,o,prep,residual_reader=None,frequency_sink=None):
         for base,tf in db.execute("SELECT rowid,cdg_count(base_fts) FROM base_fts WHERE base_fts MATCH ?",(ar.quote(phrase),)):
             work["base_hits"]+=1
             for cid in children.get(base,()):counts[cid]+=tf;work["expansions"]+=1
-        for rid,tf in db.execute("SELECT rowid,cdg_count(patch_fts) FROM patch_fts WHERE patch_fts MATCH ?",(ar.quote(phrase),)):
-            work["patch_hits"]+=1
-            if patch_children is None:
-                cid=rid>>16
-                if cid in active:counts[cid]+=tf if rid&1 else -tf
-            else:
-                for cid,coeff in patch_children.get(rid,()):
-                    work["patch_mapping_visits"]+=1
-                    if cid in active:
-                        counts[cid]+=coeff*tf
-                        work["patch_expansions"]+=1
+        if patch_cache is None or not patch_cache(db,q,active,counts,work):
+            for rid,tf in db.execute("SELECT rowid,cdg_count(patch_fts) FROM patch_fts WHERE patch_fts MATCH ?",(ar.quote(phrase),)):
+                work["patch_hits"]+=1
+                if patch_children is None:
+                    cid=rid>>16
+                    if cid in active:counts[cid]+=tf if rid&1 else -tf
+                else:
+                    for cid,coeff in patch_children.get(rid,()):
+                        work["patch_mapping_visits"]+=1
+                        if cid in active:
+                            counts[cid]+=coeff*tf
+                            work["patch_expansions"]+=1
         if residual_reader is not None:residual_reader(db,q,active,counts,work)
         assert all(v>=0 for v in counts.values())
         matches={g:tf for cid,tf in counts.items() if tf for g in active[cid]}
