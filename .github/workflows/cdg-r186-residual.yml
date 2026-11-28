@@ -1,0 +1,21 @@
+name: CDG R186-R187 residual smoke
+on:
+  push:
+    branches: ['research/round-165-r186-r187-inverted-residuals']
+    paths: ['experiments/round-186/**','.github/workflows/cdg-r186-residual.yml']
+  workflow_dispatch:
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: cc -O3 -Wall -Wextra -Werror -shared -fPIC experiments/round-186/count.c -o experiments/round-186/count.so
+      - run: python experiments/round-186/probe.py --suite smoke --out experiments/round-186/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r186-residual-smoke
+          path: experiments/round-186/ci.json
