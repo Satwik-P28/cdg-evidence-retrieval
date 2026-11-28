@@ -1,0 +1,518 @@
+{
+  "round": 190,
+  "corpus": "ap",
+  "revisions": 74364,
+  "manifest_sha256": "e12f3c397333e78a5ab3394dbb119bbab95985161e53dadf9eef71b6b5508319",
+  "cutoffs": [
+    12841,
+    33348,
+    53856,
+    74364
+  ],
+  "query_counts": {
+    "legacy": 104,
+    "extended": 160
+  },
+  "query_hashes": {
+    "legacy": "2978ed60f040bdb4fc8137eed1d6d7dc7f592d1cef25edce68997284e61987d6",
+    "extended": "388a6469c8f16ca31d747eee854b092de1988388efb85a657c3053b266a78da1"
+  },
+  "candidate_measure_us": 2238802.464,
+  "policies": {
+    "positional": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 148459520,
+      "frame_payload_bytes": 51804679,
+      "unique_frames": 41535,
+      "unique_contents": 41282,
+      "shards": 1,
+      "max_shard_rows": 41282,
+      "fts_bytes": 73351168,
+      "table_bytes": {
+        "active_stats": 1171456,
+        "contents": 364544,
+        "docs_0_config": 4096,
+        "docs_0_data": 72777728,
+        "docs_0_docsize": 446464,
+        "docs_0_idx": 122880,
+        "frames": 66891776,
+        "predictors": 4096,
+        "revision_cid": 1089536,
+        "revisions": 1839104,
+        "source": 3743744,
+        "sqlite_schema": 4096
+      },
+      "build_us": 37823950.926,
+      "kind_0": 46686,
+      "kind_1": 27678,
+      "source_checks": 74364,
+      "setup_us": 1.072,
+      "prepare": {
+        "median_us": 14125.721000000001,
+        "p95_us": 14530.091,
+        "samples": 4,
+        "p99_us": 14530.091,
+        "max_us": 31933.848
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 556.4185,
+            "p95_us": 6800.787,
+            "samples": 1248,
+            "p99_us": 9871.128,
+            "max_us": 58911.17
+          },
+          "rank_checks": 1248,
+          "max_score_error": 0,
+          "work": {}
+        },
+        "extended": {
+          "query": {
+            "median_us": 2344.9595,
+            "p95_us": 22810.801,
+            "samples": 1920,
+            "p99_us": 101663.671,
+            "max_us": 121215.379
+          },
+          "rank_checks": 1920,
+          "max_score_error": 0,
+          "work": {}
+        }
+      }
+    },
+    "signed": {
+      "sqlite_bytes": 132964352,
+      "fts_bytes": 57405440,
+      "table_bytes": {
+        "active_stats": 1171456,
+        "base_fts_config": 4096,
+        "base_fts_data": 48734208,
+        "base_fts_docsize": 335872,
+        "base_fts_idx": 102400,
+        "contents": 364544,
+        "frames": 66891776,
+        "idx_delta": 118784,
+        "patch_coeff": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 7696384,
+        "patch_fts_docsize": 499712,
+        "patch_fts_idx": 28672,
+        "patch_run": 110592,
+        "patch_use": 217088,
+        "predictors": 4096,
+        "revision_cid": 1089536,
+        "revisions": 1839104,
+        "source": 3743744,
+        "sqlite_schema": 4096
+      },
+      "delta_build_us": 49492557.801,
+      "base_contents": 31177,
+      "base_tokens": 19157640,
+      "aligned_available": 17610,
+      "patch_pairs": 29247,
+      "patch_tokens": 2994365,
+      "raw_nonempty_windows": 58494,
+      "delta_contents": 10105,
+      "aligned_selected": 8014,
+      "cache_candidates": 640,
+      "direct_rows": 42502,
+      "direct_tokens": 2556046,
+      "direct_runs": 9397,
+      "coefficient_exceptions": 4,
+      "avoided_rows": 4,
+      "avoided_tokens": 65,
+      "shared_rows": 7042,
+      "shared_tokens": 194500,
+      "window_uses": 15988,
+      "correction_coeff_l1": 58494,
+      "source_checks": 74364,
+      "setup_us": 15182.698,
+      "prepare": {
+        "median_us": 21199.0585,
+        "p95_us": 21379.919,
+        "samples": 4,
+        "p99_us": 21379.919,
+        "max_us": 26515.432
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 508.87699999999995,
+            "p95_us": 5485.602,
+            "samples": 1248,
+            "p99_us": 8369.238,
+            "max_us": 40996.76
+          },
+          "rank_checks": 1248,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 533244,
+            "expansions": 239469,
+            "patch_hits": 99660,
+            "patch_mapping_visits": 110256,
+            "patch_expansions": 28164
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 2243.326,
+            "p95_us": 16777.032,
+            "samples": 1920,
+            "p99_us": 90588.671,
+            "max_us": 142346.866
+          },
+          "rank_checks": 1920,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 1298904,
+            "expansions": 539508,
+            "patch_hits": 606708,
+            "patch_mapping_visits": 702408,
+            "patch_expansions": 190314
+          }
+        }
+      }
+    },
+    "frequency_1pct": {
+      "sqlite_bytes": 134291456,
+      "fts_bytes": 57405440,
+      "table_bytes": {
+        "active_stats": 1171456,
+        "base_fts_config": 4096,
+        "base_fts_data": 48734208,
+        "base_fts_docsize": 335872,
+        "base_fts_idx": 102400,
+        "contents": 364544,
+        "frames": 66891776,
+        "idx_delta": 118784,
+        "net_cache": 1327104,
+        "patch_coeff": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 7696384,
+        "patch_fts_docsize": 499712,
+        "patch_fts_idx": 28672,
+        "patch_run": 110592,
+        "patch_use": 217088,
+        "predictors": 4096,
+        "revision_cid": 1089536,
+        "revisions": 1839104,
+        "source": 3743744,
+        "sqlite_schema": 4096
+      },
+      "delta_build_us": 49492557.801,
+      "base_contents": 31177,
+      "base_tokens": 19157640,
+      "aligned_available": 17610,
+      "patch_pairs": 29247,
+      "patch_tokens": 2994365,
+      "raw_nonempty_windows": 58494,
+      "delta_contents": 10105,
+      "aligned_selected": 8014,
+      "cache_candidates": 640,
+      "direct_rows": 42502,
+      "direct_tokens": 2556046,
+      "direct_runs": 9397,
+      "coefficient_exceptions": 4,
+      "avoided_rows": 4,
+      "avoided_tokens": 65,
+      "shared_rows": 7042,
+      "shared_tokens": 194500,
+      "window_uses": 15988,
+      "correction_coeff_l1": 58494,
+      "cache_budget_bytes": 1329643,
+      "cache_entries": 490,
+      "cache_empty": 0,
+      "cache_candidate_count": 640,
+      "cache_proxy_bytes": 735860,
+      "cache_estimated_saved_work": 1590651,
+      "cache_physical_increment": 1327104,
+      "cache_build_us": 2328662.175,
+      "source_checks": 74364,
+      "setup_us": 14376.161,
+      "prepare": {
+        "median_us": 21756.228000000003,
+        "p95_us": 22326.633,
+        "samples": 4,
+        "p99_us": 22326.633,
+        "max_us": 25840.79
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 535.7915,
+            "p95_us": 5570.52,
+            "samples": 1248,
+            "p99_us": 8419.531,
+            "max_us": 59909.557
+          },
+          "rank_checks": 1248,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 533244,
+            "expansions": 239469,
+            "patch_hits": 70560,
+            "patch_mapping_visits": 77604,
+            "patch_expansions": 20490,
+            "cache_misses": 1236,
+            "cache_active_postings": 4164,
+            "cache_hits": 12,
+            "cache_postings": 19128,
+            "cache_bytes": 26796
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 2250.996,
+            "p95_us": 16960.46,
+            "samples": 1920,
+            "p99_us": 73932.726,
+            "max_us": 85404.369
+          },
+          "rank_checks": 1920,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 1298904,
+            "expansions": 539508,
+            "patch_hits": 22044,
+            "patch_mapping_visits": 24708,
+            "patch_expansions": 5853,
+            "cache_misses": 576,
+            "cache_hits": 48,
+            "cache_postings": 187344,
+            "cache_bytes": 252516,
+            "cache_active_postings": 45729
+          }
+        }
+      }
+    },
+    "cancellation_1pct": {
+      "sqlite_bytes": 134270976,
+      "fts_bytes": 57405440,
+      "table_bytes": {
+        "active_stats": 1171456,
+        "base_fts_config": 4096,
+        "base_fts_data": 48734208,
+        "base_fts_docsize": 335872,
+        "base_fts_idx": 102400,
+        "contents": 364544,
+        "frames": 66891776,
+        "idx_delta": 118784,
+        "net_cache": 1306624,
+        "patch_coeff": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 7696384,
+        "patch_fts_docsize": 499712,
+        "patch_fts_idx": 28672,
+        "patch_run": 110592,
+        "patch_use": 217088,
+        "predictors": 4096,
+        "revision_cid": 1089536,
+        "revisions": 1839104,
+        "source": 3743744,
+        "sqlite_schema": 4096
+      },
+      "delta_build_us": 49492557.801,
+      "base_contents": 31177,
+      "base_tokens": 19157640,
+      "aligned_available": 17610,
+      "patch_pairs": 29247,
+      "patch_tokens": 2994365,
+      "raw_nonempty_windows": 58494,
+      "delta_contents": 10105,
+      "aligned_selected": 8014,
+      "cache_candidates": 640,
+      "direct_rows": 42502,
+      "direct_tokens": 2556046,
+      "direct_runs": 9397,
+      "coefficient_exceptions": 4,
+      "avoided_rows": 4,
+      "avoided_tokens": 65,
+      "shared_rows": 7042,
+      "shared_tokens": 194500,
+      "window_uses": 15988,
+      "correction_coeff_l1": 58494,
+      "cache_budget_bytes": 1329643,
+      "cache_entries": 490,
+      "cache_empty": 0,
+      "cache_candidate_count": 640,
+      "cache_proxy_bytes": 722274,
+      "cache_estimated_saved_work": 1584918,
+      "cache_physical_increment": 1306624,
+      "cache_build_us": 2345719.865,
+      "source_checks": 74364,
+      "setup_us": 14461.482,
+      "prepare": {
+        "median_us": 22422.224499999997,
+        "p95_us": 22711.19,
+        "samples": 4,
+        "p99_us": 22711.19,
+        "max_us": 33389.04
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 541.392,
+            "p95_us": 5811.798,
+            "samples": 1248,
+            "p99_us": 8725.024,
+            "max_us": 62248.083
+          },
+          "rank_checks": 1248,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 533244,
+            "expansions": 239469,
+            "patch_hits": 70560,
+            "patch_mapping_visits": 77604,
+            "patch_expansions": 20490,
+            "cache_misses": 1236,
+            "cache_active_postings": 4164,
+            "cache_hits": 12,
+            "cache_postings": 19128,
+            "cache_bytes": 26796
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 2281.916,
+            "p95_us": 17334.182,
+            "samples": 1920,
+            "p99_us": 73436.727,
+            "max_us": 100137.31
+          },
+          "rank_checks": 1920,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 1298904,
+            "expansions": 539508,
+            "patch_hits": 22044,
+            "patch_mapping_visits": 24708,
+            "patch_expansions": 5853,
+            "cache_misses": 576,
+            "cache_hits": 48,
+            "cache_postings": 187344,
+            "cache_bytes": 252516,
+            "cache_active_postings": 45729
+          }
+        }
+      }
+    },
+    "cancellation_halfpct": {
+      "sqlite_bytes": 133591040,
+      "fts_bytes": 57405440,
+      "table_bytes": {
+        "active_stats": 1171456,
+        "base_fts_config": 4096,
+        "base_fts_data": 48734208,
+        "base_fts_docsize": 335872,
+        "base_fts_idx": 102400,
+        "contents": 364544,
+        "frames": 66891776,
+        "idx_delta": 118784,
+        "net_cache": 626688,
+        "patch_coeff": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 7696384,
+        "patch_fts_docsize": 499712,
+        "patch_fts_idx": 28672,
+        "patch_run": 110592,
+        "patch_use": 217088,
+        "predictors": 4096,
+        "revision_cid": 1089536,
+        "revisions": 1839104,
+        "source": 3743744,
+        "sqlite_schema": 4096
+      },
+      "delta_build_us": 49492557.801,
+      "base_contents": 31177,
+      "base_tokens": 19157640,
+      "aligned_available": 17610,
+      "patch_pairs": 29247,
+      "patch_tokens": 2994365,
+      "raw_nonempty_windows": 58494,
+      "delta_contents": 10105,
+      "aligned_selected": 8014,
+      "cache_candidates": 640,
+      "direct_rows": 42502,
+      "direct_tokens": 2556046,
+      "direct_runs": 9397,
+      "coefficient_exceptions": 4,
+      "avoided_rows": 4,
+      "avoided_tokens": 65,
+      "shared_rows": 7042,
+      "shared_tokens": 194500,
+      "window_uses": 15988,
+      "correction_coeff_l1": 58494,
+      "cache_budget_bytes": 664821,
+      "cache_entries": 134,
+      "cache_empty": 0,
+      "cache_candidate_count": 640,
+      "cache_proxy_bytes": 390774,
+      "cache_estimated_saved_work": 1184379,
+      "cache_physical_increment": 626688,
+      "cache_build_us": 6805274.138,
+      "source_checks": 74364,
+      "setup_us": 14757.677,
+      "prepare": {
+        "median_us": 22756.1025,
+        "p95_us": 23293.308,
+        "samples": 4,
+        "p99_us": 23293.308,
+        "max_us": 32117.301
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 535.789,
+            "p95_us": 5676.318,
+            "samples": 1248,
+            "p99_us": 8651.464,
+            "max_us": 64639.534
+          },
+          "rank_checks": 1248,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 533244,
+            "expansions": 239469,
+            "patch_hits": 99660,
+            "patch_mapping_visits": 110256,
+            "patch_expansions": 28164,
+            "cache_misses": 1248
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 2264.582,
+            "p95_us": 17285.336,
+            "samples": 1920,
+            "p99_us": 72461.599,
+            "max_us": 87010.372
+          },
+          "rank_checks": 1920,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 1298904,
+            "expansions": 539508,
+            "patch_hits": 47544,
+            "patch_mapping_visits": 52692,
+            "patch_expansions": 12468,
+            "cache_misses": 588,
+            "cache_hits": 36,
+            "cache_postings": 170148,
+            "cache_bytes": 227688,
+            "cache_active_postings": 42210
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "same finalized signed source/index archive; no transactional append",
+    "candidate pool from corpus statistics, not evaluation queries; same R188 workload",
+    "physical file increment capped after VACUUM; no guaranteed cold device IO",
+    "checksum detects accidental cache corruption; missing/invalid cache falls back to native patch index",
+    "cache entries derived from immutable signed archive, not independently authenticated",
+    "sequential arm timings, three shuffled warm passes, no peak RSS or RH theorem application"
+  ]
+}

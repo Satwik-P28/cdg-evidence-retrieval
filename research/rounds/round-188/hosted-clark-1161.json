@@ -1,0 +1,404 @@
+{
+  "round": 188,
+  "corpus": "clark",
+  "revisions": 1161,
+  "manifest_sha256": "1567b6c765b7a648e1a2a6d4221bf22543a7011377fda94161c37c04a29b6e2f",
+  "cutoffs": [
+    290,
+    580,
+    870,
+    1161
+  ],
+  "query_counts": {
+    "legacy": 80,
+    "extended": 160
+  },
+  "query_hashes": {
+    "legacy": "fe807ab4348d1a430c9065b436a6716122ddf5d61adc90f4a654e375c8d34542",
+    "extended": "a74e1a63900bf486343a0ed9c9b1fce68d09aa4409d17b7b9f5499ff3c0296f0"
+  },
+  "anchors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "policies": {
+    "positional": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 5992448,
+      "frame_payload_bytes": 2538073,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 2527232,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "docs_0_config": 4096,
+        "docs_0_data": 2490368,
+        "docs_0_docsize": 16384,
+        "docs_0_idx": 16384,
+        "frames": 3190784,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 782357.93,
+      "kind_0": 1161,
+      "source_checks": 1161,
+      "setup_us": 1.412,
+      "prepare": {
+        "median_us": 604.1469999999999,
+        "p95_us": 694.025,
+        "samples": 4,
+        "p99_us": 694.025,
+        "max_us": 913.263
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 172.648,
+            "p95_us": 2394.697,
+            "samples": 640,
+            "p99_us": 3179.621,
+            "max_us": 4980.541
+          },
+          "rank_checks": 640,
+          "max_score_error": 0,
+          "work": {}
+        },
+        "extended": {
+          "query": {
+            "median_us": 114.969,
+            "p95_us": 511.605,
+            "samples": 1280,
+            "p99_us": 646.386,
+            "max_us": 702.1
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {}
+        }
+      }
+    },
+    "signed": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 6021120,
+      "frame_payload_bytes": 2538073,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 2543616,
+      "table_bytes": {
+        "active_stats": 20480,
+        "base_fts_config": 4096,
+        "base_fts_data": 2490368,
+        "base_fts_docsize": 16384,
+        "base_fts_idx": 16384,
+        "contents": 16384,
+        "frames": 3190784,
+        "idx_delta": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 4096,
+        "patch_fts_docsize": 4096,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 4096,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 782357.93,
+      "kind_0": 1161,
+      "delta_build_us": 919689.301,
+      "base_contents": 1157,
+      "base_tokens": 948439,
+      "correction_coeff_l1": 0,
+      "source_checks": 1161,
+      "setup_us": 144.64,
+      "prepare": {
+        "median_us": 690.1075,
+        "p95_us": 809.911,
+        "samples": 4,
+        "p99_us": 809.911,
+        "max_us": 1122.264
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 194.4875,
+            "p95_us": 2253.965,
+            "samples": 640,
+            "p99_us": 3130.89,
+            "max_us": 3484.63
+          },
+          "rank_checks": 640,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 195896,
+            "expansions": 123812
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 147.69,
+            "p95_us": 543.304,
+            "samples": 1280,
+            "p99_us": 668.046,
+            "max_us": 764.286
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 7840,
+            "expansions": 4752
+          }
+        }
+      }
+    },
+    "residual": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 6021120,
+      "frame_payload_bytes": 2538073,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 2543616,
+      "table_bytes": {
+        "active_stats": 20480,
+        "base_fts_config": 4096,
+        "base_fts_data": 2490368,
+        "base_fts_docsize": 16384,
+        "base_fts_idx": 16384,
+        "contents": 16384,
+        "frames": 3190784,
+        "idx_delta": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 4096,
+        "patch_fts_docsize": 4096,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 4096,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 782357.93,
+      "kind_0": 1161,
+      "delta_build_us": 907643.093,
+      "base_contents": 1157,
+      "base_tokens": 948439,
+      "correction_coeff_l1": 0,
+      "source_checks": 1161,
+      "setup_us": 172.726,
+      "prepare": {
+        "median_us": 676.0074999999999,
+        "p95_us": 780.813,
+        "samples": 4,
+        "p99_us": 780.813,
+        "max_us": 1053.597
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 192.94549999999998,
+            "p95_us": 2304.112,
+            "samples": 640,
+            "p99_us": 3203.364,
+            "max_us": 3952.322
+          },
+          "rank_checks": 640,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 195896,
+            "expansions": 123812
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 147.2945,
+            "p95_us": 541.93,
+            "samples": 1280,
+            "p99_us": 680.038,
+            "max_us": 828.425
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 7840,
+            "expansions": 4752
+          }
+        }
+      }
+    },
+    "residual_cache": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 6021120,
+      "frame_payload_bytes": 2538073,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 2543616,
+      "table_bytes": {
+        "active_stats": 20480,
+        "base_fts_config": 4096,
+        "base_fts_data": 2490368,
+        "base_fts_docsize": 16384,
+        "base_fts_idx": 16384,
+        "contents": 16384,
+        "frames": 3190784,
+        "idx_delta": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 4096,
+        "patch_fts_docsize": 4096,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 4096,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 782357.93,
+      "kind_0": 1161,
+      "delta_build_us": 905159.929,
+      "base_contents": 1157,
+      "base_tokens": 948439,
+      "correction_coeff_l1": 0,
+      "source_checks": 1161,
+      "setup_us": 149.399,
+      "prepare": {
+        "median_us": 670.2505000000001,
+        "p95_us": 771.229,
+        "samples": 4,
+        "p99_us": 771.229,
+        "max_us": 1386.916
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 193.821,
+            "p95_us": 2286.074,
+            "samples": 640,
+            "p99_us": 3160.795,
+            "max_us": 3609.702
+          },
+          "rank_checks": 640,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 195896,
+            "expansions": 123812
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 148.372,
+            "p95_us": 550.326,
+            "samples": 1280,
+            "p99_us": 676.542,
+            "max_us": 807.526
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 7840,
+            "expansions": 4752
+          }
+        }
+      }
+    },
+    "hybrid_cache": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 6021120,
+      "frame_payload_bytes": 2538073,
+      "unique_frames": 1157,
+      "unique_contents": 1157,
+      "shards": 1,
+      "max_shard_rows": 1157,
+      "fts_bytes": 2543616,
+      "table_bytes": {
+        "active_stats": 20480,
+        "base_fts_config": 4096,
+        "base_fts_data": 2490368,
+        "base_fts_docsize": 16384,
+        "base_fts_idx": 16384,
+        "contents": 16384,
+        "frames": 3190784,
+        "idx_delta": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 4096,
+        "patch_fts_docsize": 4096,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 4096,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096
+      },
+      "build_us": 782357.93,
+      "kind_0": 1161,
+      "delta_build_us": 916573.994,
+      "base_contents": 1157,
+      "base_tokens": 948439,
+      "correction_coeff_l1": 0,
+      "source_checks": 1161,
+      "setup_us": 160.59,
+      "prepare": {
+        "median_us": 668.1959999999999,
+        "p95_us": 781.728,
+        "samples": 4,
+        "p99_us": 781.728,
+        "max_us": 1371.638
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 197.964,
+            "p95_us": 2301.612,
+            "samples": 640,
+            "p99_us": 3194.457,
+            "max_us": 3481.753
+          },
+          "rank_checks": 640,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 195896,
+            "expansions": 123812
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 145.216,
+            "p95_us": 539.746,
+            "samples": 1280,
+            "p99_us": 663.518,
+            "max_us": 749.548
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 7840,
+            "expansions": 4752
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "finalized source/index subset; no atomic receipt integration",
+    "UTF-8 normalized token keys charge actual byte lengths, no uncharged lexicon",
+    "identical source archive and index anchors; exact full active phrase frequency maps matched to signed control",
+    "prefix cache budget estimated from encoded rows and block table pages before finalization; actual SQLite bytes charged",
+    "content-derived query plans, two warm passes, no physical I/O or peak RSS",
+    "no checksum for residual records, no arbitrary positional syntax, no RH proof theorem used"
+  ]
+}

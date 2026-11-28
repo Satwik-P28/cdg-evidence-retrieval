@@ -1,0 +1,749 @@
+{
+  "round": 193,
+  "corpus": "gitdocs",
+  "revisions": 667,
+  "manifest_sha256": "bc37ab840d0cdc16753cb1bf3945657fe85de671cefe13f2376d8409241d6404",
+  "cutoffs": [
+    160,
+    324,
+    547,
+    667
+  ],
+  "query_counts": {
+    "legacy": 104,
+    "extended": 160
+  },
+  "query_hashes": {
+    "legacy": "440ea50e84fecb024a38b1d997e55fbc15b6a7035a36fd8fb0d7da4c22a4b9eb",
+    "extended": "836eae22d70c20572727b16fa76339f8e0d23c4727832a0d4079ea9c251770e8"
+  },
+  "anchors_sha256": "638a73e9d577d2160344445ff8bbbbd02d181a9bf12af916ee58deb5e12bd889",
+  "policies": {
+    "positional": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 4706304,
+      "frame_payload_bytes": 884795,
+      "unique_frames": 667,
+      "unique_contents": 667,
+      "shards": 1,
+      "max_shard_rows": 667,
+      "fts_bytes": 3547136,
+      "table_bytes": {
+        "active_stats": 16384,
+        "contents": 12288,
+        "docs_0_config": 4096,
+        "docs_0_data": 3514368,
+        "docs_0_docsize": 12288,
+        "docs_0_idx": 16384,
+        "frames": 1032192,
+        "predictors": 4096,
+        "revision_cid": 16384,
+        "revisions": 36864,
+        "source": 36864,
+        "sqlite_schema": 4096
+      },
+      "build_us": 758796.176,
+      "kind_0": 160,
+      "kind_1": 507,
+      "source_checks": 667,
+      "setup_us": 0.701,
+      "prepare": {
+        "median_us": 106.84649999999999,
+        "p95_us": 113.902,
+        "samples": 4,
+        "p99_us": 113.902,
+        "max_us": 139.12
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 122.515,
+            "p95_us": 643.163,
+            "samples": 832,
+            "p99_us": 765.278,
+            "max_us": 1054.365
+          },
+          "rank_checks": 832,
+          "max_score_error": 0,
+          "work": {}
+        },
+        "extended": {
+          "query": {
+            "median_us": 153.167,
+            "p95_us": 596.723,
+            "samples": 1280,
+            "p99_us": 760.14,
+            "max_us": 790.065
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {}
+        }
+      }
+    },
+    "signed": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 2056192,
+      "frame_payload_bytes": 884795,
+      "unique_frames": 667,
+      "unique_contents": 667,
+      "shards": 1,
+      "max_shard_rows": 667,
+      "fts_bytes": 823296,
+      "table_bytes": {
+        "active_stats": 16384,
+        "base_fts_config": 4096,
+        "base_fts_data": 614400,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 12288,
+        "frames": 1032192,
+        "idx_delta": 12288,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 167936,
+        "patch_fts_docsize": 20480,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 57344,
+        "predictors": 4096,
+        "revision_cid": 16384,
+        "revisions": 36864,
+        "source": 36864,
+        "sqlite_schema": 4096
+      },
+      "build_us": 758796.176,
+      "kind_0": 160,
+      "kind_1": 507,
+      "delta_build_us": 936413.782,
+      "base_contents": 172,
+      "base_tokens": 296047,
+      "aligned_available": 507,
+      "patch_pairs": 2421,
+      "patch_tokens": 177349,
+      "raw_nonempty_windows": 4842,
+      "delta_contents": 495,
+      "aligned_selected": 483,
+      "direct_rows": 513,
+      "direct_tokens": 16006,
+      "direct_runs": 157,
+      "shared_rows": 970,
+      "shared_tokens": 36863,
+      "window_uses": 4315,
+      "correction_coeff_l1": 4842,
+      "source_checks": 667,
+      "setup_us": 1518.427,
+      "prepare": {
+        "median_us": 204.41449999999998,
+        "p95_us": 215.576,
+        "samples": 4,
+        "p99_us": 215.576,
+        "max_us": 217.439
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 62.325,
+            "p95_us": 450.602,
+            "samples": 832,
+            "p99_us": 798.518,
+            "max_us": 836.486
+          },
+          "rank_checks": 832,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 42712,
+            "expansions": 39818,
+            "patch_hits": 51592,
+            "patch_mapping_visits": 175520,
+            "patch_expansions": 23670
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 71.298,
+            "p95_us": 165.941,
+            "samples": 1280,
+            "p99_us": 186.432,
+            "max_us": 197.308
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2680,
+            "expansions": 2498,
+            "patch_hits": 816,
+            "patch_mapping_visits": 2848,
+            "patch_expansions": 384
+          }
+        }
+      }
+    },
+    "path4": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 2027520,
+      "frame_payload_bytes": 884795,
+      "unique_frames": 667,
+      "unique_contents": 667,
+      "shards": 1,
+      "max_shard_rows": 667,
+      "fts_bytes": 823296,
+      "table_bytes": {
+        "active_stats": 16384,
+        "base_fts_config": 4096,
+        "base_fts_data": 614400,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 12288,
+        "frames": 1032192,
+        "idx_delta": 12288,
+        "operator_parent": 4096,
+        "patch_coeff": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 167936,
+        "patch_fts_docsize": 20480,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 20480,
+        "predictors": 4096,
+        "revision_cid": 16384,
+        "revisions": 36864,
+        "source": 36864,
+        "sqlite_schema": 4096
+      },
+      "build_us": 758796.176,
+      "kind_0": 160,
+      "kind_1": 507,
+      "delta_build_us": 1398221.164,
+      "base_contents": 172,
+      "base_tokens": 296047,
+      "aligned_available": 507,
+      "patch_pairs": 2421,
+      "patch_tokens": 177349,
+      "raw_nonempty_windows": 4842,
+      "delta_contents": 495,
+      "aligned_selected": 483,
+      "operator_direct": 205,
+      "operator_direct_proxy": 206401,
+      "operator_stored_proxy": 89982,
+      "operator_path_steps": 1018,
+      "operator_max_depth": 4,
+      "operator_difference": 201,
+      "operator_adjacent": 89,
+      "operator_parent_rows": 290,
+      "direct_rows": 1043,
+      "direct_tokens": 34772,
+      "direct_runs": 309,
+      "coefficient_exceptions": 2,
+      "avoided_rows": 2,
+      "avoided_tokens": 30,
+      "shared_rows": 539,
+      "shared_tokens": 17676,
+      "window_uses": 1259,
+      "correction_coeff_l1": 2308,
+      "source_checks": 667,
+      "setup_us": 895.334,
+      "prepare": {
+        "median_us": 250.91500000000002,
+        "p95_us": 287.706,
+        "samples": 4,
+        "p99_us": 287.706,
+        "max_us": 6455.295
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 65.6895,
+            "p95_us": 464.613,
+            "samples": 832,
+            "p99_us": 802.624,
+            "max_us": 872.349
+          },
+          "rank_checks": 832,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 42712,
+            "expansions": 39818,
+            "patch_hits": 52480,
+            "patch_mapping_visits": 24648,
+            "patch_expansions": 24648,
+            "operator_mapping_visits": 77104
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 70.97749999999999,
+            "p95_us": 168.144,
+            "samples": 1280,
+            "p99_us": 191.22,
+            "max_us": 201.535
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2680,
+            "expansions": 2498,
+            "patch_hits": 808,
+            "patch_mapping_visits": 392,
+            "patch_expansions": 392,
+            "operator_mapping_visits": 1240
+          }
+        }
+      }
+    },
+    "quotient4": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 2023424,
+      "frame_payload_bytes": 884795,
+      "unique_frames": 667,
+      "unique_contents": 667,
+      "shards": 1,
+      "max_shard_rows": 667,
+      "fts_bytes": 819200,
+      "table_bytes": {
+        "active_stats": 16384,
+        "base_fts_config": 4096,
+        "base_fts_data": 614400,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 12288,
+        "frames": 1032192,
+        "idx_delta": 12288,
+        "operator_parent": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 163840,
+        "patch_fts_docsize": 20480,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 24576,
+        "predictors": 4096,
+        "revision_cid": 16384,
+        "revisions": 36864,
+        "source": 36864,
+        "sqlite_schema": 4096
+      },
+      "build_us": 758796.176,
+      "kind_0": 160,
+      "kind_1": 507,
+      "delta_build_us": 1402476.45,
+      "base_contents": 172,
+      "base_tokens": 296047,
+      "aligned_available": 507,
+      "patch_pairs": 2421,
+      "patch_tokens": 177349,
+      "raw_nonempty_windows": 4842,
+      "delta_contents": 495,
+      "aligned_selected": 483,
+      "operator_direct": 218,
+      "operator_direct_proxy": 206401,
+      "operator_stored_proxy": 96889,
+      "operator_path_steps": 990,
+      "operator_max_depth": 4,
+      "operator_difference": 246,
+      "operator_adjacent": 31,
+      "operator_parent_rows": 277,
+      "direct_rows": 876,
+      "direct_tokens": 27314,
+      "direct_runs": 261,
+      "shared_rows": 612,
+      "shared_tokens": 23531,
+      "window_uses": 1462,
+      "correction_coeff_l1": 2346,
+      "source_checks": 667,
+      "setup_us": 1015.828,
+      "prepare": {
+        "median_us": 227.98950000000002,
+        "p95_us": 248.866,
+        "samples": 4,
+        "p99_us": 248.866,
+        "max_us": 288.947
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 61.1725,
+            "p95_us": 445.765,
+            "samples": 832,
+            "p99_us": 771.798,
+            "max_us": 832.42
+          },
+          "rank_checks": 832,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 42712,
+            "expansions": 39818,
+            "patch_hits": 50392,
+            "patch_mapping_visits": 24872,
+            "patch_expansions": 24872,
+            "operator_mapping_visits": 81272
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 75.114,
+            "p95_us": 186.342,
+            "samples": 1280,
+            "p99_us": 302.158,
+            "max_us": 627.239
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2680,
+            "expansions": 2498,
+            "patch_hits": 792,
+            "patch_mapping_visits": 396,
+            "patch_expansions": 396,
+            "operator_mapping_visits": 1328
+          }
+        }
+      }
+    },
+    "quotient4_k4": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 2015232,
+      "frame_payload_bytes": 884795,
+      "unique_frames": 667,
+      "unique_contents": 667,
+      "shards": 1,
+      "max_shard_rows": 667,
+      "fts_bytes": 815104,
+      "table_bytes": {
+        "active_stats": 16384,
+        "base_fts_config": 4096,
+        "base_fts_data": 614400,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 12288,
+        "frames": 1032192,
+        "idx_delta": 12288,
+        "operator_parent": 4096,
+        "patch_coeff": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 159744,
+        "patch_fts_docsize": 20480,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 16384,
+        "predictors": 4096,
+        "revision_cid": 16384,
+        "revisions": 36864,
+        "source": 36864,
+        "sqlite_schema": 4096
+      },
+      "build_us": 758796.176,
+      "kind_0": 160,
+      "kind_1": 507,
+      "delta_build_us": 2313333.314,
+      "base_contents": 172,
+      "base_tokens": 296047,
+      "aligned_available": 507,
+      "patch_pairs": 2421,
+      "patch_tokens": 177349,
+      "raw_nonempty_windows": 4842,
+      "delta_contents": 495,
+      "aligned_selected": 483,
+      "operator_direct": 181,
+      "operator_direct_proxy": 206401,
+      "operator_stored_proxy": 84676,
+      "operator_path_steps": 1131,
+      "operator_max_depth": 4,
+      "operator_difference": 281,
+      "operator_adjacent": 33,
+      "operator_parent_rows": 314,
+      "direct_rows": 1096,
+      "direct_tokens": 36659,
+      "direct_runs": 318,
+      "coefficient_exceptions": 2,
+      "avoided_rows": 2,
+      "avoided_tokens": 53,
+      "shared_rows": 389,
+      "shared_tokens": 13931,
+      "window_uses": 1038,
+      "correction_coeff_l1": 2140,
+      "source_checks": 667,
+      "setup_us": 1013.343,
+      "prepare": {
+        "median_us": 262.64300000000003,
+        "p95_us": 271.231,
+        "samples": 4,
+        "p99_us": 271.231,
+        "max_us": 300.044
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 65.64500000000001,
+            "p95_us": 472.044,
+            "samples": 832,
+            "p99_us": 818.208,
+            "max_us": 881.473
+          },
+          "rank_checks": 832,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 42712,
+            "expansions": 39818,
+            "patch_hits": 50184,
+            "patch_mapping_visits": 25638,
+            "patch_expansions": 25638,
+            "operator_mapping_visits": 72248
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 73.5115,
+            "p95_us": 170.468,
+            "samples": 1280,
+            "p99_us": 192.561,
+            "max_us": 202.286
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2680,
+            "expansions": 2498,
+            "patch_hits": 792,
+            "patch_mapping_visits": 404,
+            "patch_expansions": 404,
+            "operator_mapping_visits": 1056
+          }
+        }
+      }
+    },
+    "quotient4_k8": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 2019328,
+      "frame_payload_bytes": 884795,
+      "unique_frames": 667,
+      "unique_contents": 667,
+      "shards": 1,
+      "max_shard_rows": 667,
+      "fts_bytes": 815104,
+      "table_bytes": {
+        "active_stats": 16384,
+        "base_fts_config": 4096,
+        "base_fts_data": 614400,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 12288,
+        "frames": 1032192,
+        "idx_delta": 12288,
+        "operator_parent": 4096,
+        "patch_coeff": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 159744,
+        "patch_fts_docsize": 20480,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 20480,
+        "predictors": 4096,
+        "revision_cid": 16384,
+        "revisions": 36864,
+        "source": 36864,
+        "sqlite_schema": 4096
+      },
+      "build_us": 758796.176,
+      "kind_0": 160,
+      "kind_1": 507,
+      "delta_build_us": 2833787.21,
+      "base_contents": 172,
+      "base_tokens": 296047,
+      "aligned_available": 507,
+      "patch_pairs": 2421,
+      "patch_tokens": 177349,
+      "raw_nonempty_windows": 4842,
+      "delta_contents": 495,
+      "aligned_selected": 483,
+      "operator_direct": 173,
+      "operator_direct_proxy": 206401,
+      "operator_stored_proxy": 90775,
+      "operator_path_steps": 1174,
+      "operator_max_depth": 4,
+      "operator_difference": 285,
+      "operator_adjacent": 37,
+      "operator_parent_rows": 322,
+      "direct_rows": 1125,
+      "direct_tokens": 37328,
+      "direct_runs": 329,
+      "coefficient_exceptions": 2,
+      "avoided_rows": 2,
+      "avoided_tokens": 53,
+      "shared_rows": 354,
+      "shared_tokens": 12371,
+      "window_uses": 1149,
+      "correction_coeff_l1": 2280,
+      "source_checks": 667,
+      "setup_us": 1065.012,
+      "prepare": {
+        "median_us": 262.862,
+        "p95_us": 263.398,
+        "samples": 4,
+        "p99_us": 263.398,
+        "max_us": 285.231
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 63.956999999999994,
+            "p95_us": 465.204,
+            "samples": 832,
+            "p99_us": 804.377,
+            "max_us": 860.342
+          },
+          "rank_checks": 832,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 42712,
+            "expansions": 39818,
+            "patch_hits": 49808,
+            "patch_mapping_visits": 25718,
+            "patch_expansions": 25718,
+            "operator_mapping_visits": 77720
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 71.533,
+            "p95_us": 166.061,
+            "samples": 1280,
+            "p99_us": 185.761,
+            "max_us": 202.417
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2680,
+            "expansions": 2498,
+            "patch_hits": 792,
+            "patch_mapping_visits": 408,
+            "patch_expansions": 408,
+            "operator_mapping_visits": 1152
+          }
+        }
+      }
+    },
+    "adaptive4_k4": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 2019328,
+      "frame_payload_bytes": 884795,
+      "unique_frames": 667,
+      "unique_contents": 667,
+      "shards": 1,
+      "max_shard_rows": 667,
+      "fts_bytes": 819200,
+      "table_bytes": {
+        "active_stats": 16384,
+        "base_fts_config": 4096,
+        "base_fts_data": 614400,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 12288,
+        "frames": 1032192,
+        "idx_delta": 12288,
+        "operator_parent": 4096,
+        "patch_coeff": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 163840,
+        "patch_fts_docsize": 20480,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 16384,
+        "predictors": 4096,
+        "revision_cid": 16384,
+        "revisions": 36864,
+        "source": 36864,
+        "sqlite_schema": 4096
+      },
+      "build_us": 758796.176,
+      "kind_0": 160,
+      "kind_1": 507,
+      "delta_build_us": 2343684.617,
+      "base_contents": 172,
+      "base_tokens": 296047,
+      "aligned_available": 507,
+      "patch_pairs": 2421,
+      "patch_tokens": 177349,
+      "raw_nonempty_windows": 4842,
+      "delta_contents": 495,
+      "aligned_selected": 483,
+      "operator_direct": 181,
+      "operator_direct_proxy": 206401,
+      "operator_stored_proxy": 86179,
+      "operator_path_steps": 1129,
+      "operator_max_depth": 4,
+      "operator_difference": 276,
+      "operator_adjacent": 38,
+      "operator_parent_rows": 314,
+      "direct_rows": 1113,
+      "direct_tokens": 36380,
+      "direct_runs": 320,
+      "coefficient_exceptions": 2,
+      "avoided_rows": 2,
+      "avoided_tokens": 53,
+      "shared_rows": 384,
+      "shared_tokens": 14156,
+      "window_uses": 1039,
+      "correction_coeff_l1": 2158,
+      "source_checks": 667,
+      "setup_us": 1033.924,
+      "prepare": {
+        "median_us": 239.743,
+        "p95_us": 249.648,
+        "samples": 4,
+        "p99_us": 249.648,
+        "max_us": 294.135
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 63.6055,
+            "p95_us": 453.796,
+            "samples": 832,
+            "p99_us": 796.064,
+            "max_us": 859.861
+          },
+          "rank_checks": 832,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 42712,
+            "expansions": 39818,
+            "patch_hits": 50328,
+            "patch_mapping_visits": 25530,
+            "patch_expansions": 25530,
+            "operator_mapping_visits": 72456
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 70.281,
+            "p95_us": 164.078,
+            "samples": 1280,
+            "p99_us": 183.658,
+            "max_us": 192.03
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2680,
+            "expansions": 2498,
+            "patch_hits": 792,
+            "patch_mapping_visits": 402,
+            "patch_expansions": 402,
+            "operator_mapping_visits": 1048
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "fixed native source/index roots, finalized archive only",
+    "operator path depth distinct from unchanged one-hop source recovery bound",
+    "admission uses token-equivalent proxy, not physical byte optimum; paths limited to same root",
+    "signed window telescoping exact for supported phrases; no arbitrary positions or RH theorem transfer",
+    "precomputed active descendants charged setup; no peak RSS or physical IO claim; warm sequential timings",
+    "same previously studied R160 first-parent path-touch cohorts; excluded deleted paths; not new independent corpora or transactional commit ingestion"
+  ],
+  "pin": "777489f9e09c8d0dd6b12f9d90de6376330577a2",
+  "retained_paths": 160,
+  "changed_paths": 133
+}

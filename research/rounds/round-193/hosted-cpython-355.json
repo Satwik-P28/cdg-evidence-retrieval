@@ -1,0 +1,737 @@
+{
+  "round": 193,
+  "corpus": "cpython",
+  "revisions": 355,
+  "manifest_sha256": "b385e695dd75995df21ee467c3c2bec67415a27300446c0bffdc24c3e76eac83",
+  "cutoffs": [
+    80,
+    135,
+    266,
+    355
+  ],
+  "query_counts": {
+    "legacy": 88,
+    "extended": 160
+  },
+  "query_hashes": {
+    "legacy": "50f7c08229f57f3c35ed0da1aefb89e571807cc17aabaa6a8b2e50896bac8efb",
+    "extended": "dc00c0eb5dd672401be42bb990fc0e67afeff6e0c033857f45b5d11b94c8d09c"
+  },
+  "anchors_sha256": "3cd0a1ee035fe345d8e43c99cc1f8557a2be5ee4b6c3290b9233e490b34e436f",
+  "policies": {
+    "positional": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 4644864,
+      "frame_payload_bytes": 744488,
+      "unique_frames": 351,
+      "unique_contents": 351,
+      "shards": 1,
+      "max_shard_rows": 351,
+      "fts_bytes": 3706880,
+      "table_bytes": {
+        "active_stats": 12288,
+        "contents": 4096,
+        "docs_0_config": 4096,
+        "docs_0_data": 3682304,
+        "docs_0_docsize": 4096,
+        "docs_0_idx": 16384,
+        "frames": 856064,
+        "predictors": 4096,
+        "revision_cid": 12288,
+        "revisions": 20480,
+        "source": 24576,
+        "sqlite_schema": 4096
+      },
+      "build_us": 1315599.886,
+      "kind_0": 80,
+      "kind_1": 275,
+      "source_checks": 355,
+      "setup_us": 1.051,
+      "prepare": {
+        "median_us": 105.507,
+        "p95_us": 109.164,
+        "samples": 4,
+        "p99_us": 109.164,
+        "max_us": 156.432
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 149.348,
+            "p95_us": 522.926,
+            "samples": 704,
+            "p99_us": 598.786,
+            "max_us": 903.414
+          },
+          "rank_checks": 704,
+          "max_score_error": 0,
+          "work": {}
+        },
+        "extended": {
+          "query": {
+            "median_us": 243.799,
+            "p95_us": 944.211,
+            "samples": 1280,
+            "p99_us": 1227.368,
+            "max_us": 1791.41
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {}
+        }
+      }
+    },
+    "signed": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 1683456,
+      "frame_payload_bytes": 744488,
+      "unique_frames": 351,
+      "unique_contents": 351,
+      "shards": 1,
+      "max_shard_rows": 351,
+      "fts_bytes": 671744,
+      "table_bytes": {
+        "active_stats": 12288,
+        "base_fts_config": 4096,
+        "base_fts_data": 540672,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 4096,
+        "frames": 856064,
+        "idx_delta": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 98304,
+        "patch_fts_docsize": 12288,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 65536,
+        "predictors": 4096,
+        "revision_cid": 12288,
+        "revisions": 20480,
+        "source": 24576,
+        "sqlite_schema": 4096
+      },
+      "build_us": 1315599.886,
+      "kind_0": 80,
+      "kind_1": 275,
+      "delta_build_us": 2066368.626,
+      "base_contents": 81,
+      "base_tokens": 268809,
+      "aligned_available": 271,
+      "patch_pairs": 2608,
+      "patch_tokens": 184579,
+      "raw_nonempty_windows": 5216,
+      "delta_contents": 270,
+      "aligned_selected": 268,
+      "direct_rows": 156,
+      "direct_tokens": 5261,
+      "direct_runs": 51,
+      "shared_rows": 649,
+      "shared_tokens": 24005,
+      "window_uses": 5036,
+      "correction_coeff_l1": 5216,
+      "source_checks": 355,
+      "setup_us": 3179.046,
+      "prepare": {
+        "median_us": 222.8355,
+        "p95_us": 230.019,
+        "samples": 4,
+        "p99_us": 230.019,
+        "max_us": 252.35
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 111.708,
+            "p95_us": 337.99,
+            "samples": 704,
+            "p99_us": 455.259,
+            "max_us": 647.827
+          },
+          "rank_checks": 704,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 9704,
+            "expansions": 9550,
+            "patch_hits": 4688,
+            "patch_mapping_visits": 26664,
+            "patch_expansions": 1760
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 121.777,
+            "p95_us": 230.069,
+            "samples": 1280,
+            "p99_us": 376.873,
+            "max_us": 468.444
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2272,
+            "expansions": 2216,
+            "patch_hits": 392,
+            "patch_mapping_visits": 2608,
+            "patch_expansions": 146
+          }
+        }
+      }
+    },
+    "path4": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 1650688,
+      "frame_payload_bytes": 744488,
+      "unique_frames": 351,
+      "unique_contents": 351,
+      "shards": 1,
+      "max_shard_rows": 351,
+      "fts_bytes": 675840,
+      "table_bytes": {
+        "active_stats": 12288,
+        "base_fts_config": 4096,
+        "base_fts_data": 540672,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 4096,
+        "frames": 856064,
+        "idx_delta": 4096,
+        "operator_parent": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 102400,
+        "patch_fts_docsize": 12288,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 24576,
+        "predictors": 4096,
+        "revision_cid": 12288,
+        "revisions": 20480,
+        "source": 24576,
+        "sqlite_schema": 4096
+      },
+      "build_us": 1315599.886,
+      "kind_0": 80,
+      "kind_1": 275,
+      "delta_build_us": 3160801.296,
+      "base_contents": 81,
+      "base_tokens": 268809,
+      "aligned_available": 271,
+      "patch_pairs": 2608,
+      "patch_tokens": 184579,
+      "raw_nonempty_windows": 5216,
+      "delta_contents": 270,
+      "aligned_selected": 268,
+      "operator_direct": 116,
+      "operator_direct_proxy": 215875,
+      "operator_stored_proxy": 74934,
+      "operator_path_steps": 559,
+      "operator_max_depth": 4,
+      "operator_adjacent": 41,
+      "operator_difference": 113,
+      "operator_parent_rows": 154,
+      "direct_rows": 379,
+      "direct_tokens": 14337,
+      "direct_runs": 115,
+      "shared_rows": 490,
+      "shared_tokens": 15879,
+      "window_uses": 1457,
+      "correction_coeff_l1": 1842,
+      "source_checks": 355,
+      "setup_us": 1294.103,
+      "prepare": {
+        "median_us": 251.19850000000002,
+        "p95_us": 276.105,
+        "samples": 4,
+        "p99_us": 276.105,
+        "max_us": 405.205
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 109.0535,
+            "p95_us": 325.627,
+            "samples": 704,
+            "p99_us": 418.821,
+            "max_us": 442.415
+          },
+          "rank_checks": 704,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 9704,
+            "expansions": 9550,
+            "patch_hits": 4904,
+            "patch_mapping_visits": 1806,
+            "patch_expansions": 1806,
+            "operator_mapping_visits": 9576
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 120.3595,
+            "p95_us": 227.604,
+            "samples": 1280,
+            "p99_us": 369.018,
+            "max_us": 436.904
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2272,
+            "expansions": 2216,
+            "patch_hits": 432,
+            "patch_mapping_visits": 146,
+            "patch_expansions": 146,
+            "operator_mapping_visits": 904
+          }
+        }
+      }
+    },
+    "quotient4": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 1646592,
+      "frame_payload_bytes": 744488,
+      "unique_frames": 351,
+      "unique_contents": 351,
+      "shards": 1,
+      "max_shard_rows": 351,
+      "fts_bytes": 671744,
+      "table_bytes": {
+        "active_stats": 12288,
+        "base_fts_config": 4096,
+        "base_fts_data": 540672,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 4096,
+        "frames": 856064,
+        "idx_delta": 4096,
+        "operator_parent": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 98304,
+        "patch_fts_docsize": 12288,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 24576,
+        "predictors": 4096,
+        "revision_cid": 12288,
+        "revisions": 20480,
+        "source": 24576,
+        "sqlite_schema": 4096
+      },
+      "build_us": 1315599.886,
+      "kind_0": 80,
+      "kind_1": 275,
+      "delta_build_us": 3144405.477,
+      "base_contents": 81,
+      "base_tokens": 268809,
+      "aligned_available": 271,
+      "patch_pairs": 2608,
+      "patch_tokens": 184579,
+      "raw_nonempty_windows": 5216,
+      "delta_contents": 270,
+      "aligned_selected": 268,
+      "operator_direct": 120,
+      "operator_direct_proxy": 215875,
+      "operator_stored_proxy": 80364,
+      "operator_path_steps": 548,
+      "operator_max_depth": 4,
+      "operator_difference": 135,
+      "operator_adjacent": 15,
+      "operator_parent_rows": 150,
+      "direct_rows": 264,
+      "direct_tokens": 10376,
+      "direct_runs": 87,
+      "shared_rows": 530,
+      "shared_tokens": 18418,
+      "window_uses": 1620,
+      "correction_coeff_l1": 1890,
+      "source_checks": 355,
+      "setup_us": 1495.608,
+      "prepare": {
+        "median_us": 248.69850000000002,
+        "p95_us": 249.104,
+        "samples": 4,
+        "p99_us": 249.104,
+        "max_us": 423.82
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 112.1545,
+            "p95_us": 321.028,
+            "samples": 704,
+            "p99_us": 414.914,
+            "max_us": 495.624
+          },
+          "rank_checks": 704,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 9704,
+            "expansions": 9550,
+            "patch_hits": 4664,
+            "patch_mapping_visits": 1764,
+            "patch_expansions": 1764,
+            "operator_mapping_visits": 10144
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 119.428,
+            "p95_us": 228.907,
+            "samples": 1280,
+            "p99_us": 362.736,
+            "max_us": 405.997
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2272,
+            "expansions": 2216,
+            "patch_hits": 392,
+            "patch_mapping_visits": 146,
+            "patch_expansions": 146,
+            "operator_mapping_visits": 952
+          }
+        }
+      }
+    },
+    "quotient4_k4": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 1646592,
+      "frame_payload_bytes": 744488,
+      "unique_frames": 351,
+      "unique_contents": 351,
+      "shards": 1,
+      "max_shard_rows": 351,
+      "fts_bytes": 671744,
+      "table_bytes": {
+        "active_stats": 12288,
+        "base_fts_config": 4096,
+        "base_fts_data": 540672,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 4096,
+        "frames": 856064,
+        "idx_delta": 4096,
+        "operator_parent": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 98304,
+        "patch_fts_docsize": 12288,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 24576,
+        "predictors": 4096,
+        "revision_cid": 12288,
+        "revisions": 20480,
+        "source": 24576,
+        "sqlite_schema": 4096
+      },
+      "build_us": 1315599.886,
+      "kind_0": 80,
+      "kind_1": 275,
+      "delta_build_us": 5091200.303,
+      "base_contents": 81,
+      "base_tokens": 268809,
+      "aligned_available": 271,
+      "patch_pairs": 2608,
+      "patch_tokens": 184579,
+      "raw_nonempty_windows": 5216,
+      "delta_contents": 270,
+      "aligned_selected": 268,
+      "operator_direct": 101,
+      "operator_direct_proxy": 215875,
+      "operator_stored_proxy": 78921,
+      "operator_path_steps": 607,
+      "operator_max_depth": 4,
+      "operator_difference": 148,
+      "operator_adjacent": 21,
+      "operator_parent_rows": 169,
+      "direct_rows": 298,
+      "direct_tokens": 11043,
+      "direct_runs": 101,
+      "shared_rows": 492,
+      "shared_tokens": 16966,
+      "window_uses": 1518,
+      "correction_coeff_l1": 1822,
+      "source_checks": 355,
+      "setup_us": 1478.016,
+      "prepare": {
+        "median_us": 245.7935,
+        "p95_us": 249.926,
+        "samples": 4,
+        "p99_us": 249.926,
+        "max_us": 429.511
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 110.465,
+            "p95_us": 324.956,
+            "samples": 704,
+            "p99_us": 412.278,
+            "max_us": 433.278
+          },
+          "rank_checks": 704,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 9704,
+            "expansions": 9550,
+            "patch_hits": 4576,
+            "patch_mapping_visits": 1824,
+            "patch_expansions": 1824,
+            "operator_mapping_visits": 10168
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 120.5695,
+            "p95_us": 227.073,
+            "samples": 1280,
+            "p99_us": 366.153,
+            "max_us": 408.792
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2272,
+            "expansions": 2216,
+            "patch_hits": 392,
+            "patch_mapping_visits": 150,
+            "patch_expansions": 150,
+            "operator_mapping_visits": 1040
+          }
+        }
+      }
+    },
+    "quotient4_k8": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 1650688,
+      "frame_payload_bytes": 744488,
+      "unique_frames": 351,
+      "unique_contents": 351,
+      "shards": 1,
+      "max_shard_rows": 351,
+      "fts_bytes": 671744,
+      "table_bytes": {
+        "active_stats": 12288,
+        "base_fts_config": 4096,
+        "base_fts_data": 540672,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 4096,
+        "frames": 856064,
+        "idx_delta": 4096,
+        "operator_parent": 4096,
+        "patch_coeff": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 98304,
+        "patch_fts_docsize": 12288,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 24576,
+        "predictors": 4096,
+        "revision_cid": 12288,
+        "revisions": 20480,
+        "source": 24576,
+        "sqlite_schema": 4096
+      },
+      "build_us": 1315599.886,
+      "kind_0": 80,
+      "kind_1": 275,
+      "delta_build_us": 7143484.697,
+      "base_contents": 81,
+      "base_tokens": 268809,
+      "aligned_available": 271,
+      "patch_pairs": 2608,
+      "patch_tokens": 184579,
+      "raw_nonempty_windows": 5216,
+      "delta_contents": 270,
+      "aligned_selected": 268,
+      "operator_direct": 91,
+      "operator_direct_proxy": 215875,
+      "operator_stored_proxy": 105025,
+      "operator_path_steps": 662,
+      "operator_max_depth": 4,
+      "operator_difference": 158,
+      "operator_adjacent": 21,
+      "operator_parent_rows": 179,
+      "direct_rows": 451,
+      "direct_tokens": 13372,
+      "direct_runs": 114,
+      "coefficient_exceptions": 2,
+      "avoided_rows": 2,
+      "avoided_tokens": 38,
+      "shared_rows": 338,
+      "shared_tokens": 15063,
+      "window_uses": 1755,
+      "correction_coeff_l1": 2216,
+      "source_checks": 355,
+      "setup_us": 1669.22,
+      "prepare": {
+        "median_us": 249.9905,
+        "p95_us": 267.939,
+        "samples": 4,
+        "p99_us": 267.939,
+        "max_us": 496.595
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 116.1215,
+            "p95_us": 327.72,
+            "samples": 704,
+            "p99_us": 422.147,
+            "max_us": 564.482
+          },
+          "rank_checks": 704,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 9704,
+            "expansions": 9550,
+            "patch_hits": 4624,
+            "patch_mapping_visits": 2020,
+            "patch_expansions": 2020,
+            "operator_mapping_visits": 13776
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 121.857,
+            "p95_us": 236.571,
+            "samples": 1280,
+            "p99_us": 367.435,
+            "max_us": 405.576
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2272,
+            "expansions": 2216,
+            "patch_hits": 392,
+            "patch_mapping_visits": 166,
+            "patch_expansions": 166,
+            "operator_mapping_visits": 1688
+          }
+        }
+      }
+    },
+    "adaptive4_k4": {
+      "predictor_bytes": 0,
+      "sqlite_bytes": 1646592,
+      "frame_payload_bytes": 744488,
+      "unique_frames": 351,
+      "unique_contents": 351,
+      "shards": 1,
+      "max_shard_rows": 351,
+      "fts_bytes": 671744,
+      "table_bytes": {
+        "active_stats": 12288,
+        "base_fts_config": 4096,
+        "base_fts_data": 540672,
+        "base_fts_docsize": 4096,
+        "base_fts_idx": 4096,
+        "contents": 4096,
+        "frames": 856064,
+        "idx_delta": 4096,
+        "operator_parent": 4096,
+        "patch_fts_config": 4096,
+        "patch_fts_data": 98304,
+        "patch_fts_docsize": 12288,
+        "patch_fts_idx": 4096,
+        "patch_run": 4096,
+        "patch_use": 24576,
+        "predictors": 4096,
+        "revision_cid": 12288,
+        "revisions": 20480,
+        "source": 24576,
+        "sqlite_schema": 4096
+      },
+      "build_us": 1315599.886,
+      "kind_0": 80,
+      "kind_1": 275,
+      "delta_build_us": 5270134.276,
+      "base_contents": 81,
+      "base_tokens": 268809,
+      "aligned_available": 271,
+      "patch_pairs": 2608,
+      "patch_tokens": 184579,
+      "raw_nonempty_windows": 5216,
+      "delta_contents": 270,
+      "aligned_selected": 268,
+      "operator_direct": 100,
+      "operator_direct_proxy": 215875,
+      "operator_stored_proxy": 78429,
+      "operator_path_steps": 608,
+      "operator_max_depth": 4,
+      "operator_difference": 148,
+      "operator_adjacent": 22,
+      "operator_parent_rows": 170,
+      "direct_rows": 309,
+      "direct_tokens": 11395,
+      "direct_runs": 106,
+      "shared_rows": 480,
+      "shared_tokens": 16556,
+      "window_uses": 1479,
+      "correction_coeff_l1": 1794,
+      "source_checks": 355,
+      "setup_us": 1502.642,
+      "prepare": {
+        "median_us": 245.834,
+        "p95_us": 258.838,
+        "samples": 4,
+        "p99_us": 258.838,
+        "max_us": 662.663
+      },
+      "splits": {
+        "legacy": {
+          "query": {
+            "median_us": 118.04249999999999,
+            "p95_us": 329.067,
+            "samples": 704,
+            "p99_us": 417.771,
+            "max_us": 456.111
+          },
+          "rank_checks": 704,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 9704,
+            "expansions": 9550,
+            "patch_hits": 4584,
+            "patch_mapping_visits": 1840,
+            "patch_expansions": 1840,
+            "operator_mapping_visits": 10312
+          }
+        },
+        "extended": {
+          "query": {
+            "median_us": 120.6575,
+            "p95_us": 229.303,
+            "samples": 1280,
+            "p99_us": 366.105,
+            "max_us": 412.09
+          },
+          "rank_checks": 1280,
+          "max_score_error": 0,
+          "work": {
+            "base_hits": 2272,
+            "expansions": 2216,
+            "patch_hits": 392,
+            "patch_mapping_visits": 150,
+            "patch_expansions": 150,
+            "operator_mapping_visits": 1096
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "fixed native source/index roots, finalized archive only",
+    "operator path depth distinct from unchanged one-hop source recovery bound",
+    "admission uses token-equivalent proxy, not physical byte optimum; paths limited to same root",
+    "signed window telescoping exact for supported phrases; no arbitrary positions or RH theorem transfer",
+    "precomputed active descendants charged setup; no peak RSS or physical IO claim; warm sequential timings",
+    "same previously studied R160 first-parent path-touch cohorts; excluded deleted paths; not new independent corpora or transactional commit ingestion"
+  ],
+  "pin": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+  "retained_paths": 80,
+  "changed_paths": 66
+}
