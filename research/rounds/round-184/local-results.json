@@ -1,0 +1,97 @@
+{
+  "sqlite": "3.46.1",
+  "description": "Actual local execution. Single run. Timings descriptive, not native performance. Coupled and ranking probes independent.",
+  "ranking": [
+    {
+      "regime": "sparse",
+      "docs": 320,
+      "windows": 634,
+      "queries": 82,
+      "eager": {
+        "base_counts": 37120,
+        "eligible_rows": 47513,
+        "exact_window_evals": 47513
+      },
+      "certified": {
+        "base_counts": 37120,
+        "eligible_rows": 47513,
+        "exact_window_evals": 28358,
+        "ambiguous_df": 11666,
+        "zero_certificates": 10664,
+        "positive_certificates": 14790,
+        "exact_scored": 2547,
+        "pruned_candidates": 7561
+      },
+      "seconds": [
+        0.6741282879999986,
+        0.6615800269999923
+      ]
+    },
+    {
+      "regime": "scattered",
+      "docs": 320,
+      "windows": 3169,
+      "queries": 84,
+      "eager": {
+        "base_counts": 37760,
+        "eligible_rows": 230937,
+        "exact_window_evals": 230937
+      },
+      "certified": {
+        "base_counts": 37760,
+        "eligible_rows": 230937,
+        "exact_window_evals": 227137,
+        "ambiguous_df": 28393,
+        "positive_certificates": 917,
+        "exact_scored": 1076,
+        "pruned_candidates": 10071,
+        "zero_certificates": 8450
+      },
+      "seconds": [
+        1.3475263599999892,
+        1.3308423369999787
+      ]
+    }
+  ],
+  "coupled": {
+    "checks": 139070,
+    "regimes": [
+      {
+        "regime": "substitution",
+        "queries": 120,
+        "pairs": 240000,
+        "unigram_zero": 154781,
+        "coupled_zero": 134773,
+        "true_zero": 239580,
+        "unigram_width": 447341,
+        "coupled_width": 156435,
+        "combined_zero": 197900,
+        "combined_width": 62265
+      },
+      {
+        "regime": "insertion",
+        "queries": 120,
+        "pairs": 240000,
+        "unigram_zero": 173241,
+        "coupled_zero": 0,
+        "true_zero": 239756,
+        "unigram_width": 320047,
+        "coupled_width": 927215,
+        "combined_zero": 173241,
+        "combined_width": 143017
+      },
+      {
+        "regime": "deletion",
+        "queries": 120,
+        "pairs": 240000,
+        "unigram_zero": 185463,
+        "coupled_zero": 0,
+        "true_zero": 238840,
+        "unigram_width": 247746,
+        "coupled_width": 1089301,
+        "combined_zero": 185463,
+        "combined_width": 151438
+      }
+    ]
+  }
+}

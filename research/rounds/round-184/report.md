@@ -14,3 +14,6 @@ Paired-bound experiment (coupled_probe.py): 139070 exhaustive/randomized identit
 
 ## Hosted experiment
 Same R168 signed archive, compare eager native MATCH, DF certification without score pruning, and DF plus top-k pruning. Read unigram bounds from existing index, activate candidate rows using row-specific native MATCH, memoize shared corrections. All archive pages identical, all source byte/activation checks, native rank and exact DF/score signatures at four cutoffs. This may be much slower than native phrase postings because of unigram list scans and SQL row-at-a-time overhead. Two corpora first. Native tests and corpus CI pending. Pair-coupled bounds not implemented in hosted path; separate representation investigation next if justified. No novelty claim beyond research hypothesis.
+
+## Reproduction
+Run python research/rounds/round-184/ranking_probe.py and coupled_probe.py. Independent local synthetic probe source transcribed from executed code; raw output in local-results.json. Hosted CI: https://github.com/Satwik-P28/cdg-evidence-retrieval/actions/runs/46124632897 . No corpus outcome claimed at commit time.
