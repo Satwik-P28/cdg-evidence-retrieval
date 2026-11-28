@@ -123,7 +123,7 @@ def load_patch_map(db):
         return PatchRuns(list(db.execute("SELECT last_ordinal,cid FROM patch_run ORDER BY last_ordinal")),mapping,coefficients)
     return mapping
 
-def build_delta(db,path,events,mode):
+def build_delta(db,path,events,mode,residual_builder=None):
     start=time.perf_counter_ns()
     db.executescript("""
       CREATE VIRTUAL TABLE base_fts USING fts5(body,content='');
@@ -203,6 +203,9 @@ def build_delta(db,path,events,mode):
         else:
             insert("base_fts",cid,target);bases.add(cid);stats["base_contents"]+=1;stats["base_tokens"]+=len(target)
         hist[article].append(cid)
+    if residual_builder is not None:
+        if not runs:raise ValueError("residual builder requires signed pending rows")
+        pending=residual_builder(db,pending,stats)
     if runs:write_runs(db,pending,insert,stats,"_adaptive_" in mode,"_weighted_" in mode,"_adjusted_" in mode)
     db.execute("DROP TABLE docs_0")
     for table in ("base_fts","patch_fts"):
@@ -226,7 +229,7 @@ def prepare_delta(db,c,global_map=None):
             if cid in active:patch_children[wid].append((cid,coeff))
     return state,children,patch_children
 
-def rank_delta(db,p,o,prep):
+def rank_delta(db,p,o,prep,residual_reader=None,frequency_sink=None):
     ar.expression(p,o);(active,lens,n,total),children,patch_children=prep;freq=[];work=collections.Counter()
     for phrase in p:
         q=tokens(db,phrase)
@@ -246,10 +249,12 @@ def rank_delta(db,p,o,prep):
                     if cid in active:
                         counts[cid]+=coeff*tf
                         work["patch_expansions"]+=1
+        if residual_reader is not None:residual_reader(db,q,active,counts,work)
         assert all(v>=0 for v in counts.values())
         matches={g:tf for cid,tf in counts.items() if tf for g in active[cid]}
         assert all(1<=tf<=lens[g] for g,tf in matches.items())
         freq.append(matches)
+    if frequency_sink is not None:frequency_sink.extend(freq)
     hits,df=ar.score(freq,o,n,total,lens)
     return hits,df,work
 
