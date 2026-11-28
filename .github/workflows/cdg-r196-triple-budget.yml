@@ -1,0 +1,27 @@
+name: CDG R196 triple-budget evidence retrieval
+on:
+  push:
+    branches: ['research/round-196-triple-budget']
+    paths: ['experiments/round-196/**','.github/workflows/cdg-r196-triple-budget.yml']
+  workflow_dispatch:
+jobs:
+  qasper:
+    strategy:
+      fail-fast: false
+      matrix:
+        seed: [196,197]
+        policy: [balanced,global]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install Brotli==1.1.0 zstandard==0.23.0
+      - run: python -m unittest discover -s experiments/round-196 -p 'test_*.py' -v
+      - run: python experiments/round-196/triple_budget.py --seed ${{ matrix.seed }} --policy ${{ matrix.policy }} --out experiments/round-196/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r196-${{ matrix.seed }}-${{ matrix.policy }}
+          path: experiments/round-196/ci.json
