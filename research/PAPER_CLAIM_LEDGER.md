@@ -51,8 +51,10 @@ earlier claim that the evidence contradicts.
 | # | claim | evidence | status |
 |---|---|---|---|
 | E1 | The planner chooses the cheapest mode per query and never a mode it cannot execute. | `test_planner.py`: no positions without full coverage, no pair promises from an unindexed pair in a selective index, zero survivors for a missing pair in a complete index. | MET |
-| E2 | Planned execution beats a fixed strategy at equal storage. | R182 `planner` vs `source` and `pairs_source` on the same archives. | see `research/rounds/round-182/report.md` for the measured outcome |
-| E3 | Phrase-level joint selection beats per-term selection. | R183 `joint_coverage` vs `additive` and `independent_df`. | see `research/rounds/round-183/report.md` for the measured outcome |
+| E2 | Planned execution beats a fixed strategy at equal storage. | R182 CLARK: planner 52,563 vs 54,010 (A/held-out), 48,843 vs 51,248 (temporal), 60,789 vs 48,858 (train). R182 AP: planner 97,446 vs 92,592 (A/held-out), 79,742 vs 85,675 (B/held-out), 86,638 vs 66,811 (temporal). | **NOT MET** — the planner wins 3 of 10 splits in total and loses up to 24% elsewhere. Reported as a negative result. |
+| E3 | Phrase-level joint selection beats per-term selection. | R183: `joint_coverage` wins 1 of 6 (corpus, budget) cells; `additive`/`pairwise`/`local_swap` win the rest by up to 2×. | **REFUTED** — and the cause is identified: one token's positions suffice to reject, so a "≥2 tokens" objective undercounts every token. |
+| E4 | Better positional selection objectives beat the R174 policy on held-out queries. | R183: 20% budget → 11,053 µs CLARK (15.2× better than frequency-only) and 57,009 µs AP (6.8×) at 21–23% extra bytes. | **MET**, with the caveat that the winning objectives are simpler than the one proposed. |
+| E5 | Greedy is within a stated ratio of the optimum. | R183 `exact_gap` over the top 12 terms: 0.329 (CLARK 1%), 1.000 (CLARK 5%, 20%), 0.856 (AP 1%), 0.992 (AP 5%). | **QUALIFIED** — measured gap on a 12-term reduced problem; no submodularity proof, no (1−1/e) claim. |
 
 ## Claims that must not appear
 

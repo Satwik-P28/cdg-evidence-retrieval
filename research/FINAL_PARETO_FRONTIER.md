@@ -100,6 +100,44 @@ CLARK has three non-dominated arms: `freq`, `pairs_selective-5%`, `pairs_all`. H
 positions are strictly wasteful: the extra 286,720 bytes buy nothing once adjacency has
 already removed the candidates, and P95 rises from 7,400 to 9,551 µs.
 
+## Positional selection frontier (R183, held-out split A)
+
+These arms buy positions for a selected token set and nothing else, so they are directly
+comparable with each other and with R181's frequency baseline on the same frozen workload.
+The fraction is the **measured** archive size over the base archive.
+
+### AP-10,009 (base 14,082,048 B; frequency p95 388,344 µs)
+
+| selector | budget | p95 µs | measured fraction |
+|---|---:|---:|---:|
+| `independent_df` | 20% | 337,877 | 1.228 |
+| `additive` | 5% | 332,222 | 1.054 |
+| `local_swap` | 5% | 319,161 | 1.053 |
+| `joint_coverage` | 5% | 282,908 | 1.053 |
+| `pairwise` | 5% | 250,007 | 1.054 |
+| `local_swap` | 1% | 250,457 | 1.011 |
+| `joint_coverage` | 20% | 82,419 | 1.212 |
+| `additive` | 20% | 66,057 | 1.213 |
+| `pairwise` | 20% | 61,323 | 1.212 |
+| `local_swap` | 20% | **57,009** | 1.212 |
+
+Non-dominated: `local_swap` 1% (250,457 µs at 1.1%), `pairwise` 5% (250,007 at 5.4%),
+`local_swap` 20% (57,009 at 21.2%). `independent_df` is dominated at every budget.
+
+### CLARK-1,161 (base 5,009,408 B; frequency p95 168,171 µs)
+
+| selector | budget | p95 µs | measured fraction |
+|---|---:|---:|---:|
+| `independent_df` | 20% | 131,609 | 1.233 |
+| `joint_coverage` | 1% | 256,688 | 1.014 |
+| `local_swap` | 1% | **126,019** | 1.014 |
+| `joint_coverage` | 5% | **124,269** | 1.057 |
+| `independent_df` | 5% | 126,471 | 1.059 |
+| `joint_coverage` | 20% | 21,881 | 1.152 |
+| `additive` | 20% | **11,053** | 1.234 |
+
+Non-dominated: `local_swap` 1%, `joint_coverage` 5%, `joint_coverage` 20%, `additive` 20%.
+
 ## Best configurations
 
 **Cheapest archive that is still useful.** `pairs_selective-5%` — 4.3–4.9% above the frequency
@@ -110,6 +148,11 @@ archive, 2.3× (CLARK) to 3.7× (AP) better P95, and 56–57% fewer source reads
 
 **Best absolute latency.** `pairs_all+positions-5%` on AP (12,865 µs P95, 43,062 µs P99); on
 CLARK the same arm loses to `pairs_all` alone.
+
+**Best positional selection (R183).** `local_swap` at 20% on AP (57,009 µs for 21.2% extra
+bytes) and `additive` at 20% on CLARK (11,053 µs for 23.4%). Both beat R181's 5% budgets by
+roughly an order of magnitude, at four to five times the storage. The joint-coverage objective
+that motivated R183 does not win any cell except CLARK at 5%.
 
 **Not worth buying at any size measured.** 64-bit document fingerprints. They add 0.5–0.7%
 storage and reject 0.5% of candidates; on CLARK they are dominated outright, and on AP their

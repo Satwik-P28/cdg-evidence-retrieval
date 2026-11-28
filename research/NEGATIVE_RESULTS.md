@@ -36,6 +36,27 @@ vocabulary rule — buy tokens by document frequency, then store every pair whos
 endpoints are bought — produced the reported gains. The measured dead end is recorded here
 rather than deleted.
 
+## N0e. The "≥ 2 tokens" coverage premise is wrong for positional rejection
+
+R183 was built to test the diagnosis that R174's additive objective could not express "this
+phrase needs two of its three tokens". The joint-coverage objective implements exactly that,
+and it loses:
+
+| corpus | budget | joint_coverage p95 | best other selector | best p95 |
+|---|---:|---:|---|---:|
+| CLARK | 1% | 256,688 | `local_swap` | 126,019 |
+| CLARK | 5% | 124,269 | `joint_coverage` (only win) | — |
+| CLARK | 20% | 21,881 | `additive` | 11,053 |
+| AP | 1% | 251,203 | `local_swap` | 250,457 |
+| AP | 5% | 282,908 | `pairwise` | 250,007 |
+| AP | 20% | 82,419 | `local_swap` | 57,009 |
+
+The premise is what fails. One term's position list is sufficient to prove that a phrase
+cannot occur in a document, so requiring two disclosed tokens undercounts every single
+token: `joint_coverage` buys 575 terms where `additive` buys 3,753 at the same CLARK budget,
+and records 9,657 position rejections against 11,923. The correction is to the *model of
+rejection*, not to the optimiser.
+
 ## N0d. Greedy on a "≥2 tokens" objective does not start
 
 With phrase coverage defined as "at least two of the phrase's tokens selected", every
@@ -47,6 +68,13 @@ it is reported as a design constraint, not a bug that was quietly patched.
 Retained deliberately: each of these cost time and each is more useful to a reader
 than another positive table. All numbers are AP 10,009 at 640 rank checks per
 configuration unless stated, warm cache, same frozen query plan.
+
+## N0f. Local search is not reliably beneficial
+
+Starting from the same greedy set, 1-for-1 swaps within budget help at AP 20%
+(82,419 → 57,009 µs) and hurt at CLARK 5% (124,269 → 165,746 µs). Nothing about the search
+predicts which; it is reported as an unreliable component and is not used in the best
+configurations for CLARK at all.
 
 ## N1. The R172 document-frequency selection policy is cost-ineffective
 

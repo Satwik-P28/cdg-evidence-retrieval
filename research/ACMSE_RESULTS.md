@@ -81,6 +81,33 @@ than returning a short list. A selective index distinguishes "pair not stored" f
 occurs nowhere"; conflating the two was a real false-negative bug, fixed and now covered by a
 test.
 
+### RQ9: does valuing whole phrases beat valuing tokens?
+
+Not as posed. Valuing a token set by the phrases it *completes* (≥ 2 selected tokens) wins one
+of six held-out cells and loses elsewhere, because one term's position list already suffices
+to prove a phrase cannot occur in a document. The corrected objectives — a per-token share
+(`additive`), whole-phrase bundles (`pairwise`), or a swap-repaired greedy (`local_swap`) —
+reach 11,053 µs P95 on CLARK (15.2× better than frequency-only) and 57,009 µs on AP (6.8×)
+at a 20% budget, with measured archive fractions of 1.23 and 1.21.
+
+| corpus | arm | budget | terms | p95 µs | p99 µs | fraction |
+|---|---|---:|---:|---:|---:|---:|
+| CLARK | `additive` | 20% | 3,753 | 11,053 | 33,082 | 1.234 |
+| CLARK | `joint_coverage` | 5% | 190 | 124,269 | 214,083 | 1.057 |
+| CLARK | `local_swap` | 1% | 49 | 126,019 | 221,570 | 1.014 |
+| AP | `local_swap` | 20% | 518 | 57,009 | 133,835 | 1.212 |
+| AP | `pairwise` | 5% | 80 | 250,007 | 652,879 | 1.054 |
+
+The negative result is the useful part: the model of rejection, not the optimiser, was wrong.
+
+### RQ10: does a per-query cost model beat committing to one execution mode?
+
+Not on this archive. With a 5% pair index present, `pairs_source` is already near-optimal for
+almost every query, so planning wins two of five CLARK splits (P95 52,563 vs 54,010 and
+48,843 vs 51,248) and loses the others. The planner's value is robustness — it falls back to
+the source when neither structure covers a phrase — not speed. Its calibration must be in
+microseconds: a byte-based model produced 135,445 µs against 72,078 µs for a fixed arm.
+
 ## RQ1: cost-based selection (AP, 10,009 revisions)
 
 | Configuration | Archive MB | p95 ms | 

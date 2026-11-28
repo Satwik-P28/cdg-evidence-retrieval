@@ -72,10 +72,10 @@
         "A": {
           "train": {
             "query": {
-              "median_us": 1675.173,
-              "p95_us": 155407.941,
-              "p99_us": 261414.174,
-              "max_us": 472541.331,
+              "median_us": 2085.388,
+              "p95_us": 193369.513,
+              "p99_us": 327615.115,
+              "max_us": 610222.437,
               "samples": 815
             },
             "work": {
@@ -88,12 +88,12 @@
               "mode_source": 530
             },
             "filter_work": {
-              "pairs_unindexed": 978000,
-              "candidates_before_filter": 30739355,
-              "candidates_after_filter": 30291920,
-              "candidates_rejected": 447435,
-              "pair_bytes_activated": 36675,
-              "pairs_activated": 36675
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 815,
             "score_error": 0.0,
@@ -102,10 +102,10 @@
           },
           "validation": {
             "query": {
-              "median_us": 1491.883,
-              "p95_us": 100952.186,
-              "p99_us": 195960.982,
-              "max_us": 274879.011,
+              "median_us": 1717.778,
+              "p95_us": 121895.553,
+              "p99_us": 212316.398,
+              "max_us": 305013.882,
               "samples": 259
             },
             "work": {
@@ -118,12 +118,12 @@
               "mode_source": 161
             },
             "filter_work": {
-              "pairs_unindexed": 310800,
-              "candidates_before_filter": 9768703,
-              "candidates_after_filter": 9626512,
-              "candidates_rejected": 142191,
-              "pair_bytes_activated": 11655,
-              "pairs_activated": 11655
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 259,
             "score_error": 0.0,
@@ -132,10 +132,10 @@
           },
           "heldout": {
             "query": {
-              "median_us": 1420.296,
-              "p95_us": 142160.526,
-              "p99_us": 283573.513,
-              "max_us": 407871.81,
+              "median_us": 1322.811,
+              "p95_us": 126310.512,
+              "p99_us": 245889.527,
+              "max_us": 368663.576,
               "samples": 246
             },
             "work": {
@@ -148,12 +148,12 @@
               "mode_source": 149
             },
             "filter_work": {
-              "pairs_unindexed": 295200,
-              "candidates_before_filter": 9278382,
-              "candidates_after_filter": 9143328,
-              "candidates_rejected": 135054,
-              "pair_bytes_activated": 11070,
-              "pairs_activated": 11070
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 246,
             "score_error": 0.0,
@@ -164,10 +164,10 @@
         "B": {
           "heldout": {
             "query": {
-              "median_us": 870.335,
-              "p95_us": 92658.953,
-              "p99_us": 173108.671,
-              "max_us": 243150.008,
+              "median_us": 1255.05,
+              "p95_us": 136435.171,
+              "p99_us": 343424.704,
+              "max_us": 399593.956,
               "samples": 186
             },
             "work": {
@@ -180,12 +180,12 @@
               "mode_source": 103
             },
             "filter_work": {
-              "pairs_unindexed": 223200,
-              "candidates_before_filter": 7015362,
-              "candidates_after_filter": 6913248,
-              "candidates_rejected": 102114,
-              "pair_bytes_activated": 8370,
-              "pairs_activated": 8370
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 186,
             "score_error": 0.0,
@@ -196,10 +196,10 @@
         "C": {
           "evaluation": {
             "query": {
-              "median_us": 1690.766,
-              "p95_us": 158494.524,
-              "p99_us": 310240.649,
-              "max_us": 509689.673,
+              "median_us": 1930.263,
+              "p95_us": 186833.884,
+              "p99_us": 402978.402,
+              "max_us": 640868.1,
               "samples": 1320
             },
             "work": {
@@ -212,12 +212,12 @@
               "mode_source": 840
             },
             "filter_work": {
-              "pairs_unindexed": 1584000,
-              "candidates_before_filter": 49786440,
-              "candidates_after_filter": 49061760,
-              "candidates_rejected": 724680,
-              "pair_bytes_activated": 59400,
-              "pairs_activated": 59400
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 1320,
             "score_error": 0.0,
@@ -233,10 +233,10 @@
         "A": {
           "train": {
             "query": {
-              "median_us": 1648.667,
-              "p95_us": 164004.423,
-              "p99_us": 282153.933,
-              "max_us": 498802.922,
+              "median_us": 1368.417,
+              "p95_us": 129496.885,
+              "p99_us": 234484.22,
+              "max_us": 452752.184,
               "samples": 815
             },
             "work": {
@@ -253,12 +253,12 @@
               "position_rejections": 47
             },
             "filter_work": {
-              "pairs_unindexed": 978000,
-              "candidates_before_filter": 30739355,
-              "candidates_after_filter": 30291920,
-              "candidates_rejected": 447435,
-              "pair_bytes_activated": 36675,
-              "pairs_activated": 36675
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 815,
             "score_error": 0.0,
@@ -267,10 +267,10 @@
           },
           "validation": {
             "query": {
-              "median_us": 1513.98,
-              "p95_us": 120956.178,
-              "p99_us": 269643.883,
-              "max_us": 376135.249,
+              "median_us": 1718.269,
+              "p95_us": 142028.83,
+              "p99_us": 239842.368,
+              "max_us": 275248.535,
               "samples": 259
             },
             "work": {
@@ -287,12 +287,12 @@
               "decoded_bytes": 4055
             },
             "filter_work": {
-              "pairs_unindexed": 310800,
-              "candidates_before_filter": 9768703,
-              "candidates_after_filter": 9626512,
-              "candidates_rejected": 142191,
-              "pair_bytes_activated": 11655,
-              "pairs_activated": 11655
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 259,
             "score_error": 0.0,
@@ -301,10 +301,10 @@
           },
           "heldout": {
             "query": {
-              "median_us": 1267.602,
-              "p95_us": 132265.572,
-              "p99_us": 240436.311,
-              "max_us": 433971.019,
+              "median_us": 1349.772,
+              "p95_us": 128190.942,
+              "p99_us": 219510.418,
+              "max_us": 314006.304,
               "samples": 246
             },
             "work": {
@@ -322,12 +322,12 @@
               "position_rejections": 2
             },
             "filter_work": {
-              "pairs_unindexed": 295200,
-              "candidates_before_filter": 9278382,
-              "candidates_after_filter": 9143328,
-              "candidates_rejected": 135054,
-              "pair_bytes_activated": 11070,
-              "pairs_activated": 11070
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 246,
             "score_error": 0.0,
@@ -338,10 +338,10 @@
         "B": {
           "heldout": {
             "query": {
-              "median_us": 990.796,
-              "p95_us": 99287.632,
-              "p99_us": 297330.987,
-              "max_us": 595189.86,
+              "median_us": 809.769,
+              "p95_us": 89281.407,
+              "p99_us": 173268.892,
+              "max_us": 230681.297,
               "samples": 186
             },
             "work": {
@@ -358,12 +358,12 @@
               "position_rejections": 12
             },
             "filter_work": {
-              "pairs_unindexed": 223200,
-              "candidates_before_filter": 7015362,
-              "candidates_after_filter": 6913248,
-              "candidates_rejected": 102114,
-              "pair_bytes_activated": 8370,
-              "pairs_activated": 8370
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 186,
             "score_error": 0.0,
@@ -374,10 +374,10 @@
         "C": {
           "evaluation": {
             "query": {
-              "median_us": 1831.692,
-              "p95_us": 189615.857,
-              "p99_us": 359291.226,
-              "max_us": 661338.878,
+              "median_us": 1300.93,
+              "p95_us": 123960.125,
+              "p99_us": 206847.476,
+              "max_us": 317366.91,
               "samples": 1320
             },
             "work": {
@@ -394,12 +394,12 @@
               "position_rejections": 49
             },
             "filter_work": {
-              "pairs_unindexed": 1584000,
-              "candidates_before_filter": 49786440,
-              "candidates_after_filter": 49061760,
-              "candidates_rejected": 724680,
-              "pair_bytes_activated": 59400,
-              "pairs_activated": 59400
+              "pairs_unindexed": 0,
+              "candidates_before_filter": 0,
+              "candidates_after_filter": 0,
+              "candidates_rejected": 0,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 1320,
             "score_error": 0.0,
@@ -415,28 +415,28 @@
         "A": {
           "train": {
             "query": {
-              "median_us": 1703.726,
-              "p95_us": 147641.508,
-              "p99_us": 284626.011,
-              "max_us": 596069.825,
+              "median_us": 1274.374,
+              "p95_us": 48857.581,
+              "p99_us": 124404.396,
+              "max_us": 230818.719,
               "samples": 815
             },
             "work": {
               "posting_bytes": 796991,
               "candidate_checks": 37717,
-              "source_reads": 37168,
-              "source_decoded_bytes": 256692052,
-              "source_activated_bytes": 112348953,
-              "source_resolved": 37168,
+              "source_reads": 15643,
+              "source_decoded_bytes": 122910964,
+              "source_activated_bytes": 52856581,
+              "source_resolved": 15643,
               "mode_pairs_source": 530
             },
             "filter_work": {
-              "pairs_unindexed": 1480550,
-              "candidates_before_filter": 45723924,
-              "candidates_after_filter": 45114529,
-              "candidates_rejected": 609395,
-              "pair_bytes_activated": 36675,
-              "pairs_activated": 36675
+              "pairs_unindexed": 1088,
+              "candidates_before_filter": 37717,
+              "candidates_after_filter": 15643,
+              "candidates_rejected": 22074,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 815,
             "score_error": 0.0,
@@ -445,28 +445,28 @@
           },
           "validation": {
             "query": {
-              "median_us": 1534.785,
-              "p95_us": 111292.424,
-              "p99_us": 231838.982,
-              "max_us": 284204.958,
+              "median_us": 1422.077,
+              "p95_us": 45292.64,
+              "p99_us": 181633.761,
+              "max_us": 231898.432,
               "samples": 259
             },
             "work": {
               "posting_bytes": 283984,
               "candidate_checks": 13108,
-              "source_reads": 13031,
-              "source_decoded_bytes": 86821525,
-              "source_activated_bytes": 38041077,
-              "source_resolved": 13031,
+              "source_reads": 5555,
+              "source_decoded_bytes": 43356856,
+              "source_activated_bytes": 18599461,
+              "source_resolved": 5555,
               "mode_pairs_source": 161
             },
             "filter_work": {
-              "pairs_unindexed": 672903,
-              "candidates_before_filter": 21393069,
-              "candidates_after_filter": 21093348,
-              "candidates_rejected": 299721,
-              "pair_bytes_activated": 13496,
-              "pairs_activated": 13496
+              "pairs_unindexed": 362,
+              "candidates_before_filter": 13108,
+              "candidates_after_filter": 5555,
+              "candidates_rejected": 7553,
+              "pair_bytes_activated": 3181,
+              "pairs_activated": 52
             },
             "rank_checks": 259,
             "score_error": 0.0,
@@ -475,28 +475,28 @@
           },
           "heldout": {
             "query": {
-              "median_us": 1367.757,
-              "p95_us": 137079.387,
-              "p99_us": 235125.992,
-              "max_us": 259514.047,
+              "median_us": 1352.936,
+              "p95_us": 54009.973,
+              "p99_us": 229757.633,
+              "max_us": 338101.654,
               "samples": 246
             },
             "work": {
               "posting_bytes": 233757,
               "candidate_checks": 13143,
-              "source_reads": 13031,
-              "source_decoded_bytes": 87784133,
-              "source_activated_bytes": 38416939,
-              "source_resolved": 13031,
+              "source_reads": 6604,
+              "source_decoded_bytes": 48047290,
+              "source_activated_bytes": 20752066,
+              "source_resolved": 6604,
               "mode_pairs_source": 149
             },
             "filter_work": {
-              "pairs_unindexed": 735721,
-              "candidates_before_filter": 23337220,
-              "candidates_after_filter": 23035514,
-              "candidates_rejected": 301706,
-              "pair_bytes_activated": 15661,
-              "pairs_activated": 15661
+              "pairs_unindexed": 297,
+              "candidates_before_filter": 13143,
+              "candidates_after_filter": 6604,
+              "candidates_rejected": 6539,
+              "pair_bytes_activated": 2115,
+              "pairs_activated": 34
             },
             "rank_checks": 246,
             "score_error": 0.0,
@@ -507,28 +507,28 @@
         "B": {
           "heldout": {
             "query": {
-              "median_us": 879.426,
-              "p95_us": 69686.11,
-              "p99_us": 180118.536,
-              "max_us": 267886.288,
+              "median_us": 853.627,
+              "p95_us": 16249.673,
+              "p99_us": 73905.302,
+              "max_us": 237167.287,
               "samples": 186
             },
             "work": {
               "posting_bytes": 131237,
               "candidate_checks": 6785,
-              "source_reads": 6291,
-              "source_decoded_bytes": 42351816,
-              "source_activated_bytes": 18621168,
-              "source_resolved": 6291,
+              "source_reads": 2452,
+              "source_decoded_bytes": 17807425,
+              "source_activated_bytes": 7719513,
+              "source_resolved": 2452,
               "mode_pairs_source": 103
             },
             "filter_work": {
-              "pairs_unindexed": 609551,
-              "candidates_before_filter": 19690558,
-              "candidates_after_filter": 19410191,
-              "candidates_rejected": 280367,
-              "pair_bytes_activated": 12834,
-              "pairs_activated": 12834
+              "pairs_unindexed": 200,
+              "candidates_before_filter": 6785,
+              "candidates_after_filter": 2452,
+              "candidates_rejected": 4333,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 186,
             "score_error": 0.0,
@@ -539,28 +539,28 @@
         "C": {
           "evaluation": {
             "query": {
-              "median_us": 1322.712,
-              "p95_us": 131661.776,
-              "p99_us": 214070.887,
-              "max_us": 286522.802,
+              "median_us": 1577.004,
+              "p95_us": 51248.16,
+              "p99_us": 189766.604,
+              "max_us": 438806.637,
               "samples": 1320
             },
             "work": {
               "posting_bytes": 1314732,
               "candidate_checks": 63968,
-              "source_reads": 63230,
-              "source_decoded_bytes": 431297710,
-              "source_activated_bytes": 188806969,
-              "source_resolved": 63230,
+              "source_reads": 27802,
+              "source_decoded_bytes": 214315110,
+              "source_activated_bytes": 92208108,
+              "source_resolved": 27802,
               "mode_pairs_source": 840
             },
             "filter_work": {
-              "pairs_unindexed": 5784874,
-              "candidates_before_filter": 181299075,
-              "candidates_after_filter": 178370358,
-              "candidates_rejected": 2928717,
-              "pair_bytes_activated": 91080,
-              "pairs_activated": 91080
+              "pairs_unindexed": 1747,
+              "candidates_before_filter": 63968,
+              "candidates_after_filter": 27802,
+              "candidates_rejected": 36166,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 1320,
             "score_error": 0.0,
@@ -576,32 +576,32 @@
         "A": {
           "train": {
             "query": {
-              "median_us": 1470.214,
-              "p95_us": 129919.588,
-              "p99_us": 218259.549,
-              "max_us": 357443.635,
+              "median_us": 1827.451,
+              "p95_us": 68147.942,
+              "p99_us": 196292.128,
+              "max_us": 418600.319,
               "samples": 815
             },
             "work": {
               "posting_bytes": 796991,
               "candidate_checks": 37717,
-              "source_reads": 37121,
-              "source_decoded_bytes": 256080931,
-              "source_activated_bytes": 112107270,
-              "source_resolved": 37121,
+              "source_reads": 15596,
+              "source_decoded_bytes": 122299843,
+              "source_activated_bytes": 52614898,
+              "source_resolved": 15596,
               "mode_pairs_positions": 530,
-              "blocks_activated": 73,
-              "storage_bytes_activated": 8276,
-              "decoded_bytes": 8203,
+              "blocks_activated": 74,
+              "storage_bytes_activated": 8392,
+              "decoded_bytes": 8318,
               "position_rejections": 47
             },
             "filter_work": {
-              "pairs_unindexed": 4859540,
-              "candidates_before_filter": 155521539,
-              "candidates_after_filter": 153306594,
-              "candidates_rejected": 2214945,
-              "pair_bytes_activated": 56235,
-              "pairs_activated": 56235
+              "pairs_unindexed": 1088,
+              "candidates_before_filter": 37717,
+              "candidates_after_filter": 15643,
+              "candidates_rejected": 22074,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 815,
             "score_error": 0.0,
@@ -610,31 +610,31 @@
           },
           "validation": {
             "query": {
-              "median_us": 1576.979,
-              "p95_us": 125461.475,
-              "p99_us": 311605.158,
-              "max_us": 446261.777,
+              "median_us": 2234.2,
+              "p95_us": 87053.692,
+              "p99_us": 248309.283,
+              "max_us": 442819.528,
               "samples": 259
             },
             "work": {
               "posting_bytes": 283984,
               "candidate_checks": 13108,
-              "source_reads": 13031,
-              "source_decoded_bytes": 86821525,
-              "source_activated_bytes": 38041077,
-              "source_resolved": 13031,
+              "source_reads": 5555,
+              "source_decoded_bytes": 43356856,
+              "source_activated_bytes": 18599461,
+              "source_resolved": 5555,
               "mode_pairs_positions": 161,
-              "blocks_activated": 31,
-              "storage_bytes_activated": 3523,
-              "decoded_bytes": 3492
+              "blocks_activated": 35,
+              "storage_bytes_activated": 3967,
+              "decoded_bytes": 3932
             },
             "filter_work": {
-              "pairs_unindexed": 1746717,
-              "candidates_before_filter": 56285808,
-              "candidates_after_filter": 55475857,
-              "candidates_rejected": 809951,
-              "pair_bytes_activated": 17871,
-              "pairs_activated": 17871
+              "pairs_unindexed": 362,
+              "candidates_before_filter": 13108,
+              "candidates_after_filter": 5555,
+              "candidates_rejected": 7553,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 259,
             "score_error": 0.0,
@@ -643,32 +643,32 @@
           },
           "heldout": {
             "query": {
-              "median_us": 1369.569,
-              "p95_us": 139810.013,
-              "p99_us": 249202.321,
-              "max_us": 303477.018,
+              "median_us": 2189.935,
+              "p95_us": 84389.529,
+              "p99_us": 321182.127,
+              "max_us": 600995.216,
               "samples": 246
             },
             "work": {
               "posting_bytes": 233757,
               "candidate_checks": 13143,
-              "source_reads": 13029,
-              "source_decoded_bytes": 87715900,
-              "source_activated_bytes": 38395564,
-              "source_resolved": 13029,
+              "source_reads": 6602,
+              "source_decoded_bytes": 47979057,
+              "source_activated_bytes": 20730691,
+              "source_resolved": 6602,
               "mode_pairs_positions": 149,
-              "blocks_activated": 27,
-              "storage_bytes_activated": 2918,
-              "decoded_bytes": 2891,
+              "blocks_activated": 22,
+              "storage_bytes_activated": 2378,
+              "decoded_bytes": 2356,
               "position_rejections": 2
             },
             "filter_work": {
-              "pairs_unindexed": 1755637,
-              "candidates_before_filter": 56478586,
-              "candidates_after_filter": 55692260,
-              "candidates_rejected": 786326,
-              "pair_bytes_activated": 16974,
-              "pairs_activated": 16974
+              "pairs_unindexed": 297,
+              "candidates_before_filter": 13143,
+              "candidates_after_filter": 6604,
+              "candidates_rejected": 6539,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 246,
             "score_error": 0.0,
@@ -679,19 +679,19 @@
         "B": {
           "heldout": {
             "query": {
-              "median_us": 1093.303,
-              "p95_us": 129377.929,
-              "p99_us": 236567.583,
-              "max_us": 322321.415,
+              "median_us": 1742.132,
+              "p95_us": 36036.143,
+              "p99_us": 142604.206,
+              "max_us": 545285.339,
               "samples": 186
             },
             "work": {
               "posting_bytes": 131237,
               "candidate_checks": 6785,
-              "source_reads": 6279,
-              "source_decoded_bytes": 42185638,
-              "source_activated_bytes": 18553283,
-              "source_resolved": 6279,
+              "source_reads": 2440,
+              "source_decoded_bytes": 17641247,
+              "source_activated_bytes": 7651628,
+              "source_resolved": 2440,
               "mode_pairs_positions": 103,
               "blocks_activated": 23,
               "storage_bytes_activated": 2540,
@@ -699,12 +699,12 @@
               "position_rejections": 12
             },
             "filter_work": {
-              "pairs_unindexed": 1380707,
-              "candidates_before_filter": 44748664,
-              "candidates_after_filter": 44101877,
-              "candidates_rejected": 646787,
-              "pair_bytes_activated": 12834,
-              "pairs_activated": 12834
+              "pairs_unindexed": 200,
+              "candidates_before_filter": 6785,
+              "candidates_after_filter": 2452,
+              "candidates_rejected": 4333,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 186,
             "score_error": 0.0,
@@ -715,32 +715,32 @@
         "C": {
           "evaluation": {
             "query": {
-              "median_us": 1386.241,
-              "p95_us": 134563.787,
-              "p99_us": 236403.49,
-              "max_us": 295435.499,
+              "median_us": 2111.198,
+              "p95_us": 83817.597,
+              "p99_us": 276476.474,
+              "max_us": 544507.313,
               "samples": 1320
             },
             "work": {
               "posting_bytes": 1314732,
               "candidate_checks": 63968,
               "blocks_activated": 131,
-              "storage_bytes_activated": 14717,
-              "decoded_bytes": 14586,
-              "source_reads": 63181,
-              "source_decoded_bytes": 430618356,
-              "source_activated_bytes": 188543911,
-              "source_resolved": 63181,
+              "storage_bytes_activated": 14737,
+              "decoded_bytes": 14606,
+              "source_reads": 27753,
+              "source_decoded_bytes": 213635756,
+              "source_activated_bytes": 91945050,
+              "source_resolved": 27753,
               "mode_pairs_positions": 840,
               "position_rejections": 49
             },
             "filter_work": {
-              "pairs_unindexed": 11257594,
-              "candidates_before_filter": 359130795,
-              "candidates_after_filter": 353601678,
-              "candidates_rejected": 5529117,
-              "pair_bytes_activated": 91080,
-              "pairs_activated": 91080
+              "pairs_unindexed": 1747,
+              "candidates_before_filter": 63968,
+              "candidates_after_filter": 27802,
+              "candidates_rejected": 36166,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 1320,
             "score_error": 0.0,
@@ -756,30 +756,30 @@
         "A": {
           "train": {
             "query": {
-              "median_us": 1565.697,
-              "p95_us": 139577.63,
-              "p99_us": 233417.167,
-              "max_us": 326456.923,
+              "median_us": 1869.934,
+              "p95_us": 60788.882,
+              "p99_us": 200933.787,
+              "max_us": 370712.505,
               "samples": 815
             },
             "work": {
               "posting_bytes": 796991,
               "candidate_checks": 37717,
               "plan_lookups": 1072,
-              "source_reads": 37168,
-              "source_decoded_bytes": 256692052,
-              "source_activated_bytes": 112348953,
-              "source_resolved": 37168,
-              "mode_pairs_source": 504,
-              "mode_source": 26
+              "source_reads": 16248,
+              "source_decoded_bytes": 127504278,
+              "source_activated_bytes": 54840569,
+              "source_resolved": 16248,
+              "mode_source": 70,
+              "mode_pairs_source": 460
             },
             "filter_work": {
-              "pairs_unindexed": 8200070,
-              "candidates_before_filter": 265309014,
-              "candidates_after_filter": 261488519,
-              "candidates_rejected": 3820495,
-              "pair_bytes_activated": 56235,
-              "pairs_activated": 56235
+              "pairs_unindexed": 895,
+              "candidates_before_filter": 35649,
+              "candidates_after_filter": 14180,
+              "candidates_rejected": 21469,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 815,
             "score_error": 0.0,
@@ -788,30 +788,30 @@
           },
           "validation": {
             "query": {
-              "median_us": 1598.912,
-              "p95_us": 130727.49,
-              "p99_us": 231810.292,
-              "max_us": 355270.372,
+              "median_us": 1568.847,
+              "p95_us": 50955.474,
+              "p99_us": 189999.42,
+              "max_us": 234491.562,
               "samples": 259
             },
             "work": {
               "posting_bytes": 283984,
               "candidate_checks": 13108,
               "plan_lookups": 322,
-              "source_reads": 13031,
-              "source_decoded_bytes": 86821525,
-              "source_activated_bytes": 38041077,
-              "source_resolved": 13031,
-              "mode_source": 9,
-              "mode_pairs_source": 152
+              "source_reads": 6018,
+              "source_decoded_bytes": 46135435,
+              "source_activated_bytes": 19828236,
+              "source_resolved": 6018,
+              "mode_source": 30,
+              "mode_pairs_source": 131
             },
             "filter_work": {
-              "pairs_unindexed": 2793253,
-              "candidates_before_filter": 91170519,
-              "candidates_after_filter": 89850338,
-              "candidates_rejected": 1320181,
-              "pair_bytes_activated": 17871,
-              "pairs_activated": 17871
+              "pairs_unindexed": 275,
+              "candidates_before_filter": 11697,
+              "candidates_after_filter": 4607,
+              "candidates_rejected": 7090,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 259,
             "score_error": 0.0,
@@ -820,30 +820,30 @@
           },
           "heldout": {
             "query": {
-              "median_us": 1462.516,
-              "p95_us": 136997.016,
-              "p99_us": 232448.688,
-              "max_us": 286014.084,
+              "median_us": 1204.229,
+              "p95_us": 52563.438,
+              "p99_us": 174492.344,
+              "max_us": 260272.745,
               "samples": 246
             },
             "work": {
               "posting_bytes": 233757,
               "candidate_checks": 13143,
               "plan_lookups": 300,
-              "source_reads": 13031,
-              "source_decoded_bytes": 87784133,
-              "source_activated_bytes": 38416939,
-              "source_resolved": 13031,
-              "mode_source": 9,
-              "mode_pairs_source": 140
+              "source_reads": 6872,
+              "source_decoded_bytes": 49761724,
+              "source_activated_bytes": 21506298,
+              "source_resolved": 6872,
+              "mode_source": 27,
+              "mode_pairs_source": 122
             },
             "filter_work": {
-              "pairs_unindexed": 2742599,
-              "candidates_before_filter": 89610177,
-              "candidates_after_filter": 88339231,
-              "candidates_rejected": 1270946,
-              "pair_bytes_activated": 16974,
-              "pairs_activated": 16974
+              "pairs_unindexed": 217,
+              "candidates_before_filter": 12655,
+              "candidates_after_filter": 6384,
+              "candidates_rejected": 6271,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 246,
             "score_error": 0.0,
@@ -854,30 +854,30 @@
         "B": {
           "heldout": {
             "query": {
-              "median_us": 897.397,
-              "p95_us": 71260.058,
-              "p99_us": 202500.467,
-              "max_us": 320448.637,
+              "median_us": 884.611,
+              "p95_us": 17760.159,
+              "p99_us": 72114.397,
+              "max_us": 234297.315,
               "samples": 186
             },
             "work": {
               "posting_bytes": 131237,
               "candidate_checks": 6785,
               "plan_lookups": 208,
-              "source_reads": 6291,
-              "source_decoded_bytes": 42351816,
-              "source_activated_bytes": 18621168,
-              "source_resolved": 6291,
-              "mode_pairs_source": 100,
-              "mode_source": 3
+              "source_reads": 2459,
+              "source_decoded_bytes": 17921566,
+              "source_activated_bytes": 7766964,
+              "source_resolved": 2459,
+              "mode_pairs_source": 91,
+              "mode_source": 12
             },
             "filter_work": {
-              "pairs_unindexed": 2123413,
-              "candidates_before_filter": 69798425,
-              "candidates_after_filter": 68785218,
-              "candidates_rejected": 1013207,
-              "pair_bytes_activated": 12834,
-              "pairs_activated": 12834
+              "pairs_unindexed": 163,
+              "candidates_before_filter": 6749,
+              "candidates_after_filter": 2423,
+              "candidates_rejected": 4326,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 186,
             "score_error": 0.0,
@@ -888,30 +888,30 @@
         "C": {
           "evaluation": {
             "query": {
-              "median_us": 1403.831,
-              "p95_us": 125939.786,
-              "p99_us": 208470.292,
-              "max_us": 300496.057,
+              "median_us": 1338.322,
+              "p95_us": 48842.657,
+              "p99_us": 137145.039,
+              "max_us": 247038.52,
               "samples": 1320
             },
             "work": {
               "posting_bytes": 1314732,
               "candidate_checks": 63968,
               "plan_lookups": 1694,
-              "source_reads": 63230,
-              "source_decoded_bytes": 431297710,
-              "source_activated_bytes": 188806969,
-              "source_resolved": 63230,
-              "mode_pairs_source": 796,
-              "mode_source": 44
+              "source_reads": 29138,
+              "source_decoded_bytes": 223401437,
+              "source_activated_bytes": 96175103,
+              "source_resolved": 29138,
+              "mode_pairs_source": 713,
+              "mode_source": 127
             },
             "filter_work": {
-              "pairs_unindexed": 16413134,
-              "candidates_before_filter": 536869301,
-              "candidates_after_filter": 528739784,
-              "candidates_rejected": 8129517,
-              "pair_bytes_activated": 91080,
-              "pairs_activated": 91080
+              "pairs_unindexed": 1387,
+              "candidates_before_filter": 60001,
+              "candidates_after_filter": 25171,
+              "candidates_rejected": 34830,
+              "pair_bytes_activated": 0,
+              "pairs_activated": 0
             },
             "rank_checks": 1320,
             "score_error": 0.0,
