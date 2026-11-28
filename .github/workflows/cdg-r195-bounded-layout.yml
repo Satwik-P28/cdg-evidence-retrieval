@@ -1,0 +1,22 @@
+name: CDG R195 bounded evidence block layouts
+on:
+  push:
+    branches: ['research/round-195-bounded-evidence-layout']
+    paths: ['experiments/round-195/**','.github/workflows/cdg-r195-bounded-layout.yml']
+  workflow_dispatch:
+jobs:
+  qasper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install Brotli==1.1.0 zstandard==0.23.0
+      - run: python -m unittest discover -s experiments/round-195 -p 'test_*.py' -v
+      - run: python experiments/round-195/bounded_layout.py --out experiments/round-195/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r195-qasper
+          path: experiments/round-195/ci.json

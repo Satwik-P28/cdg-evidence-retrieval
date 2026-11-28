@@ -1,0 +1,2272 @@
+{
+  "round": 194,
+  "train_sha256": "9458bfe76074a8fa8d1685af02bcc73537aa6d338ad20591dfaff1946bc88bf4",
+  "dev_sha256": "2ae7ee62a65b1c4225791c70de80c2aad4e8998cf1fd4f09a53103db4f21af93",
+  "source_docs": 13266,
+  "questions": 1005,
+  "cohort": {
+    "questions": 1005,
+    "annotations": 1764,
+    "annotations_with_paragraph_evidence": 1452,
+    "nonmatching_evidence_strings": 129,
+    "figure_table_references": 253,
+    "questions_with_at_least_one_exact_text_evidence": 888,
+    "questions_without_exact_text_evidence": 117
+  },
+  "training": {
+    "source": "Original QASPER v0.3 TRAIN text only, original paper IDs disjoint from dev",
+    "train_papers": 888,
+    "total_candidate_paragraphs": 46882,
+    "chosen_sample_paragraphs": 4096,
+    "selected_docid_sha256": "dcdfe6b2441cf2f65e47eb32a8a29ff26602568ad15ad499f4fb2e4b2798e3dd",
+    "chosen_raw_sample_bytes": 2000232,
+    "qa_labels_seen": false,
+    "dev_paper_text_seen": false
+  },
+  "dict_sha256": "60815f70f6d9b24c1c390cc9b9030dbc94e6c352a2d6e8fbbaee448052289607",
+  "full_top10_gold": {
+    "eligible_text_evidence_questions": 888,
+    "all_questions": 1005,
+    "excluded_no_exact_text_evidence": 117,
+    "recall": {
+      "r1": {
+        "hits": 229,
+        "denominator": 888,
+        "rate": 0.257883
+      },
+      "r3": {
+        "hits": 434,
+        "denominator": 888,
+        "rate": 0.488739
+      },
+      "r5": {
+        "hits": 537,
+        "denominator": 888,
+        "rate": 0.60473
+      },
+      "r10": {
+        "hits": 664,
+        "denominator": 888,
+        "rate": 0.747748
+      }
+    },
+    "note": "Known-paper paragraph hit, not answer EM/F1, support/contradiction or open-domain source retrieval"
+  },
+  "layouts": [
+    {
+      "group": 1,
+      "codec": "brotli5",
+      "sqlite_bytes": 10268672,
+      "all_source_checks": 13266,
+      "metadata_setup_us": 12111.551,
+      "rows": [
+        {
+          "questions": 1005,
+          "context_bytes": 1826600,
+          "decoded_bytes": 1826600,
+          "activated_compressed_payload_bytes": 964451,
+          "selected_passages": 3800,
+          "source_checks": 3800,
+          "empty": 15,
+          "rank_utility": 1904028985,
+          "eligible": 888,
+          "hit": 445,
+          "gold_found": 582,
+          "gold_total": 1802,
+          "gold_union_complete": 245,
+          "any_feasible_gold": 648,
+          "policy": "rank",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 31.21,
+            "p95_us": 51.823
+          },
+          "read_and_verify_us": {
+            "median_us": 64.016,
+            "p95_us": 108.095
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1776905,
+          "decoded_bytes": 1776905,
+          "activated_compressed_payload_bytes": 965838,
+          "selected_passages": 4192,
+          "source_checks": 4192,
+          "empty": 15,
+          "rank_utility": 1907755905,
+          "eligible": 888,
+          "hit": 419,
+          "gold_found": 569,
+          "gold_total": 1802,
+          "gold_union_complete": 221,
+          "any_feasible_gold": 648,
+          "policy": "context",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 41.834,
+            "p95_us": 66.976
+          },
+          "read_and_verify_us": {
+            "median_us": 66.924,
+            "p95_us": 116.999
+          },
+          "paired_vs_rank": {
+            "wins": 25,
+            "losses": 51,
+            "delta": -0.02927927927927928,
+            "paper_cluster_bootstrap_95": [
+              -0.04853273137697517,
+              -0.00995575221238938
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1776905,
+          "decoded_bytes": 1776905,
+          "activated_compressed_payload_bytes": 965838,
+          "selected_passages": 4192,
+          "source_checks": 4192,
+          "empty": 15,
+          "rank_utility": 1907755905,
+          "eligible": 888,
+          "hit": 419,
+          "gold_found": 569,
+          "gold_total": 1802,
+          "gold_union_complete": 221,
+          "any_feasible_gold": 648,
+          "policy": "shared",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 44.896,
+            "p95_us": 70.823
+          },
+          "read_and_verify_us": {
+            "median_us": 67.95,
+            "p95_us": 116.867
+          },
+          "paired_vs_rank": {
+            "wins": 25,
+            "losses": 51,
+            "delta": -0.02927927927927928,
+            "paper_cluster_bootstrap_95": [
+              -0.04853273137697517,
+              -0.00995575221238938
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1828686,
+          "decoded_bytes": 1828686,
+          "activated_compressed_payload_bytes": 983345,
+          "selected_passages": 4114,
+          "source_checks": 4114,
+          "empty": 15,
+          "rank_utility": 1926264247,
+          "eligible": 888,
+          "hit": 435,
+          "gold_found": 579,
+          "gold_total": 1802,
+          "gold_union_complete": 236,
+          "any_feasible_gold": 648,
+          "policy": "exact",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 112.284,
+            "p95_us": 421.307
+          },
+          "read_and_verify_us": {
+            "median_us": 68.375,
+            "p95_us": 124.681
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 27,
+            "delta": -0.01126126126126126,
+            "paper_cluster_bootstrap_95": [
+              -0.027218934911242602,
+              0.004424778761061947
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3597544,
+          "decoded_bytes": 3597544,
+          "activated_compressed_payload_bytes": 1847607,
+          "selected_passages": 6473,
+          "source_checks": 6473,
+          "empty": 15,
+          "rank_utility": 2438538838,
+          "eligible": 888,
+          "hit": 594,
+          "gold_found": 843,
+          "gold_total": 1802,
+          "gold_union_complete": 367,
+          "any_feasible_gold": 664,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 50.172,
+            "p95_us": 64.037
+          },
+          "read_and_verify_us": {
+            "median_us": 117.436,
+            "p95_us": 164.867
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3512046,
+          "decoded_bytes": 3512046,
+          "activated_compressed_payload_bytes": 1834141,
+          "selected_passages": 6790,
+          "source_checks": 6790,
+          "empty": 15,
+          "rank_utility": 2446342402,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 65.115,
+            "p95_us": 79.42
+          },
+          "read_and_verify_us": {
+            "median_us": 122.752,
+            "p95_us": 164.749
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3512046,
+          "decoded_bytes": 3512046,
+          "activated_compressed_payload_bytes": 1834141,
+          "selected_passages": 6790,
+          "source_checks": 6790,
+          "empty": 15,
+          "rank_utility": 2446342402,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 70.83,
+            "p95_us": 85.184
+          },
+          "read_and_verify_us": {
+            "median_us": 122.75,
+            "p95_us": 167.372
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3602356,
+          "decoded_bytes": 3602356,
+          "activated_compressed_payload_bytes": 1869206,
+          "selected_passages": 6760,
+          "source_checks": 6760,
+          "empty": 15,
+          "rank_utility": 2458039212,
+          "eligible": 888,
+          "hit": 581,
+          "gold_found": 834,
+          "gold_total": 1802,
+          "gold_union_complete": 362,
+          "any_feasible_gold": 664,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 448.189,
+            "p95_us": 595.635
+          },
+          "read_and_verify_us": {
+            "median_us": 128.505,
+            "p95_us": 175.404
+          },
+          "paired_vs_rank": {
+            "wins": 11,
+            "losses": 24,
+            "delta": -0.01463963963963964,
+            "paper_cluster_bootstrap_95": [
+              -0.029002320185614848,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3597544,
+          "decoded_bytes": 3597544,
+          "activated_compressed_payload_bytes": 1847607,
+          "selected_passages": 6473,
+          "source_checks": 6473,
+          "empty": 15,
+          "rank_utility": 2438538838,
+          "eligible": 888,
+          "hit": 594,
+          "gold_found": 843,
+          "gold_total": 1802,
+          "gold_union_complete": 367,
+          "any_feasible_gold": 664,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 50.214,
+            "p95_us": 63.805
+          },
+          "read_and_verify_us": {
+            "median_us": 116.604,
+            "p95_us": 163.14
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3512046,
+          "decoded_bytes": 3512046,
+          "activated_compressed_payload_bytes": 1834141,
+          "selected_passages": 6790,
+          "source_checks": 6790,
+          "empty": 15,
+          "rank_utility": 2446342402,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 65.061,
+            "p95_us": 79.333
+          },
+          "read_and_verify_us": {
+            "median_us": 123.224,
+            "p95_us": 164.579
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3512046,
+          "decoded_bytes": 3512046,
+          "activated_compressed_payload_bytes": 1834141,
+          "selected_passages": 6790,
+          "source_checks": 6790,
+          "empty": 15,
+          "rank_utility": 2446342402,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 71.617,
+            "p95_us": 87.682
+          },
+          "read_and_verify_us": {
+            "median_us": 121.902,
+            "p95_us": 168.282
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3602356,
+          "decoded_bytes": 3602356,
+          "activated_compressed_payload_bytes": 1869206,
+          "selected_passages": 6760,
+          "source_checks": 6760,
+          "empty": 15,
+          "rank_utility": 2458039212,
+          "eligible": 888,
+          "hit": 581,
+          "gold_found": 834,
+          "gold_total": 1802,
+          "gold_union_complete": 362,
+          "any_feasible_gold": 664,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 447.336,
+            "p95_us": 594.387
+          },
+          "read_and_verify_us": {
+            "median_us": 128.04,
+            "p95_us": 175.768
+          },
+          "paired_vs_rank": {
+            "wins": 11,
+            "losses": 24,
+            "delta": -0.01463963963963964,
+            "paper_cluster_bootstrap_95": [
+              -0.029002320185614848,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "group": 1,
+      "codec": "zstd9-dictionary",
+      "sqlite_bytes": 9478144,
+      "all_source_checks": 13266,
+      "metadata_setup_us": 11981.497,
+      "rows": [
+        {
+          "questions": 1005,
+          "context_bytes": 1826600,
+          "decoded_bytes": 1826600,
+          "activated_compressed_payload_bytes": 704802,
+          "selected_passages": 3800,
+          "source_checks": 3800,
+          "empty": 15,
+          "rank_utility": 1904028985,
+          "eligible": 888,
+          "hit": 445,
+          "gold_found": 582,
+          "gold_total": 1802,
+          "gold_union_complete": 245,
+          "any_feasible_gold": 648,
+          "policy": "rank",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 31.012,
+            "p95_us": 52.306
+          },
+          "read_and_verify_us": {
+            "median_us": 47.856,
+            "p95_us": 82.467
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1776905,
+          "decoded_bytes": 1776905,
+          "activated_compressed_payload_bytes": 703070,
+          "selected_passages": 4192,
+          "source_checks": 4192,
+          "empty": 15,
+          "rank_utility": 1907755905,
+          "eligible": 888,
+          "hit": 419,
+          "gold_found": 569,
+          "gold_total": 1802,
+          "gold_union_complete": 221,
+          "any_feasible_gold": 648,
+          "policy": "context",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 41.346,
+            "p95_us": 67.231
+          },
+          "read_and_verify_us": {
+            "median_us": 50.084,
+            "p95_us": 88.638
+          },
+          "paired_vs_rank": {
+            "wins": 25,
+            "losses": 51,
+            "delta": -0.02927927927927928,
+            "paper_cluster_bootstrap_95": [
+              -0.04853273137697517,
+              -0.00995575221238938
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1776905,
+          "decoded_bytes": 1776905,
+          "activated_compressed_payload_bytes": 703070,
+          "selected_passages": 4192,
+          "source_checks": 4192,
+          "empty": 15,
+          "rank_utility": 1907755905,
+          "eligible": 888,
+          "hit": 419,
+          "gold_found": 569,
+          "gold_total": 1802,
+          "gold_union_complete": 221,
+          "any_feasible_gold": 648,
+          "policy": "shared",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 45.105,
+            "p95_us": 71.766
+          },
+          "read_and_verify_us": {
+            "median_us": 50.673,
+            "p95_us": 88.065
+          },
+          "paired_vs_rank": {
+            "wins": 25,
+            "losses": 51,
+            "delta": -0.02927927927927928,
+            "paper_cluster_bootstrap_95": [
+              -0.04853273137697517,
+              -0.00995575221238938
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1828686,
+          "decoded_bytes": 1828686,
+          "activated_compressed_payload_bytes": 717313,
+          "selected_passages": 4114,
+          "source_checks": 4114,
+          "empty": 15,
+          "rank_utility": 1926264247,
+          "eligible": 888,
+          "hit": 435,
+          "gold_found": 579,
+          "gold_total": 1802,
+          "gold_union_complete": 236,
+          "any_feasible_gold": 648,
+          "policy": "exact",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 111.193,
+            "p95_us": 421.74
+          },
+          "read_and_verify_us": {
+            "median_us": 50.675,
+            "p95_us": 93.562
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 27,
+            "delta": -0.01126126126126126,
+            "paper_cluster_bootstrap_95": [
+              -0.027218934911242602,
+              0.004424778761061947
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3597544,
+          "decoded_bytes": 3597544,
+          "activated_compressed_payload_bytes": 1353089,
+          "selected_passages": 6473,
+          "source_checks": 6473,
+          "empty": 15,
+          "rank_utility": 2438538838,
+          "eligible": 888,
+          "hit": 594,
+          "gold_found": 843,
+          "gold_total": 1802,
+          "gold_union_complete": 367,
+          "any_feasible_gold": 664,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 49.56,
+            "p95_us": 62.563
+          },
+          "read_and_verify_us": {
+            "median_us": 85.19,
+            "p95_us": 120.614
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3512046,
+          "decoded_bytes": 3512046,
+          "activated_compressed_payload_bytes": 1338516,
+          "selected_passages": 6790,
+          "source_checks": 6790,
+          "empty": 15,
+          "rank_utility": 2446342402,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 64.32,
+            "p95_us": 76.554
+          },
+          "read_and_verify_us": {
+            "median_us": 87.868,
+            "p95_us": 120.183
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3512046,
+          "decoded_bytes": 3512046,
+          "activated_compressed_payload_bytes": 1338516,
+          "selected_passages": 6790,
+          "source_checks": 6790,
+          "empty": 15,
+          "rank_utility": 2446342402,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 69.903,
+            "p95_us": 86.381
+          },
+          "read_and_verify_us": {
+            "median_us": 88.685,
+            "p95_us": 122.859
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3602356,
+          "decoded_bytes": 3602356,
+          "activated_compressed_payload_bytes": 1365837,
+          "selected_passages": 6760,
+          "source_checks": 6760,
+          "empty": 15,
+          "rank_utility": 2458039212,
+          "eligible": 888,
+          "hit": 581,
+          "gold_found": 834,
+          "gold_total": 1802,
+          "gold_union_complete": 362,
+          "any_feasible_gold": 664,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 445.248,
+            "p95_us": 593.059
+          },
+          "read_and_verify_us": {
+            "median_us": 92.184,
+            "p95_us": 127.174
+          },
+          "paired_vs_rank": {
+            "wins": 11,
+            "losses": 24,
+            "delta": -0.01463963963963964,
+            "paper_cluster_bootstrap_95": [
+              -0.029002320185614848,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3597544,
+          "decoded_bytes": 3597544,
+          "activated_compressed_payload_bytes": 1353089,
+          "selected_passages": 6473,
+          "source_checks": 6473,
+          "empty": 15,
+          "rank_utility": 2438538838,
+          "eligible": 888,
+          "hit": 594,
+          "gold_found": 843,
+          "gold_total": 1802,
+          "gold_union_complete": 367,
+          "any_feasible_gold": 664,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 49.859,
+            "p95_us": 63.229
+          },
+          "read_and_verify_us": {
+            "median_us": 85.264,
+            "p95_us": 119.895
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3512046,
+          "decoded_bytes": 3512046,
+          "activated_compressed_payload_bytes": 1338516,
+          "selected_passages": 6790,
+          "source_checks": 6790,
+          "empty": 15,
+          "rank_utility": 2446342402,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 64.54,
+            "p95_us": 78.117
+          },
+          "read_and_verify_us": {
+            "median_us": 88.126,
+            "p95_us": 120.872
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3512046,
+          "decoded_bytes": 3512046,
+          "activated_compressed_payload_bytes": 1338516,
+          "selected_passages": 6790,
+          "source_checks": 6790,
+          "empty": 15,
+          "rank_utility": 2446342402,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 71.089,
+            "p95_us": 85.235
+          },
+          "read_and_verify_us": {
+            "median_us": 87.857,
+            "p95_us": 122.825
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3602356,
+          "decoded_bytes": 3602356,
+          "activated_compressed_payload_bytes": 1365837,
+          "selected_passages": 6760,
+          "source_checks": 6760,
+          "empty": 15,
+          "rank_utility": 2458039212,
+          "eligible": 888,
+          "hit": 581,
+          "gold_found": 834,
+          "gold_total": 1802,
+          "gold_union_complete": 362,
+          "any_feasible_gold": 664,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 442.34,
+            "p95_us": 592.601
+          },
+          "read_and_verify_us": {
+            "median_us": 92.28,
+            "p95_us": 126.771
+          },
+          "paired_vs_rank": {
+            "wins": 11,
+            "losses": 24,
+            "delta": -0.01463963963963964,
+            "paper_cluster_bootstrap_95": [
+              -0.029002320185614848,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "group": 4,
+      "codec": "zstd9-dictionary",
+      "sqlite_bytes": 8474624,
+      "all_source_checks": 13266,
+      "metadata_setup_us": 7569.11,
+      "rows": [
+        {
+          "questions": 1005,
+          "context_bytes": 1420359,
+          "decoded_bytes": 3272764,
+          "activated_compressed_payload_bytes": 1062398,
+          "selected_passages": 2910,
+          "source_checks": 2910,
+          "empty": 16,
+          "rank_utility": 1504003700,
+          "eligible": 888,
+          "hit": 376,
+          "gold_found": 499,
+          "gold_total": 1802,
+          "gold_union_complete": 203,
+          "any_feasible_gold": 632,
+          "policy": "rank",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 20.66,
+            "p95_us": 41.388
+          },
+          "read_and_verify_us": {
+            "median_us": 35.396,
+            "p95_us": 60.151
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1340355,
+          "decoded_bytes": 3227299,
+          "activated_compressed_payload_bytes": 1051112,
+          "selected_passages": 3110,
+          "source_checks": 3110,
+          "empty": 16,
+          "rank_utility": 1451864756,
+          "eligible": 888,
+          "hit": 346,
+          "gold_found": 480,
+          "gold_total": 1802,
+          "gold_union_complete": 176,
+          "any_feasible_gold": 632,
+          "policy": "context",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 25.096,
+            "p95_us": 49.908
+          },
+          "read_and_verify_us": {
+            "median_us": 36.228,
+            "p95_us": 61.267
+          },
+          "paired_vs_rank": {
+            "wins": 23,
+            "losses": 53,
+            "delta": -0.033783783783783786,
+            "paper_cluster_bootstrap_95": [
+              -0.05308775731310943,
+              -0.016018306636155607
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1383262,
+          "decoded_bytes": 3192576,
+          "activated_compressed_payload_bytes": 1039254,
+          "selected_passages": 3060,
+          "source_checks": 3060,
+          "empty": 16,
+          "rank_utility": 1489321922,
+          "eligible": 888,
+          "hit": 357,
+          "gold_found": 488,
+          "gold_total": 1802,
+          "gold_union_complete": 187,
+          "any_feasible_gold": 632,
+          "policy": "shared",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 26.813,
+            "p95_us": 56.521
+          },
+          "read_and_verify_us": {
+            "median_us": 35.736,
+            "p95_us": 61.217
+          },
+          "paired_vs_rank": {
+            "wins": 13,
+            "losses": 32,
+            "delta": -0.021396396396396396,
+            "paper_cluster_bootstrap_95": [
+              -0.03530751708428246,
+              -0.007918552036199095
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1450082,
+          "decoded_bytes": 3279062,
+          "activated_compressed_payload_bytes": 1066328,
+          "selected_passages": 3100,
+          "source_checks": 3100,
+          "empty": 16,
+          "rank_utility": 1514971126,
+          "eligible": 888,
+          "hit": 369,
+          "gold_found": 508,
+          "gold_total": 1802,
+          "gold_union_complete": 197,
+          "any_feasible_gold": 632,
+          "policy": "exact",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 32.777,
+            "p95_us": 153.31
+          },
+          "read_and_verify_us": {
+            "median_us": 36.204,
+            "p95_us": 62.453
+          },
+          "paired_vs_rank": {
+            "wins": 15,
+            "losses": 22,
+            "delta": -0.007882882882882882,
+            "paper_cluster_bootstrap_95": [
+              -0.021714285714285714,
+              0.00585480093676815
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3120577,
+          "decoded_bytes": 6900254,
+          "activated_compressed_payload_bytes": 2227560,
+          "selected_passages": 5611,
+          "source_checks": 5611,
+          "empty": 15,
+          "rank_utility": 2246179491,
+          "eligible": 888,
+          "hit": 540,
+          "gold_found": 776,
+          "gold_total": 1802,
+          "gold_union_complete": 345,
+          "any_feasible_gold": 663,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 39.671,
+            "p95_us": 60.448
+          },
+          "read_and_verify_us": {
+            "median_us": 68.04,
+            "p95_us": 98.971
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 2989622,
+          "decoded_bytes": 6825315,
+          "activated_compressed_payload_bytes": 2205583,
+          "selected_passages": 5832,
+          "source_checks": 5832,
+          "empty": 15,
+          "rank_utility": 2218372314,
+          "eligible": 888,
+          "hit": 512,
+          "gold_found": 750,
+          "gold_total": 1802,
+          "gold_union_complete": 322,
+          "any_feasible_gold": 663,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 50.422,
+            "p95_us": 74.134
+          },
+          "read_and_verify_us": {
+            "median_us": 70.539,
+            "p95_us": 100.264
+          },
+          "paired_vs_rank": {
+            "wins": 21,
+            "losses": 49,
+            "delta": -0.03153153153153153,
+            "paper_cluster_bootstrap_95": [
+              -0.05145413870246085,
+              -0.011049723756906077
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3062822,
+          "decoded_bytes": 6711075,
+          "activated_compressed_payload_bytes": 2170718,
+          "selected_passages": 5798,
+          "source_checks": 5798,
+          "empty": 15,
+          "rank_utility": 2241448121,
+          "eligible": 888,
+          "hit": 527,
+          "gold_found": 765,
+          "gold_total": 1802,
+          "gold_union_complete": 337,
+          "any_feasible_gold": 663,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 58.405,
+            "p95_us": 81.785
+          },
+          "read_and_verify_us": {
+            "median_us": 69.733,
+            "p95_us": 101.339
+          },
+          "paired_vs_rank": {
+            "wins": 16,
+            "losses": 29,
+            "delta": -0.01463963963963964,
+            "paper_cluster_bootstrap_95": [
+              -0.02976190476190476,
+              -0.0010706638115631692
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3207535,
+          "decoded_bytes": 6911088,
+          "activated_compressed_payload_bytes": 2232240,
+          "selected_passages": 5908,
+          "source_checks": 5908,
+          "empty": 15,
+          "rank_utility": 2268369914,
+          "eligible": 888,
+          "hit": 539,
+          "gold_found": 783,
+          "gold_total": 1802,
+          "gold_union_complete": 346,
+          "any_feasible_gold": 663,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 206.657,
+            "p95_us": 516.31
+          },
+          "read_and_verify_us": {
+            "median_us": 72.463,
+            "p95_us": 104.113
+          },
+          "paired_vs_rank": {
+            "wins": 19,
+            "losses": 20,
+            "delta": -0.0011261261261261261,
+            "paper_cluster_bootstrap_95": [
+              -0.0145413870246085,
+              0.012805587892898719
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3597544,
+          "decoded_bytes": 9625565,
+          "activated_compressed_payload_bytes": 3096905,
+          "selected_passages": 6473,
+          "source_checks": 6473,
+          "empty": 15,
+          "rank_utility": 2438538838,
+          "eligible": 888,
+          "hit": 594,
+          "gold_found": 843,
+          "gold_total": 1802,
+          "gold_union_complete": 367,
+          "any_feasible_gold": 664,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 49.936,
+            "p95_us": 63.467
+          },
+          "read_and_verify_us": {
+            "median_us": 85.267,
+            "p95_us": 122.873
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3512046,
+          "decoded_bytes": 9840932,
+          "activated_compressed_payload_bytes": 3166315,
+          "selected_passages": 6790,
+          "source_checks": 6790,
+          "empty": 15,
+          "rank_utility": 2446342402,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 64.499,
+            "p95_us": 78.514
+          },
+          "read_and_verify_us": {
+            "median_us": 91.029,
+            "p95_us": 123.119
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3527612,
+          "decoded_bytes": 9329507,
+          "activated_compressed_payload_bytes": 3003181,
+          "selected_passages": 6757,
+          "source_checks": 6757,
+          "empty": 15,
+          "rank_utility": 2443936056,
+          "eligible": 888,
+          "hit": 574,
+          "gold_found": 823,
+          "gold_total": 1802,
+          "gold_union_complete": 354,
+          "any_feasible_gold": 664,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 71.047,
+            "p95_us": 86.188
+          },
+          "read_and_verify_us": {
+            "median_us": 87.424,
+            "p95_us": 122.807
+          },
+          "paired_vs_rank": {
+            "wins": 15,
+            "losses": 35,
+            "delta": -0.02252252252252252,
+            "paper_cluster_bootstrap_95": [
+              -0.03765227021040975,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3602356,
+          "decoded_bytes": 9881475,
+          "activated_compressed_payload_bytes": 3179661,
+          "selected_passages": 6760,
+          "source_checks": 6760,
+          "empty": 15,
+          "rank_utility": 2458039212,
+          "eligible": 888,
+          "hit": 581,
+          "gold_found": 834,
+          "gold_total": 1802,
+          "gold_union_complete": 362,
+          "any_feasible_gold": 664,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 423.222,
+            "p95_us": 562.765
+          },
+          "read_and_verify_us": {
+            "median_us": 93.274,
+            "p95_us": 127.257
+          },
+          "paired_vs_rank": {
+            "wins": 11,
+            "losses": 24,
+            "delta": -0.01463963963963964,
+            "paper_cluster_bootstrap_95": [
+              -0.029002320185614848,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "group": 8,
+      "codec": "zstd9-dictionary",
+      "sqlite_bytes": 8454144,
+      "all_source_checks": 13266,
+      "metadata_setup_us": 7161.487,
+      "rows": [
+        {
+          "questions": 1005,
+          "context_bytes": 882106,
+          "decoded_bytes": 2523250,
+          "activated_compressed_payload_bytes": 787662,
+          "selected_passages": 1927,
+          "source_checks": 1927,
+          "empty": 177,
+          "rank_utility": 824069622,
+          "eligible": 888,
+          "hit": 200,
+          "gold_found": 280,
+          "gold_total": 1802,
+          "gold_union_complete": 99,
+          "any_feasible_gold": 302,
+          "policy": "rank",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 11.372,
+            "p95_us": 29.124
+          },
+          "read_and_verify_us": {
+            "median_us": 23.169,
+            "p95_us": 44.837
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 846699,
+          "decoded_bytes": 2498518,
+          "activated_compressed_payload_bytes": 778165,
+          "selected_passages": 2030,
+          "source_checks": 2030,
+          "empty": 177,
+          "rank_utility": 799763256,
+          "eligible": 888,
+          "hit": 188,
+          "gold_found": 268,
+          "gold_total": 1802,
+          "gold_union_complete": 91,
+          "any_feasible_gold": 302,
+          "policy": "context",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 13.14,
+            "p95_us": 35.326
+          },
+          "read_and_verify_us": {
+            "median_us": 23.507,
+            "p95_us": 46.502
+          },
+          "paired_vs_rank": {
+            "wins": 9,
+            "losses": 21,
+            "delta": -0.013513513513513514,
+            "paper_cluster_bootstrap_95": [
+              -0.025551684088269456,
+              -0.0022701475595913734
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 864067,
+          "decoded_bytes": 2481664,
+          "activated_compressed_payload_bytes": 775124,
+          "selected_passages": 1960,
+          "source_checks": 1960,
+          "empty": 177,
+          "rank_utility": 818012876,
+          "eligible": 888,
+          "hit": 195,
+          "gold_found": 276,
+          "gold_total": 1802,
+          "gold_union_complete": 96,
+          "any_feasible_gold": 302,
+          "policy": "shared",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 14.159,
+            "p95_us": 37.721
+          },
+          "read_and_verify_us": {
+            "median_us": 22.948,
+            "p95_us": 46.176
+          },
+          "paired_vs_rank": {
+            "wins": 3,
+            "losses": 8,
+            "delta": -0.00563063063063063,
+            "paper_cluster_bootstrap_95": [
+              -0.011840688912809472,
+              0.0011507479861910242
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 921172,
+          "decoded_bytes": 2531133,
+          "activated_compressed_payload_bytes": 789924,
+          "selected_passages": 2067,
+          "source_checks": 2067,
+          "empty": 177,
+          "rank_utility": 833616822,
+          "eligible": 888,
+          "hit": 206,
+          "gold_found": 289,
+          "gold_total": 1802,
+          "gold_union_complete": 104,
+          "any_feasible_gold": 302,
+          "policy": "exact",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 10.391,
+            "p95_us": 50.679
+          },
+          "read_and_verify_us": {
+            "median_us": 24.111,
+            "p95_us": 47.028
+          },
+          "paired_vs_rank": {
+            "wins": 11,
+            "losses": 5,
+            "delta": 0.006756756756756757,
+            "paper_cluster_bootstrap_95": [
+              -0.0011467889908256881,
+              0.014492753623188406
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 2480797,
+          "decoded_bytes": 6538453,
+          "activated_compressed_payload_bytes": 2024222,
+          "selected_passages": 4477,
+          "source_checks": 4477,
+          "empty": 16,
+          "rank_utility": 1846319338,
+          "eligible": 888,
+          "hit": 468,
+          "gold_found": 646,
+          "gold_total": 1802,
+          "gold_union_complete": 291,
+          "any_feasible_gold": 652,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 26.565,
+            "p95_us": 54.129
+          },
+          "read_and_verify_us": {
+            "median_us": 50.6,
+            "p95_us": 78.741
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 2376260,
+          "decoded_bytes": 6510251,
+          "activated_compressed_payload_bytes": 2016586,
+          "selected_passages": 4610,
+          "source_checks": 4610,
+          "empty": 16,
+          "rank_utility": 1789219696,
+          "eligible": 888,
+          "hit": 443,
+          "gold_found": 630,
+          "gold_total": 1802,
+          "gold_union_complete": 266,
+          "any_feasible_gold": 652,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 32.723,
+            "p95_us": 66.665
+          },
+          "read_and_verify_us": {
+            "median_us": 52.648,
+            "p95_us": 80.606
+          },
+          "paired_vs_rank": {
+            "wins": 29,
+            "losses": 54,
+            "delta": -0.028153153153153154,
+            "paper_cluster_bootstrap_95": [
+              -0.04746136865342163,
+              -0.01005586592178771
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 2429779,
+          "decoded_bytes": 6458720,
+          "activated_compressed_payload_bytes": 2001218,
+          "selected_passages": 4512,
+          "source_checks": 4512,
+          "empty": 16,
+          "rank_utility": 1834670528,
+          "eligible": 888,
+          "hit": 458,
+          "gold_found": 637,
+          "gold_total": 1802,
+          "gold_union_complete": 281,
+          "any_feasible_gold": 652,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 35.876,
+            "p95_us": 75.894
+          },
+          "read_and_verify_us": {
+            "median_us": 51.208,
+            "p95_us": 82.175
+          },
+          "paired_vs_rank": {
+            "wins": 8,
+            "losses": 18,
+            "delta": -0.01126126126126126,
+            "paper_cluster_bootstrap_95": [
+              -0.022604951560818085,
+              0.001141552511415525
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 2638839,
+          "decoded_bytes": 6600545,
+          "activated_compressed_payload_bytes": 2040138,
+          "selected_passages": 4838,
+          "source_checks": 4838,
+          "empty": 16,
+          "rank_utility": 1871740701,
+          "eligible": 888,
+          "hit": 462,
+          "gold_found": 656,
+          "gold_total": 1802,
+          "gold_union_complete": 280,
+          "any_feasible_gold": 652,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 55.103,
+            "p95_us": 320.157
+          },
+          "read_and_verify_us": {
+            "median_us": 54.218,
+            "p95_us": 83.423
+          },
+          "paired_vs_rank": {
+            "wins": 25,
+            "losses": 31,
+            "delta": -0.006756756756756757,
+            "paper_cluster_bootstrap_95": [
+              -0.02237136465324385,
+              0.008879023307436182
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3596930,
+          "decoded_bytes": 13852622,
+          "activated_compressed_payload_bytes": 4263136,
+          "selected_passages": 6472,
+          "source_checks": 6472,
+          "empty": 15,
+          "rank_utility": 2438372172,
+          "eligible": 888,
+          "hit": 594,
+          "gold_found": 843,
+          "gold_total": 1802,
+          "gold_union_complete": 367,
+          "any_feasible_gold": 664,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 49.433,
+            "p95_us": 62.699
+          },
+          "read_and_verify_us": {
+            "median_us": 86.472,
+            "p95_us": 124.742
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3511404,
+          "decoded_bytes": 14149049,
+          "activated_compressed_payload_bytes": 4351060,
+          "selected_passages": 6789,
+          "source_checks": 6789,
+          "empty": 15,
+          "rank_utility": 2446134070,
+          "eligible": 888,
+          "hit": 572,
+          "gold_found": 817,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 63.792,
+            "p95_us": 77.259
+          },
+          "read_and_verify_us": {
+            "median_us": 90.507,
+            "p95_us": 128.532
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 39,
+            "delta": -0.024774774774774775,
+            "paper_cluster_bootstrap_95": [
+              -0.04077010192525481,
+              -0.008284023668639054
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3533395,
+          "decoded_bytes": 13123256,
+          "activated_compressed_payload_bytes": 4036289,
+          "selected_passages": 6754,
+          "source_checks": 6754,
+          "empty": 15,
+          "rank_utility": 2437147570,
+          "eligible": 888,
+          "hit": 576,
+          "gold_found": 824,
+          "gold_total": 1802,
+          "gold_union_complete": 353,
+          "any_feasible_gold": 664,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 69.731,
+            "p95_us": 85.828
+          },
+          "read_and_verify_us": {
+            "median_us": 86.293,
+            "p95_us": 125.753
+          },
+          "paired_vs_rank": {
+            "wins": 17,
+            "losses": 35,
+            "delta": -0.02027027027027027,
+            "paper_cluster_bootstrap_95": [
+              -0.036036036036036036,
+              -0.0045662100456621
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3602097,
+          "decoded_bytes": 14139673,
+          "activated_compressed_payload_bytes": 4349020,
+          "selected_passages": 6760,
+          "source_checks": 6760,
+          "empty": 15,
+          "rank_utility": 2457840404,
+          "eligible": 888,
+          "hit": 581,
+          "gold_found": 834,
+          "gold_total": 1802,
+          "gold_union_complete": 362,
+          "any_feasible_gold": 664,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 401.273,
+            "p95_us": 536.854
+          },
+          "read_and_verify_us": {
+            "median_us": 92.311,
+            "p95_us": 133.682
+          },
+          "paired_vs_rank": {
+            "wins": 11,
+            "losses": 24,
+            "delta": -0.01463963963963964,
+            "paper_cluster_bootstrap_95": [
+              -0.029002320185614848,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "group": "paper",
+      "codec": "zstd9-dictionary",
+      "sqlite_bytes": 7811072,
+      "all_source_checks": 13266,
+      "metadata_setup_us": 6927.871,
+      "rows": [
+        {
+          "questions": 1005,
+          "context_bytes": 1936,
+          "decoded_bytes": 4021,
+          "activated_compressed_payload_bytes": 1246,
+          "selected_passages": 5,
+          "source_checks": 5,
+          "empty": 1004,
+          "rank_utility": 2226190,
+          "eligible": 888,
+          "hit": 1,
+          "gold_found": 3,
+          "gold_total": 1802,
+          "gold_union_complete": 0,
+          "any_feasible_gold": 1,
+          "policy": "rank",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 2.924,
+            "p95_us": 4.405
+          },
+          "read_and_verify_us": {
+            "median_us": 0.098,
+            "p95_us": 0.138
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1936,
+          "decoded_bytes": 4021,
+          "activated_compressed_payload_bytes": 1246,
+          "selected_passages": 5,
+          "source_checks": 5,
+          "empty": 1004,
+          "rank_utility": 2226190,
+          "eligible": 888,
+          "hit": 1,
+          "gold_found": 3,
+          "gold_total": 1802,
+          "gold_union_complete": 0,
+          "any_feasible_gold": 1,
+          "policy": "context",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 2.923,
+            "p95_us": 4.525
+          },
+          "read_and_verify_us": {
+            "median_us": 0.099,
+            "p95_us": 0.135
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1936,
+          "decoded_bytes": 4021,
+          "activated_compressed_payload_bytes": 1246,
+          "selected_passages": 5,
+          "source_checks": 5,
+          "empty": 1004,
+          "rank_utility": 2226190,
+          "eligible": 888,
+          "hit": 1,
+          "gold_found": 3,
+          "gold_total": 1802,
+          "gold_union_complete": 0,
+          "any_feasible_gold": 1,
+          "policy": "shared",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 2.937,
+            "p95_us": 4.695
+          },
+          "read_and_verify_us": {
+            "median_us": 0.1,
+            "p95_us": 0.139
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 1936,
+          "decoded_bytes": 4021,
+          "activated_compressed_payload_bytes": 1246,
+          "selected_passages": 5,
+          "source_checks": 5,
+          "empty": 1004,
+          "rank_utility": 2226190,
+          "eligible": 888,
+          "hit": 1,
+          "gold_found": 3,
+          "gold_total": 1802,
+          "gold_union_complete": 0,
+          "any_feasible_gold": 1,
+          "policy": "exact",
+          "context_budget": 2048,
+          "decode_budget": 4096,
+          "selection_us": {
+            "median_us": 3.235,
+            "p95_us": 4.576
+          },
+          "read_and_verify_us": {
+            "median_us": 0.107,
+            "p95_us": 0.152
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 56493,
+          "decoded_bytes": 131390,
+          "activated_compressed_payload_bytes": 38673,
+          "selected_passages": 103,
+          "source_checks": 103,
+          "empty": 986,
+          "rank_utility": 41149988,
+          "eligible": 888,
+          "hit": 13,
+          "gold_found": 20,
+          "gold_total": 1802,
+          "gold_union_complete": 11,
+          "any_feasible_gold": 13,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 2.992,
+            "p95_us": 4.854
+          },
+          "read_and_verify_us": {
+            "median_us": 0.102,
+            "p95_us": 0.149
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 54477,
+          "decoded_bytes": 131390,
+          "activated_compressed_payload_bytes": 38673,
+          "selected_passages": 103,
+          "source_checks": 103,
+          "empty": 986,
+          "rank_utility": 40876179,
+          "eligible": 888,
+          "hit": 12,
+          "gold_found": 20,
+          "gold_total": 1802,
+          "gold_union_complete": 11,
+          "any_feasible_gold": 13,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 2.973,
+            "p95_us": 4.697
+          },
+          "read_and_verify_us": {
+            "median_us": 0.1,
+            "p95_us": 0.147
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 1,
+            "delta": -0.0011261261261261261,
+            "paper_cluster_bootstrap_95": [
+              -0.0044444444444444444,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 54477,
+          "decoded_bytes": 131390,
+          "activated_compressed_payload_bytes": 38673,
+          "selected_passages": 103,
+          "source_checks": 103,
+          "empty": 986,
+          "rank_utility": 40876179,
+          "eligible": 888,
+          "hit": 12,
+          "gold_found": 20,
+          "gold_total": 1802,
+          "gold_union_complete": 11,
+          "any_feasible_gold": 13,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 2.997,
+            "p95_us": 4.89
+          },
+          "read_and_verify_us": {
+            "median_us": 0.103,
+            "p95_us": 0.148
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 1,
+            "delta": -0.0011261261261261261,
+            "paper_cluster_bootstrap_95": [
+              -0.0044444444444444444,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 56493,
+          "decoded_bytes": 131390,
+          "activated_compressed_payload_bytes": 38673,
+          "selected_passages": 103,
+          "source_checks": 103,
+          "empty": 986,
+          "rank_utility": 41149988,
+          "eligible": 888,
+          "hit": 13,
+          "gold_found": 20,
+          "gold_total": 1802,
+          "gold_union_complete": 11,
+          "any_feasible_gold": 13,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 8192,
+          "selection_us": {
+            "median_us": 3.3,
+            "p95_us": 4.923
+          },
+          "read_and_verify_us": {
+            "median_us": 0.109,
+            "p95_us": 0.17
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3207544,
+          "decoded_bytes": 18547137,
+          "activated_compressed_payload_bytes": 5198381,
+          "selected_passages": 5802,
+          "source_checks": 5802,
+          "empty": 118,
+          "rank_utility": 2184700033,
+          "eligible": 888,
+          "hit": 534,
+          "gold_found": 754,
+          "gold_total": 1802,
+          "gold_union_complete": 337,
+          "any_feasible_gold": 599,
+          "policy": "rank",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 46.763,
+            "p95_us": 62.051
+          },
+          "read_and_verify_us": {
+            "median_us": 77.805,
+            "p95_us": 109.37
+          },
+          "paired_vs_rank": {
+            "wins": 0,
+            "losses": 0,
+            "delta": 0,
+            "paper_cluster_bootstrap_95": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3134312,
+          "decoded_bytes": 18547137,
+          "activated_compressed_payload_bytes": 5198381,
+          "selected_passages": 6064,
+          "source_checks": 6064,
+          "empty": 118,
+          "rank_utility": 2191369872,
+          "eligible": 888,
+          "hit": 517,
+          "gold_found": 734,
+          "gold_total": 1802,
+          "gold_union_complete": 327,
+          "any_feasible_gold": 599,
+          "policy": "context",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 61.097,
+            "p95_us": 77.201
+          },
+          "read_and_verify_us": {
+            "median_us": 79.693,
+            "p95_us": 108.829
+          },
+          "paired_vs_rank": {
+            "wins": 16,
+            "losses": 33,
+            "delta": -0.019144144144144143,
+            "paper_cluster_bootstrap_95": [
+              -0.03455723542116631,
+              -0.004672897196261682
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3134664,
+          "decoded_bytes": 18547137,
+          "activated_compressed_payload_bytes": 5198381,
+          "selected_passages": 6061,
+          "source_checks": 6061,
+          "empty": 118,
+          "rank_utility": 2191593682,
+          "eligible": 888,
+          "hit": 517,
+          "gold_found": 734,
+          "gold_total": 1802,
+          "gold_union_complete": 327,
+          "any_feasible_gold": 599,
+          "policy": "shared",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 65.716,
+            "p95_us": 83.188
+          },
+          "read_and_verify_us": {
+            "median_us": 80.079,
+            "p95_us": 109.823
+          },
+          "paired_vs_rank": {
+            "wins": 16,
+            "losses": 33,
+            "delta": -0.019144144144144143,
+            "paper_cluster_bootstrap_95": [
+              -0.03455723542116631,
+              -0.004672897196261682
+            ]
+          }
+        },
+        {
+          "questions": 1005,
+          "context_bytes": 3212835,
+          "decoded_bytes": 18547137,
+          "activated_compressed_payload_bytes": 5198381,
+          "selected_passages": 6042,
+          "source_checks": 6042,
+          "empty": 118,
+          "rank_utility": 2201214301,
+          "eligible": 888,
+          "hit": 525,
+          "gold_found": 747,
+          "gold_total": 1802,
+          "gold_union_complete": 335,
+          "any_feasible_gold": 599,
+          "policy": "exact",
+          "context_budget": 4096,
+          "decode_budget": 32768,
+          "selection_us": {
+            "median_us": 327.738,
+            "p95_us": 489.216
+          },
+          "read_and_verify_us": {
+            "median_us": 80.82,
+            "p95_us": 113.325
+          },
+          "paired_vs_rank": {
+            "wins": 10,
+            "losses": 19,
+            "delta": -0.010135135135135136,
+            "paper_cluster_bootstrap_95": [
+              -0.022650056625141562,
+              0.0022197558268590455
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "known-paper QASPER dev reused; top ten fixed candidates; no answer generation",
+    "UTF8 source bytes including title, not model tokenizer/context tokens; no prompt overhead",
+    "decode budget logical raw block bytes; no physical I/O or wall-clock limit",
+    "resident metadata setup separate; no peak RSS; no ranking time in selection/read timings",
+    "exact solver maximizes fixed reciprocal-rank utility, not human gold; at most 10 candidates",
+    "whole archive measured but not constrained to same persistent size across layouts",
+    "union of mapped evidence annotations, not alternative sufficient evidence chains",
+    "descriptive within-dev paired paper-cluster bootstrap, no prospective test claim"
+  ]
+}
