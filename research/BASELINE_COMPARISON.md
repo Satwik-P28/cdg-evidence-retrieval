@@ -23,6 +23,40 @@ programme.
 | RLZ (Kuruppu / Hoobin) | n/a | yes (decompress) | no | no | n/a |
 | Time-travel sharding (Anand et al.) | yes | no | yes | yes | yes |
 
+## Rejection baselines (R181), measured on the frozen R180 workload
+
+These are the baselines that matter for the newer claim. All are feature-matched: they
+answer the same queries, at the same cutoffs, and are verified against the same oracle.
+Bytes are the complete archive file; latency is p95 over the frozen workload.
+
+**AP-10,009** (frequency baseline 14,082,048 B / 388,344 µs)
+
+| Baseline | Archive B | vs base | p95 µs | Improvement |
+|---|---:|---:|---:|---:|
+| Frequency only | 14,082,048 | — | 388,344 | 1.00× |
+| 64-bit pair fingerprints | 14,180,352 | +0.7% | 365,317 | 1.06× |
+| Workload-trained positions, 5% | 14,958,592 | +6.2% | 269,475 | 1.44× |
+| Selective pair filter, 5% vocabulary | 14,770,176 | +4.9% | 105,639 | **3.67×** |
+| Complete pair index | 30,851,072 | +119.1% | 20,322 | 19.1× |
+| Complete pair index + positions 5% | 31,727,616 | +125.3% | 12,865 | 30.2× |
+
+**CLARK-1,161** (frequency baseline 5,009,408 B / 168,171 µs)
+
+| Baseline | Archive B | vs base | p95 µs | Improvement |
+|---|---:|---:|---:|---:|
+| Frequency only | 5,009,408 | — | 168,171 | 1.00× |
+| 64-bit pair fingerprints | 5,033,984 | +0.5% | 182,922 | 0.92× |
+| Workload-trained positions, 5% | 5,296,128 | +5.7% | 159,467 | 1.05× |
+| Selective pair filter, 5% vocabulary | 5,226,496 | +4.3% | 72,078 | **2.33×** |
+| Complete pair index | 12,431,360 | +148.2% | 7,400 | 22.7× |
+| Complete pair index + positions 5% | 12,718,080 | +153.9% | 9,551 | 17.6× |
+
+Two of these baselines are our own methods, and they lose. That is deliberate: the
+workload-trained positional selection is the strongest method this programme had before
+R181, and at a matched budget it is beaten by a structure that never looks at the query
+workload. Reporting only the frequency baseline would flatter the method by choosing the
+wrong opponent.
+
 ## AP NewsEdits, 10,009 revisions — feature-matched frontier
 
 Archive bytes are the complete SQLite file with all structures charged; latency is

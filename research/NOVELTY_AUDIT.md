@@ -19,6 +19,21 @@ study, not as an algorithmic breakthrough.
 | Workload-trained index configuration | Learned/adaptive indexing literature exists broadly; we make no general claim | Train on a hash-split third of the frozen query plan, validate on a second, report held-out separately | **Methodological**, no novelty claim |
 | Joint source + index + reconstruction budget | Each piece separately is known; the joint contract (exact bytes back, exact ranks, all metadata charged) is not commonly reported in one measurement | R173–R177 | **Our framing** — the most defensible original element |
 
+## Added by R179–R183
+
+| Component | Prior art | Our use | Status |
+|---|---|---|---|
+| Adjacent-pair (bigram) postings as a *phrase* filter in a versioned archive | Bigram/word-pair indexes are long-standing (e.g. "next-word" indexes); Bloom-filter phrase checks are standard | Exact pair postings used only to *reject* candidates before exact verification, charged by measured archive bytes, with the complete/selective distinction made explicit | **Adaptation**; the contribution is the charging and the soundness contract, not the structure |
+| Document-level pair fingerprints | Bloom filters (Bloom 1970); bit-sliced signatures (Faloutsos & Christodoulakis 1984) | 64-bit mask over hashed adjacent pairs, reject only on a clear bit | **Established structure, negative result** — it filters 0.5% and is not worth its bytes |
+| Cost-aware mode selection per query (source / positions / pairs+source) | Query optimisers and cost-based plan selection are textbook | Microsecond-calibrated plan choice over three physical modes, calibrated on a training split only, never on held-out | **Engineering**, no novelty claim |
+| Joint phrase coverage as the selection objective | Maximum coverage is NP-hard and greedy has a (1−1/e) bound *for submodular objectives* | Selecting tokens so that whole phrases become rejectable, with the greedy gap measured by exact enumeration over the top 12 terms only | **Adaptation** — and **no submodularity claim is made**, because no proof exists |
+
+The honest positioning does not change: there is still no new data structure and no new
+algorithm. What R181 adds to the contribution is a **discriminating comparison**: the
+same archive, the same budget, the same frozen workload, one workload-trained structure
+against one query-independent structure, with the workload-trained one losing on held-out
+phrases on both corpora.
+
 ## What can honestly be claimed as original
 
 1. **The accounting contract.** Every persistent structure — block directory, term
@@ -38,6 +53,12 @@ study, not as an algorithmic breakthrough.
    baseline).
 4. **A reproducibility artefact**: pinned manifests, deterministic query plans,
    oracle-checked rankings, CI matrices, and raw result JSON per configuration.
+5. **A generalisation audit that fails and is then repaired** (R179–R183): the R174
+   held-out collapse (training p95 12,973 µs vs held-out 1,316,938 µs on the same
+   policy) is documented, the workload is rebuilt with family and temporal holdouts,
+   and the replacement claim is measured on the new workload. Reporting the failure is
+   part of the contribution; a paper that only reported the in-distribution numbers
+   would be wrong by two orders of magnitude.
 
 ## What cannot be claimed
 

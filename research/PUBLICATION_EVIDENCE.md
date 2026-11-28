@@ -1,4 +1,4 @@
-# Publication evidence register (R173–R178)
+# Publication evidence register (R173–R183)
 
 Every number in this file is traceable to a committed result JSON, a report in
 `research/rounds/`, or a test in `experiments/`. Nothing here is projected,
@@ -28,6 +28,30 @@ Numbers: frequency-only 14,082,048 B / 24,267 µs p95; trained selective 14,503,
 What this claim does **not** say: that the system is faster than FTS5, that it beats
 PISA or FastPFor, or that the improvement generalises beyond these two corpora.
 
+## Update after R179–R183: which of these claims survive
+
+R179 re-derived every number in this file from the committed JSON. R180 replaced the
+workload. R181 measured the same archive under the new workload. Three claims changed
+status, and the change is the most important result in the programme.
+
+| earlier claim | status now | why |
+|---|---|---|
+| Cost-based selection beats document-frequency selection at equal storage (E5) | **survives, but only in-distribution** | E5 was measured on the query plan the policy was trained on. On R180's held-out splits the trained selective point cuts p95 by 1.44× on AP and 1.05× on CLARK, and on AP it reduces *no* source reads at all. |
+| The trained selective point dominates both ends of the frontier | **refuted** | It dominates statistics-only policies; it does not dominate a query-independent adjacency filter at the same storage (R181). It is also not on the R181 frontier at 5% because `pairs_selective-5%` dominates it. |
+| "Budget" percentages are storage budgets | **refuted** | Structural overhead is a median 19.2% and up to 71.7% of the estimated budget. R179 reports measured file bytes for every arm. |
+| Whole-archive savings of 25% against native positional | **not met** | Best complete archive 20,631,552 B vs native 20,684,800 B on AP: 0.26%. The large savings are index-region only. |
+
+The central claim for the paper is therefore narrower and better supported:
+
+> A query-independent adjacent-pair filter is the representation that earns its bytes for
+> held-out phrase queries: at ~5% additional storage it cuts held-out p95 by 3.7× on AP
+> and 2.3× on CLARK, while a comparable workload-trained positional selection cuts it by
+> 1.44× and 1.05×. Charges are measured archive bytes; rankings and reconstructions stay
+> exact against the native oracle.
+
+Numbers: R181 `results-ap-10009.json`, `results-clark-1161.json`; see
+`research/rounds/round-181/report.md` and `research/GENERALIZATION_AUDIT.md`.
+
 ## Evidence table
 
 | # | Claim | Evidence | Status |
@@ -37,7 +61,11 @@ PISA or FastPFor, or that the improvement generalises beyond these two corpora.
 | E3 | Charging every term row on both sides, the best block layout is 5.1% smaller than an uncompressed SIMD-BP128 layout of the same data | R176 `results-ap-10009.json`: 9,320,643 vs 9,817,431 (both include 1,075,992 B of 24 B/term rows); payload+directory only: 8,244,651 vs 8,741,439 | **Established**, size only, modest margin |
 | E4 | Our frequency index is 27.3% smaller than the best uncompressed external layout (Elias–Fano) on the same postings and with equal term metadata | R176: 3,048,885 vs 4,193,814 (payload only 3,468,822) | **Established**, size only |
 | E5 | Cost-based selection beats document-frequency selection at equal storage | R174: `df_topk` k512 = 18,657,280 B / 12,580 µs; `train_candidates` = 14,503,936 B / 7,054 µs | **Established** |
-| E6 | No corpus-statistics-only policy approaches the trained policy | R174: `df-1%` 14,266,368 B / 21,621 µs; `cf-40%` 20,520,960 B / 12,064 µs; `df-40%` 20,787,200 B / 17,380 µs | **Established** |
+| E6 | No corpus-statistics-only policy approaches the trained policy | R174: `df-1%` 14,266,368 B / 21,621 µs; `cf-40%` 20,520,960 B / 12,064 µs; `df-40%` 20,787,200 B / 17,380 µs | **Established in-distribution**; see the R179–R183 update above for the held-out caveat |
+| E7 | A query-independent adjacent-pair filter beats a workload-trained positional selection on held-out phrase queries at matched storage | R181: AP 388,344 → 105,639 µs p95 at +4.9% bytes vs 269,475 µs at +6.2%; CLARK 168,171 → 72,078 µs at +4.3% vs 159,467 µs at +5.7% | **Established**, two corpora |
+| E8 | Every rejection produces zero ranking, tie-order and document-frequency discrepancies | R181: 6 arms × 2 corpora, `score_error` 0.0, `tie_order_differences` 0, `rank_mismatches` empty | **Established** |
+| E9 | 64-bit document pair fingerprints are useless at this scale | R181: 0.5% of candidates rejected; dominated on CLARK | **Established**, negative |
+| E10 | The estimated payload budget is not a physical storage budget | R179: structural overhead median 19.2%, max 71.7% over 76 arms | **Established** |
 | E7 | Term-level selection is the only representation axis with a good byte-for-latency exchange rate | R175: 0.41 MB buys 12,836 µs; regional native mirroring costs 1.15 MB for 517 µs at 256 documents | **Established** for AP |
 | E8 | A regional (hot-set) native positional mirror is dominated by the global native index at every size tested | R175: `sel+hot4096` 24,363,008 B / 3,626 µs vs native positional 20,684,800 B / 2,775 µs | **Established**, one corpus shape |
 | E9 | Exactness holds on adversarial inputs: empty documents, duplicates, NFC/NFD, 500-fold repeats, huge insert/delete, unrelated revisions, cutoff boundaries | R177 `results-synthetic.json`: 261 rank checks, all exact | **Established** |

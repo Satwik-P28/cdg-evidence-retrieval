@@ -1,5 +1,49 @@
 # Negative results
 
+## N0. The workload-trained policy collapsed on held-out queries
+
+This is the negative result that reorganised rounds R179–R183, so it comes first.
+
+| split | queries | p95 µs | source reads |
+|---|---:|---:|---:|
+| training | 59 | 12,973 | — |
+| validation | 14 | 178,982 | — |
+| held-out | 7 | 1,316,938 | 36,816 |
+
+The same policy, the same archive, two orders of magnitude between training and held-out.
+Three causes: a non-discriminating workload (one corpus-statistics template), a split over
+queries rather than query families, and an additive per-term objective that cannot express
+"this phrase needs two of its three tokens". R180 rebuilt the workload (1,439 AP / 1,320
+CLARK templates, 12 classes, family and temporal holdouts, frozen digests) and R181
+re-measured the same structures under it. The policy still loses on held-out phrases:
+1.44× on AP and 1.05× on CLARK at ~5% storage, versus 3.7× and 2.3× for the
+query-independent pair filter.
+
+## N0b. 64-bit document pair fingerprints reject almost nothing
+
+On AP they reject 611,907 of 122,876,019 candidates (0.5%) for +0.7% storage; on CLARK they
+are dominated outright (more bytes, slower). With thousands of distinct adjacent pairs per
+document a 64-bit mask saturates, so a clear bit almost never occurs. Fingerprints are kept
+in the code and reported as a negative result; larger masks were not measured, so this says
+nothing about fingerprinting in general.
+
+## N0c. Buying pair posting lists individually is the R174 mistake again
+
+Selecting pairs by rejection-per-byte `(1 − df/N)` or by document frequency buys lists that
+queries never use: an early R181 configuration stored roughly ten thousand such pairs and
+rejected 1.5% of candidates, which is indistinguishable from having no filter. Only the
+vocabulary rule — buy tokens by document frequency, then store every pair whose two
+endpoints are bought — produced the reported gains. The measured dead end is recorded here
+rather than deleted.
+
+## N0d. Greedy on a "≥2 tokens" objective does not start
+
+With phrase coverage defined as "at least two of the phrase's tokens selected", every
+first-step marginal gain is zero and a pure greedy loop returns the empty set. R183
+measured this (joint coverage selected 0 terms at a 1% budget) and now seeds the first
+selection by potential completions per byte. The stall is a property of the objective, so
+it is reported as a design constraint, not a bug that was quietly patched.
+
 Retained deliberately: each of these cost time and each is more useful to a reader
 than another positive table. All numbers are AP 10,009 at 640 rank checks per
 configuration unless stated, warm cache, same frozen query plan.

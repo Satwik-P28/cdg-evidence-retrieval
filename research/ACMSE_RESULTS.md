@@ -29,6 +29,58 @@ with native FTS5 on the same snapshot and every reconstructed revision compared 
 for byte. 640 executions of a frozen 160-query × 4-cutoff plan per configuration,
 warm cache, 2 vCPU.
 
+## Update after R179–R183
+
+The results below are the in-distribution measurements. R179 recomputed them, R180 replaced
+the workload with a frozen one that separates query families, and R181 re-measured the same
+structures on held-out phrases. Two results must be read together:
+
+* **RQ1 holds in-distribution only.** On the new held-out splits the trained selective point
+  cuts p95 by 1.44× on AP and 1.05× on CLARK at ~5% storage, and on AP it reduces no source
+  reads at all.
+* **A query-independent pair filter does better on the same budget.** 3.67× on AP (+4.9%
+  bytes) and 2.33× on CLARK (+4.3% bytes), with zero ranking, tie-order and document-frequency
+  discrepancies against native FTS5.
+
+### RQ6: does a structure that never sees the workload beat one trained on it?
+
+| corpus | arm | archive B | vs base | p95 µs | p99 µs | source reads |
+|---|---|---:|---:|---:|---:|---:|
+| AP | frequency only | 14,082,048 | — | 388,344 | 588,428 | 168,996 |
+| AP | trained positions 5% | 14,958,592 | +6.2% | 269,475 | 395,113 | 168,996 |
+| AP | selective pairs 5% | 14,770,176 | +4.9% | 105,639 | 369,527 | 71,887 |
+| AP | complete pair index | 30,851,072 | +119.1% | 20,322 | 81,231 | 9,970 |
+| CLARK | frequency only | 5,009,408 | — | 168,171 | 348,464 | 63,968 |
+| CLARK | trained positions 5% | 5,296,128 | +5.7% | 159,467 | 335,512 | 63,968 |
+| CLARK | selective pairs 5% | 5,226,496 | +4.3% | 72,078 | 245,543 | 27,802 |
+| CLARK | complete pair index | 12,431,360 | +148.2% | 7,400 | 42,235 | 4,379 |
+
+Answer: yes, on both corpora, at a *matched* budget, and the winner is the structure that
+ignores the workload. The reason is visible in the source-read column: the trained policy
+buys positions for 904 terms and on AP those terms cover no held-out phrase, so nothing is
+rejected. Adjacency works at the level of token pairs, so an unseen phrase built from
+familiar words is filtered anyway.
+
+### RQ7: which structures earn their bytes?
+
+| corpus | non-dominated arms | dominated |
+|---|---|---|
+| AP | frequency, fingerprints64, selective pairs 5%, complete pairs, complete pairs + positions 5% | trained positions 5% |
+| CLARK | frequency, selective pairs 5%, complete pairs | fingerprints64, trained positions 5%, complete pairs + positions 5% |
+
+Positions are not worthless — on AP they are the fastest arm when combined with a complete
+pair index (12,865 µs) — but at a 5% budget they are the wrong purchase on AP and pure
+overhead on CLARK.
+
+### RQ8: do approximate filters stay safe?
+
+Yes, with a caveat that matters: 64-bit document fingerprints reject 0.5% of candidates and
+are not worth their bytes; exact pair postings are worth theirs. Every survivor is verified
+exactly, approximate values never determine a score, and corrupted filter data raises rather
+than returning a short list. A selective index distinguishes "pair not stored" from "pair
+occurs nowhere"; conflating the two was a real false-negative bug, fixed and now covered by a
+test.
+
 ## RQ1: cost-based selection (AP, 10,009 revisions)
 
 | Configuration | Archive MB | p95 ms | 

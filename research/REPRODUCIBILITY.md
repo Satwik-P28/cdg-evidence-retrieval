@@ -16,7 +16,57 @@ Everything below was executed in an unprivileged Linux container (2 vCPU, 3 GB R
 | R175 (joint layout) | `fce2b81` |
 | R176 (external codecs) | `d14ba43` |
 | R177 (adversarial) | `3d61254` |
+| R179–R180 (repair, workload) | `88caca9` |
+| R181 (rejection) | `d239230` |
+| R182 (planner), R183 (joint selection) | see `git log` on `research/round-179-r183-generalization` |
 | Merge to `main` | **not performed** (research branch only) |
+
+## Environment for R179–R183
+
+No root in this container, so the pieces were installed user-locally:
+
+```
+python3 -m venv /tmp/venv
+/tmp/venv/bin/pip install pytest zstandard==0.25.0 gdown==5.2.0 numpy rapidfuzz==3.14.3 pyflakes
+# SQLite 3.45.1 headers, unpacked user-locally (no root, no system install)
+unzip sqlite-amalgamation-3450100.zip -d /tmp/sqlite && cp /tmp/sqlite/sqlite3ext.h /tmp/sqlincl/
+cc -O3 -Wall -Wextra -Werror -I/tmp/sqlincl -shared -fPIC \
+   experiments/round-152/cdg_fts.c -o experiments/round-152/cdgfts.so
+cc -O3 -Wall -Wextra -Werror -I/tmp/sqlincl -shared -fPIC \
+   experiments/round-173/cdg_blockpos.c -o experiments/round-173/cdgbp.so
+```
+
+The extension is loaded through `CDG_FTS_EXTENSION`; tests and runners fail loudly if it is
+missing rather than silently skipping oracle checks.
+
+```
+CDG_FTS_EXTENSION="$PWD/experiments/round-152/cdgfts.so" \
+PYTHONPATH=experiments/round-181:experiments/round-180:experiments/round-174:experiments/round-173:experiments/round-158:experiments/round-157:experiments/round-165:experiments/round-152:experiments/round-141:experiments/round-120:experiments/round-136:experiments/round-138 \
+/tmp/venv/bin/python -m pytest -q experiments/round-181
+```
+
+## R179–R183 runtimes (2 vCPU, 8 GB)
+
+| stage | command | observed |
+|---|---|---|
+| R179 repair | `python experiments/round-179/repair.py` | seconds (re-reads committed JSON only) |
+| R180 workload | `python experiments/round-180/workload.py --corpus ap --source external/newsedits/ap.db --target 10000` | ~6 min per corpus |
+| R181 rejection | `python experiments/round-181/rejection.py --corpus ap --source external/newsedits/ap.db --target 10000` | ~25 min (AP), ~8 min (CLARK) |
+| R182 planner | `python experiments/round-182/planner.py --corpus clark --source external/clark` | tens of minutes per corpus |
+| R183 joint | `python experiments/round-183/joint.py --corpus clark --source external/clark --budgets 1,5,20` | tens of minutes per corpus |
+
+Long runs were started with `nohup … > /tmp/log 2>&1 &` and polled, because a single shell
+command is capped at five minutes here. Each runner writes its result JSON only at the end,
+so a killed run leaves no partial file to mistake for a result.
+
+## What is *not* reproducible from this repository
+
+The R174 hosted-CI matrix (runs `45926879483`, `14150924757`) cannot be re-read: there is no
+`gh` CLI and no token in this environment, and the artifact endpoint answers 401. Those
+numbers are therefore quoted only where they also exist in a committed local JSON, and the
+held-out table in `research/GENERALIZATION_AUDIT.md` is labelled as a CI-reported figure
+that could not be re-downloaded. Every other number in these documents was recomputed
+locally by R179 from committed files.
 
 ## Corpus identities
 
