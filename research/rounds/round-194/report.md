@@ -1,0 +1,16 @@
+# R194: original compression/RAG research, shared activation and context budgets
+
+R95/R98 evidence availability at fixed persistent bytes, R103 grouped dictionary blocks, R105 update amplification, R179 candidate rejection and R190 cache work all expose different resource constraints. This round returns to evidence retrieval rather than further correction-codec tuning. Same QASPER source, fixed native paper-scoped top-ten candidates, label-free selection. For passage i, context cost c_i is original source bytes (section title + newline + paragraph), block activation d_b is raw decompressed block bytes charged once per query. Hard caps C,D, score sum floor(1e6/rank). Compare rank-order skip, context density, shared activation normalized density, and exact subset enumeration (<=10 candidates). These are not new knapsack algorithms. Related cost-aware RAG https://arxiv.org/abs/2606.02245 and budget-constrained submodular evidence packing https://arxiv.org/abs/2607.00725; our test isolates archive-dependent shared decode cost, not a first-of-kind claim.
+
+## Executed local algorithm probe
+Four seeds194–197 x four block sizes1/2/4/8, 200 generated 32-passage cost instances per seed/layout, three budget pairs (2048/4096,4096/8192,4096/32768), four policies. 38400 feasibility/utility checks, 480 independent brute-force exact objective comparisons, all passed. No real relevance labels or physical archive measured locally. Rank, context, shared, exact average objective (units 1e6) / decoded bytes across 2400 budget instances per group:
+| Group | Rank | Context | Shared | Exact |
+|---|---|---|---|---|
+|1|1.9270/3197|1.9274/3092|1.9274/3092|1.9518/3192|
+|2|1.8630/6128|1.8320/6265|1.8603/6068|1.8833/6276|
+|4|1.5440/8277|1.4721/8545|1.5348/8119|1.5586/8596|
+|8|1.0697/9909|1.0454/10228|1.0646/9320|1.0828/10195|
+At group8 shared versus rank uses 5.94% fewer decoded bytes but loses 0.48% rank utility; exact improves utility 1.23% at greater decoded bytes. Rank is strong; no evidence quality result yet. Raw local results and exact source supplied in companion ZIP. Reproduce python experiments/round-194/local_probe.py. Local probe uses generated costs, not a physical SQLite store.
+
+## Hosted QASPER evaluation
+SHA-locked 888 train papers, 281 dev papers (same previously studied dev), 13266 paragraphs, 1005 questions, 888 eligible text evidence. Same original R97 rank candidates across layouts. Original R103 train-only 64KiB dictionary, fully charged. Five matched-schema layouts (Brotli individual, Zstd9 dictionary individual/group4/group8/whole-paper). Every selected source checked byte for byte, all original sources also checked, actual unique raw block inflations compared to predicted charge. Report complete SQLite bytes, selection and source read/verification latencies separately, human evidence hit and union fraction, complete union, empty queries, activated compressed payload, paired wins/losses and paper-cluster bootstrap. All 1005 queries included in cost measures, eligible gold-only metrics separate. No retrieval timing, prompt tokens or model generation. Persistent storage reported not equal-budget enforced yet. Real benchmark pending at commit; no result claimed.

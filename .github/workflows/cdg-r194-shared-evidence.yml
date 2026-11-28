@@ -1,0 +1,22 @@
+name: CDG R194 shared activation evidence budgets
+on:
+  push:
+    branches: ['research/round-194-shared-evidence-budgets']
+    paths: ['experiments/round-194/**','.github/workflows/cdg-r194-shared-evidence.yml']
+  workflow_dispatch:
+jobs:
+  qasper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install Brotli==1.1.0 zstandard==0.23.0
+      - run: python -m unittest discover -s experiments/round-194 -p 'test_*.py' -v
+      - run: python experiments/round-194/evidence_budget.py --out experiments/round-194/ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cdg-r194-qasper
+          path: experiments/round-194/ci.json
