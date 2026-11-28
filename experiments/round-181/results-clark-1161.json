@@ -1,0 +1,345 @@
+{
+  "round": 181,
+  "corpus": "clark",
+  "revisions": 1161,
+  "manifest_sha256": "1567b6c765b7a648e1a2a6d4221bf22543a7011377fda94161c37c04a29b6e2f",
+  "cutoffs": [
+    290,
+    580,
+    870,
+    1161
+  ],
+  "workload_sha256": "50d5ccab28dcc2064716d222156131c5fcc37d7e1f2c565ad0db4466b83408c6",
+  "workload_source": "manifest-clark-1161.json",
+  "query_count": 1320,
+  "base_archive_bytes": 5009408,
+  "pair_metadata": {
+    "pair_count": 380216,
+    "pair_payload_bytes": 1180985,
+    "pair_table_bytes": 8159232,
+    "pair_build_seconds": 4.908,
+    "selected_terms": 904,
+    "selection_bytes": 250457.0
+  },
+  "fingerprint_metadata": {
+    "documents": 1157,
+    "fingerprint_bits": 64,
+    "fingerprint_bytes": 9256,
+    "fingerprint_table_bytes": 24576,
+    "fingerprint_build_seconds": 2.015
+  },
+  "arms": {
+    "freq": {
+      "pairs": null,
+      "bits": null,
+      "positions": false,
+      "budget_pct": null,
+      "query": {
+        "median_us": 2023.568,
+        "p95_us": 168171.475,
+        "p99_us": 348464.071,
+        "max_us": 619898.843,
+        "samples": 1320
+      },
+      "work": {
+        "posting_bytes": 1314732,
+        "candidate_checks": 63968,
+        "source_reads": 63968,
+        "source_decoded_bytes": 436598412,
+        "source_activated_bytes": 191116131,
+        "source_resolved": 63968
+      },
+      "filter_work": {
+        "candidates_before_filter": 42709772,
+        "candidates_after_filter": 42709772,
+        "candidates_rejected": 0
+      },
+      "rank_checks": 1320,
+      "score_error": 0.0,
+      "tie_order_differences": 0,
+      "rank_mismatches": [],
+      "sqlite_bytes": 5009408,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "frames": 3190784,
+        "lexicon": 593920,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096,
+        "token_postings": 950272
+      },
+      "budget_fraction": 1.0,
+      "base_archive_bytes": 5009408
+    },
+    "pairs_all": {
+      "pairs": "all",
+      "bits": null,
+      "positions": false,
+      "budget_pct": null,
+      "pair_count": 380216,
+      "pair_payload_bytes": 1180985,
+      "pair_table_bytes": 8159232,
+      "pair_build_seconds": 4.908,
+      "query": {
+        "median_us": 860.955,
+        "p95_us": 7399.633,
+        "p99_us": 42235.454,
+        "max_us": 153168.648,
+        "samples": 1320
+      },
+      "work": {
+        "posting_bytes": 1314732,
+        "candidate_checks": 63968,
+        "source_reads": 4379,
+        "source_decoded_bytes": 40539152,
+        "source_activated_bytes": 16866014,
+        "source_resolved": 4379
+      },
+      "filter_work": {
+        "pair_bytes_activated": 20965026,
+        "pairs_activated": 1093556,
+        "candidates_before_filter": 42709772,
+        "candidates_after_filter": 2799575,
+        "candidates_rejected": 39910197
+      },
+      "rank_checks": 1320,
+      "score_error": 0.0,
+      "tie_order_differences": 0,
+      "rank_mismatches": [],
+      "sqlite_bytes": 12431360,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "frames": 3190784,
+        "lexicon": 593920,
+        "pair_index_meta": 4096,
+        "pair_postings": 7417856,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096,
+        "token_postings": 950272
+      },
+      "budget_fraction": 2.481602616516762,
+      "base_archive_bytes": 5009408
+    },
+    "pairs_selective-5%": {
+      "pairs": 5,
+      "bits": null,
+      "positions": false,
+      "budget_pct": 5,
+      "selected_pairs": 6244,
+      "query": {
+        "median_us": 2142.34,
+        "p95_us": 72077.636,
+        "p99_us": 245543.296,
+        "max_us": 453447.511,
+        "samples": 1320
+      },
+      "work": {
+        "posting_bytes": 1314732,
+        "candidate_checks": 63968,
+        "source_reads": 27802,
+        "source_decoded_bytes": 214315110,
+        "source_activated_bytes": 92208108,
+        "source_resolved": 27802
+      },
+      "filter_work": {
+        "pairs_unindexed": 1113010,
+        "candidates_before_filter": 42709772,
+        "candidates_after_filter": 19016503,
+        "candidates_rejected": 23693269,
+        "pair_bytes_activated": 10952361,
+        "pairs_activated": 150070
+      },
+      "rank_checks": 1320,
+      "score_error": 0.0,
+      "tie_order_differences": 0,
+      "rank_mismatches": [],
+      "sqlite_bytes": 5226496,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "frames": 3190784,
+        "lexicon": 593920,
+        "pair_index_meta": 4096,
+        "pair_postings": 212992,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096,
+        "token_postings": 950272
+      },
+      "budget_fraction": 1.0433360588716272,
+      "base_archive_bytes": 5009408
+    },
+    "fingerprints64": {
+      "pairs": null,
+      "bits": 64,
+      "positions": false,
+      "budget_pct": null,
+      "documents": 1157,
+      "fingerprint_bits": 64,
+      "fingerprint_bytes": 9256,
+      "fingerprint_table_bytes": 24576,
+      "fingerprint_build_seconds": 2.015,
+      "query": {
+        "median_us": 1974.61,
+        "p95_us": 182922.462,
+        "p99_us": 320737.497,
+        "max_us": 617778.633,
+        "samples": 1320
+      },
+      "work": {
+        "posting_bytes": 1314732,
+        "candidate_checks": 63968,
+        "source_reads": 63674,
+        "source_decoded_bytes": 436248155,
+        "source_activated_bytes": 190914004,
+        "source_resolved": 63674
+      },
+      "filter_work": {
+        "fingerprint_bytes_activated": 11614040,
+        "candidates_before_filter": 42709772,
+        "candidates_after_filter": 42535746,
+        "candidates_rejected": 174026
+      },
+      "rank_checks": 1320,
+      "score_error": 0.0,
+      "tie_order_differences": 0,
+      "rank_mismatches": [],
+      "sqlite_bytes": 5033984,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "doc_pair_bits": 24576,
+        "frames": 3190784,
+        "lexicon": 593920,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096,
+        "token_postings": 950272
+      },
+      "budget_fraction": 1.0049059689288635,
+      "base_archive_bytes": 5009408
+    },
+    "positions-5%": {
+      "pairs": null,
+      "bits": null,
+      "positions": true,
+      "budget_pct": 5,
+      "selected_terms": 904,
+      "selection_bytes": 250457.0,
+      "query": {
+        "median_us": 1619.901,
+        "p95_us": 159467.157,
+        "p99_us": 335511.627,
+        "max_us": 637063.093,
+        "samples": 1320
+      },
+      "work": {
+        "posting_bytes": 1314732,
+        "candidate_checks": 63968,
+        "source_reads": 63968,
+        "source_decoded_bytes": 436598412,
+        "source_activated_bytes": 191116131,
+        "source_resolved": 63968
+      },
+      "filter_work": {
+        "candidates_before_filter": 42709772,
+        "candidates_after_filter": 42709772,
+        "candidates_rejected": 0
+      },
+      "rank_checks": 1320,
+      "score_error": 0.0,
+      "tie_order_differences": 0,
+      "rank_mismatches": [],
+      "sqlite_bytes": 5296128,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "frames": 3190784,
+        "lexicon": 593920,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096,
+        "term_blocks": 286720,
+        "token_postings": 950272
+      },
+      "budget_fraction": 1.0572363041700736,
+      "base_archive_bytes": 5009408
+    },
+    "pairs_all+positions-5%": {
+      "pairs": "all",
+      "bits": null,
+      "positions": true,
+      "budget_pct": 5,
+      "pair_count": 380216,
+      "pair_payload_bytes": 1180985,
+      "pair_table_bytes": 8159232,
+      "pair_build_seconds": 4.908,
+      "selected_terms": 904,
+      "selection_bytes": 250457.0,
+      "query": {
+        "median_us": 1143.344,
+        "p95_us": 9550.793,
+        "p99_us": 51854.828,
+        "max_us": 209253.275,
+        "samples": 1320
+      },
+      "work": {
+        "posting_bytes": 1314732,
+        "candidate_checks": 63968,
+        "source_reads": 4379,
+        "source_decoded_bytes": 40539152,
+        "source_activated_bytes": 16866014,
+        "source_resolved": 4379
+      },
+      "filter_work": {
+        "pair_bytes_activated": 20965026,
+        "pairs_activated": 1093556,
+        "candidates_before_filter": 42709772,
+        "candidates_after_filter": 2799575,
+        "candidates_rejected": 39910197
+      },
+      "rank_checks": 1320,
+      "score_error": 0.0,
+      "tie_order_differences": 0,
+      "rank_mismatches": [],
+      "sqlite_bytes": 12718080,
+      "table_bytes": {
+        "active_stats": 20480,
+        "contents": 16384,
+        "frames": 3190784,
+        "lexicon": 593920,
+        "pair_index_meta": 4096,
+        "pair_postings": 7417856,
+        "predictors": 4096,
+        "revision_cid": 20480,
+        "revisions": 147456,
+        "source": 61440,
+        "sqlite_schema": 4096,
+        "term_blocks": 286720,
+        "token_postings": 950272
+      },
+      "budget_fraction": 2.538838920686836,
+      "base_archive_bytes": 5009408
+    }
+  },
+  "limitations": [
+    "logical activation of stored bytes; no physical page I/O",
+    "pair identity is a 64-bit content hash; collisions can only add candidates, which are verified exactly afterwards",
+    "fingerprints are 64 bits per document, so false positives are common and expected; they can only reject on a clear bit",
+    "corrupted postings raise instead of returning a short candidate list",
+    "warm-cache timing; every ranking is compared with the native FTS5 oracle"
+  ]
+}
