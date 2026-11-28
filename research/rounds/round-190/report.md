@@ -10,3 +10,5 @@ All three jobs passed pyflakes and pytest. CLARK 1161: no signed deltas, no cach
 
 ## Decision
 Stop general suffix representation optimization. Real R188 overhead too large; cache improves favorable synthetic queries but modestly changes full AP latency and does not validate cancellation-aware selection superiority. Prioritize R167/R168 signed corrections and earlier transactional evidence for ACMSE. Next research, if pursued, should address multi-revision sharing of correction operators or integration into the transaction contract, not more cache or codec tuning. No RH theorem application.
+
+Final AP74364 hosted result (job 140940246597, passed). Bytes / extended P95 us / extended P99 us: positional 148459520/22810.801/101663.671; signed 132964352/16777.032/90588.671; frequency_1pct 134291456/16960.46/73932.726; cancellation_1pct 134270976/17334.182/73436.727; cancellation_halfpct 133591040/17285.336/72461.599. All checks passed. Cache improves P99 at extra storage and worse P95. Frequency and cancellation 1% arms had identical measured work but not verified identical key sets. No novelty or universal improvement claim.
