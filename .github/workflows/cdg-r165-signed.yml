@@ -1,4 +1,4 @@
-name: CDG R191 operator paths
+name: CDG R192 marginal operator paths
 on:
   push:
     branches: ['research/round-165-*']
@@ -35,5 +35,5 @@ jobs:
       - run: python experiments/round-165/operator_paths.py --corpus ${{ matrix.corpus }} --source ${{ matrix.source }} --target ${{ matrix.target }} --extension experiments/round-152/cdgfts.so --out experiments/round-165/ci.json
       - uses: actions/upload-artifact@v4
         with:
-          name: cdg-r191-${{ matrix.corpus }}-${{ matrix.target }}
+          name: cdg-r192-${{ matrix.corpus }}-${{ matrix.target }}
           path: experiments/round-165/ci.json

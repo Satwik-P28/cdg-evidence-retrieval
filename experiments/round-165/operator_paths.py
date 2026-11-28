@@ -13,13 +13,22 @@ def diff(a,b):
     c=collections.Counter(a);c.subtract(b)
     return {w:v for w,v in c.items() if v}
 
-def path_builder(events,limit):
+def path_builder(events,limit,objective='local'):
     def build(db,pending,stats):
         roots=dict(db.execute("SELECT cid,base FROM idx_delta"))
         direct=dict(pending);assert set(direct)==set(roots)
+        refs=collections.Counter(w for m in direct.values() for w in m)
         parent={};depth={};cum={};recent={};out=[]
         for cid,m in pending:
-            root=roots[cid];d=cost(m);best=(d,0,root,m,"direct")
+            root=roots[cid];d=cost(m);best=(d if objective=="local" else 0,0,root,m,"direct")
+            def shared_cost(w,n):
+                if n<=0:return 0
+                if objective=="quotient":return len(w)+6+4*n
+                # Approximate R168 adaptive writer, not measured page costs.
+                return min(n*(len(w)+6),len(w)+6+6*n)
+            def marginal(z):
+                removed=set(m)-set(z);added=set(z)-set(m)
+                return 4+sum(shared_cost(w,refs[w]-1)-shared_cost(w,refs[w]) for w in removed)+sum(shared_cost(w,refs[w]+1)-shared_cost(w,refs[w]) for w in added)
             prev=recent.get(root)
             if prev is not None and depth[prev]<limit:
                 alternatives=[("difference",diff(m,direct[prev]))]
@@ -31,9 +40,12 @@ def path_builder(events,limit):
                     c=cost(z)
                     # Bound cumulative token-equivalent path cost, not physical reads.
                     if cum[prev]+c>2*d+24:continue
-                    x=(c+4,depth[prev],prev,z,label)
+                    x=(c+4 if objective=='local' else marginal(z),depth[prev],prev,z,label)
                     if x[:3]<best[:3]:best=x
-            _,_,p,m2,kind=best;parent[cid]=p;depth[cid]=1 if p==root else depth[p]+1
+            _,_,p,m2,kind=best
+            refs.subtract(m.keys());refs.update(m2.keys())
+            if any(refs[w]<0 for w in m):raise ValueError('window refcount underflow')
+            parent[cid]=p;depth[cid]=1 if p==root else depth[p]+1
             cum[cid]=cost(m2)+(0 if p==root else cum[p])
             assert depth[cid]<=limit and p<cid
             recent[root]=cid;out.append((cid,m2))
@@ -82,10 +94,10 @@ def run(events,manifest,cuts,folder,ext,corpus):
     for ref in refs.values():ref.close()
     root=folder/"source.sqlite";db,size0=f.build(root,ext,events,"marginal",False);db.close()
     sigs={};freq_sigs={};results={};anchor_sig=None
-    for mode,limit in (("positional",0),("signed",1),("path2",2),("path4",4),("path8",8)):
+    for mode,limit,objective in (("positional",0,"local"),("signed",1,"local"),("path4",4,"local"),("quotient4",4,"quotient"),("adaptive4",4,"adaptive")):
         path=folder/(mode+".sqlite");shutil.copyfile(root,path);db=connect(path,ext);size=dict(size0)
         if limit:
-            size.update(sp.build_delta(db,path,events,MODE,path_builder(events,limit) if limit>1 else None))
+            size.update(sp.build_delta(db,path,events,MODE,path_builder(events,limit,objective) if limit>1 else None))
             signature=h.sha(h.canonical(list(db.execute("SELECT cid,base FROM idx_delta ORDER BY cid")))).hex()
             if anchor_sig is None:anchor_sig=signature
             else:assert anchor_sig==signature
@@ -127,7 +139,7 @@ def run(events,manifest,cuts,folder,ext,corpus):
             splits[group]=dict(query=quant(times),rank_checks=len(times),max_score_error=err,work=dict(work))
         results[mode]=dict(**size,source_checks=len(events),setup_us=setup,prepare=quant(pt),splits=splits)
         print("ARM_JSON="+json.dumps(dict(mode=mode,**results[mode])),flush=True);db.close();path.unlink()
-    return dict(round=191,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
+    return dict(round=192,corpus=corpus,revisions=len(events),manifest_sha256=manifest,cutoffs=cuts,
         query_counts={k:len(v) for k,v in groups.items()},query_hashes={k:h.sha(h.canonical(v)).hex() for k,v in groups.items()},
         anchors_sha256=anchor_sig,policies=results,limitations=["fixed native source/index roots, finalized archive only",
         "operator path depth distinct from unchanged one-hop source recovery bound",
